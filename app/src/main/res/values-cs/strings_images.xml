@@ -11,8 +11,8 @@
     <string name="hor_tones_none">Tóny: –</string>
     <string name="hor_tones">Tóny: %1$s Hz</string>
     <string name="hor_wait">Rámce se objeví po přijetí paketu (obvykle každých pár sekund).</string>
-    <string name="hor_from_file"> • ze souboru</string>
-    <string name="hor_seconds_ago"> • před %1$d s</string>
+    <string name="hor_from_file">" • ze souboru"</string>
+    <string name="hor_seconds_ago">" • před %1$d s"</string>
     <string name="hor_show_map">Zobrazit na mapě</string>
     <string name="hor_copy_position">Kopírovat polohu</string>
     <string name="hor_altitude">Výška</string>
@@ -21,9 +21,9 @@
     <string name="hor_satellites">Satelity</string>
     <string name="hor_temperature">Teplota</string>
     <string name="hor_battery">Baterie</string>
-    <string name="hor_elevation"> • elevace %1$s°</string>
+    <string name="hor_elevation">" • elevace %1$s°"</string>
     <string name="hor_no_gps">V rámci chybí poloha GPS</string>
-    <string name="hor_file">soubor  </string>
+    <string name="hor_file">"soubor  "</string>
     <string name="hor_unknown_format">v%1$s (neznámý formát) %2$s</string>
     <string name="hor_no_map_app">Chybí aplikace s mapou</string>
     <string name="hor_balloon_position">Poloha balónu</string>
@@ -34,12 +34,12 @@
     <string name="ds_mode">Režim %1$s</string>
     <string name="ds_interleave_long">prokládání 2 s</string>
     <string name="ds_interleave_short">prokládání 400 ms</string>
-    <string name="ds_strong_protection"> • silná ochrana</string>
+    <string name="ds_strong_protection">" • silná ochrana"</string>
     <string name="ds_saved">Uloženo %1$s</string>
     <string name="ds_received_count">Přijato obrázků: %1$d</string>
     <string name="ds_none_found">Obrázek DSSTV nenalezen</string>
     <string name="ds_help">Digitální SSTV (HamDRM, kompatibilní s EasyPal a QSSTV) – mj. 14,233 MHz USB, 7,173 MHz LSB, 3,733 MHz LSB. Signál vypadá jako šum o šířce asi 2,3 kHz. Nejspolehlivěji se přijímá kabelem z audio výstupu rádia; přes mikrofon fungují režimy 4-QAM a 16-QAM v tichém prostředí. Obrázky se ukládají do Galerie.</string>
-    <string name="ds_sender">Vysílá: %1$s • </string>
+    <string name="ds_sender">"Vysílá: %1$s • "</string>
     <string name="ds_offset">odchylka %1$s Hz • FAC %2$d%%</string>
     <string name="ds_receiving">Přijímám %1$s: %2$s segmentů</string>
     <string name="ds_file">soubor</string>
@@ -47,7 +47,7 @@
     <string name="ds_picture">Obrázek DSSTV</string>
     <string name="ds_cannot_show">%1$s se nepodařilo zobrazit</string>
     <string name="ds_will_appear">Obrázek se objeví během příjmu</string>
-    <string name="ds_rs_fixed"> • RS opravil %1$s</string>
+    <string name="ds_rs_fixed">" • RS opravil %1$s"</string>
     <string name="sstv_unsupported">Ukládání není na tomto starém systému podporováno</string>
     <string name="sstv_save_error">Chyba uložení</string>
     <string name="sstv_saved_as">Uloženo jako %1$s</string>

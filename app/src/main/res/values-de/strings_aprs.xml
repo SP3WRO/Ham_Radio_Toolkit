@@ -7,7 +7,7 @@
     <string name="aprs_position_sent">Position %1$s an APRS-IS gesendet</string>
     <string name="aprs_my_station">Meine Station</string>
     <string name="aprs_radius">Empfangsradius: %1$d km</string>
-    <string name="aprs_comment">  •  Kommentar: %1$s</string>
+    <string name="aprs_comment">"  •  Kommentar: %1$s"</string>
     <string name="aprs_always_listening">Der Empfang läuft die ganze Zeit, solange die App geöffnet ist.</string>
     <string name="aprs_need_callsign">Das Senden der Position erfordert ein Amateurfunkrufzeichen. Ohne Rufzeichen empfängt die App nur APRS-Rahmen (APRS-IS-Verbindung nur lesend).</string>
     <string name="aprs_enter_callsign">Rufzeichen in den Einstellungen eintragen</string>
@@ -26,7 +26,7 @@
     <string name="aprs_gain">Gewinn %1$s dB</string>
     <string name="aprs_humidity">Luftfeuchte %1$s%%</string>
     <string name="aprs_wind">Wind %1$d km/h</string>
-    <string name="aprs_wind_from"> aus %1$s°</string>
+    <string name="aprs_wind_from">" aus %1$s°"</string>
     <string name="aprs_gusts">Böen %1$d km/h</string>
     <string name="aprs_rain_1h">Regen 1 h %1$s mm</string>
     <string name="aprs_rain_24h">Regen 24 h %1$s mm</string>

@@ -11,8 +11,8 @@
     <string name="hor_tones_none">Tones: –</string>
     <string name="hor_tones">Tones: %1$s Hz</string>
     <string name="hor_wait">Frames will appear after a packet is received (usually every few seconds).</string>
-    <string name="hor_from_file"> • from file</string>
-    <string name="hor_seconds_ago"> • %1$d s ago</string>
+    <string name="hor_from_file">" • from file"</string>
+    <string name="hor_seconds_ago">" • %1$d s ago"</string>
     <string name="hor_show_map">Show on map</string>
     <string name="hor_copy_position">Copy position</string>
     <string name="hor_altitude">Altitude</string>
@@ -21,9 +21,9 @@
     <string name="hor_satellites">Satellites</string>
     <string name="hor_temperature">Temperature</string>
     <string name="hor_battery">Battery</string>
-    <string name="hor_elevation"> • elevation %1$s°</string>
+    <string name="hor_elevation">" • elevation %1$s°"</string>
     <string name="hor_no_gps">No GPS position in the frame</string>
-    <string name="hor_file">file    </string>
+    <string name="hor_file">"file    "</string>
     <string name="hor_unknown_format">v%1$s (unknown format) %2$s</string>
     <string name="hor_no_map_app">No map app</string>
     <string name="hor_balloon_position">Balloon position</string>
@@ -34,12 +34,12 @@
     <string name="ds_mode">Mode %1$s</string>
     <string name="ds_interleave_long">interleave 2 s</string>
     <string name="ds_interleave_short">interleave 400 ms</string>
-    <string name="ds_strong_protection"> • strong protection</string>
+    <string name="ds_strong_protection">" • strong protection"</string>
     <string name="ds_saved">Saved %1$s</string>
     <string name="ds_received_count">Pictures received: %1$d</string>
     <string name="ds_none_found">No DSSTV picture found</string>
     <string name="ds_help">Digital SSTV (HamDRM, compatible with EasyPal and QSSTV) – e.g. 14.233 MHz USB, 7.173 MHz LSB, 3.733 MHz LSB. The signal looks like noise about 2.3 kHz wide. It is received most reliably by cable from the radio\'s audio output; through the microphone the 4-QAM and 16-QAM modes work in quiet surroundings. Pictures are saved in the Gallery.</string>
-    <string name="ds_sender">Sender: %1$s • </string>
+    <string name="ds_sender">"Sender: %1$s • "</string>
     <string name="ds_offset">offset %1$s Hz • FAC %2$d%%</string>
     <string name="ds_receiving">Receiving %1$s: %2$s segments</string>
     <string name="ds_file">file</string>
@@ -47,7 +47,7 @@
     <string name="ds_picture">DSSTV picture</string>
     <string name="ds_cannot_show">Could not display %1$s</string>
     <string name="ds_will_appear">The picture will appear during reception</string>
-    <string name="ds_rs_fixed"> • RS corrected %1$s</string>
+    <string name="ds_rs_fixed">" • RS corrected %1$s"</string>
     <string name="sstv_unsupported">Saving is not supported on this old system</string>
     <string name="sstv_save_error">Save error</string>
     <string name="sstv_saved_as">Saved as %1$s</string>

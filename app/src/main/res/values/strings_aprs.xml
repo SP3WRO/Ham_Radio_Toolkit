@@ -7,7 +7,7 @@
     <string name="aprs_position_sent">Position %1$s sent to APRS-IS</string>
     <string name="aprs_my_station">My station</string>
     <string name="aprs_radius">Listening radius: %1$d km</string>
-    <string name="aprs_comment">  •  comment: %1$s</string>
+    <string name="aprs_comment">"  •  comment: %1$s"</string>
     <string name="aprs_always_listening">Listening runs all the time while the app is open.</string>
     <string name="aprs_need_callsign">Sending a position requires an amateur callsign. Without one the app only receives APRS frames (read-only APRS-IS connection).</string>
     <string name="aprs_enter_callsign">Enter your callsign in Settings</string>
@@ -26,7 +26,7 @@
     <string name="aprs_gain">gain %1$s dB</string>
     <string name="aprs_humidity">humidity %1$s%%</string>
     <string name="aprs_wind">wind %1$d km/h</string>
-    <string name="aprs_wind_from"> from %1$s°</string>
+    <string name="aprs_wind_from">" from %1$s°"</string>
     <string name="aprs_gusts">gusts %1$d km/h</string>
     <string name="aprs_rain_1h">rain 1 h %1$s mm</string>
     <string name="aprs_rain_24h">rain 24 h %1$s mm</string>

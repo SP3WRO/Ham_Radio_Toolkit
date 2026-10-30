@@ -17,10 +17,10 @@
     <string name="bcn_off_note">Część beaconów bywa czasowo wyłączona – aktualny stan: ncdxf.org/beacon</string>
     <string name="bp_title">Bandplan IARU Region %1$d</string>
     <string name="bp_region">Region %1$d</string>
-    <string name="bp_you_are_here"> (tu jesteś)</string>
+    <string name="bp_you_are_here">" (tu jesteś)"</string>
     <string name="bp_fm_calling">Wywoławcze FM: %1$s</string>
     <string name="bp_emergency">Łączność kryzysowa (KF): %1$s</string>
-    <string name="bp_r1_poland">Plan Regionu 1 z uwzględnieniem praktyki w Polsce. </string>
+    <string name="bp_r1_poland">"Plan Regionu 1 z uwzględnieniem praktyki w Polsce. "</string>
     <string name="bp_source_note">Źródło: %1$s. Bandplan IARU to zalecenie – wiążą krajowe przepisy.</string>
     <string name="gl_title">Szara linia</string>
     <string name="gl_legend">Żółta linia to Gray Line. Czerwona kropka to Twoje QTH.</string>

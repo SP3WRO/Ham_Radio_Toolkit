@@ -15,7 +15,7 @@
     <string name="ft8_no_match">Pro tento filtr nejsou žádné zprávy.</string>
     <string name="ft8_decode_wav">Dekódovat soubor WAV</string>
     <string name="ft8_file_segment">Soubor, úsek %1$d • %2$s</string>
-    <string name="ft8_legend">dB  DT  Hz  •  zelené – CQ. Klepnutím na zprávu ověříš značku odesílatele.</string>
+    <string name="ft8_legend">"dB  DT  Hz  •  zelené – CQ. Klepnutím na zprávu ověříš značku odesílatele."</string>
     <string name="dec_file_error">Chyba souboru: %1$s</string>
     <string name="rtty_title">Dekodér RTTY</string>
     <string name="rtty_reverse">obr.</string>
@@ -48,7 +48,7 @@
     <string name="cwt_title">Trenažér CW (Koch)</string>
     <string name="cwt_lesson">Lekce %1$d z %2$d</string>
     <string name="cwt_chars">Znaky: %1$s</string>
-    <string name="cwt_new_char">Nový znak: %1$s  %2$s</string>
+    <string name="cwt_new_char">"Nový znak: %1$s  %2$s"</string>
     <string name="cwt_listen">Poslechnout</string>
     <string name="cwt_char_speed">Rychlost znaku: %1$d WPM</string>
     <string name="cwt_eff_speed">Efektivní rychlost (Farnsworth): %1$d WPM</string>
@@ -59,7 +59,7 @@
     <string name="cwt_type_hint">Napiš, co slyšíš (skupiny odděl mezerou)</string>
     <string name="cwt_check">Zkontrolovat</string>
     <string name="cwt_accuracy">Úspěšnost: %1$s%%</string>
-    <string name="cwt_sent">Odvysíláno:  %1$s</string>
+    <string name="cwt_sent">"Odvysíláno:  %1$s"</string>
     <string name="cwt_received">Přijato: %1$s</string>
     <string name="cwt_pass" formatted="false">Nad 90 % – můžeš přejít na další lekci.</string>
     <string name="cwt_next_lesson">Lekce %1$d: nový znak %2$s</string>

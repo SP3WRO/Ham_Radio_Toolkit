@@ -7,7 +7,7 @@
     <string name="ch_dx_desc">Spoty krajów DXCC, których nie ma jeszcze w logu</string>
     <string name="ch_space">Pogoda kosmiczna</string>
     <string name="ch_space_desc">Burze geomagnetyczne (Kp), możliwa zorza i propagacja aurora</string>
-    <string name="sw_storm_g"> (burza G%1$d)</string>
+    <string name="sw_storm_g">" (burza G%1$d)"</string>
     <string name="sw_kp7">Zorza możliwa w całej Polsce, silne zakłócenia KF, szansa na propagację aurora na 6 m i 2 m.</string>
     <string name="sw_kp6">Zorza możliwa na północy Polski; pasma KF osłabione, szczególnie trasy polarne.</string>
     <string name="sw_kp5">Pogorszenie propagacji na wyższych pasmach KF i trasach polarnych.</string>

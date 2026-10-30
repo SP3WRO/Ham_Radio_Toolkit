@@ -2,14 +2,14 @@
 <!-- Wygenerowane z tabeli tłumaczeń strings_home.tsv -->
 <resources>
     <string name="home_hello">Hallo!</string>
-    <string name="home_hello_call">Hallo, </string>
+    <string name="home_hello_call">"Hallo, "</string>
     <string name="home_utc_time">UTC-Zeit</string>
-    <string name="home_date_local">%1$s  •  Ortszeit %2$s</string>
+    <string name="home_date_local">"%1$s  •  Ortszeit %2$s"</string>
     <string name="home_qth_locator">QTH-Locator</string>
     <string name="home_no_location">Kein Standortzugriff</string>
     <string name="home_allow_location">Standort erlauben</string>
     <string name="home_waiting_gps">Warte auf GPS-Position…</string>
-    <string name="home_asl"> ü. NN</string>
+    <string name="home_asl">" ü. NN"</string>
     <string name="home_no_altitude">keine Höhe</string>
     <string name="home_aprs_connecting">Verbinde mit dem APRS-IS-Netz…</string>
     <string name="home_aprs_no_stations">Verbunden – keine Stationen im Umkreis von %1$d km</string>

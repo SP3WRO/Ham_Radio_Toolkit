@@ -17,10 +17,10 @@
     <string name="bcn_off_note">Einige Baken sind zeitweise abgeschaltet – aktueller Stand: ncdxf.org/beacon</string>
     <string name="bp_title">IARU-Region-%1$d-Bandplan</string>
     <string name="bp_region">Region %1$d</string>
-    <string name="bp_you_are_here"> (du bist hier)</string>
+    <string name="bp_you_are_here">" (du bist hier)"</string>
     <string name="bp_fm_calling">FM-Anruf: %1$s</string>
     <string name="bp_emergency">Notfunk (KW): %1$s</string>
-    <string name="bp_r1_poland">Plan der Region 1 unter Berücksichtigung der Praxis in Polen. </string>
+    <string name="bp_r1_poland">"Plan der Region 1 unter Berücksichtigung der Praxis in Polen. "</string>
     <string name="bp_source_note">Quelle: %1$s. Der IARU-Bandplan ist eine Empfehlung – verbindlich sind die nationalen Vorschriften.</string>
     <string name="gl_title">Graulinie</string>
     <string name="gl_legend">Die gelbe Linie ist die Graulinie. Der rote Punkt ist dein QTH.</string>

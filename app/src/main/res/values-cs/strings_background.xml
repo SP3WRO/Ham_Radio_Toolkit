@@ -7,7 +7,7 @@
     <string name="ch_dx_desc">Spoty zemí DXCC, které ještě nemáš v deníku</string>
     <string name="ch_space">Kosmické počasí</string>
     <string name="ch_space_desc">Geomagnetické bouře (Kp), možná polární záře a šíření aurora</string>
-    <string name="sw_storm_g"> (bouře G%1$d)</string>
+    <string name="sw_storm_g">" (bouře G%1$d)"</string>
     <string name="sw_kp7">Polární záře možná v celé střední Evropě, silné rušení KV, šance na šíření aurora na 6 m a 2 m.</string>
     <string name="sw_kp6">Polární záře možná na severu střední Evropy; pásma KV oslabená, zejména polární trasy.</string>
     <string name="sw_kp5">Zhoršené šíření na vyšších pásmech KV a polárních trasách.</string>

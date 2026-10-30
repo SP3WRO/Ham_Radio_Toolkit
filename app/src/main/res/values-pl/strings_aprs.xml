@@ -7,7 +7,7 @@
     <string name="aprs_position_sent">Wysłano pozycję %1$s do APRS-IS</string>
     <string name="aprs_my_station">Moja stacja</string>
     <string name="aprs_radius">Promień nasłuchu: %1$d km</string>
-    <string name="aprs_comment">  •  komentarz: %1$s</string>
+    <string name="aprs_comment">"  •  komentarz: %1$s"</string>
     <string name="aprs_always_listening">Nasłuch działa przez cały czas, gdy aplikacja jest otwarta.</string>
     <string name="aprs_need_callsign">Nadawanie pozycji wymaga znaku krótkofalarskiego. Bez niego aplikacja tylko odbiera ramki APRS (połączenie z APRS-IS w trybie do odczytu).</string>
     <string name="aprs_enter_callsign">Wpisz znak w Ustawieniach</string>
@@ -26,7 +26,7 @@
     <string name="aprs_gain">zysk %1$s dB</string>
     <string name="aprs_humidity">wilgotność %1$s%%</string>
     <string name="aprs_wind">wiatr %1$d km/h</string>
-    <string name="aprs_wind_from"> z %1$s°</string>
+    <string name="aprs_wind_from">" z %1$s°"</string>
     <string name="aprs_gusts">porywy %1$d km/h</string>
     <string name="aprs_rain_1h">opad 1 h %1$s mm</string>
     <string name="aprs_rain_24h">opad 24 h %1$s mm</string>

@@ -11,8 +11,8 @@
     <string name="hor_tones_none">Tóny: –</string>
     <string name="hor_tones">Tóny: %1$s Hz</string>
     <string name="hor_wait">Rámce sa objavia po prijatí paketu (zvyčajne každých pár sekúnd).</string>
-    <string name="hor_from_file"> • zo súboru</string>
-    <string name="hor_seconds_ago"> • pred %1$d s</string>
+    <string name="hor_from_file">" • zo súboru"</string>
+    <string name="hor_seconds_ago">" • pred %1$d s"</string>
     <string name="hor_show_map">Zobraziť na mape</string>
     <string name="hor_copy_position">Kopírovať polohu</string>
     <string name="hor_altitude">Výška</string>
@@ -21,7 +21,7 @@
     <string name="hor_satellites">Satelity</string>
     <string name="hor_temperature">Teplota</string>
     <string name="hor_battery">Batéria</string>
-    <string name="hor_elevation"> • elevácia %1$s°</string>
+    <string name="hor_elevation">" • elevácia %1$s°"</string>
     <string name="hor_no_gps">V rámci chýba poloha GPS</string>
     <string name="hor_file">súbor</string>
     <string name="hor_unknown_format">v%1$s (neznámy formát) %2$s</string>
@@ -34,7 +34,7 @@
     <string name="ds_mode">Režim %1$s</string>
     <string name="ds_interleave_long">prekladanie 2 s</string>
     <string name="ds_interleave_short">prekladanie 400 ms</string>
-    <string name="ds_strong_protection"> • silná ochrana</string>
+    <string name="ds_strong_protection">" • silná ochrana"</string>
     <string name="ds_saved">Uložené %1$s</string>
     <string name="ds_received_count">Prijatých obrázkov: %1$d</string>
     <string name="ds_none_found">Obrázok DSSTV sa nenašiel</string>
@@ -47,7 +47,7 @@
     <string name="ds_picture">Obrázok DSSTV</string>
     <string name="ds_cannot_show">%1$s sa nepodarilo zobraziť</string>
     <string name="ds_will_appear">Obrázok sa objaví počas príjmu</string>
-    <string name="ds_rs_fixed"> • RS opravil %1$s</string>
+    <string name="ds_rs_fixed">" • RS opravil %1$s"</string>
     <string name="sstv_unsupported">Ukladanie nie je na tomto starom systéme podporované</string>
     <string name="sstv_save_error">Chyba uloženia</string>
     <string name="sstv_saved_as">Uložené ako %1$s</string>

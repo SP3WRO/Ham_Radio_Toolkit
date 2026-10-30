@@ -17,7 +17,7 @@
     <string name="bcn_off_note">Niektoré majáky bývajú dočasne vypnuté – aktuálny stav: ncdxf.org/beacon</string>
     <string name="bp_title">Kmitočtový plán IARU Región %1$d</string>
     <string name="bp_region">Región %1$d</string>
-    <string name="bp_you_are_here"> (si tu)</string>
+    <string name="bp_you_are_here">" (si tu)"</string>
     <string name="bp_fm_calling">Výzva FM: %1$s</string>
     <string name="bp_emergency">Tiesňová prevádzka (KV): %1$s</string>
     <string name="bp_r1_poland">Plán Regiónu 1 so zreteľom na prax v Poľsku.</string>

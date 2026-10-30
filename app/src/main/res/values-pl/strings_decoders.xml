@@ -15,7 +15,7 @@
     <string name="ft8_no_match">Brak wiadomości dla filtra.</string>
     <string name="ft8_decode_wav">Dekoduj plik WAV</string>
     <string name="ft8_file_segment">Plik, odcinek %1$d • %2$s</string>
-    <string name="ft8_legend">dB  DT  Hz  •  zielone – CQ. Dotknij wiadomości, żeby sprawdzić znak nadawcy.</string>
+    <string name="ft8_legend">"dB  DT  Hz  •  zielone – CQ. Dotknij wiadomości, żeby sprawdzić znak nadawcy."</string>
     <string name="dec_file_error">Błąd pliku: %1$s</string>
     <string name="rtty_title">Dekoder RTTY</string>
     <string name="rtty_reverse">odwr.</string>
@@ -48,7 +48,7 @@
     <string name="cwt_title">Trener CW (Koch)</string>
     <string name="cwt_lesson">Lekcja %1$d z %2$d</string>
     <string name="cwt_chars">Znaki: %1$s</string>
-    <string name="cwt_new_char">Nowy znak: %1$s  %2$s</string>
+    <string name="cwt_new_char">"Nowy znak: %1$s  %2$s"</string>
     <string name="cwt_listen">Posłuchaj</string>
     <string name="cwt_char_speed">Prędkość znaku: %1$d WPM</string>
     <string name="cwt_eff_speed">Prędkość efektywna (Farnsworth): %1$d WPM</string>
@@ -59,7 +59,7 @@
     <string name="cwt_type_hint">Wpisz, co słyszysz (grupy oddziel spacją)</string>
     <string name="cwt_check">Sprawdź</string>
     <string name="cwt_accuracy">Skuteczność: %1$s%%</string>
-    <string name="cwt_sent">Nadano:  %1$s</string>
+    <string name="cwt_sent">"Nadano:  %1$s"</string>
     <string name="cwt_received">Odebrano: %1$s</string>
     <string name="cwt_pass" formatted="false">Powyżej 90% – możesz przejść do kolejnej lekcji.</string>
     <string name="cwt_next_lesson">Lekcja %1$d: nowy znak %2$s</string>

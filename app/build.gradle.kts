@@ -17,8 +17,8 @@ android {
         minSdk = 24
         targetSdk = 36
         // Wersja: RR.MM.betaN; versionCode = RRMM·100 + N (musi rosnąć przy każdym wydaniu)
-        versionCode = 261009
-        versionName = "26.10.beta9"
+        versionCode = 261010
+        versionName = "26.10.beta10"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -7,7 +7,7 @@
     <string name="ch_dx_desc">Spots of DXCC entities not yet in your log</string>
     <string name="ch_space">Space weather</string>
     <string name="ch_space_desc">Geomagnetic storms (Kp), possible aurora and auroral propagation</string>
-    <string name="sw_storm_g"> (G%1$d storm)</string>
+    <string name="sw_storm_g">" (G%1$d storm)"</string>
     <string name="sw_kp7">Aurora possible across central Europe, strong HF disturbance, chance of auroral propagation on 6 m and 2 m.</string>
     <string name="sw_kp6">Aurora possible in northern central Europe; HF bands weakened, especially polar paths.</string>
     <string name="sw_kp5">Degraded propagation on the higher HF bands and polar paths.</string>

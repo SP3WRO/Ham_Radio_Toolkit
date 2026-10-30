@@ -7,7 +7,7 @@
     <string name="ch_dx_desc">Spots von DXCC-Gebieten, die noch nicht im Log sind</string>
     <string name="ch_space">Weltraumwetter</string>
     <string name="ch_space_desc">Geomagnetische Stürme (Kp), mögliche Polarlichter und Aurora-Ausbreitung</string>
-    <string name="sw_storm_g"> (Sturm G%1$d)</string>
+    <string name="sw_storm_g">" (Sturm G%1$d)"</string>
     <string name="sw_kp7">Polarlichter in ganz Mitteleuropa möglich, starke KW-Störungen, Chance auf Aurora-Ausbreitung auf 6 m und 2 m.</string>
     <string name="sw_kp6">Polarlichter im Norden Mitteleuropas möglich; KW-Bänder geschwächt, besonders polare Wege.</string>
     <string name="sw_kp5">Verschlechterte Ausbreitung auf den höheren KW-Bändern und polaren Wegen.</string>

@@ -24,9 +24,9 @@
     <string name="aw_your_result">Tvoj výsledok na radiodyplom.pl</string>
     <string name="aw_set_callsign">Nastav svoju značku v Nastaveniach a uvidíš výsledok v rebríčku.</string>
     <string name="aw_ranking_full">%1$s: %2$d b., %3$d QSO – miesto %4$d</string>
-    <string name="aw_of_participants"> z %1$d</string>
+    <string name="aw_of_participants">" z %1$d"</string>
     <string name="aw_not_ranked">%1$s: nie je v rebríčku (organizátori zatiaľ nenahrali spojenia s tebou)</string>
-    <string name="aw_participants"> • účastníkov: %1$d</string>
+    <string name="aw_participants">" • účastníkov: %1$d"</string>
     <string name="aw_ranking_from">Rebríček z %1$s</string>
     <string name="aw_awards_estimate">Diplomy (body z tvojho denníka – odhad)</string>
     <string name="aw_points">%1$d b.</string>

@@ -15,7 +15,7 @@
     <string name="ft8_no_match">No messages for this filter.</string>
     <string name="ft8_decode_wav">Decode a WAV file</string>
     <string name="ft8_file_segment">File, segment %1$d • %2$s</string>
-    <string name="ft8_legend">dB  DT  Hz  •  green – CQ. Tap a message to look up the sender\'s callsign.</string>
+    <string name="ft8_legend">"dB  DT  Hz  •  green – CQ. Tap a message to look up the sender\'s callsign."</string>
     <string name="dec_file_error">File error: %1$s</string>
     <string name="rtty_title">RTTY decoder</string>
     <string name="rtty_reverse">rev.</string>
@@ -48,7 +48,7 @@
     <string name="cwt_title">CW trainer (Koch)</string>
     <string name="cwt_lesson">Lesson %1$d of %2$d</string>
     <string name="cwt_chars">Characters: %1$s</string>
-    <string name="cwt_new_char">New character: %1$s  %2$s</string>
+    <string name="cwt_new_char">"New character: %1$s  %2$s"</string>
     <string name="cwt_listen">Listen</string>
     <string name="cwt_char_speed">Character speed: %1$d WPM</string>
     <string name="cwt_eff_speed">Effective speed (Farnsworth): %1$d WPM</string>
@@ -59,7 +59,7 @@
     <string name="cwt_type_hint">Type what you hear (separate groups with spaces)</string>
     <string name="cwt_check">Check</string>
     <string name="cwt_accuracy">Accuracy: %1$s%%</string>
-    <string name="cwt_sent">Sent:  %1$s</string>
+    <string name="cwt_sent">"Sent:  %1$s"</string>
     <string name="cwt_received">Received: %1$s</string>
     <string name="cwt_pass" formatted="false">Above 90% – you can move on to the next lesson.</string>
     <string name="cwt_next_lesson">Lesson %1$d: new character %2$s</string>

@@ -7,7 +7,7 @@
     <string name="ch_dx_desc">Spoty krajín DXCC, ktoré ešte nemáš v denníku</string>
     <string name="ch_space">Kozmické počasie</string>
     <string name="ch_space_desc">Geomagnetické búrky (Kp), možná polárna žiara a šírenie aurora</string>
-    <string name="sw_storm_g"> (búrka G%1$d)</string>
+    <string name="sw_storm_g">" (búrka G%1$d)"</string>
     <string name="sw_kp7">Polárna žiara možná v celej strednej Európe, silné rušenie KV, šanca na šírenie aurora na 6 m a 2 m.</string>
     <string name="sw_kp6">Polárna žiara možná na severe strednej Európy; pásma KV oslabené, najmä polárne trasy.</string>
     <string name="sw_kp5">Zhoršené šírenie na vyšších pásmach KV a polárnych trasách.</string>

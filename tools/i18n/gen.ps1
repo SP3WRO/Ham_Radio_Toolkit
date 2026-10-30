@@ -12,6 +12,8 @@ function Esc([string]$s) {
     $s = $s -replace "(?<!\\)'", "\'"
     $s = $s -replace '(?<!\\)"', '\"'
     if ($s.StartsWith('@') -or $s.StartsWith('?')) { $s = '\' + $s }
+    # Bez cudzysłowów aapt2 obcina spacje na brzegach i skleja podwójne
+    if ($s -match '^\s|\s$|\s\s') { $s = '"' + $s + '"' }
     return $s
 }
 $rows = @()

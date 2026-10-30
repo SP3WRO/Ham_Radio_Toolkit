@@ -17,10 +17,10 @@
     <string name="bcn_off_note">Některé majáky bývají dočasně vypnuté – aktuální stav: ncdxf.org/beacon</string>
     <string name="bp_title">Kmitočtový plán IARU Region %1$d</string>
     <string name="bp_region">Region %1$d</string>
-    <string name="bp_you_are_here"> (jsi zde)</string>
+    <string name="bp_you_are_here">" (jsi zde)"</string>
     <string name="bp_fm_calling">Výzva FM: %1$s</string>
     <string name="bp_emergency">Tísňový provoz (KV): %1$s</string>
-    <string name="bp_r1_poland">Plán Regionu 1 s ohledem na praxi v Polsku. </string>
+    <string name="bp_r1_poland">"Plán Regionu 1 s ohledem na praxi v Polsku. "</string>
     <string name="bp_source_note">Zdroj: %1$s. Kmitočtový plán IARU je doporučení – závazné jsou národní předpisy.</string>
     <string name="gl_title">Šedá linie</string>
     <string name="gl_legend">Žlutá čára je šedá linie. Červená tečka je tvoje QTH.</string>

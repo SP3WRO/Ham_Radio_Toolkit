@@ -11,8 +11,8 @@
     <string name="hor_tones_none">Tony: –</string>
     <string name="hor_tones">Tony: %1$s Hz</string>
     <string name="hor_wait">Ramki pojawią się po odebraniu pakietu (zwykle co kilka sekund).</string>
-    <string name="hor_from_file"> • z pliku</string>
-    <string name="hor_seconds_ago"> • %1$d s temu</string>
+    <string name="hor_from_file">" • z pliku"</string>
+    <string name="hor_seconds_ago">" • %1$d s temu"</string>
     <string name="hor_show_map">Pokaż na mapie</string>
     <string name="hor_copy_position">Kopiuj pozycję</string>
     <string name="hor_altitude">Wysokość</string>
@@ -21,9 +21,9 @@
     <string name="hor_satellites">Satelity</string>
     <string name="hor_temperature">Temperatura</string>
     <string name="hor_battery">Bateria</string>
-    <string name="hor_elevation"> • elewacja %1$s°</string>
+    <string name="hor_elevation">" • elewacja %1$s°"</string>
     <string name="hor_no_gps">Brak pozycji GPS w ramce</string>
-    <string name="hor_file">plik    </string>
+    <string name="hor_file">"plik    "</string>
     <string name="hor_unknown_format">v%1$s (nieznany format) %2$s</string>
     <string name="hor_no_map_app">Brak aplikacji z mapą</string>
     <string name="hor_balloon_position">Pozycja balonu</string>
@@ -34,12 +34,12 @@
     <string name="ds_mode">Tryb %1$s</string>
     <string name="ds_interleave_long">przeplot 2 s</string>
     <string name="ds_interleave_short">przeplot 400 ms</string>
-    <string name="ds_strong_protection"> • silna ochrona</string>
+    <string name="ds_strong_protection">" • silna ochrona"</string>
     <string name="ds_saved">Zapisano %1$s</string>
     <string name="ds_received_count">Odebrano obrazków: %1$d</string>
     <string name="ds_none_found">Nie znaleziono obrazka DSSTV</string>
     <string name="ds_help">Cyfrowe SSTV (HamDRM, zgodne z EasyPal i QSSTV) – m.in. 14,233 MHz USB, 7,173 MHz LSB, 3,733 MHz LSB. Sygnał wygląda jak szum o szerokości ok. 2,3 kHz. Najpewniej odbiera się kablem z wyjścia audio radia; przez mikrofon działają tryby 4-QAM i 16-QAM przy cichym otoczeniu. Obrazki zapisują się w Galerii.</string>
-    <string name="ds_sender">Nadaje: %1$s • </string>
+    <string name="ds_sender">"Nadaje: %1$s • "</string>
     <string name="ds_offset">odchyłka %1$s Hz • FAC %2$d%%</string>
     <string name="ds_receiving">Odbieram %1$s: %2$s segmentów</string>
     <string name="ds_file">plik</string>
@@ -47,7 +47,7 @@
     <string name="ds_picture">Obrazek DSSTV</string>
     <string name="ds_cannot_show">Nie udało się wyświetlić %1$s</string>
     <string name="ds_will_appear">Obrazek pojawi się w trakcie odbioru</string>
-    <string name="ds_rs_fixed"> • RS poprawił %1$s</string>
+    <string name="ds_rs_fixed">" • RS poprawił %1$s"</string>
     <string name="sstv_unsupported">Zapis nie wspierany w starym systemie</string>
     <string name="sstv_save_error">Błąd zapisu</string>
     <string name="sstv_saved_as">Zapisano jako %1$s</string>

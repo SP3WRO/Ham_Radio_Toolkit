@@ -4,12 +4,12 @@
     <string name="home_hello">Ahoj!</string>
     <string name="home_hello_call">Ahoj,</string>
     <string name="home_utc_time">Čas UTC</string>
-    <string name="home_date_local">%1$s  •  miestny čas %2$s</string>
+    <string name="home_date_local">"%1$s  •  miestny čas %2$s"</string>
     <string name="home_qth_locator">Lokátor QTH</string>
     <string name="home_no_location">Bez prístupu k polohe</string>
     <string name="home_allow_location">Povoliť polohu</string>
     <string name="home_waiting_gps">Čaká sa na polohu GPS…</string>
-    <string name="home_asl"> n. m.</string>
+    <string name="home_asl">" n. m."</string>
     <string name="home_no_altitude">bez výšky</string>
     <string name="home_aprs_connecting">Pripája sa k sieti APRS-IS…</string>
     <string name="home_aprs_no_stations">Pripojené – žiadne stanice v okruhu %1$d km</string>

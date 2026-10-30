@@ -11,8 +11,8 @@
     <string name="hor_tones_none">Töne: –</string>
     <string name="hor_tones">Töne: %1$s Hz</string>
     <string name="hor_wait">Rahmen erscheinen nach dem Empfang eines Pakets (meist alle paar Sekunden).</string>
-    <string name="hor_from_file"> • aus Datei</string>
-    <string name="hor_seconds_ago"> • vor %1$d s</string>
+    <string name="hor_from_file">" • aus Datei"</string>
+    <string name="hor_seconds_ago">" • vor %1$d s"</string>
     <string name="hor_show_map">Auf der Karte zeigen</string>
     <string name="hor_copy_position">Position kopieren</string>
     <string name="hor_altitude">Höhe</string>
@@ -21,9 +21,9 @@
     <string name="hor_satellites">Satelliten</string>
     <string name="hor_temperature">Temperatur</string>
     <string name="hor_battery">Batterie</string>
-    <string name="hor_elevation"> • Elevation %1$s°</string>
+    <string name="hor_elevation">" • Elevation %1$s°"</string>
     <string name="hor_no_gps">Keine GPS-Position im Rahmen</string>
-    <string name="hor_file">Datei   </string>
+    <string name="hor_file">"Datei   "</string>
     <string name="hor_unknown_format">v%1$s (unbekanntes Format) %2$s</string>
     <string name="hor_no_map_app">Keine Karten-App</string>
     <string name="hor_balloon_position">Ballonposition</string>
@@ -34,12 +34,12 @@
     <string name="ds_mode">Modus %1$s</string>
     <string name="ds_interleave_long">Interleaving 2 s</string>
     <string name="ds_interleave_short">Interleaving 400 ms</string>
-    <string name="ds_strong_protection"> • starker Schutz</string>
+    <string name="ds_strong_protection">" • starker Schutz"</string>
     <string name="ds_saved">%1$s gespeichert</string>
     <string name="ds_received_count">Empfangene Bilder: %1$d</string>
     <string name="ds_none_found">Kein DSSTV-Bild gefunden</string>
     <string name="ds_help">Digitales SSTV (HamDRM, kompatibel mit EasyPal und QSSTV) – u. a. 14,233 MHz USB, 7,173 MHz LSB, 3,733 MHz LSB. Das Signal sieht aus wie etwa 2,3 kHz breites Rauschen. Am zuverlässigsten ist der Empfang per Kabel vom Audioausgang des Funkgeräts; über das Mikrofon funktionieren die Modi 4-QAM und 16-QAM in ruhiger Umgebung. Bilder werden in der Galerie gespeichert.</string>
-    <string name="ds_sender">Sender: %1$s • </string>
+    <string name="ds_sender">"Sender: %1$s • "</string>
     <string name="ds_offset">Ablage %1$s Hz • FAC %2$d%%</string>
     <string name="ds_receiving">Empfange %1$s: %2$s Segmente</string>
     <string name="ds_file">Datei</string>
@@ -47,7 +47,7 @@
     <string name="ds_picture">DSSTV-Bild</string>
     <string name="ds_cannot_show">%1$s konnte nicht angezeigt werden</string>
     <string name="ds_will_appear">Das Bild erscheint während des Empfangs</string>
-    <string name="ds_rs_fixed"> • RS korrigiert %1$s</string>
+    <string name="ds_rs_fixed">" • RS korrigiert %1$s"</string>
     <string name="sstv_unsupported">Speichern wird auf diesem alten System nicht unterstützt</string>
     <string name="sstv_save_error">Speicherfehler</string>
     <string name="sstv_saved_as">Gespeichert als %1$s</string>
