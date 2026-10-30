@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_vademecum.tsv -->
+<resources>
+    <string name="vad_title">Vademecum</string>
+    <string name="vad_tab_qcodes">Kody Q</string>
+    <string name="vad_tab_reports">Raporty</string>
+    <string name="vad_tab_areas">Okręgi</string>
+    <string name="vad_tab_slang">Slang</string>
+    <string name="vad_tab_morse">Morse</string>
+    <string name="vad_tab_phonetic">Literowanie</string>
+    <string name="vad_search_dxcc">Szukaj kraju lub znaku…</string>
+    <string name="vad_continent">Kontynent: %1$s</string>
+    <string name="rst_title">Raportowanie w systemie RST</string>
+    <string name="rst_r">R - Czytelność sygnału (Readability)</string>
+    <string name="rst_r_scale">1 - Całkowicie nieczytelny\n2 - Zaledwie czytelny, sporadycznie\n3 - Czytelny z dużymi trudnościami\n4 - Czytelny bez większych trudności\n5 - Doskonale czytelny</string>
+    <string name="rst_s">S - Siła sygnału (Strength)</string>
+    <string name="rst_s_scale">1 - Zaledwie wyczuwalny (ledwo słyszalny)\n2 - Bardzo słaby\n3 - Słaby\n4 - Dostateczny\n5 - Dość dobry\n6 - Dobry\n7 - Średni\n8 - Silny\n9 - Bardzo silny</string>
+    <string name="rst_s_note">Często używa się ocen S9+10dB, S9+20dB, co oznacza siłę sygnału powyżej skali (mierzoną na S-metrze).</string>
+    <string name="rst_t">T - Ton (Tone) [Tylko telegrafia CW]</string>
+    <string name="rst_t_scale">1 - Bardzo chrapliwy, szeroki ton prądu przemiennego\n2 - Bardzo chrapliwy, twardy ton\n3 - Chrapliwy ton prądu zmiennego bez filtracji\n4 - Chrapliwy ton, słabe ślady filtracji\n5 - Ton filtrowany, ale z silną modulacją (przydźwiękiem)\n6 - Ton filtrowany, wyraźne ślady przydźwięku\n7 - Ton prawie czysty, ślady przydźwięku\n8 - Ton prawie idealny, minimalne ślady przydźwięku\n9 - Idealnie czysty ton (jak dzwonek), brak jakichkolwiek przydźwięków</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_contests.tsv -->
+<resources>
+    <string name="ct_filter_polish">Polské</string>
+    <string name="ct_filter_international">Mezinárodní</string>
+    <string name="ct_vhf">VKV</string>
+    <string name="ct_filter_digi">Digitální</string>
+    <string name="ct_filter_local">Země pobytu</string>
+    <string name="ct_title">Kalendář závodů</string>
+    <string name="ct_show_weekly">Zobrazit týdenní závody (CWT, MWC, sprinty…)</string>
+    <string name="ct_show_russian">Zobrazit ruské národní a regionální závody (QRZ.RU)</string>
+    <string name="ct_running_now">Probíhají teď</string>
+    <string name="ct_none">Pro zvolený filtr nejsou žádné závody.</string>
+    <string name="ct_footer">Data: kalendář závodů SP9CXN, kalendář závodů VKV/UHF/SHF sdružení Polski Klub UKF a kalendář závodů QRZ.RU (ruské názvy přeložené aplikací do angličtiny). Kalendáře se obnovují každých 12 hodin. Před startem si ověř termín v propozicích.</string>
+    <string name="ct_calendar_of">Kalendář %1$s</string>
+    <string name="ct_offline">Bez připojení a uložených kalendářů – vestavěný kalendář (vybrané velké závody, termíny vypočtené z pravidel)</string>
+    <string name="ct_unavailable">%1$s: nedostupný</string>
+    <string name="ct_copy_from">%1$s: kopie z %2$s</string>
+    <string name="ct_running_left">PROBÍHÁ – do konce %1$s</string>
+    <string name="ct_starts_in">Start za %1$s</string>
+    <string name="ct_organizer">Pořadatel</string>
+    <string name="ct_exchange">Výměna</string>
+    <string name="ct_log_deadline">Termín zaslání deníků</string>
+    <string name="ct_organizer_page">Stránka pořadatele</string>
+    <string name="ct_rules">Propozice</string>
+    <string name="ct_search_rules">Hledat propozice</string>
+    <string name="ct_rules_pl">Propozice (PL)</string>
+    <string name="ct_logs_by">Deníky do: %1$s</string>
+    <string name="ct_rules_pl_value">Propozice (PL): %1$s</string>
+    <plurals name="dur_days">
+        <item quantity="one">%1$d den</item>
+        <item quantity="few">%1$d dny</item>
+        <item quantity="many">%1$d dne</item>
+        <item quantity="other">%1$d dní</item>
+    </plurals>
+    <string name="dur_hours">%1$d h</string>
+    <string name="dur_hours_minutes">%1$d h %2$d min</string>
+    <string name="dur_minutes">%1$d min</string>
+    <string name="ct_mode_cw">CW</string>
+    <string name="ct_mode_ssb">SSB</string>
+    <string name="ct_qrp">QRP</string>
+</resources>

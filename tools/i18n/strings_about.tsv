@@ -1,0 +1,74 @@
+# key	en	pl	de	cs	sk
+about_version	Version %1$s	Wersja %1$s	Version %1$s	Verze %1$s	Verzia %1$s
+about_github	Source code on GitHub	Kod źródłowy na GitHubie	Quellcode auf GitHub	Zdrojový kód na GitHubu	Zdrojový kód na GitHube
+about_author	About the author	O autorze	Über den Autor	O autorovi	O autorovi
+about_author_text	Created with the help of AI by Mateusz SP3WRO.	Stworzone przy użyciu AI przez Mateusza SP3WRO.	Mit Hilfe von KI erstellt von Mateusz SP3WRO.	Vytvořil s pomocí AI Mateusz SP3WRO.	Vytvoril s pomocou AI Mateusz SP3WRO.
+about_author_joke	No transistors were harmed in the making of this app!	W trakcie budowania aplikacji nie ucierpiał żaden tranzystor!	Bei der Entwicklung dieser App wurde kein Transistor verletzt!	Při vývoji aplikace nebyl zraněn žádný tranzistor!	Pri vývoji aplikácie nebol zranený žiadny tranzistor!
+about_license_title	License – MIT	Licencja – MIT	Lizenz – MIT	Licence – MIT	Licencia – MIT
+about_license_text	The app is open source software under the MIT license. You may use, copy, modify and distribute it free of charge – also in modified form – on one condition: every copy and every modification must keep the author notice (Copyright © 2026 Mateusz SP3WRO) and the license text.	Aplikacja jest otwartym oprogramowaniem (open source) na licencji MIT. Możesz ją bezpłatnie używać, kopiować, przerabiać i rozpowszechniać – także w zmienionej postaci – pod jednym warunkiem: w każdej kopii i każdej przeróbce musi zostać informacja o autorze (Copyright © 2026 Mateusz SP3WRO) i treść licencji.	Die App ist Open-Source-Software unter der MIT-Lizenz. Du darfst sie kostenlos nutzen, kopieren, verändern und verbreiten – auch in veränderter Form – unter einer Bedingung: In jeder Kopie und jeder Bearbeitung müssen der Urhebervermerk (Copyright © 2026 Mateusz SP3WRO) und der Lizenztext erhalten bleiben.	Aplikace je otevřený software (open source) pod licencí MIT. Můžeš ji zdarma používat, kopírovat, upravovat a šířit – i v upravené podobě – za jedné podmínky: v každé kopii a každé úpravě musí zůstat informace o autorovi (Copyright © 2026 Mateusz SP3WRO) a text licence.	Aplikácia je otvorený softvér (open source) pod licenciou MIT. Môžeš ju bezplatne používať, kopírovať, upravovať a šíriť – aj v upravenej podobe – pod jednou podmienkou: v každej kópii a každej úprave musí zostať informácia o autorovi (Copyright © 2026 Mateusz SP3WRO) a text licencie.
+about_as_is	The app is provided “as is”, without any warranty.	Aplikacja jest dostarczana „tak jak jest”, bez żadnej gwarancji.	Die App wird „wie besehen“ ohne jegliche Gewährleistung bereitgestellt.	Aplikace je poskytována „tak, jak je“, bez jakékoli záruky.	Aplikácia sa poskytuje „tak, ako je“, bez akejkoľvek záruky.
+about_full_license	Full license text	Pełny tekst licencji	Vollständiger Lizenztext	Úplný text licence	Úplný text licencie
+about_repository	Repository	Repozytorium	Repository	Repozitář	Repozitár
+about_third_party	Code by other authors in the app	Kod innych autorów w aplikacji	Code anderer Autoren in der App	Kód jiných autorů v aplikaci	Kód iných autorov v aplikácii
+about_third_party_note	These parts keep their own licenses (LICENSE-*.txt files in the repository). The Horus decoder remains under the LGPL-2.1 license.	Te części zachowują własne licencje (pliki LICENSE-*.txt w repozytorium). Dekoder Horus pozostaje na licencji LGPL-2.1.	Diese Teile behalten ihre eigenen Lizenzen (Dateien LICENSE-*.txt im Repository). Der Horus-Decoder bleibt unter der LGPL-2.1.	Tyto části si ponechávají vlastní licence (soubory LICENSE-*.txt v repozitáři). Dekodér Horus zůstává pod licencí LGPL-2.1.	Tieto časti si ponechávajú vlastné licencie (súbory LICENSE-*.txt v repozitári). Dekodér Horus zostáva pod licenciou LGPL-2.1.
+about_sources	Data sources	Źródła danych	Datenquellen	Zdroje dat	Zdroje údajov
+about_sources_note	Huge thanks to the creators of the free services and projects the app uses (%1$d sources in %2$d groups). Tap a source to open its website.	Ogromne podziękowania dla twórców darmowych usług i projektów, z których korzysta aplikacja (%1$d źródeł w %2$d grupach). Dotknij źródła, żeby otworzyć jego stronę.	Großer Dank an die Macher der kostenlosen Dienste und Projekte, die die App nutzt (%1$d Quellen in %2$d Gruppen). Tippe auf eine Quelle, um ihre Website zu öffnen.	Velké díky tvůrcům bezplatných služeb a projektů, které aplikace využívá (%1$d zdrojů v %2$d skupinách). Klepnutím na zdroj otevřeš jeho web.	Veľká vďaka tvorcom bezplatných služieb a projektov, ktoré aplikácia využíva (%1$d zdrojov v %2$d skupinách). Ťuknutím na zdroj otvoríš jeho web.
+about_show_sources	Show all sources	Pokaż wszystkie źródła	Alle Quellen anzeigen	Zobrazit všechny zdroje	Zobraziť všetky zdroje
+about_thanks	For strong support and motivation, thanks to Dorota SQ3TGY.	Za silne wsparcie i motywację do działania dziękuję Dorocie SQ3TGY.	Für die starke Unterstützung und Motivation danke ich Dorota SQ3TGY.	Za silnou podporu a motivaci děkuji Dorotě SQ3TGY.	Za silnú podporu a motiváciu ďakujem Dorote SQ3TGY.
+about_mit_title	MIT License	Licencja MIT	MIT-Lizenz	Licence MIT	Licencia MIT
+about_on_github	On GitHub	Na GitHubie	Auf GitHub	Na GitHubu	Na GitHube
+# grupy źródeł
+src_g_propagation	Propagation and space weather	Propagacja i pogoda kosmiczna	Ausbreitung und Weltraumwetter	Šíření a kosmické počasí	Šírenie a kozmické počasie
+src_g_dx	DX Cluster and DXCC entities	DX Cluster i kraje DXCC	DX-Cluster und DXCC-Gebiete	DX Cluster a země DXCC	DX Cluster a krajiny DXCC
+src_g_activations	Field activations	Aktywacje terenowe	Portabel-Aktivierungen	Aktivace v terénu	Aktivácie v teréne
+src_g_repeaters	Repeaters	Przemienniki	Relais	Převáděče	Prevádzače
+src_g_lookup	Callsign lookup	Wyszukiwarka znaków	Rufzeichensuche	Hledání značek	Hľadanie značiek
+src_g_satellites	Satellites	Satelity	Satelliten	Družice	Družice
+src_g_contests	Contests and awards	Zawody i dyplomy	Contests und Diplome	Závody a diplomy	Preteky a diplomy
+src_g_log	Log and confirmations	Log i potwierdzenia	Log und Bestätigungen	Deník a potvrzení	Denník a potvrdenia
+src_g_bandplans	Band plans, regulations and beacons	Bandplany, przepisy i beacony	Bandpläne, Vorschriften und Baken	Kmitočtové plány, předpisy a majáky	Kmitočtové plány, predpisy a majáky
+src_g_algorithms	Algorithms and inspiration	Algorytmy i inspiracje	Algorithmen und Inspiration	Algoritmy a inspirace	Algoritmy a inšpirácie
+# opisy źródeł
+src_ft8	FT8 / FT4 decoder • MIT	dekoder FT8 / FT4 • MIT	FT8-/FT4-Decoder • MIT	dekodér FT8 / FT4 • MIT	dekodér FT8 / FT4 • MIT
+src_robot36	SSTV decoder • 0BSD	dekoder SSTV • 0BSD	SSTV-Decoder • 0BSD	dekodér SSTV • 0BSD	dekodér SSTV • 0BSD
+src_horus	Horus Binary balloon decoder • LGPL-2.1	dekoder balonów Horus Binary • LGPL-2.1	Horus-Binary-Ballondecoder • LGPL-2.1	dekodér balónů Horus Binary • LGPL-2.1	dekodér balónov Horus Binary • LGPL-2.1
+src_pdfjs	JPEG 2000 decoder in DSSTV • Apache 2.0	dekoder JPEG 2000 w DSSTV • Apache 2.0	JPEG-2000-Decoder in DSSTV • Apache 2.0	dekodér JPEG 2000 v DSSTV • Apache 2.0	dekodér JPEG 2000 v DSSTV • Apache 2.0
+src_aprs_symbols	APRS symbol icons	ikony symboli APRS	APRS-Symbolgrafiken	ikony symbolů APRS	ikony symbolov APRS
+src_hamqsl	solar indices and band conditions	wskaźniki solarne i warunki na pasmach	Sonnenindizes und Bandbedingungen	sluneční indexy a podmínky na pásmech	slnečné indexy a podmienky na pásmach
+src_noaa	Kp index and geomagnetic storm alerts	indeks Kp i alerty burz magnetycznych	Kp-Index und Warnungen vor geomagnetischen Stürmen	index Kp a výstrahy před geomagnetickými bouřemi	index Kp a výstrahy pred geomagnetickými búrkami
+src_tropocast	tropospheric propagation maps	mapy propagacji troposferycznej	Karten der troposphärischen Ausbreitung	mapy troposférického šíření	mapy troposférického šírenia
+src_dxsummit	DX spots	spoty DX	DX-Spots	DX spoty	DX spoty
+src_cty	DXCC entity database (cty.dat)	baza krajów DXCC (cty.dat)	DXCC-Datenbank (cty.dat)	databáze zemí DXCC (cty.dat)	databáza krajín DXCC (cty.dat)
+src_pota	Parks on the Air references and spots	obiekty i spoty Parks on the Air	Parks-on-the-Air-Referenzen und -Spots	objekty a spoty Parks on the Air	objekty a spoty Parks on the Air
+src_sota	summit database	baza szczytów	Gipfeldatenbank	databáze vrcholů	databáza vrcholov
+src_wwff	World Wide Flora & Fauna references and spots	obiekty i spoty World Wide Flora & Fauna	World-Wide-Flora-&-Fauna-Referenzen und -Spots	objekty a spoty World Wide Flora & Fauna	objekty a spoty World Wide Flora & Fauna
+src_aprsis	station positions and position beacons	pozycje stacji i nadawanie pozycji	Stationspositionen und Positionsaussendung	polohy stanic a vysílání polohy	polohy staníc a vysielanie polohy
+src_rep_pl_eu	repeaters in Poland and Europe	przemienniki w Polsce i Europie	Relais in Polen und Europa	převáděče v Polsku a Evropě	prevádzače v Poľsku a Európe
+src_rep_pl	repeaters in Poland	przemienniki w Polsce	Relais in Polen	převáděče v Polsku	prevádzače v Poľsku
+src_rep_world	repeaters worldwide	przemienniki na świecie	Relais weltweit	převáděče ve světě	prevádzače vo svete
+src_dmr_details	DMR repeater details	szczegóły przemienników DMR	Details zu DMR-Relais	podrobnosti převáděčů DMR	podrobnosti prevádzačov DMR
+src_rb	repeaters – with your own token	przemienniki – z własnym tokenem	Relais – mit eigenem Token	převáděče – s vlastním tokenem	prevádzače – s vlastným tokenom
+src_uke_name	UKE – Polish amateur licence register	UKE – rejestr pozwoleń amatorskich	UKE – polnisches Register der Amateurfunkgenehmigungen	UKE – polský registr radioamatérských povolení	UKE – poľský register rádioamatérskych povolení
+src_uke	Polish station data	dane polskich stacji	Daten polnischer Stationen	údaje polských stanic	údaje poľských staníc
+src_callbook	callbook	callbook	Callbook	callbook	callbook
+src_hamdb	callbook (US, CA, DE, CZ, AU)	callbook (US, CA, DE, CZ, AU)	Callbook (US, CA, DE, CZ, AU)	callbook (US, CA, DE, CZ, AU)	callbook (US, CA, DE, CZ, AU)
+src_dmr_ids	DMR IDs	identyfikatory DMR	DMR-IDs	identifikátory DMR	identifikátory DMR
+src_pskreporter	senders' locators	lokatory nadawców	Locatoren der Sender	lokátory vysílajících	lokátory vysielajúcich
+src_tle	orbital elements (TLE)	elementy orbit (TLE)	Bahnelemente (TLE)	dráhové elementy (TLE)	dráhové elementy (TLE)
+src_tle_backup	orbital elements (TLE) – backup	elementy orbit (TLE) – zapasowo	Bahnelemente (TLE) – Reserve	dráhové elementy (TLE) – záložně	dráhové elementy (TLE) – záložne
+src_satnogs	transponders and frequencies	transpondery i częstotliwości	Transponder und Frequenzen	transpondéry a kmitočty	transpondéry a kmitočty
+src_satdb	frequencies of active satellites	częstotliwości aktywnych satelitów	Frequenzen aktiver Satelliten	kmitočty aktivních družic	kmitočty aktívnych družíc
+src_sp9cxn_name	SP9CXN contest calendar	Kalendarz zawodów SP9CXN	SP9CXN-Contestkalender	Kalendář závodů SP9CXN	Kalendár pretekov SP9CXN
+src_sp9cxn	national and international contests	zawody krajowe i międzynarodowe	nationale und internationale Contests	národní a mezinárodní závody	národné a medzinárodné preteky
+src_pkukf	VHF/UHF/SHF contest calendar	kalendarz zawodów VHF/UHF/SHF	VHF/UHF/SHF-Contestkalender	kalendář závodů VKV/UHF/SHF	kalendár pretekov VKV/UHF/SHF
+src_qrzru	contest calendar	kalendarz zawodów	Contestkalender	kalendář závodů	kalendár pretekov
+src_radiodyplom	award programmes, stations and ranking	akcje dyplomowe, stacje i ranking	Diplomaktionen, Stationen und Rangliste	diplomové akce, stanice a žebříček	diplomové akcie, stanice a rebríček
+src_upload	QSO upload	wysyłka łączności	QSO-Upload	odesílání spojení	odosielanie spojení
+src_iaru_name	IARU Regions 1, 2 and 3	IARU Regiony 1, 2 i 3	IARU-Regionen 1, 2 und 3	IARU Regiony 1, 2 a 3	IARU Regióny 1, 2 a 3
+src_iaru	band plans	bandplany	Bandpläne	kmitočtové plány	kmitočtové plány
+src_cept_name	CEPT/ECO – recommendation T/R 61-01	CEPT/ECO – zalecenie T/R 61-01	CEPT/ECO – Empfehlung T/R 61-01	CEPT/ECO – doporučení T/R 61-01	CEPT/ECO – odporúčanie T/R 61-01
+src_cept	CEPT licence and prefixes abroad	licencja CEPT i prefiksy za granicą	CEPT-Lizenz und Präfixe im Ausland	licence CEPT a prefixy v zahraničí	licencia CEPT a prefixy v zahraničí
+src_ncdxf	beacon schedule	harmonogram beaconów	Bakenfahrplan	rozvrh majáků	rozvrh majákov
+src_coax	cable loss	tłumienność przewodów	Kabeldämpfung	útlum kabelů	útlm káblov
+src_moxon	Moxon antenna formulas	wzory anteny Moxona	Formeln der Moxon-Antenne	vzorce antény Moxon	vzorce antény Moxon
+src_drm	DSSTV decoder	dekoder DSSTV	DSSTV-Decoder	dekodér DSSTV	dekodér DSSTV

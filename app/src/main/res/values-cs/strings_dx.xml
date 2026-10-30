@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_dx.tsv -->
+<resources>
+    <string name="dx_filters">Filtry</string>
+    <string name="dx_spot_it">Spotovat</string>
+    <string name="dx_filtering">Filtrování spotů</string>
+    <string name="dx_reset_filters">Zrušit filtry</string>
+    <string name="dx_search_hint">Hledat stanici DX, spottera…</string>
+    <string name="dx_band">Pásmo:</string>
+    <string name="dx_mode">Provoz:</string>
+    <string name="dx_country">Země:</string>
+    <string name="dx_country_count">Země (%1$d):</string>
+    <string name="dx_country_hint">např. Japan</string>
+    <string name="dx_updated">Aktualizace: %1$s</string>
+    <string name="dx_spots_count">Spoty: %1$d</string>
+    <string name="dx_no_spots">Žádné spoty neodpovídají zvoleným filtrům.</string>
+    <string name="dx_qso_logged">QSO s %1$s zapsáno</string>
+    <string name="dx_sending_spot">Odesílání spotu…</string>
+    <string name="dx_invalid_freq">Neplatný kmitočet</string>
+    <string name="dx_award_points">%1$s · %2$d b.</string>
+    <string name="dx_error_download">Chyba stahování dat: %1$s</string>
+    <string name="dx_error_send">Odeslání selhalo: %1$s</string>
+    <string name="spot_new_country">NOVÁ ZEMĚ</string>
+    <string name="spot_award">DIPLOM: %1$s</string>
+    <string name="addspot_title">Přidat nový spot</string>
+    <string name="addspot_dx_call">Značka DX</string>
+    <string name="addspot_freq">Kmitočet (kHz)</string>
+    <string name="addspot_comment">Komentář (volitelně)</string>
+</resources>

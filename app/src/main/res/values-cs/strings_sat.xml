@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_sat.tsv -->
+<resources>
+    <string name="sat_title">Družice</string>
+    <string name="sat_update_online">Aktualizovat online</string>
+    <string name="sat_search">Hledat družici…</string>
+    <string name="sat_list_header">Družice a přelety (%1$d):</string>
+    <string name="sat_calculating">Výpočet: %1$d/%2$d</string>
+    <string name="sat_none">Kritériím neodpovídají žádné družice.</string>
+    <string name="sat_in_pass">Letí! Do konce: %1$dm %2$ds</string>
+    <string name="sat_aos_los">AOS: %1$s (za %2$s) | LOS: %3$s</string>
+    <string name="sat_calculating_pass">Výpočet přeletu…</string>
+    <string name="sat_remind">Připomínat přelety</string>
+    <string name="sat_freq_amsat">Kmitočty (AMSAT DB):</string>
+    <string name="sat_freq_satnogs">Kmitočty (SatNOGS):</string>
+    <string name="sat_freq_builtin">Kmitočty (vestavěné):</string>
+    <string name="sat_callsign">Značka: %1$s</string>
+    <string name="sat_none_short">žádný</string>
+    <string name="sat_no_freqs">Žádné registrované kmitočty.</string>
+    <string name="sat_skyplot">RADAR OBLOHY (SKYPLOT)</string>
+    <string name="sat_satellite">Družice</string>
+    <string name="sat_azimuth">Azimut (směr)</string>
+    <string name="sat_elevation">Elevace (výška)</string>
+    <string name="sat_pick_hint">Vyber družici ze seznamu níže a uvidíš její polohu na kompasu.</string>
+    <string name="loc_title">Lokátor a směry</string>
+    <string name="loc_not_recognized">Nerozpoznáno: zadej lokátor (JO70FD), souřadnice (50.1, 14.4) nebo značku</string>
+    <string name="loc_search_error">Chyba hledání: %1$s</string>
+    <string name="loc_my_station">Moje stanice</string>
+    <string name="loc_manual">ručně zadaný lokátor</string>
+    <string name="loc_from_gps">z GPS</string>
+    <string name="loc_no_position">Chybí poloha – zapni polohu nebo zadej svůj lokátor.</string>
+    <string name="loc_my_locator">Můj lokátor (volitelně)</string>
+    <string name="loc_use_gps">Použít GPS</string>
+    <string name="loc_refresh_gps">Obnovit polohu GPS</string>
+    <string name="loc_distance_bearing">Vzdálenost a azimut</string>
+    <string name="loc_target_label">Lokátor, souřadnice nebo značka</string>
+    <string name="loc_target_hint">např. FN31pr, 40.7, -74.0 nebo VK2ABC</string>
+    <string name="loc_target_locator">Lokátor cíle: %1$s</string>
+    <string name="loc_short_path">Krátká cesta (SP)</string>
+    <string name="loc_long_path">Dlouhá cesta (LP)</string>
+    <string name="loc_enlarge_map">Zvětšit mapu</string>
+    <string name="loc_map_note">Azimutální mapa: směr od středu = azimut antény, vzdálenost od středu = vzdálenost po ortodromě. Žlutá čára – krátká cesta, růžová přerušovaná – dlouhá cesta. Klepnutím mapu zvětšíš.</string>
+    <string name="loc_my_station_value">Moje stanice: %1$s</string>
+    <string name="loc_coords_to_locator">Souřadnice → lokátor</string>
+    <string name="loc_lat">Šířka (N+)</string>
+    <string name="loc_lon">Délka (E+)</string>
+    <string name="loc_locator_value">Lokátor %1$s</string>
+    <string name="loc_point">Bod %1$s°, %2$s°</string>
+    <string name="loc_no_locator_for">Pro stanici %1$s nemáme údaje o lokátoru</string>
+    <string name="live_title">Aktivace živě</string>
+    <string name="live_count">%1$d spotů</string>
+    <string name="live_nearest">Nejbližší</string>
+    <string name="live_error">Chyba: %1$s</string>
+    <string name="live_sota_note">Spoty SOTA se nezobrazují: podmínky API SOTA vyžadují pro aplikace (včetně vytvořených s pomocí AI) předchozí souhlas SOTA Management Team.</string>
+    <string name="live_logged">Zapsáno %1$s @ %2$s</string>
+    <string name="live_logged_badge">ZAPSÁNO</string>
+</resources>

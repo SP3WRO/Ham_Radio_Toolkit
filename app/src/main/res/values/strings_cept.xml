@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_cept.tsv -->
+<resources>
+    <string name="cept_and">and</string>
+    <string name="cept_classes">classes</string>
+    <string name="cept_formerly">formerly</string>
+    <string name="cept_formerly_also">formerly also</string>
+    <string name="cept_guest">guest</string>
+    <string name="cept_note_ee">Guests with a CEPT licence may operate for up to 3 months with class B privileges; class A requires proof of CW knowledge (min. 5 wpm).</string>
+    <string name="cept_note_ie">The EJ prefix is for offshore islands.</string>
+    <string name="cept_note_lv">Guests with a CEPT licence may operate for up to 3 months.</string>
+    <string name="cept_note_au">A class licence lets guests with a CEPT licence operate for up to 365 days on all amateur bands without additional permits.</string>
+    <string name="cept_note_bq">PJ4 – Bonaire, PJ5 – St. Eustatius, PJ6 – Saba.</string>
+    <string name="cept_note_nz">Guests with a CEPT licence may operate for up to 90 days on all amateur bands without permits or registration.</string>
+    <string name="cept_note_pe">In Peru, OA with the zone digit is appended at the end of the callsign (e.g. SP3WRO/OA4).</string>
+    <string name="cept_privileges">privileges</string>
+</resources>

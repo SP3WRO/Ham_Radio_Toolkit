@@ -1,0 +1,71 @@
+# key	en	pl	de	cs	sk
+dec_mic_denied	Microphone access denied	Odmowa dostępu do mikrofonu	Mikrofonzugriff verweigert	Přístup k mikrofonu odepřen	Prístup k mikrofónu zamietnutý
+dec_mic_failed	Cannot start the microphone	Nie można uruchomić mikrofonu	Mikrofon kann nicht gestartet werden	Mikrofon nelze spustit	Mikrofón nie je možné spustiť
+dec_stop_listening	Stop listening	Zatrzymaj nasłuch	Empfang stoppen	Zastavit příjem	Zastaviť príjem
+dec_start_listening	Start listening	Start nasłuchu	Empfang starten	Spustit příjem	Spustiť príjem
+ft8_title	FT8 / FT4 decoder	Dekoder FT8 / FT4	FT8-/FT4-Decoder	Dekodér FT8 / FT4	Dekodér FT8 / FT4
+ft8_show_controls	Show control panel	Pokaż panel sterowania	Bedienfeld anzeigen	Zobrazit ovládací panel	Zobraziť ovládací panel
+ft8_full_list	Full-screen list	Lista na cały ekran	Liste im Vollbild	Seznam na celou obrazovku	Zoznam na celú obrazovku
+ft8_only_cq	CQ only	Tylko CQ	Nur CQ	Jen CQ	Len CQ
+ft8_frequencies	%1$s frequencies	Częstotliwości %1$s	%1$s-Frequenzen	Kmitočty %1$s	Kmitočty %1$s
+ft8_freq_hint	%1$s frequencies: %2$s. Put the phone next to the radio's speaker; the phone clock must be accurate (±1 s) – check it in the DT column.	Częstotliwości %1$s: %2$s. Telefon połóż przy głośniku radia; zegar telefonu musi być dokładny (±1 s) – sprawdzisz to w kolumnie DT.	%1$s-Frequenzen: %2$s. Lege das Telefon neben den Lautsprecher des Funkgeräts; die Uhr des Telefons muss genau gehen (±1 s) – prüfe das in der Spalte DT.	Kmitočty %1$s: %2$s. Polož telefon k reproduktoru rádia; hodiny telefonu musí být přesné (±1 s) – ověříš to ve sloupci DT.	Kmitočty %1$s: %2$s. Polož telefón k reproduktoru rádia; hodiny telefónu musia byť presné (±1 s) – overíš to v stĺpci DT.
+ft8_wait_slot	Messages will appear when the slot ends (%1$s: every %2$s s).	Wiadomości pojawią się po zakończeniu slotu (%1$s: co %2$s s).	Nachrichten erscheinen nach dem Ende des Slots (%1$s: alle %2$s s).	Zprávy se objeví po skončení slotu (%1$s: každých %2$s s).	Správy sa objavia po skončení slotu (%1$s: každých %2$s s).
+ft8_no_match	No messages for this filter.	Brak wiadomości dla filtra.	Keine Nachrichten für diesen Filter.	Pro tento filtr nejsou žádné zprávy.	Pre tento filter nie sú žiadne správy.
+ft8_decode_wav	Decode a WAV file	Dekoduj plik WAV	WAV-Datei dekodieren	Dekódovat soubor WAV	Dekódovať súbor WAV
+ft8_file_segment	File, segment %1$d • %2$s	Plik, odcinek %1$d • %2$s	Datei, Abschnitt %1$d • %2$s	Soubor, úsek %1$d • %2$s	Súbor, úsek %1$d • %2$s
+ft8_legend	dB  DT  Hz  •  green – CQ. Tap a message to look up the sender's callsign.	dB  DT  Hz  •  zielone – CQ. Dotknij wiadomości, żeby sprawdzić znak nadawcy.	dB  DT  Hz  •  grün – CQ. Tippe auf eine Nachricht, um das Rufzeichen des Senders nachzuschlagen.	dB  DT  Hz  •  zelené – CQ. Klepnutím na zprávu ověříš značku odesílatele.	dB  DT  Hz  •  zelené – CQ. Ťuknutím na správu overíš značku odosielateľa.
+dec_file_error	File error: %1$s	Błąd pliku: %1$s	Dateifehler: %1$s	Chyba souboru: %1$s	Chyba súboru: %1$s
+rtty_title	RTTY decoder	Dekoder RTTY	RTTY-Decoder	Dekodér RTTY	Dekodér RTTY
+rtty_reverse	rev.	odwr.	inv.	obr.	obr.
+rtty_normal	norm.	norm.	norm.	norm.	norm.
+rtty_afc_locked	AFC: tracking the signal	AFC: śledzę sygnał	AFC: verfolge das Signal	AFC: sleduji signál	AFC: sledujem signál
+rtty_afc_searching	AFC: searching for a signal…	AFC: szukam sygnału…	AFC: suche ein Signal…	AFC: hledám signál…	AFC: hľadám signál…
+rtty_options	Options	Opcje	Optionen	Možnosti	Možnosti
+rtty_tuning	Tuning (AFC)	Strojenie (AFC)	Abstimmung (AFC)	Ladění (AFC)	Ladenie (AFC)
+rtty_tuning_auto	Finds the signal by itself and follows its drift; tapping the spectrum picks which station to follow.	Sam znajduje sygnał i śledzi jego dryf; dotknięcie widma wskazuje, którą stację śledzić.	Findet das Signal selbst und folgt seiner Drift; ein Tippen auf das Spektrum wählt die zu verfolgende Station.	Sám najde signál a sleduje jeho drift; klepnutím na spektrum určíš, kterou stanici sledovat.	Sám nájde signál a sleduje jeho drift; ťuknutím na spektrum určíš, ktorú stanicu sledovať.
+rtty_tuning_manual	You tune by tapping the spectrum between the tones or with the ±5 Hz buttons.	Stroisz dotykając widma między tonami albo przyciskami ±5 Hz.	Du stimmst ab, indem du zwischen die Töne ins Spektrum tippst oder die Tasten ±5 Hz nutzt.	Ladíš klepnutím do spektra mezi tóny nebo tlačítky ±5 Hz.	Ladíš ťuknutím do spektra medzi tónmi alebo tlačidlami ±5 Hz.
+rtty_shift	Shift	Przesuw (shift)	Shift	Posun (shift)	Posun (shift)
+rtty_speed	Speed	Szybkość	Geschwindigkeit	Rychlost	Rýchlosť
+rtty_polarity	Polarity	Polaryzacja	Polarität	Polarita	Polarita
+rtty_reversed_long	Reversed (mark lower – receiving on LSB)	Odwrócona (mark niżej – odbiór na LSB)	Invertiert (Mark tiefer – Empfang auf LSB)	Obrácená (mark níže – příjem na LSB)	Obrátená (mark nižšie – príjem na LSB)
+rtty_usos	Letters after space (USOS)	Litery po spacji (USOS)	Buchstaben nach Leerzeichen (USOS)	Písmena po mezeře (USOS)	Písmená po medzere (USOS)
+rtty_squelch	Noise squelch: %1$d %%	Blokada szumów: %1$d %%	Rauschsperre: %1$d %%	Umlčovač šumu: %1$d %%	Umlčovač šumu: %1$d %%
+rtty_info	Baudot code (ITA2). Radio on USB; on LSB the polarity reverses by itself (or set it manually).	Kod Baudot (ITA2). Radio na USB; przy LSB polaryzacja odwróci się sama (albo ustaw ją ręcznie).	Baudot-Code (ITA2). Funkgerät auf USB; bei LSB kehrt sich die Polarität selbst um (oder stelle sie manuell ein).	Kód Baudot (ITA2). Rádio na USB; při LSB se polarita obrátí sama (nebo ji nastav ručně).	Kód Baudot (ITA2). Rádio na USB; pri LSB sa polarita obráti sama (alebo ju nastav ručne).
+rtty_audio_level	Audio level	Poziom audio	Audiopegel	Úroveň zvuku	Úroveň zvuku
+rtty_quality	Signal quality	Jakość sygnału	Signalqualität	Kvalita signálu	Kvalita signálu
+rtty_tune_hint	Tune to the signal: tap the spectrum between the tones or use “Auto”.	Dostrój się do sygnału: dotknij widma między tonami albo użyj „Auto”.	Stimme auf das Signal ab: tippe zwischen die Töne ins Spektrum oder nutze „Auto“.	Nalaď signál: klepni do spektra mezi tóny nebo použij „Auto“.	Nalaď signál: ťukni do spektra medzi tónmi alebo použi „Auto“.
+dec_decoding	Decoding…	Dekoduję…	Dekodiere…	Dekóduji…	Dekódujem…
+dec_wav_file	WAV file	Plik WAV	WAV-Datei	Soubor WAV	Súbor WAV
+dec_save_rec	Save %1$d s	Zapisz %1$d s	%1$d s speichern	Uložit %1$d s	Uložiť %1$d s
+dec_record	Record	Nagraj	Aufnehmen	Nahrát	Nahrať
+dec_save_unsupported	Saving is not supported on this Android version	Zapis nie jest obsługiwany w tej wersji Androida	Speichern wird in dieser Android-Version nicht unterstützt	Ukládání není v této verzi Androidu podporováno	Ukladanie nie je v tejto verzii Androidu podporované
+dec_no_storage	no storage location	brak miejsca zapisu	kein Speicherort	chybí místo pro uložení	chýba miesto na uloženie
+dec_saved_music	Saved to Music/HamRadioToolkit/%1$s	Zapisano Muzyka/HamRadioToolkit/%1$s	Gespeichert unter Musik/HamRadioToolkit/%1$s	Uloženo do Hudba/HamRadioToolkit/%1$s	Uložené do Hudba/HamRadioToolkit/%1$s
+dec_save_error	Save error: %1$s	Błąd zapisu: %1$s	Speicherfehler: %1$s	Chyba uložení: %1$s	Chyba uloženia: %1$s
+dec_manual	Manual	Ręcznie	Manuell	Ručně	Ručne
+cwt_title	CW trainer (Koch)	Trener CW (Koch)	CW-Trainer (Koch)	Trenažér CW (Koch)	Tréner CW (Koch)
+cwt_lesson	Lesson %1$d of %2$d	Lekcja %1$d z %2$d	Lektion %1$d von %2$d	Lekce %1$d z %2$d	Lekcia %1$d z %2$d
+cwt_chars	Characters: %1$s	Znaki: %1$s	Zeichen: %1$s	Znaky: %1$s	Znaky: %1$s
+cwt_new_char	New character: %1$s  %2$s	Nowy znak: %1$s  %2$s	Neues Zeichen: %1$s  %2$s	Nový znak: %1$s  %2$s	Nový znak: %1$s  %2$s
+cwt_listen	Listen	Posłuchaj	Anhören	Poslechnout	Vypočuť
+cwt_char_speed	Character speed: %1$d WPM	Prędkość znaku: %1$d WPM	Zeichengeschwindigkeit: %1$d WPM	Rychlost znaku: %1$d WPM	Rýchlosť znaku: %1$d WPM
+cwt_eff_speed	Effective speed (Farnsworth): %1$d WPM	Prędkość efektywna (Farnsworth): %1$d WPM	Effektive Geschwindigkeit (Farnsworth): %1$d WPM	Efektivní rychlost (Farnsworth): %1$d WPM	Efektívna rýchlosť (Farnsworth): %1$d WPM
+cwt_tone	Tone: %1$d Hz	Ton: %1$d Hz	Ton: %1$d Hz	Tón: %1$d Hz	Tón: %1$d Hz
+cwt_groups	Number of 5-character groups: %1$d	Liczba grup po 5 znaków: %1$d	Anzahl der Fünfergruppen: %1$d	Počet skupin po 5 znacích: %1$d	Počet skupín po 5 znakoch: %1$d
+cwt_new_round	New round	Nowa runda	Neue Runde	Nové kolo	Nové kolo
+cwt_repeat	Repeat	Powtórz	Wiederholen	Opakovat	Opakovať
+cwt_type_hint	Type what you hear (separate groups with spaces)	Wpisz, co słyszysz (grupy oddziel spacją)	Gib ein, was du hörst (Gruppen mit Leerzeichen trennen)	Napiš, co slyšíš (skupiny odděl mezerou)	Napíš, čo počuješ (skupiny oddeľ medzerou)
+cwt_check	Check	Sprawdź	Prüfen	Zkontrolovat	Skontrolovať
+cwt_accuracy	Accuracy: %1$s%%	Skuteczność: %1$s%%	Trefferquote: %1$s%%	Úspěšnost: %1$s%%	Úspešnosť: %1$s%%
+cwt_sent	Sent:  %1$s	Nadano:  %1$s	Gesendet:  %1$s	Odvysíláno:  %1$s	Odvysielané:  %1$s
+cwt_received	Received: %1$s	Odebrano: %1$s	Empfangen: %1$s	Přijato: %1$s	Prijaté: %1$s
+cwt_pass	Above 90% – you can move on to the next lesson.	Powyżej 90% – możesz przejść do kolejnej lekcji.	Über 90 % – du kannst zur nächsten Lektion übergehen.	Nad 90 % – můžeš přejít na další lekci.	Nad 90 % – môžeš prejsť na ďalšiu lekciu.
+cwt_next_lesson	Lesson %1$d: new character %2$s	Lekcja %1$d: nowy znak %2$s	Lektion %1$d: neues Zeichen %2$s	Lekce %1$d: nový znak %2$s	Lekcia %1$d: nový znak %2$s
+cwt_stay	Stay on this lesson until you reach 90%.	Zostań przy tej lekcji, aż osiągniesz 90%.	Bleib bei dieser Lektion, bis du 90 % erreichst.	Zůstaň u této lekce, dokud nedosáhneš 90 %.	Zostaň pri tejto lekcii, kým nedosiahneš 90 %.
+cwd_title	CW decoder	Dekoder CW	CW-Decoder	Dekodér CW	Dekodér CW
+cwd_listening	Listening… hold the phone near the receiver's speaker	Nasłuch… przyłóż telefon do głośnika odbiornika	Empfang… halte das Telefon an den Lautsprecher des Empfängers	Příjem… přilož telefon k reproduktoru přijímače	Príjem… prilož telefón k reproduktoru prijímača
+cwd_press_listen	Press “Listen”	Naciśnij „Nasłuch”	Drücke „Empfang“	Stiskni „Příjem“	Stlač „Príjem“
+cwd_tone	Tone: %1$s Hz	Ton: %1$s Hz	Ton: %1$s Hz	Tón: %1$s Hz	Tón: %1$s Hz
+cwd_auto_tone	Automatic tone search	Automatyczne wyszukiwanie tonu	Automatische Tonsuche	Automatické hledání tónu	Automatické hľadanie tónu
+cwd_listen	Listen	Nasłuch	Empfang	Příjem	Príjem
+cwd_info	Works best with a clean signal and a single tone. The speed adapts by itself; the first character after a change of pace may be read wrongly.	Najlepiej działa przy czystym sygnale i jednym tonie. Prędkość dopasowuje się sama; pierwszy znak po zmianie tempa może zostać odczytany błędnie.	Funktioniert am besten mit einem sauberen Signal und einem einzelnen Ton. Die Geschwindigkeit passt sich selbst an; das erste Zeichen nach einem Tempowechsel kann falsch gelesen werden.	Nejlépe funguje při čistém signálu a jednom tónu. Rychlost se přizpůsobí sama; první znak po změně tempa může být přečten chybně.	Najlepšie funguje pri čistom signáli a jednom tóne. Rýchlosť sa prispôsobí sama; prvý znak po zmene tempa môže byť prečítaný chybne.

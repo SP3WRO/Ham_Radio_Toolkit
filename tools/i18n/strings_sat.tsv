@@ -1,0 +1,54 @@
+# key	en	pl	de	cs	sk
+sat_title	Satellites	Satelity	Satelliten	Družice	Družice
+sat_update_online	Update online	Aktualizuj online	Online aktualisieren	Aktualizovat online	Aktualizovať online
+sat_search	Search satellite…	Szukaj satelity…	Satellit suchen…	Hledat družici…	Hľadať družicu…
+sat_list_header	Satellites and passes (%1$d):	Satelity i przeloty (%1$d):	Satelliten und Überflüge (%1$d):	Družice a přelety (%1$d):	Družice a prelety (%1$d):
+sat_calculating	Calculating: %1$d/%2$d	Liczenie: %1$d/%2$d	Berechnung: %1$d/%2$d	Výpočet: %1$d/%2$d	Výpočet: %1$d/%2$d
+sat_none	No satellites match the criteria.	Brak satelitów pasujących do kryteriów.	Keine Satelliten entsprechen den Kriterien.	Kritériím neodpovídají žádné družice.	Kritériám nezodpovedajú žiadne družice.
+sat_in_pass	Overhead! Ends in: %1$dm %2$ds	Leci! Do końca: %1$dm %2$ds	Im Überflug! Ende in: %1$dm %2$ds	Letí! Do konce: %1$dm %2$ds	Letí! Do konca: %1$dm %2$ds
+sat_aos_los	AOS: %1$s (in %2$s) | LOS: %3$s	AOS: %1$s (za %2$s) | LOS: %3$s	AOS: %1$s (in %2$s) | LOS: %3$s	AOS: %1$s (za %2$s) | LOS: %3$s	AOS: %1$s (o %2$s) | LOS: %3$s
+sat_calculating_pass	Calculating pass…	Obliczanie przelotu…	Überflug wird berechnet…	Výpočet přeletu…	Výpočet preletu…
+sat_remind	Remind me of passes	Przypominaj o przelotach	An Überflüge erinnern	Připomínat přelety	Pripomínať prelety
+sat_freq_amsat	Frequencies (AMSAT DB):	Częstotliwości (AMSAT DB):	Frequenzen (AMSAT DB):	Kmitočty (AMSAT DB):	Kmitočty (AMSAT DB):
+sat_freq_satnogs	Frequencies (SatNOGS):	Częstotliwości (SatNOGS):	Frequenzen (SatNOGS):	Kmitočty (SatNOGS):	Kmitočty (SatNOGS):
+sat_freq_builtin	Frequencies (built-in):	Częstotliwości (wbudowane):	Frequenzen (integriert):	Kmitočty (vestavěné):	Kmitočty (vstavané):
+sat_callsign	Callsign: %1$s	Znak: %1$s	Rufzeichen: %1$s	Značka: %1$s	Značka: %1$s
+sat_none_short	none	brak	keine	žádný	žiadny
+sat_no_freqs	No registered frequencies.	Brak zarejestrowanych częstotliwości.	Keine registrierten Frequenzen.	Žádné registrované kmitočty.	Žiadne registrované kmitočty.
+sat_skyplot	SKY PLOT	RADAR NIEBOSKŁONU (SKYPLOT)	HIMMELSANSICHT (SKYPLOT)	RADAR OBLOHY (SKYPLOT)	RADAR OBLOHY (SKYPLOT)
+sat_satellite	Satellite	Satelita	Satellit	Družice	Družica
+sat_azimuth	Azimuth (direction)	Azymut (kierunek)	Azimut (Richtung)	Azimut (směr)	Azimut (smer)
+sat_elevation	Elevation (height)	Elewacja (wysokość)	Elevation (Höhe)	Elevace (výška)	Elevácia (výška)
+sat_pick_hint	Pick a satellite from the list below to see its position on the compass.	Wybierz satelitę z listy poniżej, aby zobaczyć pozycję na kompasie.	Wähle unten einen Satelliten, um seine Position auf dem Kompass zu sehen.	Vyber družici ze seznamu níže a uvidíš její polohu na kompasu.	Vyber družicu zo zoznamu nižšie a uvidíš jej polohu na kompase.
+loc_title	Locator and bearings	Lokator i kierunki	Locator und Richtungen	Lokátor a směry	Lokátor a smery
+loc_not_recognized	Not recognised: enter a locator (JO82LK), coordinates (52.4, 16.9) or a callsign	Nie rozpoznano: podaj lokator (JO82LK), współrzędne (52.4, 16.9) albo znak	Nicht erkannt: Locator (JO62QM), Koordinaten (52.4, 13.4) oder Rufzeichen eingeben	Nerozpoznáno: zadej lokátor (JO70FD), souřadnice (50.1, 14.4) nebo značku	Nerozpoznané: zadaj lokátor (JN88NC), súradnice (48.1, 17.1) alebo značku
+loc_search_error	Search error: %1$s	Błąd wyszukiwania: %1$s	Suchfehler: %1$s	Chyba hledání: %1$s	Chyba hľadania: %1$s
+loc_my_station	My station	Moja stacja	Meine Station	Moje stanice	Moja stanica
+loc_manual	locator entered manually	lokator wpisany ręcznie	manuell eingegebener Locator	ručně zadaný lokátor	ručne zadaný lokátor
+loc_from_gps	from GPS	z GPS	aus GPS	z GPS	z GPS
+loc_no_position	No position – turn on location or enter your locator.	Brak pozycji – włącz lokalizację albo wpisz swój lokator.	Keine Position – Standort einschalten oder Locator eingeben.	Chybí poloha – zapni polohu nebo zadej svůj lokátor.	Chýba poloha – zapni polohu alebo zadaj svoj lokátor.
+loc_my_locator	My locator (optional)	Mój lokator (opcjonalnie)	Mein Locator (optional)	Můj lokátor (volitelně)	Môj lokátor (voliteľne)
+loc_use_gps	Use GPS	Użyj GPS	GPS verwenden	Použít GPS	Použiť GPS
+loc_refresh_gps	Refresh GPS position	Odśwież pozycję GPS	GPS-Position aktualisieren	Obnovit polohu GPS	Obnoviť polohu GPS
+loc_distance_bearing	Distance and bearing	Odległość i azymut	Entfernung und Richtung	Vzdálenost a azimut	Vzdialenosť a azimut
+loc_target_label	Locator, coordinates or callsign	Lokator, współrzędne lub znak	Locator, Koordinaten oder Rufzeichen	Lokátor, souřadnice nebo značka	Lokátor, súradnice alebo značka
+loc_target_hint	e.g. FN31pr, 40.7, -74.0 or VK2ABC	np. FN31pr, 40.7, -74.0 lub VK2ABC	z. B. FN31pr, 40.7, -74.0 oder VK2ABC	např. FN31pr, 40.7, -74.0 nebo VK2ABC	napr. FN31pr, 40.7, -74.0 alebo VK2ABC
+loc_target_locator	Target locator: %1$s	Lokator celu: %1$s	Ziel-Locator: %1$s	Lokátor cíle: %1$s	Lokátor cieľa: %1$s
+loc_short_path	Short path (SP)	Krótka droga (SP)	Kurzer Weg (SP)	Krátká cesta (SP)	Krátka cesta (SP)
+loc_long_path	Long path (LP)	Długa droga (LP)	Langer Weg (LP)	Dlouhá cesta (LP)	Dlhá cesta (LP)
+loc_enlarge_map	Enlarge map	Powiększ mapę	Karte vergrößern	Zvětšit mapu	Zväčšiť mapu
+loc_map_note	Azimuthal map: direction from the centre = antenna bearing, distance from the centre = great-circle distance. Yellow line – short path, pink dashed – long path. Tap the map to enlarge it.	Mapa azymutalna: kierunek od środka = azymut anteny, odległość od środka = odległość po ortodromie. Żółta linia – krótka droga, różowa przerywana – długa droga. Stuknij mapę, aby ją powiększyć.	Azimutalkarte: Richtung vom Mittelpunkt = Antennenrichtung, Abstand vom Mittelpunkt = Großkreisentfernung. Gelbe Linie – kurzer Weg, rosa gestrichelt – langer Weg. Tippe auf die Karte, um sie zu vergrößern.	Azimutální mapa: směr od středu = azimut antény, vzdálenost od středu = vzdálenost po ortodromě. Žlutá čára – krátká cesta, růžová přerušovaná – dlouhá cesta. Klepnutím mapu zvětšíš.	Azimutálna mapa: smer od stredu = azimut antény, vzdialenosť od stredu = vzdialenosť po ortodróme. Žltá čiara – krátka cesta, ružová prerušovaná – dlhá cesta. Ťuknutím mapu zväčšíš.
+loc_my_station_value	My station: %1$s	Moja stacja: %1$s	Meine Station: %1$s	Moje stanice: %1$s	Moja stanica: %1$s
+loc_coords_to_locator	Coordinates → locator	Współrzędne → lokator	Koordinaten → Locator	Souřadnice → lokátor	Súradnice → lokátor
+loc_lat	Lat. (N+)	Szer. (N+)	Breite (N+)	Šířka (N+)	Šírka (N+)
+loc_lon	Lon. (E+)	Dł. (E+)	Länge (E+)	Délka (E+)	Dĺžka (E+)
+loc_locator_value	Locator %1$s	Lokator %1$s	Locator %1$s	Lokátor %1$s	Lokátor %1$s
+loc_point	Point %1$s°, %2$s°	Punkt %1$s°, %2$s°	Punkt %1$s°, %2$s°	Bod %1$s°, %2$s°	Bod %1$s°, %2$s°
+loc_no_locator_for	We have no locator data for station %1$s	Nie posiadamy danych o lokatorze stacji %1$s	Für die Station %1$s liegen keine Locator-Daten vor	Pro stanici %1$s nemáme údaje o lokátoru	Pre stanicu %1$s nemáme údaje o lokátore
+live_title	Live activations	Aktywacje na żywo	Live-Aktivierungen	Aktivace živě	Aktivácie naživo
+live_count	%1$d spots	%1$d spotów	%1$d Spots	%1$d spotů	%1$d spotov
+live_nearest	Nearest	Najbliższe	Nächste	Nejbližší	Najbližšie
+live_error	Error: %1$s	Błąd: %1$s	Fehler: %1$s	Chyba: %1$s	Chyba: %1$s
+live_sota_note	SOTA spots are not shown: the SOTA API terms require prior approval from the SOTA Management Team for apps (including those built with the help of AI).	Spoty SOTA nie są wyświetlane: regulamin API SOTA wymaga wcześniejszej zgody SOTA Management Team dla aplikacji (w tym tworzonych z pomocą AI).	SOTA-Spots werden nicht angezeigt: Die Nutzungsbedingungen der SOTA-API verlangen für Apps (auch mit KI erstellte) eine vorherige Zustimmung des SOTA Management Team.	Spoty SOTA se nezobrazují: podmínky API SOTA vyžadují pro aplikace (včetně vytvořených s pomocí AI) předchozí souhlas SOTA Management Team.	Spoty SOTA sa nezobrazujú: podmienky API SOTA vyžadujú pre aplikácie (vrátane vytvorených s pomocou AI) predchádzajúci súhlas SOTA Management Team.
+live_logged	Logged %1$s @ %2$s	Zalogowano %1$s @ %2$s	%1$s @ %2$s geloggt	Zapsáno %1$s @ %2$s	Zapísané %1$s @ %2$s
+live_logged_badge	LOGGED	ZALOGOWANE	GELOGGT	ZAPSÁNO	ZAPÍSANÉ

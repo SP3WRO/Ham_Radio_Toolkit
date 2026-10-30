@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_main.tsv -->
+<resources>
+    <string name="location_rationale_title">Standortzugriff</string>
+    <string name="location_rationale_text">Die Position dient zur Bestimmung deines QTH-Locators, zur Suche nach den nächsten Relais und APRS-Stationen sowie zur Berechnung von Satellitenüberflügen und Entfernungen zu DX-Stationen. GPS arbeitet nur, solange die App geöffnet ist. Online-Dienste (APRS-IS-Server, Relaisdatenbanken) erhalten nur das Suchgebiet; deine Position ist im APRS-Netz erst sichtbar, nachdem du „Position senden“ drückst.</string>
+    <string name="country_welcome_poland">Willkommen in Polen</string>
+    <string name="country_you_are_in">Du bist in: %1$s</string>
+    <string name="country_change_repeaters">Relais: %1$s</string>
+    <string name="country_change_tropocast">Tropocast-Karte: Gebiet deines Aufenthaltslandes</string>
+    <string name="country_changes_toast">%1$s – %2$s (änderbar in den Einstellungen)</string>
+</resources>

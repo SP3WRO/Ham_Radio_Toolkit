@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_aprs.tsv -->
+<resources>
+    <string name="aprs_listen_only">Listen only</string>
+    <string name="aprs_send_position">Send position</string>
+    <string name="aprs_no_gps">No GPS position</string>
+    <string name="aprs_position_sent">Position %1$s sent to APRS-IS</string>
+    <string name="aprs_my_station">My station</string>
+    <string name="aprs_radius">Listening radius: %1$d km</string>
+    <string name="aprs_comment">  •  comment: %1$s</string>
+    <string name="aprs_always_listening">Listening runs all the time while the app is open.</string>
+    <string name="aprs_need_callsign">Sending a position requires an amateur callsign. Without one the app only receives APRS frames (read-only APRS-IS connection).</string>
+    <string name="aprs_enter_callsign">Enter your callsign in Settings</string>
+    <string name="aprs_waiting_gps">Waiting for a GPS fix…</string>
+    <string name="aprs_waiting_frames">Waiting for frames within %1$d km…</string>
+    <string name="aprs_connecting">Connecting to the APRS-IS network…</string>
+    <string name="aprs_now">now</string>
+    <string name="aprs_min_ago">%1$d min ago</string>
+    <string name="aprs_position">Position</string>
+    <string name="aprs_movement">Movement</string>
+    <string name="aprs_course">course %1$s°</string>
+    <string name="aprs_altitude">Altitude</string>
+    <string name="aprs_altitude_value">%1$d m a.s.l.</string>
+    <string name="aprs_phg">Station (PHG)</string>
+    <string name="aprs_antenna">antenna %1$d m</string>
+    <string name="aprs_gain">gain %1$s dB</string>
+    <string name="aprs_humidity">humidity %1$s%%</string>
+    <string name="aprs_wind">wind %1$d km/h</string>
+    <string name="aprs_wind_from"> from %1$s°</string>
+    <string name="aprs_gusts">gusts %1$d km/h</string>
+    <string name="aprs_rain_1h">rain 1 h %1$s mm</string>
+    <string name="aprs_rain_24h">rain 24 h %1$s mm</string>
+    <string name="aprs_weather">Weather</string>
+    <string name="rep_title">Repeaters (%1$d km)</string>
+    <string name="rep_only_working">Working only</string>
+    <string name="rep_found">Found: %1$d</string>
+    <string name="rep_none">No repeaters within your range match the criteria.</string>
+    <string name="rep_tx">Repeater TX</string>
+    <string name="rep_rx">Repeater RX</string>
+    <string name="rep_ctcss">CTCSS tone</string>
+    <string name="rep_none_short">None</string>
+    <string name="rep_checking_radioid">Checking RadioID…</string>
+    <string name="rep_trustee">Trustee: %1$s</string>
+    <string name="rep_download_error">Download error (%1$s): %2$s</string>
+</resources>

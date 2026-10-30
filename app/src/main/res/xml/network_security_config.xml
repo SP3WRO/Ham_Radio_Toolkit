@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Cały ruch wyłącznie po HTTPS -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+            <!-- Android 7.0 (API 24) nie ma w systemie ISRG Root X1 (Let's Encrypt),
+                 przez co np. amsat.org zwracał "chain validation failed" -->
+            <certificates src="@raw/isrg_root_x1" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

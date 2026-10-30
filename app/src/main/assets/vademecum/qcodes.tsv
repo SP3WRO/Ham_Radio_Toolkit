@@ -1,0 +1,71 @@
+code	en	pl	de	cs	sk
+QAZ	Thunderstorm, I am closing down my station	Burza, wyłączam stację	Gewitter, ich schalte meine Station ab	Bouřka, vypínám stanici	Búrka, vypínam stanicu
+QHL	Searching the band from the highest frequency	Przeszukiwanie pasma od największej częstotliwości	Absuchen des Bandes ab der höchsten Frequenz	Prohledávání pásma od nejvyššího kmitočtu	Prehľadávanie pásma od najvyššieho kmitočtu
+QHM	Searching the band from the highest to the middle frequency	Przeszukiwanie pasma od największej do środkowej częstotliwości	Absuchen des Bandes von der höchsten bis zur mittleren Frequenz	Prohledávání pásma od nejvyššího ke střednímu kmitočtu	Prehľadávanie pásma od najvyššieho k strednému kmitočtu
+QLH	Searching the band from the lowest frequency	Przeszukiwanie pasma od najmniejszej częstotliwości	Absuchen des Bandes ab der niedrigsten Frequenz	Prohledávání pásma od nejnižšího kmitočtu	Prehľadávanie pásma od najnižšieho kmitočtu
+QLM	Searching the band from the lowest to the middle frequency	Przeszukiwanie pasma od najmniejszej do środkowej częstotliwości	Absuchen des Bandes von der niedrigsten bis zur mittleren Frequenz	Prohledávání pásma od nejnižšího ke střednímu kmitočtu	Prehľadávanie pásma od najnižšieho k strednému kmitočtu
+QMH	Searching the band from the middle to the highest frequency	Przeszukiwanie pasma od środkowej do największej częstotliwości	Absuchen des Bandes von der mittleren bis zur höchsten Frequenz	Prohledávání pásma od středního k nejvyššímu kmitočtu	Prehľadávanie pásma od stredného k najvyššiemu kmitočtu
+QML	Searching the band from the middle to the lowest frequency	Przeszukiwanie pasma od środkowej do najmniejszej częstotliwości	Absuchen des Bandes von der mittleren bis zur niedrigsten Frequenz	Prohledávání pásma od středního k nejnižšímu kmitočtu	Prehľadávanie pásma od stredného k najnižšiemu kmitočtu
+QQQ	I must break off the contact, explanations later	Muszę przerwać łączność, wyjaśnienia później	Ich muss die Verbindung abbrechen, Erklärung folgt	Musím přerušit spojení, vysvětlení později	Musím prerušiť spojenie, vysvetlenie neskôr
+QRA	The name of my station is…	Moja stacja nazywa się…	Der Name meiner Station ist…	Moje stanice se jmenuje…	Moja stanica sa volá…
+QRAR	My callbook address is correct and accurate	Mój adres w callbooku jest dokładny i prawidłowy	Meine Callbook-Adresse ist korrekt	Moje adresa v callbooku je přesná a správná	Moja adresa v callbooku je presná a správna
+QRB	The distance between our stations is … km	Odległość między naszymi stacjami wynosi … km	Die Entfernung zwischen unseren Stationen beträgt … km	Vzdálenost mezi našimi stanicemi je … km	Vzdialenosť medzi našimi stanicami je … km
+QRD	We are bound for … from …	Zdążamy do… z …	Wir sind unterwegs nach … von …	Směřujeme do … z …	Smerujeme do … z …
+QRE	We expect to arrive at … at … hours	Przypuszczalnie przybędziemy do … A … godzinie	Wir werden voraussichtlich um … Uhr in … ankommen	Předpokládáme příjezd do … v … hodin	Predpokladáme príchod do … o … hodine
+QRF	We are returning (return) to … (place)	Wracamy (wracajcie) do … (miejsce)	Wir kehren (kehrt) zurück nach … (Ort)	Vracíme se (vraťte se) do … (místo)	Vraciame sa (vráťte sa) do … (miesto)
+QRG	Your exact frequency is…	Twoja częstotliwość wynosi…	Deine Frequenz ist…	Tvůj kmitočet je…	Tvoj kmitočet je…
+QRH	Your frequency varies	Twoja częstotliwość zmienia się, waha	Deine Frequenz schwankt	Tvůj kmitočet kolísá	Tvoj kmitočet kolíše
+QRI	Your tone is: 1. good, 2. variable, 3. bad	Twój ton jest: 1. dobry, 2. zmienny, 3. zły	Dein Ton ist: 1. gut, 2. schwankend, 3. schlecht	Tvůj tón je: 1. dobrý, 2. proměnlivý, 3. špatný	Tvoj tón je: 1. dobrý, 2. premenlivý, 3. zlý
+QRJ	Your signals are very weak, unreadable	Wasze sygnały są bardzo słabe, nieodbieralne	Deine Signale sind sehr schwach, nicht aufnehmbar	Tvé signály jsou velmi slabé, nečitelné	Tvoje signály sú veľmi slabé, nečitateľné
+QRK	The readability of your signals is (1…5)	Czytelność waszych sygnałów wynosi (1…5)	Die Lesbarkeit deiner Signale ist (1…5)	Čitelnost tvých signálů je (1…5)	Čitateľnosť tvojich signálov je (1…5)
+QRL	I am busy, please do not interfere	Jestem zajęty, proszę nie przeszkadzać	Ich bin beschäftigt, bitte nicht stören	Jsem zaneprázdněn, prosím neruš	Som zaneprázdnený, prosím neruš
+QRM	I have interference from other stations	Mam przeszkody w odbiorze, zakłócenia od innych stacji	Ich habe Störungen durch andere Stationen	Mám rušení od jiných stanic	Mám rušenie od iných staníc
+QRN	I have atmospheric noise	Mam zakłócenia atmosferyczne	Ich habe atmosphärische Störungen	Mám atmosférické rušení	Mám atmosférické rušenie
+QRO	Increase power; high power	Zwiększ moc, duża moc	Erhöhe die Leistung; hohe Leistung	Zvyš výkon; velký výkon	Zvýš výkon; veľký výkon
+QRP	Decrease power; low power	Zmniejsz moc, mała moc	Verringere die Leistung; kleine Leistung	Sniž výkon; malý výkon	Zníž výkon; malý výkon
+QRQ	Send faster	Nadawaj szybciej	Gib schneller	Vysílej rychleji	Vysielaj rýchlejšie
+QRR	I am ready for automatic operation	Jestem gotowy do pracy automatycznej	Ich bin bereit für automatischen Betrieb	Jsem připraven k automatickému provozu	Som pripravený na automatickú prevádzku
+QRRR	Land distress signal (amateur traffic only)	Znak niebezpieczeństwa na lądzie (tylko w ruchu amatorskim)	Notzeichen an Land (nur im Amateurfunk)	Tísňový signál na pevnině (jen v radioamatérském provozu)	Tiesňový signál na pevnine (len v rádioamatérskej prevádzke)
+QRS	Send more slowly	Nadawaj wolniej	Gib langsamer	Vysílej pomaleji	Vysielaj pomalšie
+QRT	I am closing down my station; stop sending!	Kończę nadawanie, wyłączam stację, przerwij nadawanie!	Ich stelle den Betrieb ein; hör auf zu senden!	Končím vysílání, vypínám stanici; přestaň vysílat!	Končím vysielanie, vypínam stanicu; prestaň vysielať!
+QRU	I have nothing for you	Nie mam nic dla ciebie	Ich habe nichts für dich	Nemám pro tebe nic	Nemám pre teba nič
+QRV	I am ready	Jestem gotów do pracy	Ich bin bereit	Jsem připraven	Som pripravený
+QRW	Please inform … that I am calling him on … kHz	Przekażcie …, że go wołam na częstotliwości …	Bitte teile … mit, dass ich ihn auf … rufe	Vyřiď …, že ho volám na kmitočtu …	Odkáž …, že ho volám na kmitočte …
+QRX	Please wait, I will call you again at … hours	Proszę poczekać, zawołam was o godzinie …	Bitte warte, ich rufe dich um … Uhr wieder	Prosím počkej, zavolám tě v … hodin	Prosím počkaj, zavolám ťa o … hodine
+QRY	Your turn is number…	Wasza kolejność jest…	Du bist an der Reihe als Nummer…	Jsi na řadě jako…	Si na rade ako…
+QRZ	You are being called by…; who is calling me?	Was woła…, kto mnie woła?	Du wirst gerufen von…; wer ruft mich?	Volá tě…; kdo mě volá?	Volá ťa…; kto ma volá?
+QSA	The strength of your signals is (1…9)	Siła waszych sygnałów wynosi (1…9)	Die Stärke deiner Signale ist (1…9)	Síla tvých signálů je (1…9)	Sila tvojich signálov je (1…9)
+QSB	Your signal strength is fading	Siła waszego sygnału waha się	Deine Signalstärke schwankt (Fading)	Síla tvého signálu kolísá	Sila tvojho signálu kolíše
+QSD	Your CW keying is defective	Błędnie nadajecie CW	Deine CW-Tastung ist fehlerhaft	Tvé klíčování CW je chybné	Tvoje kľúčovanie CW je chybné
+QSI	I have been unable to break in on your transmission	Nie mogłem przerwać waszego nadawania	Ich konnte deine Aussendung nicht unterbrechen	Nemohl jsem přerušit tvé vysílání	Nemohol som prerušiť tvoje vysielanie
+QSK	I can hear you between my signals (break-in, BK)	Mogę słuchać w przerwach nadawania (BK)	Ich kann zwischen meinen Zeichen hören (BK)	Slyším tě v přestávkách vysílání (BK)	Počujem ťa v prestávkach vysielania (BK)
+QSL	I acknowledge receipt; I will send a QSL card	Potwierdzam, przyślę kartę QSL	Ich bestätige den Empfang; ich schicke eine QSL-Karte	Potvrzuji, pošlu kartu QSL	Potvrdzujem, pošlem kartu QSL
+QSLL	Let us exchange our QSL cards	Wymieńmy wzajemnie nasze karty QSL	Lass uns unsere QSL-Karten austauschen	Vyměňme si navzájem karty QSL	Vymeňme si navzájom karty QSL
+QSLN	No need to send a QSL card	Nie trzeba wysyłać karty QSL	Keine QSL-Karte nötig	Není třeba posílat kartu QSL	Netreba posielať kartu QSL
+QSM	Please repeat (RPT)	Proszę powtórzyć (RPT)	Bitte wiederholen (RPT)	Prosím zopakuj (RPT)	Prosím zopakuj (RPT)
+QSN	I heard you on … kHz	Słyszałem was na … kHz	Ich habe dich auf … kHz gehört	Slyšel jsem tě na … kHz	Počul som ťa na … kHz
+QSO	A contact; I can communicate with…	Łączność, mam połączenie	Verbindung; ich habe Verbindung mit…	Spojení; mám spojení s…	Spojenie; mám spojenie s…
+QSP	Relay the message to…	Przekażcie komunikat do…	Übermittle die Nachricht an…	Předej zprávu…	Odovzdaj správu…
+QSQ	Send each word once	Nadawajcie każde słowo jeden raz	Gib jedes Wort einmal	Vysílej každé slovo jednou	Vysielaj každé slovo raz
+QSR	Repeat your call on the calling frequency	Powtórzcie wasze wywołanie na częstotliwości wywoławczej	Wiederhole deinen Anruf auf der Anruffrequenz	Zopakuj volání na volacím kmitočtu	Zopakuj volanie na volacom kmitočte
+QSS	We want to use the working frequency …	Chcemy używać częstotliwości roboczej …	Wir möchten die Arbeitsfrequenz … benutzen	Chceme používat pracovní kmitočet …	Chceme používať pracovný kmitočet …
+QST	Message to all	Komunikat dla wszystkich	Nachricht an alle	Zpráva pro všechny	Správa pre všetkých
+QSU	Send on … kHz	Nadawajcie na częstotliwości … kHz	Sende auf … kHz	Vysílej na kmitočtu … kHz	Vysielaj na kmitočte … kHz
+QSUF	Please give me a wire telephone connection	Proszę o łączność telefoniczną przewodową	Bitte um eine drahtgebundene Telefonverbindung	Prosím o drátové telefonní spojení	Prosím o drôtové telefónne spojenie
+QSV	Send a series of Vs for tuning	Nadawajcie V dla strojenia	Gib eine Reihe V zum Abstimmen	Vysílej V pro ladění	Vysielaj V na ladenie
+QSW	I am going to send on frequency…	Przechodzę na częstotliwość…	Ich gehe auf die Frequenz…	Přecházím na kmitočet…	Prechádzam na kmitočet…
+QSX	I am listening on frequency…	Słucham na częstotliwości…	Ich höre auf der Frequenz…	Poslouchám na kmitočtu…	Počúvam na kmitočte…
+QSY	Change to frequency…	Przejdźcie na częstotliwość…	Wechsle auf die Frequenz…	Přejdi na kmitočet…	Prejdi na kmitočet…
+QSZ	Send each word twice (or … times)	Nadawajcie każde słowo dwa razy (lub … razy)	Gib jedes Wort zweimal (oder …-mal)	Vysílej každé slovo dvakrát (nebo …krát)	Vysielaj každé slovo dvakrát (alebo …krát)
+QTA	Cancel telegram no. … as if it had not been sent	Anulujcie radiogram nr… , jak gdyby nie był nadany	Streiche Telegramm Nr. …, als ob es nicht gesendet wäre	Zruš radiogram č. …, jako by nebyl odeslán	Zruš rádiogram č. …, akoby nebol odoslaný
+QTB	I do not agree with your word count	Nie zgadzam się z waszym obliczeniem ilości słów	Ich stimme deiner Wortzählung nicht zu	Nesouhlasím s tvým počtem slov	Nesúhlasím s tvojím počtom slov
+QTC	I have a message for you	Mam dla was wiadomość	Ich habe eine Nachricht für dich	Mám pro tebe zprávu	Mám pre teba správu
+QTG	We will send two dashes of 10 seconds each after our call sign	Będziemy nadawali po naszym znaku dwie “kreski”, każda po 10 sek.	Wir senden nach unserem Rufzeichen zwei Striche von je 10 Sekunden	Po své značce vyšleme dvě „čárky“, každou po 10 s	Po svojej značke vyšleme dve „čiarky“, každú po 10 s
+QTH	My location is…	Moje położenie geograficzne to…	Mein Standort ist…	Moje stanoviště je…	Moje stanovište je…
+QTN	We left that place at … hours	Opuściliśmy to miejsce o … godzinie	Wir haben diesen Ort um … Uhr verlassen	Opustili jsme to místo v … hodin	Opustili sme to miesto o … hodine
+QTR	The exact time is…	Dokładny czas jest…	Die genaue Zeit ist…	Přesný čas je…	Presný čas je…
+QTS	We will send our call sign for … minutes for measurements	Będziemy nadawali do pomiarów nasz sygnał wywoławczy przez … minut	Wir senden unser Rufzeichen … Minuten lang für Messungen	Pro měření budeme … minut vysílat naši volací značku	Na meranie budeme … minút vysielať našu volaciu značku
+QTT	The following identification signal is superimposed on another transmission	Sygnał rozpoznawczy który nastąpi jest nałożony na inną transmisję	Das folgende Kennungssignal ist einer anderen Aussendung überlagert	Následující identifikační signál je překryt jiným vysíláním	Nasledujúci identifikačný signál je prekrytý iným vysielaním
+QTU	I am operating from … to …	Pracuję od … do …	Ich bin von … bis … in Betrieb	Pracuji od … do …	Pracujem od … do …
+QTV	Listen for us on … (from … to … hours)	Nasłuchujcie za nas na częstotliwości … ( od … do … godziny)	Höre für uns auf … (von … bis … Uhr)	Poslouchej za nás na kmitočtu … (od … do … hodin)	Počúvaj za nás na kmitočte … (od … do … hodiny)
+QTX	We will keep our station open for further communication with you	Będziemy w pogotowiu do dalszej łączności z wami	Wir bleiben für weitere Verbindungen mit dir empfangsbereit	Budeme v pohotovosti pro další spojení s vámi	Budeme v pohotovosti na ďalšie spojenie s vami

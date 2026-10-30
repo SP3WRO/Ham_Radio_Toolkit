@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_tools.tsv -->
+<resources>
+    <string name="act_title">Miejsca do aktywacji</string>
+    <string name="act_sync">Pobierz najnowsze bazy</string>
+    <string name="act_syncing">Pobieram obiekty POTA, SOTA i WWFF w Twojej okolicy…</string>
+    <string name="act_none">Brak obiektów w promieniu %1$d km.\nSprawdź filtry w Ustawieniach.</string>
+    <string name="act_no_position">Brak pozycji – włącz lokalizację, żeby pobrać obiekty w okolicy</string>
+    <string name="act_download_failed">Nie udało się pobrać baz – sprawdź połączenie</string>
+    <string name="act_sync_error">Błąd synchronizacji: %1$s</string>
+    <string name="bcn_title">Beacony NCDXF/IARU</string>
+    <string name="bcn_info">Każdy beacon nadaje 10 s: znak (22 WPM) i cztery kreski 100 W / 10 W / 1 W / 100 mW. Słyszysz beacon = jest propagacja w jego kierunku.</string>
+    <string name="bcn_next">dalej: %1$s</string>
+    <string name="bcn_all">Wszystkie beacony – dotknij, aby zobaczyć, kiedy nadaje</string>
+    <string name="bcn_on_air_now">NADAJE TERAZ</string>
+    <string name="bcn_in">za %1$s</string>
+    <string name="bcn_off_note">Część beaconów bywa czasowo wyłączona – aktualny stan: ncdxf.org/beacon</string>
+    <string name="bp_title">Bandplan IARU Region %1$d</string>
+    <string name="bp_region">Region %1$d</string>
+    <string name="bp_you_are_here"> (tu jesteś)</string>
+    <string name="bp_fm_calling">Wywoławcze FM: %1$s</string>
+    <string name="bp_emergency">Łączność kryzysowa (KF): %1$s</string>
+    <string name="bp_r1_poland">Plan Regionu 1 z uwzględnieniem praktyki w Polsce. </string>
+    <string name="bp_source_note">Źródło: %1$s. Bandplan IARU to zalecenie – wiążą krajowe przepisy.</string>
+    <string name="gl_title">Szara linia</string>
+    <string name="gl_legend">Żółta linia to Gray Line. Czerwona kropka to Twoje QTH.</string>
+    <string name="gl_your_station">Twoja stacja (QTH)</string>
+    <string name="gl_allow_gps">Zezwól na GPS</string>
+    <string name="gl_waiting_gps">Oczekiwanie na lokalizację GPS…</string>
+    <string name="gl_sunrise">Wschód Słońca:</string>
+    <string name="gl_sunset">Zachód Słońca:</string>
+    <string name="gl_polar">Brak zjawiska wschodu/zachodu (noc/dzień polarny)</string>
+    <string name="gl_about">O zjawisku Gray Line</string>
+    <string name="gl_about_text">Gray Line (linia cienia) to pasmo na granicy dnia i nocy. Jonosfera zachowuje się w tym rejonie w sposób szczególny – warstwa D (tłumiąca niższe częstotliwości) zanika przed nadejściem nocy, a warstwy F pozostają na tyle zjonizowane, by odbijać fale radiowe.\n\nDzięki temu stacje leżące na tej samej linii cienia mogą nawiązywać niezwykle dalekie łączności DX (tzw. Gray Line Propagation) na pasmach 160m, 80m czy 40m przy minimalnych stratach sygnału.</string>
+    <string name="coax_title">Tłumienność kabli</string>
+    <string name="coax_choose">Wybierz przewód</string>
+    <string name="coax_freq">Częstotliwość (MHz)</string>
+    <string name="coax_length">Długość kabla (m)</string>
+    <string name="coax_power">Moc wejściowa (W)</string>
+    <string name="coax_no_data">Brak danych lub częstotliwość zbyt wysoka dla tego kabla.</string>
+    <string name="coax_result">Wynik dla %1$s</string>
+    <string name="coax_attenuation">Tłumienie</string>
+    <string name="coax_power_at_antenna">Moc na antenie</string>
+    <string name="coax_loss_percent">Strata procentowa: %1$s %%</string>
+    <string name="coax_power_lost">Moc utracona w kablu (ciepło): %1$s W</string>
+    <string name="coax_credit">Kalkulator oparty na projekcie Coax Calculator\nAutor: SQ3SWF Olgierd</string>
+</resources>

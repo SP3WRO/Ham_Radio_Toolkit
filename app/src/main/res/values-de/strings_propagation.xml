@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_propagation.tsv -->
+<resources>
+    <string name="prop_title">Ausbreitung</string>
+    <string name="prop_tab_hf">KW</string>
+    <string name="prop_tab_vhf">UKW</string>
+    <string name="prop_tropocast_title">Tropocast-Karte (ICON-EU)</string>
+    <string name="prop_now">Jetzt</string>
+    <string name="prop_vhf_map_desc">UKW-Ausbreitungskarte</string>
+    <string name="prop_legend_background">Hintergrund</string>
+    <string name="prop_legend_marginal">marginal</string>
+    <string name="prop_legend_weak">schwach</string>
+    <string name="prop_legend_moderate">mäßig</string>
+    <string name="prop_legend_good">gut</string>
+    <string name="prop_legend_very_good">sehr gut</string>
+    <string name="prop_legend_high">hoch</string>
+    <string name="prop_legend_strong">stark</string>
+    <string name="prop_legend_very_strong">sehr stark</string>
+    <string name="prop_solar_params">Sonnenparameter</string>
+    <string name="prop_updated">Aktualisiert: %1$s</string>
+    <string name="prop_sunspots">Sonnenflecken (SN)</string>
+    <string name="prop_a_index">A-Index</string>
+    <string name="prop_k_index">K-Index</string>
+    <string name="prop_day">Tag</string>
+    <string name="prop_night">Nacht</string>
+    <string name="prop_cond_good">Gut</string>
+    <string name="prop_cond_fair">Mittel</string>
+    <string name="prop_cond_poor">Schlecht</string>
+    <string name="prop_cond_closed">Geschlossen</string>
+    <string name="prop_offline_cached">Keine Verbindung – zeige die zuletzt geladenen Daten</string>
+    <string name="prop_download_error">Fehler beim Laden der Daten: %1$s</string>
+    <string name="prop_tropocast_error">Tropocast-Karte konnte nicht geladen werden: %1$s</string>
+</resources>

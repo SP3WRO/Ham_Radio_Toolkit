@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_contests.tsv -->
+<resources>
+    <string name="ct_filter_polish">Polish</string>
+    <string name="ct_filter_international">International</string>
+    <string name="ct_vhf">VHF</string>
+    <string name="ct_filter_digi">Digital</string>
+    <string name="ct_filter_local">Country of stay</string>
+    <string name="ct_title">Contest calendar</string>
+    <string name="ct_show_weekly">Show weekly contests (CWT, MWC, sprints…)</string>
+    <string name="ct_show_russian">Show Russian national and regional contests (QRZ.RU)</string>
+    <string name="ct_running_now">Running now</string>
+    <string name="ct_none">No contests for the selected filter.</string>
+    <string name="ct_footer">Data: SP9CXN contest calendar, VHF/UHF/SHF contest calendar of the Polski Klub UKF association and the QRZ.RU contest calendar (Russian names translated into English by the app). The calendars refresh every 12 hours. Check the date in the rules before the start.</string>
+    <string name="ct_calendar_of">%1$s calendar</string>
+    <string name="ct_offline">No connection and no saved calendars – built-in calendar (selected major contests, dates calculated from the rules)</string>
+    <string name="ct_unavailable">%1$s: unavailable</string>
+    <string name="ct_copy_from">%1$s: copy from %2$s</string>
+    <string name="ct_running_left">ON NOW – ends in %1$s</string>
+    <string name="ct_starts_in">Starts in %1$s</string>
+    <string name="ct_organizer">Organizer</string>
+    <string name="ct_exchange">Exchange</string>
+    <string name="ct_log_deadline">Log deadline</string>
+    <string name="ct_organizer_page">Organizer\'s page</string>
+    <string name="ct_rules">Rules</string>
+    <string name="ct_search_rules">Search for rules</string>
+    <string name="ct_rules_pl">Rules (PL)</string>
+    <string name="ct_logs_by">Logs by: %1$s</string>
+    <string name="ct_rules_pl_value">Rules (PL): %1$s</string>
+    <plurals name="dur_days">
+        <item quantity="one">%1$d day</item>
+        <item quantity="other">%1$d days</item>
+    </plurals>
+    <string name="dur_hours">%1$d h</string>
+    <string name="dur_hours_minutes">%1$d h %2$d min</string>
+    <string name="dur_minutes">%1$d min</string>
+    <string name="ct_mode_cw">CW</string>
+    <string name="ct_mode_ssb">SSB</string>
+    <string name="ct_qrp">QRP</string>
+</resources>

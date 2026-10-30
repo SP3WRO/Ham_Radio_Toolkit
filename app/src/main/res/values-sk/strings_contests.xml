@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_contests.tsv -->
+<resources>
+    <string name="ct_filter_polish">Poľské</string>
+    <string name="ct_filter_international">Medzinárodné</string>
+    <string name="ct_vhf">VKV</string>
+    <string name="ct_filter_digi">Digitálne</string>
+    <string name="ct_filter_local">Krajina pobytu</string>
+    <string name="ct_title">Kalendár pretekov</string>
+    <string name="ct_show_weekly">Zobraziť týždenné preteky (CWT, MWC, šprinty…)</string>
+    <string name="ct_show_russian">Zobraziť ruské národné a regionálne preteky (QRZ.RU)</string>
+    <string name="ct_running_now">Prebiehajú teraz</string>
+    <string name="ct_none">Pre zvolený filter nie sú žiadne preteky.</string>
+    <string name="ct_footer">Údaje: kalendár pretekov SP9CXN, kalendár pretekov VKV/UHF/SHF združenia Polski Klub UKF a kalendár pretekov QRZ.RU (ruské názvy preložené aplikáciou do angličtiny). Kalendáre sa obnovujú každých 12 hodín. Pred štartom si over termín v propozíciách.</string>
+    <string name="ct_calendar_of">Kalendár %1$s</string>
+    <string name="ct_offline">Bez pripojenia a uložených kalendárov – vstavaný kalendár (vybrané veľké preteky, termíny vypočítané z pravidiel)</string>
+    <string name="ct_unavailable">%1$s: nedostupný</string>
+    <string name="ct_copy_from">%1$s: kópia z %2$s</string>
+    <string name="ct_running_left">PREBIEHA – do konca %1$s</string>
+    <string name="ct_starts_in">Štart o %1$s</string>
+    <string name="ct_organizer">Organizátor</string>
+    <string name="ct_exchange">Výmena</string>
+    <string name="ct_log_deadline">Termín zaslania denníkov</string>
+    <string name="ct_organizer_page">Stránka organizátora</string>
+    <string name="ct_rules">Propozície</string>
+    <string name="ct_search_rules">Hľadať propozície</string>
+    <string name="ct_rules_pl">Propozície (PL)</string>
+    <string name="ct_logs_by">Denníky do: %1$s</string>
+    <string name="ct_rules_pl_value">Propozície (PL): %1$s</string>
+    <plurals name="dur_days">
+        <item quantity="one">%1$d deň</item>
+        <item quantity="few">%1$d dni</item>
+        <item quantity="many">%1$d dňa</item>
+        <item quantity="other">%1$d dní</item>
+    </plurals>
+    <string name="dur_hours">%1$d h</string>
+    <string name="dur_hours_minutes">%1$d h %2$d min</string>
+    <string name="dur_minutes">%1$d min</string>
+    <string name="ct_mode_cw">CW</string>
+    <string name="ct_mode_ssb">SSB</string>
+    <string name="ct_qrp">QRP</string>
+</resources>

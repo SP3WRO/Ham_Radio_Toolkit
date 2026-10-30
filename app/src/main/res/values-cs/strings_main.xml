@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_main.tsv -->
+<resources>
+    <string name="location_rationale_title">Přístup k poloze</string>
+    <string name="location_rationale_text">Poloha slouží k určení lokátoru QTH, vyhledání nejbližších převáděčů a stanic APRS a výpočtu přeletů družic a vzdáleností k DX stanicím. GPS pracuje jen tehdy, když je aplikace otevřená. Online služby (server APRS-IS, databáze převáděčů) dostávají pouze oblast hledání; tvoje poloha je v síti APRS vidět až po stisknutí „Odeslat polohu“.</string>
+    <string name="country_welcome_poland">Vítej v Polsku</string>
+    <string name="country_you_are_in">Jsi v zemi: %1$s</string>
+    <string name="country_change_repeaters">Převáděče: %1$s</string>
+    <string name="country_change_tropocast">Mapa Tropocast: oblast pro zemi pobytu</string>
+    <string name="country_changes_toast">%1$s – %2$s (změníš v Nastavení)</string>
+</resources>

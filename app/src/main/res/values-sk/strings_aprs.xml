@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_aprs.tsv -->
+<resources>
+    <string name="aprs_listen_only">Len príjem</string>
+    <string name="aprs_send_position">Odoslať polohu</string>
+    <string name="aprs_no_gps">Chýba poloha GPS</string>
+    <string name="aprs_position_sent">Poloha %1$s odoslaná do APRS-IS</string>
+    <string name="aprs_my_station">Moja stanica</string>
+    <string name="aprs_radius">Polomer príjmu: %1$d km</string>
+    <string name="aprs_comment">  •  komentár: %1$s</string>
+    <string name="aprs_always_listening">Príjem beží po celý čas, keď je aplikácia otvorená.</string>
+    <string name="aprs_need_callsign">Odosielanie polohy vyžaduje rádioamatérsku značku. Bez nej aplikácia len prijíma rámce APRS (spojenie s APRS-IS len na čítanie).</string>
+    <string name="aprs_enter_callsign">Zadaj značku v Nastaveniach</string>
+    <string name="aprs_waiting_gps">Čaká sa na polohu GPS…</string>
+    <string name="aprs_waiting_frames">Čaká sa na rámce v okruhu %1$d km…</string>
+    <string name="aprs_connecting">Pripája sa k sieti APRS-IS…</string>
+    <string name="aprs_now">teraz</string>
+    <string name="aprs_min_ago">pred %1$d min</string>
+    <string name="aprs_position">Poloha</string>
+    <string name="aprs_movement">Pohyb</string>
+    <string name="aprs_course">kurz %1$s°</string>
+    <string name="aprs_altitude">Výška</string>
+    <string name="aprs_altitude_value">%1$d m n. m.</string>
+    <string name="aprs_phg">Stanica (PHG)</string>
+    <string name="aprs_antenna">anténa %1$d m</string>
+    <string name="aprs_gain">zisk %1$s dB</string>
+    <string name="aprs_humidity">vlhkosť %1$s%%</string>
+    <string name="aprs_wind">vietor %1$d km/h</string>
+    <string name="aprs_wind_from"> od %1$s°</string>
+    <string name="aprs_gusts">nárazy %1$d km/h</string>
+    <string name="aprs_rain_1h">zrážky 1 h %1$s mm</string>
+    <string name="aprs_rain_24h">zrážky 24 h %1$s mm</string>
+    <string name="aprs_weather">Počasie</string>
+    <string name="rep_title">Prevádzače (%1$d km)</string>
+    <string name="rep_only_working">Len funkčné</string>
+    <string name="rep_found">Nájdené: %1$d</string>
+    <string name="rep_none">V tvojom dosahu nie sú prevádzače zodpovedajúce kritériám.</string>
+    <string name="rep_tx">Prevádzač TX</string>
+    <string name="rep_rx">Prevádzač RX</string>
+    <string name="rep_ctcss">Tón CTCSS</string>
+    <string name="rep_none_short">Žiadny</string>
+    <string name="rep_checking_radioid">Overujem RadioID…</string>
+    <string name="rep_trustee">Správca: %1$s</string>
+    <string name="rep_download_error">Chyba sťahovania (%1$s): %2$s</string>
+</resources>

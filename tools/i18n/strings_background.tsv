@@ -1,0 +1,70 @@
+# key	en	pl	de	cs	sk
+ch_sat	Satellite passes	Przeloty satelitów	Satellitenüberflüge	Přelety družic	Prelety družíc
+ch_sat_desc	Reminder before a pass of a watched satellite	Przypomnienie przed przelotem obserwowanego satelity	Erinnerung vor dem Überflug eines beobachteten Satelliten	Připomínka před přeletem sledované družice	Pripomienka pred preletom sledovanej družice
+ch_dx	DX Cluster – new countries	DX Cluster – nowe kraje	DX-Cluster – neue Länder	DX Cluster – nové země	DX Cluster – nové krajiny
+ch_dx_desc	Spots of DXCC entities not yet in your log	Spoty krajów DXCC, których nie ma jeszcze w logu	Spots von DXCC-Gebieten, die noch nicht im Log sind	Spoty zemí DXCC, které ještě nemáš v deníku	Spoty krajín DXCC, ktoré ešte nemáš v denníku
+ch_space	Space weather	Pogoda kosmiczna	Weltraumwetter	Kosmické počasí	Kozmické počasie
+ch_space_desc	Geomagnetic storms (Kp), possible aurora and auroral propagation	Burze geomagnetyczne (Kp), możliwa zorza i propagacja aurora	Geomagnetische Stürme (Kp), mögliche Polarlichter und Aurora-Ausbreitung	Geomagnetické bouře (Kp), možná polární záře a šíření aurora	Geomagnetické búrky (Kp), možná polárna žiara a šírenie aurora
+sw_storm_g	 (G%1$d storm)	 (burza G%1$d)	 (Sturm G%1$d)	 (bouře G%1$d)	 (búrka G%1$d)
+sw_kp7	Aurora possible across central Europe, strong HF disturbance, chance of auroral propagation on 6 m and 2 m.	Zorza możliwa w całej Polsce, silne zakłócenia KF, szansa na propagację aurora na 6 m i 2 m.	Polarlichter in ganz Mitteleuropa möglich, starke KW-Störungen, Chance auf Aurora-Ausbreitung auf 6 m und 2 m.	Polární záře možná v celé střední Evropě, silné rušení KV, šance na šíření aurora na 6 m a 2 m.	Polárna žiara možná v celej strednej Európe, silné rušenie KV, šanca na šírenie aurora na 6 m a 2 m.
+sw_kp6	Aurora possible in northern central Europe; HF bands weakened, especially polar paths.	Zorza możliwa na północy Polski; pasma KF osłabione, szczególnie trasy polarne.	Polarlichter im Norden Mitteleuropas möglich; KW-Bänder geschwächt, besonders polare Wege.	Polární záře možná na severu střední Evropy; pásma KV oslabená, zejména polární trasy.	Polárna žiara možná na severe strednej Európy; pásma KV oslabené, najmä polárne trasy.
+sw_kp5	Degraded propagation on the higher HF bands and polar paths.	Pogorszenie propagacji na wyższych pasmach KF i trasach polarnych.	Verschlechterte Ausbreitung auf den höheren KW-Bändern und polaren Wegen.	Zhoršené šíření na vyšších pásmech KV a polárních trasách.	Zhoršené šírenie na vyšších pásmach KV a polárnych trasách.
+sw_elevated	Elevated geomagnetic conditions.	Warunki geomagnetyczne podwyższone.	Erhöhte geomagnetische Aktivität.	Zvýšená geomagnetická aktivita.	Zvýšená geomagnetická aktivita.
+ntf_storm	Geomagnetic storm	Burza geomagnetyczna	Geomagnetischer Sturm	Geomagnetická bouře	Geomagnetická búrka
+ntf_noaa	NOAA: geomagnetic warning	NOAA: ostrzeżenie geomagnetyczne	NOAA: geomagnetische Warnung	NOAA: geomagnetické varování	NOAA: geomagnetické varovanie
+ntf_issued	%1$s (issued %2$s UTC)	%1$s (wydane %2$s UTC)	%1$s (ausgegeben %2$s UTC)	%1$s (vydáno %2$s UTC)	%1$s (vydané %2$s UTC)
+ntf_new_country	New country on the air	Nowy kraj w eterze	Neues Land auf Sendung	Nová země na pásmu	Nová krajina na pásme
+ntf_new_countries	New countries on the air (%1$d)	Nowe kraje w eterze (%1$d)	Neue Länder auf Sendung (%1$d)	Nové země na pásmu (%1$d)	Nové krajiny na pásme (%1$d)
+ntf_pass_in	%1$s – pass in %2$d min	%1$s – przelot za %2$d min	%1$s – Überflug in %2$d Min.	%1$s – přelet za %2$d min	%1$s – prelet o %2$d min
+ntf_pass_details	AOS %1$s, LOS %2$s, max. elevation %3$s°	AOS %1$s, LOS %2$s, maks. elewacja %3$s°	AOS %1$s, LOS %2$s, max. Elevation %3$s°	AOS %1$s, LOS %2$s, max. elevace %3$s°	AOS %1$s, LOS %2$s, max. elevácia %3$s°
+wdg_updated	Updated %1$s • hamqsl.com	Aktualizacja %1$s • hamqsl.com	Aktualisiert %1$s • hamqsl.com	Aktualizace %1$s • hamqsl.com	Aktualizácia %1$s • hamqsl.com
+wdg_offline	No network – %1$s	Brak sieci – %1$s	Kein Netz – %1$s	Bez sítě – %1$s	Bez siete – %1$s
+wdg_now	Now	Teraz	Jetzt	Teď	Teraz
+wdg_sat_line	%1$s %2$s, max. %3$s°	%1$s %2$s, maks. %3$s°	%1$s %2$s, max. %3$s°	%1$s %2$s, max. %3$s°	%1$s %2$s, max. %3$s°
+wdg_no_bands	No band data	Brak danych o pasmach	Keine Banddaten	Žádná data o pásmech	Žiadne údaje o pásmach
+wdg_band_line	%1$s: day %2$s, night %3$s	%1$s: dzień %2$s, noc %3$s	%1$s: Tag %2$s, Nacht %3$s	%1$s: den %2$s, noc %3$s	%1$s: deň %2$s, noc %3$s
+wdg_good	good	dobre	gut	dobré	dobré
+wdg_fair	fair	średnie	mittel	průměrné	priemerné
+wdg_poor	poor	słabe	schlecht	slabé	slabé
+err_empty_response	Empty response	Pusta odpowiedź	Leere Antwort	Prázdná odpověď	Prázdna odpoveď
+err_empty_response_from	Empty response from %1$s	Pusta odpowiedź z %1$s	Leere Antwort von %1$s	Prázdná odpověď z %1$s	Prázdna odpoveď z %1$s
+err_cannot_open_file	Cannot open the file	Nie można otworzyć pliku	Datei kann nicht geöffnet werden	Soubor nelze otevřít	Súbor nie je možné otvoriť
+err_file	file error	błąd pliku	Dateifehler	chyba souboru	chyba súboru
+err_wav_pcm	Only uncompressed WAV (PCM) is supported	Obsługiwany jest tylko nieskompresowany WAV (PCM)	Nur unkomprimiertes WAV (PCM) wird unterstützt	Podporován je jen nekomprimovaný WAV (PCM)	Podporovaný je len nekomprimovaný WAV (PCM)
+err_wav_16bit	Only 16-bit WAV is supported	Obsługiwany jest tylko WAV 16-bit	Nur 16-Bit-WAV wird unterstützt	Podporován je jen 16bitový WAV	Podporovaný je len 16-bitový WAV
+err_wav_fmt	No fmt header in the WAV file	Brak nagłówka fmt w pliku WAV	Kein fmt-Header in der WAV-Datei	V souboru WAV chybí hlavička fmt	V súbore WAV chýba hlavička fmt
+err_invalid_calendar	Invalid calendar	Nieprawidłowy kalendarz	Ungültiger Kalender	Neplatný kalendář	Neplatný kalendár
+err_no_contests	No contests on the page	Brak zawodów na stronie	Keine Contests auf der Seite	Na stránce nejsou žádné závody	Na stránke nie sú žiadne preteky
+err_hearham_incomplete	Incomplete HearHam data	Niepełne dane HearHam	Unvollständige HearHam-Daten	Neúplná data HearHam	Neúplné údaje HearHam
+err_rb_429	RepeaterBook: too many requests – try again later	RepeaterBook: za dużo zapytań – spróbuj później	RepeaterBook: zu viele Anfragen – später erneut versuchen	RepeaterBook: příliš mnoho dotazů – zkus to později	RepeaterBook: príliš veľa dopytov – skús to neskôr
+err_rep_no_position	No position – turn on location to search for repeaters abroad	Brak pozycji – włącz lokalizację, żeby wyszukać przemienniki za granicą	Keine Position – Standort einschalten, um Relais im Ausland zu suchen	Chybí poloha – zapni polohu, aby šlo hledat převáděče v zahraničí	Chýba poloha – zapni polohu, aby bolo možné hľadať prevádzače v zahraničí
+err_rep_no_country	Could not determine the country (RepeaterBook needs the country name)	Nie udało się ustalić kraju (RepeaterBook wymaga nazwy kraju)	Land konnte nicht ermittelt werden (RepeaterBook braucht den Ländernamen)	Zemi se nepodařilo zjistit (RepeaterBook vyžaduje název země)	Krajinu sa nepodarilo zistiť (RepeaterBook vyžaduje názov krajiny)
+err_hamqth_login	HamQTH login failed	Logowanie do HamQTH nie powiodło się	Anmeldung bei HamQTH fehlgeschlagen	Přihlášení k HamQTH selhalo	Prihlásenie do HamQTH zlyhalo
+up_no_connection	No connection to %1$s: %2$s	Brak połączenia z %1$s: %2$s	Keine Verbindung zu %1$s: %2$s	Bez spojení s %1$s: %2$s	Bez spojenia s %1$s: %2$s
+up_qrz_auth	QRZ: not authorised (subscription required or wrong key)	QRZ: brak uprawnień (wymagana subskrypcja lub zły klucz)	QRZ: keine Berechtigung (Abo erforderlich oder falscher Schlüssel)	QRZ: chybí oprávnění (vyžadováno předplatné nebo špatný klíč)	QRZ: chýba oprávnenie (vyžaduje sa predplatné alebo zlý kľúč)
+up_qrz_unexpected	QRZ: unexpected response	QRZ: nieoczekiwana odpowiedź	QRZ: unerwartete Antwort	QRZ: neočekávaná odpověď	QRZ: neočakávaná odpoveď
+up_eqsl_rejected	eQSL: record was not added	eQSL: rekord nie został dodany	eQSL: Datensatz wurde nicht hinzugefügt	eQSL: záznam nebyl přidán	eQSL: záznam nebol pridaný
+cb_failed	Search failed: %1$s	Wyszukiwanie nie powiodło się: %1$s	Suche fehlgeschlagen: %1$s	Hledání selhalo: %1$s	Hľadanie zlyhalo: %1$s
+cb_connection_error	connection error	błąd połączenia	Verbindungsfehler	chyba spojení	chyba spojenia
+cb_src_psk	PSK Reporter – transmitted by the station %1$s	PSK Reporter – nadawany przez stację %1$s	PSK Reporter – von der Station gesendet %1$s	PSK Reporter – vysílaný stanicí %1$s	PSK Reporter – vysielaný stanicou %1$s
+cb_src_log	Your log – QSO %1$s UTC	Twój log – QSO %1$s UTC	Dein Log – QSO %1$s UTC	Tvůj deník – QSO %1$s UTC	Tvoj denník – QSO %1$s UTC
+cb_src_operator	%1$s – entered by the operator, may be out of date	%1$s – wpisany przez operatora, może być nieaktualny	%1$s – vom Operator eingetragen, möglicherweise veraltet	%1$s – zadaný operátorem, může být neaktuální	%1$s – zadaný operátorom, môže byť neaktuálny
+cb_src_hamdb	HamDB – from the address in the official licence database	HamDB – z adresu w urzędowej bazie licencji	HamDB – aus der Adresse in der amtlichen Lizenzdatenbank	HamDB – z adresy v úřední databázi licencí	HamDB – z adresy v úradnej databáze licencií
+cb_psk_wait	PSK Reporter: next query possible in %1$d min (service limit: once every 5 minutes).	PSK Reporter: następne zapytanie możliwe za %1$d min (limit serwisu: raz na 5 minut).	PSK Reporter: nächste Abfrage in %1$d Min. möglich (Limit des Dienstes: einmal alle 5 Minuten).	PSK Reporter: další dotaz možný za %1$d min (limit služby: jednou za 5 minut).	PSK Reporter: ďalší dopyt možný o %1$d min (limit služby: raz za 5 minút).
+cb_abroad	The station operates outside its licence country – home locator from databases skipped.	Stacja pracuje spoza kraju swojego pozwolenia – lokator domowy z baz danych pominięty.	Die Station arbeitet außerhalb ihres Lizenzlandes – Heimatlocator aus Datenbanken übergangen.	Stanice vysílá mimo zemi svého povolení – domovský lokátor z databází vynechán.	Stanica vysiela mimo krajiny svojho povolenia – domovský lokátor z databáz vynechaný.
+cb_suffix	Callsign with /%1$s – the station may be away from its usual QTH.	Znak z dodatkiem /%1$s – stacja może być poza swoim stałym QTH.	Rufzeichen mit /%1$s – die Station ist möglicherweise nicht an ihrem üblichen QTH.	Značka s /%1$s – stanice může být mimo své obvyklé QTH.	Značka s /%1$s – stanica môže byť mimo svojho obvyklého QTH.
+cb_just_now	just now	przed chwilą	gerade eben	před chvílí	pred chvíľou
+cb_minutes_ago	%1$d min ago	%1$d min temu	vor %1$d Min.	před %1$d min	pred %1$d min
+cb_hours_ago	%1$d h ago	%1$d h temu	vor %1$d Std.	před %1$d h	pred %1$d h
+ft8_wait_slot_start	Waiting for the start of a slot…	Czekam na początek slotu…	Warte auf den Beginn eines Slots…	Čekám na začátek slotu…	Čakám na začiatok slotu…
+ft8_receiving	Receiving %1$s…	Odbiór %1$s…	Empfang %1$s…	Příjem %1$s…	Príjem %1$s…
+ft8_wait_slot_mode	Waiting for the start of a %1$s slot…	Czekam na początek slotu %1$s…	Warte auf den Beginn eines %1$s-Slots…	Čekám na začátek slotu %1$s…	Čakám na začiatok slotu %1$s…
+plural:ft8_messages	one:%1$d message|other:%1$d messages	one:%1$d wiadomość|few:%1$d wiadomości|many:%1$d wiadomości|other:%1$d wiadomości	one:%1$d Nachricht|other:%1$d Nachrichten	one:%1$d zpráva|few:%1$d zprávy|many:%1$d zprávy|other:%1$d zpráv	one:%1$d správa|few:%1$d správy|many:%1$d správy|other:%1$d správ
+map_zoom_in	Zoom in	Powiększ	Vergrößern	Přiblížit	Priblížiť
+map_whole	Whole map	Cała mapa	Ganze Karte	Celá mapa	Celá mapa
+map_hint	Pinch to zoom • drag to move • double-tap: zoom / whole map	Szczypnij, aby powiększyć • przeciągnij, aby przesunąć • stuknij dwukrotnie: powiększ / cała mapa	Zum Zoomen zusammenziehen • zum Verschieben ziehen • doppelt tippen: zoomen / ganze Karte	Roztažením přiblížíš • tažením posuneš • dvojité klepnutí: přiblížit / celá mapa	Roztiahnutím priblížiš • ťahaním posunieš • dvojité ťuknutie: priblížiť / celá mapa
+iaru_r2	Region 2 – the Americas	Region 2 – Ameryki	Region 2 – Amerika	Region 2 – Amerika	Región 2 – Amerika
+iaru_r3	Region 3 – Asia and the Pacific	Region 3 – Azja i Pacyfik	Region 3 – Asien und Pazifik	Region 3 – Asie a Tichomoří	Región 3 – Ázia a Tichomorie
+ft8_file_decoded	File (%1$s): decoded %2$s	Plik (%1$s): zdekodowano %2$s	Datei (%1$s): %2$s dekodiert	Soubor (%1$s): dekódováno %2$s	Súbor (%1$s): dekódovaných %2$s
+ft8_last_slot	Last %1$s slot: %2$s	Ostatni slot %1$s: %2$s	Letzter %1$s-Slot: %2$s	Poslední slot %1$s: %2$s	Posledný slot %1$s: %2$s
+iaru_r1	Region 1 – Europe, Africa, Middle East, northern Asia	Region 1 – Europa, Afryka, Bliski Wschód, północna Azja	Region 1 – Europa, Afrika, Naher Osten, Nordasien	Region 1 – Evropa, Afrika, Blízký východ, severní Asie	Región 1 – Európa, Afrika, Blízky východ, severná Ázia

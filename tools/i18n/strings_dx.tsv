@@ -1,0 +1,26 @@
+# key	en	pl	de	cs	sk
+dx_filters	Filters	Filtry	Filter	Filtry	Filtre
+dx_spot_it	Spot it	Zaspotuj	Spotten	Spotovat	Spotovať
+dx_filtering	Spot filters	Filtrowanie spotów	Spot-Filter	Filtrování spotů	Filtrovanie spotov
+dx_reset_filters	Reset filters	Resetuj filtry	Filter zurücksetzen	Zrušit filtry	Zrušiť filtre
+dx_search_hint	Search DX station, spotter…	Szukaj stacji DX, spottera…	DX-Station, Spotter suchen…	Hledat stanici DX, spottera…	Hľadať stanicu DX, spottera…
+dx_band	Band:	Pasmo:	Band:	Pásmo:	Pásmo:
+dx_mode	Mode:	Emisja:	Betriebsart:	Provoz:	Prevádzka:
+dx_country	Country:	Kraj:	Land:	Země:	Krajina:
+dx_country_count	Country (%1$d):	Kraj (%1$d):	Land (%1$d):	Země (%1$d):	Krajina (%1$d):
+dx_country_hint	e.g. Japan	np. Japan	z. B. Japan	např. Japan	napr. Japan
+dx_updated	Updated: %1$s	Aktualizacja: %1$s	Aktualisiert: %1$s	Aktualizace: %1$s	Aktualizácia: %1$s
+dx_spots_count	Spots: %1$d	Spoty: %1$d	Spots: %1$d	Spoty: %1$d	Spoty: %1$d
+dx_no_spots	No spots match the selected filters.	Brak spotów spełniających wybrane filtry.	Keine Spots für die gewählten Filter.	Žádné spoty neodpovídají zvoleným filtrům.	Žiadne spoty nezodpovedajú zvoleným filtrom.
+dx_qso_logged	QSO with %1$s logged	Zalogowano QSO z %1$s	QSO mit %1$s geloggt	QSO s %1$s zapsáno	QSO s %1$s zapísané
+dx_sending_spot	Sending spot…	Wysyłanie spotu…	Spot wird gesendet…	Odesílání spotu…	Odosiela sa spot…
+dx_invalid_freq	Invalid frequency	Nieprawidłowa częstotliwość	Ungültige Frequenz	Neplatný kmitočet	Neplatný kmitočet
+dx_award_points	%1$s · %2$d pts	%1$s · %2$d pkt	%1$s · %2$d Pkt.	%1$s · %2$d b.	%1$s · %2$d b.
+dx_error_download	Error downloading data: %1$s	Błąd pobierania danych: %1$s	Fehler beim Laden der Daten: %1$s	Chyba stahování dat: %1$s	Chyba sťahovania údajov: %1$s
+dx_error_send	Sending failed: %1$s	Błąd wysyłania: %1$s	Senden fehlgeschlagen: %1$s	Odeslání selhalo: %1$s	Odoslanie zlyhalo: %1$s
+spot_new_country	NEW COUNTRY	NOWY KRAJ	NEUES LAND	NOVÁ ZEMĚ	NOVÁ KRAJINA
+spot_award	AWARD: %1$s	DYPLOM: %1$s	DIPLOM: %1$s	DIPLOM: %1$s	DIPLOM: %1$s
+addspot_title	Add a new spot	Dodaj nowy spot	Neuen Spot hinzufügen	Přidat nový spot	Pridať nový spot
+addspot_dx_call	DX callsign	Znak DX (DX Call)	DX-Rufzeichen	Značka DX	Značka DX
+addspot_freq	Frequency (kHz)	Częstotliwość (kHz)	Frequenz (kHz)	Kmitočet (kHz)	Kmitočet (kHz)
+addspot_comment	Comment (optional)	Komentarz (opcjonalnie)	Kommentar (optional)	Komentář (volitelně)	Komentár (voliteľne)

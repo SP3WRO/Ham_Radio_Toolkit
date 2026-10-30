@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_decoders.tsv -->
+<resources>
+    <string name="dec_mic_denied">Mikrofonzugriff verweigert</string>
+    <string name="dec_mic_failed">Mikrofon kann nicht gestartet werden</string>
+    <string name="dec_stop_listening">Empfang stoppen</string>
+    <string name="dec_start_listening">Empfang starten</string>
+    <string name="ft8_title">FT8-/FT4-Decoder</string>
+    <string name="ft8_show_controls">Bedienfeld anzeigen</string>
+    <string name="ft8_full_list">Liste im Vollbild</string>
+    <string name="ft8_only_cq">Nur CQ</string>
+    <string name="ft8_frequencies">%1$s-Frequenzen</string>
+    <string name="ft8_freq_hint">%1$s-Frequenzen: %2$s. Lege das Telefon neben den Lautsprecher des Funkgeräts; die Uhr des Telefons muss genau gehen (±1 s) – prüfe das in der Spalte DT.</string>
+    <string name="ft8_wait_slot">Nachrichten erscheinen nach dem Ende des Slots (%1$s: alle %2$s s).</string>
+    <string name="ft8_no_match">Keine Nachrichten für diesen Filter.</string>
+    <string name="ft8_decode_wav">WAV-Datei dekodieren</string>
+    <string name="ft8_file_segment">Datei, Abschnitt %1$d • %2$s</string>
+    <string name="ft8_legend">dB  DT  Hz  •  grün – CQ. Tippe auf eine Nachricht, um das Rufzeichen des Senders nachzuschlagen.</string>
+    <string name="dec_file_error">Dateifehler: %1$s</string>
+    <string name="rtty_title">RTTY-Decoder</string>
+    <string name="rtty_reverse">inv.</string>
+    <string name="rtty_normal">norm.</string>
+    <string name="rtty_afc_locked">AFC: verfolge das Signal</string>
+    <string name="rtty_afc_searching">AFC: suche ein Signal…</string>
+    <string name="rtty_options">Optionen</string>
+    <string name="rtty_tuning">Abstimmung (AFC)</string>
+    <string name="rtty_tuning_auto">Findet das Signal selbst und folgt seiner Drift; ein Tippen auf das Spektrum wählt die zu verfolgende Station.</string>
+    <string name="rtty_tuning_manual">Du stimmst ab, indem du zwischen die Töne ins Spektrum tippst oder die Tasten ±5 Hz nutzt.</string>
+    <string name="rtty_shift">Shift</string>
+    <string name="rtty_speed">Geschwindigkeit</string>
+    <string name="rtty_polarity">Polarität</string>
+    <string name="rtty_reversed_long">Invertiert (Mark tiefer – Empfang auf LSB)</string>
+    <string name="rtty_usos">Buchstaben nach Leerzeichen (USOS)</string>
+    <string name="rtty_squelch">Rauschsperre: %1$d %%</string>
+    <string name="rtty_info">Baudot-Code (ITA2). Funkgerät auf USB; bei LSB kehrt sich die Polarität selbst um (oder stelle sie manuell ein).</string>
+    <string name="rtty_audio_level">Audiopegel</string>
+    <string name="rtty_quality">Signalqualität</string>
+    <string name="rtty_tune_hint">Stimme auf das Signal ab: tippe zwischen die Töne ins Spektrum oder nutze „Auto“.</string>
+    <string name="dec_decoding">Dekodiere…</string>
+    <string name="dec_wav_file">WAV-Datei</string>
+    <string name="dec_save_rec">%1$d s speichern</string>
+    <string name="dec_record">Aufnehmen</string>
+    <string name="dec_save_unsupported">Speichern wird in dieser Android-Version nicht unterstützt</string>
+    <string name="dec_no_storage">kein Speicherort</string>
+    <string name="dec_saved_music">Gespeichert unter Musik/HamRadioToolkit/%1$s</string>
+    <string name="dec_save_error">Speicherfehler: %1$s</string>
+    <string name="dec_manual">Manuell</string>
+    <string name="cwt_title">CW-Trainer (Koch)</string>
+    <string name="cwt_lesson">Lektion %1$d von %2$d</string>
+    <string name="cwt_chars">Zeichen: %1$s</string>
+    <string name="cwt_new_char">Neues Zeichen: %1$s  %2$s</string>
+    <string name="cwt_listen">Anhören</string>
+    <string name="cwt_char_speed">Zeichengeschwindigkeit: %1$d WPM</string>
+    <string name="cwt_eff_speed">Effektive Geschwindigkeit (Farnsworth): %1$d WPM</string>
+    <string name="cwt_tone">Ton: %1$d Hz</string>
+    <string name="cwt_groups">Anzahl der Fünfergruppen: %1$d</string>
+    <string name="cwt_new_round">Neue Runde</string>
+    <string name="cwt_repeat">Wiederholen</string>
+    <string name="cwt_type_hint">Gib ein, was du hörst (Gruppen mit Leerzeichen trennen)</string>
+    <string name="cwt_check">Prüfen</string>
+    <string name="cwt_accuracy">Trefferquote: %1$s%%</string>
+    <string name="cwt_sent">Gesendet:  %1$s</string>
+    <string name="cwt_received">Empfangen: %1$s</string>
+    <string name="cwt_pass" formatted="false">Über 90 % – du kannst zur nächsten Lektion übergehen.</string>
+    <string name="cwt_next_lesson">Lektion %1$d: neues Zeichen %2$s</string>
+    <string name="cwt_stay" formatted="false">Bleib bei dieser Lektion, bis du 90 % erreichst.</string>
+    <string name="cwd_title">CW-Decoder</string>
+    <string name="cwd_listening">Empfang… halte das Telefon an den Lautsprecher des Empfängers</string>
+    <string name="cwd_press_listen">Drücke „Empfang“</string>
+    <string name="cwd_tone">Ton: %1$s Hz</string>
+    <string name="cwd_auto_tone">Automatische Tonsuche</string>
+    <string name="cwd_listen">Empfang</string>
+    <string name="cwd_info">Funktioniert am besten mit einem sauberen Signal und einem einzelnen Ton. Die Geschwindigkeit passt sich selbst an; das erste Zeichen nach einem Tempowechsel kann falsch gelesen werden.</string>
+</resources>

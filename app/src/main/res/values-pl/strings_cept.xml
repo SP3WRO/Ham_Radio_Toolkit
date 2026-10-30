@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_cept.tsv -->
+<resources>
+    <string name="cept_and">i</string>
+    <string name="cept_classes">klasy</string>
+    <string name="cept_formerly">dawniej</string>
+    <string name="cept_formerly_also">dawniej także</string>
+    <string name="cept_guest">gość</string>
+    <string name="cept_note_ee">Goście z licencją CEPT mogą pracować do 3 miesięcy z uprawnieniami klasy B; klasa A wymaga potwierdzenia znajomości CW (min. 5 słów/min).</string>
+    <string name="cept_note_ie">Prefiks EJ jest przeznaczony dla wysp przybrzeżnych.</string>
+    <string name="cept_note_lv">Goście z licencją CEPT mogą pracować do 3 miesięcy.</string>
+    <string name="cept_note_au">Licencja klasowa pozwala gościom z licencją CEPT pracować do 365 dni na wszystkich pasmach amatorskich bez dodatkowych zezwoleń.</string>
+    <string name="cept_note_bq">PJ4 – Bonaire, PJ5 – St. Eustatius, PJ6 – Saba.</string>
+    <string name="cept_note_nz">Goście z licencją CEPT mogą pracować do 90 dni na wszystkich pasmach amatorskich bez zezwoleń i rejestracji.</string>
+    <string name="cept_note_pe">W Peru OA z cyfrą strefy dopisuje się na końcu znaku (np. SP3WRO/OA4).</string>
+    <string name="cept_privileges">uprawnienia</string>
+</resources>

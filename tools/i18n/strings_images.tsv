@@ -1,0 +1,58 @@
+# key	en	pl	de	cs	sk
+hor_file_result	File: decoded %1$d frames	Plik: zdekodowano %1$d ramek	Datei: %1$d Rahmen dekodiert	Soubor: dekódováno %1$d rámců	Súbor: dekódovaných %1$d rámcov
+hor_title	Balloons – Horus Binary	Balony – Horus Binary	Ballone – Horus Binary	Balóny – Horus Binary	Balóny – Horus Binary
+dec_how_to	How to receive	Jak odbierać	Wie empfangen	Jak přijímat	Ako prijímať
+hor_help	Balloons with a Horus Binary payload (e.g. RS41ng) transmit 4FSK at 100 Bd on 70 cm – most often 434.200 MHz; current flights and frequencies: amateur.sondehub.org. Receive in USB with the phone next to the speaker. The plot should show four lines about 270 Hz apart; the decoder finds them by itself (100–4000 Hz).	Balony z ładunkiem Horus Binary (np. RS41ng) nadają 4FSK 100 Bd na 70 cm – najczęściej 434,200 MHz; aktualne loty i częstotliwości: amateur.sondehub.org. Odbiór w USB, telefon przy głośniku. Na wykresie powinny być widać cztery prążki w odstępach ok. 270 Hz; dekoder sam je znajdzie (100–4000 Hz).	Ballone mit Horus-Binary-Nutzlast (z. B. RS41ng) senden 4FSK mit 100 Bd auf 70 cm – meist 434,200 MHz; aktuelle Flüge und Frequenzen: amateur.sondehub.org. Empfang in USB, Telefon am Lautsprecher. Im Diagramm sollten vier Linien im Abstand von etwa 270 Hz zu sehen sein; der Decoder findet sie selbst (100–4000 Hz).	Balóny s nákladem Horus Binary (např. RS41ng) vysílají 4FSK 100 Bd na 70 cm – nejčastěji 434,200 MHz; aktuální lety a kmitočty: amateur.sondehub.org. Příjem v USB, telefon u reproduktoru. Na grafu by měly být vidět čtyři čáry ve vzdálenosti asi 270 Hz; dekodér je najde sám (100–4000 Hz).	Balóny s nákladom Horus Binary (napr. RS41ng) vysielajú 4FSK 100 Bd na 70 cm – najčastejšie 434,200 MHz; aktuálne lety a kmitočty: amateur.sondehub.org. Príjem v USB, telefón pri reproduktore. Na grafe by mali byť vidieť štyri čiary vo vzdialenosti asi 270 Hz; dekodér ich nájde sám (100–4000 Hz).
+dec_decoding_file	Decoding the file…	Dekodowanie pliku…	Datei wird dekodiert…	Dekódování souboru…	Dekódovanie súboru…
+dec_listening	Listening…	Nasłuch…	Empfang…	Příjem…	Príjem…
+dec_ready	Ready	Gotowy	Bereit	Připraveno	Pripravené
+hor_tones_none	Tones: –	Tony: –	Töne: –	Tóny: –	Tóny: –
+hor_tones	Tones: %1$s Hz	Tony: %1$s Hz	Töne: %1$s Hz	Tóny: %1$s Hz	Tóny: %1$s Hz
+hor_wait	Frames will appear after a packet is received (usually every few seconds).	Ramki pojawią się po odebraniu pakietu (zwykle co kilka sekund).	Rahmen erscheinen nach dem Empfang eines Pakets (meist alle paar Sekunden).	Rámce se objeví po přijetí paketu (obvykle každých pár sekund).	Rámce sa objavia po prijatí paketu (zvyčajne každých pár sekúnd).
+hor_from_file	 • from file	 • z pliku	 • aus Datei	 • ze souboru	 • zo súboru
+hor_seconds_ago	 • %1$d s ago	 • %1$d s temu	 • vor %1$d s	 • před %1$d s	 • pred %1$d s
+hor_show_map	Show on map	Pokaż na mapie	Auf der Karte zeigen	Zobrazit na mapě	Zobraziť na mape
+hor_copy_position	Copy position	Kopiuj pozycję	Position kopieren	Kopírovat polohu	Kopírovať polohu
+hor_altitude	Altitude	Wysokość	Höhe	Výška	Výška
+hor_ascent	Ascent	Wznoszenie	Steigrate	Stoupání	Stúpanie
+hor_speed	Speed	Prędkość	Geschwindigkeit	Rychlost	Rýchlosť
+hor_satellites	Satellites	Satelity	Satelliten	Satelity	Satelity
+hor_temperature	Temperature	Temperatura	Temperatur	Teplota	Teplota
+hor_battery	Battery	Bateria	Batterie	Baterie	Batéria
+hor_elevation	 • elevation %1$s°	 • elewacja %1$s°	 • Elevation %1$s°	 • elevace %1$s°	 • elevácia %1$s°
+hor_no_gps	No GPS position in the frame	Brak pozycji GPS w ramce	Keine GPS-Position im Rahmen	V rámci chybí poloha GPS	V rámci chýba poloha GPS
+hor_file	file    	plik    	Datei   	soubor  	súbor
+hor_unknown_format	v%1$s (unknown format) %2$s	v%1$s (nieznany format) %2$s	v%1$s (unbekanntes Format) %2$s	v%1$s (neznámý formát) %2$s	v%1$s (neznámy formát) %2$s
+hor_no_map_app	No map app	Brak aplikacji z mapą	Keine Karten-App	Chybí aplikace s mapou	Chýba aplikácia s mapou
+hor_balloon_position	Balloon position	Pozycja balonu	Ballonposition	Poloha balónu	Poloha balóna
+hor_copied	Position copied	Skopiowano pozycję	Position kopiert	Poloha zkopírována	Poloha skopírovaná
+ds_searching_file	Decoding the file – searching for a signal…	Dekodowanie pliku – szukam sygnału…	Datei wird dekodiert – suche Signal…	Dekódování souboru – hledám signál…	Dekódovanie súboru – hľadám signál…
+ds_searching	Searching for a DSSTV signal…	Szukam sygnału DSSTV…	Suche DSSTV-Signal…	Hledám signál DSSTV…	Hľadám signál DSSTV…
+ds_sync_fac	Sync: mode %1$s, %2$s – waiting for FAC…	Synchronizacja: tryb %1$s, %2$s – czekam na FAC…	Synchronisiert: Modus %1$s, %2$s – warte auf FAC…	Synchronizace: režim %1$s, %2$s – čekám na FAC…	Synchronizácia: režim %1$s, %2$s – čakám na FAC…
+ds_mode	Mode %1$s	Tryb %1$s	Modus %1$s	Režim %1$s	Režim %1$s
+ds_interleave_long	interleave 2 s	przeplot 2 s	Interleaving 2 s	prokládání 2 s	prekladanie 2 s
+ds_interleave_short	interleave 400 ms	przeplot 400 ms	Interleaving 400 ms	prokládání 400 ms	prekladanie 400 ms
+ds_strong_protection	 • strong protection	 • silna ochrona	 • starker Schutz	 • silná ochrana	 • silná ochrana
+ds_saved	Saved %1$s	Zapisano %1$s	%1$s gespeichert	Uloženo %1$s	Uložené %1$s
+ds_received_count	Pictures received: %1$d	Odebrano obrazków: %1$d	Empfangene Bilder: %1$d	Přijato obrázků: %1$d	Prijatých obrázkov: %1$d
+ds_none_found	No DSSTV picture found	Nie znaleziono obrazka DSSTV	Kein DSSTV-Bild gefunden	Obrázek DSSTV nenalezen	Obrázok DSSTV sa nenašiel
+ds_help	Digital SSTV (HamDRM, compatible with EasyPal and QSSTV) – e.g. 14.233 MHz USB, 7.173 MHz LSB, 3.733 MHz LSB. The signal looks like noise about 2.3 kHz wide. It is received most reliably by cable from the radio's audio output; through the microphone the 4-QAM and 16-QAM modes work in quiet surroundings. Pictures are saved in the Gallery.	Cyfrowe SSTV (HamDRM, zgodne z EasyPal i QSSTV) – m.in. 14,233 MHz USB, 7,173 MHz LSB, 3,733 MHz LSB. Sygnał wygląda jak szum o szerokości ok. 2,3 kHz. Najpewniej odbiera się kablem z wyjścia audio radia; przez mikrofon działają tryby 4-QAM i 16-QAM przy cichym otoczeniu. Obrazki zapisują się w Galerii.	Digitales SSTV (HamDRM, kompatibel mit EasyPal und QSSTV) – u. a. 14,233 MHz USB, 7,173 MHz LSB, 3,733 MHz LSB. Das Signal sieht aus wie etwa 2,3 kHz breites Rauschen. Am zuverlässigsten ist der Empfang per Kabel vom Audioausgang des Funkgeräts; über das Mikrofon funktionieren die Modi 4-QAM und 16-QAM in ruhiger Umgebung. Bilder werden in der Galerie gespeichert.	Digitální SSTV (HamDRM, kompatibilní s EasyPal a QSSTV) – mj. 14,233 MHz USB, 7,173 MHz LSB, 3,733 MHz LSB. Signál vypadá jako šum o šířce asi 2,3 kHz. Nejspolehlivěji se přijímá kabelem z audio výstupu rádia; přes mikrofon fungují režimy 4-QAM a 16-QAM v tichém prostředí. Obrázky se ukládají do Galerie.	Digitálne SSTV (HamDRM, kompatibilné s EasyPal a QSSTV) – okrem iného 14,233 MHz USB, 7,173 MHz LSB, 3,733 MHz LSB. Signál vyzerá ako šum so šírkou asi 2,3 kHz. Najspoľahlivejšie sa prijíma káblom z audio výstupu rádia; cez mikrofón fungujú režimy 4-QAM a 16-QAM v tichom prostredí. Obrázky sa ukladajú do Galérie.
+ds_sender	Sender: %1$s • 	Nadaje: %1$s • 	Sender: %1$s • 	Vysílá: %1$s • 	Vysiela: %1$s •
+ds_offset	offset %1$s Hz • FAC %2$d%%	odchyłka %1$s Hz • FAC %2$d%%	Ablage %1$s Hz • FAC %2$d%%	odchylka %1$s Hz • FAC %2$d%%	odchýlka %1$s Hz • FAC %2$d%%
+ds_receiving	Receiving %1$s: %2$s segments	Odbieram %1$s: %2$s segmentów	Empfange %1$s: %2$s Segmente	Přijímám %1$s: %2$s segmentů	Prijímam %1$s: %2$s segmentov
+ds_file	file	plik	Datei	soubor	súbor
+ds_of	%1$d of %2$d	%1$d z %2$d	%1$d von %2$d	%1$d z %2$d	%1$d z %2$d
+ds_picture	DSSTV picture	Obrazek DSSTV	DSSTV-Bild	Obrázek DSSTV	Obrázok DSSTV
+ds_cannot_show	Could not display %1$s	Nie udało się wyświetlić %1$s	%1$s konnte nicht angezeigt werden	%1$s se nepodařilo zobrazit	%1$s sa nepodarilo zobraziť
+ds_will_appear	The picture will appear during reception	Obrazek pojawi się w trakcie odbioru	Das Bild erscheint während des Empfangs	Obrázek se objeví během příjmu	Obrázok sa objaví počas príjmu
+ds_rs_fixed	 • RS corrected %1$s	 • RS poprawił %1$s	 • RS korrigiert %1$s	 • RS opravil %1$s	 • RS opravil %1$s
+sstv_unsupported	Saving is not supported on this old system	Zapis nie wspierany w starym systemie	Speichern wird auf diesem alten System nicht unterstützt	Ukládání není na tomto starém systému podporováno	Ukladanie nie je na tomto starom systéme podporované
+sstv_save_error	Save error	Błąd zapisu	Speicherfehler	Chyba uložení	Chyba uloženia
+sstv_saved_as	Saved as %1$s	Zapisano jako %1$s	Gespeichert als %1$s	Uloženo jako %1$s	Uložené ako %1$s
+sstv_title	SSTV decoder	Dekoder SSTV	SSTV-Decoder	Dekodér SSTV	Dekodér SSTV
+sstv_preview	SSTV reception preview	Podgląd odbioru SSTV	SSTV-Empfangsvorschau	Náhled příjmu SSTV	Náhľad príjmu SSTV
+sstv_ready	Ready to listen	Gotowy do nasłuchu	Bereit zum Empfang	Připraveno k příjmu	Pripravené na príjem
+sstv_level	Signal level:	Poziom sygnału:	Signalpegel:	Úroveň signálu:	Úroveň signálu:
+sstv_receiving	Receiving: %1$s	Odbiór: %1$s	Empfang: %1$s	Příjem: %1$s	Príjem: %1$s
+sstv_mode	Decoding mode	Tryb dekodowania	Dekodiermodus	Režim dekódování	Režim dekódovania
+sstv_auto	Auto (VIS detection)	Auto (wykrywanie VIS)	Auto (VIS-Erkennung)	Auto (detekce VIS)	Auto (detekcia VIS)

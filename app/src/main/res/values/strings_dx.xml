@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_dx.tsv -->
+<resources>
+    <string name="dx_filters">Filters</string>
+    <string name="dx_spot_it">Spot it</string>
+    <string name="dx_filtering">Spot filters</string>
+    <string name="dx_reset_filters">Reset filters</string>
+    <string name="dx_search_hint">Search DX station, spotter…</string>
+    <string name="dx_band">Band:</string>
+    <string name="dx_mode">Mode:</string>
+    <string name="dx_country">Country:</string>
+    <string name="dx_country_count">Country (%1$d):</string>
+    <string name="dx_country_hint">e.g. Japan</string>
+    <string name="dx_updated">Updated: %1$s</string>
+    <string name="dx_spots_count">Spots: %1$d</string>
+    <string name="dx_no_spots">No spots match the selected filters.</string>
+    <string name="dx_qso_logged">QSO with %1$s logged</string>
+    <string name="dx_sending_spot">Sending spot…</string>
+    <string name="dx_invalid_freq">Invalid frequency</string>
+    <string name="dx_award_points">%1$s · %2$d pts</string>
+    <string name="dx_error_download">Error downloading data: %1$s</string>
+    <string name="dx_error_send">Sending failed: %1$s</string>
+    <string name="spot_new_country">NEW COUNTRY</string>
+    <string name="spot_award">AWARD: %1$s</string>
+    <string name="addspot_title">Add a new spot</string>
+    <string name="addspot_dx_call">DX callsign</string>
+    <string name="addspot_freq">Frequency (kHz)</string>
+    <string name="addspot_comment">Comment (optional)</string>
+</resources>

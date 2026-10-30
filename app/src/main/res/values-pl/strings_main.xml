@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_main.tsv -->
+<resources>
+    <string name="location_rationale_title">Dostęp do lokalizacji</string>
+    <string name="location_rationale_text">Pozycja służy do wyznaczenia lokatora QTH, wyszukania najbliższych przemienników i stacji APRS, obliczenia przelotów satelitów oraz odległości do stacji DX. GPS działa tylko wtedy, gdy aplikacja jest otwarta. Do serwisów (serwer APRS-IS, bazy przemienników) trafia wyłącznie obszar wyszukiwania; Twoją pozycję w sieci APRS widać dopiero po naciśnięciu „Nadaj pozycję”.</string>
+    <string name="country_welcome_poland">Witaj w Polsce</string>
+    <string name="country_you_are_in">Jesteś w kraju: %1$s</string>
+    <string name="country_change_repeaters">Przemienniki: %1$s</string>
+    <string name="country_change_tropocast">Mapa Tropocast: obszar dla kraju pobytu</string>
+    <string name="country_changes_toast">%1$s – %2$s (zmienisz w Ustawieniach)</string>
+</resources>

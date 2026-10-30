@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_tools.tsv -->
+<resources>
+    <string name="act_title">Miesta na aktiváciu</string>
+    <string name="act_sync">Stiahnuť najnovšie databázy</string>
+    <string name="act_syncing">Sťahujem objekty POTA, SOTA a WWFF v tvojom okolí…</string>
+    <string name="act_none">Žiadne objekty v okruhu %1$d km.\nSkontroluj filtre v Nastaveniach.</string>
+    <string name="act_no_position">Chýba poloha – zapni polohu, aby sa stiahli objekty v okolí</string>
+    <string name="act_download_failed">Databázy sa nepodarilo stiahnuť – skontroluj pripojenie</string>
+    <string name="act_sync_error">Chyba synchronizácie: %1$s</string>
+    <string name="bcn_title">Majáky NCDXF/IARU</string>
+    <string name="bcn_info">Každý maják vysiela 10 s: značku (22 WPM) a štyri čiarky 100 W / 10 W / 1 W / 100 mW. Počuješ maják = je šírenie jeho smerom.</string>
+    <string name="bcn_next">ďalší: %1$s</string>
+    <string name="bcn_all">Všetky majáky – ťukni a uvidíš, kedy vysiela</string>
+    <string name="bcn_on_air_now">VYSIELA TERAZ</string>
+    <string name="bcn_in">o %1$s</string>
+    <string name="bcn_off_note">Niektoré majáky bývajú dočasne vypnuté – aktuálny stav: ncdxf.org/beacon</string>
+    <string name="bp_title">Kmitočtový plán IARU Región %1$d</string>
+    <string name="bp_region">Región %1$d</string>
+    <string name="bp_you_are_here"> (si tu)</string>
+    <string name="bp_fm_calling">Výzva FM: %1$s</string>
+    <string name="bp_emergency">Tiesňová prevádzka (KV): %1$s</string>
+    <string name="bp_r1_poland">Plán Regiónu 1 so zreteľom na prax v Poľsku.</string>
+    <string name="bp_source_note">Zdroj: %1$s. Kmitočtový plán IARU je odporúčanie – záväzné sú národné predpisy.</string>
+    <string name="gl_title">Sivá línia</string>
+    <string name="gl_legend">Žltá čiara je sivá línia. Červená bodka je tvoje QTH.</string>
+    <string name="gl_your_station">Tvoja stanica (QTH)</string>
+    <string name="gl_allow_gps">Povoliť GPS</string>
+    <string name="gl_waiting_gps">Čaká sa na polohu GPS…</string>
+    <string name="gl_sunrise">Východ Slnka:</string>
+    <string name="gl_sunset">Západ Slnka:</string>
+    <string name="gl_polar">Bez východu/západu (polárna noc/deň)</string>
+    <string name="gl_about">O sivej línii</string>
+    <string name="gl_about_text">Sivá línia (terminátor) je pás na hranici dňa a noci. Ionosféra sa v tejto oblasti správa zvláštne – vrstva D (tlmiaca nižšie kmitočty) mizne pred príchodom noci, zatiaľ čo vrstvy F zostávajú dostatočne ionizované, aby odrážali rádiové vlny.\n\nVďaka tomu môžu stanice ležiace na rovnakej sivej línii nadväzovať nezvyčajne ďaleké DX spojenia (šírenie po sivej línii) na pásmach 160 m, 80 m alebo 40 m s minimálnymi stratami signálu.</string>
+    <string name="coax_title">Útlm káblov</string>
+    <string name="coax_choose">Vyber kábel</string>
+    <string name="coax_freq">Kmitočet (MHz)</string>
+    <string name="coax_length">Dĺžka kábla (m)</string>
+    <string name="coax_power">Vstupný výkon (W)</string>
+    <string name="coax_no_data">Chýbajú údaje alebo je kmitočet pre tento kábel príliš vysoký.</string>
+    <string name="coax_result">Výsledok pre %1$s</string>
+    <string name="coax_attenuation">Útlm</string>
+    <string name="coax_power_at_antenna">Výkon na anténe</string>
+    <string name="coax_loss_percent">Percentuálna strata: %1$s %%</string>
+    <string name="coax_power_lost">Výkon stratený v kábli (teplo): %1$s W</string>
+    <string name="coax_credit">Kalkulačka založená na projekte Coax Calculator\nAutor: SQ3SWF Olgierd</string>
+</resources>

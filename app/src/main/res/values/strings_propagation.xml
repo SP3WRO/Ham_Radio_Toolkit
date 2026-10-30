@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_propagation.tsv -->
+<resources>
+    <string name="prop_title">Propagation</string>
+    <string name="prop_tab_hf">HF</string>
+    <string name="prop_tab_vhf">VHF</string>
+    <string name="prop_tropocast_title">Tropocast map (ICON-EU)</string>
+    <string name="prop_now">Now</string>
+    <string name="prop_vhf_map_desc">VHF propagation map</string>
+    <string name="prop_legend_background">background</string>
+    <string name="prop_legend_marginal">marginal</string>
+    <string name="prop_legend_weak">weak</string>
+    <string name="prop_legend_moderate">moderate</string>
+    <string name="prop_legend_good">good</string>
+    <string name="prop_legend_very_good">very good</string>
+    <string name="prop_legend_high">high</string>
+    <string name="prop_legend_strong">strong</string>
+    <string name="prop_legend_very_strong">very strong</string>
+    <string name="prop_solar_params">Solar parameters</string>
+    <string name="prop_updated">Updated: %1$s</string>
+    <string name="prop_sunspots">Sunspots (SN)</string>
+    <string name="prop_a_index">A index</string>
+    <string name="prop_k_index">K index</string>
+    <string name="prop_day">Day</string>
+    <string name="prop_night">Night</string>
+    <string name="prop_cond_good">Good</string>
+    <string name="prop_cond_fair">Fair</string>
+    <string name="prop_cond_poor">Poor</string>
+    <string name="prop_cond_closed">Closed</string>
+    <string name="prop_offline_cached">No connection – showing the last downloaded data</string>
+    <string name="prop_download_error">Error downloading data: %1$s</string>
+    <string name="prop_tropocast_error">Could not download the Tropocast map: %1$s</string>
+</resources>

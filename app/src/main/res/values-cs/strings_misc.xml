@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_misc.tsv -->
+<resources>
+    <string name="err_award_page">Stránka akce nerozpoznána</string>
+    <string name="err_repeatermap">repeatermap.de neodpovídá</string>
+    <string name="err_not_wav">Toto není soubor WAV</string>
+    <string name="err_wav_no_audio">V souboru WAV chybí zvuková data</string>
+    <string name="dec_decoding_file_mode">Dekódování souboru (%1$s)…</string>
+    <string name="aprs_icon_desc">Ikona APRS %1$s</string>
+    <string name="map_zoom_out">Oddálit</string>
+    <string name="hp_pressure">Tlak</string>
+    <string name="hp_temp_ext">Venk. tepl.</string>
+    <string name="hp_temp1">Tepl. 1</string>
+    <string name="hp_temp2">Tepl. 2</string>
+    <string name="hp_humidity">Vlhkost</string>
+    <string name="hp_solar">Solární panel</string>
+    <string name="hp_voltage1">Napětí 1</string>
+    <string name="hp_voltage2">Napětí 2</string>
+    <string name="hp_cutdown_battery">Baterie odpojovače</string>
+    <string name="r36_unsupported_audio">Nepodporovaný zvukový formát</string>
+    <string name="r36_mic_failed">Mikrofon se nepodařilo spustit</string>
+    <string name="r36_listening">Příjem…</string>
+    <string name="r36_mic_read_error">Chyba čtení z mikrofonu</string>
+    <string name="r36_file_done">Dekódování souboru dokončeno</string>
+    <string name="ct_note_unconfirmed">Termín nepotvrzen – závod se nemusí konat</string>
+    <string name="ct_note_old_rules">Odkaz na propozice předchozího ročníku – mohou se ještě změnit</string>
+    <string name="ct_note_ru_by">Spojení a násobiče se stanicemi z Ruska a Běloruska se nehodnotí</string>
+</resources>

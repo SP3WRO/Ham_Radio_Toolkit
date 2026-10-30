@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_cept.tsv -->
+<resources>
+    <string name="cept_and">und</string>
+    <string name="cept_classes">Klassen</string>
+    <string name="cept_formerly">früher</string>
+    <string name="cept_formerly_also">früher auch</string>
+    <string name="cept_guest">Gast</string>
+    <string name="cept_note_ee">Gäste mit CEPT-Lizenz dürfen bis zu 3 Monate mit Rechten der Klasse B funken; Klasse A erfordert den Nachweis von CW-Kenntnissen (mind. 5 WpM).</string>
+    <string name="cept_note_ie">Das Präfix EJ ist für die vorgelagerten Inseln bestimmt.</string>
+    <string name="cept_note_lv">Gäste mit CEPT-Lizenz dürfen bis zu 3 Monate funken.</string>
+    <string name="cept_note_au">Eine Klassenlizenz erlaubt Gästen mit CEPT-Lizenz bis zu 365 Tage Betrieb auf allen Amateurfunkbändern ohne zusätzliche Genehmigung.</string>
+    <string name="cept_note_bq">PJ4 – Bonaire, PJ5 – St. Eustatius, PJ6 – Saba.</string>
+    <string name="cept_note_nz">Gäste mit CEPT-Lizenz dürfen bis zu 90 Tage auf allen Amateurfunkbändern ohne Genehmigung und Registrierung funken.</string>
+    <string name="cept_note_pe">In Peru wird OA mit der Zonenziffer ans Ende des Rufzeichens gehängt (z. B. SP3WRO/OA4).</string>
+    <string name="cept_privileges">Rechte</string>
+</resources>

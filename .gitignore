@@ -1,0 +1,23 @@
+# Do repozytorium trafia tylko projekt aplikacji – pliki robocze w katalogu głównym zostają lokalnie
+/*
+!/app/
+!/gradle/
+!/tools/
+!/build.gradle.kts
+!/settings.gradle.kts
+!/gradle.properties
+!/gradlew
+!/gradlew.bat
+!/LICENSE
+!/README.md
+!/.gitignore
+
+*.iml
+.gradle
+.kotlin
+local.properties
+.DS_Store
+build/
+/captures
+.externalNativeBuild
+.cxx

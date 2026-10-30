@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_lookup.tsv -->
+<resources>
+    <string name="lk_min_chars">Mindestens 3 Zeichen eingeben</string>
+    <string name="lk_unknown_prefix">Präfix nicht erkannt – Rufzeichen prüfen</string>
+    <string name="lk_failed">Suche fehlgeschlagen: %1$s</string>
+    <string name="lk_title">Rufzeichensuche</string>
+    <string name="lk_hint">z. B. SP3WRO, DL1ABC/P, VK2ABC</string>
+    <string name="lk_info">DXCC-Land, Zonen und Ortszeit funktionieren offline (Datenbank cty.csv). Stationslocator: aus PSK Reporter (digitale Betriebsarten der letzten 24 h), APRS-IS (letzte 2 h), deinem Log, QRZCQ und HamQTH (Logins in den Einstellungen) oder HamDB (USA, Kanada, Deutschland, Tschechien, Australien). Ohne Locator wird keine Entfernung angezeigt.</string>
+    <string name="lk_station">Station</string>
+    <string name="lk_not_found">Rufzeichen in den verfügbaren Datenbanken nicht gefunden.</string>
+    <string name="lk_club">Klub</string>
+    <string name="lk_name">Name</string>
+    <string name="lk_uke_licence">UKE-Genehmigung</string>
+    <string name="lk_valid_to">Gültig bis</string>
+    <string name="lk_licence_class">Lizenzklasse</string>
+    <string name="lk_sources">Quellen: %1$s</string>
+    <string name="lk_dxcc_country">DXCC-Gebiet</string>
+    <string name="lk_country">Land</string>
+    <string name="lk_main_prefix">Hauptpräfix</string>
+    <string name="lk_dxcc_number">DXCC-Nummer</string>
+    <string name="lk_continent">Kontinent</string>
+    <string name="lk_zones">CQ-/ITU-Zone</string>
+    <string name="lk_locator_bearing">Locator und Antennenrichtung</string>
+    <string name="lk_no_locator">Für diese Station liegen keine Locator-Daten vor – Entfernung und Richtung sind nicht verfügbar.</string>
+    <string name="lk_ask_locator">Frag die Gegenstation nach ihrem Locator. Wenn sie FT8/FT4 sendet, kann der Locator in PSK Reporter erscheinen.</string>
+    <string name="lk_short_path">Kurzer Weg</string>
+    <string name="lk_long_path">Langer Weg</string>
+    <string name="lk_no_my_position">Deine Position ist unbekannt – Standort einschalten oder Locator unter „Locator und Richtung“ eingeben.</string>
+    <string name="lk_local_time">Ortszeit</string>
+    <string name="lk_tz_note">Grundzeitzone des Landes, ohne Sommerzeit; große Länder haben mehrere Zonen.</string>
+    <string name="lk_hamqth_hint">Optional: Ein HamQTH-Login unter Einstellungen → Dienstkonten ergänzt Locator und QSL-Infos (Büro, LoTW, eQSL).</string>
+    <string name="lk_open_settings">Einstellungen öffnen</string>
+    <string name="lk_bureau">Büro</string>
+    <string name="lk_not_in_hamqth">Rufzeichen nicht in HamQTH</string>
+    <string name="lk_your_log">Dein Log</string>
+    <string name="lk_no_qso_yet">Du hast noch keine QSOs mit diesem Rufzeichen.</string>
+    <plurals name="lk_qso_count">
+        <item quantity="one">%1$d QSO</item>
+        <item quantity="other">%1$d QSOs</item>
+    </plurals>
+    <string name="lk_bands_modes">Bänder und Betriebsarten: %1$s</string>
+    <string name="ab_title">Im Ausland</string>
+    <string name="ab_from_gps">%1$s (aus GPS)</string>
+    <string name="ab_choose_country">Land wählen</string>
+    <string name="ab_current_location">%1$s Aktueller Standort (%2$s)</string>
+    <string name="ab_detecting">Ermittle das Land aus deiner Position… Wenn das lange dauert (kein Internet), wähle ein Land aus der Liste.</string>
+    <string name="ab_in_poland">Du bist in Polen – du funkst unter deinem eigenen Rufzeichen.</string>
+    <string name="ab_no_cept">Dieses Land wendet die CEPT-Empfehlung T/R 61-01 nicht an.</string>
+    <string name="ab_need_permit">Zum Senden brauchst du eine Genehmigung der örtlichen Behörde oder eine Lizenz aufgrund eines bilateralen Abkommens. Prüfe die Vorschriften vor der Reise.</string>
+    <string name="ab_transmit_as">Senden als</string>
+    <string name="ab_your_call">DEINCALL</string>
+    <string name="ab_cept_member">CEPT-Land – eine Lizenz der Klasse 1 (CEPT) erlaubt den Funkbetrieb während eines kurzen Aufenthalts ohne zusätzliche Genehmigung.</string>
+    <string name="ab_cept_nonmember">Nicht-CEPT-Land, das T/R 61-01 anwendet – die CEPT-Lizenz wird anerkannt.</string>
+    <string name="ab_equivalent">CEPT-gleichwertige Lizenzen in diesem Land: %1$s</string>
+    <string name="ab_guest_prefixes">Präfixe für Gäste: %1$s</string>
+    <string name="ab_canada">Das Präfix hängt von der Provinz ab (VE1–VE9, VO1, VO2, VY0–VY2) – Standort einschalten, um es zu bestimmen.</string>
+    <string name="ab_how_to_sign">In CW: Präfix/Rufzeichen mit Schrägstrich; in Fonie: „Präfix stroke Rufzeichen“.</string>
+    <string name="ab_remember">Denk daran</string>
+    <string-array name="ab_remember_items">
+        <item>Die CEPT-Lizenz gilt nur für vorübergehende Aufenthalte; bei längerem Aufenthalt brauchst du eine örtliche Lizenz.</item>
+        <item>Führe deine Lizenz (das CEPT-Dokument) mit – du musst sie auf Verlangen vorzeigen.</item>
+        <item>Es gelten die Vorschriften des Gastlandes: Bänder, Leistung und örtliche Einschränkungen.</item>
+        <item>Eine Gaststation kann keinen Schutz vor Störungen beanspruchen.</item>
+    </string-array>
+    <string name="ab_iaru_region">IARU-Region %1$d</string>
+    <string name="ab_different_plan">Hinweis: andere Bandaufteilung als in Europa (z. B. 40 m bis 7.300 in R2).</string>
+    <string name="ab_repeaters_nearby">Relais in der Nähe</string>
+    <string name="ab_zones_time">Zonen und Zeit</string>
+    <string name="ab_zones">CQ-Zone %1$s • ITU %2$s</string>
+    <string name="ab_standard_time">Normalzeit: %1$s (UTC%2$s, ohne Sommerzeit)</string>
+    <string name="ab_source">Quelle: %1$s, docdb.cept.org. Prüfe den aktuellen Umsetzungsstand und nationale Fußnoten vor der Reise im Dokument.</string>
+    <string name="ab_outside_cept">Land außerhalb CEPT T/R 61-01 – Genehmigung erforderlich</string>
+    <string name="ab_transmit_as_value">Senden als %1$s</string>
+    <string name="ab_guest_prefix">Präfix für Gäste: %1$s/</string>
+</resources>

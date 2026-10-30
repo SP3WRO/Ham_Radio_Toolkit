@@ -1,0 +1,85 @@
+# key	en	pl	de	cs	sk
+settings_not_set	Not set	Nie ustawiono	Nicht festgelegt	Nenastaveno	Nenastavené
+settings_set	Set	Ustawiono	Festgelegt	Nastaveno	Nastavené
+settings_none	None	Brak	Keine	Žádný	Žiadny
+settings_section_appearance	Appearance	Wygląd	Darstellung	Vzhled	Vzhľad
+settings_theme	Theme	Motyw	Design	Motiv	Motív
+settings_theme_system	Follow system	Zgodny z systemem	Wie System	Podle systému	Podľa systému
+settings_theme_light	Light	Jasny	Hell	Světlý	Svetlý
+settings_theme_dark	Dark	Ciemny	Dunkel	Tmavý	Tmavý
+settings_section_station	My station	Moja stacja	Meine Station	Moje stanice	Moja stanica
+settings_callsign	Callsign	Znak wywoławczy	Rufzeichen	Volací značka	Volacia značka
+settings_callsign_empty	None – listener mode (APRS receive only, no position beacon)	Brak – tryb nasłuchowca (APRS tylko odbiór, bez nadawania pozycji)	Keins – Hörermodus (APRS nur Empfang, keine Positionsaussendung)	Žádná – posluchačský režim (APRS jen příjem, bez vysílání polohy)	Žiadna – poslucháčsky režim (APRS len príjem, bez vysielania polohy)
+settings_callsign_placeholder	e.g. SP3ABC	np. SP3ABC	z. B. DL1ABC	např. OK1ABC	napr. OM3ABC
+settings_callsign_invalid	This doesn't look like an amateur callsign (e.g. SP3ABC). Leave it empty if you have no callsign.	To nie wygląda na znak krótkofalarski (np. SP3ABC). Zostaw puste, jeśli nie masz znaku.	Das sieht nicht nach einem Amateurfunkrufzeichen aus (z. B. DL1ABC). Leer lassen, wenn du keins hast.	Tohle nevypadá jako radioamatérská značka (např. OK1ABC). Pokud značku nemáš, nech pole prázdné.	Toto nevyzerá ako rádioamatérska značka (napr. OM3ABC). Ak značku nemáš, nechaj pole prázdne.
+settings_locator	QTH locator	Lokator QTH	QTH-Locator	Lokátor QTH	Lokátor QTH
+settings_locator_empty	From GPS (enter it if your station is somewhere else than the phone)	Z GPS (wpisz, jeśli stacja jest gdzie indziej niż telefon)	Aus GPS (eingeben, wenn die Station woanders ist als das Telefon)	Z GPS (zadej, pokud je stanice jinde než telefon)	Z GPS (zadaj, ak je stanica inde ako telefón)
+settings_locator_placeholder	e.g. JO82LK	np. JO82LK	z. B. JO62QM	např. JO70FD	napr. JN88NC
+settings_locator_invalid	Invalid locator	Niepoprawny lokator	Ungültiger Locator	Neplatný lokátor	Neplatný lokátor
+settings_section_dx	DX Cluster and propagation	DX Cluster i propagacja	DX-Cluster und Ausbreitung	DX Cluster a šíření	DX Cluster a šírenie
+settings_dx_refresh	DX Cluster refresh	Odświeżanie DX Clustera	DX-Cluster-Aktualisierung	Obnovování DX Clusteru	Obnovovanie DX Clustera
+settings_dx_refresh_manual	Manual	Ręcznie	Manuell	Ručně	Ručne
+settings_dx_refresh_1	Every minute	Co 1 minutę	Jede Minute	Každou minutu	Každú minútu
+settings_dx_refresh_5	Every 5 minutes	Co 5 minut	Alle 5 Minuten	Každých 5 minut	Každých 5 minút
+settings_tropocast_area	Tropocast map area	Obszar mapy Tropocast	Tropocast-Kartengebiet	Oblast mapy Tropocast	Oblasť mapy Tropocast
+settings_area_europe	Europe	Europa	Europa	Evropa	Európa
+settings_area_poland	Poland and neighbours	Polska i sąsiedzi	Polen und Nachbarn	Polsko a sousedé	Poľsko a susedia
+settings_area_uk	United Kingdom	Wielka Brytania	Vereinigtes Königreich	Spojené království	Spojené kráľovstvo
+settings_area_germany	Germany	Niemcy	Deutschland	Německo	Nemecko
+settings_area_france	France	Francja	Frankreich	Francie	Francúzsko
+settings_area_spain	Spain	Hiszpania	Spanien	Španělsko	Španielsko
+settings_area_italy	Italy	Włochy	Italien	Itálie	Taliansko
+settings_area_czechia	Czechia	Czechy	Tschechien	Česko	Česko
+settings_area_croatia	Croatia	Chorwacja	Kroatien	Chorvatsko	Chorvátsko
+settings_section_repeaters	Repeaters	Przemienniki	Relais	Převáděče	Prevádzače
+settings_repeater_source	Data source	Źródło danych	Datenquelle	Zdroj dat	Zdroj údajov
+settings_source_poland	%1$s (Poland)	%1$s (Polska)	%1$s (Polen)	%1$s (Polsko)	%1$s (Poľsko)
+settings_source_world	%1$s (world)	%1$s (świat)	%1$s (weltweit)	%1$s (svět)	%1$s (svet)
+settings_source_europe	%1$s (Europe)	%1$s (Europa)	%1$s (Europa)	%1$s (Evropa)	%1$s (Európa)
+settings_source_token	%1$s (token required)	%1$s (wymaga tokenu)	%1$s (Token erforderlich)	%1$s (vyžaduje token)	%1$s (vyžaduje token)
+settings_repeater_note	Outside Poland the source switches automatically to “HearHam + repeatermap.de” when the app starts, and back to the previous one when you return. A manual choice takes priority. DMR details (network, talk groups) come from RadioID.net.	Poza Polską źródło przełącza się samo przy uruchomieniu aplikacji na „HearHam + repeatermap.de”, a po powrocie wraca do poprzedniego. Wybór ręczny ma pierwszeństwo. Szczegóły DMR (sieć, talkgrupy) z RadioID.net.	Außerhalb Polens wechselt die Quelle beim Start der App automatisch auf „HearHam + repeatermap.de“ und nach der Rückkehr wieder zurück. Eine manuelle Auswahl hat Vorrang. DMR-Details (Netz, Sprechgruppen) kommen von RadioID.net.	Mimo Polsko se zdroj při spuštění aplikace sám přepne na „HearHam + repeatermap.de“ a po návratu se vrátí k předchozímu. Ruční volba má přednost. Podrobnosti DMR (síť, talkgroupy) z RadioID.net.	Mimo Poľska sa zdroj pri spustení aplikácie sám prepne na „HearHam + repeatermap.de“ a po návrate sa vráti k predchádzajúcemu. Ručná voľba má prednosť. Podrobnosti DMR (sieť, talkgroupy) z RadioID.net.
+settings_search_radius	Search radius	Promień wyszukiwania	Suchradius	Poloměr hledání	Polomer hľadania
+settings_aprs_ssid_placeholder	e.g. -7 (car), -9 (on foot)	np. -7 (samochód), -9 (pieszo)	z. B. -7 (Auto), -9 (zu Fuß)	např. -7 (auto), -9 (pěšky)	napr. -7 (auto), -9 (pešo)
+settings_aprs_ssid_invalid	SSID from 0 to 15	SSID od 0 do 15	SSID von 0 bis 15	SSID od 0 do 15	SSID od 0 do 15
+settings_aprs_icon	Map icon	Ikona na mapie	Kartensymbol	Ikona na mapě	Ikona na mape
+settings_aprs_icon_car	Car	Samochód	Auto	Auto	Auto
+settings_aprs_icon_motorcycle	Motorcycle	Motocykl	Motorrad	Motocykl	Motocykel
+settings_aprs_icon_van	Van	Van	Transporter	Dodávka	Dodávka
+settings_aprs_icon_walker	On foot	Pieszo	Zu Fuß	Pěšky	Pešo
+settings_aprs_icon_home	Home	Dom	Haus	Dům	Dom
+settings_aprs_icon_tent	Tent / portable	Namiot / portable	Zelt / portabel	Stan / portable	Stan / portable
+settings_aprs_comment	Beacon comment	Komentarz w beaconie	Bakenkommentar	Komentář v majáku	Komentár v majáku
+settings_aprs_radius	Listening radius	Promień nasłuchu	Empfangsradius	Poloměr příjmu	Polomer príjmu
+settings_section_programs	Activations – reference list	Aktywacje – lista obiektów	Aktivierungen – Referenzliste	Aktivace – seznam objektů	Aktivácie – zoznam objektov
+settings_wwff_desc	World Wide Flora & Fauna (in Poland: SPFF)	World Wide Flora & Fauna (w Polsce: SPFF)	World Wide Flora & Fauna (in Polen: SPFF)	World Wide Flora & Fauna (v Polsku: SPFF)	World Wide Flora & Fauna (v Poľsku: SPFF)
+settings_section_notifications	Notifications	Powiadomienia	Benachrichtigungen	Oznámení	Upozornenia
+settings_storms	Geomagnetic storms	Burze geomagnetyczne	Geomagnetische Stürme	Geomagnetické bouře	Geomagnetické búrky
+settings_storms_desc	Kp above the threshold and NOAA warnings, checked every hour	Kp powyżej progu i ostrzeżenia NOAA, sprawdzane co godzinę	Kp über dem Schwellenwert und NOAA-Warnungen, stündlich geprüft	Kp nad prahem a varování NOAA, kontrolováno každou hodinu	Kp nad prahom a varovania NOAA, kontrolované každú hodinu
+settings_kp_threshold	Kp threshold	Próg Kp	Kp-Schwelle	Práh Kp	Prah Kp
+settings_kp_4	Kp 4 (elevated activity)	Kp 4 (podwyższona aktywność)	Kp 4 (erhöhte Aktivität)	Kp 4 (zvýšená aktivita)	Kp 4 (zvýšená aktivita)
+settings_kp_5	Kp 5 (G1 storm)	Kp 5 (burza G1)	Kp 5 (Sturm G1)	Kp 5 (bouře G1)	Kp 5 (búrka G1)
+settings_new_countries	New countries in the DX Cluster	Nowe kraje w DX Clusterze	Neue Länder im DX-Cluster	Nové země v DX Clusteru	Nové krajiny v DX Clusteri
+settings_new_countries_desc	Spots of DXCC entities not yet in your log, every 15 minutes	Spoty krajów DXCC, których nie ma jeszcze w logu, co 15 minut	Spots von DXCC-Gebieten, die noch nicht im Log sind, alle 15 Minuten	Spoty zemí DXCC, které ještě nemáš v deníku, každých 15 minut	Spoty krajín DXCC, ktoré ešte nemáš v denníku, každých 15 minút
+settings_watched_sats	Watched satellites	Obserwowane satelity	Beobachtete Satelliten	Sledované družice	Sledované družice
+settings_watched_sats_empty	None – turn reminders on in a satellite card (Toolbox → Satellites)	Brak – włącz przypomnienia w karcie satelity (Przybornik → Satelity)	Keine – Erinnerungen in der Satellitenkarte einschalten (Werkzeuge → Satelliten)	Žádné – zapni připomínky v kartě družice (Nástroje → Družice)	Žiadne – zapni pripomienky v karte družice (Nástroje → Družice)
+settings_pass_reminder	Reminder before a pass	Przypomnienie przed przelotem	Erinnerung vor dem Überflug	Připomínka před přeletem	Pripomienka pred preletom
+settings_minutes_before_aos	%1$d min before AOS	%1$d min przed AOS	%1$d min vor AOS	%1$d min před AOS	%1$d min pred AOS
+settings_min_elevation	Only passes above	Tylko przeloty powyżej	Nur Überflüge über	Jen přelety nad	Len prelety nad
+settings_elevation_value	%1$d° elevation	%1$d° elewacji	%1$d° Elevation	%1$d° elevace	%1$d° elevácie
+settings_exact_alarms	Allow exact alarms	Zezwól na dokładne alarmy	Exakte Alarme erlauben	Povolit přesné budíky	Povoliť presné budíky
+settings_exact_alarms_desc	Without this permission a pass reminder may come a few minutes late	Bez tej zgody przypomnienie o przelocie może przyjść kilka minut później	Ohne diese Erlaubnis kann die Überflugerinnerung einige Minuten später kommen	Bez tohoto povolení může připomínka přeletu přijít o několik minut později	Bez tohto povolenia môže pripomienka preletu prísť o niekoľko minút neskôr
+settings_widget	“Propagation and satellites” widget	Widżet „Propagacja i satelity”	Widget „Ausbreitung und Satelliten“	Widget „Šíření a družice“	Widget „Šírenie a družice“
+settings_widget_desc	Add it from the home screen: long-press an empty spot → Widgets	Dodasz go z ekranu głównego: przytrzymaj puste miejsce → Widżety	Über den Startbildschirm hinzufügen: auf eine freie Stelle lange drücken → Widgets	Přidáš ho z domovské obrazovky: podrž prázdné místo → Widgety	Pridáš ho z domovskej obrazovky: podrž prázdne miesto → Widgety
+settings_section_accounts	Service accounts	Konta w serwisach	Dienstkonten	Účty ve službách	Účty v službách
+settings_security	Security	Bezpieczeństwo	Sicherheit	Zabezpečení	Zabezpečenie
+settings_security_desc	Passwords and keys are stored only on this phone and are not included in cloud backups	Hasła i klucze są zapisane tylko w tym telefonie i nie trafiają do kopii zapasowej w chmurze	Passwörter und Schlüssel werden nur auf diesem Telefon gespeichert und nicht in Cloud-Backups übernommen	Hesla a klíče jsou uloženy jen v tomto telefonu a nedostávají se do zálohy v cloudu	Heslá a kľúče sú uložené len v tomto telefóne a nedostávajú sa do zálohy v cloude
+settings_login	%1$s – login	%1$s – login	%1$s – Benutzername	%1$s – přihlašovací jméno	%1$s – prihlasovacie meno
+settings_password	%1$s – password	%1$s – hasło	%1$s – Passwort	%1$s – heslo	%1$s – heslo
+settings_hamqth_desc	Callsign lookup in the logger (free account at hamqth.com)	Wyszukiwanie znaków w loggerze (darmowe konto na hamqth.com)	Rufzeichensuche im Logbuch (kostenloses Konto auf hamqth.com)	Hledání značek v deníku (bezplatný účet na hamqth.com)	Hľadanie značiek v denníku (bezplatný účet na hamqth.com)
+settings_qrzcq_desc	Additional source of station locators (account at qrzcq.com)	Dodatkowe źródło lokatorów stacji (konto na qrzcq.com)	Zusätzliche Quelle für Stationslocatoren (Konto auf qrzcq.com)	Další zdroj lokátorů stanic (účet na qrzcq.com)	Ďalší zdroj lokátorov staníc (účet na qrzcq.com)
+settings_qrz_key	QRZ Logbook – API key	QRZ Logbook – klucz API	QRZ Logbook – API-Schlüssel	QRZ Logbook – klíč API	QRZ Logbook – kľúč API
+settings_qrz_key_desc	From the logbook settings at qrz.com; uploading requires a QRZ subscription	Z ustawień logbooka na qrz.com; wysyłka wymaga subskrypcji QRZ	Aus den Logbuch-Einstellungen auf qrz.com; das Hochladen erfordert ein QRZ-Abo	Z nastavení logbooku na qrz.com; odesílání vyžaduje předplatné QRZ	Z nastavení logbooku na qrz.com; odosielanie vyžaduje predplatné QRZ
+settings_rb_token	RepeaterBook – app token	RepeaterBook – token aplikacji	RepeaterBook – App-Token	RepeaterBook – token aplikace	RepeaterBook – token aplikácie
+settings_rb_token_desc	rbuapp_… token from the API Apps panel at repeaterbook.com (“RepeaterBook” repeater source)	Token rbuapp_… z panelu API Apps na repeaterbook.com (źródło przemienników „RepeaterBook”)	Token rbuapp_… aus dem Bereich API Apps auf repeaterbook.com (Relaisquelle „RepeaterBook“)	Token rbuapp_… z panelu API Apps na repeaterbook.com (zdroj převáděčů „RepeaterBook“)	Token rbuapp_… z panelu API Apps na repeaterbook.com (zdroj prevádzačov „RepeaterBook“)
+settings_rb_contact	RepeaterBook – contact e-mail	RepeaterBook – e-mail kontaktowy	RepeaterBook – Kontakt-E-Mail	RepeaterBook – kontaktní e-mail	RepeaterBook – kontaktný e-mail
+settings_rb_contact_desc	RepeaterBook requires a contact address in requests	RepeaterBook wymaga adresu kontaktowego w zapytaniach	RepeaterBook verlangt eine Kontaktadresse in den Anfragen	RepeaterBook vyžaduje v dotazech kontaktní adresu	RepeaterBook vyžaduje v dopytoch kontaktnú adresu

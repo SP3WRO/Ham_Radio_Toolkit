@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_tools.tsv -->
+<resources>
+    <string name="act_title">Orte zum Aktivieren</string>
+    <string name="act_sync">Neueste Datenbanken laden</string>
+    <string name="act_syncing">Lade POTA-, SOTA- und WWFF-Referenzen in deiner Nähe…</string>
+    <string name="act_none">Keine Referenzen im Umkreis von %1$d km.\nPrüfe die Filter in den Einstellungen.</string>
+    <string name="act_no_position">Keine Position – Standort einschalten, um Referenzen in der Nähe zu laden</string>
+    <string name="act_download_failed">Datenbanken konnten nicht geladen werden – Verbindung prüfen</string>
+    <string name="act_sync_error">Synchronisierungsfehler: %1$s</string>
+    <string name="bcn_title">NCDXF/IARU-Baken</string>
+    <string name="bcn_info">Jede Bake sendet 10 s: ihr Rufzeichen (22 WPM) und vier Striche mit 100 W / 10 W / 1 W / 100 mW. Hörst du die Bake, gibt es Ausbreitung in ihre Richtung.</string>
+    <string name="bcn_next">danach: %1$s</string>
+    <string name="bcn_all">Alle Baken – antippen, um die Sendezeit zu sehen</string>
+    <string name="bcn_on_air_now">SENDET JETZT</string>
+    <string name="bcn_in">in %1$s</string>
+    <string name="bcn_off_note">Einige Baken sind zeitweise abgeschaltet – aktueller Stand: ncdxf.org/beacon</string>
+    <string name="bp_title">IARU-Region-%1$d-Bandplan</string>
+    <string name="bp_region">Region %1$d</string>
+    <string name="bp_you_are_here"> (du bist hier)</string>
+    <string name="bp_fm_calling">FM-Anruf: %1$s</string>
+    <string name="bp_emergency">Notfunk (KW): %1$s</string>
+    <string name="bp_r1_poland">Plan der Region 1 unter Berücksichtigung der Praxis in Polen. </string>
+    <string name="bp_source_note">Quelle: %1$s. Der IARU-Bandplan ist eine Empfehlung – verbindlich sind die nationalen Vorschriften.</string>
+    <string name="gl_title">Graulinie</string>
+    <string name="gl_legend">Die gelbe Linie ist die Graulinie. Der rote Punkt ist dein QTH.</string>
+    <string name="gl_your_station">Deine Station (QTH)</string>
+    <string name="gl_allow_gps">GPS erlauben</string>
+    <string name="gl_waiting_gps">Warte auf GPS-Standort…</string>
+    <string name="gl_sunrise">Sonnenaufgang:</string>
+    <string name="gl_sunset">Sonnenuntergang:</string>
+    <string name="gl_polar">Kein Sonnenauf-/-untergang (Polarnacht/-tag)</string>
+    <string name="gl_about">Über die Graulinie</string>
+    <string name="gl_about_text">Die Graulinie (Terminator) ist der Streifen an der Grenze zwischen Tag und Nacht. Die Ionosphäre verhält sich dort besonders – die D-Schicht (die niedrigere Frequenzen dämpft) verschwindet vor Einbruch der Nacht, während die F-Schichten noch genug ionisiert sind, um Funkwellen zu reflektieren.\n\nDadurch können Stationen auf derselben Graulinie ungewöhnlich weite DX-Verbindungen (Graulinien-Ausbreitung) auf 160 m, 80 m oder 40 m mit minimalen Signalverlusten herstellen.</string>
+    <string name="coax_title">Kabeldämpfung</string>
+    <string name="coax_choose">Kabel wählen</string>
+    <string name="coax_freq">Frequenz (MHz)</string>
+    <string name="coax_length">Kabellänge (m)</string>
+    <string name="coax_power">Eingangsleistung (W)</string>
+    <string name="coax_no_data">Keine Daten oder die Frequenz ist für dieses Kabel zu hoch.</string>
+    <string name="coax_result">Ergebnis für %1$s</string>
+    <string name="coax_attenuation">Dämpfung</string>
+    <string name="coax_power_at_antenna">Leistung an der Antenne</string>
+    <string name="coax_loss_percent">Prozentualer Verlust: %1$s %%</string>
+    <string name="coax_power_lost">Im Kabel verlorene Leistung (Wärme): %1$s W</string>
+    <string name="coax_credit">Rechner basierend auf dem Projekt Coax Calculator\nAutor: SQ3SWF Olgierd</string>
+</resources>

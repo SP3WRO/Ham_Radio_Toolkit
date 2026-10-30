@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Języki aplikacji widoczne w ustawieniach systemu Android 13+ (Ustawienia → Aplikacje → Język) -->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="pl" />
+    <locale android:name="de" />
+    <locale android:name="cs" />
+    <locale android:name="sk" />
+</locale-config>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_sat.tsv -->
+<resources>
+    <string name="sat_title">Satellites</string>
+    <string name="sat_update_online">Update online</string>
+    <string name="sat_search">Search satellite…</string>
+    <string name="sat_list_header">Satellites and passes (%1$d):</string>
+    <string name="sat_calculating">Calculating: %1$d/%2$d</string>
+    <string name="sat_none">No satellites match the criteria.</string>
+    <string name="sat_in_pass">Overhead! Ends in: %1$dm %2$ds</string>
+    <string name="sat_aos_los">AOS: %1$s (in %2$s) | LOS: %3$s</string>
+    <string name="sat_calculating_pass">Calculating pass…</string>
+    <string name="sat_remind">Remind me of passes</string>
+    <string name="sat_freq_amsat">Frequencies (AMSAT DB):</string>
+    <string name="sat_freq_satnogs">Frequencies (SatNOGS):</string>
+    <string name="sat_freq_builtin">Frequencies (built-in):</string>
+    <string name="sat_callsign">Callsign: %1$s</string>
+    <string name="sat_none_short">none</string>
+    <string name="sat_no_freqs">No registered frequencies.</string>
+    <string name="sat_skyplot">SKY PLOT</string>
+    <string name="sat_satellite">Satellite</string>
+    <string name="sat_azimuth">Azimuth (direction)</string>
+    <string name="sat_elevation">Elevation (height)</string>
+    <string name="sat_pick_hint">Pick a satellite from the list below to see its position on the compass.</string>
+    <string name="loc_title">Locator and bearings</string>
+    <string name="loc_not_recognized">Not recognised: enter a locator (JO82LK), coordinates (52.4, 16.9) or a callsign</string>
+    <string name="loc_search_error">Search error: %1$s</string>
+    <string name="loc_my_station">My station</string>
+    <string name="loc_manual">locator entered manually</string>
+    <string name="loc_from_gps">from GPS</string>
+    <string name="loc_no_position">No position – turn on location or enter your locator.</string>
+    <string name="loc_my_locator">My locator (optional)</string>
+    <string name="loc_use_gps">Use GPS</string>
+    <string name="loc_refresh_gps">Refresh GPS position</string>
+    <string name="loc_distance_bearing">Distance and bearing</string>
+    <string name="loc_target_label">Locator, coordinates or callsign</string>
+    <string name="loc_target_hint">e.g. FN31pr, 40.7, -74.0 or VK2ABC</string>
+    <string name="loc_target_locator">Target locator: %1$s</string>
+    <string name="loc_short_path">Short path (SP)</string>
+    <string name="loc_long_path">Long path (LP)</string>
+    <string name="loc_enlarge_map">Enlarge map</string>
+    <string name="loc_map_note">Azimuthal map: direction from the centre = antenna bearing, distance from the centre = great-circle distance. Yellow line – short path, pink dashed – long path. Tap the map to enlarge it.</string>
+    <string name="loc_my_station_value">My station: %1$s</string>
+    <string name="loc_coords_to_locator">Coordinates → locator</string>
+    <string name="loc_lat">Lat. (N+)</string>
+    <string name="loc_lon">Lon. (E+)</string>
+    <string name="loc_locator_value">Locator %1$s</string>
+    <string name="loc_point">Point %1$s°, %2$s°</string>
+    <string name="loc_no_locator_for">We have no locator data for station %1$s</string>
+    <string name="live_title">Live activations</string>
+    <string name="live_count">%1$d spots</string>
+    <string name="live_nearest">Nearest</string>
+    <string name="live_error">Error: %1$s</string>
+    <string name="live_sota_note">SOTA spots are not shown: the SOTA API terms require prior approval from the SOTA Management Team for apps (including those built with the help of AI).</string>
+    <string name="live_logged">Logged %1$s @ %2$s</string>
+    <string name="live_logged_badge">LOGGED</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 11 i starsze: hasła i klucze do serwisów nie trafiają do kopii zapasowej -->
+<full-backup-content>
+    <exclude domain="file" path="datastore/service_credentials.preferences_pb" />
+</full-backup-content>

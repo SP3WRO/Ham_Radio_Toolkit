@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_contests.tsv -->
+<resources>
+    <string name="ct_filter_polish">Polnische</string>
+    <string name="ct_filter_international">International</string>
+    <string name="ct_vhf">UKW</string>
+    <string name="ct_filter_digi">Digital</string>
+    <string name="ct_filter_local">Aufenthaltsland</string>
+    <string name="ct_title">Contestkalender</string>
+    <string name="ct_show_weekly">Wöchentliche Contests anzeigen (CWT, MWC, Sprints…)</string>
+    <string name="ct_show_russian">Russische nationale und regionale Contests anzeigen (QRZ.RU)</string>
+    <string name="ct_running_now">Laufen gerade</string>
+    <string name="ct_none">Keine Contests für den gewählten Filter.</string>
+    <string name="ct_footer">Daten: Contestkalender SP9CXN, VHF/UHF/SHF-Contestkalender des Vereins Polski Klub UKF und der Contestkalender von QRZ.RU (russische Namen von der App ins Englische übersetzt). Die Kalender werden alle 12 Stunden aktualisiert. Prüfe vor dem Start den Termin in der Ausschreibung.</string>
+    <string name="ct_calendar_of">Kalender %1$s</string>
+    <string name="ct_offline">Keine Verbindung und keine gespeicherten Kalender – integrierter Kalender (ausgewählte große Contests, Termine aus den Regeln berechnet)</string>
+    <string name="ct_unavailable">%1$s: nicht verfügbar</string>
+    <string name="ct_copy_from">%1$s: Kopie vom %2$s</string>
+    <string name="ct_running_left">LÄUFT – endet in %1$s</string>
+    <string name="ct_starts_in">Start in %1$s</string>
+    <string name="ct_organizer">Veranstalter</string>
+    <string name="ct_exchange">Austausch</string>
+    <string name="ct_log_deadline">Logeinsendeschluss</string>
+    <string name="ct_organizer_page">Seite des Veranstalters</string>
+    <string name="ct_rules">Ausschreibung</string>
+    <string name="ct_search_rules">Ausschreibung suchen</string>
+    <string name="ct_rules_pl">Ausschreibung (PL)</string>
+    <string name="ct_logs_by">Logs bis: %1$s</string>
+    <string name="ct_rules_pl_value">Ausschreibung (PL): %1$s</string>
+    <plurals name="dur_days">
+        <item quantity="one">%1$d Tag</item>
+        <item quantity="other">%1$d Tage</item>
+    </plurals>
+    <string name="dur_hours">%1$d Std.</string>
+    <string name="dur_hours_minutes">%1$d Std. %2$d Min.</string>
+    <string name="dur_minutes">%1$d Min.</string>
+    <string name="ct_mode_cw">CW</string>
+    <string name="ct_mode_ssb">SSB</string>
+    <string name="ct_qrp">QRP</string>
+</resources>

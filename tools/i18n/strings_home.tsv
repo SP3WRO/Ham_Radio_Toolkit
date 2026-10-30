@@ -1,0 +1,21 @@
+# key	en	pl	de	cs	sk
+home_hello	Hello!	Witaj!	Hallo!	Ahoj!	Ahoj!
+home_hello_call	Hello, 	Witaj, 	Hallo, 	Ahoj, 	Ahoj,
+home_utc_time	UTC time	Czas UTC	UTC-Zeit	Čas UTC	Čas UTC
+home_date_local	%1$s  •  local time %2$s	%1$s  •  czas lokalny %2$s	%1$s  •  Ortszeit %2$s	%1$s  •  místní čas %2$s	%1$s  •  miestny čas %2$s
+home_qth_locator	QTH locator	Lokator QTH	QTH-Locator	Lokátor QTH	Lokátor QTH
+home_no_location	No location access	Brak dostępu do lokalizacji	Kein Standortzugriff	Bez přístupu k poloze	Bez prístupu k polohe
+home_allow_location	Allow location	Zezwól na lokalizację	Standort erlauben	Povolit polohu	Povoliť polohu
+home_waiting_gps	Waiting for a GPS fix…	Oczekiwanie na pozycję GPS…	Warte auf GPS-Position…	Čekání na polohu GPS…	Čaká sa na polohu GPS…
+home_asl	 a.s.l.	 n.p.m.	 ü. NN	 n. m.	 n. m.
+home_no_altitude	no altitude	brak wysokości	keine Höhe	bez výšky	bez výšky
+home_aprs_connecting	Connecting to the APRS-IS network…	Łączenie z siecią APRS-IS…	Verbinde mit dem APRS-IS-Netz…	Připojování k síti APRS-IS…	Pripája sa k sieti APRS-IS…
+home_aprs_no_stations	Connected – no stations within %1$d km	Połączono – brak stacji w promieniu %1$d km	Verbunden – keine Stationen im Umkreis von %1$d km	Připojeno – žádné stanice v okruhu %1$d km	Pripojené – žiadne stanice v okruhu %1$d km
+plural:home_aprs_stations	one:%1$d station within %2$d km|other:%1$d stations within %2$d km	one:%1$d stacja w promieniu %2$d km|few:%1$d stacje w promieniu %2$d km|many:%1$d stacji w promieniu %2$d km|other:%1$d stacji w promieniu %2$d km	one:%1$d Station im Umkreis von %2$d km|other:%1$d Stationen im Umkreis von %2$d km	one:%1$d stanice v okruhu %2$d km|few:%1$d stanice v okruhu %2$d km|many:%1$d stanice v okruhu %2$d km|other:%1$d stanic v okruhu %2$d km	one:%1$d stanica v okruhu %2$d km|few:%1$d stanice v okruhu %2$d km|many:%1$d stanice v okruhu %2$d km|other:%1$d staníc v okruhu %2$d km
+home_nearest_repeater	Nearest repeater	Najbliższy przemiennik	Nächstes Relais	Nejbližší převáděč	Najbližší prevádzač
+home_tx	Transmit	Nadawanie	Senden	Vysílání	Vysielanie
+home_rx	Receive	Odbiór	Empfang	Příjem	Príjem
+home_mode	Mode	Emisja	Betriebsart	Druh provozu	Druh prevádzky
+home_none	none	brak	keiner	žádný	žiadny
+home_connected	connected	połączono	verbunden	připojeno	pripojené
+home_disconnected	disconnected	rozłączono	getrennt	odpojeno	odpojené

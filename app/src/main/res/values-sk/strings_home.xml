@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_home.tsv -->
+<resources>
+    <string name="home_hello">Ahoj!</string>
+    <string name="home_hello_call">Ahoj,</string>
+    <string name="home_utc_time">Čas UTC</string>
+    <string name="home_date_local">%1$s  •  miestny čas %2$s</string>
+    <string name="home_qth_locator">Lokátor QTH</string>
+    <string name="home_no_location">Bez prístupu k polohe</string>
+    <string name="home_allow_location">Povoliť polohu</string>
+    <string name="home_waiting_gps">Čaká sa na polohu GPS…</string>
+    <string name="home_asl"> n. m.</string>
+    <string name="home_no_altitude">bez výšky</string>
+    <string name="home_aprs_connecting">Pripája sa k sieti APRS-IS…</string>
+    <string name="home_aprs_no_stations">Pripojené – žiadne stanice v okruhu %1$d km</string>
+    <plurals name="home_aprs_stations">
+        <item quantity="one">%1$d stanica v okruhu %2$d km</item>
+        <item quantity="few">%1$d stanice v okruhu %2$d km</item>
+        <item quantity="many">%1$d stanice v okruhu %2$d km</item>
+        <item quantity="other">%1$d staníc v okruhu %2$d km</item>
+    </plurals>
+    <string name="home_nearest_repeater">Najbližší prevádzač</string>
+    <string name="home_tx">Vysielanie</string>
+    <string name="home_rx">Príjem</string>
+    <string name="home_mode">Druh prevádzky</string>
+    <string name="home_none">žiadny</string>
+    <string name="home_connected">pripojené</string>
+    <string name="home_disconnected">odpojené</string>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_lookup.tsv -->
+<resources>
+    <string name="lk_min_chars">Zadej alespoň 3 znaky</string>
+    <string name="lk_unknown_prefix">Prefix nerozpoznán – zkontroluj značku</string>
+    <string name="lk_failed">Hledání selhalo: %1$s</string>
+    <string name="lk_title">Hledání značek</string>
+    <string name="lk_hint">např. SP3WRO, DL1ABC/P, VK2ABC</string>
+    <string name="lk_info">Země DXCC, zóny a místní čas fungují bez internetu (databáze cty.csv). Lokátor stanice: z PSK Reporter (digitální provozy za poslední den), z APRS-IS (poslední 2 h), z tvého deníku, z QRZCQ a HamQTH (přihlášení v Nastavení) nebo z HamDB (USA, Kanada, Německo, Česko, Austrálie). Bez lokátoru vzdálenost nezobrazujeme.</string>
+    <string name="lk_station">Stanice</string>
+    <string name="lk_not_found">Značka nebyla v dostupných databázích nalezena.</string>
+    <string name="lk_club">Klub</string>
+    <string name="lk_name">Jméno / název</string>
+    <string name="lk_uke_licence">Povolení UKE</string>
+    <string name="lk_valid_to">Platí do</string>
+    <string name="lk_licence_class">Třída licence</string>
+    <string name="lk_sources">Zdroje: %1$s</string>
+    <string name="lk_dxcc_country">Země DXCC</string>
+    <string name="lk_country">Země</string>
+    <string name="lk_main_prefix">Hlavní prefix</string>
+    <string name="lk_dxcc_number">Číslo DXCC</string>
+    <string name="lk_continent">Kontinent</string>
+    <string name="lk_zones">Zóna CQ / ITU</string>
+    <string name="lk_locator_bearing">Lokátor a směr antény</string>
+    <string name="lk_no_locator">Pro tuto stanici nemáme údaje o lokátoru – vzdálenost a směr nejsou k dispozici.</string>
+    <string name="lk_ask_locator">Požádej protistanici o lokátor. Pokud vysílá FT8/FT4, lokátor se může objevit v PSK Reporter.</string>
+    <string name="lk_short_path">Krátká cesta</string>
+    <string name="lk_long_path">Dlouhá cesta</string>
+    <string name="lk_no_my_position">Tvoje poloha není známa – zapni polohu nebo zadej lokátor v „Lokátor a azimut“.</string>
+    <string name="lk_local_time">Místní čas</string>
+    <string name="lk_tz_note">Základní časové pásmo země, bez letního času; velké země mají více pásem.</string>
+    <string name="lk_hamqth_hint">Volitelně: přihlášení HamQTH v Nastavení → Účty ve službách doplní lokátor a informace o QSL (bureau, LoTW, eQSL).</string>
+    <string name="lk_open_settings">Otevřít nastavení</string>
+    <string name="lk_bureau">Bureau</string>
+    <string name="lk_not_in_hamqth">Značka není v HamQTH</string>
+    <string name="lk_your_log">Tvůj deník</string>
+    <string name="lk_no_qso_yet">S touto značkou zatím nemáš žádné spojení.</string>
+    <plurals name="lk_qso_count">
+        <item quantity="one">%1$d spojení</item>
+        <item quantity="few">%1$d spojení</item>
+        <item quantity="many">%1$d spojení</item>
+        <item quantity="other">%1$d spojení</item>
+    </plurals>
+    <string name="lk_bands_modes">Pásma a provozy: %1$s</string>
+    <string name="ab_title">V zahraničí</string>
+    <string name="ab_from_gps">%1$s (z GPS)</string>
+    <string name="ab_choose_country">Vyber zemi</string>
+    <string name="ab_current_location">%1$s Aktuální poloha (%2$s)</string>
+    <string name="ab_detecting">Zjišťuji zemi z polohy… Pokud to trvá dlouho (bez internetu), vyber zemi ze seznamu.</string>
+    <string name="ab_in_poland">Jsi v Polsku – vysíláš pod vlastní značkou.</string>
+    <string name="ab_no_cept">Tato země neuplatňuje doporučení CEPT T/R 61-01.</string>
+    <string name="ab_need_permit">K vysílání je potřeba povolení místního úřadu nebo licence na základě dvoustranné dohody. Před cestou si ověř předpisy.</string>
+    <string name="ab_transmit_as">Vysílej jako</string>
+    <string name="ab_your_call">TVOJEZNAČKA</string>
+    <string name="ab_cept_member">Země CEPT – licence tř. 1 (CEPT) umožňuje vysílat během krátkého pobytu bez dalšího povolení.</string>
+    <string name="ab_cept_nonmember">Země mimo CEPT uplatňující T/R 61-01 – licence CEPT je uznávána.</string>
+    <string name="ab_equivalent">Licence rovnocenné CEPT v této zemi: %1$s</string>
+    <string name="ab_guest_prefixes">Prefixy pro hosty: %1$s</string>
+    <string name="ab_canada">Prefix závisí na provincii (VE1–VE9, VO1, VO2, VY0–VY2) – zapni polohu, aby se vybral.</string>
+    <string name="ab_how_to_sign">Telegrafií: prefix/značka s lomítkem; fonií: „prefix stroke značka“.</string>
+    <string name="ab_remember">Pamatuj</string>
+    <string-array name="ab_remember_items">
+        <item>Licence CEPT platí jen pro dočasné pobyty; při delším pobytu je potřeba místní licence.</item>
+        <item>Měj u sebe povolení (dokument CEPT) – na požádání ho musíš předložit.</item>
+        <item>Platí předpisy země pobytu: pásma, výkony a místní omezení.</item>
+        <item>Hostující stanice nemůže požadovat ochranu před rušením.</item>
+    </string-array>
+    <string name="ab_iaru_region">Region IARU %1$d</string>
+    <string name="ab_different_plan">Pozor: jiné rozdělení pásem než v Evropě (např. 40 m do 7.300 v R2).</string>
+    <string name="ab_repeaters_nearby">Převáděče v okolí</string>
+    <string name="ab_zones_time">Zóny a čas</string>
+    <string name="ab_zones">Zóna CQ %1$s • ITU %2$s</string>
+    <string name="ab_standard_time">Standardní čas: %1$s (UTC%2$s, bez letního času)</string>
+    <string name="ab_source">Zdroj: %1$s, docdb.cept.org. Aktuální stav zavedení a národní poznámky si před cestou ověř v dokumentu.</string>
+    <string name="ab_outside_cept">Země mimo CEPT T/R 61-01 – je potřeba povolení</string>
+    <string name="ab_transmit_as_value">Vysílej jako %1$s</string>
+    <string name="ab_guest_prefix">Prefix pro hosty: %1$s/</string>
+</resources>

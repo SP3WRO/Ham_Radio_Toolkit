@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_propagation.tsv -->
+<resources>
+    <string name="prop_title">Šírenie</string>
+    <string name="prop_tab_hf">KV</string>
+    <string name="prop_tab_vhf">VKV</string>
+    <string name="prop_tropocast_title">Mapa Tropocast (ICON-EU)</string>
+    <string name="prop_now">Teraz</string>
+    <string name="prop_vhf_map_desc">Mapa šírenia VKV</string>
+    <string name="prop_legend_background">pozadie</string>
+    <string name="prop_legend_marginal">okrajové</string>
+    <string name="prop_legend_weak">slabé</string>
+    <string name="prop_legend_moderate">mierne</string>
+    <string name="prop_legend_good">dobré</string>
+    <string name="prop_legend_very_good">veľmi dobré</string>
+    <string name="prop_legend_high">vysoké</string>
+    <string name="prop_legend_strong">silné</string>
+    <string name="prop_legend_very_strong">veľmi silné</string>
+    <string name="prop_solar_params">Slnečné parametre</string>
+    <string name="prop_updated">Aktualizácia: %1$s</string>
+    <string name="prop_sunspots">Škvrny (SN)</string>
+    <string name="prop_a_index">Index A</string>
+    <string name="prop_k_index">Index K</string>
+    <string name="prop_day">Deň</string>
+    <string name="prop_night">Noc</string>
+    <string name="prop_cond_good">Dobré</string>
+    <string name="prop_cond_fair">Priemerné</string>
+    <string name="prop_cond_poor">Slabé</string>
+    <string name="prop_cond_closed">Uzavreté</string>
+    <string name="prop_offline_cached">Bez pripojenia – zobrazujem naposledy stiahnuté údaje</string>
+    <string name="prop_download_error">Chyba sťahovania údajov: %1$s</string>
+    <string name="prop_tropocast_error">Mapu Tropocast sa nepodarilo stiahnuť: %1$s</string>
+</resources>

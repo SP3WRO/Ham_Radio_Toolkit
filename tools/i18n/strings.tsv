@@ -1,0 +1,84 @@
+# key	en	pl	de	cs	sk
+app_name	Ham Radio Toolkit	Ham Radio Toolkit	Ham Radio Toolkit	Ham Radio Toolkit	Ham Radio Toolkit
+# --- widżet
+widget_name	Propagation and satellites	Propagacja i satelity	Ausbreitung und Satelliten	Šíření a družice	Šírenie a družice
+widget_placeholder_indices	SFI – • A – • K –	SFI – • A – • K –	SFI – • A – • K –	SFI – • A – • K –	SFI – • A – • K –
+widget_loading	Loading…	Ładowanie…	Wird geladen…	Načítání…	Načítava sa…
+widget_description	Solar indices, HF band conditions and the next pass of a watched satellite	Wskaźniki słoneczne, warunki na pasmach KF i najbliższy przelot obserwowanego satelity	Sonnenindizes, KW-Bandbedingungen und der nächste Überflug eines beobachteten Satelliten	Sluneční indexy, podmínky na KV pásmech a nejbližší přelet sledované družice	Slnečné indexy, podmienky na KV pásmach a najbližší prelet sledovanej družice
+# --- wspólne akcje
+common_refresh	Refresh	Odśwież	Aktualisieren	Obnovit	Obnoviť
+common_settings	Settings	Ustawienia	Einstellungen	Nastavení	Nastavenia
+common_close	Close	Zamknij	Schließen	Zavřít	Zavrieť
+common_cancel	Cancel	Anuluj	Abbrechen	Zrušit	Zrušiť
+common_save	Save	Zapisz	Speichern	Uložit	Uložiť
+common_delete	Delete	Usuń	Löschen	Smazat	Odstrániť
+common_back	Back	Wstecz	Zurück	Zpět	Späť
+common_search	Search	Szukaj	Suchen	Hledat	Hľadať
+common_clear	Clear	Wyczyść	Leeren	Vymazat	Vymazať
+common_details	Details	Szczegóły	Details	Podrobnosti	Podrobnosti
+common_retry	Try again	Spróbuj ponownie	Erneut versuchen	Zkusit znovu	Skúsiť znova
+common_next	Next	Dalej	Weiter	Další	Ďalej
+common_not_now	Not now	Nie teraz	Nicht jetzt	Teď ne	Teraz nie
+common_open_page	Open page	Otwórz stronę	Seite öffnen	Otevřít stránku	Otvoriť stránku
+common_expand	Expand	Rozwiń	Ausklappen	Rozbalit	Rozbaliť
+common_collapse	Collapse	Zwiń	Einklappen	Sbalit	Zbaliť
+common_show_less	Show less	Pokaż mniej	Weniger anzeigen	Zobrazit méně	Zobraziť menej
+common_all	All	Wszystkie	Alle	Vše	Všetky
+common_no_browser	No web browser	Brak przeglądarki	Kein Webbrowser	Chybí webový prohlížeč	Chýba webový prehliadač
+common_no_calendar_app	No calendar app	Brak aplikacji kalendarza	Keine Kalender-App	Chybí aplikace kalendáře	Chýba aplikácia kalendára
+common_add_to_calendar	Add to calendar	Do kalendarza	Zum Kalender	Do kalendáře	Do kalendára
+common_unknown_error	Unknown error	Nieznany błąd	Unbekannter Fehler	Neznámá chyba	Neznáma chyba
+common_no_data	no data	brak danych	keine Daten	žádná data	žiadne údaje
+common_local_time	Local time: %1$s	Czas lokalny: %1$s	Ortszeit: %1$s	Místní čas: %1$s	Miestny čas: %1$s
+common_source	Source	Źródło	Quelle	Zdroj	Zdroj
+common_source_value	Source: %1$s	Źródło: %1$s	Quelle: %1$s	Zdroj: %1$s	Zdroj: %1$s
+common_stop	Stop	Stop	Stopp	Stop	Stop
+common_km	%1$s km	%1$s km	%1$s km	%1$s km	%1$s km
+# --- dolny pasek
+tab_home	Home	Home	Start	Domů	Domov
+tab_propagation	Propagation	Propagacja	Ausbreitung	Šíření	Šírenie
+tab_dx_cluster	DX Cluster	DX Cluster	DX-Cluster	DX Cluster	DX Cluster
+tab_logger	Logger	Logger	Logbuch	Deník	Denník
+tab_toolbox	Toolbox	Przybornik	Werkzeuge	Nástroje	Nástroje
+# --- Przybornik
+toolbox_title	Toolbox	Przybornik	Werkzeuge	Nástroje	Nástroje
+toolbox_group_on_air	On the air	Na antenie	Auf Sendung	Na pásmu	Na pásme
+toolbox_group_digital	Digital modes and CW	Emisje cyfrowe i CW	Digitale Betriebsarten und CW	Digitální provozy a CW	Digitálne prevádzky a CW
+toolbox_group_planning	Planning and maps	Planowanie i mapy	Planung und Karten	Plánování a mapy	Plánovanie a mapy
+toolbox_group_calculators	Calculators	Kalkulatory	Rechner	Kalkulačky	Kalkulačky
+toolbox_group_cheatsheets	Cheat sheets	Ściągi	Spickzettel	Taháky	Ťaháky
+toolbox_group_app	App	Aplikacja	App	Aplikace	Aplikácia
+tool_callsign_lookup	Callsign lookup	Wyszukiwarka znaków	Rufzeichensuche	Hledání značek	Hľadanie značiek
+tool_live_spots	Live activations	Aktywacje na żywo	Live-Aktivierungen	Aktivace živě	Aktivácie naživo
+tool_aprs	APRS	APRS	APRS	APRS	APRS
+tool_repeaters	Repeaters	Przemienniki	Relais	Převáděče	Prevádzače
+tool_satellites	Satellites	Satelity	Satelliten	Družice	Družice
+tool_beacons	NCDXF beacons	Beacony NCDXF	NCDXF-Baken	Majáky NCDXF	Majáky NCDXF
+tool_ft8	FT8 / FT4 decoder	Dekoder FT8 / FT4	FT8-/FT4-Decoder	Dekodér FT8 / FT4	Dekodér FT8 / FT4
+tool_rtty	RTTY decoder	Dekoder RTTY	RTTY-Decoder	Dekodér RTTY	Dekodér RTTY
+tool_horus	Balloons (Horus 4FSK)	Balony (Horus 4FSK)	Ballone (Horus 4FSK)	Balóny (Horus 4FSK)	Balóny (Horus 4FSK)
+tool_sstv	SSTV decoder	Dekoder SSTV	SSTV-Decoder	Dekodér SSTV	Dekodér SSTV
+tool_dsstv	DSSTV decoder (HamDRM)	Dekoder DSSTV (HamDRM)	DSSTV-Decoder (HamDRM)	Dekodér DSSTV (HamDRM)	Dekodér DSSTV (HamDRM)
+tool_cw_decoder	CW decoder	Dekoder CW	CW-Decoder	Dekodér CW	Dekodér CW
+tool_cw_trainer	CW trainer	Trener CW	CW-Trainer	Trenažér CW	Tréner CW
+tool_contests	Contest calendar	Kalendarz zawodów	Contestkalender	Kalendář závodů	Kalendár pretekov
+tool_awards	Awards	Dyplomy	Diplome	Diplomy	Diplomy
+tool_abroad	Abroad	Za granicą	Im Ausland	V zahraničí	V zahraničí
+tool_locator	Locator and bearing	Lokator i azymut	Locator und Richtung	Lokátor a azimut	Lokátor a azimut
+tool_grayline	Gray line	Szara linia	Graulinie	Šedá linie	Sivá línia
+tool_bandplan	Band plan	Bandplan	Bandplan	Kmitočtový plán	Kmitočtový plán
+tool_activations	Activation references	Obiekty do aktywacji	Aktivierungsreferenzen	Objekty k aktivaci	Objekty na aktiváciu
+tool_calculators	Antennas, SWR and power	Anteny, SWR i zasilanie	Antennen, SWR und Stromversorgung	Antény, PSV a napájení	Antény, PSV a napájanie
+tool_coax	Cable loss	Tłumienność kabli	Kabeldämpfung	Útlum kabelů	Útlm káblov
+tool_dxcc	DXCC entities	Kraje DXCC	DXCC-Gebiete	Země DXCC	Krajiny DXCC
+tool_qcodes	Q codes	Kody Q	Q-Gruppen	Q-kódy	Q-kódy
+tool_rst	RST reports	Raporty RST	RST-Rapporte	Reporty RST	Reporty RST
+tool_sp_districts	SP call areas	Okręgi SP	SP-Rufzeichenbezirke	Oblasti SP	Oblasti SP
+tool_slang	Ham slang	Slang	Amateurfunk-Jargon	Radioamatérský slang	Rádioamatérsky slang
+tool_morse	Morse code	Alfabet Morse'a	Morsealphabet	Morseova abeceda	Morseova abeceda
+tool_phonetic	Phonetic alphabet	Literowanie	Buchstabieralphabet	Hláskovací abeceda	Hláskovacia abeceda
+tool_about	About	O programie	Über die App	O aplikaci	O aplikácii
+# --- język (Ustawienia)
+settings_language	Language	Język	Sprache	Jazyk	Jazyk
+settings_language_system	System language	Język systemu	Systemsprache	Jazyk systému	Jazyk systému
+settings_language_hint	Translations were made with the help of AI – corrections are welcome on GitHub.	Tłumaczenia powstały z pomocą AI – poprawki mile widziane na GitHubie.	Die Übersetzungen entstanden mit Hilfe von KI – Korrekturen sind auf GitHub willkommen.	Překlady vznikly s pomocí AI – opravy jsou na GitHubu vítány.	Preklady vznikli s pomocou AI – opravy sú na GitHube vítané.

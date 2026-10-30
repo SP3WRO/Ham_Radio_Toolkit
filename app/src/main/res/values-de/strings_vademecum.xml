@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_vademecum.tsv -->
+<resources>
+    <string name="vad_title">Spickzettel</string>
+    <string name="vad_tab_qcodes">Q-Gruppen</string>
+    <string name="vad_tab_reports">Rapporte</string>
+    <string name="vad_tab_areas">SP-Bezirke</string>
+    <string name="vad_tab_slang">Abkürzungen</string>
+    <string name="vad_tab_morse">Morse</string>
+    <string name="vad_tab_phonetic">Buchstabieren</string>
+    <string name="vad_search_dxcc">Land oder Präfix suchen…</string>
+    <string name="vad_continent">Kontinent: %1$s</string>
+    <string name="rst_title">Das RST-Rapportsystem</string>
+    <string name="rst_r">R – Lesbarkeit (Readability)</string>
+    <string name="rst_r_scale">1 – Unlesbar\n2 – Kaum lesbar, nur einzelne Wörter\n3 – Mit großen Schwierigkeiten lesbar\n4 – Fast ohne Schwierigkeiten lesbar\n5 – Einwandfrei lesbar</string>
+    <string name="rst_s">S – Signalstärke (Strength)</string>
+    <string name="rst_s_scale">1 – Kaum wahrnehmbar\n2 – Sehr schwach\n3 – Schwach\n4 – Ausreichend\n5 – Ziemlich gut\n6 – Gut\n7 – Mäßig stark\n8 – Stark\n9 – Sehr stark</string>
+    <string name="rst_s_note">Häufig werden Rapporte wie S9+10 dB oder S9+20 dB gegeben – das bedeutet eine Signalstärke über der Skala (am S-Meter gemessen).</string>
+    <string name="rst_t">T – Ton (Tone) [nur CW]</string>
+    <string name="rst_t_scale">1 – Sehr rauer, breiter Wechselstromton\n2 – Sehr rauer, harter Ton\n3 – Rauer Wechselstromton ohne Siebung\n4 – Rauer Ton, schwache Spuren von Siebung\n5 – Gesiebter Ton, aber stark brummmoduliert\n6 – Gesiebter Ton, deutliche Brummspuren\n7 – Fast reiner Ton, Spuren von Brumm\n8 – Fast perfekter Ton, minimale Brummspuren\n9 – Völlig reiner Ton (wie eine Glocke), keinerlei Brumm</string>
+</resources>

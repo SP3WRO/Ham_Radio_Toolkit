@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_tools.tsv -->
+<resources>
+    <string name="act_title">Places to activate</string>
+    <string name="act_sync">Download the latest databases</string>
+    <string name="act_syncing">Downloading POTA, SOTA and WWFF references near you…</string>
+    <string name="act_none">No references within %1$d km.\nCheck the filters in Settings.</string>
+    <string name="act_no_position">No position – turn on location to download references nearby</string>
+    <string name="act_download_failed">Could not download the databases – check your connection</string>
+    <string name="act_sync_error">Sync error: %1$s</string>
+    <string name="bcn_title">NCDXF/IARU beacons</string>
+    <string name="bcn_info">Each beacon transmits for 10 s: its callsign (22 WPM) and four dashes at 100 W / 10 W / 1 W / 100 mW. If you hear a beacon, the band is open in its direction.</string>
+    <string name="bcn_next">next: %1$s</string>
+    <string name="bcn_all">All beacons – tap to see when it transmits</string>
+    <string name="bcn_on_air_now">ON AIR NOW</string>
+    <string name="bcn_in">in %1$s</string>
+    <string name="bcn_off_note">Some beacons are temporarily off – current status: ncdxf.org/beacon</string>
+    <string name="bp_title">IARU Region %1$d band plan</string>
+    <string name="bp_region">Region %1$d</string>
+    <string name="bp_you_are_here"> (you are here)</string>
+    <string name="bp_fm_calling">FM calling: %1$s</string>
+    <string name="bp_emergency">Emergency traffic (HF): %1$s</string>
+    <string name="bp_r1_poland">Region 1 plan including Polish practice. </string>
+    <string name="bp_source_note">Source: %1$s. The IARU band plan is a recommendation – national regulations are binding.</string>
+    <string name="gl_title">Gray line</string>
+    <string name="gl_legend">The yellow line is the gray line. The red dot is your QTH.</string>
+    <string name="gl_your_station">Your station (QTH)</string>
+    <string name="gl_allow_gps">Allow GPS</string>
+    <string name="gl_waiting_gps">Waiting for GPS location…</string>
+    <string name="gl_sunrise">Sunrise:</string>
+    <string name="gl_sunset">Sunset:</string>
+    <string name="gl_polar">No sunrise/sunset (polar night/day)</string>
+    <string name="gl_about">About the gray line</string>
+    <string name="gl_about_text">The gray line (terminator) is the band along the boundary between day and night. The ionosphere behaves in a special way there – the D layer (which absorbs lower frequencies) fades before nightfall, while the F layers stay ionised enough to reflect radio waves.\n\nThanks to this, stations lying on the same gray line can make unusually long DX contacts (gray-line propagation) on 160 m, 80 m or 40 m with minimal signal loss.</string>
+    <string name="coax_title">Cable loss</string>
+    <string name="coax_choose">Choose a cable</string>
+    <string name="coax_freq">Frequency (MHz)</string>
+    <string name="coax_length">Cable length (m)</string>
+    <string name="coax_power">Input power (W)</string>
+    <string name="coax_no_data">No data, or the frequency is too high for this cable.</string>
+    <string name="coax_result">Result for %1$s</string>
+    <string name="coax_attenuation">Attenuation</string>
+    <string name="coax_power_at_antenna">Power at the antenna</string>
+    <string name="coax_loss_percent">Percentage loss: %1$s %%</string>
+    <string name="coax_power_lost">Power lost in the cable (heat): %1$s W</string>
+    <string name="coax_credit">Calculator based on the Coax Calculator project\nAuthor: SQ3SWF Olgierd</string>
+</resources>

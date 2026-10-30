@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_contest_phrases.tsv -->
+<resources>
+    <string name="cx_eu_non_eu">stacje europejskie pracują z pozaeuropejskimi</string>
+    <string name="cx_qtc_all">QTC między wszystkimi stacjami</string>
+    <string name="cx_contacts_only_with">łączności tylko z</string>
+    <string name="cx_serial">numer kolejny</string>
+    <string name="cx_tx_power">moc nadajnika</string>
+    <string name="cx_operator_age">wiek operatora</string>
+    <string name="cx_asia">Azją</string>
+    <string name="cx_member_number">numer członkowski</string>
+    <string name="cx_or_country">lub kraj</string>
+    <string name="cx_name">imię</string>
+    <string name="cx_cq_zone">strefa CQ</string>
+    <string name="cx_itu_zone">strefa ITU</string>
+    <string name="cx_hq_stations">stacje HQ</string>
+    <string name="cx_society">skrót stowarzyszenia</string>
+    <string name="cx_eg">np.</string>
+    <string name="cx_sp_stations">stacje SP</string>
+    <string name="cx_province_letter">litera województwa</string>
+    <string name="cx_county_code">kod komitatu</string>
+    <string name="cx_oblast_code">kod obwodu</string>
+    <string name="cx_district_code">kod powiatu</string>
+    <string name="cx_state_province">stan/prowincja</string>
+    <string name="cx_locator">lokator</string>
+    <string name="cx_chars">znaki</string>
+    <string name="cx_chars_gen">znaków</string>
+    <string name="cx_and_up">i wyżej</string>
+    <string name="cx_also">także</string>
+</resources>

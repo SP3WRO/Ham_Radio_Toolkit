@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_lookup.tsv -->
+<resources>
+    <string name="lk_min_chars">Wpisz co najmniej 3 znaki</string>
+    <string name="lk_unknown_prefix">Nie rozpoznano prefiksu – sprawdź znak</string>
+    <string name="lk_failed">Wyszukiwanie nie powiodło się: %1$s</string>
+    <string name="lk_title">Wyszukiwarka znaków</string>
+    <string name="lk_hint">np. SP3WRO, DL1ABC/P, VK2ABC</string>
+    <string name="lk_info">Kraj DXCC, strefy i czas lokalny działają bez internetu (baza cty.csv). Lokator stacji: z PSK Reporter (emisje cyfrowe z ostatniej doby), z APRS-IS (ostatnie 2 h), z Twojego logu, z QRZCQ i HamQTH (loginy w Ustawieniach) albo z HamDB (USA, Kanada, Niemcy, Czechy, Australia). Bez lokatora nie pokazujemy odległości.</string>
+    <string name="lk_station">Stacja</string>
+    <string name="lk_not_found">Nie znaleziono znaku w dostępnych bazach.</string>
+    <string name="lk_club">Klub</string>
+    <string name="lk_name">Imię / nazwa</string>
+    <string name="lk_uke_licence">Pozwolenie UKE</string>
+    <string name="lk_valid_to">Ważne do</string>
+    <string name="lk_licence_class">Klasa licencji</string>
+    <string name="lk_sources">Źródła: %1$s</string>
+    <string name="lk_dxcc_country">Kraj DXCC</string>
+    <string name="lk_country">Kraj</string>
+    <string name="lk_main_prefix">Prefiks główny</string>
+    <string name="lk_dxcc_number">Numer DXCC</string>
+    <string name="lk_continent">Kontynent</string>
+    <string name="lk_zones">Strefa CQ / ITU</string>
+    <string name="lk_locator_bearing">Lokator i kierunek anteny</string>
+    <string name="lk_no_locator">Nie posiadamy danych o lokatorze tej stacji – odległość i kierunek są niedostępne.</string>
+    <string name="lk_ask_locator">Poproś korespondenta o lokator. Jeśli stacja nadaje FT8/FT4, lokator może się pojawić w PSK Reporter.</string>
+    <string name="lk_short_path">Krótka droga</string>
+    <string name="lk_long_path">Długa droga</string>
+    <string name="lk_no_my_position">Brak Twojej pozycji – włącz lokalizację albo wpisz lokator w „Lokator i azymut”.</string>
+    <string name="lk_local_time">Czas lokalny</string>
+    <string name="lk_tz_note">Strefa podstawowa kraju, bez czasu letniego; duże kraje mają kilka stref.</string>
+    <string name="lk_hamqth_hint">Opcjonalnie: login HamQTH w Ustawieniach → Konta w serwisach dodaje lokator i informacje o QSL (biuro, LoTW, eQSL).</string>
+    <string name="lk_open_settings">Otwórz ustawienia</string>
+    <string name="lk_bureau">Biuro</string>
+    <string name="lk_not_in_hamqth">Brak znaku w HamQTH</string>
+    <string name="lk_your_log">Twój log</string>
+    <string name="lk_no_qso_yet">Nie masz jeszcze łączności z tym znakiem.</string>
+    <plurals name="lk_qso_count">
+        <item quantity="one">%1$d łączność</item>
+        <item quantity="few">%1$d łączności</item>
+        <item quantity="many">%1$d łączności</item>
+        <item quantity="other">%1$d łączności</item>
+    </plurals>
+    <string name="lk_bands_modes">Pasma i emisje: %1$s</string>
+    <string name="ab_title">Za granicą</string>
+    <string name="ab_from_gps">%1$s (z GPS)</string>
+    <string name="ab_choose_country">Wybierz kraj</string>
+    <string name="ab_current_location">%1$s Bieżąca lokalizacja (%2$s)</string>
+    <string name="ab_detecting">Ustalam kraj z pozycji… Jeśli to trwa długo (brak internetu), wybierz kraj z listy.</string>
+    <string name="ab_in_poland">Jesteś w Polsce – pracujesz pod własnym znakiem.</string>
+    <string name="ab_no_cept">Ten kraj nie stosuje zalecenia CEPT T/R 61-01.</string>
+    <string name="ab_need_permit">Do nadawania potrzebne jest zezwolenie lokalnego urzędu albo licencja na podstawie umowy dwustronnej. Sprawdź przepisy przed wyjazdem.</string>
+    <string name="ab_transmit_as">Nadawaj jako</string>
+    <string name="ab_your_call">TWÓJZNAK</string>
+    <string name="ab_cept_member">Kraj CEPT – licencja kat. 1 (CEPT) pozwala pracować podczas krótkiego pobytu bez dodatkowego zezwolenia.</string>
+    <string name="ab_cept_nonmember">Kraj spoza CEPT stosujący zalecenie T/R 61-01 – licencja CEPT jest uznawana.</string>
+    <string name="ab_equivalent">Licencje równoważne CEPT w tym kraju: %1$s</string>
+    <string name="ab_guest_prefixes">Prefiksy dla gości: %1$s</string>
+    <string name="ab_canada">Prefiks zależy od prowincji (VE1–VE9, VO1, VO2, VY0–VY2) – włącz lokalizację, żeby go dobrać.</string>
+    <string name="ab_how_to_sign">Telegrafią: prefiks/znak z ukośnikiem; fonią: „prefiks stroke znak”.</string>
+    <string name="ab_remember">Pamiętaj</string>
+    <string-array name="ab_remember_items">
+        <item>Licencja CEPT dotyczy tylko pobytów czasowych; przy dłuższym pobycie potrzebna jest licencja miejscowa.</item>
+        <item>Miej przy sobie pozwolenie (dokument CEPT) – na żądanie trzeba je okazać.</item>
+        <item>Obowiązują przepisy kraju pobytu: pasma, moce i ograniczenia lokalne.</item>
+        <item>Stacja gościa nie może żądać ochrony przed zakłóceniami.</item>
+    </string-array>
+    <string name="ab_iaru_region">Region IARU %1$d</string>
+    <string name="ab_different_plan">Uwaga: inny podział pasm niż w Polsce (np. 40 m do 7.300 w R2).</string>
+    <string name="ab_repeaters_nearby">Przemienniki w okolicy</string>
+    <string name="ab_zones_time">Strefy i czas</string>
+    <string name="ab_zones">Strefa CQ %1$s • ITU %2$s</string>
+    <string name="ab_standard_time">Czas standardowy: %1$s (UTC%2$s, bez czasu letniego)</string>
+    <string name="ab_source">Źródło: %1$s, docdb.cept.org. Aktualny stan wdrożenia i przypisy krajowe sprawdź w dokumencie przed wyjazdem.</string>
+    <string name="ab_outside_cept">Kraj poza CEPT T/R 61-01 – potrzebne zezwolenie</string>
+    <string name="ab_transmit_as_value">Nadawaj jako %1$s</string>
+    <string name="ab_guest_prefix">Prefiks dla gości: %1$s/</string>
+</resources>

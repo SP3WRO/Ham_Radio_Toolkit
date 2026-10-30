@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_aprs.tsv -->
+<resources>
+    <string name="aprs_listen_only">Nur Empfang</string>
+    <string name="aprs_send_position">Position senden</string>
+    <string name="aprs_no_gps">Keine GPS-Position</string>
+    <string name="aprs_position_sent">Position %1$s an APRS-IS gesendet</string>
+    <string name="aprs_my_station">Meine Station</string>
+    <string name="aprs_radius">Empfangsradius: %1$d km</string>
+    <string name="aprs_comment">  •  Kommentar: %1$s</string>
+    <string name="aprs_always_listening">Der Empfang läuft die ganze Zeit, solange die App geöffnet ist.</string>
+    <string name="aprs_need_callsign">Das Senden der Position erfordert ein Amateurfunkrufzeichen. Ohne Rufzeichen empfängt die App nur APRS-Rahmen (APRS-IS-Verbindung nur lesend).</string>
+    <string name="aprs_enter_callsign">Rufzeichen in den Einstellungen eintragen</string>
+    <string name="aprs_waiting_gps">Warte auf GPS-Position…</string>
+    <string name="aprs_waiting_frames">Warte auf Rahmen im Umkreis von %1$d km…</string>
+    <string name="aprs_connecting">Verbinde mit dem APRS-IS-Netz…</string>
+    <string name="aprs_now">jetzt</string>
+    <string name="aprs_min_ago">vor %1$d Min.</string>
+    <string name="aprs_position">Position</string>
+    <string name="aprs_movement">Bewegung</string>
+    <string name="aprs_course">Kurs %1$s°</string>
+    <string name="aprs_altitude">Höhe</string>
+    <string name="aprs_altitude_value">%1$d m ü. NN</string>
+    <string name="aprs_phg">Station (PHG)</string>
+    <string name="aprs_antenna">Antenne %1$d m</string>
+    <string name="aprs_gain">Gewinn %1$s dB</string>
+    <string name="aprs_humidity">Luftfeuchte %1$s%%</string>
+    <string name="aprs_wind">Wind %1$d km/h</string>
+    <string name="aprs_wind_from"> aus %1$s°</string>
+    <string name="aprs_gusts">Böen %1$d km/h</string>
+    <string name="aprs_rain_1h">Regen 1 h %1$s mm</string>
+    <string name="aprs_rain_24h">Regen 24 h %1$s mm</string>
+    <string name="aprs_weather">Wetter</string>
+    <string name="rep_title">Relais (%1$d km)</string>
+    <string name="rep_only_working">Nur in Betrieb</string>
+    <string name="rep_found">Gefunden: %1$d</string>
+    <string name="rep_none">Keine Relais in deiner Reichweite entsprechen den Kriterien.</string>
+    <string name="rep_tx">Relais TX</string>
+    <string name="rep_rx">Relais RX</string>
+    <string name="rep_ctcss">CTCSS-Ton</string>
+    <string name="rep_none_short">Keiner</string>
+    <string name="rep_checking_radioid">Prüfe RadioID…</string>
+    <string name="rep_trustee">Verantwortlicher: %1$s</string>
+    <string name="rep_download_error">Ladefehler (%1$s): %2$s</string>
+</resources>

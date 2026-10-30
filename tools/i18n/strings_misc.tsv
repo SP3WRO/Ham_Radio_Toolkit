@@ -1,0 +1,25 @@
+# key	en	pl	de	cs	sk
+err_award_page	Programme page not recognised	Nie rozpoznano strony akcji	Aktionsseite nicht erkannt	Stránka akce nerozpoznána	Stránka akcie nerozpoznaná
+err_repeatermap	repeatermap.de is not responding	repeatermap.de nie odpowiada	repeatermap.de antwortet nicht	repeatermap.de neodpovídá	repeatermap.de neodpovedá
+err_not_wav	This is not a WAV file	To nie jest plik WAV	Das ist keine WAV-Datei	Toto není soubor WAV	Toto nie je súbor WAV
+err_wav_no_audio	No audio data in the WAV file	Brak danych audio w pliku WAV	Keine Audiodaten in der WAV-Datei	V souboru WAV chybí zvuková data	V súbore WAV chýbajú zvukové údaje
+dec_decoding_file_mode	Decoding the file (%1$s)…	Dekodowanie pliku (%1$s)…	Datei wird dekodiert (%1$s)…	Dekódování souboru (%1$s)…	Dekódovanie súboru (%1$s)…
+aprs_icon_desc	APRS icon %1$s	Ikona APRS %1$s	APRS-Symbol %1$s	Ikona APRS %1$s	Ikona APRS %1$s
+map_zoom_out	Zoom out	Pomniejsz	Verkleinern	Oddálit	Oddialiť
+hp_pressure	Pressure	Ciśnienie	Luftdruck	Tlak	Tlak
+hp_temp_ext	Ext. temp.	Temp. zewn.	Außentemp.	Venk. tepl.	Vonk. tepl.
+hp_temp1	Temp. 1	Temp. 1	Temp. 1	Tepl. 1	Tepl. 1
+hp_temp2	Temp. 2	Temp. 2	Temp. 2	Tepl. 2	Tepl. 2
+hp_humidity	Humidity	Wilgotność	Luftfeuchte	Vlhkost	Vlhkosť
+hp_solar	Solar panel	Panel słoneczny	Solarpanel	Solární panel	Solárny panel
+hp_voltage1	Voltage 1	Napięcie 1	Spannung 1	Napětí 1	Napätie 1
+hp_voltage2	Voltage 2	Napięcie 2	Spannung 2	Napětí 2	Napätie 2
+hp_cutdown_battery	Cut-down battery	Bateria odcinacza	Batterie des Abtrennmechanismus	Baterie odpojovače	Batéria odpojovača
+r36_unsupported_audio	Unsupported audio format	Nieobsługiwany format audio	Nicht unterstütztes Audioformat	Nepodporovaný zvukový formát	Nepodporovaný zvukový formát
+r36_mic_failed	Could not start the microphone	Nie udało się uruchomić mikrofonu	Mikrofon konnte nicht gestartet werden	Mikrofon se nepodařilo spustit	Mikrofón sa nepodarilo spustiť
+r36_listening	Listening…	Nasłuch...	Empfang…	Příjem…	Príjem…
+r36_mic_read_error	Error reading from the microphone	Błąd odczytu z mikrofonu	Fehler beim Lesen vom Mikrofon	Chyba čtení z mikrofonu	Chyba čítania z mikrofónu
+r36_file_done	Finished decoding the file	Zakończono dekodowanie pliku	Dekodierung der Datei abgeschlossen	Dekódování souboru dokončeno	Dekódovanie súboru dokončené
+ct_note_unconfirmed	Date not confirmed – the contest may not take place	Termin niepotwierdzony – zawody mogą się nie odbyć	Termin nicht bestätigt – der Contest findet möglicherweise nicht statt	Termín nepotvrzen – závod se nemusí konat	Termín nepotvrdený – pretek sa nemusí konať
+ct_note_old_rules	Link to the previous edition's rules – they may still change	Link do regulaminu poprzedniej edycji – może się jeszcze zmienić	Link zur Ausschreibung der Vorjahresausgabe – kann sich noch ändern	Odkaz na propozice předchozího ročníku – mohou se ještě změnit	Odkaz na propozície predchádzajúceho ročníka – môžu sa ešte zmeniť
+ct_note_ru_by	QSOs and multipliers with stations from Russia and Belarus do not score	Łączności i mnożniki ze stacjami z Rosji i Białorusi nie są punktowane	Verbindungen und Multiplikatoren mit Stationen aus Russland und Belarus werden nicht gewertet	Spojení a násobiče se stanicemi z Ruska a Běloruska se nehodnotí	Spojenia a násobiče so stanicami z Ruska a Bieloruska sa nehodnotia

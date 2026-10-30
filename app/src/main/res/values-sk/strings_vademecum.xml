@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_vademecum.tsv -->
+<resources>
+    <string name="vad_title">Ťaháky</string>
+    <string name="vad_tab_qcodes">Q-kódy</string>
+    <string name="vad_tab_reports">Reporty</string>
+    <string name="vad_tab_areas">Oblasti SP</string>
+    <string name="vad_tab_slang">Skratky</string>
+    <string name="vad_tab_morse">Morse</string>
+    <string name="vad_tab_phonetic">Hláskovanie</string>
+    <string name="vad_search_dxcc">Hľadať krajinu alebo prefix…</string>
+    <string name="vad_continent">Kontinent: %1$s</string>
+    <string name="rst_title">Systém reportov RST</string>
+    <string name="rst_r">R – Čitateľnosť (Readability)</string>
+    <string name="rst_r_scale">1 – Nečitateľný\n2 – Sotva čitateľný, len občas\n3 – Čitateľný s veľkými ťažkosťami\n4 – Čitateľný bez väčších ťažkostí\n5 – Dokonale čitateľný</string>
+    <string name="rst_s">S – Sila signálu (Strength)</string>
+    <string name="rst_s_scale">1 – Sotva postrehnuteľný\n2 – Veľmi slabý\n3 – Slabý\n4 – Dostatočný\n5 – Celkom dobrý\n6 – Dobrý\n7 – Stredne silný\n8 – Silný\n9 – Veľmi silný</string>
+    <string name="rst_s_note">Často sa používajú hodnotenia S9+10 dB, S9+20 dB, čo znamená silu signálu nad stupnicou (meranú S-metrom).</string>
+    <string name="rst_t">T – Tón (Tone) [len telegrafia CW]</string>
+    <string name="rst_t_scale">1 – Veľmi chrapľavý, široký tón striedavého prúdu\n2 – Veľmi chrapľavý, tvrdý tón\n3 – Chrapľavý tón striedavého prúdu bez filtrácie\n4 – Chrapľavý tón, slabé stopy filtrácie\n5 – Filtrovaný tón, ale so silným brumom\n6 – Filtrovaný tón, zreteľné stopy brumu\n7 – Takmer čistý tón, stopy brumu\n8 – Takmer dokonalý tón, minimálne stopy brumu\n9 – Dokonale čistý tón (ako zvonček), bez akéhokoľvek brumu</string>
+</resources>

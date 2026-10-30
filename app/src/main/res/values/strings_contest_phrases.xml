@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_contest_phrases.tsv -->
+<resources>
+    <string name="cx_eu_non_eu">European stations work non-European ones</string>
+    <string name="cx_qtc_all">QTC between all stations</string>
+    <string name="cx_contacts_only_with">contacts only with</string>
+    <string name="cx_serial">serial number</string>
+    <string name="cx_tx_power">transmitter power</string>
+    <string name="cx_operator_age">operator\'s age</string>
+    <string name="cx_asia">Asia</string>
+    <string name="cx_member_number">member number</string>
+    <string name="cx_or_country">or country</string>
+    <string name="cx_name">name</string>
+    <string name="cx_cq_zone">CQ zone</string>
+    <string name="cx_itu_zone">ITU zone</string>
+    <string name="cx_hq_stations">HQ stations</string>
+    <string name="cx_society">society abbreviation</string>
+    <string name="cx_eg">e.g.</string>
+    <string name="cx_sp_stations">SP stations</string>
+    <string name="cx_province_letter">province letter</string>
+    <string name="cx_county_code">county code</string>
+    <string name="cx_oblast_code">oblast code</string>
+    <string name="cx_district_code">district code</string>
+    <string name="cx_state_province">state/province</string>
+    <string name="cx_locator">locator</string>
+    <string name="cx_chars">characters</string>
+    <string name="cx_chars_gen">characters</string>
+    <string name="cx_and_up">and up</string>
+    <string name="cx_also">also</string>
+</resources>

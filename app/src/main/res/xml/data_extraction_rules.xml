@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 12+: hasła i klucze do serwisów (HamQTH, QRZ, eQSL) nie trafiają do kopii w chmurze
+     ani do transferu na nowe urządzenie -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="file" path="datastore/service_credentials.preferences_pb" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="datastore/service_credentials.preferences_pb" />
+    </device-transfer>
+</data-extraction-rules>

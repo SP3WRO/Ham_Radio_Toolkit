@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_awards.tsv -->
+<resources>
+    <string name="aw_running">Running</string>
+    <string name="aw_upcoming">Upcoming</string>
+    <string name="aw_followed">Followed</string>
+    <string name="aw_unavailable">radiodyplom.pl: unavailable (%1$s)</string>
+    <string name="aw_cached">radiodyplom.pl: copy from %1$s (no connection)</string>
+    <string name="aw_error">error</string>
+    <string name="aw_running_header">Running now (%1$d)</string>
+    <string name="aw_upcoming_header">Upcoming (%1$d)</string>
+    <string name="aw_none_followed">You are not following any award programme – tap the star next to one.</string>
+    <string name="aw_none">No award programmes for the selected filter.</string>
+    <string name="aw_footer">Data: calendar and programme pages of radiodyplom.pl (SP8TZ). Points “from your log” are an estimate by the app; the radiodyplom.pl ranking, calculated from the organisers\' logs, is binding. Followed programmes (star) are highlighted in the DX Cluster. Programme descriptions and rules are shown as published by the organisers.</string>
+    <string name="aw_unfollow">Stop following</string>
+    <string name="aw_follow">Follow</string>
+    <string name="aw_running_left">ON NOW – %1$s left</string>
+    <string name="aw_ranking_short">Ranking: %1$d pts, %2$d QSOs (place %3$d)</string>
+    <string name="aw_details_failed">Could not download details: %1$s</string>
+    <string name="aw_event_page">Programme page</string>
+    <string name="aw_organizers">Organisers</string>
+    <string name="aw_repeats">Repeated QSOs</string>
+    <string name="aw_digi_group">Modes counted together as DIGI</string>
+    <string name="aw_your_result">Your result on radiodyplom.pl</string>
+    <string name="aw_set_callsign">Set your callsign in Settings to see your ranking result.</string>
+    <string name="aw_ranking_full">%1$s: %2$d pts, %3$d QSOs – place %4$d</string>
+    <string name="aw_of_participants"> of %1$d</string>
+    <string name="aw_not_ranked">%1$s: not in the ranking (the organisers have not uploaded QSOs with you yet)</string>
+    <string name="aw_participants"> • participants: %1$d</string>
+    <string name="aw_ranking_from">Ranking from %1$s</string>
+    <string name="aw_awards_estimate">Awards (points from your log – estimate)</string>
+    <string name="aw_points">%1$d pts</string>
+    <string name="aw_for">for: </string>
+    <string name="aw_without">excluding: </string>
+    <string name="aw_no_multipliers">The programme\'s time multipliers are not included.</string>
+    <string name="aw_daily_utc">The daily limit is counted by UTC date.</string>
+    <string name="aw_stations">Programme stations: %1$d • worked: %2$d</string>
+    <string name="aw_show_all">Show all (%1$d)</string>
+    <string name="aw_hide_description">Hide programme description</string>
+    <string name="aw_description">Programme description and rules</string>
+    <string name="aw_fetched">Downloaded %1$s</string>
+</resources>

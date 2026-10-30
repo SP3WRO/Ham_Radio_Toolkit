@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_contests.tsv -->
+<resources>
+    <string name="ct_filter_polish">Polskie</string>
+    <string name="ct_filter_international">Międzynarodowe</string>
+    <string name="ct_vhf">UKF</string>
+    <string name="ct_filter_digi">Cyfrowe</string>
+    <string name="ct_filter_local">Kraj pobytu</string>
+    <string name="ct_title">Kalendarz zawodów</string>
+    <string name="ct_show_weekly">Pokaż zawody cotygodniowe (CWT, MWC, sprinty…)</string>
+    <string name="ct_show_russian">Pokaż rosyjskie zawody krajowe i regionalne (QRZ.RU)</string>
+    <string name="ct_running_now">Trwają teraz</string>
+    <string name="ct_none">Brak zawodów dla wybranego filtra.</string>
+    <string name="ct_footer">Dane: kalendarz zawodów SP9CXN, kalendarz zawodów VHF/UHF/SHF Stowarzyszenia Polski Klub UKF oraz kalendarz zawodów QRZ.RU (rosyjskie nazwy przetłumaczone na angielski przez aplikację). Kalendarze odświeżają się co 12 godzin. Przed startem sprawdź termin w regulaminie.</string>
+    <string name="ct_calendar_of">Kalendarz %1$s</string>
+    <string name="ct_offline">Brak połączenia i zapisanych kalendarzy – kalendarz wbudowany (wybrane duże zawody, terminy wyliczone z reguł)</string>
+    <string name="ct_unavailable">%1$s: niedostępny</string>
+    <string name="ct_copy_from">%1$s: kopia z %2$s</string>
+    <string name="ct_running_left">TRWA – do końca %1$s</string>
+    <string name="ct_starts_in">Start za %1$s</string>
+    <string name="ct_organizer">Organizator</string>
+    <string name="ct_exchange">Wymiana</string>
+    <string name="ct_log_deadline">Termin wysyłki logów</string>
+    <string name="ct_organizer_page">Strona organizatora</string>
+    <string name="ct_rules">Regulamin</string>
+    <string name="ct_search_rules">Szukaj regulaminu</string>
+    <string name="ct_rules_pl">Regulamin PL</string>
+    <string name="ct_logs_by">Logi do: %1$s</string>
+    <string name="ct_rules_pl_value">Regulamin PL: %1$s</string>
+    <plurals name="dur_days">
+        <item quantity="one">%1$d dzień</item>
+        <item quantity="few">%1$d dni</item>
+        <item quantity="many">%1$d dni</item>
+        <item quantity="other">%1$d dni</item>
+    </plurals>
+    <string name="dur_hours">%1$d godz.</string>
+    <string name="dur_hours_minutes">%1$d godz. %2$d min</string>
+    <string name="dur_minutes">%1$d min</string>
+    <string name="ct_mode_cw">CW</string>
+    <string name="ct_mode_ssb">SSB</string>
+    <string name="ct_qrp">QRP</string>
+</resources>

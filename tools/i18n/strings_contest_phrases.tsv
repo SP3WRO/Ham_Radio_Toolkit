@@ -1,0 +1,28 @@
+# key	en	pl	de	cs	sk
+# Zwroty z opisów wymiany we wbudowanym kalendarzu zawodów (ContestCalendar) – bez wielkiej litery na początku
+cx_eu_non_eu	European stations work non-European ones	stacje europejskie pracują z pozaeuropejskimi	europäische Stationen arbeiten außereuropäische	evropské stanice pracují s mimoevropskými	európske stanice pracujú s mimoeurópskymi
+cx_qtc_all	QTC between all stations	QTC między wszystkimi stacjami	QTC zwischen allen Stationen	QTC mezi všemi stanicemi	QTC medzi všetkými stanicami
+cx_contacts_only_with	contacts only with	łączności tylko z	Verbindungen nur mit	spojení jen s	spojenia len s
+cx_serial	serial number	numer kolejny	laufende Nummer	pořadové číslo	poradové číslo
+cx_tx_power	transmitter power	moc nadajnika	Sendeleistung	výkon vysílače	výkon vysielača
+cx_operator_age	operator's age	wiek operatora	Alter des Operators	věk operátora	vek operátora
+cx_asia	Asia	Azją	Asien	Asií	Áziou
+cx_member_number	member number	numer członkowski	Mitgliedsnummer	členské číslo	členské číslo
+cx_or_country	or country	lub kraj	oder Land	nebo země	alebo krajina
+cx_name	name	imię	Name	jméno	meno
+cx_cq_zone	CQ zone	strefa CQ	CQ-Zone	zóna CQ	zóna CQ
+cx_itu_zone	ITU zone	strefa ITU	ITU-Zone	zóna ITU	zóna ITU
+cx_hq_stations	HQ stations	stacje HQ	HQ-Stationen	stanice HQ	stanice HQ
+cx_society	society abbreviation	skrót stowarzyszenia	Verbandskürzel	zkratka spolku	skratka spolku
+cx_eg	e.g.	np.	z. B.	např.	napr.
+cx_sp_stations	SP stations	stacje SP	SP-Stationen	stanice SP	stanice SP
+cx_province_letter	province letter	litera województwa	Woiwodschaftsbuchstabe	písmeno vojvodství	písmeno vojvodstva
+cx_county_code	county code	kod komitatu	Komitatskennung	kód župy	kód župy
+cx_oblast_code	oblast code	kod obwodu	Oblast-Kennung	kód oblasti	kód oblasti
+cx_district_code	district code	kod powiatu	Bezirkskennung	kód okresu	kód okresu
+cx_state_province	state/province	stan/prowincja	Bundesstaat/Provinz	stát/provincie	štát/provincia
+cx_locator	locator	lokator	Locator	lokátor	lokátor
+cx_chars	characters	znaki	Zeichen	znaky	znaky
+cx_chars_gen	characters	znaków	Zeichen	znaků	znakov
+cx_and_up	and up	i wyżej	und höher	a výše	a vyššie
+cx_also	also	także	auch	také	aj

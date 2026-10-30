@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_vademecum.tsv -->
+<resources>
+    <string name="vad_title">Cheat sheets</string>
+    <string name="vad_tab_qcodes">Q codes</string>
+    <string name="vad_tab_reports">Reports</string>
+    <string name="vad_tab_areas">SP areas</string>
+    <string name="vad_tab_slang">Abbreviations</string>
+    <string name="vad_tab_morse">Morse</string>
+    <string name="vad_tab_phonetic">Spelling</string>
+    <string name="vad_search_dxcc">Search country or prefix…</string>
+    <string name="vad_continent">Continent: %1$s</string>
+    <string name="rst_title">The RST reporting system</string>
+    <string name="rst_r">R – Readability</string>
+    <string name="rst_r_scale">1 – Unreadable\n2 – Barely readable, occasional words\n3 – Readable with considerable difficulty\n4 – Readable with practically no difficulty\n5 – Perfectly readable</string>
+    <string name="rst_s">S – Signal strength</string>
+    <string name="rst_s_scale">1 – Faint, signals barely perceptible\n2 – Very weak\n3 – Weak\n4 – Fair\n5 – Fairly good\n6 – Good\n7 – Moderately strong\n8 – Strong\n9 – Very strong</string>
+    <string name="rst_s_note">Reports such as S9+10 dB or S9+20 dB are common – they mean a signal above the scale (measured on the S-meter).</string>
+    <string name="rst_t">T – Tone [CW only]</string>
+    <string name="rst_t_scale">1 – Sixty-cycle AC or less, very rough and broad\n2 – Very rough AC, very harsh and broad\n3 – Rough AC tone, rectified but not filtered\n4 – Rough note, some trace of filtering\n5 – Filtered rectified AC but strongly ripple-modulated\n6 – Filtered tone, definite trace of ripple modulation\n7 – Near pure tone, trace of ripple modulation\n8 – Near perfect tone, slight trace of modulation\n9 – Perfect tone, no trace of ripple or modulation of any kind</string>
+</resources>

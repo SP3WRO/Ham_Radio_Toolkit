@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_contest_phrases.tsv -->
+<resources>
+    <string name="cx_eu_non_eu">európske stanice pracujú s mimoeurópskymi</string>
+    <string name="cx_qtc_all">QTC medzi všetkými stanicami</string>
+    <string name="cx_contacts_only_with">spojenia len s</string>
+    <string name="cx_serial">poradové číslo</string>
+    <string name="cx_tx_power">výkon vysielača</string>
+    <string name="cx_operator_age">vek operátora</string>
+    <string name="cx_asia">Áziou</string>
+    <string name="cx_member_number">členské číslo</string>
+    <string name="cx_or_country">alebo krajina</string>
+    <string name="cx_name">meno</string>
+    <string name="cx_cq_zone">zóna CQ</string>
+    <string name="cx_itu_zone">zóna ITU</string>
+    <string name="cx_hq_stations">stanice HQ</string>
+    <string name="cx_society">skratka spolku</string>
+    <string name="cx_eg">napr.</string>
+    <string name="cx_sp_stations">stanice SP</string>
+    <string name="cx_province_letter">písmeno vojvodstva</string>
+    <string name="cx_county_code">kód župy</string>
+    <string name="cx_oblast_code">kód oblasti</string>
+    <string name="cx_district_code">kód okresu</string>
+    <string name="cx_state_province">štát/provincia</string>
+    <string name="cx_locator">lokátor</string>
+    <string name="cx_chars">znaky</string>
+    <string name="cx_chars_gen">znakov</string>
+    <string name="cx_and_up">a vyššie</string>
+    <string name="cx_also">aj</string>
+</resources>

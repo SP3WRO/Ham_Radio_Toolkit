@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_aprs.tsv -->
+<resources>
+    <string name="aprs_listen_only">Jen příjem</string>
+    <string name="aprs_send_position">Odeslat polohu</string>
+    <string name="aprs_no_gps">Chybí poloha GPS</string>
+    <string name="aprs_position_sent">Poloha %1$s odeslána do APRS-IS</string>
+    <string name="aprs_my_station">Moje stanice</string>
+    <string name="aprs_radius">Poloměr příjmu: %1$d km</string>
+    <string name="aprs_comment">  •  komentář: %1$s</string>
+    <string name="aprs_always_listening">Příjem běží po celou dobu, kdy je aplikace otevřená.</string>
+    <string name="aprs_need_callsign">Odesílání polohy vyžaduje radioamatérskou značku. Bez ní aplikace jen přijímá rámce APRS (spojení s APRS-IS jen pro čtení).</string>
+    <string name="aprs_enter_callsign">Zadej značku v Nastavení</string>
+    <string name="aprs_waiting_gps">Čekání na polohu GPS…</string>
+    <string name="aprs_waiting_frames">Čekání na rámce v okruhu %1$d km…</string>
+    <string name="aprs_connecting">Připojování k síti APRS-IS…</string>
+    <string name="aprs_now">teď</string>
+    <string name="aprs_min_ago">před %1$d min</string>
+    <string name="aprs_position">Poloha</string>
+    <string name="aprs_movement">Pohyb</string>
+    <string name="aprs_course">kurz %1$s°</string>
+    <string name="aprs_altitude">Výška</string>
+    <string name="aprs_altitude_value">%1$d m n. m.</string>
+    <string name="aprs_phg">Stanice (PHG)</string>
+    <string name="aprs_antenna">anténa %1$d m</string>
+    <string name="aprs_gain">zisk %1$s dB</string>
+    <string name="aprs_humidity">vlhkost %1$s%%</string>
+    <string name="aprs_wind">vítr %1$d km/h</string>
+    <string name="aprs_wind_from"> od %1$s°</string>
+    <string name="aprs_gusts">nárazy %1$d km/h</string>
+    <string name="aprs_rain_1h">srážky 1 h %1$s mm</string>
+    <string name="aprs_rain_24h">srážky 24 h %1$s mm</string>
+    <string name="aprs_weather">Počasí</string>
+    <string name="rep_title">Převáděče (%1$d km)</string>
+    <string name="rep_only_working">Jen funkční</string>
+    <string name="rep_found">Nalezeno: %1$d</string>
+    <string name="rep_none">V tvém dosahu nejsou převáděče odpovídající kritériím.</string>
+    <string name="rep_tx">Převáděč TX</string>
+    <string name="rep_rx">Převáděč RX</string>
+    <string name="rep_ctcss">Tón CTCSS</string>
+    <string name="rep_none_short">Žádný</string>
+    <string name="rep_checking_radioid">Ověřuji RadioID…</string>
+    <string name="rep_trustee">Správce: %1$s</string>
+    <string name="rep_download_error">Chyba stahování (%1$s): %2$s</string>
+</resources>

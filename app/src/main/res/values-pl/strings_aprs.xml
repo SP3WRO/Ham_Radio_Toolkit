@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_aprs.tsv -->
+<resources>
+    <string name="aprs_listen_only">Tylko nasłuch</string>
+    <string name="aprs_send_position">Nadaj pozycję</string>
+    <string name="aprs_no_gps">Brak pozycji GPS</string>
+    <string name="aprs_position_sent">Wysłano pozycję %1$s do APRS-IS</string>
+    <string name="aprs_my_station">Moja stacja</string>
+    <string name="aprs_radius">Promień nasłuchu: %1$d km</string>
+    <string name="aprs_comment">  •  komentarz: %1$s</string>
+    <string name="aprs_always_listening">Nasłuch działa przez cały czas, gdy aplikacja jest otwarta.</string>
+    <string name="aprs_need_callsign">Nadawanie pozycji wymaga znaku krótkofalarskiego. Bez niego aplikacja tylko odbiera ramki APRS (połączenie z APRS-IS w trybie do odczytu).</string>
+    <string name="aprs_enter_callsign">Wpisz znak w Ustawieniach</string>
+    <string name="aprs_waiting_gps">Oczekiwanie na pozycję GPS…</string>
+    <string name="aprs_waiting_frames">Oczekiwanie na ramki w promieniu %1$d km…</string>
+    <string name="aprs_connecting">Łączenie z siecią APRS-IS…</string>
+    <string name="aprs_now">teraz</string>
+    <string name="aprs_min_ago">%1$d min temu</string>
+    <string name="aprs_position">Pozycja</string>
+    <string name="aprs_movement">Ruch</string>
+    <string name="aprs_course">kurs %1$s°</string>
+    <string name="aprs_altitude">Wysokość</string>
+    <string name="aprs_altitude_value">%1$d m n.p.m.</string>
+    <string name="aprs_phg">Stacja (PHG)</string>
+    <string name="aprs_antenna">antena %1$d m</string>
+    <string name="aprs_gain">zysk %1$s dB</string>
+    <string name="aprs_humidity">wilgotność %1$s%%</string>
+    <string name="aprs_wind">wiatr %1$d km/h</string>
+    <string name="aprs_wind_from"> z %1$s°</string>
+    <string name="aprs_gusts">porywy %1$d km/h</string>
+    <string name="aprs_rain_1h">opad 1 h %1$s mm</string>
+    <string name="aprs_rain_24h">opad 24 h %1$s mm</string>
+    <string name="aprs_weather">Pogoda</string>
+    <string name="rep_title">Przemienniki (%1$d km)</string>
+    <string name="rep_only_working">Tylko sprawne</string>
+    <string name="rep_found">Znaleziono: %1$d</string>
+    <string name="rep_none">Brak przemienników spełniających kryteria w Twoim zasięgu.</string>
+    <string name="rep_tx">Przemiennik TX</string>
+    <string name="rep_rx">Przemiennik RX</string>
+    <string name="rep_ctcss">Ton CTCSS</string>
+    <string name="rep_none_short">Brak</string>
+    <string name="rep_checking_radioid">Sprawdzam RadioID…</string>
+    <string name="rep_trustee">Opiekun: %1$s</string>
+    <string name="rep_download_error">Błąd pobierania (%1$s): %2$s</string>
+</resources>

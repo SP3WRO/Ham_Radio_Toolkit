@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_misc.tsv -->
+<resources>
+    <string name="err_award_page">Nie rozpoznano strony akcji</string>
+    <string name="err_repeatermap">repeatermap.de nie odpowiada</string>
+    <string name="err_not_wav">To nie jest plik WAV</string>
+    <string name="err_wav_no_audio">Brak danych audio w pliku WAV</string>
+    <string name="dec_decoding_file_mode">Dekodowanie pliku (%1$s)…</string>
+    <string name="aprs_icon_desc">Ikona APRS %1$s</string>
+    <string name="map_zoom_out">Pomniejsz</string>
+    <string name="hp_pressure">Ciśnienie</string>
+    <string name="hp_temp_ext">Temp. zewn.</string>
+    <string name="hp_temp1">Temp. 1</string>
+    <string name="hp_temp2">Temp. 2</string>
+    <string name="hp_humidity">Wilgotność</string>
+    <string name="hp_solar">Panel słoneczny</string>
+    <string name="hp_voltage1">Napięcie 1</string>
+    <string name="hp_voltage2">Napięcie 2</string>
+    <string name="hp_cutdown_battery">Bateria odcinacza</string>
+    <string name="r36_unsupported_audio">Nieobsługiwany format audio</string>
+    <string name="r36_mic_failed">Nie udało się uruchomić mikrofonu</string>
+    <string name="r36_listening">Nasłuch...</string>
+    <string name="r36_mic_read_error">Błąd odczytu z mikrofonu</string>
+    <string name="r36_file_done">Zakończono dekodowanie pliku</string>
+    <string name="ct_note_unconfirmed">Termin niepotwierdzony – zawody mogą się nie odbyć</string>
+    <string name="ct_note_old_rules">Link do regulaminu poprzedniej edycji – może się jeszcze zmienić</string>
+    <string name="ct_note_ru_by">Łączności i mnożniki ze stacjami z Rosji i Białorusi nie są punktowane</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_home.tsv -->
+<resources>
+    <string name="home_hello">Witaj!</string>
+    <string name="home_hello_call">Witaj, </string>
+    <string name="home_utc_time">Czas UTC</string>
+    <string name="home_date_local">%1$s  •  czas lokalny %2$s</string>
+    <string name="home_qth_locator">Lokator QTH</string>
+    <string name="home_no_location">Brak dostępu do lokalizacji</string>
+    <string name="home_allow_location">Zezwól na lokalizację</string>
+    <string name="home_waiting_gps">Oczekiwanie na pozycję GPS…</string>
+    <string name="home_asl"> n.p.m.</string>
+    <string name="home_no_altitude">brak wysokości</string>
+    <string name="home_aprs_connecting">Łączenie z siecią APRS-IS…</string>
+    <string name="home_aprs_no_stations">Połączono – brak stacji w promieniu %1$d km</string>
+    <plurals name="home_aprs_stations">
+        <item quantity="one">%1$d stacja w promieniu %2$d km</item>
+        <item quantity="few">%1$d stacje w promieniu %2$d km</item>
+        <item quantity="many">%1$d stacji w promieniu %2$d km</item>
+        <item quantity="other">%1$d stacji w promieniu %2$d km</item>
+    </plurals>
+    <string name="home_nearest_repeater">Najbliższy przemiennik</string>
+    <string name="home_tx">Nadawanie</string>
+    <string name="home_rx">Odbiór</string>
+    <string name="home_mode">Emisja</string>
+    <string name="home_none">brak</string>
+    <string name="home_connected">połączono</string>
+    <string name="home_disconnected">rozłączono</string>
+</resources>

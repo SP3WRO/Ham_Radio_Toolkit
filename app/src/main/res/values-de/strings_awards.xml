@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_awards.tsv -->
+<resources>
+    <string name="aw_running">Laufend</string>
+    <string name="aw_upcoming">Bevorstehend</string>
+    <string name="aw_followed">Beobachtet</string>
+    <string name="aw_unavailable">radiodyplom.pl: nicht verfügbar (%1$s)</string>
+    <string name="aw_cached">radiodyplom.pl: Kopie vom %1$s (keine Verbindung)</string>
+    <string name="aw_error">Fehler</string>
+    <string name="aw_running_header">Laufen gerade (%1$d)</string>
+    <string name="aw_upcoming_header">Bevorstehend (%1$d)</string>
+    <string name="aw_none_followed">Du beobachtest keine Diplomaktion – tippe auf den Stern bei einer Aktion.</string>
+    <string name="aw_none">Keine Diplomaktionen für den gewählten Filter.</string>
+    <string name="aw_footer">Daten: Kalender und Aktionsseiten von radiodyplom.pl (SP8TZ). Punkte „aus deinem Log“ sind eine Schätzung der App; verbindlich ist die Rangliste von radiodyplom.pl, berechnet aus den Logs der Veranstalter. Beobachtete Aktionen (Stern) werden im DX-Cluster markiert. Beschreibungen und Regeln werden so angezeigt, wie die Veranstalter sie veröffentlicht haben.</string>
+    <string name="aw_unfollow">Nicht mehr beobachten</string>
+    <string name="aw_follow">Beobachten</string>
+    <string name="aw_running_left">LÄUFT – noch %1$s</string>
+    <string name="aw_ranking_short">Rangliste: %1$d Pkt., %2$d QSOs (Platz %3$d)</string>
+    <string name="aw_details_failed">Details konnten nicht geladen werden: %1$s</string>
+    <string name="aw_event_page">Aktionsseite</string>
+    <string name="aw_organizers">Veranstalter</string>
+    <string name="aw_repeats">Wiederholte QSOs</string>
+    <string name="aw_digi_group">Gemeinsam als DIGI gewertete Betriebsarten</string>
+    <string name="aw_your_result">Dein Ergebnis auf radiodyplom.pl</string>
+    <string name="aw_set_callsign">Trage dein Rufzeichen in den Einstellungen ein, um dein Ranglistenergebnis zu sehen.</string>
+    <string name="aw_ranking_full">%1$s: %2$d Pkt., %3$d QSOs – Platz %4$d</string>
+    <string name="aw_of_participants"> von %1$d</string>
+    <string name="aw_not_ranked">%1$s: nicht in der Rangliste (die Veranstalter haben noch keine QSOs mit dir hochgeladen)</string>
+    <string name="aw_participants"> • Teilnehmer: %1$d</string>
+    <string name="aw_ranking_from">Rangliste vom %1$s</string>
+    <string name="aw_awards_estimate">Diplome (Punkte aus deinem Log – Schätzung)</string>
+    <string name="aw_points">%1$d Pkt.</string>
+    <string name="aw_for">für: </string>
+    <string name="aw_without">ohne: </string>
+    <string name="aw_no_multipliers">Zeitmultiplikatoren der Aktion werden nicht berücksichtigt.</string>
+    <string name="aw_daily_utc">Das Tageslimit wird nach UTC-Datum gezählt.</string>
+    <string name="aw_stations">Stationen der Aktion: %1$d • gearbeitet: %2$d</string>
+    <string name="aw_show_all">Alle anzeigen (%1$d)</string>
+    <string name="aw_hide_description">Beschreibung ausblenden</string>
+    <string name="aw_description">Beschreibung und Regeln der Aktion</string>
+    <string name="aw_fetched">Geladen %1$s</string>
+</resources>

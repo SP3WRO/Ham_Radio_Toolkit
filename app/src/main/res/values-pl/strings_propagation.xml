@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_propagation.tsv -->
+<resources>
+    <string name="prop_title">Propagacja</string>
+    <string name="prop_tab_hf">HF (KF)</string>
+    <string name="prop_tab_vhf">VHF (UKF)</string>
+    <string name="prop_tropocast_title">Mapa Tropocast (ICON-EU)</string>
+    <string name="prop_now">Teraz</string>
+    <string name="prop_vhf_map_desc">Mapa propagacji VHF</string>
+    <string name="prop_legend_background">tło</string>
+    <string name="prop_legend_marginal">marginalna</string>
+    <string name="prop_legend_weak">słaba</string>
+    <string name="prop_legend_moderate">umiarkowana</string>
+    <string name="prop_legend_good">dobra</string>
+    <string name="prop_legend_very_good">bardzo dobra</string>
+    <string name="prop_legend_high">wysoka</string>
+    <string name="prop_legend_strong">silna</string>
+    <string name="prop_legend_very_strong">bardzo silna</string>
+    <string name="prop_solar_params">Parametry słoneczne</string>
+    <string name="prop_updated">Aktualizacja: %1$s</string>
+    <string name="prop_sunspots">Plamy (SN)</string>
+    <string name="prop_a_index">Indeks A</string>
+    <string name="prop_k_index">Indeks K</string>
+    <string name="prop_day">Dzień</string>
+    <string name="prop_night">Noc</string>
+    <string name="prop_cond_good">Dobre</string>
+    <string name="prop_cond_fair">Średnie</string>
+    <string name="prop_cond_poor">Słabe</string>
+    <string name="prop_cond_closed">Zamknięte</string>
+    <string name="prop_offline_cached">Brak połączenia – pokazuję ostatnie pobrane dane</string>
+    <string name="prop_download_error">Błąd pobierania danych: %1$s</string>
+    <string name="prop_tropocast_error">Nie udało się pobrać mapy Tropocast: %1$s</string>
+</resources>

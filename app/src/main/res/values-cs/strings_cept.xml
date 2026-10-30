@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_cept.tsv -->
+<resources>
+    <string name="cept_and">a</string>
+    <string name="cept_classes">třídy</string>
+    <string name="cept_formerly">dříve</string>
+    <string name="cept_formerly_also">dříve také</string>
+    <string name="cept_guest">host</string>
+    <string name="cept_note_ee">Hosté s licencí CEPT mohou vysílat až 3 měsíce s oprávněním třídy B; třída A vyžaduje doložení znalosti CW (min. 5 slov/min).</string>
+    <string name="cept_note_ie">Prefix EJ je určen pro pobřežní ostrovy.</string>
+    <string name="cept_note_lv">Hosté s licencí CEPT mohou vysílat až 3 měsíce.</string>
+    <string name="cept_note_au">Hromadná licence umožňuje hostům s licencí CEPT vysílat až 365 dní na všech radioamatérských pásmech bez dalších povolení.</string>
+    <string name="cept_note_bq">PJ4 – Bonaire, PJ5 – St. Eustatius, PJ6 – Saba.</string>
+    <string name="cept_note_nz">Hosté s licencí CEPT mohou vysílat až 90 dní na všech radioamatérských pásmech bez povolení a registrace.</string>
+    <string name="cept_note_pe">V Peru se OA s číslicí zóny připojuje na konec značky (např. SP3WRO/OA4).</string>
+    <string name="cept_privileges">oprávnění</string>
+</resources>
