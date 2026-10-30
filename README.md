@@ -1,67 +1,128 @@
 # Ham Radio Toolkit
 
-Zestaw narzędzi dla krótkofalowców na Androida: propagacja, DX Cluster, log łączności, APRS, przemienniki, satelity, kalendarz zawodów i dekodery emisji cyfrowych w jednej aplikacji.
+Zestaw narzędzi dla krótkofalowców na Androida. W jednej aplikacji łączy propagację, DX Cluster, log łączności, APRS, przemienniki, satelity, kalendarz zawodów i dyplomów, kalkulatory oraz dekodery FT8/FT4, RTTY, CW, SSTV, DSSTV i Horus Binary.
 
 **Pobieranie:** plik APK znajdziesz w zakładce [Releases](https://github.com/SP3WRO/Ham_Radio_Toolkit/releases).
 
-Aplikacja jest w fazie beta. Działa na Androidzie 7.0 lub nowszym i jest dostępna po angielsku, polsku, niemiecku, czesku i słowacku. Język można zmienić w ustawieniach aplikacji.
+Aplikacja jest w fazie beta. Wymaga Androida 7.0 lub nowszego. Interfejs jest dostępny po angielsku, polsku, niemiecku, czesku i słowacku, a język i motyw (jasny, ciemny lub systemowy) zmienisz w ustawieniach. Tłumaczenia powstały z pomocą AI, więc poprawki są mile widziane.
 
-## Funkcje
+## Główne ekrany
+
+Dolne menu prowadzi do pięciu ekranów.
+
+### Home
+Czas UTC i lokalny, lokator QTH z GPS, współrzędne i wysokość, stacje APRS w okolicy oraz najbliższy przemiennik z częstotliwościami, emisją i tonem CTCSS.
+
+### Propagacja
+- Parametry słoneczne: SFI, liczba plam (SN), indeksy A i K
+- Warunki na pasmach KF w dzień i w nocy
+- Mapy propagacji troposferycznej UKF Tropocast (ICON-EU) dla Europy i wybranych krajów
+- Ostatnie pobrane dane, gdy nie ma połączenia
+
+### DX Cluster
+- Spoty z DX Summit z wyszukiwaniem i filtrami pasma, emisji oraz kraju
+- Odświeżanie ręczne, co 1 minutę lub co 5 minut
+- Oznaczenia krajów, których nie masz jeszcze w logu, i stacji z obserwowanych akcji dyplomowych
+- Dodawanie własnych spotów i szybkie logowanie QSO ze spotu
+
+### Logger
+- Dodawanie i edycja QSO, także z automatycznym wyszukaniem danych stacji
+- Wykrywanie dubli, historia łączności ze stacją oraz odległość i azymut
+- Wyszukiwanie po znaku, paśmie, emisji, kraju i dacie
+- Import i eksport ADIF
+- Wysyłanie QSO do QRZ Logbook (wymaga subskrypcji QRZ) i eQSL
+- Statystyki: QSO według pasm i emisji, kraje DXCC, parki POTA i obiekty WWFF
+
+Statystyki pokazują kraje zrobione (worked). Aplikacja nie pobiera jeszcze potwierdzeń z LoTW ani eQSL.
+
+### Przybornik
+Pozostałe narzędzia, opisane poniżej.
+
+## Przybornik
 
 ### Na antenie
-- **Ekran główny:** czas UTC, lokator QTH, wysokość n.p.m., najbliższy przemiennik i stacje APRS w okolicy
-- **Propagacja:** indeksy słoneczne, warunki na pasmach, indeks Kp, mapy propagacji troposferycznej i widżet na ekran główny
-- **DX Cluster:** spoty DX z rozpoznawaniem podmiotów DXCC oraz dodawanie własnych spotów
-- **Aktywacje:** POTA, SOTA i WWFF w pobliżu oraz spoty na żywo
-- **APRS:** stacje z sieci APRS-IS i wysyłanie własnej pozycji
-- **Przemienniki:** bazy dla Polski, Europy i świata, także DMR
-- **Satelity:** przewidywanie przelotów, kompas do śledzenia satelity, częstotliwości transponderów i przypomnienia o przelotach
-- **Latarnie NCDXF/IARU:** harmonogram z informacją, która latarnia nadaje w tej chwili
+- **Wyszukiwarka znaków:** kraj DXCC, strefy CQ/ITU i czas lokalny działają bez internetu. Dane stacji pochodzą z rejestru UKE, a lokator z PSK Reporter, APRS-IS, Twojego logu, QRZCQ, HamQTH lub HamDB. Wynik obejmuje też odległość, azymut krótką i długą drogą oraz Twoje łączności z tą stacją.
+- **Aktywacje na żywo:** spoty POTA i WWFF z sortowaniem według odległości i logowaniem QSO. Spoty SOTA nie są wyświetlane, ponieważ regulamin API SOTA wymaga wcześniejszej zgody.
+- **APRS:** odbiór stacji z APRS-IS w wybranym promieniu, w tym ich ruchu, wysokości, danych PHG i pogody, oraz ręczne nadawanie własnej pozycji. Bez znaku wywoławczego aplikacja działa tylko w trybie nasłuchu.
+- **Przemienniki:** wyszukiwanie w wybranym promieniu i filtr sprawnych przemienników. Źródła to przemienniki.eu, przemienniki.net, HearHam, repeatermap.de i RepeaterBook (wymaga tokenu), a szczegóły DMR pochodzą z RadioID. Poza Polską źródło przełącza się samo, chyba że wybierzesz je ręcznie.
+- **Satelity:** aktualizacja danych TLE, lista przelotów z AOS i LOS, skyplot, kompas z azymutem i elewacją, częstotliwości z AMSAT i SatNOGS oraz przypomnienia o przelotach.
+- **Beacony NCDXF:** harmonogram z informacją, która stacja nadaje teraz i kiedy nadają pozostałe.
 
-### Log i dyplomy
-- **Log łączności:** import i eksport ADIF, statystyki oraz wysyłanie QSO do QRZ Logbook i eQSL
-- **Wyszukiwarka znaków:** rejestr UKE, HamQTH, HamDB, QRZCQ, RadioID i PSK Reporter
-- **Kalendarz zawodów:** imprezy krajowe, międzynarodowe i UKF
-- **Dyplomy:** programy, stacje i ranking z radiodyplom.pl oraz postęp na podstawie logu
+### Emisje cyfrowe i CW
+Telefon odbiera sygnał mikrofonem, więc wystarczy położyć go przy głośniku radia. Dekodery nie nadają.
 
-### Dekodery
-Dźwięk dekodowany jest z mikrofonu telefonu, bez dodatkowego sprzętu.
+| Dekoder | Możliwości | Plik WAV |
+| --- | --- | --- |
+| **FT8 / FT4** | filtr „Tylko CQ”, lista częstotliwości, sprawdzanie znaku nadawcy po dotknięciu wiadomości; zegar telefonu musi być dokładny do ±1 s | tak |
+| **RTTY** | ITA2, automatyczne strojenie AFC, widmo, przesuw 170–850 Hz, szybkość 45,45–100 Bd, odwrócona polaryzacja, USOS, blokada szumów, nagrywanie | tak |
+| **CW** | automatyczne dopasowanie prędkości i wyszukiwanie tonu; najlepiej działa przy czystym sygnale | nie |
+| **SSTV** | Robot 36/72, PD 50–290, Martin 1/2, Scottie 1/2/DX, Wraase SC2-180, HF Fax i Raw; automatyczne wykrywanie VIS i zapis obrazów | tak |
+| **DSSTV (HamDRM)** | zgodny z EasyPal i QSSTV; przez mikrofon działają tryby 4-QAM i 16-QAM przy cichym otoczeniu, a najpewniejszy jest odbiór kablem z wyjścia audio radia | tak |
+| **Balony (Horus 4FSK)** | Horus Binary 4FSK 100 Bd: pozycja, wysokość, prędkość, temperatura i bateria balonu oraz pokazanie go na mapie | tak |
 
-- **FT8 / FT4**
-- **CW**, a także trener telegrafii
-- **RTTY**
-- **SSTV** (dekoder robot36)
-- **DSSTV** (HamDRM)
-- **Horus Binary** (balony stratosferyczne)
+**Trener CW** uczy alfabetu Morse'a metodą Kocha. Ma regulowaną prędkość znaku i prędkość efektywną (Farnsworth), wysokość tonu i liczbę grup, a do kolejnej lekcji zachęca po osiągnięciu 90% skuteczności.
 
-### Narzędzia i wiedza
-- **Plany pasm** IARU dla Regionów 1, 2 i 3
-- **Licencja CEPT** i prefiksy za granicą
-- **Kalkulatory:** m.in. anteny i tłumienie kabli koncentrycznych
-- **Linia szarości**, czyli terminator dzień/noc z godzinami wschodu i zachodu słońca dla QTH
-- **Lokator** Maidenhead
-- **Vademecum:** kody Q, slang, alfabet fonetyczny, podmioty DXCC i okręgi SP
+### Planowanie i mapy
+- **Kalendarz zawodów:** dane SP9CXN, Polskiego Klubu UKF i QRZ.RU, filtry zawodów polskich, międzynarodowych, UKF, cyfrowych i z kraju pobytu oraz dodawanie do kalendarza telefonu. Bez internetu dostępny jest kalendarz wbudowany z wybranymi dużymi zawodami.
+- **Dyplomy:** trwające i nadchodzące akcje z radiodyplom.pl, obserwowanie akcji, Twój wynik w rankingu i szacunek punktów z Twojego logu. Wiążący jest ranking radiodyplom.pl.
+- **Za granicą:** zasady licencji CEPT T/R 61-01, znak do użycia w danym kraju, prefiksy dla gości, Region IARU, strefy i czas oraz przemienniki w okolicy. Przed wyjazdem sprawdź aktualne przepisy kraju.
+- **Lokator i azymut:** przeliczanie lokatora i współrzędnych, odległość i azymut krótką oraz długą drogą do lokatora, punktu lub znaku, a także mapa azymutalna.
+- **Szara linia:** mapa terminatora oraz godziny wschodu i zachodu słońca dla Twojego QTH.
+- **Bandplan:** plany pasm IARU dla Regionów 1, 2 i 3, z polską praktyką w Regionie 1.
+- **Obiekty do aktywacji:** obiekty POTA, SOTA i WWFF w pobliżu Twojej pozycji.
 
-### Powiadomienia
-Aplikacja może powiadamiać o przelotach satelitów, nowych krajach DXCC i burzach geomagnetycznych.
+### Kalkulatory
+- **Anteny:** dipol, EFHW, ground plane ¼λ, J-pole, Yagi 3-elementowa, prostokąt Moxona, pętla Quad/Delta
+- **Dopasowanie i zasilanie:** odcinki kabla, transformator λ/4, SWR, moc i ERP/EIRP, czas pracy na akumulatorze
+- **Tłumienność kabli:** straty i moc na antenie dla wybranego kabla, częstotliwości i długości
+
+Wyniki dla anten to wymiary startowe, które trzeba dostroić w praktyce.
+
+### Ściągi
+Kraje DXCC, kody Q, raporty RST, okręgi SP, slang, alfabet Morse'a i literowanie.
+
+## Powiadomienia i widżet
+
+- **Przeloty satelitów:** przypomnienie przed przelotem obserwowanego satelity, z wyborem wyprzedzenia i minimalnej elewacji
+- **Nowe kraje w DX Clusterze:** sprawdzanie co 15 minut spotów krajów, których nie masz w logu
+- **Burze geomagnetyczne:** sprawdzanie co godzinę progu Kp i ostrzeżeń NOAA
+- **Widżet „Propagacja i satelity”:** wskaźniki słoneczne, warunki na pasmach KF i najbliższy przelot obserwowanego satelity
+
+Powiadomienia włączysz w ustawieniach aplikacji.
 
 ## Instalacja
 
 1. Pobierz plik APK z zakładki [Releases](https://github.com/SP3WRO/Ham_Radio_Toolkit/releases) na telefon.
 2. Otwórz go i zezwól na instalację z tego źródła, jeśli Android o to zapyta.
-3. Po uruchomieniu przyznaj uprawnienia do funkcji, z których chcesz korzystać.
+3. W ustawieniach aplikacji wpisz swój znak wywoławczy. Bez znaku możesz korzystać z aplikacji jako nasłuchowiec.
+
+Nowsze wydania instalują się jako aktualizacja bez utraty danych.
 
 ### Uprawnienia
 
 | Uprawnienie | Do czego służy |
 | --- | --- |
-| Lokalizacja | lokator QTH, obiekty w pobliżu, przeloty satelitów |
-| Mikrofon | dekodery emisji cyfrowych |
+| Lokalizacja | lokator QTH, przemienniki i stacje APRS w pobliżu, przeloty satelitów, odległość do stacji; lokator możesz też wpisać ręcznie |
+| Mikrofon | dekodery |
 | Internet | dane z serwisów zewnętrznych |
 | Powiadomienia | przypomnienia i alerty |
-| Dokładne alarmy | przypomnienie o przelocie co do minuty; bez tej zgody przypomnienie jest przybliżone |
+| Dokładne alarmy | przypomnienie o przelocie co do minuty; bez tej zgody może przyjść kilka minut później |
 
-Niektóre usługi wymagają własnego konta lub klucza, który podajesz w ustawieniach aplikacji, np. wysyłanie QSO do QRZ i eQSL, HamQTH oraz RepeaterBook.
+### Konta w serwisach
+
+Podstawowe funkcje działają bez kont. Dane logowania są potrzebne tylko do tych usług:
+
+| Usługa | Co jest potrzebne |
+| --- | --- |
+| QRZ Logbook | klucz API i subskrypcja QRZ |
+| eQSL | login i hasło |
+| HamQTH | bezpłatne konto |
+| QRZCQ | konto |
+| RepeaterBook | token aplikacji i e-mail kontaktowy |
+
+### Prywatność
+
+Hasła i klucze są zapisane tylko w telefonie i nie trafiają do kopii zapasowej w chmurze. GPS działa tylko wtedy, gdy aplikacja jest otwarta. Serwisy zewnętrzne dostają tylko obszar wyszukiwania, a Twoja pozycja pojawia się w sieci APRS dopiero po naciśnięciu „Nadaj pozycję”.
 
 ## Budowanie ze źródeł
 
@@ -77,7 +138,7 @@ Plik APK pojawi się w `app/build/outputs/apk/debug/`. Testy jednostkowe uruchom
 
 ### Tłumaczenia
 
-Teksty interfejsu są w plikach `tools/i18n/*.tsv`. Pliki `strings_*.xml` są z nich generowane skryptem `tools/i18n/gen.ps1`, więc zmiany wprowadzaj w TSV, a nie w XML.
+Teksty interfejsu są w plikach `tools/i18n/*.tsv`. Pliki `strings_*.xml` są z nich generowane skryptem `tools/i18n/gen.ps1`, więc zmiany wprowadzaj w TSV, a nie w XML. Szczegóły opisuje [instrukcja tłumaczeń](tools/i18n/README.md).
 
 ## Licencja
 
@@ -94,7 +155,9 @@ Fragmenty kodu innych autorów zachowują własne licencje:
 
 ## Podziękowania
 
-Dziękuję twórcom bezpłatnych serwisów i projektów, z których korzysta aplikacja. Pełna lista źródeł danych z odnośnikami jest w aplikacji, na ekranie **O aplikacji**.
+Dziękuję twórcom bezpłatnych serwisów i projektów, z których korzysta aplikacja. Pełna lista źródeł danych z odnośnikami jest w aplikacji, na ekranie **O programie**.
+
+Kalkulator tłumienności kabli powstał na podstawie projektu Coax Calculator autorstwa SQ3SWF Olgierda.
 
 Za silne wsparcie i motywację do działania dziękuję Dorocie SQ3TGY.
 
