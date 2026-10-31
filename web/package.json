@@ -1,0 +1,15 @@
+{
+  "name": "ham-radio-toolkit-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ham Radio Toolkit – wersja WWW (PWA) dla iPhone'a i przeglądarek",
+  "type": "module",
+  "license": "SEE LICENSE IN ../LICENSE",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "data": "node tools/build-data.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "tsc -p jsconfig.json",
+    "start": "node server/server.mjs"
+  }
+}

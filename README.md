@@ -4,6 +4,8 @@ Zestaw narzędzi dla krótkofalowców na Androida. W jednej aplikacji łączy pr
 
 **Pobieranie:** plik APK znajdziesz w zakładce [Releases](https://github.com/SP3WRO/Ham_Radio_Toolkit/releases).
 
+**iPhone / przeglądarka:** wersja WWW (PWA) jest w katalogu [`web/`](web/README.md) – instalacja na serwerze i lista przeniesionych ekranów.
+
 Aplikacja jest w fazie beta. Wymaga Androida 7.0 lub nowszego. Interfejs jest dostępny po angielsku, polsku, niemiecku, czesku i słowacku, a język i motyw (jasny, ciemny lub systemowy) zmienisz w ustawieniach. Tłumaczenia powstały z pomocą AI, więc poprawki są mile widziane.
 
 ## Główne ekrany

@@ -3,6 +3,7 @@
 !/app/
 !/gradle/
 !/tools/
+!/web/
 !/.github/
 !/build.gradle.kts
 !/settings.gradle.kts

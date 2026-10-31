@@ -1,0 +1,38 @@
+# Usługa systemd dla serwera wersji WWW Ham Radio Toolkit.
+# Instalacja (jako root):
+#   cp web/server/hamradio-toolkit-web.service /etc/systemd/system/
+#   systemctl daemon-reload && systemctl enable --now hamradio-toolkit-web
+# Ścieżkę WorkingDirectory/ExecStart dopasuj do miejsca, w którym sklonowano repozytorium.
+[Unit]
+Description=Ham Radio Toolkit – wersja WWW (pliki aplikacji + pośrednik danych)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=hamradio
+Group=hamradio
+WorkingDirectory=/opt/Ham_Radio_Toolkit/web
+ExecStart=/usr/bin/node server/server.mjs
+Environment=HOST=127.0.0.1
+Environment=PORT=8080
+Environment=NODE_ENV=production
+Restart=on-failure
+RestartSec=5
+
+# Zabezpieczenia: serwer tylko czyta pliki aplikacji i łączy się z internetem
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+LockPersonality=true
+MemoryMax=256M
+
+[Install]
+WantedBy=multi-user.target
