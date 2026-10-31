@@ -3,7 +3,7 @@
 Uwaga, dane udostępnione za zgodą PK-UKF na potrzeby aplikacji Ham Radio Toolkit.
 Jeżeli chcesz korzystać z tych danych - zapytaj Zarząd PK-UKF.
 
-Co 48 godzin workflow `.github/workflows/pkukf-calendar.yml` pobiera
+Co 48 godzin workflow `.github/workflows/contest-calendars.yml` pobiera
 [kalendarz zawodów VHF/UHF/SHF PK-UKF](https://pk-ukf.pl/kalendarz-zawodow-2026/),
 zamienia go na JSON i commituje do `data/` **tylko wtedy, gdy coś się zmieniło**.
 
