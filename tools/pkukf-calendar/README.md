@@ -1,5 +1,8 @@
 # Kalendarz zawodów PK-UKF → JSON
 
+Uwaga, dane udostępnione za zgodą PK-UKF na potrzeby aplikacji Ham Radio Toolkit.
+Jeżeli chcesz korzystać z tych danych - zapytaj Zarząd PK-UKF.
+
 Co 48 godzin workflow `.github/workflows/pkukf-calendar.yml` pobiera
 [kalendarz zawodów VHF/UHF/SHF PK-UKF](https://pk-ukf.pl/kalendarz-zawodow-2026/),
 zamienia go na JSON i commituje do `data/` **tylko wtedy, gdy coś się zmieniło**.
@@ -45,3 +48,5 @@ python scraper/scrape.py --out data
 
 - Gdy strona zwróci tabelę bez zawodów (np. po zmianie wyglądu), skrypt kończy się błędem i nie nadpisuje danych – w Actions pojawi się czerwony krzyżyk i e-mail.
 - JSON nie zawiera czasu pobrania, więc commit powstaje tylko przy realnej zmianie kalendarza.
+
+Źródła danych kalendarza: PK-UKF / SP1CNV
