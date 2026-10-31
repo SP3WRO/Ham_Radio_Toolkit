@@ -74,3 +74,35 @@ def test_ids_unique_and_stable():
     ids = [c["id"] for c in DATA["contests"]]
     assert len(set(ids)) == len(ids)
     assert ids == [c["id"] for c in parse_calendar(FIXTURE)["contests"]]
+
+
+# ---- prawdziwa kopia strony sp9cxn.pzk.pl/kalendarz.html (aktualizacja 20.10.2026)
+REAL = parse_calendar(Path(__file__).with_name("real_2026-10.html").read_bytes())
+
+
+def test_real_page_counts():
+    assert REAL["count"] == 176
+    assert REAL["months"] == ["2026-10", "2026-11", "2026-12"]
+    assert REAL["source_updated"] == "2026-10-20"
+    domestic = sum(c["domestic"] for c in REAL["contests"])
+    assert (domestic, REAL["count"] - domestic) == (65, 111)
+    assert all(c["rules_url"] for c in REAL["contests"])
+
+
+def test_real_page_source_errors():
+    flagged = {(c["name"], c["start_utc"][:10]): c["problems"] for c in REAL["contests"] if c["problems"]}
+    assert flagged == {
+        ("DARC FT4 Contest", "2026-02-10"): ["date_outside_section"],
+        ("Sunday Contest CW", "2026-06-07"): ["date_outside_section"],
+        ("Sunday Contest CW", "2026-10-18"): ["end_date_fixed"],
+    }
+    okdx = next(c for c in REAL["contests"] if c["name"] == "OK DX RTTY Contest")
+    assert okdx["end_utc"] == "2026-12-20T00:00:00Z"
+
+
+def test_real_page_markers():
+    c = REAL["contests"]
+    assert sum(x["old_rules"] for x in c) == 19
+    assert sum(x["no_ru_by_contacts"] for x in c) == 14
+    assert not any(x["domestic"] and x["rules_pl_url"] for x in c)
+    assert not any(ch in x["name"] for x in c for ch in "*?")
