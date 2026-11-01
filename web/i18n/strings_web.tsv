@@ -32,3 +32,5 @@ web_sat_no_pass	No pass in the next 24 h	Brak przelotu w ciągu 24 h	Kein Überf
 web_aprs_listening	Listening runs while the app is open on screen.	Nasłuch działa, dopóki aplikacja jest otwarta na ekranie.	Der Empfang läuft, solange die App auf dem Bildschirm geöffnet ist.	Příjem běží, dokud je aplikace otevřená na obrazovce.	Príjem beží, kým je aplikácia otvorená na obrazovke.
 web_aprs_wait	Wait 30 s before sending your position again.	Odczekaj 30 s przed ponownym nadaniem pozycji.	Warte 30 s, bevor du die Position erneut sendest.	Před dalším odesláním polohy počkejte 30 s.	Pred ďalším odoslaním polohy počkajte 30 s.
 web_ft8_stopped	Stopped	Zatrzymano	Angehalten	Zastaveno	Zastavené
+web_sstv_received	Received images	Odebrane obrazy	Empfangene Bilder	Přijaté obrázky	Prijaté obrázky
+web_sstv_tap_save	Tap an image to save or share it.	Dotknij obrazu, aby go zapisać lub udostępnić.	Tippe auf ein Bild, um es zu speichern oder zu teilen.	Klepnutím na obrázek jej uložíte nebo sdílíte.	Ťuknutím na obrázok ho uložíte alebo zdieľate.
