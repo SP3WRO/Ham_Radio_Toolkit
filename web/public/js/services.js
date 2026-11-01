@@ -5,6 +5,7 @@ import { saveLastKnownPosition, credentials } from "./store.js";
 import { t } from "./i18n.js";
 import { cbBaseCall, isCompleteCall, HAMDB_DXCC, combineCallbook } from "./core/callbook.js";
 import { Maidenhead } from "./core/geo.js";
+import { inPoland } from "./core/world.js";
 import { logbook } from "./db.js";
 
 // ---------------------------------------------------------------- GPS (działa, gdy strona jest na ekranie)
@@ -178,4 +179,37 @@ export async function callbookLookup(callsign, usePskReporter = false) {
   const result = combineCallbook({ call, entity, homeEntity, data, lastLogged, hamQthConfigured: credentials.hasHamQth() }, t);
   callbookCache.set(call, [Date.now(), result]);
   return result;
+}
+
+// ---------------------------------------------------------------- kraj z pozycji (CountryResolver)
+const COUNTRY_KEY = "hrt.country.v1";
+/** @typedef {{iso: string, adminArea: string, position: {lat: number, lon: number}}} ResolvedCountry */
+/** @type {Promise<ResolvedCountry | null> | null} */
+let countryPending = null;
+
+/** Ostatnio ustalony kraj (bez czekania). @returns {ResolvedCountry | null} */
+export function cachedCountry() {
+  try { return JSON.parse(localStorage.getItem(COUNTRY_KEY) ?? "null"); } catch { return null; }
+}
+
+/**
+ * Kraj dla pozycji: serwer (OpenStreetMap), a bez sieci – przybliżony obrys Polski. W promieniu ~5 km od
+ * poprzedniego wyniku nie pytamy ponownie. @param {{lat: number, lon: number}} pos @returns {Promise<ResolvedCountry | null>}
+ */
+export function resolveCountry(pos) {
+  const prev = cachedCountry();
+  if (prev && Math.abs(prev.position.lat - pos.lat) < 0.05 && Math.abs(prev.position.lon - pos.lon) < 0.05) return Promise.resolve(prev);
+  countryPending ??= (async () => {
+    /** @type {ResolvedCountry | null} */
+    let info = null;
+    try {
+      const res = await fetch(apiUrl(`/country?lat=${pos.lat.toFixed(4)}&lon=${pos.lon.toFixed(4)}`), { signal: AbortSignal.timeout(12000) });
+      const data = await res.json();
+      if (res.ok && data.iso) info = { iso: data.iso, adminArea: data.adminArea ?? "", position: pos };
+    } catch { /* bez sieci */ }
+    if (!info && inPoland(pos)) info = { iso: "PL", adminArea: "", position: pos };
+    if (info) try { localStorage.setItem(COUNTRY_KEY, JSON.stringify(info)); } catch { /* pełna pamięć */ }
+    return info;
+  })().finally(() => { countryPending = null; });
+  return countryPending;
 }

@@ -13,6 +13,7 @@ import { repeaters } from "./repeaters.mjs";
 import { lookup as callbookLookup } from "./callbook.mjs";
 import { contests } from "./contests.mjs";
 import { awardEvents, awardDetails } from "./awards.mjs";
+import { countryAt } from "./country.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT ?? 8080);
@@ -248,6 +249,15 @@ const server = createServer(async (req, res) => {
     if (url.pathname === "/api/contests") {
       try {
         return send(res, 200, await contests(USER_AGENT, url.searchParams.get("refresh") === "1"));
+      } catch (e) {
+        return send(res, 502, { error: String(e?.message ?? e) });
+      }
+    }
+    if (url.pathname === "/api/country") {
+      const lat = Number(url.searchParams.get("lat")), lon = Number(url.searchParams.get("lon"));
+      if (!Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) return send(res, 400, { error: "Podaj lat i lon" });
+      try {
+        return send(res, 200, await countryAt(lat, lon, USER_AGENT));
       } catch (e) {
         return send(res, 502, { error: String(e?.message ?? e) });
       }

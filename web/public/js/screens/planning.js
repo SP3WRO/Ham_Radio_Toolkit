@@ -3,7 +3,7 @@
 import { h, replace, chip, button, icon } from "../ui.js";
 import { t, fmt, format, currentLanguage } from "../i18n.js";
 import { stationPosition } from "../store.js";
-import { location } from "../services.js";
+import { location, cachedCountry } from "../services.js";
 import { Maidenhead, GreatCircle } from "../core/geo.js";
 import { NcdxfBeacons } from "../core/radio.js";
 import { IaruRegion, regionalInfo, PhraseLocalizer, sunInfo, formatDecimalHour, inPoland } from "../core/world.js";
@@ -129,8 +129,9 @@ let bandplanData = null;
 /** @param {import("../app.js").ScreenContext} ctx */
 export function bandplanScreen(ctx) {
   const pos = location.get().fix ?? stationPosition();
-  // Bez geokodera kraju nie znamy – w Polsce wiemy na pewno, poza nią zgrubnie z położenia
-  const countryIso = pos && inPoland(pos) ? "PL" : null;
+  // Kraj z ostatniego ustalenia (OpenStreetMap), w Polsce z obrysu; inaczej region zgrubnie z położenia
+  const known = cachedCountry();
+  const countryIso = pos && inPoland(pos) ? "PL" : known && pos && Math.abs(known.position.lat - pos.lat) < 1 && Math.abs(known.position.lon - pos.lon) < 1 ? known.iso : null;
   const detected = countryIso ? IaruRegion.forCountry(countryIso) : pos ? IaruRegion.forPosition(pos) : null;
   /** @type {1|2|3} */
   let region = detected ?? 1;

@@ -3,10 +3,11 @@
 import { h, infoCard, button, replace, icon } from "../ui.js";
 import { t, format, fmt } from "../i18n.js";
 import { settings } from "../store.js";
-import { location } from "../services.js";
+import { location, resolveCountry } from "../services.js";
 import { Maidenhead } from "../core/geo.js";
 import { layout, everySecond } from "./common.js";
 import { repeaterStore, nearestRepeater } from "./repeaters.js";
+import { abroadBanner } from "./abroad.js";
 
 const isIos = () => /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 const isStandalone = () => matchMedia("(display-mode: standalone)").matches || /** @type {any} */ (navigator).standalone === true;
@@ -52,7 +53,12 @@ export function homeScreen(ctx) {
     }
   };
   renderQth();
-  const unsubscribe = location.subscribe(() => { renderQth(); repeaterStore.ensure(); renderRepeater(); });
+  // Za granicą – karta z prefiksem CEPT (kraj z pozycji, jak na Androidzie)
+  const abroadHost = h("div");
+  const renderAbroad = () => replace(abroadHost, abroadBanner(ctx.navigate));
+  const checkCountry = () => { const fix = location.get().fix; if (fix) resolveCountry(fix).then(renderAbroad); };
+  const unsubscribe = location.subscribe(() => { renderQth(); repeaterStore.ensure(); renderRepeater(); checkCountry(); });
+  checkCountry();
 
   // Najbliższy przemiennik (do 100 km) – dotknięcie otwiera listę przemienników
   const repeaterHost = h("div");
@@ -76,6 +82,7 @@ export function homeScreen(ctx) {
   const { el } = layout(ctx, { title: "Ham Radio Toolkit" },
     hello, install,
     infoCard({ title: t("home_utc_time") }, time, date),
+    abroadHost,
     infoCard({ title: t("home_qth_locator") }, qthBody),
     repeaterHost);
 

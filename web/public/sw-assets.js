@@ -1,5 +1,5 @@
 // Wygenerowane przez tools/build-data.mjs – nie edytować
-self.HRT_VERSION = "563e98706c2a";
+self.HRT_VERSION = "f8401c3d79d0";
 self.HRT_ASSETS = [
  "./",
  "css/app.css",
@@ -26,6 +26,7 @@ self.HRT_ASSETS = [
  "js/app.js",
  "js/core/awards.js",
  "js/core/callbook.js",
+ "js/core/cept.js",
  "js/core/contests.js",
  "js/core/geo.js",
  "js/core/logbook.js",
@@ -36,6 +37,7 @@ self.HRT_ASSETS = [
  "js/db.js",
  "js/i18n.js",
  "js/icons.js",
+ "js/screens/abroad.js",
  "js/screens/awards.js",
  "js/screens/calculators.js",
  "js/screens/common.js",
