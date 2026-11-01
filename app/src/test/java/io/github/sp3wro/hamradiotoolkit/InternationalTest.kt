@@ -126,20 +126,6 @@ class InternationalTest {
     }
 
     @Test
-    fun parsesRepeaterBookExport() {
-        // Nazwy pól wg dokumentacji eksportu RepeaterBook
-        val text = """{"count":1,"results":[{"Callsign":"HB9F","Frequency":"438.6250","Input Freq":"431.0250","PL":"71.9",
-            "TSQ":"","Lat":"46.95","Long":"7.44","Nearest City":"Bern","Landmark":"Gurten","Operational Status":"On-air",
-            "FM Analog":"Yes","DMR":"No","D-Star":"No","System Fusion":"Yes","Notes":"Linked"}]}"""
-        val r = InternationalRepeaters.parseRepeaterBook(text).single()
-        assertEquals("HB9F", r.callsign)
-        assertEquals(431.025, r.userTx, 1e-9)
-        assertEquals("71.9", r.requiredCtcss)
-        assertEquals(listOf("FM", "C4FM"), r.modes)
-        assertEquals("Bern, Gurten", r.qth)
-    }
-
-    @Test
     fun geoBoxTilesCoverArea() {
         val box = GeoBox.around(52.4, 16.9, 210.0)
         val tiles = box.tiles(2.0)

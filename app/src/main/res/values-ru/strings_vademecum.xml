@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_vademecum.tsv -->
+<resources>
+    <string name="vad_title">Справочники</string>
+    <string name="vad_tab_qcodes">Q-коды</string>
+    <string name="vad_tab_reports">Рапорты</string>
+    <string name="vad_tab_areas">Районы SP</string>
+    <string name="vad_tab_slang">Сокращения</string>
+    <string name="vad_tab_morse">Морзе</string>
+    <string name="vad_tab_phonetic">Фонетика</string>
+    <string name="vad_search_dxcc">Поиск страны или префикса…</string>
+    <string name="vad_continent">Континент: %1$s</string>
+    <string name="rst_title">Система рапортов RST</string>
+    <string name="rst_r">R – Разборчивость</string>
+    <string name="rst_r_scale">1 – Неразборчиво\n2 – Едва разборчиво, отдельные слова\n3 – Разборчиво с большим трудом\n4 – Разборчиво практически без труда\n5 – Отличная разборчивость</string>
+    <string name="rst_s">S – Сила сигнала</string>
+    <string name="rst_s_scale">1 – Едва заметные сигналы\n2 – Очень слабый\n3 – Слабый\n4 – Удовлетворительный\n5 – Довольно хороший\n6 – Хороший\n7 – Умеренно сильный\n8 – Сильный\n9 – Очень сильный</string>
+    <string name="rst_s_note">Часто встречаются рапорты S9+10 дБ или S9+20 дБ – они означают сигнал выше шкалы (по S-метру).</string>
+    <string name="rst_t">T – Тон [только CW]</string>
+    <string name="rst_t_scale">1 – Переменный ток 60 Гц или ниже, очень грубый и широкий\n2 – Очень грубый переменный ток, резкий и широкий\n3 – Грубый тон, выпрямленный, но не отфильтрованный\n4 – Грубый тон, слабая фильтрация\n5 – Отфильтрованный выпрямленный ток с сильной модуляцией пульсациями\n6 – Отфильтрованный тон с заметной модуляцией пульсациями\n7 – Почти чистый тон, следы модуляции пульсациями\n8 – Почти идеальный тон, слабые следы модуляции\n9 – Идеальный тон без следов пульсаций и какой-либо модуляции</string>
+</resources>

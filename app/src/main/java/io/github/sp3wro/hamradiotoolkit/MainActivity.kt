@@ -46,6 +46,8 @@ import io.github.sp3wro.hamradiotoolkit.ui.screens.AboutScreen
 import io.github.sp3wro.hamradiotoolkit.ui.screens.SettingsScreen
 import io.github.sp3wro.hamradiotoolkit.ui.screens.BandplanScreen
 import io.github.sp3wro.hamradiotoolkit.ui.screens.RepeatersScreen
+import io.github.sp3wro.hamradiotoolkit.data.preferences.DEFAULT_APRS_ICON
+import io.github.sp3wro.hamradiotoolkit.data.preferences.DEFAULT_APRS_SSID
 import io.github.sp3wro.hamradiotoolkit.data.preferences.UserPreferencesRepository
 import io.github.sp3wro.hamradiotoolkit.data.preferences.dataStore
 import androidx.compose.runtime.rememberCoroutineScope
@@ -221,8 +223,8 @@ fun HamRadioToolkitApp(repository: UserPreferencesRepository) {
     val refreshInterval by repository.refreshInterval.collectAsState(initial = 0)
     val tropocastArea by repository.tropocastArea.collectAsState(initial = "poland")
     val activePrograms by repository.activePrograms.collectAsState(initial = setOf("POTA", "SOTA", "WWFF", "PGA", "ZAMEK"))
-    val aprsSsid by repository.aprsSsid.collectAsState(initial = "-7")
-    val aprsIcon by repository.aprsIcon.collectAsState(initial = "/>")
+    val aprsSsid by repository.aprsSsid.collectAsState(initial = DEFAULT_APRS_SSID)
+    val aprsIcon by repository.aprsIcon.collectAsState(initial = DEFAULT_APRS_ICON)
     val aprsComment by repository.aprsComment.collectAsState(initial = "HamRadioToolkit")
     val aprsRadius by repository.aprsRadius.collectAsState(initial = 50)
     val repeaterRadius by repository.repeaterRadius.collectAsState(initial = 50)
@@ -449,7 +451,7 @@ fun HamRadioToolkitApp(repository: UserPreferencesRepository) {
                 ContestCalendarScreen(countryIso = country?.isoCode, onSettingsClick = openSettings)
             }
             composable(Screen.Awards.route) {
-                AwardsScreen(callsign = callsign)
+                AwardsScreen()
             }
             composable(
                 Screen.CallsignLookup.route,

@@ -1,332 +1,332 @@
-prefix	continent	en	pl	de	cs	sk
-1A	EU	Sovereign Military Order of Malta	Zakon Maltański	Malteserorden	Maltézský řád	Maltézsky rád
-3A	EU	Monaco	Monako	Monaco	Monako	Monako
-3B6, 3B7	AF	Agalega and St. Brandon	Wyspy Agalega i St. Brandon	Agalega und St. Brandon	Agalega a St. Brandon	Agalega a St. Brandon
-3B8	AF	Mauritius	Mauritius	Mauritius	Mauricius	Maurícius
-3B9	AF	Rodrigues Island	Wyspa Rodrigues	Rodrigues	Ostrov Rodrigues	Ostrov Rodrigues
-3C	AF	Equatorial Guinea	Gwinea Równikowa	Äquatorialguinea	Rovníková Guinea	Rovníková Guinea
-3C0	AF	Annobon	Annobon	Annobón	Annobón	Annobón
-3D2	OC	Fiji	Fidżi	Fidschi	Fidži	Fidži
-3D2C	OC	Conway Reef	Wyspa Conway Reef	Conway-Riff	Útes Conway	Útes Conway
-3D2R	OC	Rotuma Island	Wyspa Rotuma	Rotuma	Ostrov Rotuma	Ostrov Rotuma
-3DA	AF	Eswatini (Swaziland)	Eswatini (Suazi)	Eswatini (Swasiland)	Eswatini (Svazijsko)	Eswatini (Svazijsko)
-3V	AF	Tunisia	Tunezja	Tunesien	Tunisko	Tunisko
-3W, XV	AS	Vietnam	Wietnam	Vietnam	Vietnam	Vietnam
-3X	AF	Guinea	Gwinea	Guinea	Guinea	Guinea
-3Y	AF	Bouvet Island	Wyspa Bouveta	Bouvetinsel	Bouvetův ostrov	Bouvetov ostrov
-3Y	AN	Peter I Island	Wyspa Piotra I	Peter-I.-Insel	Ostrov Petra I.	Ostrov Petra I.
-4J, 4K	AS	Azerbaijan	Azerbejdżan	Aserbaidschan	Ázerbájdžán	Azerbajdžan
-4L	AS	Georgia	Gruzja	Georgien	Gruzie	Gruzínsko
-4O	EU	Montenegro	Czarnogóra	Montenegro	Černá Hora	Čierna Hora
-4S	AS	Sri Lanka	Sri Lanka	Sri Lanka	Srí Lanka	Srí Lanka
-4U1I	EU	ITU (Geneva)	ITU (Genewa)	ITU (Genf)	ITU (Ženeva)	ITU (Ženeva)
-4U1U	NA	United Nations (New York)	ONZ (Nowy Jork)	Vereinte Nationen (New York)	OSN (New York)	OSN (New York)
-4W	OC	Timor-Leste	Timor Wschodni	Osttimor	Východní Timor	Východný Timor
-4X, 4Z	AS	Israel	Izrael	Israel	Izrael	Izrael
-5A	AF	Libya	Libia	Libyen	Libye	Líbya
-5B, C4, P3	AS	Cyprus	Cypr	Zypern	Kypr	Cyprus
-5H-5I	AF	Tanzania	Tanzania	Tansania	Tanzanie	Tanzánia
-5N-5O	AF	Nigeria	Nigeria	Nigeria	Nigérie	Nigéria
-5R-5S	AF	Madagascar	Madagaskar	Madagaskar	Madagaskar	Madagaskar
-5T	AF	Mauritania	Mauretania	Mauretanien	Mauritánie	Mauritánia
-5U	AF	Niger	Niger	Niger	Niger	Niger
-5V	AF	Togo	Togo	Togo	Togo	Togo
-5W	OC	Samoa	Samoa	Samoa	Samoa	Samoa
-5X	AF	Uganda	Uganda	Uganda	Uganda	Uganda
-5Y, 5Z	AF	Kenya	Kenia	Kenia	Keňa	Keňa
-6V, 6W	AF	Senegal	Senegal	Senegal	Senegal	Senegal
-6Y	NA	Jamaica	Jamajka	Jamaika	Jamajka	Jamajka
-7O	AS	Yemen	Jemen	Jemen	Jemen	Jemen
-7P	AF	Lesotho	Lesotho	Lesotho	Lesotho	Lesotho
-7Q	AF	Malawi	Malawi	Malawi	Malawi	Malawi
-7T-7Y	AF	Algeria	Algieria	Algerien	Alžírsko	Alžírsko
-8P	NA	Barbados	Barbados	Barbados	Barbados	Barbados
-8Q	AS	Maldives	Malediwy	Malediven	Maledivy	Maldivy
-8R	SA	Guyana	Gujana	Guyana	Guyana	Guyana
-9A	EU	Croatia	Chorwacja	Kroatien	Chorvatsko	Chorvátsko
-9G	AF	Ghana	Ghana	Ghana	Ghana	Ghana
-9H	EU	Malta	Malta	Malta	Malta	Malta
-9J, 9K	AF	Zambia	Zambia	Sambia	Zambie	Zambia
-9K	AS	Kuwait	Kuwejt	Kuwait	Kuvajt	Kuvajt
-9L	AF	Sierra Leone	Sierra Leone	Sierra Leone	Sierra Leone	Sierra Leone
-9M2, 9M4	AS	West Malaysia	Malezja Zachodnia	Westmalaysia	Západní Malajsie	Západná Malajzia
-9M6, 9M8	OC	East Malaysia	Malezja Wschodnia	Ostmalaysia	Východní Malajsie	Východná Malajzia
-9N	AS	Nepal	Nepal	Nepal	Nepál	Nepál
-9Q-9T	AF	DR Congo	Dem. Rep. Konga	Demokratische Republik Kongo	Demokratická republika Kongo	Konžská demokratická republika
-9U	AF	Burundi	Burundi	Burundi	Burundi	Burundi
-9V	AS	Singapore	Singapur	Singapur	Singapur	Singapur
-9X	AF	Rwanda	Rwanda	Ruanda	Rwanda	Rwanda
-9Y, 9Z	NA	Trinidad and Tobago	Trynidad i Tobago	Trinidad und Tobago	Trinidad a Tobago	Trinidad a Tobago
-A2	AF	Botswana	Botswana	Botswana	Botswana	Botswana
-A3	OC	Tonga	Tonga	Tonga	Tonga	Tonga
-A4	AS	Oman	Oman	Oman	Omán	Omán
-A5	AS	Bhutan	Bhutan	Bhutan	Bhútán	Bhután
-A6	AS	United Arab Emirates	Zjedn. Emiraty Arabskie	Vereinigte Arabische Emirate	Spojené arabské emiráty	Spojené arabské emiráty
-A7	AS	Qatar	Katar	Katar	Katar	Katar
-A9	AS	Bahrain	Bahrajn	Bahrain	Bahrajn	Bahrajn
-AP, AR, AS	AS	Pakistan	Pakistan	Pakistan	Pákistán	Pakistan
-BS7	AS	Scarborough Reef	Rafa Scarborough	Scarborough-Riff	Útes Scarborough	Útes Scarborough
-BV	AS	Taiwan	Tajwan	Taiwan	Tchaj-wan	Taiwan
-BY, BA-BD	AS	China	Chiny	China	Čína	Čína
-C2	OC	Nauru	Nauru	Nauru	Nauru	Nauru
-C3	EU	Andorra	Andora	Andorra	Andorra	Andorra
-C5	AF	The Gambia	Gambia	Gambia	Gambie	Gambia
-C6	NA	Bahamas	Bahamy	Bahamas	Bahamy	Bahamy
-C9	AF	Mozambique	Mozambik	Mosambik	Mosambik	Mozambik
-CA-CE	SA	Chile	Chile	Chile	Chile	Čile
-CE0X	SA	San Felix Island	Wyspa San Felix	San Félix	Ostrov San Félix	Ostrov San Félix
-CE0Y	SA	Easter Island	Wyspa Wielkanocna	Osterinsel	Velikonoční ostrov	Veľkonočný ostrov
-CE0Z	SA	Juan Fernandez Islands	Wyspy Juan Fernandez	Juan-Fernández-Inseln	Ostrovy Juana Fernándeze	Ostrovy Juana Fernándeza
-CE9	AN	Antarctica (Chile)	Antarktyda (Chile)	Antarktis (Chile)	Antarktida (Chile)	Antarktída (Čile)
-CM, CO	NA	Cuba	Kuba	Kuba	Kuba	Kuba
-CN	AF	Morocco	Maroko	Marokko	Maroko	Maroko
-CP	SA	Bolivia	Boliwia	Bolivien	Bolívie	Bolívia
-CT, CS	EU	Portugal	Portugalia	Portugal	Portugalsko	Portugalsko
-CT3	AF	Madeira	Madera	Madeira	Madeira	Madeira
-CU	EU	Azores	Azory	Azoren	Azory	Azory
-CV-CX	SA	Uruguay	Urugwaj	Uruguay	Uruguay	Uruguaj
-CY0	NA	Sable Island	Wyspa Sable	Sable Island	Ostrov Sable	Ostrov Sable
-CY9	NA	St. Paul Island	Wyspa St. Paul	St. Paul Island	Ostrov St. Paul	Ostrov St. Paul
-D2, D3	AF	Angola	Angola	Angola	Angola	Angola
-D4	AF	Cape Verde	Wyspy Zielonego Przylądka	Kap Verde	Kapverdy	Kapverdy
-D6	AF	Comoros	Komory	Komoren	Komory	Komory
-DA-DR	EU	Germany	Niemcy	Deutschland	Německo	Nemecko
-DU-DZ, 4D-4I	OC	Philippines	Filipiny	Philippinen	Filipíny	Filipíny
-E3	AF	Eritrea	Erytrea	Eritrea	Eritrea	Eritrea
-E4	AS	Palestine	Palestyna	Palästina	Palestina	Palestína
-E5	OC	North Cook Islands	Północne Wyspy Cooka	Nördliche Cookinseln	Severní Cookovy ostrovy	Severné Cookove ostrovy
-E5	OC	South Cook Islands	Południowe Wyspy Cooka	Südliche Cookinseln	Jižní Cookovy ostrovy	Južné Cookove ostrovy
-E6	OC	Niue	Niue	Niue	Niue	Niue
-E7	EU	Bosnia and Herzegovina	Bośnia i Hercegowina	Bosnien und Herzegowina	Bosna a Hercegovina	Bosna a Hercegovina
-EA, EB, EC	EU	Spain	Hiszpania	Spanien	Španělsko	Španielsko
-EA6	EU	Balearic Islands	Baleary	Balearen	Baleáry	Baleáry
-EA8	AF	Canary Islands	Wyspy Kanaryjskie	Kanarische Inseln	Kanárské ostrovy	Kanárske ostrovy
-EA9	AF	Ceuta and Melilla	Ceuta i Melilla	Ceuta und Melilla	Ceuta a Melilla	Ceuta a Melilla
-EI, EJ	EU	Ireland	Irlandia	Irland	Irsko	Írsko
-EK	AS	Armenia	Armenia	Armenien	Arménie	Arménsko
-EL	AF	Liberia	Liberia	Liberia	Libérie	Libéria
-EP, EQ	AS	Iran	Iran	Iran	Írán	Irán
-ER	EU	Moldova	Mołdawia	Moldau	Moldavsko	Moldavsko
-ES	EU	Estonia	Estonia	Estland	Estonsko	Estónsko
-ET	AF	Ethiopia	Etiopia	Äthiopien	Etiopie	Etiópia
-EU, EV, EW	EU	Belarus	Białoruś	Belarus	Bělorusko	Bielorusko
-EX	AS	Kyrgyzstan	Kirgistan	Kirgisistan	Kyrgyzstán	Kirgizsko
-EY	AS	Tajikistan	Tadżykistan	Tadschikistan	Tádžikistán	Tadžikistan
-EZ	AS	Turkmenistan	Turkmenistan	Turkmenistan	Turkmenistán	Turkménsko
-F, HW-HZ	EU	France	Francja	Frankreich	Francie	Francúzsko
-FG	NA	Guadeloupe	Gwadelupa	Guadeloupe	Guadeloupe	Guadeloupe
-FH	AF	Mayotte	Majotta	Mayotte	Mayotte	Mayotte
-FJ	NA	Saint Barthélemy	Saint Barthelemy	Saint-Barthélemy	Svatý Bartoloměj	Svätý Bartolomej
-FK	OC	New Caledonia	Nowa Kaledonia	Neukaledonien	Nová Kaledonie	Nová Kaledónia
-FK	OC	Chesterfield Islands	Wyspy Chesterfield	Chesterfieldinseln	Chesterfieldovy ostrovy	Chesterfieldove ostrovy
-FM	NA	Martinique	Martynika	Martinique	Martinik	Martinik
-FO	NA	Clipperton Island	Wyspa Clippertona	Clipperton	Clippertonův ostrov	Clippertonov ostrov
-FO	OC	French Polynesia	Polinezja Francuska	Französisch-Polynesien	Francouzská Polynésie	Francúzska Polynézia
-FO	OC	Marquesas Islands	Markizy	Marquesas	Markézy	Markézy
-FO	OC	Austral Islands	Wyspy Austral	Austral-Inseln	Australské ostrovy	Australské ostrovy
-FP	NA	Saint Pierre and Miquelon	Saint Pierre i Miquelon	Saint-Pierre und Miquelon	Saint-Pierre a Miquelon	Saint-Pierre a Miquelon
-FR	AF	Réunion	Reunion	Réunion	Réunion	Réunion
-FR	AF	Glorioso Islands	Glorioso	Glorieuses	Glorieuses	Glorieuses
-FR	AF	Juan de Nova Island	Wyspa Juan de Nova	Juan de Nova	Ostrov Juan de Nova	Ostrov Juan de Nova
-FR	AF	Tromelin Island	Wyspa Tromelin	Tromelin	Ostrov Tromelin	Ostrov Tromelin
-FS	NA	Saint Martin	Saint Martin	Saint-Martin	Svatý Martin	Svätý Martin
-FT5W	AF	Crozet Islands	Wyspy Crozeta	Crozetinseln	Crozetovy ostrovy	Crozetove ostrovy
-FT5X	AF	Kerguelen Islands	Wyspy Kerguelena	Kerguelen	Kergueleny	Kergueleny
-FT5Z	AF	Amsterdam and St. Paul Islands	Wyspy Amsterdam i Paul	Amsterdam und St. Paul	Ostrovy Amsterdam a St. Paul	Ostrovy Amsterdam a St. Paul
-FW	OC	Wallis and Futuna	Wallis i Futuna	Wallis und Futuna	Wallis a Futuna	Wallis a Futuna
-FY	SA	French Guiana	Gujana Francuska	Französisch-Guayana	Francouzská Guyana	Francúzska Guyana
-G, GX, M, 2	EU	England	Anglia	England	Anglie	Anglicko
-GD, GT	EU	Isle of Man	Wyspa Man	Isle of Man	Ostrov Man	Ostrov Man
-GI, GN	EU	Northern Ireland	Irlandia Północna	Nordirland	Severní Irsko	Severné Írsko
-GJ, GH	EU	Jersey	Jersey	Jersey	Jersey	Jersey
-GM, MM, 2M	EU	Scotland	Szkocja	Schottland	Skotsko	Škótsko
-GU, GP	EU	Guernsey	Guernsey	Guernsey	Guernsey	Guernsey
-GW, MW, 2W	EU	Wales	Walia	Wales	Wales	Wales
-H4	OC	Solomon Islands	Wyspy Salomona	Salomonen	Šalamounovy ostrovy	Šalamúnove ostrovy
-H40	OC	Temotu Province	Wyspy Temotu	Temotu	Ostrovy Temotu	Ostrovy Temotu
-HA, HG	EU	Hungary	Węgry	Ungarn	Maďarsko	Maďarsko
-HB9, HB0	EU	Switzerland	Szwajcaria	Schweiz	Švýcarsko	Švajčiarsko
-HB0	EU	Liechtenstein	Liechtenstein	Liechtenstein	Lichtenštejnsko	Lichtenštajnsko
-HC, HD	SA	Ecuador	Ekwador	Ecuador	Ekvádor	Ekvádor
-HC8	SA	Galápagos Islands	Wyspy Galapagos	Galápagos-Inseln	Galapágy	Galapágy
-HH	NA	Haiti	Haiti	Haiti	Haiti	Haiti
-HI	NA	Dominican Republic	Dominikana	Dominikanische Republik	Dominikánská republika	Dominikánska republika
-HJ, HK	SA	Colombia	Kolumbia	Kolumbien	Kolumbie	Kolumbia
-HK0	SA	Malpelo Island	Wyspa Malpelo	Malpelo	Ostrov Malpelo	Ostrov Malpelo
-HK0	NA	San Andrés and Providencia	San Andres i Providencia	San Andrés und Providencia	San Andrés a Providencia	San Andrés a Providencia
-HL, DS	AS	South Korea	Korea Południowa	Südkorea	Jižní Korea	Južná Kórea
-HO, HP	NA	Panama	Panama	Panama	Panama	Panama
-HR	NA	Honduras	Honduras	Honduras	Honduras	Honduras
-HS, E2	AS	Thailand	Tajlandia	Thailand	Thajsko	Thajsko
-HV	EU	Vatican City	Watykan	Vatikanstadt	Vatikán	Vatikán
-HZ	AS	Saudi Arabia	Arabia Saudyjska	Saudi-Arabien	Saúdská Arábie	Saudská Arábia
-I, IK, IZ	EU	Italy	Włochy	Italien	Itálie	Taliansko
-IS0, IM0	EU	Sardinia	Sardynia	Sardinien	Sardinie	Sardínia
-J2	AF	Djibouti	Dżibuti	Dschibuti	Džibutsko	Džibutsko
-J3	NA	Grenada	Grenada	Grenada	Grenada	Grenada
-J5	AF	Guinea-Bissau	Gwinea Bissau	Guinea-Bissau	Guinea-Bissau	Guinea-Bissau
-J6	NA	Saint Lucia	Saint Lucia	St. Lucia	Svatá Lucie	Svätá Lucia
-J7	NA	Dominica	Dominika	Dominica	Dominika	Dominika
-J8	NA	Saint Vincent and the Grenadines	Saint Vincent i Grenadyny	St. Vincent und die Grenadinen	Svatý Vincenc a Grenadiny	Svätý Vincent a Grenadíny
-JA, JI, JR, 7K	AS	Japan	Japonia	Japan	Japonsko	Japonsko
-JD1	AS	Ogasawara (Bonin Islands)	Ogasawara (Wyspy Bonin)	Ogasawara (Bonininseln)	Ogasawara (Boninské ostrovy)	Ogasawara (Boninské ostrovy)
-JD1	OC	Minami-Tori-shima	Wyspy Minami-Tori-shima	Minami-Torishima	Minami-Torišima	Minami-Torišima
-JT-JV	AS	Mongolia	Mongolia	Mongolei	Mongolsko	Mongolsko
-JW	EU	Svalbard	Svalbard	Spitzbergen	Špicberky	Špicbergy
-JX	EU	Jan Mayen	Jan Mayen	Jan Mayen	Jan Mayen	Jan Mayen
-JY	AS	Jordan	Jordania	Jordanien	Jordánsko	Jordánsko
-K, W, N, AA-AK	NA	USA	USA	USA	USA	USA
-KG4	NA	Guantanamo Bay	Zatoka Guantanamo	Guantánamo-Bucht	Zátoka Guantánamo	Záliv Guantánamo
-KH0	OC	Mariana Islands	Mariany	Nördliche Marianen	Mariany	Mariány
-KH1	OC	Baker and Howland Islands	Wyspa Baker i Howland	Baker und Howland	Ostrovy Baker a Howland	Ostrovy Baker a Howland
-KH2	OC	Guam	Guam	Guam	Guam	Guam
-KH3	OC	Johnston Island	Wyspa Johnston	Johnston-Atoll	Johnstonův atol	Johnstonov atol
-KH4	OC	Midway Islands	Wyspy Midway	Midwayinseln	Midwayské ostrovy	Midwayské ostrovy
-KH5	OC	Palmyra and Jarvis Islands	Wyspa Palmyra i Jarvis	Palmyra und Jarvis	Ostrovy Palmyra a Jarvis	Ostrovy Palmyra a Jarvis
-KH6, KH7	OC	Hawaii	Hawaje	Hawaii	Havaj	Havaj
-KH8	OC	American Samoa	Samoa Amerykańskie	Amerikanisch-Samoa	Americká Samoa	Americká Samoa
-KH8	OC	Swains Island	Wyspa Swains	Swains Island	Ostrov Swains	Ostrov Swains
-KH9	OC	Wake Island	Wyspa Wake	Wake	Ostrov Wake	Ostrov Wake
-KL7	NA	Alaska	Alaska	Alaska	Aljaška	Aljaška
-KP1	NA	Navassa Island	Wyspa Navassa	Navassa	Ostrov Navassa	Ostrov Navassa
-KP2	NA	US Virgin Islands	Wyspy Dziewicze (USA)	Amerikanische Jungferninseln	Americké Panenské ostrovy	Americké Panenské ostrovy
-KP4	NA	Puerto Rico	Portoryko	Puerto Rico	Portoriko	Portoriko
-KP5	NA	Desecheo Island	Wyspa Desecheo	Desecheo	Ostrov Desecheo	Ostrov Desecheo
-LA, LN	EU	Norway	Norwegia	Norwegen	Norsko	Nórsko
-LO-LW, LU	SA	Argentina	Argentyna	Argentinien	Argentina	Argentína
-LX	EU	Luxembourg	Luksemburg	Luxemburg	Lucembursko	Luxembursko
-LY	EU	Lithuania	Litwa	Litauen	Litva	Litva
-LZ	EU	Bulgaria	Bułgaria	Bulgarien	Bulharsko	Bulharsko
-OA-OC	SA	Peru	Peru	Peru	Peru	Peru
-OD	AS	Lebanon	Liban	Libanon	Libanon	Libanon
-OE	EU	Austria	Austria	Österreich	Rakousko	Rakúsko
-OF-OI, OH	EU	Finland	Finlandia	Finnland	Finsko	Fínsko
-OH0	EU	Åland Islands	Wyspy Alandzkie	Ålandinseln	Alandy	Alandy
-OJ0	EU	Market Reef	Market Reef	Märket	Märket	Märket
-OK, OL	EU	Czech Republic	Czechy	Tschechien	Česko	Česko
-OM	EU	Slovakia	Słowacja	Slowakei	Slovensko	Slovensko
-ON, OO-OT	EU	Belgium	Belgia	Belgien	Belgie	Belgicko
-OX	NA	Greenland	Grenlandia	Grönland	Grónsko	Grónsko
-OY	EU	Faroe Islands	Wyspy Owcze	Färöer	Faerské ostrovy	Faerské ostrovy
-OZ, OU-OZ	EU	Denmark	Dania	Dänemark	Dánsko	Dánsko
-P2	OC	Papua New Guinea	Papua Nowa Gwinea	Papua-Neuguinea	Papua Nová Guinea	Papua-Nová Guinea
-P4	SA	Aruba	Aruba	Aruba	Aruba	Aruba
-P5	AS	North Korea	Korea Północna	Nordkorea	Severní Korea	Severná Kórea
-PA, PB-PI	EU	Netherlands	Holandia	Niederlande	Nizozemsko	Holandsko
-PJ2	SA	Curaçao	Curaçao	Curaçao	Curaçao	Curaçao
-PJ4	SA	Bonaire	Bonaire	Bonaire	Bonaire	Bonaire
-PJ5, PJ6	NA	Saba / Sint Eustatius	Saba / Sint Eustatius	Saba / Sint Eustatius	Saba / Svatý Eustach	Saba / Svätý Eustach
-PJ7	NA	Sint Maarten	Sint Maarten	Sint Maarten	Svatý Martin (niz.)	Svätý Martin (hol.)
-PP-PY	SA	Brazil	Brazylia	Brasilien	Brazílie	Brazília
-PY0F	SA	Fernando de Noronha	Fernando de Noronha	Fernando de Noronha	Fernando de Noronha	Fernando de Noronha
-PY0S	SA	St. Peter and St. Paul Rocks	Wyspy Świętego Piotra i Pawła	St.-Peter-und-St.-Paul-Felsen	Skály sv. Petra a Pavla	Skaly sv. Petra a Pavla
-PY0T	SA	Trindade and Martim Vaz	Trindade i Martim Vaz	Trindade und Martim Vaz	Trindade a Martim Vaz	Trindade a Martim Vaz
-PZ	SA	Suriname	Surinam	Suriname	Surinam	Surinam
-R1F	EU	Franz Josef Land	Ziemia Franciszka Józefa	Franz-Josef-Land	Země Františka Josefa	Zem Františka Jozefa
-R1M	EU	Malyj Vysotskij Island	Wyspa Malyj Wysockij	Malyj Wyssozki	Ostrov Malyj Vysockij	Ostrov Malyj Vysockij
-S0	AF	Western Sahara	Sahara Zachodnia	Westsahara	Západní Sahara	Západná Sahara
-S2	AS	Bangladesh	Bangladesz	Bangladesch	Bangladéš	Bangladéš
-S5	EU	Slovenia	Słowenia	Slowenien	Slovinsko	Slovinsko
-S7	AF	Seychelles	Seszele	Seychellen	Seychely	Seychely
-S9	AF	São Tomé and Príncipe	Wyspy Świętego Tomasza i Książęca	São Tomé und Príncipe	Svatý Tomáš a Princův ostrov	Svätý Tomáš a Princov ostrov
-SA-SM	EU	Sweden	Szwecja	Schweden	Švédsko	Švédsko
-SP, SQ, SR, 3Z	EU	Poland	Polska	Polen	Polsko	Poľsko
-ST	AF	Sudan	Sudan	Sudan	Súdán	Sudán
-SU	AF	Egypt	Egipt	Ägypten	Egypt	Egypt
-SV, J4, SY	EU	Greece	Grecja	Griechenland	Řecko	Grécko
-SV/A	EU	Mount Athos	Góra Athos	Berg Athos	Hora Athos	Hora Athos
-SV5	EU	Dodecanese	Dodekanez	Dodekanes	Dodekanésy	Dodekanéz
-SV9	EU	Crete	Kreta	Kreta	Kréta	Kréta
-T2	OC	Tuvalu	Tuvalu	Tuvalu	Tuvalu	Tuvalu
-T30	OC	Western Kiribati	Zachodnie Kiribati	West-Kiribati	Západní Kiribati	Západné Kiribati
-T31	OC	Central Kiribati	Centralne Kiribati	Zentral-Kiribati	Střední Kiribati	Stredné Kiribati
-T32	OC	Eastern Kiribati	Wschodnie Kiribati	Ost-Kiribati	Východní Kiribati	Východné Kiribati
-T33	OC	Banaba Island	Wyspa Banaba	Banaba	Ostrov Banaba	Ostrov Banaba
-T5	AF	Somalia	Somalia	Somalia	Somálsko	Somálsko
-T7	EU	San Marino	San Marino	San Marino	San Marino	San Maríno
-T8	OC	Palau	Palau	Palau	Palau	Palau
-TA, TB, TC	EU/AS	Turkey	Turcja	Türkei	Turecko	Turecko
-TF	EU	Iceland	Islandia	Island	Island	Island
-TG	NA	Guatemala	Gwatemala	Guatemala	Guatemala	Guatemala
-TI, TE	NA	Costa Rica	Kostaryka	Costa Rica	Kostarika	Kostarika
-TI9	NA	Cocos Island	Wyspa Kokosowa	Kokosinsel	Kokosový ostrov	Kokosový ostrov
-TJ	AF	Cameroon	Kamerun	Kamerun	Kamerun	Kamerun
-TK	EU	Corsica	Korsyka	Korsika	Korsika	Korzika
-TL	AF	Central African Republic	Republika Środkowoafrykańska	Zentralafrikanische Republik	Středoafrická republika	Stredoafrická republika
-TN	AF	Republic of the Congo	Kongo	Republik Kongo	Kongo	Kongo
-TR	AF	Gabon	Gabon	Gabun	Gabon	Gabon
-TT	AF	Chad	Czad	Tschad	Čad	Čad
-TU	AF	Côte d'Ivoire	Wybrzeże Kości Słoniowej	Elfenbeinküste	Pobřeží slonoviny	Pobrežie Slonoviny
-TY	AF	Benin	Benin	Benin	Benin	Benin
-TZ	AF	Mali	Mali	Mali	Mali	Mali
-UA, RA, R, U	EU/AS	Russia	Rosja	Russland	Rusko	Rusko
-UA2, RA2	EU	Kaliningrad	Obwód Kaliningradzki	Oblast Kaliningrad	Kaliningradská oblast	Kaliningradská oblasť
-UN-UQ	AS	Kazakhstan	Kazachstan	Kasachstan	Kazachstán	Kazachstan
-UR, UT, UY, EM-EO	EU	Ukraine	Ukraina	Ukraine	Ukrajina	Ukrajina
-V2	NA	Antigua and Barbuda	Antigua i Barbuda	Antigua und Barbuda	Antigua a Barbuda	Antigua a Barbuda
-V3	NA	Belize	Belize	Belize	Belize	Belize
-V4	NA	Saint Kitts and Nevis	Saint Kitts i Nevis	St. Kitts und Nevis	Svatý Kryštof a Nevis	Svätý Krištof a Nevis
-V5	AF	Namibia	Namibia	Namibia	Namibie	Namíbia
-V6	OC	Micronesia	Mikronezja	Mikronesien	Mikronésie	Mikronézia
-V7	OC	Marshall Islands	Wyspy Marshalla	Marshallinseln	Marshallovy ostrovy	Marshallove ostrovy
-V8	AS	Brunei	Brunei	Brunei	Brunej	Brunej
-VE, VA-VG	NA	Canada	Kanada	Kanada	Kanada	Kanada
-VK, AX	OC	Australia	Australia	Australien	Austrálie	Austrália
-VK0	AF	Heard Island	Wyspa Heard	Heard	Heardův ostrov	Heardov ostrov
-VK0	OC	Macquarie Island	Wyspa Macquarie	Macquarieinsel	Ostrov Macquarie	Ostrov Macquarie
-VK9C	OC	Cocos (Keeling) Islands	Wyspy Kokosowe (Keeling)	Kokosinseln (Keeling)	Kokosové ostrovy (Keeling)	Kokosové ostrovy (Keeling)
-VK9L	OC	Lord Howe Island	Wyspa Lord Howe	Lord-Howe-Insel	Ostrov lorda Howa	Ostrov lorda Howa
-VK9M	OC	Mellish Reef	Rafa Mellish	Mellish-Riff	Útes Mellish	Útes Mellish
-VK9N	OC	Norfolk Island	Wyspa Norfolk	Norfolkinsel	Norfolk	Norfolk
-VK9W	OC	Willis Island	Rafa Willis	Willis-Insel	Ostrov Willis	Ostrov Willis
-VK9X	OC	Christmas Island	Wyspa Bożego Narodzenia	Weihnachtsinsel	Vánoční ostrov	Vianočný ostrov
-VP2E	NA	Anguilla	Anguilla	Anguilla	Anguilla	Anguilla
-VP2M	NA	Montserrat	Montserrat	Montserrat	Montserrat	Montserrat
-VP2V	NA	British Virgin Islands	Brytyjskie Wyspy Dziewicze	Britische Jungferninseln	Britské Panenské ostrovy	Britské Panenské ostrovy
-VP5	NA	Turks and Caicos Islands	Turks i Caicos	Turks- und Caicosinseln	Turks a Caicos	Turks a Caicos
-VP6	OC	Pitcairn Islands	Wyspy Pitcairn	Pitcairninseln	Pitcairnovy ostrovy	Pitcairnove ostrovy
-VP8	SA	Falkland Islands	Falklandy	Falklandinseln	Falklandy	Falklandy
-VP8	SA	South Georgia	Georgia Południowa	Südgeorgien	Jižní Georgie	Južná Georgia
-VP8	AN	South Orkney Islands	Południowe Orkady	Südliche Orkneyinseln	Jižní Orkneje	Južné Orkneje
-VP8	AN	South Shetland Islands	Południowe Szetlandy	Südliche Shetlandinseln	Jižní Shetlandy	Južné Shetlandy
-VP8	SA	South Sandwich Islands	Południowy Sandwich	Südliche Sandwichinseln	Jižní Sandwichovy ostrovy	Južné Sandwichove ostrovy
-VP9	NA	Bermuda	Bermudy	Bermuda	Bermudy	Bermudy
-VQ9	AF	Chagos Archipelago	Archipelag Chagos	Chagos-Archipel	Čagoské ostrovy	Čagoské ostrovy
-VR2	AS	Hong Kong	Hongkong	Hongkong	Hongkong	Hongkong
-VU	AS	India	Indie	Indien	Indie	India
-VU4	AS	Andaman and Nicobar Islands	Wyspy Andaman i Nicobar	Andamanen und Nikobaren	Andamany a Nikobary	Andamany a Nikobary
-VU7	AS	Lakshadweep	Lakszadiwy	Lakshadweep	Lakadivy	Lakadivy
-XE, XF, XG	NA	Mexico	Meksyk	Mexiko	Mexiko	Mexiko
-XT	AF	Burkina Faso	Burkina Faso	Burkina Faso	Burkina Faso	Burkina Faso
-XU	AS	Cambodia	Kambodża	Kambodscha	Kambodža	Kambodža
-XW	AS	Laos	Laos	Laos	Laos	Laos
-XX9	AS	Macao	Makau	Macau	Macao	Macao
-XY, XZ	AS	Myanmar (Burma)	Mjanma (Birma)	Myanmar (Birma)	Myanmar (Barma)	Mjanmarsko (Barma)
-YA	AS	Afghanistan	Afganistan	Afghanistan	Afghánistán	Afganistan
-YB-YH	OC	Indonesia	Indonezja	Indonesien	Indonésie	Indonézia
-YI	AS	Iraq	Irak	Irak	Irák	Irak
-YJ	OC	Vanuatu	Vanuatu	Vanuatu	Vanuatu	Vanuatu
-YL	EU	Latvia	Łotwa	Lettland	Lotyšsko	Lotyšsko
-YN	NA	Nicaragua	Nikaragua	Nicaragua	Nikaragua	Nikaragua
-YO, YR	EU	Romania	Rumunia	Rumänien	Rumunsko	Rumunsko
-YS	NA	El Salvador	Salwador	El Salvador	Salvador	Salvádor
-YU, YT	EU	Serbia	Serbia	Serbien	Srbsko	Srbsko
-YV, YY	SA	Venezuela	Wenezuela	Venezuela	Venezuela	Venezuela
-YV0	NA	Aves Island	Wyspa Aves	Aves	Ostrov Aves	Ostrov Aves
-Z2	AF	Zimbabwe	Zimbabwe	Simbabwe	Zimbabwe	Zimbabwe
-Z3	EU	North Macedonia	Macedonia Północna	Nordmazedonien	Severní Makedonie	Severné Macedónsko
-Z6	EU	Kosovo	Kosowo	Kosovo	Kosovo	Kosovo
-ZA	EU	Albania	Albania	Albanien	Albánie	Albánsko
-ZB2	EU	Gibraltar	Gibraltar	Gibraltar	Gibraltar	Gibraltár
-ZC4	AS	UK Sovereign Base Areas on Cyprus	Bazy Brytyjskie na Cyprze	Britische Militärbasen auf Zypern	Britské základny na Kypru	Britské základne na Cypre
-ZD7	AF	Saint Helena	Wyspa Świętej Heleny	St. Helena	Svatá Helena	Svätá Helena
-ZD8	AF	Ascension Island	Wyspa Wniebowstąpienia	Ascension	Ascension	Ascension
-ZD9	AF	Tristan da Cunha and Gough Island	Tristan da Cunha i Gough	Tristan da Cunha und Gough	Tristan da Cunha a Gough	Tristan da Cunha a Gough
-ZF	NA	Cayman Islands	Kajmany	Kaimaninseln	Kajmanské ostrovy	Kajmanie ostrovy
-ZL, ZM	OC	New Zealand	Nowa Zelandia	Neuseeland	Nový Zéland	Nový Zéland
-ZL7	OC	Chatham Islands	Wyspy Chatham	Chathaminseln	Chathamské ostrovy	Chathamské ostrovy
-ZL8	OC	Kermadec Islands	Wyspy Kermadec	Kermadecinseln	Kermadecovy ostrovy	Kermadecove ostrovy
-ZL9	OC	New Zealand Subantarctic Islands	Subantarktyczne Wyspy Nowej Zelandii	Subantarktische Inseln Neuseelands	Novozélandské subantarktické ostrovy	Novozélandské subantarktické ostrovy
-ZP	SA	Paraguay	Paragwaj	Paraguay	Paraguay	Paraguaj
-ZS, ZR-ZU	AF	South Africa	RPA	Südafrika	Jihoafrická republika	Juhoafrická republika
-ZS8	AF	Prince Edward and Marion Islands	Wyspy Księcia Edwarda i Marion	Prinz-Edward-Inseln	Ostrovy prince Edwarda	Ostrovy princa Eduarda
+prefix	continent	en	pl	de	cs	sk	ru
+1A	EU	Sovereign Military Order of Malta	Zakon Maltański	Malteserorden	Maltézský řád	Maltézsky rád	Мальтийский орден
+3A	EU	Monaco	Monako	Monaco	Monako	Monako	Монако
+3B6, 3B7	AF	Agalega and St. Brandon	Wyspy Agalega i St. Brandon	Agalega und St. Brandon	Agalega a St. Brandon	Agalega a St. Brandon	Агалега и Сент-Брандон
+3B8	AF	Mauritius	Mauritius	Mauritius	Mauricius	Maurícius	Маврикий
+3B9	AF	Rodrigues Island	Wyspa Rodrigues	Rodrigues	Ostrov Rodrigues	Ostrov Rodrigues	Остров Родригес
+3C	AF	Equatorial Guinea	Gwinea Równikowa	Äquatorialguinea	Rovníková Guinea	Rovníková Guinea	Экваториальная Гвинея
+3C0	AF	Annobon	Annobon	Annobón	Annobón	Annobón	Аннобон
+3D2	OC	Fiji	Fidżi	Fidschi	Fidži	Fidži	Фиджи
+3D2C	OC	Conway Reef	Wyspa Conway Reef	Conway-Riff	Útes Conway	Útes Conway	Риф Конвей
+3D2R	OC	Rotuma Island	Wyspa Rotuma	Rotuma	Ostrov Rotuma	Ostrov Rotuma	Остров Ротума
+3DA	AF	Eswatini (Swaziland)	Eswatini (Suazi)	Eswatini (Swasiland)	Eswatini (Svazijsko)	Eswatini (Svazijsko)	Эсватини (Свазиленд)
+3V	AF	Tunisia	Tunezja	Tunesien	Tunisko	Tunisko	Тунис
+3W, XV	AS	Vietnam	Wietnam	Vietnam	Vietnam	Vietnam	Вьетнам
+3X	AF	Guinea	Gwinea	Guinea	Guinea	Guinea	Гвинея
+3Y	AF	Bouvet Island	Wyspa Bouveta	Bouvetinsel	Bouvetův ostrov	Bouvetov ostrov	Остров Буве
+3Y	AN	Peter I Island	Wyspa Piotra I	Peter-I.-Insel	Ostrov Petra I.	Ostrov Petra I.	Остров Петра I
+4J, 4K	AS	Azerbaijan	Azerbejdżan	Aserbaidschan	Ázerbájdžán	Azerbajdžan	Азербайджан
+4L	AS	Georgia	Gruzja	Georgien	Gruzie	Gruzínsko	Грузия
+4O	EU	Montenegro	Czarnogóra	Montenegro	Černá Hora	Čierna Hora	Черногория
+4S	AS	Sri Lanka	Sri Lanka	Sri Lanka	Srí Lanka	Srí Lanka	Шри-Ланка
+4U1I	EU	ITU (Geneva)	ITU (Genewa)	ITU (Genf)	ITU (Ženeva)	ITU (Ženeva)	МСЭ (Женева)
+4U1U	NA	United Nations (New York)	ONZ (Nowy Jork)	Vereinte Nationen (New York)	OSN (New York)	OSN (New York)	Организация Объединённых Наций (Нью-Йорк)
+4W	OC	Timor-Leste	Timor Wschodni	Osttimor	Východní Timor	Východný Timor	Восточный Тимор
+4X, 4Z	AS	Israel	Izrael	Israel	Izrael	Izrael	Израиль
+5A	AF	Libya	Libia	Libyen	Libye	Líbya	Ливия
+5B, C4, P3	AS	Cyprus	Cypr	Zypern	Kypr	Cyprus	Кипр
+5H-5I	AF	Tanzania	Tanzania	Tansania	Tanzanie	Tanzánia	Танзания
+5N-5O	AF	Nigeria	Nigeria	Nigeria	Nigérie	Nigéria	Нигерия
+5R-5S	AF	Madagascar	Madagaskar	Madagaskar	Madagaskar	Madagaskar	Мадагаскар
+5T	AF	Mauritania	Mauretania	Mauretanien	Mauritánie	Mauritánia	Мавритания
+5U	AF	Niger	Niger	Niger	Niger	Niger	Нигер
+5V	AF	Togo	Togo	Togo	Togo	Togo	Того
+5W	OC	Samoa	Samoa	Samoa	Samoa	Samoa	Самоа
+5X	AF	Uganda	Uganda	Uganda	Uganda	Uganda	Уганда
+5Y, 5Z	AF	Kenya	Kenia	Kenia	Keňa	Keňa	Кения
+6V, 6W	AF	Senegal	Senegal	Senegal	Senegal	Senegal	Сенегал
+6Y	NA	Jamaica	Jamajka	Jamaika	Jamajka	Jamajka	Ямайка
+7O	AS	Yemen	Jemen	Jemen	Jemen	Jemen	Йемен
+7P	AF	Lesotho	Lesotho	Lesotho	Lesotho	Lesotho	Лесото
+7Q	AF	Malawi	Malawi	Malawi	Malawi	Malawi	Малави
+7T-7Y	AF	Algeria	Algieria	Algerien	Alžírsko	Alžírsko	Алжир
+8P	NA	Barbados	Barbados	Barbados	Barbados	Barbados	Барбадос
+8Q	AS	Maldives	Malediwy	Malediven	Maledivy	Maldivy	Мальдивы
+8R	SA	Guyana	Gujana	Guyana	Guyana	Guyana	Гайана
+9A	EU	Croatia	Chorwacja	Kroatien	Chorvatsko	Chorvátsko	Хорватия
+9G	AF	Ghana	Ghana	Ghana	Ghana	Ghana	Гана
+9H	EU	Malta	Malta	Malta	Malta	Malta	Мальта
+9J, 9K	AF	Zambia	Zambia	Sambia	Zambie	Zambia	Замбия
+9K	AS	Kuwait	Kuwejt	Kuwait	Kuvajt	Kuvajt	Кувейт
+9L	AF	Sierra Leone	Sierra Leone	Sierra Leone	Sierra Leone	Sierra Leone	Сьерра-Леоне
+9M2, 9M4	AS	West Malaysia	Malezja Zachodnia	Westmalaysia	Západní Malajsie	Západná Malajzia	Западная Малайзия
+9M6, 9M8	OC	East Malaysia	Malezja Wschodnia	Ostmalaysia	Východní Malajsie	Východná Malajzia	Восточная Малайзия
+9N	AS	Nepal	Nepal	Nepal	Nepál	Nepál	Непал
+9Q-9T	AF	DR Congo	Dem. Rep. Konga	Demokratische Republik Kongo	Demokratická republika Kongo	Konžská demokratická republika	ДР Конго
+9U	AF	Burundi	Burundi	Burundi	Burundi	Burundi	Бурунди
+9V	AS	Singapore	Singapur	Singapur	Singapur	Singapur	Сингапур
+9X	AF	Rwanda	Rwanda	Ruanda	Rwanda	Rwanda	Руанда
+9Y, 9Z	NA	Trinidad and Tobago	Trynidad i Tobago	Trinidad und Tobago	Trinidad a Tobago	Trinidad a Tobago	Тринидад и Тобаго
+A2	AF	Botswana	Botswana	Botswana	Botswana	Botswana	Ботсвана
+A3	OC	Tonga	Tonga	Tonga	Tonga	Tonga	Тонга
+A4	AS	Oman	Oman	Oman	Omán	Omán	Оман
+A5	AS	Bhutan	Bhutan	Bhutan	Bhútán	Bhután	Бутан
+A6	AS	United Arab Emirates	Zjedn. Emiraty Arabskie	Vereinigte Arabische Emirate	Spojené arabské emiráty	Spojené arabské emiráty	Объединённые Арабские Эмираты
+A7	AS	Qatar	Katar	Katar	Katar	Katar	Катар
+A9	AS	Bahrain	Bahrajn	Bahrain	Bahrajn	Bahrajn	Бахрейн
+AP, AR, AS	AS	Pakistan	Pakistan	Pakistan	Pákistán	Pakistan	Пакистан
+BS7	AS	Scarborough Reef	Rafa Scarborough	Scarborough-Riff	Útes Scarborough	Útes Scarborough	Риф Скарборо
+BV	AS	Taiwan	Tajwan	Taiwan	Tchaj-wan	Taiwan	Тайвань
+BY, BA-BD	AS	China	Chiny	China	Čína	Čína	Китай
+C2	OC	Nauru	Nauru	Nauru	Nauru	Nauru	Науру
+C3	EU	Andorra	Andora	Andorra	Andorra	Andorra	Андорра
+C5	AF	The Gambia	Gambia	Gambia	Gambie	Gambia	Гамбия
+C6	NA	Bahamas	Bahamy	Bahamas	Bahamy	Bahamy	Багамы
+C9	AF	Mozambique	Mozambik	Mosambik	Mosambik	Mozambik	Мозамбик
+CA-CE	SA	Chile	Chile	Chile	Chile	Čile	Чили
+CE0X	SA	San Felix Island	Wyspa San Felix	San Félix	Ostrov San Félix	Ostrov San Félix	Остров Сан-Феликс
+CE0Y	SA	Easter Island	Wyspa Wielkanocna	Osterinsel	Velikonoční ostrov	Veľkonočný ostrov	Остров Пасхи
+CE0Z	SA	Juan Fernandez Islands	Wyspy Juan Fernandez	Juan-Fernández-Inseln	Ostrovy Juana Fernándeze	Ostrovy Juana Fernándeza	Острова Хуан-Фернандес
+CE9	AN	Antarctica (Chile)	Antarktyda (Chile)	Antarktis (Chile)	Antarktida (Chile)	Antarktída (Čile)	Антарктида (Чили)
+CM, CO	NA	Cuba	Kuba	Kuba	Kuba	Kuba	Куба
+CN	AF	Morocco	Maroko	Marokko	Maroko	Maroko	Марокко
+CP	SA	Bolivia	Boliwia	Bolivien	Bolívie	Bolívia	Боливия
+CT, CS	EU	Portugal	Portugalia	Portugal	Portugalsko	Portugalsko	Португалия
+CT3	AF	Madeira	Madera	Madeira	Madeira	Madeira	Мадейра
+CU	EU	Azores	Azory	Azoren	Azory	Azory	Азорские острова
+CV-CX	SA	Uruguay	Urugwaj	Uruguay	Uruguay	Uruguaj	Уругвай
+CY0	NA	Sable Island	Wyspa Sable	Sable Island	Ostrov Sable	Ostrov Sable	Остров Сейбл
+CY9	NA	St. Paul Island	Wyspa St. Paul	St. Paul Island	Ostrov St. Paul	Ostrov St. Paul	Остров Сент-Пол
+D2, D3	AF	Angola	Angola	Angola	Angola	Angola	Ангола
+D4	AF	Cape Verde	Wyspy Zielonego Przylądka	Kap Verde	Kapverdy	Kapverdy	Кабо-Верде
+D6	AF	Comoros	Komory	Komoren	Komory	Komory	Коморы
+DA-DR	EU	Germany	Niemcy	Deutschland	Německo	Nemecko	Германия
+DU-DZ, 4D-4I	OC	Philippines	Filipiny	Philippinen	Filipíny	Filipíny	Филиппины
+E3	AF	Eritrea	Erytrea	Eritrea	Eritrea	Eritrea	Эритрея
+E4	AS	Palestine	Palestyna	Palästina	Palestina	Palestína	Палестина
+E5	OC	North Cook Islands	Północne Wyspy Cooka	Nördliche Cookinseln	Severní Cookovy ostrovy	Severné Cookove ostrovy	Северные острова Кука
+E5	OC	South Cook Islands	Południowe Wyspy Cooka	Südliche Cookinseln	Jižní Cookovy ostrovy	Južné Cookove ostrovy	Южные острова Кука
+E6	OC	Niue	Niue	Niue	Niue	Niue	Ниуэ
+E7	EU	Bosnia and Herzegovina	Bośnia i Hercegowina	Bosnien und Herzegowina	Bosna a Hercegovina	Bosna a Hercegovina	Босния и Герцеговина
+EA, EB, EC	EU	Spain	Hiszpania	Spanien	Španělsko	Španielsko	Испания
+EA6	EU	Balearic Islands	Baleary	Balearen	Baleáry	Baleáry	Балеарские острова
+EA8	AF	Canary Islands	Wyspy Kanaryjskie	Kanarische Inseln	Kanárské ostrovy	Kanárske ostrovy	Канарские острова
+EA9	AF	Ceuta and Melilla	Ceuta i Melilla	Ceuta und Melilla	Ceuta a Melilla	Ceuta a Melilla	Сеута и Мелилья
+EI, EJ	EU	Ireland	Irlandia	Irland	Irsko	Írsko	Ирландия
+EK	AS	Armenia	Armenia	Armenien	Arménie	Arménsko	Армения
+EL	AF	Liberia	Liberia	Liberia	Libérie	Libéria	Либерия
+EP, EQ	AS	Iran	Iran	Iran	Írán	Irán	Иран
+ER	EU	Moldova	Mołdawia	Moldau	Moldavsko	Moldavsko	Молдова
+ES	EU	Estonia	Estonia	Estland	Estonsko	Estónsko	Эстония
+ET	AF	Ethiopia	Etiopia	Äthiopien	Etiopie	Etiópia	Эфиопия
+EU, EV, EW	EU	Belarus	Białoruś	Belarus	Bělorusko	Bielorusko	Беларусь
+EX	AS	Kyrgyzstan	Kirgistan	Kirgisistan	Kyrgyzstán	Kirgizsko	Киргизия
+EY	AS	Tajikistan	Tadżykistan	Tadschikistan	Tádžikistán	Tadžikistan	Таджикистан
+EZ	AS	Turkmenistan	Turkmenistan	Turkmenistan	Turkmenistán	Turkménsko	Туркменистан
+F, HW-HZ	EU	France	Francja	Frankreich	Francie	Francúzsko	Франция
+FG	NA	Guadeloupe	Gwadelupa	Guadeloupe	Guadeloupe	Guadeloupe	Гваделупа
+FH	AF	Mayotte	Majotta	Mayotte	Mayotte	Mayotte	Майотта
+FJ	NA	Saint Barthélemy	Saint Barthelemy	Saint-Barthélemy	Svatý Bartoloměj	Svätý Bartolomej	Сен-Бартелеми
+FK	OC	New Caledonia	Nowa Kaledonia	Neukaledonien	Nová Kaledonie	Nová Kaledónia	Новая Каледония
+FK	OC	Chesterfield Islands	Wyspy Chesterfield	Chesterfieldinseln	Chesterfieldovy ostrovy	Chesterfieldove ostrovy	Острова Честерфилд
+FM	NA	Martinique	Martynika	Martinique	Martinik	Martinik	Мартиника
+FO	NA	Clipperton Island	Wyspa Clippertona	Clipperton	Clippertonův ostrov	Clippertonov ostrov	Остров Клиппертон
+FO	OC	French Polynesia	Polinezja Francuska	Französisch-Polynesien	Francouzská Polynésie	Francúzska Polynézia	Французская Полинезия
+FO	OC	Marquesas Islands	Markizy	Marquesas	Markézy	Markézy	Маркизские острова
+FO	OC	Austral Islands	Wyspy Austral	Austral-Inseln	Australské ostrovy	Australské ostrovy	Острова Тубуаи
+FP	NA	Saint Pierre and Miquelon	Saint Pierre i Miquelon	Saint-Pierre und Miquelon	Saint-Pierre a Miquelon	Saint-Pierre a Miquelon	Сен-Пьер и Микелон
+FR	AF	Réunion	Reunion	Réunion	Réunion	Réunion	Реюньон
+FR	AF	Glorioso Islands	Glorioso	Glorieuses	Glorieuses	Glorieuses	Острова Глорьёз
+FR	AF	Juan de Nova Island	Wyspa Juan de Nova	Juan de Nova	Ostrov Juan de Nova	Ostrov Juan de Nova	Остров Жуан-ди-Нова
+FR	AF	Tromelin Island	Wyspa Tromelin	Tromelin	Ostrov Tromelin	Ostrov Tromelin	Остров Тромлен
+FS	NA	Saint Martin	Saint Martin	Saint-Martin	Svatý Martin	Svätý Martin	Сен-Мартен
+FT5W	AF	Crozet Islands	Wyspy Crozeta	Crozetinseln	Crozetovy ostrovy	Crozetove ostrovy	Острова Крозе
+FT5X	AF	Kerguelen Islands	Wyspy Kerguelena	Kerguelen	Kergueleny	Kergueleny	Острова Кергелен
+FT5Z	AF	Amsterdam and St. Paul Islands	Wyspy Amsterdam i Paul	Amsterdam und St. Paul	Ostrovy Amsterdam a St. Paul	Ostrovy Amsterdam a St. Paul	Острова Амстердам и Сен-Поль
+FW	OC	Wallis and Futuna	Wallis i Futuna	Wallis und Futuna	Wallis a Futuna	Wallis a Futuna	Уоллис и Футуна
+FY	SA	French Guiana	Gujana Francuska	Französisch-Guayana	Francouzská Guyana	Francúzska Guyana	Французская Гвиана
+G, GX, M, 2	EU	England	Anglia	England	Anglie	Anglicko	Англия
+GD, GT	EU	Isle of Man	Wyspa Man	Isle of Man	Ostrov Man	Ostrov Man	Остров Мэн
+GI, GN	EU	Northern Ireland	Irlandia Północna	Nordirland	Severní Irsko	Severné Írsko	Северная Ирландия
+GJ, GH	EU	Jersey	Jersey	Jersey	Jersey	Jersey	Джерси
+GM, MM, 2M	EU	Scotland	Szkocja	Schottland	Skotsko	Škótsko	Шотландия
+GU, GP	EU	Guernsey	Guernsey	Guernsey	Guernsey	Guernsey	Гернси
+GW, MW, 2W	EU	Wales	Walia	Wales	Wales	Wales	Уэльс
+H4	OC	Solomon Islands	Wyspy Salomona	Salomonen	Šalamounovy ostrovy	Šalamúnove ostrovy	Соломоновы острова
+H40	OC	Temotu Province	Wyspy Temotu	Temotu	Ostrovy Temotu	Ostrovy Temotu	Провинция Темоту
+HA, HG	EU	Hungary	Węgry	Ungarn	Maďarsko	Maďarsko	Венгрия
+HB9, HB0	EU	Switzerland	Szwajcaria	Schweiz	Švýcarsko	Švajčiarsko	Швейцария
+HB0	EU	Liechtenstein	Liechtenstein	Liechtenstein	Lichtenštejnsko	Lichtenštajnsko	Лихтенштейн
+HC, HD	SA	Ecuador	Ekwador	Ecuador	Ekvádor	Ekvádor	Эквадор
+HC8	SA	Galápagos Islands	Wyspy Galapagos	Galápagos-Inseln	Galapágy	Galapágy	Галапагосские острова
+HH	NA	Haiti	Haiti	Haiti	Haiti	Haiti	Гаити
+HI	NA	Dominican Republic	Dominikana	Dominikanische Republik	Dominikánská republika	Dominikánska republika	Доминиканская Республика
+HJ, HK	SA	Colombia	Kolumbia	Kolumbien	Kolumbie	Kolumbia	Колумбия
+HK0	SA	Malpelo Island	Wyspa Malpelo	Malpelo	Ostrov Malpelo	Ostrov Malpelo	Остров Мальпело
+HK0	NA	San Andrés and Providencia	San Andres i Providencia	San Andrés und Providencia	San Andrés a Providencia	San Andrés a Providencia	Сан-Андрес и Провиденсия
+HL, DS	AS	South Korea	Korea Południowa	Südkorea	Jižní Korea	Južná Kórea	Южная Корея
+HO, HP	NA	Panama	Panama	Panama	Panama	Panama	Панама
+HR	NA	Honduras	Honduras	Honduras	Honduras	Honduras	Гондурас
+HS, E2	AS	Thailand	Tajlandia	Thailand	Thajsko	Thajsko	Таиланд
+HV	EU	Vatican City	Watykan	Vatikanstadt	Vatikán	Vatikán	Ватикан
+HZ	AS	Saudi Arabia	Arabia Saudyjska	Saudi-Arabien	Saúdská Arábie	Saudská Arábia	Саудовская Аравия
+I, IK, IZ	EU	Italy	Włochy	Italien	Itálie	Taliansko	Италия
+IS0, IM0	EU	Sardinia	Sardynia	Sardinien	Sardinie	Sardínia	Сардиния
+J2	AF	Djibouti	Dżibuti	Dschibuti	Džibutsko	Džibutsko	Джибути
+J3	NA	Grenada	Grenada	Grenada	Grenada	Grenada	Гренада
+J5	AF	Guinea-Bissau	Gwinea Bissau	Guinea-Bissau	Guinea-Bissau	Guinea-Bissau	Гвинея-Бисау
+J6	NA	Saint Lucia	Saint Lucia	St. Lucia	Svatá Lucie	Svätá Lucia	Сент-Люсия
+J7	NA	Dominica	Dominika	Dominica	Dominika	Dominika	Доминика
+J8	NA	Saint Vincent and the Grenadines	Saint Vincent i Grenadyny	St. Vincent und die Grenadinen	Svatý Vincenc a Grenadiny	Svätý Vincent a Grenadíny	Сент-Винсент и Гренадины
+JA, JI, JR, 7K	AS	Japan	Japonia	Japan	Japonsko	Japonsko	Япония
+JD1	AS	Ogasawara (Bonin Islands)	Ogasawara (Wyspy Bonin)	Ogasawara (Bonininseln)	Ogasawara (Boninské ostrovy)	Ogasawara (Boninské ostrovy)	Огасавара (острова Бонин)
+JD1	OC	Minami-Tori-shima	Wyspy Minami-Tori-shima	Minami-Torishima	Minami-Torišima	Minami-Torišima	Минамитори
+JT-JV	AS	Mongolia	Mongolia	Mongolei	Mongolsko	Mongolsko	Монголия
+JW	EU	Svalbard	Svalbard	Spitzbergen	Špicberky	Špicbergy	Шпицберген
+JX	EU	Jan Mayen	Jan Mayen	Jan Mayen	Jan Mayen	Jan Mayen	Ян-Майен
+JY	AS	Jordan	Jordania	Jordanien	Jordánsko	Jordánsko	Иордания
+K, W, N, AA-AK	NA	USA	USA	USA	USA	USA	США
+KG4	NA	Guantanamo Bay	Zatoka Guantanamo	Guantánamo-Bucht	Zátoka Guantánamo	Záliv Guantánamo	Гуантанамо
+KH0	OC	Mariana Islands	Mariany	Nördliche Marianen	Mariany	Mariány	Марианские острова
+KH1	OC	Baker and Howland Islands	Wyspa Baker i Howland	Baker und Howland	Ostrovy Baker a Howland	Ostrovy Baker a Howland	Острова Бейкер и Хауленд
+KH2	OC	Guam	Guam	Guam	Guam	Guam	Гуам
+KH3	OC	Johnston Island	Wyspa Johnston	Johnston-Atoll	Johnstonův atol	Johnstonov atol	Атолл Джонстон
+KH4	OC	Midway Islands	Wyspy Midway	Midwayinseln	Midwayské ostrovy	Midwayské ostrovy	Острова Мидуэй
+KH5	OC	Palmyra and Jarvis Islands	Wyspa Palmyra i Jarvis	Palmyra und Jarvis	Ostrovy Palmyra a Jarvis	Ostrovy Palmyra a Jarvis	Пальмира и остров Джарвис
+KH6, KH7	OC	Hawaii	Hawaje	Hawaii	Havaj	Havaj	Гавайи
+KH8	OC	American Samoa	Samoa Amerykańskie	Amerikanisch-Samoa	Americká Samoa	Americká Samoa	Американское Самоа
+KH8	OC	Swains Island	Wyspa Swains	Swains Island	Ostrov Swains	Ostrov Swains	Остров Суэйнс
+KH9	OC	Wake Island	Wyspa Wake	Wake	Ostrov Wake	Ostrov Wake	Остров Уэйк
+KL7	NA	Alaska	Alaska	Alaska	Aljaška	Aljaška	Аляска
+KP1	NA	Navassa Island	Wyspa Navassa	Navassa	Ostrov Navassa	Ostrov Navassa	Остров Навасса
+KP2	NA	US Virgin Islands	Wyspy Dziewicze (USA)	Amerikanische Jungferninseln	Americké Panenské ostrovy	Americké Panenské ostrovy	Виргинские острова США
+KP4	NA	Puerto Rico	Portoryko	Puerto Rico	Portoriko	Portoriko	Пуэрто-Рико
+KP5	NA	Desecheo Island	Wyspa Desecheo	Desecheo	Ostrov Desecheo	Ostrov Desecheo	Остров Десечео
+LA, LN	EU	Norway	Norwegia	Norwegen	Norsko	Nórsko	Норвегия
+LO-LW, LU	SA	Argentina	Argentyna	Argentinien	Argentina	Argentína	Аргентина
+LX	EU	Luxembourg	Luksemburg	Luxemburg	Lucembursko	Luxembursko	Люксембург
+LY	EU	Lithuania	Litwa	Litauen	Litva	Litva	Литва
+LZ	EU	Bulgaria	Bułgaria	Bulgarien	Bulharsko	Bulharsko	Болгария
+OA-OC	SA	Peru	Peru	Peru	Peru	Peru	Перу
+OD	AS	Lebanon	Liban	Libanon	Libanon	Libanon	Ливан
+OE	EU	Austria	Austria	Österreich	Rakousko	Rakúsko	Австрия
+OF-OI, OH	EU	Finland	Finlandia	Finnland	Finsko	Fínsko	Финляндия
+OH0	EU	Åland Islands	Wyspy Alandzkie	Ålandinseln	Alandy	Alandy	Аландские острова
+OJ0	EU	Market Reef	Market Reef	Märket	Märket	Märket	Риф Маркет
+OK, OL	EU	Czech Republic	Czechy	Tschechien	Česko	Česko	Чехия
+OM	EU	Slovakia	Słowacja	Slowakei	Slovensko	Slovensko	Словакия
+ON, OO-OT	EU	Belgium	Belgia	Belgien	Belgie	Belgicko	Бельгия
+OX	NA	Greenland	Grenlandia	Grönland	Grónsko	Grónsko	Гренландия
+OY	EU	Faroe Islands	Wyspy Owcze	Färöer	Faerské ostrovy	Faerské ostrovy	Фарерские острова
+OZ, OU-OZ	EU	Denmark	Dania	Dänemark	Dánsko	Dánsko	Дания
+P2	OC	Papua New Guinea	Papua Nowa Gwinea	Papua-Neuguinea	Papua Nová Guinea	Papua-Nová Guinea	Папуа — Новая Гвинея
+P4	SA	Aruba	Aruba	Aruba	Aruba	Aruba	Аруба
+P5	AS	North Korea	Korea Północna	Nordkorea	Severní Korea	Severná Kórea	Северная Корея
+PA, PB-PI	EU	Netherlands	Holandia	Niederlande	Nizozemsko	Holandsko	Нидерланды
+PJ2	SA	Curaçao	Curaçao	Curaçao	Curaçao	Curaçao	Кюрасао
+PJ4	SA	Bonaire	Bonaire	Bonaire	Bonaire	Bonaire	Бонайре
+PJ5, PJ6	NA	Saba / Sint Eustatius	Saba / Sint Eustatius	Saba / Sint Eustatius	Saba / Svatý Eustach	Saba / Svätý Eustach	Саба / Синт-Эстатиус
+PJ7	NA	Sint Maarten	Sint Maarten	Sint Maarten	Svatý Martin (niz.)	Svätý Martin (hol.)	Синт-Мартен
+PP-PY	SA	Brazil	Brazylia	Brasilien	Brazílie	Brazília	Бразилия
+PY0F	SA	Fernando de Noronha	Fernando de Noronha	Fernando de Noronha	Fernando de Noronha	Fernando de Noronha	Фернанду-ди-Норонья
+PY0S	SA	St. Peter and St. Paul Rocks	Wyspy Świętego Piotra i Pawła	St.-Peter-und-St.-Paul-Felsen	Skály sv. Petra a Pavla	Skaly sv. Petra a Pavla	Скалы Святых Петра и Павла
+PY0T	SA	Trindade and Martim Vaz	Trindade i Martim Vaz	Trindade und Martim Vaz	Trindade a Martim Vaz	Trindade a Martim Vaz	Триндади и Мартин-Вас
+PZ	SA	Suriname	Surinam	Suriname	Surinam	Surinam	Суринам
+R1F	EU	Franz Josef Land	Ziemia Franciszka Józefa	Franz-Josef-Land	Země Františka Josefa	Zem Františka Jozefa	Земля Франца-Иосифа
+R1M	EU	Malyj Vysotskij Island	Wyspa Malyj Wysockij	Malyj Wyssozki	Ostrov Malyj Vysockij	Ostrov Malyj Vysockij	Остров Малый Высоцкий
+S0	AF	Western Sahara	Sahara Zachodnia	Westsahara	Západní Sahara	Západná Sahara	Западная Сахара
+S2	AS	Bangladesh	Bangladesz	Bangladesch	Bangladéš	Bangladéš	Бангладеш
+S5	EU	Slovenia	Słowenia	Slowenien	Slovinsko	Slovinsko	Словения
+S7	AF	Seychelles	Seszele	Seychellen	Seychely	Seychely	Сейшельские острова
+S9	AF	São Tomé and Príncipe	Wyspy Świętego Tomasza i Książęca	São Tomé und Príncipe	Svatý Tomáš a Princův ostrov	Svätý Tomáš a Princov ostrov	Сан-Томе и Принсипи
+SA-SM	EU	Sweden	Szwecja	Schweden	Švédsko	Švédsko	Швеция
+SP, SQ, SR, 3Z	EU	Poland	Polska	Polen	Polsko	Poľsko	Польша
+ST	AF	Sudan	Sudan	Sudan	Súdán	Sudán	Судан
+SU	AF	Egypt	Egipt	Ägypten	Egypt	Egypt	Египет
+SV, J4, SY	EU	Greece	Grecja	Griechenland	Řecko	Grécko	Греция
+SV/A	EU	Mount Athos	Góra Athos	Berg Athos	Hora Athos	Hora Athos	Гора Афон
+SV5	EU	Dodecanese	Dodekanez	Dodekanes	Dodekanésy	Dodekanéz	Додеканес
+SV9	EU	Crete	Kreta	Kreta	Kréta	Kréta	Крит
+T2	OC	Tuvalu	Tuvalu	Tuvalu	Tuvalu	Tuvalu	Тувалу
+T30	OC	Western Kiribati	Zachodnie Kiribati	West-Kiribati	Západní Kiribati	Západné Kiribati	Западный Кирибати
+T31	OC	Central Kiribati	Centralne Kiribati	Zentral-Kiribati	Střední Kiribati	Stredné Kiribati	Центральный Кирибати
+T32	OC	Eastern Kiribati	Wschodnie Kiribati	Ost-Kiribati	Východní Kiribati	Východné Kiribati	Восточный Кирибати
+T33	OC	Banaba Island	Wyspa Banaba	Banaba	Ostrov Banaba	Ostrov Banaba	Остров Банаба
+T5	AF	Somalia	Somalia	Somalia	Somálsko	Somálsko	Сомали
+T7	EU	San Marino	San Marino	San Marino	San Marino	San Maríno	Сан-Марино
+T8	OC	Palau	Palau	Palau	Palau	Palau	Палау
+TA, TB, TC	EU/AS	Turkey	Turcja	Türkei	Turecko	Turecko	Турция
+TF	EU	Iceland	Islandia	Island	Island	Island	Исландия
+TG	NA	Guatemala	Gwatemala	Guatemala	Guatemala	Guatemala	Гватемала
+TI, TE	NA	Costa Rica	Kostaryka	Costa Rica	Kostarika	Kostarika	Коста-Рика
+TI9	NA	Cocos Island	Wyspa Kokosowa	Kokosinsel	Kokosový ostrov	Kokosový ostrov	Остров Кокос
+TJ	AF	Cameroon	Kamerun	Kamerun	Kamerun	Kamerun	Камерун
+TK	EU	Corsica	Korsyka	Korsika	Korsika	Korzika	Корсика
+TL	AF	Central African Republic	Republika Środkowoafrykańska	Zentralafrikanische Republik	Středoafrická republika	Stredoafrická republika	Центральноафриканская Республика
+TN	AF	Republic of the Congo	Kongo	Republik Kongo	Kongo	Kongo	Республика Конго
+TR	AF	Gabon	Gabon	Gabun	Gabon	Gabon	Габон
+TT	AF	Chad	Czad	Tschad	Čad	Čad	Чад
+TU	AF	Côte d'Ivoire	Wybrzeże Kości Słoniowej	Elfenbeinküste	Pobřeží slonoviny	Pobrežie Slonoviny	Кот-д'Ивуар
+TY	AF	Benin	Benin	Benin	Benin	Benin	Бенин
+TZ	AF	Mali	Mali	Mali	Mali	Mali	Мали
+UA, RA, R, U	EU/AS	Russia	Rosja	Russland	Rusko	Rusko	Россия
+UA2, RA2	EU	Kaliningrad	Obwód Kaliningradzki	Oblast Kaliningrad	Kaliningradská oblast	Kaliningradská oblasť	Калининград
+UN-UQ	AS	Kazakhstan	Kazachstan	Kasachstan	Kazachstán	Kazachstan	Казахстан
+UR, UT, UY, EM-EO	EU	Ukraine	Ukraina	Ukraine	Ukrajina	Ukrajina	Украина
+V2	NA	Antigua and Barbuda	Antigua i Barbuda	Antigua und Barbuda	Antigua a Barbuda	Antigua a Barbuda	Антигуа и Барбуда
+V3	NA	Belize	Belize	Belize	Belize	Belize	Белиз
+V4	NA	Saint Kitts and Nevis	Saint Kitts i Nevis	St. Kitts und Nevis	Svatý Kryštof a Nevis	Svätý Krištof a Nevis	Сент-Китс и Невис
+V5	AF	Namibia	Namibia	Namibia	Namibie	Namíbia	Намибия
+V6	OC	Micronesia	Mikronezja	Mikronesien	Mikronésie	Mikronézia	Микронезия
+V7	OC	Marshall Islands	Wyspy Marshalla	Marshallinseln	Marshallovy ostrovy	Marshallove ostrovy	Маршалловы острова
+V8	AS	Brunei	Brunei	Brunei	Brunej	Brunej	Бруней
+VE, VA-VG	NA	Canada	Kanada	Kanada	Kanada	Kanada	Канада
+VK, AX	OC	Australia	Australia	Australien	Austrálie	Austrália	Австралия
+VK0	AF	Heard Island	Wyspa Heard	Heard	Heardův ostrov	Heardov ostrov	Остров Херд
+VK0	OC	Macquarie Island	Wyspa Macquarie	Macquarieinsel	Ostrov Macquarie	Ostrov Macquarie	Остров Маккуори
+VK9C	OC	Cocos (Keeling) Islands	Wyspy Kokosowe (Keeling)	Kokosinseln (Keeling)	Kokosové ostrovy (Keeling)	Kokosové ostrovy (Keeling)	Кокосовые острова (Килинг)
+VK9L	OC	Lord Howe Island	Wyspa Lord Howe	Lord-Howe-Insel	Ostrov lorda Howa	Ostrov lorda Howa	Остров Лорд-Хау
+VK9M	OC	Mellish Reef	Rafa Mellish	Mellish-Riff	Útes Mellish	Útes Mellish	Риф Меллиш
+VK9N	OC	Norfolk Island	Wyspa Norfolk	Norfolkinsel	Norfolk	Norfolk	Остров Норфолк
+VK9W	OC	Willis Island	Rafa Willis	Willis-Insel	Ostrov Willis	Ostrov Willis	Остров Уиллис
+VK9X	OC	Christmas Island	Wyspa Bożego Narodzenia	Weihnachtsinsel	Vánoční ostrov	Vianočný ostrov	Остров Рождества
+VP2E	NA	Anguilla	Anguilla	Anguilla	Anguilla	Anguilla	Ангилья
+VP2M	NA	Montserrat	Montserrat	Montserrat	Montserrat	Montserrat	Монтсеррат
+VP2V	NA	British Virgin Islands	Brytyjskie Wyspy Dziewicze	Britische Jungferninseln	Britské Panenské ostrovy	Britské Panenské ostrovy	Британские Виргинские острова
+VP5	NA	Turks and Caicos Islands	Turks i Caicos	Turks- und Caicosinseln	Turks a Caicos	Turks a Caicos	Теркс и Кайкос
+VP6	OC	Pitcairn Islands	Wyspy Pitcairn	Pitcairninseln	Pitcairnovy ostrovy	Pitcairnove ostrovy	Острова Питкэрн
+VP8	SA	Falkland Islands	Falklandy	Falklandinseln	Falklandy	Falklandy	Фолклендские острова
+VP8	SA	South Georgia	Georgia Południowa	Südgeorgien	Jižní Georgie	Južná Georgia	Южная Георгия
+VP8	AN	South Orkney Islands	Południowe Orkady	Südliche Orkneyinseln	Jižní Orkneje	Južné Orkneje	Южные Оркнейские острова
+VP8	AN	South Shetland Islands	Południowe Szetlandy	Südliche Shetlandinseln	Jižní Shetlandy	Južné Shetlandy	Южные Шетландские острова
+VP8	SA	South Sandwich Islands	Południowy Sandwich	Südliche Sandwichinseln	Jižní Sandwichovy ostrovy	Južné Sandwichove ostrovy	Южные Сандвичевы острова
+VP9	NA	Bermuda	Bermudy	Bermuda	Bermudy	Bermudy	Бермуды
+VQ9	AF	Chagos Archipelago	Archipelag Chagos	Chagos-Archipel	Čagoské ostrovy	Čagoské ostrovy	Архипелаг Чагос
+VR2	AS	Hong Kong	Hongkong	Hongkong	Hongkong	Hongkong	Гонконг
+VU	AS	India	Indie	Indien	Indie	India	Индия
+VU4	AS	Andaman and Nicobar Islands	Wyspy Andaman i Nicobar	Andamanen und Nikobaren	Andamany a Nikobary	Andamany a Nikobary	Андаманские и Никобарские острова
+VU7	AS	Lakshadweep	Lakszadiwy	Lakshadweep	Lakadivy	Lakadivy	Лакшадвип
+XE, XF, XG	NA	Mexico	Meksyk	Mexiko	Mexiko	Mexiko	Мексика
+XT	AF	Burkina Faso	Burkina Faso	Burkina Faso	Burkina Faso	Burkina Faso	Буркина-Фасо
+XU	AS	Cambodia	Kambodża	Kambodscha	Kambodža	Kambodža	Камбоджа
+XW	AS	Laos	Laos	Laos	Laos	Laos	Лаос
+XX9	AS	Macao	Makau	Macau	Macao	Macao	Макао
+XY, XZ	AS	Myanmar (Burma)	Mjanma (Birma)	Myanmar (Birma)	Myanmar (Barma)	Mjanmarsko (Barma)	Мьянма (Бирма)
+YA	AS	Afghanistan	Afganistan	Afghanistan	Afghánistán	Afganistan	Афганистан
+YB-YH	OC	Indonesia	Indonezja	Indonesien	Indonésie	Indonézia	Индонезия
+YI	AS	Iraq	Irak	Irak	Irák	Irak	Ирак
+YJ	OC	Vanuatu	Vanuatu	Vanuatu	Vanuatu	Vanuatu	Вануату
+YL	EU	Latvia	Łotwa	Lettland	Lotyšsko	Lotyšsko	Латвия
+YN	NA	Nicaragua	Nikaragua	Nicaragua	Nikaragua	Nikaragua	Никарагуа
+YO, YR	EU	Romania	Rumunia	Rumänien	Rumunsko	Rumunsko	Румыния
+YS	NA	El Salvador	Salwador	El Salvador	Salvador	Salvádor	Сальвадор
+YU, YT	EU	Serbia	Serbia	Serbien	Srbsko	Srbsko	Сербия
+YV, YY	SA	Venezuela	Wenezuela	Venezuela	Venezuela	Venezuela	Венесуэла
+YV0	NA	Aves Island	Wyspa Aves	Aves	Ostrov Aves	Ostrov Aves	Остров Авес
+Z2	AF	Zimbabwe	Zimbabwe	Simbabwe	Zimbabwe	Zimbabwe	Зимбабве
+Z3	EU	North Macedonia	Macedonia Północna	Nordmazedonien	Severní Makedonie	Severné Macedónsko	Северная Македония
+Z6	EU	Kosovo	Kosowo	Kosovo	Kosovo	Kosovo	Косово
+ZA	EU	Albania	Albania	Albanien	Albánie	Albánsko	Албания
+ZB2	EU	Gibraltar	Gibraltar	Gibraltar	Gibraltar	Gibraltár	Гибралтар
+ZC4	AS	UK Sovereign Base Areas on Cyprus	Bazy Brytyjskie na Cyprze	Britische Militärbasen auf Zypern	Britské základny na Kypru	Britské základne na Cypre	Британские суверенные базы на Кипре
+ZD7	AF	Saint Helena	Wyspa Świętej Heleny	St. Helena	Svatá Helena	Svätá Helena	Остров Святой Елены
+ZD8	AF	Ascension Island	Wyspa Wniebowstąpienia	Ascension	Ascension	Ascension	Остров Вознесения
+ZD9	AF	Tristan da Cunha and Gough Island	Tristan da Cunha i Gough	Tristan da Cunha und Gough	Tristan da Cunha a Gough	Tristan da Cunha a Gough	Тристан-да-Кунья и остров Гоф
+ZF	NA	Cayman Islands	Kajmany	Kaimaninseln	Kajmanské ostrovy	Kajmanie ostrovy	Каймановы острова
+ZL, ZM	OC	New Zealand	Nowa Zelandia	Neuseeland	Nový Zéland	Nový Zéland	Новая Зеландия
+ZL7	OC	Chatham Islands	Wyspy Chatham	Chathaminseln	Chathamské ostrovy	Chathamské ostrovy	Острова Чатем
+ZL8	OC	Kermadec Islands	Wyspy Kermadec	Kermadecinseln	Kermadecovy ostrovy	Kermadecove ostrovy	Острова Кермадек
+ZL9	OC	New Zealand Subantarctic Islands	Subantarktyczne Wyspy Nowej Zelandii	Subantarktische Inseln Neuseelands	Novozélandské subantarktické ostrovy	Novozélandské subantarktické ostrovy	Субантарктические острова Новой Зеландии
+ZP	SA	Paraguay	Paragwaj	Paraguay	Paraguay	Paraguaj	Парагвай
+ZS, ZR-ZU	AF	South Africa	RPA	Südafrika	Jihoafrická republika	Juhoafrická republika	Южная Африка
+ZS8	AF	Prince Edward and Marion Islands	Wyspy Księcia Edwarda i Marion	Prinz-Edward-Inseln	Ostrovy prince Edwarda	Ostrovy princa Eduarda	Острова Принс-Эдуард и Марион

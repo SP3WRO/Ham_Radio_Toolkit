@@ -6,7 +6,7 @@ Zestaw narzędzi dla krótkofalowców na Androida. W jednej aplikacji łączy pr
 
 **iPhone / przeglądarka:** wersja WWW (PWA) jest w katalogu [`web/`](web/README.md) – instalacja na serwerze i lista przeniesionych ekranów.
 
-Aplikacja jest w fazie beta. Wymaga Androida 7.0 lub nowszego. Interfejs jest dostępny po angielsku, polsku, niemiecku, czesku i słowacku, a język i motyw (jasny, ciemny lub systemowy) zmienisz w ustawieniach. Tłumaczenia powstały z pomocą AI, więc poprawki są mile widziane.
+Aplikacja jest w fazie beta. Wymaga Androida 7.0 lub nowszego. Interfejs jest dostępny po angielsku, polsku, niemiecku, czesku, słowacku i rosyjsku, a język i motyw (jasny, ciemny lub systemowy) zmienisz w ustawieniach. Tłumaczenia powstały z pomocą AI, więc poprawki są mile widziane.
 
 ## Główne ekrany
 
@@ -46,7 +46,7 @@ Pozostałe narzędzia, opisane poniżej.
 - **Wyszukiwarka znaków:** kraj DXCC, strefy CQ/ITU i czas lokalny działają bez internetu. Dane stacji pochodzą z rejestru UKE, a lokator z PSK Reporter, APRS-IS, Twojego logu, QRZCQ, HamQTH lub HamDB. Wynik obejmuje też odległość, azymut krótką i długą drogą oraz Twoje łączności z tą stacją.
 - **Aktywacje na żywo:** spoty POTA i WWFF z sortowaniem według odległości i logowaniem QSO. Spoty SOTA nie są wyświetlane, ponieważ regulamin API SOTA wymaga wcześniejszej zgody.
 - **APRS:** odbiór stacji z APRS-IS w wybranym promieniu, w tym ich ruchu, wysokości, danych PHG i pogody, oraz ręczne nadawanie własnej pozycji. Bez znaku wywoławczego aplikacja działa tylko w trybie nasłuchu.
-- **Przemienniki:** wyszukiwanie w wybranym promieniu i filtr sprawnych przemienników. Źródła to przemienniki.eu, przemienniki.net, HearHam, repeatermap.de i RepeaterBook (wymaga tokenu), a szczegóły DMR pochodzą z RadioID. Poza Polską źródło przełącza się samo, chyba że wybierzesz je ręcznie.
+- **Przemienniki:** wyszukiwanie w wybranym promieniu i filtr sprawnych przemienników. Źródła to przemienniki.eu, przemienniki.net, HearHam i repeatermap.de, a szczegóły DMR pochodzą z RadioID. Poza Polską źródło przełącza się samo, chyba że wybierzesz je ręcznie.
 - **Satelity:** aktualizacja danych TLE, lista przelotów z AOS i LOS, skyplot, kompas z azymutem i elewacją, częstotliwości z AMSAT i SatNOGS oraz przypomnienia o przelotach.
 - **Beacony NCDXF:** harmonogram z informacją, która stacja nadaje teraz i kiedy nadają pozostałe.
 
@@ -65,8 +65,8 @@ Telefon odbiera sygnał mikrofonem, więc wystarczy położyć go przy głośnik
 **Trener CW** uczy alfabetu Morse'a metodą Kocha. Ma regulowaną prędkość znaku i prędkość efektywną (Farnsworth), wysokość tonu i liczbę grup, a do kolejnej lekcji zachęca po osiągnięciu 90% skuteczności.
 
 ### Planowanie i mapy
-- **Kalendarz zawodów:** dane SP9CXN, Polskiego Klubu UKF i QRZ.RU, filtry zawodów polskich, międzynarodowych, UKF, cyfrowych i z kraju pobytu oraz dodawanie do kalendarza telefonu. Bez internetu dostępny jest kalendarz wbudowany z wybranymi dużymi zawodami.
-- **Dyplomy:** trwające i nadchodzące akcje z radiodyplom.pl, obserwowanie akcji, Twój wynik w rankingu i szacunek punktów z Twojego logu. Wiążący jest ranking radiodyplom.pl.
+- **Kalendarz zawodów:** dane SP9CXN, PK-UKF / SP1CNV i QRZ.RU, filtry zawodów polskich, międzynarodowych, UKF, cyfrowych i z kraju pobytu oraz dodawanie do kalendarza telefonu. Bez internetu dostępny jest kalendarz wbudowany z wybranymi dużymi zawodami.
+- **Dyplomy:** trwające i nadchodzące akcje z radiodyplom.pl, stacje aktywne teraz na pasmach i obserwowanie akcji. Stacje obserwowanych akcji są oznaczane w DX Clusterze.
 - **Za granicą:** zasady licencji CEPT T/R 61-01, znak do użycia w danym kraju, prefiksy dla gości, Region IARU, strefy i czas oraz przemienniki w okolicy. Przed wyjazdem sprawdź aktualne przepisy kraju.
 - **Lokator i azymut:** przeliczanie lokatora i współrzędnych, odległość i azymut krótką oraz długą drogą do lokatora, punktu lub znaku, a także mapa azymutalna.
 - **Szara linia:** mapa terminatora oraz godziny wschodu i zachodu słońca dla Twojego QTH.
@@ -120,7 +120,6 @@ Podstawowe funkcje działają bez kont. Dane logowania są potrzebne tylko do ty
 | eQSL | login i hasło |
 | HamQTH | bezpłatne konto |
 | QRZCQ | konto |
-| RepeaterBook | token aplikacji i e-mail kontaktowy |
 
 ### Prywatność
 

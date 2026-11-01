@@ -38,10 +38,9 @@
     <string name="settings_source_poland">%1$s (Polsko)</string>
     <string name="settings_source_world">%1$s (svět)</string>
     <string name="settings_source_europe">%1$s (Evropa)</string>
-    <string name="settings_source_token">%1$s (vyžaduje token)</string>
     <string name="settings_repeater_note">Mimo Polsko se zdroj při spuštění aplikace sám přepne na „HearHam + repeatermap.de“ a po návratu se vrátí k předchozímu. Ruční volba má přednost. Podrobnosti DMR (síť, talkgroupy) z RadioID.net.</string>
     <string name="settings_search_radius">Poloměr hledání</string>
-    <string name="settings_aprs_ssid_placeholder">např. -7 (auto), -9 (pěšky)</string>
+    <string name="settings_aprs_ssid_placeholder">např. -5 (telefon), -7 (ruční), -9 (vozidlo)</string>
     <string name="settings_aprs_ssid_invalid">SSID od 0 do 15</string>
     <string name="settings_aprs_icon">Ikona na mapě</string>
     <string name="settings_aprs_icon_car">Auto</string>
@@ -50,6 +49,10 @@
     <string name="settings_aprs_icon_walker">Pěšky</string>
     <string name="settings_aprs_icon_home">Dům</string>
     <string name="settings_aprs_icon_tent">Stan / portable</string>
+    <string name="settings_aprs_icon_custom">Vlastní ikona</string>
+    <string name="settings_aprs_icon_custom_desc">Kód APRS: tabulka a symbol, např. /b je kolo</string>
+    <string name="settings_aprs_icon_custom_value">Vlastní: %1$s</string>
+    <string name="settings_aprs_icon_custom_invalid">Dva znaky: tabulka (lomítko, zpětné lomítko, číslice nebo velké písmeno) a symbol</string>
     <string name="settings_aprs_comment">Komentář v majáku</string>
     <string name="settings_aprs_radius">Poloměr příjmu</string>
     <string name="settings_section_programs">Aktivace – seznam objektů</string>
@@ -81,8 +84,4 @@
     <string name="settings_qrzcq_desc">Další zdroj lokátorů stanic (účet na qrzcq.com)</string>
     <string name="settings_qrz_key">QRZ Logbook – klíč API</string>
     <string name="settings_qrz_key_desc">Z nastavení logbooku na qrz.com; odesílání vyžaduje předplatné QRZ</string>
-    <string name="settings_rb_token">RepeaterBook – token aplikace</string>
-    <string name="settings_rb_token_desc">Token rbuapp_… z panelu API Apps na repeaterbook.com (zdroj převáděčů „RepeaterBook“)</string>
-    <string name="settings_rb_contact">RepeaterBook – kontaktní e-mail</string>
-    <string name="settings_rb_contact_desc">RepeaterBook vyžaduje v dotazech kontaktní adresu</string>
 </resources>

@@ -184,7 +184,7 @@ class LoggerViewModel(application: Application) : AndroidViewModel(application) 
             val summary = mutableListOf<String>()
             try {
                 if (credentials.hasQrz) {
-                    summary += uploadTo(UploadService.QRZ, "QRZ") { uploadClient.uploadToQrz(credentials.qrzLogbookKey, it) }
+                    summary += uploadTo(UploadService.QRZ, "QRZ") { uploadClient.uploadToQrz(credentials.qrzLogbookKey, it, stationCallsign) }
                 }
                 if (credentials.hasEqsl) {
                     summary += uploadTo(UploadService.EQSL, "eQSL") {

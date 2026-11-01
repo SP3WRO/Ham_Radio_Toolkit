@@ -16,9 +16,9 @@ android {
         applicationId = "io.github.sp3wro.hamradiotoolkit"
         minSdk = 24
         targetSdk = 36
-        // Wersja: RR.MM.betaN; versionCode = RRMM·100 + N (musi rosnąć przy każdym wydaniu)
-        versionCode = 261010
-        versionName = "26.10.beta10"
+        // Wersja: RR.MM.N (testowe: RR.MM.betaN); versionCode = RRMM·100 + N (musi rosnąć przy każdym wydaniu)
+        versionCode = 261101
+        versionName = "26.11.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -52,11 +52,11 @@ android {
             // Pełny zestaw nagrań FT8 z ft8_lib: ./gradlew test -Pft8.testDir=<katalog test/wav>
             providers.gradleProperty("ft8.testDir").orNull?.let { dir -> it.systemProperty("ft8.testDir", dir) }
             providers.gradleProperty("ft8.verbose").orNull?.let { v -> it.systemProperty("ft8.verbose", v) }
-            // Pobrane kalendarze zawodów (sp9cxn.html, pkukf.html, qrzru.ics) do sprawdzenia parserów: -Pcontests.dir=<katalog>
+            // Pobrane kalendarze zawodów (sp9cxn.json, pkukf.json, qrzru.ics) do sprawdzenia parserów: -Pcontests.dir=<katalog>
             providers.gradleProperty("contests.dir").orNull?.let { d -> it.systemProperty("contests.dir", d) }
-            // Pobrane dane radiodyplom.pl (radiodyplom.ics, ses_<id>.html) do sprawdzenia parserów: -Pawards.dir=<katalog>
+            // Pobrane dane radiodyplom.pl (public_events.json, public_bandmap.json) do sprawdzenia parserów: -Pawards.dir=<katalog>
             providers.gradleProperty("awards.dir").orNull?.let { d -> it.systemProperty("awards.dir", d) }
-            // Pełne pobrane dane przemienników (hearham.json, repeatermap_*.json): -Pintl.dataDir=<katalog>
+            // Pełne pobrane dane przemienników (hearham.json, repeatermap_*.json, rpts.json): -Pintl.dataDir=<katalog>
             providers.gradleProperty("intl.dataDir").orNull?.let { d -> it.systemProperty("intl.dataDir", d) }
             // Nagrania DSSTV (HamDRM) z QSSTV: -Pdsstv.wavDir=<katalog z wav> (i katalogi out_* z plikami wzorcowymi)
             providers.gradleProperty("dsstv.wavDir").orNull?.let { d -> it.systemProperty("dsstv.wavDir", d) }

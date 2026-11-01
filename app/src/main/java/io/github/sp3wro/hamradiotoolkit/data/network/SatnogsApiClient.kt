@@ -33,7 +33,7 @@ class SatnogsApiClient(private val client: OkHttpClient = HttpClients.default) {
             .build()
 
         client.newCall(request).execute().use { response ->
-            if (!response.isSuccessful) throw IOException("HTTP ${response.code} z SatNOGS")
+            if (!response.isSuccessful) throw IOException(AppStrings.get(R.string.err_http_from, response.code, "SatNOGS"))
             val body = response.body?.string() ?: throw IOException(AppStrings.get(R.string.err_empty_response_from, "SatNOGS"))
             json.decodeFromString<List<SatnogsTransmitter>>(body)
         }

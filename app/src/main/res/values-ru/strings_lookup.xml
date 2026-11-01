@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_lookup.tsv -->
+<resources>
+    <string name="lk_min_chars">Введите не менее 3 знаков</string>
+    <string name="lk_unknown_prefix">Префикс не распознан – проверьте позывной</string>
+    <string name="lk_failed">Ошибка поиска: %1$s</string>
+    <string name="lk_title">Поиск позывного</string>
+    <string name="lk_hint">например, SP3WRO, DL1ABC/P, VK2ABC</string>
+    <string name="lk_info">Страна DXCC, зоны и местное время работают без интернета (база cty.csv). Локатор станции: из PSK Reporter (цифровые виды за последние 24 ч), APRS-IS (последние 2 ч), вашего журнала, QRZCQ и HamQTH (логины в настройках) или HamDB (США, Канада, Германия, Чехия, Австралия). Без локатора расстояние не показывается.</string>
+    <string name="lk_station">Станция</string>
+    <string name="lk_not_found">Позывной не найден в доступных базах.</string>
+    <string name="lk_club">Клуб</string>
+    <string name="lk_name">Имя</string>
+    <string name="lk_uke_licence">Лицензия UKE</string>
+    <string name="lk_valid_to">Действует до</string>
+    <string name="lk_licence_class">Класс лицензии</string>
+    <string name="lk_sources">Источники: %1$s</string>
+    <string name="lk_dxcc_country">Территория DXCC</string>
+    <string name="lk_country">Страна</string>
+    <string name="lk_main_prefix">Основной префикс</string>
+    <string name="lk_dxcc_number">Номер DXCC</string>
+    <string name="lk_continent">Континент</string>
+    <string name="lk_zones">Зона CQ / ITU</string>
+    <string name="lk_locator_bearing">Локатор и азимут антенны</string>
+    <string name="lk_no_locator">У нас нет данных о локаторе этой станции – расстояние и азимут недоступны.</string>
+    <string name="lk_ask_locator">Спросите локатор у корреспондента. Если он работает в FT8/FT4, локатор может появиться в PSK Reporter.</string>
+    <string name="lk_short_path">Короткий путь</string>
+    <string name="lk_long_path">Длинный путь</string>
+    <string name="lk_no_my_position">Ваша позиция неизвестна – включите определение местоположения или укажите локатор в разделе «Локатор и азимут».</string>
+    <string name="lk_local_time">Местное время</string>
+    <string name="lk_tz_note">Основной часовой пояс страны без летнего времени; в больших странах поясов несколько.</string>
+    <string name="lk_hamqth_hint">Необязательно: логин HamQTH в разделе «Настройки → Учётные записи сервисов» добавит локатор и сведения о QSL (бюро, LoTW, eQSL).</string>
+    <string name="lk_open_settings">Открыть настройки</string>
+    <string name="lk_bureau">Бюро</string>
+    <string name="lk_not_in_hamqth">Позывного нет в HamQTH</string>
+    <string name="lk_your_log">Ваш журнал</string>
+    <string name="lk_no_qso_yet">У вас пока нет QSO с этим позывным.</string>
+    <plurals name="lk_qso_count">
+        <item quantity="one">%1$d QSO</item>
+        <item quantity="few">%1$d QSO</item>
+        <item quantity="many">%1$d QSO</item>
+        <item quantity="other">%1$d QSO</item>
+    </plurals>
+    <string name="lk_bands_modes">Диапазоны и виды работы: %1$s</string>
+    <string name="ab_title">За границей</string>
+    <string name="ab_from_gps">%1$s (по GPS)</string>
+    <string name="ab_choose_country">Выберите страну</string>
+    <string name="ab_current_location">%1$s Текущее местоположение (%2$s)</string>
+    <string name="ab_detecting">Определение страны по вашей позиции… Если это займёт много времени (нет интернета), выберите страну из списка.</string>
+    <string name="ab_in_poland">Вы в Польше – работаете под своим позывным.</string>
+    <string name="ab_no_cept">Эта страна не применяет рекомендацию CEPT T/R 61-01.</string>
+    <string name="ab_need_permit">Для передачи нужно разрешение местного органа или лицензия по двустороннему соглашению. Проверьте правила перед поездкой.</string>
+    <string name="ab_transmit_as">Передавайте как</string>
+    <string name="ab_your_call">ВАШПОЗЫВНОЙ</string>
+    <string name="ab_cept_member">Страна CEPT – лицензия класса 1 (CEPT) позволяет работать во время короткого пребывания без дополнительного разрешения.</string>
+    <string name="ab_cept_nonmember">Страна вне CEPT, применяющая T/R 61-01 – лицензия CEPT признаётся.</string>
+    <string name="ab_equivalent">Лицензии, эквивалентные CEPT, в этой стране: %1$s</string>
+    <string name="ab_guest_prefixes">Префиксы для гостей: %1$s</string>
+    <string name="ab_canada">Префикс зависит от провинции (VE1–VE9, VO1, VO2, VY0–VY2) – включите определение местоположения, чтобы выбрать его.</string>
+    <string name="ab_how_to_sign">В CW: префикс/позывной через дробь; в телефоне: «префикс дробь позывной».</string>
+    <string name="ab_remember">Помните</string>
+    <string-array name="ab_remember_items">
+        <item>Лицензия CEPT действует только при временном пребывании; для длительного нужна местная лицензия.</item>
+        <item>Имейте при себе лицензию (документ CEPT) – её нужно предъявить по требованию.</item>
+        <item>Действуют правила принимающей страны: диапазоны, мощность и местные ограничения.</item>
+        <item>Гостевая станция не может требовать защиты от помех.</item>
+    </string-array>
+    <string name="ab_iaru_region">Район IARU %1$d</string>
+    <string name="ab_different_plan">Внимание: частотный план отличается от польского (например, 40 м до 7,300 в R2).</string>
+    <string name="ab_repeaters_nearby">Ретрансляторы поблизости</string>
+    <string name="ab_zones_time">Зоны и время</string>
+    <string name="ab_zones">Зона CQ %1$s • ITU %2$s</string>
+    <string name="ab_standard_time">Стандартное время: %1$s (UTC%2$s, без летнего времени)</string>
+    <string name="ab_source">Источник: %1$s, docdb.cept.org. Перед поездкой проверьте актуальный статус применения и национальные примечания в документе.</string>
+    <string name="ab_outside_cept">Страна вне CEPT T/R 61-01 – нужно разрешение</string>
+    <string name="ab_transmit_as_value">Передавайте как %1$s</string>
+    <string name="ab_guest_prefix">Префикс для гостей: %1$s/</string>
+</resources>

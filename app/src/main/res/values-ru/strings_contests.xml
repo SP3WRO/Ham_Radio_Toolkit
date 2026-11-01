@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_contests.tsv -->
+<resources>
+    <string name="ct_filter_polish">Польские</string>
+    <string name="ct_filter_international">Международные</string>
+    <string name="ct_vhf">УКВ</string>
+    <string name="ct_filter_digi">Цифровые</string>
+    <string name="ct_filter_local">Страна пребывания</string>
+    <string name="ct_title">Календарь соревнований</string>
+    <string name="ct_show_weekly">Показывать еженедельные соревнования (CWT, MWC, спринты…)</string>
+    <string name="ct_show_russian">Показывать российские национальные и региональные соревнования (QRZ.RU)</string>
+    <string name="ct_running_now">Идут сейчас</string>
+    <string name="ct_none">Нет соревнований для выбранного фильтра.</string>
+    <string name="ct_footer">Данные: календарь соревнований SP9CXN, календарь соревнований VHF/UHF/SHF PK-UKF / SP1CNV и календарь соревнований QRZ.RU (приложение переводит русские названия на английский). Календари обновляются раз в сутки. Перед стартом проверьте дату в положении.</string>
+    <string name="ct_calendar_of">Календарь %1$s</string>
+    <string name="ct_offline">Нет соединения и сохранённых календарей – встроенный календарь (некоторые крупные соревнования, даты рассчитаны по положениям)</string>
+    <string name="ct_unavailable">%1$s: недоступен</string>
+    <string name="ct_copy_from">%1$s: копия от %2$s</string>
+    <string name="ct_running_left">ИДУТ – окончание через %1$s</string>
+    <string name="ct_starts_in">Начало через %1$s</string>
+    <string name="ct_organizer">Организатор</string>
+    <string name="ct_exchange">Обмен</string>
+    <string name="ct_log_deadline">Срок отправки отчётов</string>
+    <string name="ct_organizer_page">Страница организатора</string>
+    <string name="ct_source_page">Страница соревнований на %1$s</string>
+    <string name="ct_rules">Положение</string>
+    <string name="ct_search_rules">Найти положение</string>
+    <string name="ct_rules_pl">Положение (PL)</string>
+    <string name="ct_logs_by">Отчёты до: %1$s</string>
+    <string name="ct_rules_pl_value">Положение (PL): %1$s</string>
+    <plurals name="dur_days">
+        <item quantity="one">%1$d день</item>
+        <item quantity="few">%1$d дня</item>
+        <item quantity="many">%1$d дней</item>
+        <item quantity="other">%1$d дня</item>
+    </plurals>
+    <string name="dur_hours">%1$d ч</string>
+    <string name="dur_hours_minutes">%1$d ч %2$d мин</string>
+    <string name="dur_minutes">%1$d мин</string>
+    <string name="ct_mode_cw">CW</string>
+    <string name="ct_mode_ssb">SSB</string>
+    <string name="ct_qrp">QRP</string>
+</resources>

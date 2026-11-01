@@ -11,7 +11,7 @@
     <string name="ct_show_russian">Zobraziť ruské národné a regionálne preteky (QRZ.RU)</string>
     <string name="ct_running_now">Prebiehajú teraz</string>
     <string name="ct_none">Pre zvolený filter nie sú žiadne preteky.</string>
-    <string name="ct_footer">Údaje: kalendár pretekov SP9CXN, kalendár pretekov VKV/UHF/SHF združenia Polski Klub UKF a kalendár pretekov QRZ.RU (ruské názvy preložené aplikáciou do angličtiny). Kalendáre sa obnovujú každých 12 hodín. Pred štartom si over termín v propozíciách.</string>
+    <string name="ct_footer">Údaje: kalendár pretekov SP9CXN, kalendár pretekov VKV/UHF/SHF PK-UKF / SP1CNV a kalendár pretekov QRZ.RU (ruské názvy preložené aplikáciou do angličtiny). Kalendáre sa obnovujú raz denne. Pred štartom si over termín v propozíciách.</string>
     <string name="ct_calendar_of">Kalendár %1$s</string>
     <string name="ct_offline">Bez pripojenia a uložených kalendárov – vstavaný kalendár (vybrané veľké preteky, termíny vypočítané z pravidiel)</string>
     <string name="ct_unavailable">%1$s: nedostupný</string>
@@ -22,6 +22,7 @@
     <string name="ct_exchange">Výmena</string>
     <string name="ct_log_deadline">Termín zaslania denníkov</string>
     <string name="ct_organizer_page">Stránka organizátora</string>
+    <string name="ct_source_page">Stránka pretekov na %1$s</string>
     <string name="ct_rules">Propozície</string>
     <string name="ct_search_rules">Hľadať propozície</string>
     <string name="ct_rules_pl">Propozície (PL)</string>

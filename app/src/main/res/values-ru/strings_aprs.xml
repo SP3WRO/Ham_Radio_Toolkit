@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_aprs.tsv -->
+<resources>
+    <string name="aprs_listen_only">Только приём</string>
+    <string name="aprs_send_position">Отправить позицию</string>
+    <string name="aprs_no_gps">Нет позиции GPS</string>
+    <string name="aprs_position_sent">Позиция %1$s отправлена в APRS-IS</string>
+    <string name="aprs_my_station">Моя станция</string>
+    <string name="aprs_radius">Радиус приёма: %1$d км</string>
+    <string name="aprs_comment">"  •  комментарий: %1$s"</string>
+    <string name="aprs_always_listening">Приём работает всё время, пока приложение открыто.</string>
+    <string name="aprs_need_callsign">Для отправки позиции нужен любительский позывной. Без него приложение только принимает кадры APRS (подключение к APRS-IS только для чтения).</string>
+    <string name="aprs_enter_callsign">Укажите позывной в настройках</string>
+    <string name="aprs_waiting_gps">Ожидание сигнала GPS…</string>
+    <string name="aprs_waiting_frames">Ожидание кадров в радиусе %1$d км…</string>
+    <string name="aprs_connecting">Подключение к сети APRS-IS…</string>
+    <string name="aprs_now">сейчас</string>
+    <string name="aprs_min_ago">%1$d мин назад</string>
+    <string name="aprs_position">Позиция</string>
+    <string name="aprs_movement">Движение</string>
+    <string name="aprs_course">курс %1$s°</string>
+    <string name="aprs_altitude">Высота</string>
+    <string name="aprs_altitude_value">%1$d м над ур. моря</string>
+    <string name="aprs_phg">Станция (PHG)</string>
+    <string name="aprs_antenna">антенна %1$d м</string>
+    <string name="aprs_gain">усиление %1$s дБ</string>
+    <string name="aprs_humidity">влажность %1$s%%</string>
+    <string name="aprs_wind">ветер %1$d км/ч</string>
+    <string name="aprs_wind_from">" с направления %1$s°"</string>
+    <string name="aprs_gusts">порывы %1$d км/ч</string>
+    <string name="aprs_rain_1h">дождь за 1 ч %1$s мм</string>
+    <string name="aprs_rain_24h">дождь за 24 ч %1$s мм</string>
+    <string name="aprs_weather">Погода</string>
+    <string name="rep_title">Ретрансляторы (%1$d км)</string>
+    <string name="rep_only_working">Только работающие</string>
+    <string name="rep_found">Найдено: %1$d</string>
+    <string name="rep_none">В вашем радиусе нет ретрансляторов, подходящих под условия.</string>
+    <string name="rep_tx">Передача ретранслятора</string>
+    <string name="rep_rx">Приём ретранслятора</string>
+    <string name="rep_ctcss">Тон CTCSS</string>
+    <string name="rep_none_short">Нет</string>
+    <string name="rep_checking_radioid">Проверка в RadioID…</string>
+    <string name="rep_trustee">Ответственный: %1$s</string>
+    <string name="rep_download_error">Ошибка загрузки (%1$s): %2$s</string>
+</resources>

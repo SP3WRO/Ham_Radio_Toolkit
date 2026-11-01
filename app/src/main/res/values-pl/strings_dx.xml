@@ -17,7 +17,6 @@
     <string name="dx_qso_logged">Zalogowano QSO z %1$s</string>
     <string name="dx_sending_spot">Wysyłanie spotu…</string>
     <string name="dx_invalid_freq">Nieprawidłowa częstotliwość</string>
-    <string name="dx_award_points">%1$s · %2$d pkt</string>
     <string name="dx_error_download">Błąd pobierania danych: %1$s</string>
     <string name="dx_error_send">Błąd wysyłania: %1$s</string>
     <string name="spot_new_country">NOWY KRAJ</string>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_tools.tsv -->
+<resources>
+    <string name="act_title">Места для активаций</string>
+    <string name="act_sync">Загрузить последние базы</string>
+    <string name="act_syncing">Загрузка референсов POTA, SOTA и WWFF поблизости…</string>
+    <string name="act_none">Нет референсов в радиусе %1$d км.\nПроверьте фильтры в настройках.</string>
+    <string name="act_no_position">Нет позиции – включите определение местоположения, чтобы загрузить ближайшие референсы</string>
+    <string name="act_download_failed">Не удалось загрузить базы – проверьте соединение</string>
+    <string name="act_sync_error">Ошибка синхронизации: %1$s</string>
+    <string name="bcn_title">Маяки NCDXF/IARU</string>
+    <string name="bcn_info">Каждый маяк передаёт 10 с: свой позывной (22 WPM) и четыре тире на 100 Вт / 10 Вт / 1 Вт / 100 мВт. Если вы слышите маяк, диапазон открыт в его направлении.</string>
+    <string name="bcn_next">следующий: %1$s</string>
+    <string name="bcn_all">Все маяки – нажмите, чтобы увидеть время передачи</string>
+    <string name="bcn_on_air_now">СЕЙЧАС В ЭФИРЕ</string>
+    <string name="bcn_in">через %1$s</string>
+    <string name="bcn_off_note">Некоторые маяки временно выключены – текущий статус: ncdxf.org/beacon</string>
+    <string name="bp_title">Частотный план района IARU %1$d</string>
+    <string name="bp_region">Район %1$d</string>
+    <string name="bp_you_are_here">" (вы здесь)"</string>
+    <string name="bp_fm_calling">Вызов FM: %1$s</string>
+    <string name="bp_emergency">Аварийный трафик (КВ): %1$s</string>
+    <string name="bp_r1_poland">"План района 1 с учётом польской практики. "</string>
+    <string name="bp_source_note">Источник: %1$s. Частотный план IARU – это рекомендация, обязательны национальные правила.</string>
+    <string name="gl_title">Серая линия</string>
+    <string name="gl_legend">Жёлтая линия – серая линия. Красная точка – ваш QTH.</string>
+    <string name="gl_your_station">Ваша станция (QTH)</string>
+    <string name="gl_allow_gps">Разрешить GPS</string>
+    <string name="gl_waiting_gps">Ожидание позиции GPS…</string>
+    <string name="gl_sunrise">Восход:</string>
+    <string name="gl_sunset">Закат:</string>
+    <string name="gl_polar">Нет восхода/заката (полярная ночь/день)</string>
+    <string name="gl_about">О серой линии</string>
+    <string name="gl_about_text">Серая линия (терминатор) – это полоса вдоль границы дня и ночи. Ионосфера ведёт себя там особым образом: слой D (поглощающий низкие частоты) исчезает до наступления ночи, а слои F остаются достаточно ионизованными, чтобы отражать радиоволны.\n\nБлагодаря этому станции, лежащие на одной серой линии, могут проводить необычно дальние DX-связи (прохождение по серой линии) на 160, 80 или 40 м с минимальным ослаблением сигнала.</string>
+    <string name="coax_title">Потери в кабеле</string>
+    <string name="coax_choose">Выберите кабель</string>
+    <string name="coax_freq">Частота (МГц)</string>
+    <string name="coax_length">Длина кабеля (м)</string>
+    <string name="coax_power">Входная мощность (Вт)</string>
+    <string name="coax_no_data">Нет данных, или частота слишком высока для этого кабеля.</string>
+    <string name="coax_result">Результат для %1$s</string>
+    <string name="coax_attenuation">Затухание</string>
+    <string name="coax_power_at_antenna">Мощность на антенне</string>
+    <string name="coax_loss_percent">Потери в процентах: %1$s %%</string>
+    <string name="coax_power_lost">Мощность, потерянная в кабеле (тепло): %1$s Вт</string>
+    <string name="coax_credit">Калькулятор на основе проекта Coax Calculator\nАвтор: SQ3SWF Olgierd</string>
+</resources>

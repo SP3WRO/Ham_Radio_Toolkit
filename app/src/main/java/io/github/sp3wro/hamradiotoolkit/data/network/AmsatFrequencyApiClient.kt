@@ -36,7 +36,7 @@ class AmsatFrequencyApiClient(private val client: OkHttpClient = HttpClients.def
             .build()
 
         client.newCall(request).execute().use { response ->
-            if (!response.isSuccessful) throw Exception("HTTP ${response.code} z AMSAT DB")
+            if (!response.isSuccessful) throw Exception(AppStrings.get(R.string.err_http_from, response.code, "AMSAT DB"))
             val body = response.body?.string() ?: throw Exception(AppStrings.get(R.string.err_empty_response_from, "AMSAT DB"))
             json.decodeFromString(body)
         }

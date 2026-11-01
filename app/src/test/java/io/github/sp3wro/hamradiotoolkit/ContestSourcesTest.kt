@@ -23,28 +23,30 @@ class ContestSourcesTest {
 
     // ------------------------------------------------------------------ SP9CXN
 
-    private fun spCell(text: String) = """<td class="TC-1"><p class="Normal P-5"><span class="C-16">$text</span></p></td>"""
-
-    private val sp9cxnHtml = """
-        <p><span class="C-15">KALENDARZ ZAWODÓW KRAJOWYCH PAŹDZIERNIK 2026</span></p>
-        <table id="table_261" border="1"><tr><td colspan="2">Początek</td><td>Nazwa zawodów</td><td colspan="2">Koniec</td></tr>
-        <tr>${spCell("Data")}${spCell("Godz. UTC")}${spCell("Data")}${spCell("Godz. UTC")}</tr>
-        <tr>${spCell("07.10.2026")}${spCell("17:00")}<td class="TC-2"><p class="Normal"><a href="arki_ukf_2026.pdf" target="_blank" class="C-17">O<span class="C-17">MP ARKI VHF<span class="C-17"> X tura</span></span></a></p></td>${spCell("07.10.2026")}${spCell("19:00")}</tr>
-        <tr>${spCell("11.10.2026")}${spCell("15:00")}<td class="TC-2"><p class="Normal"><a href="sp_cw_2026.pdf" class="C-17">SP CW Contest</a></p></td>${spCell("11.10.2026")}${spCell("15:59")}</tr>
-        </table>
-        <p><span class="C-15">KALENDARZ ZAWODÓW MIĘDZYNARODOWYCH PAŹDZIERNIK 2026</span></p>
-        <table id="table_262" border="1">
-        <tr>${spCell("04.10.2026")}${spCell("06:00")}<td class="TC-1"><p class="Normal"><a href="https://www.uba.be/en/hf/contest-rules/on-contest" class="C-17">ON Contest 80/40 m SSB</a><span class="C-16"> &nbsp;</span><span class="C-20">UA i EU</span></p></td><td class="TC-1"><p class="Normal P-6"><a href="https://www-uba-be.translate.goog/en/?_x_tr_sl=auto&amp;_x_tr_tl=pl" class="C-18">PL</a></p></td>${spCell("04.10.2026")}${spCell("09:00")}</tr>
-        <tr>${spCell("13.10.2026")}${spCell("18:00")}<td class="TC-1"><p class="Normal"><a href="https://www.darc.de/rtty" class="C-17">DARC RTTY <span class="C-17">Short C<span class="C-17">ontest</span></span></a></p></td><td class="TC-1"><p class="Normal P-6"><a href="DARC_RTTY.pdf" class="C-18">PL</a></p></td>${spCell("13.10.2026")}${spCell("19:29")}</tr>
-        <tr>${spCell("18.10.2026")}${spCell("17:30")}<td class="TC-1"><p class="Normal"><a href="https://example.org/sunday" class="C-17">Sunday Contest<span class="C-17"> CW</span></a><span> *</span></p></td><td class="TC-1">-</td>${spCell("18.10.2016")}${spCell("18:00")}</tr>
-        <tr>${spCell("??.10.2026")}${spCell("18:00")}<td class="TC-1">Nieznane</td><td>-</td>${spCell("??.10.2026")}${spCell("19:00")}</tr>
-        </table>
+    private val sp9cxnJson = """
+        {"source":"SP9CXN","months":["2026-10"],"count":7,"contests":[
+        {"id":"a","name":"OMP ARKI VHF X tura","section":"domestic","domestic":true,"start_utc":"2026-10-07T17:00:00Z","end_utc":"2026-10-07T19:00:00Z",
+         "rules_url":"https://sp9cxn.pzk.pl/arki_ukf_2026.pdf","rules_pl_url":null,"modes":[],"unconfirmed":false,"old_rules":false,"no_ru_by_contacts":false,"problems":[]},
+        {"id":"b","name":"SP CW Contest","domestic":true,"start_utc":"2026-10-11T15:00:00Z","end_utc":"2026-10-11T15:59:00Z","rules_url":"https://sp9cxn.pzk.pl/sp_cw_2026.pdf"},
+        {"id":"c","name":"ON Contest 80/40 m SSB","domestic":false,"start_utc":"2026-10-04T06:00:00Z","end_utc":"2026-10-04T09:00:00Z",
+         "rules_url":"https://www.uba.be/en/hf/contest-rules/on-contest","rules_pl_url":"https://www-uba-be.translate.goog/en/?_x_tr_sl=auto&_x_tr_tl=pl",
+         "rules_pl_machine_translated":true,"no_ru_by_contacts":true},
+        {"id":"d","name":"DARC RTTY Short Contest","domestic":false,"start_utc":"2026-10-13T18:00:00Z","end_utc":"2026-10-13T19:29:00Z",
+         "rules_url":"https://www.darc.de/rtty","rules_pl_url":"https://sp9cxn.pzk.pl/DARC_RTTY.pdf"},
+        {"id":"e","name":"Sunday Contest CW","domestic":false,"start_utc":"2026-10-18T17:30:00Z","end_utc":"2026-10-18T18:00:00Z",
+         "rules_url":"https://example.org/sunday","rules_pl_url":null,"old_rules":true,"problems":["end_date_fixed"]},
+        {"id":"f","name":"Nocne Marki","domestic":true,"start_utc":"2026-12-06T23:00:00Z","end_utc":"2026-12-22T00:00:00Z"},
+        {"id":"g","name":"Bez końca","domestic":false,"start_utc":"2026-10-20T18:00:00Z","end_utc":null,"problems":["end_unparsed"]}
+        ]}
     """.trimIndent()
 
     @Test
-    fun sp9cxnParsesDomesticAndInternationalTables() {
-        val list = Sp9cxnCalendar.parse(sp9cxnHtml).associateBy { it.name }
-        assertEquals(list.keys.toString(), 5, list.size)
+    fun sp9cxnParsesPublishedJson() {
+        val list = Sp9cxnCalendar.parse(sp9cxnJson).associateBy { it.name }
+        assertEquals(list.keys.toString(), 6, list.size) // bez daty końca pominięty
+
+        // Koniec ponad 14 dni po starcie to literówka: ta sama godzina w dniu po starcie
+        assertEquals("2026-12-07 00:00", fmt(list.getValue("Nocne Marki").endMs))
 
         val arki = list.getValue("OMP ARKI VHF X tura")
         assertTrue(arki.polish)
@@ -63,7 +65,7 @@ class ContestSourcesTest {
 
         assertEquals("https://sp9cxn.pzk.pl/DARC_RTTY.pdf", list.getValue("DARC RTTY Short Contest").rulesPlUrl)
 
-        // Literówka w roku końca (2016) i gwiazdka "regulamin poprzedniej edycji"
+        // Gwiazdka "regulamin poprzedniej edycji"
         val sunday = list.getValue("Sunday Contest CW")
         assertEquals("2026-10-18 18:00", fmt(sunday.endMs))
         assertEquals(1, sunday.notes.size)
@@ -72,46 +74,48 @@ class ContestSourcesTest {
 
     // ------------------------------------------------------------------ PK-UKF
 
-    private fun pkRow(date: String, time: String, name: String, band: String, org: String, deadline: String) =
-        """<tr><td>1</td><td>$date</td><td>$time</td><td><strong>$name</strong></td><td>$band</td><td>$org</td>
-           <td><a href="https://pk-ukf.pl/pl.pdf">Regulamin</a></td><td><a href="https://pk-ukf.pl/en.pdf">Regulamin</a></td><td>$deadline</td></tr>"""
-
-    private val pkHtml = """
-        <table><tr><td>Lp.</td><td>Data</td><td>Czas trwania UTC</td><td>Nazwa zawodów</td><td>Pasmo</td><td>Organizator</td><td>Regulamin polski</td><td>Regulamin angielski</td><td>Termin wysyłki logów</td></tr>
-        ${pkRow("3 Listopad 2026", "18:00 &#8211; 22:00", "SPAC Listopad 144MHz", "144 MHz", "PK UKF", "10 Listopad 2026 (7dni)")}
-        ${pkRow("7-8 Listopad 2026", "14:00 &#8211; 14:00", "MMC 144 MHz", "144MHz CW", "ARI", "11 Listopad 2026 (3dni)")}
-        ${pkRow("31 Październik &#8211; 1 Listopad 2026", "00:00 &#8211; 23:59", "EME ARRL I-part", "50 .. 1296 MHz", "ARRL", "30 dni po zawodach")}
-        ${pkRow("6 Styczeń 2026", "18:0 – 22:00", "SPAC Styczeń 144MHz", "144 MHz", "PK UKF", "13 Styczeń 2026")}
-        ${pkRow("1 Styczeń 2026", "14.00 - 18.00", "AGCW VHF/UHF Contest", "144 i 432MHz", "AGCW", "2 Styczeń 2026")}
-        ${pkRow("?? Listopad 2026", "18:00 &#8211; 21:59", "YL VHF Contest", "144 i 432 MHz", "LRAL", "28 Listopad 2026")}
-        </table>
+    private val pkJson = """
+        {"years":[2026],"count":4,"contests":[
+        {"id":"a","name":"SPAC Listopad 144MHz","major":false,"month":11,"start_utc":"2026-11-03T18:00:00Z","end_utc":"2026-11-03T22:00:00Z",
+         "band":"144 MHz","organizer":"PK UKF","rules_pl":"https://pk-ukf.pl/pl.pdf","rules_en":"https://pk-ukf.pl/en.pdf",
+         "log_deadline_raw":"10 Listopad 2026 (7dni)","log_deadline":"2026-11-10","log_deadline_computed":false,"is_spac":true,"year":2026},
+        {"id":"b","name":"MMC 144 MHz","start_utc":"2026-11-07T14:00:00Z","end_utc":"2026-11-08T14:00:00Z",
+         "band":"144MHz CW","organizer":"ARI","rules_pl":null,"rules_en":"https://example.org/mmc","log_deadline_raw":"30 dni po zawodach","log_deadline":"2026-12-08"},
+        {"id":"c","name":"EME ARRL I-part","start_utc":"2026-10-31T00:00:00Z","end_utc":"2026-11-01T23:59:00Z",
+         "band":"50 .. 1296 MHz","organizer":"-","rules_pl":null,"rules_en":null,"log_deadline_raw":"?? Lipiec 2026 (5 dni)","log_deadline":null},
+        {"id":"d","name":"YL VHF Contest","start_date":null,"end_date":null,"start_utc":null,"end_utc":null,"band":"144 i 432 MHz","organizer":"LRAL"}
+        ]}
     """.trimIndent()
 
     @Test
-    fun pkUkfParsesDateFormats() {
-        val list = PkUkfCalendar.parse(pkHtml).associateBy { it.name }
-        assertEquals(list.keys.toString(), 5, list.size) // "?? Listopad" pominięty
+    fun pkUkfParsesPublishedJson() {
+        val list = PkUkfCalendar.parse(pkJson).associateBy { it.name }
+        assertEquals(list.keys.toString(), 3, list.size) // data "??" pominięta
 
         val spac = list.getValue("SPAC Listopad 144MHz")
+        assertEquals("PK-UKF / SP1CNV", spac.source.label)
         assertTrue(spac.polish)
         assertTrue(spac.vhf)
         assertEquals("2026-11-03 18:00", fmt(spac.startMs))
         assertEquals("2026-11-03 22:00", fmt(spac.endMs))
+        assertEquals("https://pk-ukf.pl/en.pdf", spac.rulesUrl)
         assertEquals("https://pk-ukf.pl/pl.pdf", spac.rulesPlUrl)
-        assertEquals("10 Listopad 2026 (7dni)", spac.logDeadline)
+        assertEquals("10.11.2026", spac.logDeadline)
 
         val mmc = list.getValue("MMC 144 MHz")
         assertFalse(mmc.polish)
         assertTrue(ContestMode.CW in mmc.modes)
-        assertEquals("2026-11-07 14:00", fmt(mmc.startMs))
         assertEquals("2026-11-08 14:00", fmt(mmc.endMs))
+        assertEquals("https://example.org/mmc", mmc.rulesUrl)
+        assertNull(mmc.rulesPlUrl)
+        // "30 dni po zawodach" jest już przeliczone na datę
+        assertEquals("08.12.2026", mmc.logDeadline)
 
         val eme = list.getValue("EME ARRL I-part")
         assertEquals("2026-10-31 00:00", fmt(eme.startMs))
         assertEquals("2026-11-02 00:00", fmt(eme.endMs))
-
-        assertEquals("2026-01-06 18:00", fmt(list.getValue("SPAC Styczeń 144MHz").startMs))
-        assertEquals("2026-01-01 18:00", fmt(list.getValue("AGCW VHF/UHF Contest").endMs))
+        assertEquals("", eme.organizer)
+        assertEquals("?? Lipiec 2026 (5 dni)", eme.logDeadline)
     }
 
     // ------------------------------------------------------------------ QRZ.RU
@@ -178,7 +182,7 @@ class ContestSourcesTest {
 
     @Test
     fun mergeJoinsSameContestFromDifferentSources() {
-        val sp = Sp9cxnCalendar.parse(sp9cxnHtml)
+        val sp = Sp9cxnCalendar.parse(sp9cxnJson)
         val qrz = QrzRuCalendar.parse(
             "BEGIN:VEVENT\nUID:77@qrz.ru\nLOCATION: Диапазон(ы): 80 м\\, 40 м. Модуляция: SSB.\n" +
                 "SUMMARY: ON Contest\\, проводится с 04.10.2026 06:00 UTC по 04.10.2026 09:00 UTC\nEND:VEVENT\n" +
@@ -191,12 +195,25 @@ class ContestSourcesTest {
         assertEquals(setOf(ContestSource.SP9CXN, ContestSource.QRZ_RU), on.sources)
         assertEquals("80 m, 40 m", on.bands)
         assertEquals("https://www.uba.be/en/hf/contest-rules/on-contest", on.rulesUrl)
+        // Link do strony QRZ.RU zostaje, choć regulamin pochodzi z SP9CXN
+        assertEquals("https://www.qrz.ru/contest/detail/77.html", on.sourcePageUrl)
+    }
+
+    @Test
+    fun qrzRuRequestsOnlyNeededMonths() {
+        fun at(y: Int, m: Int, d: Int) = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"))
+            .apply { clear(); set(y, m - 1, d, 12, 0) }.timeInMillis
+        assertEquals(listOf(11, 12, 1), QrzRuCalendar.monthsToFetch(at(2026, 11, 1)))
+        assertEquals(listOf(12, 1, 2), QrzRuCalendar.monthsToFetch(at(2026, 12, 31)))
+        assertEquals(10, QrzRuCalendar.previousMonth(at(2026, 11, 1)))
+        assertEquals(12, QrzRuCalendar.previousMonth(at(2027, 1, 15)))
+        assertEquals("https://m.qrz.ru/contest/qrz-contest.ics?m=11", QrzRuCalendar.icsUrl(11))
     }
 
     @Test
     fun cyclicContestsDetected() {
         val week = 7 * 86_400_000L
-        val base = Sp9cxnCalendar.parse(sp9cxnHtml).first()
+        val base = Sp9cxnCalendar.parse(sp9cxnJson).first()
         val entries = (0 until 4).map { base.copy(name = "MWC Contest CW", startMs = base.startMs + it * week, endMs = base.endMs + it * week) } +
             base.copy(name = "SP CW Contest")
         assertEquals(setOf("mwc contest cw"), ContestSources.cyclicNames(entries))
@@ -206,10 +223,10 @@ class ContestSourcesTest {
 
     @Test
     fun parsesDownloadedFiles() {
-        // Opcjonalnie: -Pcontests.dir=<katalog z sp9cxn.html, pkukf.html, qrzru.ics>
+        // Opcjonalnie: -Pcontests.dir=<katalog z sp9cxn.json, pkukf.json, qrzru.ics>
         val dir = System.getProperty("contests.dir")?.let(::File) ?: return
-        val sp = File(dir, "sp9cxn.html").takeIf { it.exists() }?.readText()?.let(Sp9cxnCalendar::parse).orEmpty()
-        val pk = File(dir, "pkukf.html").takeIf { it.exists() }?.readText()?.let(PkUkfCalendar::parse).orEmpty()
+        val sp = File(dir, "sp9cxn.json").takeIf { it.exists() }?.readText()?.let(Sp9cxnCalendar::parse).orEmpty()
+        val pk = File(dir, "pkukf.json").takeIf { it.exists() }?.readText()?.let(PkUkfCalendar::parse).orEmpty()
         val qrz = File(dir, "qrzru.ics").takeIf { it.exists() }?.readText()?.let(QrzRuCalendar::parse).orEmpty()
         val merged = ContestSources.merge(listOf(sp, pk, qrz))
         println("SP9CXN=${sp.size} (krajowe ${sp.count { it.polish }}), PK-UKF=${pk.size}, QRZ.RU=${qrz.size}, po złączeniu=${merged.size}")

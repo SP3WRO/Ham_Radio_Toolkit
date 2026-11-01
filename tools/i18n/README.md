@@ -1,13 +1,13 @@
 # Tłumaczenia / Translations
 
-The app is available in English (default, `res/values`), Polish, German, Czech and Slovak.
+The app is available in English (default, `res/values`), Polish, German, Czech, Slovak and Russian.
 
 ## UI texts — `strings_*.tsv`
 
 Each `.tsv` file in this folder is one translation table: one row per text, columns separated by a TAB:
 
 ```
-key	en	pl	de	cs	sk
+key	en	pl	de	cs	sk	ru
 ```
 
 - Placeholders: `%1$s`, `%2$d` … (same set in every column). A literal percent sign next to a placeholder is `%%`.
@@ -27,6 +27,6 @@ Do not edit the generated XML files by hand — the next run of `gen.ps1` overwr
 ## Cheat sheets — `app/src/main/assets/vademecum/*.tsv`
 
 DXCC entities, Q codes, CW abbreviations, SP call areas and the phonetic alphabet are data tables with one column
-per language (`en`, `pl`, `de`, `cs`, `sk`). They are read directly by the app; an empty cell falls back to English.
+per language (`en`, `pl`, `de`, `cs`, `sk`, `ru`). They are read directly by the app; an empty cell falls back to English.
 
-Translations into German, Czech and Slovak were made with the help of AI — corrections from native speakers are welcome.
+Translations into German, Czech, Slovak and Russian were made with the help of AI — corrections from native speakers are welcome.

@@ -30,23 +30,8 @@ data class CountryInfo(
     /** Nazwa kraju po polsku (z systemu), np. "Niemcy". */
     val namePl: String get() = Locale.Builder().setRegion(isoCode).build().getDisplayCountry(UiLocale).ifBlank { isoCode }
 
-    /** Nazwa kraju po angielsku – tak nazywają kraje RadioID i RepeaterBook. */
-    val nameEn: String get() = englishName(isoCode)
-
     /** Flaga z kodu ISO (dwa symbole "regional indicator"). */
     val flag: String get() = isoCode.uppercase().map { Character.toChars(0x1F1E6 + (it - 'A')).concatToString() }.joinToString("")
-
-    companion object {
-        fun englishName(iso: String): String = when (iso) {
-            // Nazwy w bazach krótkofalarskich różnią się od systemowych
-            "US" -> "United States"
-            "GB" -> "United Kingdom"
-            "CZ" -> "Czech Republic"
-            "KR" -> "South Korea"
-            "RU" -> "Russia"
-            else -> Locale.Builder().setRegion(iso).build().getDisplayCountry(Locale.ENGLISH).ifBlank { iso }
-        }
-    }
 }
 
 /**

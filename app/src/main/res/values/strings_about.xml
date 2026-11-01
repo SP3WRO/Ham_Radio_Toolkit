@@ -44,10 +44,8 @@
     <string name="src_wwff">World Wide Flora &amp; Fauna references and spots</string>
     <string name="src_aprsis">station positions and position beacons</string>
     <string name="src_rep_pl_eu">repeaters in Poland and Europe</string>
-    <string name="src_rep_pl">repeaters in Poland</string>
     <string name="src_rep_world">repeaters worldwide</string>
     <string name="src_dmr_details">DMR repeater details</string>
-    <string name="src_rb">repeaters – with your own token</string>
     <string name="src_uke_name">UKE – Polish amateur licence register</string>
     <string name="src_uke">Polish station data</string>
     <string name="src_callbook">callbook</string>
@@ -62,7 +60,7 @@
     <string name="src_sp9cxn">national and international contests</string>
     <string name="src_pkukf">VHF/UHF/SHF contest calendar</string>
     <string name="src_qrzru">contest calendar</string>
-    <string name="src_radiodyplom">award programmes, stations and ranking</string>
+    <string name="src_radiodyplom">award programmes and band map</string>
     <string name="src_upload">QSO upload</string>
     <string name="src_iaru_name">IARU Regions 1, 2 and 3</string>
     <string name="src_iaru">band plans</string>

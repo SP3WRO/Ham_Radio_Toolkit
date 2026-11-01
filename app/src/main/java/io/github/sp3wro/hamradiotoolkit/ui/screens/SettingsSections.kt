@@ -169,15 +169,5 @@ fun AccountsSettings() {
         SettingsTextItem(title = stringResource(R.string.settings_password, "eQSL"), value = credentials.eqslPassword, isSecret = true) { v ->
             update { it.copy(eqslPassword = v) }
         }
-        SettingsDivider()
-        SettingsTextItem(title = stringResource(R.string.settings_rb_token), value = credentials.repeaterBookToken, isSecret = true,
-            emptySummary = stringResource(R.string.settings_rb_token_desc)) { v ->
-            update { it.copy(repeaterBookToken = v) }
-        }
-        SettingsDivider()
-        SettingsTextItem(title = stringResource(R.string.settings_rb_contact), value = credentials.repeaterBookContact,
-            emptySummary = stringResource(R.string.settings_rb_contact_desc)) { v ->
-            update { it.copy(repeaterBookContact = v) }
-        }
     }
 }

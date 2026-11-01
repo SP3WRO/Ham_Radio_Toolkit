@@ -1,39 +1,18 @@
-# key	en	pl	de	cs	sk
-aw_running	Running	Trwające	Laufend	Probíhající	Prebiehajúce
-aw_upcoming	Upcoming	Nadchodzące	Bevorstehend	Nadcházející	Nadchádzajúce
-aw_followed	Followed	Obserwowane	Beobachtet	Sledované	Sledované
-aw_unavailable	radiodyplom.pl: unavailable (%1$s)	radiodyplom.pl: niedostępny (%1$s)	radiodyplom.pl: nicht verfügbar (%1$s)	radiodyplom.pl: nedostupný (%1$s)	radiodyplom.pl: nedostupný (%1$s)
-aw_cached	radiodyplom.pl: copy from %1$s (no connection)	radiodyplom.pl: kopia z %1$s (brak połączenia)	radiodyplom.pl: Kopie vom %1$s (keine Verbindung)	radiodyplom.pl: kopie z %1$s (bez připojení)	radiodyplom.pl: kópia z %1$s (bez pripojenia)
-aw_error	error	błąd	Fehler	chyba	chyba
-aw_running_header	Running now (%1$d)	Trwają teraz (%1$d)	Laufen gerade (%1$d)	Probíhají teď (%1$d)	Prebiehajú teraz (%1$d)
-aw_upcoming_header	Upcoming (%1$d)	Nadchodzące (%1$d)	Bevorstehend (%1$d)	Nadcházející (%1$d)	Nadchádzajúce (%1$d)
-aw_none_followed	You are not following any award programme – tap the star next to one.	Nie obserwujesz żadnej akcji – dotknij gwiazdki przy akcji.	Du beobachtest keine Diplomaktion – tippe auf den Stern bei einer Aktion.	Nesleduješ žádnou diplomovou akci – klepni na hvězdičku u akce.	Nesleduješ žiadnu diplomovú akciu – ťukni na hviezdičku pri akcii.
-aw_none	No award programmes for the selected filter.	Brak akcji dla wybranego filtra.	Keine Diplomaktionen für den gewählten Filter.	Pro zvolený filtr nejsou žádné akce.	Pre zvolený filter nie sú žiadne akcie.
-aw_footer	Data: calendar and programme pages of radiodyplom.pl (SP8TZ). Points “from your log” are an estimate by the app; the radiodyplom.pl ranking, calculated from the organisers' logs, is binding. Followed programmes (star) are highlighted in the DX Cluster. Programme descriptions and rules are shown as published by the organisers.	Dane: kalendarz i strony akcji serwisu radiodyplom.pl (SP8TZ). Punkty „z Twojego logu” to szacunek aplikacji; wiążący jest ranking radiodyplom.pl, liczony z logów organizatorów. Obserwowane akcje (gwiazdka) są oznaczane w DX Clusterze.	Daten: Kalender und Aktionsseiten von radiodyplom.pl (SP8TZ). Punkte „aus deinem Log“ sind eine Schätzung der App; verbindlich ist die Rangliste von radiodyplom.pl, berechnet aus den Logs der Veranstalter. Beobachtete Aktionen (Stern) werden im DX-Cluster markiert. Beschreibungen und Regeln werden so angezeigt, wie die Veranstalter sie veröffentlicht haben.	Data: kalendář a stránky akcí serveru radiodyplom.pl (SP8TZ). Body „z tvého deníku“ jsou odhad aplikace; závazný je žebříček radiodyplom.pl počítaný z deníků pořadatelů. Sledované akce (hvězdička) jsou označeny v DX Clusteru. Popisy a pravidla akcí se zobrazují tak, jak je pořadatelé zveřejnili.	Údaje: kalendár a stránky akcií servera radiodyplom.pl (SP8TZ). Body „z tvojho denníka“ sú odhad aplikácie; záväzný je rebríček radiodyplom.pl počítaný z denníkov organizátorov. Sledované akcie (hviezdička) sú označené v DX Clusteri. Popisy a pravidlá akcií sa zobrazujú tak, ako ich organizátori zverejnili.
-aw_unfollow	Stop following	Przestań obserwować	Nicht mehr beobachten	Přestat sledovat	Prestať sledovať
-aw_follow	Follow	Obserwuj	Beobachten	Sledovat	Sledovať
-aw_running_left	ON NOW – %1$s left	TRWA – jeszcze %1$s	LÄUFT – noch %1$s	PROBÍHÁ – ještě %1$s	PREBIEHA – ešte %1$s
-aw_ranking_short	Ranking: %1$d pts, %2$d QSOs (place %3$d)	Ranking: %1$d pkt, %2$d QSO (miejsce %3$d)	Rangliste: %1$d Pkt., %2$d QSOs (Platz %3$d)	Žebříček: %1$d b., %2$d QSO (místo %3$d)	Rebríček: %1$d b., %2$d QSO (miesto %3$d)
-aw_details_failed	Could not download details: %1$s	Nie udało się pobrać szczegółów: %1$s	Details konnten nicht geladen werden: %1$s	Podrobnosti se nepodařilo stáhnout: %1$s	Podrobnosti sa nepodarilo stiahnuť: %1$s
-aw_event_page	Programme page	Strona akcji	Aktionsseite	Stránka akce	Stránka akcie
-aw_organizers	Organisers	Organizatorzy	Veranstalter	Pořadatelé	Organizátori
-aw_repeats	Repeated QSOs	Powtórzone łączności	Wiederholte QSOs	Opakovaná spojení	Opakované spojenia
-aw_digi_group	Modes counted together as DIGI	Emisje liczone razem jako DIGI	Gemeinsam als DIGI gewertete Betriebsarten	Provozy počítané společně jako DIGI	Prevádzky počítané spolu ako DIGI
-aw_your_result	Your result on radiodyplom.pl	Twój wynik w radiodyplom.pl	Dein Ergebnis auf radiodyplom.pl	Tvůj výsledek na radiodyplom.pl	Tvoj výsledok na radiodyplom.pl
-aw_set_callsign	Set your callsign in Settings to see your ranking result.	Ustaw swój znak w Ustawieniach, żeby zobaczyć wynik z rankingu.	Trage dein Rufzeichen in den Einstellungen ein, um dein Ranglistenergebnis zu sehen.	Nastav svou značku v Nastavení a uvidíš výsledek v žebříčku.	Nastav svoju značku v Nastaveniach a uvidíš výsledok v rebríčku.
-aw_ranking_full	%1$s: %2$d pts, %3$d QSOs – place %4$d	%1$s: %2$d pkt, %3$d QSO – miejsce %4$d	%1$s: %2$d Pkt., %3$d QSOs – Platz %4$d	%1$s: %2$d b., %3$d QSO – místo %4$d	%1$s: %2$d b., %3$d QSO – miesto %4$d
-aw_of_participants	 of %1$d	 z %1$d	 von %1$d	 z %1$d	 z %1$d
-aw_not_ranked	%1$s: not in the ranking (the organisers have not uploaded QSOs with you yet)	%1$s: brak w rankingu (organizatorzy jeszcze nie wgrali łączności z Tobą)	%1$s: nicht in der Rangliste (die Veranstalter haben noch keine QSOs mit dir hochgeladen)	%1$s: není v žebříčku (pořadatelé zatím nenahráli spojení s tebou)	%1$s: nie je v rebríčku (organizátori zatiaľ nenahrali spojenia s tebou)
-aw_participants	 • participants: %1$d	 • uczestników: %1$d	 • Teilnehmer: %1$d	 • účastníků: %1$d	 • účastníkov: %1$d
-aw_ranking_from	Ranking from %1$s	Ranking z %1$s	Rangliste vom %1$s	Žebříček z %1$s	Rebríček z %1$s
-aw_awards_estimate	Awards (points from your log – estimate)	Dyplomy (punkty z Twojego logu – szacunek)	Diplome (Punkte aus deinem Log – Schätzung)	Diplomy (body z tvého deníku – odhad)	Diplomy (body z tvojho denníka – odhad)
-aw_points	%1$d pts	%1$d pkt	%1$d Pkt.	%1$d b.	%1$d b.
-aw_for	for: 	dla: 	für: 	pro: 	pre:
-aw_without	excluding: 	bez: 	ohne: 	bez: 	bez:
-aw_no_multipliers	The programme's time multipliers are not included.	Mnożniki czasowe akcji nie są doliczane.	Zeitmultiplikatoren der Aktion werden nicht berücksichtigt.	Časové násobitele akce se nezapočítávají.	Časové násobiteľe akcie sa nezapočítavajú.
-aw_daily_utc	The daily limit is counted by UTC date.	Limit dzienny liczony wg daty UTC.	Das Tageslimit wird nach UTC-Datum gezählt.	Denní limit se počítá podle data UTC.	Denný limit sa počíta podľa dátumu UTC.
-aw_stations	Programme stations: %1$d • worked: %2$d	Stacje akcji: %1$d • zrobione: %2$d	Stationen der Aktion: %1$d • gearbeitet: %2$d	Stanice akce: %1$d • pracováno: %2$d	Stanice akcie: %1$d • pracované: %2$d
-aw_show_all	Show all (%1$d)	Pokaż wszystkie (%1$d)	Alle anzeigen (%1$d)	Zobrazit vše (%1$d)	Zobraziť všetky (%1$d)
-aw_hide_description	Hide programme description	Ukryj opis akcji	Beschreibung ausblenden	Skrýt popis akce	Skryť popis akcie
-aw_description	Programme description and rules	Opis i regulamin akcji	Beschreibung und Regeln der Aktion	Popis a pravidla akce	Popis a pravidlá akcie
-aw_fetched	Downloaded %1$s	Pobrano %1$s	Geladen %1$s	Staženo %1$s	Stiahnuté %1$s
+# key	en	pl	de	cs	sk	ru
+aw_running	Running	Trwające	Laufend	Probíhající	Prebiehajúce	Идут
+aw_upcoming	Upcoming	Nadchodzące	Bevorstehend	Nadcházející	Nadchádzajúce	Предстоящие
+aw_followed	Followed	Obserwowane	Beobachtet	Sledované	Sledované	Отслеживаемые
+aw_unavailable	radiodyplom.pl: unavailable (%1$s)	radiodyplom.pl: niedostępny (%1$s)	radiodyplom.pl: nicht verfügbar (%1$s)	radiodyplom.pl: nedostupný (%1$s)	radiodyplom.pl: nedostupný (%1$s)	radiodyplom.pl: недоступен (%1$s)
+aw_cached	radiodyplom.pl: copy from %1$s (no connection)	radiodyplom.pl: kopia z %1$s (brak połączenia)	radiodyplom.pl: Kopie vom %1$s (keine Verbindung)	radiodyplom.pl: kopie z %1$s (bez připojení)	radiodyplom.pl: kópia z %1$s (bez pripojenia)	radiodyplom.pl: копия от %1$s (нет соединения)
+aw_running_header	Running now (%1$d)	Trwają teraz (%1$d)	Laufen gerade (%1$d)	Probíhají teď (%1$d)	Prebiehajú teraz (%1$d)	Идут сейчас (%1$d)
+aw_upcoming_header	Upcoming (%1$d)	Nadchodzące (%1$d)	Bevorstehend (%1$d)	Nadcházející (%1$d)	Nadchádzajúce (%1$d)	Предстоящие (%1$d)
+aw_none_followed	You are not following any award programme – tap the star next to one.	Nie obserwujesz żadnej akcji – dotknij gwiazdki przy akcji.	Du beobachtest keine Diplomaktion – tippe auf den Stern bei einer Aktion.	Nesleduješ žádnou diplomovou akci – klepni na hvězdičku u akce.	Nesleduješ žiadnu diplomovú akciu – ťukni na hviezdičku pri akcii.	Вы не отслеживаете ни одной дипломной программы – нажмите на звёздочку рядом с ней.
+aw_none	No award programmes for the selected filter.	Brak akcji dla wybranego filtra.	Keine Diplomaktionen für den gewählten Filter.	Pro zvolený filtr nejsou žádné akce.	Pre zvolený filter nie sú žiadne akcie.	Нет дипломных программ для выбранного фильтра.
+aw_footer	Data: radiodyplom.pl (SP8TZ) – programme list and band map from the last 30 minutes. Stations of followed programmes (star) are highlighted in the DX Cluster.	Dane: radiodyplom.pl (SP8TZ) – lista akcji i mapa pasm z ostatnich 30 minut. Stacje obserwowanych akcji (gwiazdka) są oznaczane w DX Clusterze.	Daten: radiodyplom.pl (SP8TZ) – Aktionsliste und Bandkarte der letzten 30 Minuten. Stationen beobachteter Aktionen (Stern) werden im DX-Cluster markiert.	Data: radiodyplom.pl (SP8TZ) – seznam akcí a mapa pásem za posledních 30 minut. Stanice sledovaných akcí (hvězdička) jsou označeny v DX Clusteru.	Údaje: radiodyplom.pl (SP8TZ) – zoznam akcií a mapa pásiem za posledných 30 minút. Stanice sledovaných akcií (hviezdička) sú označené v DX Clusteri.	Данные: radiodyplom.pl (SP8TZ) – список программ и карта диапазонов за последние 30 минут. Станции отслеживаемых программ (звёздочка) выделяются в DX-кластере.
+aw_unfollow	Stop following	Przestań obserwować	Nicht mehr beobachten	Přestat sledovat	Prestať sledovať	Не отслеживать
+aw_follow	Follow	Obserwuj	Beobachten	Sledovat	Sledovať	Отслеживать
+aw_running_left	ON NOW – %1$s left	TRWA – jeszcze %1$s	LÄUFT – noch %1$s	PROBÍHÁ – ještě %1$s	PREBIEHA – ešte %1$s	ИДЁТ – осталось %1$s
+aw_event_page	Programme page	Strona akcji	Aktionsseite	Stránka akce	Stránka akcie	Страница программы
+aw_on_air_header	On the air now (%1$d)	Teraz na pasmach (%1$d)	Jetzt auf den Bändern (%1$d)	Teď na pásmech (%1$d)	Teraz na pásmach (%1$d)	Сейчас в эфире (%1$d)
+aw_on_air_none	No programme stations reported in the last 30 minutes.	Brak zgłoszonych stacji akcji w ostatnich 30 minutach.	In den letzten 30 Minuten wurden keine Stationen der Aktionen gemeldet.	Za posledních 30 minut nebyly nahlášeny žádné stanice akcí.	Za posledných 30 minút neboli nahlásené žiadne stanice akcií.	За последние 30 минут нет сообщений о станциях программы.
+aw_organizers_value	Organisers: %1$s	Organizatorzy: %1$s	Veranstalter: %1$s	Pořadatelé: %1$s	Organizátori: %1$s	Организаторы: %1$s

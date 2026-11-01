@@ -64,6 +64,7 @@ class HamQthClient(private val client: OkHttpClient = HttpClients.default) {
         }
     }
 
+    // Hasło musi iść w adresie: API nie przyjmuje POST (sprawdzone 2026-11-01), a połączenie to HTTPS
     private fun login(user: String, password: String): String {
         val url = BASE_URL.toHttpUrl().newBuilder()
             .addQueryParameter("u", user)
@@ -88,7 +89,7 @@ class HamQthClient(private val client: OkHttpClient = HttpClients.default) {
 
     private fun get(url: String): String =
         client.newCall(Request.Builder().url(url).build()).execute().use { response ->
-            if (!response.isSuccessful) throw IOException("HTTP ${response.code} z HamQTH")
+            if (!response.isSuccessful) throw IOException(AppStrings.get(R.string.err_http_from, response.code, "HamQTH"))
             response.body?.string() ?: throw IOException(AppStrings.get(R.string.err_empty_response_from, "HamQTH"))
         }
 

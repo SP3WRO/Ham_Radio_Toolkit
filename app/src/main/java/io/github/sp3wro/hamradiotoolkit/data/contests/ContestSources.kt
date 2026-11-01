@@ -21,13 +21,14 @@ data class SourceStatus(val source: ContestSource, val fetchedAtMs: Long?, val f
 data class ContestCalendarResult(val entries: List<ContestEntry>, val statuses: List<SourceStatus>)
 
 /**
- * Kalendarz zawodów z trzech źródeł: SP9CXN (zawody krajowe i międzynarodowe), PK-UKF (UKF)
- * i QRZ.RU (ICS, ok. rok do przodu). Każde źródło pobierane najwyżej co 12 godzin i trzymane na dysku;
- * te same zawody z kilku źródeł są łączone w jeden wpis.
+ * Kalendarz zawodów z trzech źródeł: SP9CXN (zawody krajowe i międzynarodowe) i PK-UKF / SP1CNV (UKF) –
+ * oba jako JSON z tego repozytorium – oraz QRZ.RU (ICS, po jednym pliku na miesiąc, bieżący i dwa kolejne,
+ * pobierane po kolei). Każdy plik jest pobierany najwyżej raz na dobę, jeśli użytkownik nie odświeży ręcznie.
+ * Kopie są trzymane na dysku, a te same zawody z kilku źródeł łączone w jeden wpis.
  */
 object ContestSources {
     private const val TAG = "ContestSources"
-    private const val MAX_AGE_MS = 12 * 3_600_000L
+    private const val MAX_AGE_MS = 24 * 3_600_000L
     private const val HOUR_MS = 3_600_000L
     private val mutex = Mutex()
 
@@ -36,35 +37,58 @@ object ContestSources {
             val dir = File(context.applicationContext.filesDir, "contests").apply { mkdirs() }
             // Pozostałość po dawnym kalendarzu WA7BNM
             File(context.applicationContext.filesDir, "wa7bnm").takeIf { it.exists() }?.deleteRecursively()
+            // Pozostałości po czytaniu stron pk-ukf.pl i sp9cxn.pzk.pl
+            dir.listFiles { f -> f.name.endsWith(".html") }?.forEach { it.delete() }
             val now = System.currentTimeMillis()
-            val year = CivilDate.fromMillis(now).year
-            val month = CivilDate.fromMillis(now).month
+            val qrzMonths = QrzRuCalendar.monthsToFetch(now)
+            val qrzPrevious = qrzFile(dir, QrzRuCalendar.previousMonth(now))
+            // Dawny plik z całym rokiem i kopie miesięcy, które już nie są potrzebne
+            val qrzKeep = qrzMonths.map { qrzFile(dir, it).name } + qrzPrevious.name
+            dir.listFiles { f -> f.name.startsWith("qrzru") && f.name !in qrzKeep }?.forEach { it.delete() }
             coroutineScope {
-                val sp = async { fetch(File(dir, "sp9cxn.html"), Sp9cxnCalendar.URL, forceRefresh, Sp9cxnCalendar::parse) }
-                val pk = async {
-                    // Od listopada sprawdzamy też kalendarz na kolejny rok (jeśli już jest opublikowany)
-                    val years = if (month >= 11) listOf(year, year + 1) else listOf(year)
-                    years.map { y -> fetch(File(dir, "pkukf_$y.html"), PkUkfCalendar.url(y), forceRefresh, PkUkfCalendar::parse) }
+                val sp = async { fetch(File(dir, "sp9cxn.json"), Sp9cxnCalendar.JSON_URL, forceRefresh, Sp9cxnCalendar::parse) }
+                val pk = async { fetch(File(dir, "pkukf.json"), PkUkfCalendar.JSON_URL, forceRefresh, PkUkfCalendar::parse) }
+                val qrz = async {
+                    val months = qrzMonths.map { month ->
+                        fetch(qrzFile(dir, month), QrzRuCalendar.icsUrl(month), forceRefresh, QrzRuCalendar::parse)
+                    }
+                    combine(months, previousCopy(qrzPrevious))
                 }
-                val qrz = async { fetch(File(dir, "qrzru.ics"), QrzRuCalendar.ICS_URL, forceRefresh, QrzRuCalendar::parse) }
 
                 val spResult = sp.await()
-                val pkResults = pk.await()
+                val pkResult = pk.await()
                 val qrzResult = qrz.await()
-                val pkMain = pkResults.first()
-                val pkEntries = pkResults.flatMap { it.entries }
                 val statuses = listOf(
                     spResult.status(ContestSource.SP9CXN),
-                    pkMain.status(ContestSource.PK_UKF),
+                    pkResult.status(ContestSource.PK_UKF),
                     qrzResult.status(ContestSource.QRZ_RU)
                 )
-                ContestCalendarResult(merge(listOf(spResult.entries, pkEntries, qrzResult.entries)), statuses)
+                ContestCalendarResult(merge(listOf(spResult.entries, pkResult.entries, qrzResult.entries)), statuses)
             }
         }
     }
 
     private class Fetched(val entries: List<ContestEntry>, val fetchedAtMs: Long?, val fromCache: Boolean, val error: String?) {
         fun status(source: ContestSource) = SourceStatus(source, fetchedAtMs, fromCache, error)
+    }
+
+    private fun qrzFile(dir: File, month: Int) = File(dir, "qrzru-$month.ics")
+
+    private fun previousCopy(file: File): List<ContestEntry> = try {
+        if (file.exists()) QrzRuCalendar.parse(file.readText()) else emptyList()
+    } catch (e: Exception) {
+        emptyList()
+    }
+
+    /** Pliki miesięcy jako jedno źródło; czas najstarszej kopii, a brak któregoś miesiąca oznacza dane z kopii. */
+    private fun combine(months: List<Fetched>, previous: List<ContestEntry>): Fetched {
+        val entries = (previous + months.flatMap { it.entries }).distinctBy { it.key }.sortedBy { it.startMs }
+        return Fetched(
+            entries,
+            months.mapNotNull { it.fetchedAtMs }.minOrNull(),
+            fromCache = months.any { it.fromCache || it.error != null },
+            error = months.firstNotNullOfOrNull { it.error }?.takeIf { entries.isEmpty() }
+        )
     }
 
     private fun fetch(file: File, url: String, force: Boolean, parse: (String) -> List<ContestEntry>): Fetched {
@@ -165,6 +189,7 @@ object ContestSources {
                         originalName = base.originalName ?: entry.originalName,
                         rulesUrl = base.rulesUrl ?: entry.rulesUrl,
                         rulesPlUrl = base.rulesPlUrl ?: entry.rulesPlUrl,
+                        sourcePageUrl = base.sourcePageUrl ?: entry.sourcePageUrl,
                         homepage = base.homepage ?: entry.homepage,
                         organizer = base.organizer.ifEmpty { entry.organizer },
                         logDeadline = base.logDeadline.ifEmpty { entry.logDeadline },

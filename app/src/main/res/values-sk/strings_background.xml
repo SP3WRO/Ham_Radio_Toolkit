@@ -35,12 +35,13 @@
     <string name="err_wav_pcm">Podporovaný je len nekomprimovaný WAV (PCM)</string>
     <string name="err_wav_16bit">Podporovaný je len 16-bitový WAV</string>
     <string name="err_wav_fmt">V súbore WAV chýba hlavička fmt</string>
-    <string name="err_invalid_calendar">Neplatný kalendár</string>
     <string name="err_no_contests">Na stránke nie sú žiadne preteky</string>
     <string name="err_hearham_incomplete">Neúplné údaje HearHam</string>
-    <string name="err_rb_429">RepeaterBook: príliš veľa dopytov – skús to neskôr</string>
     <string name="err_rep_no_position">Chýba poloha – zapni polohu, aby bolo možné hľadať prevádzače v zahraničí</string>
-    <string name="err_rep_no_country">Krajinu sa nepodarilo zistiť (RepeaterBook vyžaduje názov krajiny)</string>
+    <string name="err_http_from">HTTP %1$d z %2$s</string>
+    <string name="up_qrz_rejected">QRZ: záznam odmietnutý</string>
+    <string name="cb_login_failed">prihlásenie zlyhalo</string>
+    <string name="cb_premium_required">účet vyžaduje balík Premium</string>
     <string name="err_hamqth_login">Prihlásenie do HamQTH zlyhalo</string>
     <string name="up_no_connection">Bez spojenia s %1$s: %2$s</string>
     <string name="up_qrz_auth">QRZ: chýba oprávnenie (vyžaduje sa predplatné alebo zlý kľúč)</string>

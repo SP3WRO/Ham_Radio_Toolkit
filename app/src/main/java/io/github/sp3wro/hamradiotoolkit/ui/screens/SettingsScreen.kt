@@ -23,7 +23,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import io.github.sp3wro.hamradiotoolkit.R
 import io.github.sp3wro.hamradiotoolkit.data.network.RepeaterSources
+import io.github.sp3wro.hamradiotoolkit.data.preferences.DEFAULT_APRS_ICON
+import io.github.sp3wro.hamradiotoolkit.data.preferences.DEFAULT_APRS_SSID
 import io.github.sp3wro.hamradiotoolkit.data.preferences.UserPreferencesRepository
+import io.github.sp3wro.hamradiotoolkit.data.network.AprsParser
+import io.github.sp3wro.hamradiotoolkit.ui.components.AprsSymbolPreview
 import io.github.sp3wro.hamradiotoolkit.ui.components.SettingsChoiceItem
 import io.github.sp3wro.hamradiotoolkit.ui.components.SettingsDivider
 import io.github.sp3wro.hamradiotoolkit.ui.components.SettingsSection
@@ -59,8 +63,8 @@ fun SettingsScreen(
     val tropocastArea by repository.tropocastArea.collectAsState(initial = "poland")
     val repeaterSource by repository.repeaterDataSource.collectAsState(initial = "przemienniki_net")
     val repeaterRadius by repository.repeaterRadius.collectAsState(initial = 50)
-    val aprsSsid by repository.aprsSsid.collectAsState(initial = "-7")
-    val aprsIcon by repository.aprsIcon.collectAsState(initial = "/>")
+    val aprsSsid by repository.aprsSsid.collectAsState(initial = DEFAULT_APRS_SSID)
+    val aprsIcon by repository.aprsIcon.collectAsState(initial = DEFAULT_APRS_ICON)
     val aprsComment by repository.aprsComment.collectAsState(initial = "")
     val aprsRadius by repository.aprsRadius.collectAsState(initial = 50)
     val activePrograms by repository.activePrograms.collectAsState(initial = emptySet())
@@ -179,8 +183,7 @@ fun SettingsScreen(
                         RepeaterSources.PRZEMIENNIKI_EU to stringResource(R.string.settings_source_poland, "przemienniki.eu"),
                         RepeaterSources.WORLD to stringResource(R.string.settings_source_world, "HearHam + repeatermap.de"),
                         RepeaterSources.HEARHAM to stringResource(R.string.settings_source_world, "HearHam"),
-                        RepeaterSources.REPEATERMAP to stringResource(R.string.settings_source_europe, "repeatermap.de"),
-                        RepeaterSources.REPEATERBOOK to stringResource(R.string.settings_source_token, "RepeaterBook")
+                        RepeaterSources.REPEATERMAP to stringResource(R.string.settings_source_europe, "repeatermap.de")
                     ),
                     selected = repeaterSource
                 ) { save { repository.saveRepeaterDataSource(it) } }
@@ -213,18 +216,32 @@ fun SettingsScreen(
                     save { repository.saveAprsSettings(normalized, aprsIcon, aprsComment) }
                 }
                 SettingsDivider()
+                val aprsIconOptions = listOf(
+                    "/>" to stringResource(R.string.settings_aprs_icon_car),
+                    "/<" to stringResource(R.string.settings_aprs_icon_motorcycle),
+                    "/v" to stringResource(R.string.settings_aprs_icon_van),
+                    "/[" to stringResource(R.string.settings_aprs_icon_walker),
+                    "/-" to stringResource(R.string.settings_aprs_icon_home),
+                    "/;" to stringResource(R.string.settings_aprs_icon_tent)
+                )
+                val customIcon = aprsIcon.takeIf { code -> aprsIconOptions.none { it.first == code } }
                 SettingsChoiceItem(
                     title = stringResource(R.string.settings_aprs_icon),
-                    options = listOf(
-                        "/>" to stringResource(R.string.settings_aprs_icon_car),
-                        "/<" to stringResource(R.string.settings_aprs_icon_motorcycle),
-                        "/v" to stringResource(R.string.settings_aprs_icon_van),
-                        "/[" to stringResource(R.string.settings_aprs_icon_walker),
-                        "/-" to stringResource(R.string.settings_aprs_icon_home),
-                        "/;" to stringResource(R.string.settings_aprs_icon_tent)
-                    ),
-                    selected = aprsIcon
+                    options = aprsIconOptions,
+                    selected = aprsIcon,
+                    summaryOverride = customIcon?.let { stringResource(R.string.settings_aprs_icon_custom_value, it) }
                 ) { save { repository.saveAprsSettings(aprsSsid, it, aprsComment) } }
+                SettingsDivider()
+                val iconInvalid = stringResource(R.string.settings_aprs_icon_custom_invalid)
+                SettingsTextItem(
+                    title = stringResource(R.string.settings_aprs_icon_custom),
+                    value = customIcon.orEmpty(),
+                    emptySummary = stringResource(R.string.settings_aprs_icon_custom_desc),
+                    placeholder = "/b",
+                    validate = { if (it.isEmpty() || AprsParser.isValidSymbolCode(it)) null else iconInvalid },
+                    trailing = customIcon?.takeIf(AprsParser::isValidSymbolCode)?.let { code -> { AprsSymbolPreview(code) } },
+                    preview = { code -> if (AprsParser.isValidSymbolCode(code)) AprsSymbolPreview(code, size = 48.dp) }
+                ) { save { repository.saveAprsSettings(aprsSsid, it.ifEmpty { DEFAULT_APRS_ICON }, aprsComment) } }
                 SettingsDivider()
                 SettingsTextItem(
                     title = stringResource(R.string.settings_aprs_comment),

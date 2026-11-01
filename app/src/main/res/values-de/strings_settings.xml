@@ -38,10 +38,9 @@
     <string name="settings_source_poland">%1$s (Polen)</string>
     <string name="settings_source_world">%1$s (weltweit)</string>
     <string name="settings_source_europe">%1$s (Europa)</string>
-    <string name="settings_source_token">%1$s (Token erforderlich)</string>
     <string name="settings_repeater_note">Außerhalb Polens wechselt die Quelle beim Start der App automatisch auf „HearHam + repeatermap.de“ und nach der Rückkehr wieder zurück. Eine manuelle Auswahl hat Vorrang. DMR-Details (Netz, Sprechgruppen) kommen von RadioID.net.</string>
     <string name="settings_search_radius">Suchradius</string>
-    <string name="settings_aprs_ssid_placeholder">z. B. -7 (Auto), -9 (zu Fuß)</string>
+    <string name="settings_aprs_ssid_placeholder">z. B. -5 (Smartphone), -7 (Handfunkgerät), -9 (Fahrzeug)</string>
     <string name="settings_aprs_ssid_invalid">SSID von 0 bis 15</string>
     <string name="settings_aprs_icon">Kartensymbol</string>
     <string name="settings_aprs_icon_car">Auto</string>
@@ -50,6 +49,10 @@
     <string name="settings_aprs_icon_walker">Zu Fuß</string>
     <string name="settings_aprs_icon_home">Haus</string>
     <string name="settings_aprs_icon_tent">Zelt / portabel</string>
+    <string name="settings_aprs_icon_custom">Eigenes Symbol</string>
+    <string name="settings_aprs_icon_custom_desc">APRS-Code: Tabelle und Symbol, z. B. /b für Fahrrad</string>
+    <string name="settings_aprs_icon_custom_value">Eigenes: %1$s</string>
+    <string name="settings_aprs_icon_custom_invalid">Zwei Zeichen: Tabelle (Schrägstrich, Backslash, Ziffer oder Großbuchstabe) und Symbol</string>
     <string name="settings_aprs_comment">Bakenkommentar</string>
     <string name="settings_aprs_radius">Empfangsradius</string>
     <string name="settings_section_programs">Aktivierungen – Referenzliste</string>
@@ -81,8 +84,4 @@
     <string name="settings_qrzcq_desc">Zusätzliche Quelle für Stationslocatoren (Konto auf qrzcq.com)</string>
     <string name="settings_qrz_key">QRZ Logbook – API-Schlüssel</string>
     <string name="settings_qrz_key_desc">Aus den Logbuch-Einstellungen auf qrz.com; das Hochladen erfordert ein QRZ-Abo</string>
-    <string name="settings_rb_token">RepeaterBook – App-Token</string>
-    <string name="settings_rb_token_desc">Token rbuapp_… aus dem Bereich API Apps auf repeaterbook.com (Relaisquelle „RepeaterBook“)</string>
-    <string name="settings_rb_contact">RepeaterBook – Kontakt-E-Mail</string>
-    <string name="settings_rb_contact_desc">RepeaterBook verlangt eine Kontaktadresse in den Anfragen</string>
 </resources>

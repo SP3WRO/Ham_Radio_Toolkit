@@ -11,7 +11,7 @@
     <string name="ct_show_russian">Pokaż rosyjskie zawody krajowe i regionalne (QRZ.RU)</string>
     <string name="ct_running_now">Trwają teraz</string>
     <string name="ct_none">Brak zawodów dla wybranego filtra.</string>
-    <string name="ct_footer">Dane: kalendarz zawodów SP9CXN, kalendarz zawodów VHF/UHF/SHF Stowarzyszenia Polski Klub UKF oraz kalendarz zawodów QRZ.RU (rosyjskie nazwy przetłumaczone na angielski przez aplikację). Kalendarze odświeżają się co 12 godzin. Przed startem sprawdź termin w regulaminie.</string>
+    <string name="ct_footer">Dane: kalendarz zawodów SP9CXN, kalendarz zawodów VHF/UHF/SHF PK-UKF / SP1CNV oraz kalendarz zawodów QRZ.RU (rosyjskie nazwy przetłumaczone na angielski przez aplikację). Kalendarze odświeżają się raz na dobę. Przed startem sprawdź termin w regulaminie.</string>
     <string name="ct_calendar_of">Kalendarz %1$s</string>
     <string name="ct_offline">Brak połączenia i zapisanych kalendarzy – kalendarz wbudowany (wybrane duże zawody, terminy wyliczone z reguł)</string>
     <string name="ct_unavailable">%1$s: niedostępny</string>
@@ -22,6 +22,7 @@
     <string name="ct_exchange">Wymiana</string>
     <string name="ct_log_deadline">Termin wysyłki logów</string>
     <string name="ct_organizer_page">Strona organizatora</string>
+    <string name="ct_source_page">Strona zawodów na %1$s</string>
     <string name="ct_rules">Regulamin</string>
     <string name="ct_search_rules">Szukaj regulaminu</string>
     <string name="ct_rules_pl">Regulamin PL</string>

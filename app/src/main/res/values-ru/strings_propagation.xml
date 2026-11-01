@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_propagation.tsv -->
+<resources>
+    <string name="prop_title">Прохождение</string>
+    <string name="prop_tab_hf">КВ</string>
+    <string name="prop_tab_vhf">УКВ</string>
+    <string name="prop_tropocast_title">Карта Tropocast (ICON-EU)</string>
+    <string name="prop_now">Сейчас</string>
+    <string name="prop_vhf_map_desc">Карта прохождения на УКВ</string>
+    <string name="prop_legend_background">фон</string>
+    <string name="prop_legend_marginal">на грани</string>
+    <string name="prop_legend_weak">слабое</string>
+    <string name="prop_legend_moderate">умеренное</string>
+    <string name="prop_legend_good">хорошее</string>
+    <string name="prop_legend_very_good">очень хорошее</string>
+    <string name="prop_legend_high">высокое</string>
+    <string name="prop_legend_strong">сильное</string>
+    <string name="prop_legend_very_strong">очень сильное</string>
+    <string name="prop_solar_params">Солнечные параметры</string>
+    <string name="prop_updated">Обновлено: %1$s</string>
+    <string name="prop_sunspots">Солнечные пятна (SN)</string>
+    <string name="prop_a_index">Индекс A</string>
+    <string name="prop_k_index">Индекс K</string>
+    <string name="prop_day">День</string>
+    <string name="prop_night">Ночь</string>
+    <string name="prop_cond_good">Хорошо</string>
+    <string name="prop_cond_fair">Средне</string>
+    <string name="prop_cond_poor">Плохо</string>
+    <string name="prop_cond_closed">Закрыт</string>
+    <string name="prop_offline_cached">Нет соединения – показаны последние загруженные данные</string>
+    <string name="prop_download_error">Ошибка загрузки данных: %1$s</string>
+    <string name="prop_tropocast_error">Не удалось загрузить карту Tropocast: %1$s</string>
+</resources>

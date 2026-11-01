@@ -73,11 +73,10 @@ private val dataSources = listOf(
     CreditGroup(
         R.string.src_g_repeaters, listOf(
             Credit("przemienniki.eu", R.string.src_rep_pl_eu, "https://przemienniki.eu"),
-            Credit("przemienniki.net", R.string.src_rep_pl, "https://przemienniki.net"),
+            Credit("przemienniki.net", R.string.src_rep_pl_eu, "https://przemienniki.net"),
             Credit("HearHam.com", R.string.src_rep_world, "https://hearham.com"),
             Credit("repeatermap.de", R.string.src_rep_world, "https://www.repeatermap.de"),
-            Credit("RadioID.net", R.string.src_dmr_details, "https://radioid.net"),
-            Credit("RepeaterBook.com", R.string.src_rb, "https://www.repeaterbook.com")
+            Credit("RadioID.net", R.string.src_dmr_details, "https://radioid.net")
         )
     ),
     CreditGroup(
@@ -102,7 +101,7 @@ private val dataSources = listOf(
     CreditGroup(
         R.string.src_g_contests, listOf(
             Credit("SP9CXN", R.string.src_sp9cxn, "https://sp9cxn.pzk.pl", R.string.src_sp9cxn_name),
-            Credit("Polski Klub UKF", R.string.src_pkukf, "https://pk-ukf.pl"),
+            Credit("PK-UKF / SP1CNV", R.string.src_pkukf, "https://pk-ukf.pl"),
             Credit("QRZ.RU", R.string.src_qrzru, "https://www.qrz.ru/contest/"),
             Credit("radiodyplom.pl – SP8TZ", R.string.src_radiodyplom, "https://radiodyplom.pl")
         )

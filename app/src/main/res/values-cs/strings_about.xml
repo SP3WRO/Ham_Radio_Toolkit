@@ -44,10 +44,8 @@
     <string name="src_wwff">objekty a spoty World Wide Flora &amp; Fauna</string>
     <string name="src_aprsis">polohy stanic a vysílání polohy</string>
     <string name="src_rep_pl_eu">převáděče v Polsku a Evropě</string>
-    <string name="src_rep_pl">převáděče v Polsku</string>
     <string name="src_rep_world">převáděče ve světě</string>
     <string name="src_dmr_details">podrobnosti převáděčů DMR</string>
-    <string name="src_rb">převáděče – s vlastním tokenem</string>
     <string name="src_uke_name">UKE – polský registr radioamatérských povolení</string>
     <string name="src_uke">údaje polských stanic</string>
     <string name="src_callbook">callbook</string>
@@ -62,7 +60,7 @@
     <string name="src_sp9cxn">národní a mezinárodní závody</string>
     <string name="src_pkukf">kalendář závodů VKV/UHF/SHF</string>
     <string name="src_qrzru">kalendář závodů</string>
-    <string name="src_radiodyplom">diplomové akce, stanice a žebříček</string>
+    <string name="src_radiodyplom">diplomové akce a mapa pásem</string>
     <string name="src_upload">odesílání spojení</string>
     <string name="src_iaru_name">IARU Regiony 1, 2 a 3</string>
     <string name="src_iaru">kmitočtové plány</string>

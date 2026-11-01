@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_cept.tsv -->
+<resources>
+    <string name="cept_and">и</string>
+    <string name="cept_classes">классы</string>
+    <string name="cept_formerly">ранее</string>
+    <string name="cept_formerly_also">ранее также</string>
+    <string name="cept_guest">гость</string>
+    <string name="cept_note_ee">Гости с лицензией CEPT могут работать до 3 месяцев с правами класса B; для класса A нужно подтвердить знание CW (не менее 5 слов/мин).</string>
+    <string name="cept_note_ie">Префикс EJ предназначен для прибрежных островов.</string>
+    <string name="cept_note_lv">Гости с лицензией CEPT могут работать до 3 месяцев.</string>
+    <string name="cept_note_au">Классовая лицензия позволяет гостям с лицензией CEPT работать до 365 дней на всех любительских диапазонах без дополнительных разрешений.</string>
+    <string name="cept_note_bq">PJ4 – Бонайре, PJ5 – Синт-Эстатиус, PJ6 – Саба.</string>
+    <string name="cept_note_nz">Гости с лицензией CEPT могут работать до 90 дней на всех любительских диапазонах без разрешений и регистрации.</string>
+    <string name="cept_note_pe">В Перу в конце позывного добавляется OA с цифрой зоны (например, SP3WRO/OA4).</string>
+    <string name="cept_privileges">права</string>
+</resources>

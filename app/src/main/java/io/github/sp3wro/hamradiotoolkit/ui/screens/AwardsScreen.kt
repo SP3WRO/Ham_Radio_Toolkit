@@ -7,14 +7,11 @@ import android.content.Context
 import android.content.Intent
 import android.provider.CalendarContract
 import android.widget.Toast
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.OpenInNew
 import androidx.compose.material.icons.filled.EventAvailable
-import androidx.compose.material.icons.filled.ExpandLess
-import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.StarBorder
@@ -26,25 +23,19 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import io.github.sp3wro.hamradiotoolkit.data.awards.AwardDetails
 import io.github.sp3wro.hamradiotoolkit.data.awards.AwardEvent
-import io.github.sp3wro.hamradiotoolkit.data.awards.AwardStation
-import io.github.sp3wro.hamradiotoolkit.data.awards.AwardProgressCalculator
 import io.github.sp3wro.hamradiotoolkit.data.awards.AwardSources
-import io.github.sp3wro.hamradiotoolkit.data.awards.RadiodyplomCalendar
-import io.github.sp3wro.hamradiotoolkit.data.awards.RepeatLimit
-import io.github.sp3wro.hamradiotoolkit.data.model.QsoEntry
+import io.github.sp3wro.hamradiotoolkit.data.awards.BandmapSpot
+import io.github.sp3wro.hamradiotoolkit.data.awards.RadiodyplomFeed
 import io.github.sp3wro.hamradiotoolkit.data.preferences.UserPreferencesRepository
 import io.github.sp3wro.hamradiotoolkit.data.preferences.dataStore
 import io.github.sp3wro.hamradiotoolkit.utils.UiLocale
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Locale
 import java.util.TimeZone
 
 private enum class AwardFilter(@StringRes val label: Int) {
@@ -54,25 +45,14 @@ private enum class AwardFilter(@StringRes val label: Int) {
     FOLLOWED(R.string.aw_followed)
 }
 
-private const val AWARD_DAY_MS = 86_400_000L
-private const val STATIONS_PREVIEW = 24
-
-/** Stan szczegółów jednej akcji na ekranie. */
-private sealed class DetailsState {
-    object Loading : DetailsState()
-    data class Loaded(val details: AwardDetails) : DetailsState()
-    data class Failed(val message: String) : DetailsState()
-}
-
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
-fun AwardsScreen(callsign: String, loggerViewModel: LoggerViewModel = viewModel()) {
+fun AwardsScreen() {
     val context = LocalContext.current
     val res = LocalResources.current
     val prefs = remember { UserPreferencesRepository(context.applicationContext.dataStore) }
     val scope = rememberCoroutineScope()
     val followed by prefs.followedAwards.collectAsState(initial = emptySet())
-    val logs by loggerViewModel.logs.collectAsState()
 
     var now by remember { mutableLongStateOf(System.currentTimeMillis()) }
     LaunchedEffect(Unit) {
@@ -86,19 +66,8 @@ fun AwardsScreen(callsign: String, loggerViewModel: LoggerViewModel = viewModel(
     var loading by remember { mutableStateOf(true) }
     var events by remember { mutableStateOf<List<AwardEvent>>(emptyList()) }
     var status by remember { mutableStateOf("") }
-    var expanded by remember { mutableStateOf<String?>(null) }
-    val details = remember { mutableStateMapOf<String, DetailsState>() }
-
-    fun loadDetails(id: String, force: Boolean = false) {
-        if (!force && details[id] is DetailsState.Loading) return
-        details[id] = DetailsState.Loading
-        scope.launch {
-            details[id] = AwardSources.loadDetails(context, id, callsign, force).fold(
-                onSuccess = { DetailsState.Loaded(it) },
-                onFailure = { DetailsState.Failed(it.message ?: it.javaClass.simpleName) }
-            )
-        }
-    }
+    // null – nie udało się ustalić (brak sieci), pusta lista – nikogo nie ma na pasmach
+    var spots by remember { mutableStateOf<List<BandmapSpot>?>(null) }
 
     LaunchedEffect(refreshTick) {
         loading = true
@@ -111,17 +80,11 @@ fun AwardsScreen(callsign: String, loggerViewModel: LoggerViewModel = viewModel(
             else -> "radiodyplom.pl: ${time.format(Date(result.fetchedAtMs))}"
         }
         loading = false
-        // Zapisane szczegóły obserwowanych akcji – od razu, potem odświeżenie z sieci (gdy starsze niż 12 h)
-        val followedNow = prefs.followedAwards.first()
-        AwardSources.pruneDetails(context, events.map { it.id }.toSet() + followedNow)
-        for (id in followedNow) {
-            AwardSources.cachedDetails(context, id)?.let { if (details[id] == null) details[id] = DetailsState.Loaded(it) }
-        }
-        for (id in followedNow) {
-            details[id] = AwardSources.loadDetails(context, id, callsign, forceRefresh = refreshTick > 0).fold(
-                onSuccess = { DetailsState.Loaded(it) },
-                onFailure = { e -> (details[id] as? DetailsState.Loaded) ?: DetailsState.Failed(e.message ?: res.getString(R.string.aw_error)) }
-            )
+    }
+    LaunchedEffect(Unit) {
+        while (true) {
+            spots = AwardSources.loadBandmap(context)
+            delay(AwardSources.BANDMAP_POLL_MS)
         }
     }
 
@@ -135,6 +98,13 @@ fun AwardsScreen(callsign: String, loggerViewModel: LoggerViewModel = viewModel(
     }
     val running = visible.filter { it.isRunning(now) }.sortedBy { it.endMs }
     val upcoming = visible.filter { it.startMs > now }.sortedBy { it.startMs }
+    val visibleSpots = spots?.filter { spot ->
+        when (filter) {
+            AwardFilter.ALL, AwardFilter.RUNNING -> true
+            AwardFilter.UPCOMING -> false
+            AwardFilter.FOLLOWED -> spot.events.any { it.id in followed }
+        }
+    }
 
     Scaffold(
         topBar = {
@@ -165,24 +135,24 @@ fun AwardsScreen(callsign: String, loggerViewModel: LoggerViewModel = viewModel(
                 }
             }
 
+            if (filter != AwardFilter.UPCOMING && visibleSpots != null) {
+                item(key = "on_air_header") { AwardSectionHeader(stringResource(R.string.aw_on_air_header, visibleSpots.size)) }
+                if (visibleSpots.isEmpty()) {
+                    item(key = "on_air_none") {
+                        Text(stringResource(R.string.aw_on_air_none), style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
+                }
+                visibleSpots.forEach { s -> item(key = "s_${s.callsign}_${s.band}_${s.mode}") { BandmapSpotCard(s) } }
+            }
+
             val cardFor: @Composable (AwardEvent) -> Unit = { e ->
                 AwardCard(
                     event = e,
                     now = now,
-                    expanded = expanded == e.id,
                     followed = e.id in followed,
-                    state = details[e.id],
-                    logs = logs,
                     context = context,
-                    onToggle = {
-                        expanded = if (expanded == e.id) null else e.id
-                        if (expanded == e.id && details[e.id] !is DetailsState.Loaded) loadDetails(e.id)
-                    },
-                    onFollow = { follow ->
-                        scope.launch { prefs.setAwardFollowed(e.id, follow) }
-                        if (follow && details[e.id] !is DetailsState.Loaded) loadDetails(e.id)
-                    },
-                    onRetry = { loadDetails(e.id, force = true) }
+                    onFollow = { follow -> scope.launch { prefs.setAwardFollowed(e.id, follow) } }
                 )
             }
 
@@ -208,11 +178,9 @@ fun AwardsScreen(callsign: String, loggerViewModel: LoggerViewModel = viewModel(
                 Column(verticalArrangement = Arrangement.spacedBy(2.dp), modifier = Modifier.padding(top = 8.dp)) {
                     Text(
                         stringResource(R.string.aw_footer),
-                            
-                            
                         style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
-                    TextButton(onClick = { openUrl(context, RadiodyplomCalendar.PAGE_URL) }) {
+                    TextButton(onClick = { openUrl(context, RadiodyplomFeed.PAGE_URL) }) {
                         Icon(Icons.AutoMirrored.Filled.OpenInNew, contentDescription = null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.width(6.dp))
                         Text("radiodyplom.pl")
@@ -229,22 +197,40 @@ private fun AwardSectionHeader(text: String) {
         modifier = Modifier.padding(top = 8.dp, start = 4.dp))
 }
 
+@Composable
+private fun BandmapSpotCard(spot: BandmapSpot) {
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Column(modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(spot.callsign, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily.Monospace, modifier = Modifier.weight(1f))
+                spot.frequencyKhz?.let { khz ->
+                    Text(String.format(Locale.US, "%.3f MHz", khz / 1000.0), style = MaterialTheme.typography.bodyMedium, fontFamily = FontFamily.Monospace)
+                }
+            }
+            Text(
+                listOf(spot.band, spot.mode, spot.timeUtc.takeIf { it.isNotEmpty() }?.let { "$it UTC" }.orEmpty())
+                    .filter { it.isNotEmpty() }.joinToString(" • "),
+                style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            spot.events.forEach { e ->
+                Text("${e.title} ${e.pointsInfo}".trim(), style = MaterialTheme.typography.bodySmall)
+            }
+        }
+    }
+}
+
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun AwardCard(
     event: AwardEvent,
     now: Long,
-    expanded: Boolean,
     followed: Boolean,
-    state: DetailsState?,
-    logs: List<QsoEntry>,
     context: Context,
-    onToggle: () -> Unit,
-    onFollow: (Boolean) -> Unit,
-    onRetry: () -> Unit
+    onFollow: (Boolean) -> Unit
 ) {
     val runningNow = event.isRunning(now)
-    val loaded = (state as? DetailsState.Loaded)?.details
+    val polish = UiLocale.language == "pl"
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = if (runningNow) CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer) else CardDefaults.cardColors()
@@ -252,8 +238,8 @@ private fun AwardCard(
         Column(modifier = Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    event.name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold,
-                    modifier = Modifier.weight(1f).clickable(onClick = onToggle)
+                    event.title(polish), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold,
+                    modifier = Modifier.weight(1f)
                 )
                 IconButton(onClick = { onFollow(!followed) }) {
                     Icon(
@@ -262,44 +248,17 @@ private fun AwardCard(
                         tint = if (followed) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
-                IconButton(onClick = onToggle) {
-                    Icon(if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore, contentDescription = stringResource(R.string.common_details))
-                }
             }
             Text(
                 if (runningNow) stringResource(R.string.aw_running_left, durationText(context, event.endMs - now))
-else stringResource(R.string.ct_starts_in, durationText(context, event.startMs - now)),
+                else stringResource(R.string.ct_starts_in, durationText(context, event.startMs - now)),
                 style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold,
                 color = if (runningNow) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.primary
             )
-            Text(
-                loaded?.let { d -> if (d.startMs != null && d.endMs != null) exactRange(d.startMs, d.endMs) else null }
-                    ?: dayRange(event.startMs, event.endMs),
-                style = MaterialTheme.typography.bodyMedium
-            )
-            // Krótki postęp obserwowanej akcji widoczny bez rozwijania
-            if (!expanded && loaded != null && followed) {
-                loaded.myRanking?.let { r ->
-                    Text(stringResource(R.string.aw_ranking_short, r.points, r.qsos, r.rank), style = MaterialTheme.typography.bodySmall,
-                        fontWeight = FontWeight.SemiBold)
-                }
-            }
-            if (!expanded && event.description.isNotBlank()) {
-                Text(event.description, style = MaterialTheme.typography.bodySmall, maxLines = 2, overflow = TextOverflow.Ellipsis,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
-
-            if (expanded) {
-                HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
-                when (state) {
-                    null, DetailsState.Loading -> LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
-                    is DetailsState.Failed -> {
-                        Text(stringResource(R.string.aw_details_failed, state.message), style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.error)
-                        TextButton(onClick = onRetry) { Text(stringResource(R.string.common_retry)) }
-                    }
-                    is DetailsState.Loaded -> AwardDetailsSection(event, state.details, logs)
-                }
+            Text(exactRange(event.startMs, event.endMs), style = MaterialTheme.typography.bodyMedium)
+            val organizers = event.organizersText(polish)
+            if (organizers.isNotBlank()) {
+                Text(stringResource(R.string.aw_organizers_value, organizers), style = MaterialTheme.typography.bodySmall)
             }
 
             FlowRow(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -308,7 +267,7 @@ else stringResource(R.string.ct_starts_in, durationText(context, event.startMs -
                     Spacer(Modifier.width(4.dp))
                     Text(stringResource(R.string.aw_event_page))
                 }
-                TextButton(onClick = { addAwardToCalendar(context, event, loaded) }) {
+                TextButton(onClick = { addAwardToCalendar(context, event, polish) }) {
                     Icon(Icons.Filled.EventAvailable, contentDescription = null, modifier = Modifier.size(18.dp))
                     Spacer(Modifier.width(4.dp))
                     Text(stringResource(R.string.common_add_to_calendar))
@@ -318,155 +277,22 @@ else stringResource(R.string.ct_starts_in, durationText(context, event.startMs -
     }
 }
 
-@OptIn(ExperimentalLayoutApi::class)
-@Composable
-private fun AwardDetailsSection(event: AwardEvent, d: AwardDetails, logs: List<QsoEntry>) {
-    val progress = remember(d, logs) { AwardProgressCalculator.compute(d, logs, event.startMs, event.endMs) }
-    var showAllStations by remember { mutableStateOf(false) }
-    var showDescription by remember { mutableStateOf(false) }
-
-    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-        if (d.organizers.isNotBlank()) LabeledText(stringResource(R.string.aw_organizers), d.organizers)
-        if (d.repeatRule.isNotBlank()) LabeledText(stringResource(R.string.aw_repeats), d.repeatRule)
-        if (d.digiGroup.isNotEmpty()) LabeledText(stringResource(R.string.aw_digi_group), d.digiGroup.joinToString(", "))
-
-        // Ranking serwisu – z logów organizatorów
-        Text(stringResource(R.string.aw_your_result), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
-        val call = d.rankingCallsign
-        Text(
-            when {
-                call.isEmpty() -> stringResource(R.string.aw_set_callsign)
-                d.myRanking != null -> stringResource(R.string.aw_ranking_full, call, d.myRanking.points, d.myRanking.qsos, d.myRanking.rank) +
-                    (if (d.participants > 0) stringResource(R.string.aw_of_participants, d.participants) else "")
-                else -> stringResource(R.string.aw_not_ranked, call) +
-                    (if (d.participants > 0) stringResource(R.string.aw_participants, d.participants) else "")
-            },
-            style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold
-        )
-        if (d.rankingUpdated.isNotBlank()) {
-            Text(stringResource(R.string.aw_ranking_from, d.rankingUpdated), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        }
-
-        // Dyplomy i szacunek z własnego logu
-        if (d.awards.isNotEmpty()) {
-            Text(stringResource(R.string.aw_awards_estimate), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
-            progress.rules.forEach { p ->
-                Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                    val min = p.rule.minPoints
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(p.rule.title, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold, modifier = Modifier.weight(1f))
-                        Text(
-                            if (min != null) "${p.points} / $min ${p.rule.unit}" else stringResource(R.string.aw_points, p.points),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = if (p.achieved) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.onSurface,
-                            fontWeight = if (p.achieved) FontWeight.Bold else FontWeight.Normal
-                        )
-                    }
-                    if (min != null && min > 0) {
-                        LinearProgressIndicator(progress = { (p.points.toFloat() / min).coerceIn(0f, 1f) }, modifier = Modifier.fillMaxWidth())
-                    }
-                    val regions = listOfNotNull(
-                        p.rule.allowedRegions.takeIf { it.isNotEmpty() }?.joinToString(", ", prefix = stringResource(R.string.aw_for)),
-                        p.rule.excludedRegions.takeIf { it.isNotEmpty() }?.joinToString(", ", prefix = stringResource(R.string.aw_without))
-                    )
-                    if (regions.isNotEmpty()) {
-                        Text(regions.joinToString(" • "), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    }
-                    if (p.rule.bands.isNotEmpty() || p.rule.modes.isNotEmpty()) {
-                        Text(
-                            listOf(p.rule.bands.joinToString(" "), p.rule.modes.joinToString(" ")).filter { it.isNotBlank() }.joinToString("  •  "),
-                            style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            maxLines = 2, overflow = TextOverflow.Ellipsis
-                        )
-                    }
-                }
-            }
-            val notes = listOfNotNull(
-                stringResource(R.string.aw_no_multipliers).takeIf { d.hasTimeMultipliers },
-                stringResource(R.string.aw_daily_utc).takeIf { d.repeatLimit == RepeatLimit.BAND_MODE_DAILY }
-            )
-            notes.forEach { Text("⚠ $it", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.error) }
-        }
-
-        // Stacje akcji – zrobione z logu wyróżnione
-        if (d.stations.isNotEmpty()) {
-            val worked = progress.workedStations
-            Text(
-                stringResource(R.string.aw_stations, d.stations.size, worked.size),
-                style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary
-            )
-            val sorted = d.stations.sortedWith(compareByDescending<AwardStation> { it.callsign in worked }
-                .thenByDescending { it.points }.thenBy { it.callsign })
-            val shown = if (showAllStations) sorted else sorted.take(STATIONS_PREVIEW)
-            FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                shown.forEach { s ->
-                    val done = s.callsign in worked
-                    AssistChip(
-                        onClick = {},
-                        label = {
-                            Text(
-                                "${if (done) "✓ " else ""}${s.callsign} · ${s.points}",
-                                fontFamily = FontFamily.Monospace,
-                                fontWeight = if (done) FontWeight.Bold else FontWeight.Normal
-                            )
-                        },
-                        colors = if (done) AssistChipDefaults.assistChipColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer)
-                        else AssistChipDefaults.assistChipColors()
-                    )
-                }
-            }
-            if (sorted.size > STATIONS_PREVIEW) {
-                TextButton(onClick = { showAllStations = !showAllStations }) {
-                    Text(if (showAllStations) stringResource(R.string.common_show_less) else stringResource(R.string.aw_show_all, sorted.size))
-                }
-            }
-        }
-
-        if (d.description.isNotBlank()) {
-            TextButton(onClick = { showDescription = !showDescription }) {
-                Text(if (showDescription) stringResource(R.string.aw_hide_description) else stringResource(R.string.aw_description))
-            }
-            if (showDescription) Text(d.description, style = MaterialTheme.typography.bodySmall)
-        }
-        val time = remember { SimpleDateFormat("dd.MM HH:mm", UiLocale) }
-        Text(stringResource(R.string.aw_fetched, time.format(Date(d.fetchedAtMs))), style = MaterialTheme.typography.labelSmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant)
-    }
-}
-
-@Composable
-private fun LabeledText(label: String, value: String) {
-    Column {
-        Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
-        Text(value, style = MaterialTheme.typography.bodySmall)
-    }
-}
-
-
-private fun dayRange(startMs: Long, endExclusiveMs: Long): String {
-    val fmt = SimpleDateFormat("dd.MM.yyyy", UiLocale).apply { timeZone = TimeZone.getTimeZone("UTC") }
-    return "${fmt.format(Date(startMs))} – ${fmt.format(Date(endExclusiveMs - 1))}"
-}
-
 private fun exactRange(startMs: Long, endMs: Long): String {
     val fmt = SimpleDateFormat("dd.MM.yyyy HH:mm", UiLocale).apply { timeZone = TimeZone.getTimeZone("UTC") }
     return "${fmt.format(Date(startMs))} – ${fmt.format(Date(endMs - 60_000L))} UTC"
 }
 
-private fun addAwardToCalendar(context: Context, e: AwardEvent, d: AwardDetails?) {
-    val start = d?.startMs ?: e.startMs
-    val end = d?.endMs ?: e.endMs
+private fun addAwardToCalendar(context: Context, e: AwardEvent, polish: Boolean) {
     val description = listOfNotNull(
-        e.description.takeIf { it.isNotBlank() },
+        e.organizersText(polish).takeIf { it.isNotBlank() },
         e.url,
         context.getString(R.string.common_source_value, "radiodyplom.pl")
     ).joinToString("\n")
     val intent = Intent(Intent.ACTION_INSERT)
         .setData(CalendarContract.Events.CONTENT_URI)
-        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, start)
-        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, end)
-        .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, d?.startMs == null)
-        .putExtra(CalendarContract.Events.TITLE, e.name)
+        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, e.startMs)
+        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, e.endMs)
+        .putExtra(CalendarContract.Events.TITLE, e.title(polish))
         .putExtra(CalendarContract.Events.DESCRIPTION, description)
         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     try {

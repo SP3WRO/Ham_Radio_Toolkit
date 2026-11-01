@@ -35,12 +35,13 @@
     <string name="err_wav_pcm">Nur unkomprimiertes WAV (PCM) wird unterstützt</string>
     <string name="err_wav_16bit">Nur 16-Bit-WAV wird unterstützt</string>
     <string name="err_wav_fmt">Kein fmt-Header in der WAV-Datei</string>
-    <string name="err_invalid_calendar">Ungültiger Kalender</string>
     <string name="err_no_contests">Keine Contests auf der Seite</string>
     <string name="err_hearham_incomplete">Unvollständige HearHam-Daten</string>
-    <string name="err_rb_429">RepeaterBook: zu viele Anfragen – später erneut versuchen</string>
     <string name="err_rep_no_position">Keine Position – Standort einschalten, um Relais im Ausland zu suchen</string>
-    <string name="err_rep_no_country">Land konnte nicht ermittelt werden (RepeaterBook braucht den Ländernamen)</string>
+    <string name="err_http_from">HTTP %1$d von %2$s</string>
+    <string name="up_qrz_rejected">QRZ: Datensatz abgelehnt</string>
+    <string name="cb_login_failed">Anmeldung fehlgeschlagen</string>
+    <string name="cb_premium_required">das Konto benötigt das Premium-Paket</string>
     <string name="err_hamqth_login">Anmeldung bei HamQTH fehlgeschlagen</string>
     <string name="up_no_connection">Keine Verbindung zu %1$s: %2$s</string>
     <string name="up_qrz_auth">QRZ: keine Berechtigung (Abo erforderlich oder falscher Schlüssel)</string>

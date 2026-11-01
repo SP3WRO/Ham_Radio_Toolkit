@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_sat.tsv -->
+<resources>
+    <string name="sat_title">Спутники</string>
+    <string name="sat_update_online">Обновить онлайн</string>
+    <string name="sat_search">Поиск спутника…</string>
+    <string name="sat_list_header">Спутники и пролёты (%1$d):</string>
+    <string name="sat_calculating">Расчёт: %1$d/%2$d</string>
+    <string name="sat_none">Нет спутников, подходящих под условия.</string>
+    <string name="sat_in_pass">Над горизонтом! Конец через: %1$dм %2$dс</string>
+    <string name="sat_aos_los">AOS: %1$s (через %2$s) | LOS: %3$s</string>
+    <string name="sat_calculating_pass">Расчёт пролёта…</string>
+    <string name="sat_remind">Напоминать о пролётах</string>
+    <string name="sat_freq_amsat">Частоты (AMSAT DB):</string>
+    <string name="sat_freq_satnogs">Частоты (SatNOGS):</string>
+    <string name="sat_freq_builtin">Частоты (встроенные):</string>
+    <string name="sat_callsign">Позывной: %1$s</string>
+    <string name="sat_none_short">нет</string>
+    <string name="sat_no_freqs">Нет зарегистрированных частот.</string>
+    <string name="sat_skyplot">КАРТА НЕБА</string>
+    <string name="sat_satellite">Спутник</string>
+    <string name="sat_azimuth">Азимут (направление)</string>
+    <string name="sat_elevation">Возвышение (высота)</string>
+    <string name="sat_pick_hint">Выберите спутник из списка ниже, чтобы увидеть его положение на компасе.</string>
+    <string name="loc_title">Локатор и азимуты</string>
+    <string name="loc_not_recognized">Не распознано: введите локатор (JO82LK), координаты (52.4, 16.9) или позывной</string>
+    <string name="loc_search_error">Ошибка поиска: %1$s</string>
+    <string name="loc_my_station">Моя станция</string>
+    <string name="loc_manual">локатор введён вручную</string>
+    <string name="loc_from_gps">по GPS</string>
+    <string name="loc_no_position">Нет позиции – включите определение местоположения или введите свой локатор.</string>
+    <string name="loc_my_locator">Мой локатор (необязательно)</string>
+    <string name="loc_use_gps">Использовать GPS</string>
+    <string name="loc_refresh_gps">Обновить позицию GPS</string>
+    <string name="loc_distance_bearing">Расстояние и азимут</string>
+    <string name="loc_target_label">Локатор, координаты или позывной</string>
+    <string name="loc_target_hint">например, FN31pr, 40.7, -74.0 или VK2ABC</string>
+    <string name="loc_target_locator">Локатор цели: %1$s</string>
+    <string name="loc_short_path">Короткий путь (SP)</string>
+    <string name="loc_long_path">Длинный путь (LP)</string>
+    <string name="loc_enlarge_map">Увеличить карту</string>
+    <string name="loc_map_note">Азимутальная карта: направление от центра = азимут антенны, расстояние от центра = расстояние по дуге большого круга. Жёлтая линия – короткий путь, розовая пунктирная – длинный. Нажмите на карту, чтобы увеличить её.</string>
+    <string name="loc_my_station_value">Моя станция: %1$s</string>
+    <string name="loc_coords_to_locator">Координаты → локатор</string>
+    <string name="loc_lat">Шир. (N+)</string>
+    <string name="loc_lon">Долг. (E+)</string>
+    <string name="loc_locator_value">Локатор %1$s</string>
+    <string name="loc_point">Точка %1$s°, %2$s°</string>
+    <string name="loc_no_locator_for">У нас нет данных о локаторе станции %1$s</string>
+    <string name="live_title">Активации в эфире</string>
+    <string name="live_count">Спотов: %1$d</string>
+    <string name="live_nearest">Ближайшие</string>
+    <string name="live_error">Ошибка: %1$s</string>
+    <string name="live_sota_note">Споты SOTA не показываются: условия API SOTA требуют предварительного одобрения SOTA Management Team для приложений (в том числе созданных с помощью ИИ).</string>
+    <string name="live_logged">Записано %1$s @ %2$s</string>
+    <string name="live_logged_badge">В ЖУРНАЛЕ</string>
+</resources>

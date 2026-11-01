@@ -35,12 +35,13 @@
     <string name="err_wav_pcm">Only uncompressed WAV (PCM) is supported</string>
     <string name="err_wav_16bit">Only 16-bit WAV is supported</string>
     <string name="err_wav_fmt">No fmt header in the WAV file</string>
-    <string name="err_invalid_calendar">Invalid calendar</string>
     <string name="err_no_contests">No contests on the page</string>
     <string name="err_hearham_incomplete">Incomplete HearHam data</string>
-    <string name="err_rb_429">RepeaterBook: too many requests – try again later</string>
     <string name="err_rep_no_position">No position – turn on location to search for repeaters abroad</string>
-    <string name="err_rep_no_country">Could not determine the country (RepeaterBook needs the country name)</string>
+    <string name="err_http_from">HTTP %1$d from %2$s</string>
+    <string name="up_qrz_rejected">QRZ: record rejected</string>
+    <string name="cb_login_failed">login failed</string>
+    <string name="cb_premium_required">the account requires the Premium plan</string>
     <string name="err_hamqth_login">HamQTH login failed</string>
     <string name="up_no_connection">No connection to %1$s: %2$s</string>
     <string name="up_qrz_auth">QRZ: not authorised (subscription required or wrong key)</string>
