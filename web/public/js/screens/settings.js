@@ -47,7 +47,7 @@ export function settingsScreen(ctx) {
       settingsSection(t("settings_section_repeaters"), "cellTower",
         settingsChoice(t("settings_repeater_source"), [
           ["przemienniki_net", t("settings_source_poland", "przemienniki.net")], ["przemienniki_eu", t("settings_source_poland", "przemienniki.eu")],
-          ["world", t("settings_source_world", "HearHam + repeatermap.de")], ["hearham", t("settings_source_world", "HearHam")],
+          ["international", t("settings_source_world", "HearHam + repeatermap.de")], ["hearham", t("settings_source_world", "HearHam")],
           ["repeatermap", t("settings_source_europe", "repeatermap.de")], ["repeaterbook", t("settings_source_token", "RepeaterBook")],
         ], s.repeater_data_source, (v) => settings.set({ repeater_data_source: v })),
         h("div", { class: "settings-note" }, t("settings_repeater_note")),

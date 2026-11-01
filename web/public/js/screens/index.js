@@ -11,6 +11,7 @@ import { vademecumScreen } from "./vademecum.js";
 import { settingsScreen } from "./settings.js";
 import { soonScreen } from "./common.js";
 import { dxClusterScreen, liveSpotsScreen, activationsScreen } from "./spots.js";
+import { repeatersScreen } from "./repeaters.js";
 
 /** @type {Record<string, (ctx: import("../app.js").ScreenContext) => import("../app.js").ScreenInstance>} */
 export const SCREENS = {
@@ -19,6 +20,7 @@ export const SCREENS = {
   dx_cluster: dxClusterScreen,
   live_spots: liveSpotsScreen,
   activations: activationsScreen,
+  repeaters: repeatersScreen,
   logger: loggerScreen,
   log_stats: logStatsScreen,
   toolbox: toolboxScreen,

@@ -9,6 +9,7 @@ import { readFile, stat } from "node:fs/promises";
 import { join, normalize, extname, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { nearby } from "./activations.mjs";
+import { repeaters } from "./repeaters.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT ?? 8080);
@@ -34,6 +35,8 @@ const SERVICES = {
   // Aktywatorzy na żywo
   pota: { base: "https://api.pota.app/", ttl: 45, paths: /^spot\/activator$/ },
   wwff: { base: "https://spots.wwff.co/", ttl: 45, paths: /^static\/spots\.json$/ },
+  // Szczegóły przemienników DMR (color code, sieć, grupy)
+  radioid: { base: "https://radioid.net/api/dmr/", ttl: 24 * 3600, paths: /^repeater\/\?callsign=[A-Z0-9]{3,10}$/ },
 };
 
 const MIME = {
@@ -209,6 +212,17 @@ const server = createServer(async (req, res) => {
     if (m && req.method === "POST") return proxyPost(req, res, m[1], m[2]);
     if (req.method !== "GET") return send(res, 405, { error: "Tylko GET i POST" });
     if (m) return proxy(req, res, m[1], m[2] + url.search);
+    if (url.pathname === "/api/repeaters") {
+      const source = url.searchParams.get("source") ?? "przemienniki_net";
+      const lat = url.searchParams.has("lat") ? Number(url.searchParams.get("lat")) : null;
+      const lon = url.searchParams.has("lon") ? Number(url.searchParams.get("lon")) : null;
+      if ((lat != null && !Number.isFinite(lat)) || (lon != null && !Number.isFinite(lon))) return send(res, 400, { error: "Złe współrzędne" });
+      try {
+        return send(res, 200, { repeaters: await repeaters(source, lat, lon, USER_AGENT) });
+      } catch (e) {
+        return send(res, 502, { error: String(e?.message ?? e) });
+      }
+    }
     if (url.pathname === "/api/activations") {
       const lat = Number(url.searchParams.get("lat")), lon = Number(url.searchParams.get("lon"));
       const radius = Math.min(Number(url.searchParams.get("radius") ?? 500), 500);

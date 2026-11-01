@@ -27,6 +27,8 @@ export const DEFAULTS = {
 
 /** @type {Settings} */
 let state = { ...DEFAULTS, ...read() };
+// Etap 1 zapisywał źródło "świat" jako "world" – w aplikacji to "international"
+if (/** @type {string} */ (state.repeater_data_source) === "world") state.repeater_data_source = "international";
 /** @type {Set<(s: Settings) => void>} */
 const listeners = new Set();
 

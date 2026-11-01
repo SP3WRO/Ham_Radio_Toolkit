@@ -89,7 +89,7 @@ button.card { cursor: pointer; padding: 0; }
 .card.tonal { background: var(--secondary-container); color: var(--on-secondary-container); }
 .card.error { background: var(--error-container); color: var(--on-error-container); }
 .card.selected { background: var(--secondary-container); color: var(--on-secondary-container); }
-.info-card { padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+.card.info-card { padding: 16px; display: flex; flex-direction: column; gap: 4px; }
 .info-card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .info-card-title { font-size: 14px; font-weight: 500; color: var(--primary); }
 

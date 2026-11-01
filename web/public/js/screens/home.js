@@ -6,6 +6,7 @@ import { settings } from "../store.js";
 import { location } from "../services.js";
 import { Maidenhead } from "../core/geo.js";
 import { layout, everySecond } from "./common.js";
+import { repeaterStore, nearestRepeater } from "./repeaters.js";
 
 const isIos = () => /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 const isStandalone = () => matchMedia("(display-mode: standalone)").matches || /** @type {any} */ (navigator).standalone === true;
@@ -51,13 +52,32 @@ export function homeScreen(ctx) {
     }
   };
   renderQth();
-  const unsubscribe = location.subscribe(renderQth);
+  const unsubscribe = location.subscribe(() => { renderQth(); repeaterStore.ensure(); renderRepeater(); });
+
+  // Najbliższy przemiennik (do 100 km) – dotknięcie otwiera listę przemienników
+  const repeaterHost = h("div");
+  const renderRepeater = () => {
+    const g = location.get().fix ? nearestRepeater() : null;
+    if (!g || g.distanceKm > 100) return replace(repeaterHost);
+    const col = (label, lines) => h("div", { class: "col gap-s" }, h("span", { class: "label-s muted" }, label), h("span", { class: "title-s pre" }, lines.join("\n")));
+    replace(repeaterHost, infoCard({ title: t("home_nearest_repeater"), onclick: () => ctx.navigate("repeaters") },
+      h("div", { class: "row between" }, h("span", { class: "headline-s" }, g.callsign), h("span", { class: "title-m" }, `${g.distanceKm} km`)),
+      h("div", { class: "body-m muted" }, g.qth),
+      h("div", { class: "hr", style: { margin: "8px 0" } }),
+      h("div", { class: "row between top" },
+        col(t("home_tx"), g.channels.map((c) => format("%.4f", c.userTx))),
+        col(t("home_rx"), g.channels.map((c) => format("%.4f", c.userRx))),
+        col(t("home_mode"), [...new Set(g.channels.flatMap((c) => c.modes).map((m) => m.toUpperCase()))]),
+        col("CTCSS", g.channels.map((c) => (c.requiredCtcss !== "-" ? `${c.requiredCtcss} Hz` : t("home_none")))))));
+  };
+  repeaterStore.listeners.add(renderRepeater);
+  repeaterStore.ensure();
 
   const { el } = layout(ctx, { title: "Ham Radio Toolkit" },
     hello, install,
     infoCard({ title: t("home_utc_time") }, time, date),
-    infoCard({ title: t("home_qth_locator") }, qthBody));
-  // Karty APRS-IS i najbliższego przemiennika dojdą razem z serwerem APRS i bazami przemienników (etap 2)
+    infoCard({ title: t("home_qth_locator") }, qthBody),
+    repeaterHost);
 
-  return { el, destroy: () => { stopClock(); unsubscribe(); } };
+  return { el, destroy: () => { stopClock(); unsubscribe(); repeaterStore.listeners.delete(renderRepeater); } };
 }
