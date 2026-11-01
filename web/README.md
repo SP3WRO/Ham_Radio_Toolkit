@@ -50,6 +50,17 @@ GPS i instalacja PWA wymagają HTTPS (wyjątek: `localhost`). Do testów na iPho
 
 ## Wdrożenie na serwerze Debian (subdomena)
 
+Najprościej – jedno polecenie na serwerze (Debian 12, wcześniej: rekord DNS A dla domeny i otwarte porty 80/443).
+Instaluje wszystko, a uruchomione ponownie aktualizuje aplikację do najnowszej wersji z GitHuba:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/SP3WRO/Ham_Radio_Toolkit/web-pwa/web/server/zainstaluj.sh | sudo bash
+```
+
+Domena jest ustawiona na `toolkit.czysty.eu`; inną podasz tak: `... | sudo DOMAIN=ham.example.pl bash`.
+
+Ręcznie, krok po kroku:
+
 ```bash
 # 1. Node.js 18+ (Debian 12 ma 18.x w repozytorium)
 sudo apt install nodejs nginx certbot python3-certbot-nginx
