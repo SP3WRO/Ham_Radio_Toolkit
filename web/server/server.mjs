@@ -5,6 +5,7 @@
 //   PORT (8080), HOST (127.0.0.1 – za nginx), STATIC_DIR (../public), CACHE_MAX_MB (32),
 //   ALLOWED_ORIGINS – lista adresów stron rozdzielona przecinkami, które mogą korzystać z /api (domyślnie: tylko ten sam adres)
 import { createServer } from "node:http";
+import { gzipSync } from "node:zlib";
 import { readFile, stat } from "node:fs/promises";
 import { join, normalize, extname, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -14,6 +15,7 @@ import { lookup as callbookLookup } from "./callbook.mjs";
 import { contests } from "./contests.mjs";
 import { awardEvents, awardDetails } from "./awards.mjs";
 import { countryAt } from "./country.mjs";
+import { satellites } from "./satellites.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT ?? 8080);
@@ -203,8 +205,15 @@ async function serveStatic(req, res, pathname) {
 
 function send(res, status, body) {
   const json = typeof body !== "string";
-  res.writeHead(status, { "Content-Type": json ? "application/json; charset=utf-8" : "text/plain; charset=utf-8", ...SECURITY_HEADERS });
-  res.end(json ? JSON.stringify(body) : body);
+  const text = json ? JSON.stringify(body) : body;
+  const headers = { "Content-Type": json ? "application/json; charset=utf-8" : "text/plain; charset=utf-8", ...SECURITY_HEADERS };
+  // Duże odpowiedzi (satelity, kalendarze) kompresujemy – na telefonie liczy się każdy transfer
+  if (text.length > 8192 && /\bgzip\b/.test(String(res.req?.headers["accept-encoding"] ?? ""))) {
+    res.writeHead(status, { ...headers, "Content-Encoding": "gzip", Vary: "Accept-Encoding" });
+    return res.end(gzipSync(text));
+  }
+  res.writeHead(status, headers);
+  res.end(text);
 }
 
 // ---------------------------------------------------------------- serwer
@@ -249,6 +258,13 @@ const server = createServer(async (req, res) => {
     if (url.pathname === "/api/contests") {
       try {
         return send(res, 200, await contests(USER_AGENT, url.searchParams.get("refresh") === "1"));
+      } catch (e) {
+        return send(res, 502, { error: String(e?.message ?? e) });
+      }
+    }
+    if (url.pathname === "/api/satellites") {
+      try {
+        return send(res, 200, await satellites(USER_AGENT, url.searchParams.get("refresh") === "1"));
       } catch (e) {
         return send(res, 502, { error: String(e?.message ?? e) });
       }

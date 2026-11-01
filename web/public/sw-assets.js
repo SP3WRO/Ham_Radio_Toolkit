@@ -1,5 +1,5 @@
 // Wygenerowane przez tools/build-data.mjs – nie edytować
-self.HRT_VERSION = "f8401c3d79d0";
+self.HRT_VERSION = "65c370f0e5a7";
 self.HRT_ASSETS = [
  "./",
  "css/app.css",
@@ -12,6 +12,7 @@ self.HRT_ASSETS = [
  "data/i18n/en.json",
  "data/i18n/pl.json",
  "data/i18n/sk.json",
+ "data/sat_freqs.json",
  "data/vademecum/dxcc.tsv",
  "data/vademecum/phonetic.tsv",
  "data/vademecum/qcodes.tsv",
@@ -32,6 +33,7 @@ self.HRT_ASSETS = [
  "js/core/logbook.js",
  "js/core/radio.js",
  "js/core/repeaters.js",
+ "js/core/sgp4.js",
  "js/core/spots.js",
  "js/core/world.js",
  "js/db.js",
@@ -51,6 +53,7 @@ self.HRT_ASSETS = [
  "js/screens/planning.js",
  "js/screens/propagation.js",
  "js/screens/repeaters.js",
+ "js/screens/satellites.js",
  "js/screens/settings.js",
  "js/screens/spots.js",
  "js/screens/toolbox.js",

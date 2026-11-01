@@ -125,6 +125,19 @@ writeFileSync(join(OUT, "bandplan.json"), JSON.stringify(bandplan));
   console.log(`zawody RU: ${Object.keys(known).length} nazw`);
 }
 
+// ---------------------------------------------------------------- wbudowane częstotliwości satelitów
+{
+  const src = readFileSync(join(KOTLIN, "data", "model", "SatelliteDatabase.kt"), "utf8");
+  /** @type {Record<string, string[][]>} */
+  const db = {};
+  for (const m of src.matchAll(/"([^"]+)"\s+to\s+listOf\(([\s\S]*?)\n\s*\)/g)) {
+    db[m[1]] = [...m[2].matchAll(/SatFrequency\("([^"]*)",\s*"([^"]*)",\s*"([^"]*)",\s*"([^"]*)"\)/g)].map((f) => [f[1], f[2], f[3], f[4]]);
+  }
+  if (Object.keys(db).length < 15) throw new Error("Za mało satelitów w SatelliteDatabase.kt");
+  writeFileSync(join(OUT, "sat_freqs.json"), JSON.stringify(db));
+  console.log(`satelity: ${Object.keys(db).length} z częstotliwościami wbudowanymi`);
+}
+
 // ---------------------------------------------------------------- pliki kopiowane 1:1
 copyFileSync(join(MAIN, "assets", "cty.csv"), join(OUT, "cty.csv"));
 copyFileSync(join(MAIN, "assets", "activations.json"), join(OUT, "activations.json"));

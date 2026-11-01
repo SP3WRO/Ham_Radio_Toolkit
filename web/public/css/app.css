@@ -330,3 +330,16 @@ a.btn { text-decoration: none; }
 .station-chip { font-family: ui-monospace, Menlo, monospace; font-size: 13px; padding: 4px 10px; border-radius: 8px; border: 1px solid var(--outline-variant); }
 .station-chip.done { background: var(--tertiary-container); color: var(--on-tertiary-container); border-color: transparent; font-weight: 700; }
 .icon-btn.tertiary { color: var(--tertiary); }
+.skyplot { display: block; max-width: 100%; }
+.skyplot .sky-bg { fill: color-mix(in srgb, var(--outline-variant) 20%, transparent); }
+.skyplot .sky-ring { fill: none; stroke: var(--outline-variant); stroke-width: 1; }
+.skyplot .sky-ring.dashed { stroke-dasharray: 4 4; }
+.skyplot text { font: 700 12px system-ui, sans-serif; fill: var(--on-surface); }
+.skyplot .sky-n { fill: var(--primary); font-size: 13px; }
+.skyplot .sky-track { fill: none; stroke: var(--secondary); stroke-width: 2.5; stroke-dasharray: 8 5; opacity: .85; }
+.skyplot .sky-sat { fill: var(--primary); }
+.skyplot .sky-sat.up { fill: var(--tertiary); }
+.skyplot .sky-sat.halo { opacity: .3; }
+.skyplot .sky-name { font-size: 11px; fill: var(--primary); }
+.skyplot .sky-name.up { fill: var(--tertiary); }
+.spinner.s { width: 14px; height: 14px; border-width: 2px; }
