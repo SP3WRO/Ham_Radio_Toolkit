@@ -17,9 +17,16 @@ step() { printf '\n\033[1m== %s\033[0m\n' "$*"; }
 
 [ "$(id -u)" -eq 0 ] || { red "Uruchom przez sudo/jako root."; exit 1; }
 
-step "1/6 Pakiety (Node.js, nginx, certbot, git)"
+# Serwer WWW: jeśli działa już Apache (np. dla innych stron), dodajemy domenę do niego; inaczej – nginx
+if systemctl is-active --quiet apache2; then WEB=apache; else WEB=nginx; fi
+
+step "1/6 Pakiety (Node.js, $WEB, certbot, git)"
 apt-get update -q
-apt-get install -y -q nginx certbot python3-certbot-nginx curl dnsutils git
+if [ "$WEB" = apache ]; then
+  apt-get install -y -q certbot python3-certbot-apache curl dnsutils git
+else
+  apt-get install -y -q nginx certbot python3-certbot-nginx curl dnsutils git
+fi
 if ! command -v node >/dev/null || [ "$(node -p 'process.versions.node.split(".")[0]')" -lt 18 ]; then
   apt-get install -y -q nodejs || true
 fi
@@ -67,10 +74,35 @@ sleep 1
 curl -fs "http://127.0.0.1:$PORT/api/health" >/dev/null && green "Serwer aplikacji działa na porcie $PORT" \
   || { red "Serwer nie odpowiada – zobacz: journalctl -u hamradio-toolkit-web -n 50"; exit 1; }
 
-step "5/6 nginx dla $DOMAIN"
-CONF=/etc/nginx/sites-available/hamradio-toolkit
-if [ ! -f "$CONF" ]; then
-  cat > "$CONF" <<EOF
+step "5/6 Serwer WWW ($WEB) dla $DOMAIN"
+if [ "$WEB" = apache ]; then
+  # nginx (jeśli został zainstalowany wcześniej) nie może walczyć z Apache o port 80
+  systemctl disable --now nginx 2>/dev/null || true
+  a2enmod -q proxy proxy_http proxy_wstunnel headers rewrite >/dev/null
+  CONF=/etc/apache2/sites-available/hamradio-toolkit.conf
+  if [ ! -f "$CONF" ]; then
+    cat > "$CONF" <<EOF
+<VirtualHost *:80>
+    ServerName $DOMAIN
+    ProxyPreserveHost On
+    ProxyRequests Off
+    RequestHeader set X-Forwarded-Proto expr=%{REQUEST_SCHEME}
+    # Na przyszłość: most APRS-IS przez WebSocket
+    RewriteEngine On
+    RewriteCond %{HTTP:Upgrade} =websocket [NC]
+    RewriteRule ^/(.*) ws://127.0.0.1:$PORT/\$1 [P,L]
+    ProxyPass / http://127.0.0.1:$PORT/
+    ProxyPassReverse / http://127.0.0.1:$PORT/
+</VirtualHost>
+EOF
+  fi
+  a2ensite -q hamradio-toolkit >/dev/null
+  apachectl configtest
+  systemctl reload apache2
+else
+  CONF=/etc/nginx/sites-available/hamradio-toolkit
+  if [ ! -f "$CONF" ]; then
+    cat > "$CONF" <<EOF
 server {
     listen 80;
     listen [::]:80;
@@ -91,19 +123,26 @@ server {
     }
 }
 EOF
-  ln -sf "$CONF" /etc/nginx/sites-enabled/hamradio-toolkit
+    ln -sf "$CONF" /etc/nginx/sites-enabled/hamradio-toolkit
+  fi
+  nginx -t
+  if ! systemctl enable --now nginx || ! systemctl is-active --quiet nginx; then
+    red "nginx nie chce wystartować. Port 80 zajmuje:"
+    ss -ltnp 'sport = :80' || true
+    red "Napisz, jaki program jest powyżej – trzeba będzie dodać domenę do niego."
+    exit 1
+  fi
+  systemctl reload nginx
 fi
-nginx -t
-systemctl reload nginx
 
 step "6/6 Certyfikat HTTPS (Let's Encrypt)"
 if [ -d "/etc/letsencrypt/live/$DOMAIN" ]; then
   green "Certyfikat już jest – odnawia się sam."
 else
   echo "certbot zapyta o adres e-mail (powiadomienia o wygaśnięciu) i zgodę na regulamin."
-  certbot --nginx -d "$DOMAIN" --redirect </dev/tty
+  certbot "--$WEB" -d "$DOMAIN" --redirect </dev/tty
 fi
-systemctl reload nginx
+if [ "$WEB" = apache ]; then systemctl reload apache2; else systemctl reload nginx; fi
 
 echo
 curl -fs "https://$DOMAIN/api/health" >/dev/null \
