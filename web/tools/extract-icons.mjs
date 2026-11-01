@@ -28,7 +28,7 @@ const ICONS = {
   hiking: "MdHiking", notifications: "MdNotifications", key: "MdKey", iosShare: "MdIosShare", share: "MdShare",
   addBox: "MdAddBox", cloudOff: "MdCloudOff", construction: "MdConstruction", filterList: "MdFilterList", sync: "MdSync",
   openInNew: "MdOpenInNew", eventAvailable: "MdEventAvailable", checkCircle: "MdCheckCircle", navigation: "MdNavigation",
-  radioButtonUnchecked: "MdRadioButtonUnchecked", warning: "MdWarning",
+  radioButtonUnchecked: "MdRadioButtonUnchecked", warning: "MdWarning", star: "MdStar", starBorder: "MdStarBorder",
 };
 
 function toSvg(node) {

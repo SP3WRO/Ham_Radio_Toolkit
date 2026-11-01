@@ -22,6 +22,7 @@ export const DEFAULTS = {
   last_known_lon: /** @type {number | null} */ (null),
   install_hint_dismissed: false,
   contests_show_russian: false,
+  followed_awards: /** @type {string[]} */ ([]),
 };
 
 /** @typedef {typeof DEFAULTS} Settings */

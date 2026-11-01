@@ -325,3 +325,8 @@ a.card { color: inherit; text-decoration: none; }
 .card.running { background: var(--primary-container); color: var(--on-primary-container); }
 .label-m { font-size: 12px; font-weight: 500; }
 a.btn { text-decoration: none; }
+.meter { height: 4px; border-radius: 2px; background: var(--surface-variant); overflow: hidden; }
+.meter > div { height: 100%; background: var(--primary); }
+.station-chip { font-family: ui-monospace, Menlo, monospace; font-size: 13px; padding: 4px 10px; border-radius: 8px; border: 1px solid var(--outline-variant); }
+.station-chip.done { background: var(--tertiary-container); color: var(--on-tertiary-container); border-color: transparent; font-weight: 700; }
+.icon-btn.tertiary { color: var(--tertiary); }

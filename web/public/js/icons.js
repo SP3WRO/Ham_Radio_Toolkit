@@ -73,4 +73,6 @@ export const ICON_PATHS = {"home":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></pat
 "checkCircle":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z\"></path>",
 "navigation":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M12 2 4.5 20.29l.71.71L12 18l6.79 3 .71-.71z\"></path>",
 "radioButtonUnchecked":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8\"></path>",
-"warning":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M1 21h22L12 2zm12-3h-2v-2h2zm0-4h-2v-4h2z\"></path>"};
+"warning":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M1 21h22L12 2zm12-3h-2v-2h2zm0-4h-2v-4h2z\"></path>",
+"star":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"></path>",
+"starBorder":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"m22 9.24-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28z\"></path>"};

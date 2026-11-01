@@ -5,6 +5,7 @@ import { t, fmt, format } from "../i18n.js";
 import { settings, stationPosition } from "../store.js";
 import { logbook } from "../db.js";
 import { cty, proxied, apiUrl } from "../services.js";
+import { followedAwardStations, awardTextFor } from "./awards.js";
 import { GreatCircle } from "../core/geo.js";
 import { bandForKhz, Callsigns, parseNum } from "../core/radio.js";
 import { DX_BANDS, DX_MODES, filterDxSpots, spotKhz, guessModeFromSpot, qsoFrequency, parsePota, parseWwff } from "../core/spots.js";
@@ -13,6 +14,12 @@ import { qsoDialog } from "./logger.js";
 
 /** @typedef {import("../core/spots.js").DxSpot} DxSpot */
 /** @typedef {import("../core/spots.js").LiveSpot} LiveSpot */
+
+/** Linijka "akcja dyplomowa" pod spotem. @param {Map<string, any>} tags @param {string} call */
+function award(tags, call) {
+  const text = tags.size ? awardTextFor(tags, call) : null;
+  return text ? h("div", { class: "body-s bold tertiary ellipsis" }, t("spot_award", text)) : null;
+}
 
 const allLabel = (x) => (x === "ALL" ? t("common_all") : x);
 const chipRow = (options, selected, onselect) => h("div", { class: "chip-scroll" }, options.map((o) => chip(allLabel(o), selected === o, () => onselect(o))));
@@ -103,6 +110,7 @@ export function dxClusterScreen(ctx) {
     if (!shown.length) return replace(list, h("div", { class: "centered muted" }, t("dx_no_spots")));
     const logs = logbook.all();
     const worked = logbook.workedDxcc();
+    const awardTags = followedAwardStations();
     replace(list, error ? h("div", { class: "body-s error-text" }, error) : null, shown.map((s) => {
       const entity = db?.resolve(s.dx_call) ?? null;
       const isNew = entity != null && logs.length > 0 && !worked.has(entity.dxcc);
@@ -112,6 +120,7 @@ export function dxClusterScreen(ctx) {
         h("div", { class: "row between" }, h("span", { class: "title-l bold primary" }, s.dx_call), h("span", { class: "title-m secondary" }, format("%.1f", s.frequency))),
         h("div", { class: "row between body-s muted" }, h("span", null, `de ${s.de_call} @ ${String(s.time ?? "").slice(-8)}`), h("span", null, entity?.name ?? s.dx_country ?? "")),
         isNew ? h("div", { class: "body-s bold tertiary", style: { textAlign: "right" } }, t("spot_new_country")) : null,
+        award(awardTags, s.dx_call),
         s.info ? h("div", { class: "body-m italic clamp2" }, s.info) : null);
     }));
   }

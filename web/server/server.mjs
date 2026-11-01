@@ -12,6 +12,7 @@ import { nearby } from "./activations.mjs";
 import { repeaters } from "./repeaters.mjs";
 import { lookup as callbookLookup } from "./callbook.mjs";
 import { contests } from "./contests.mjs";
+import { awardEvents, awardDetails } from "./awards.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT ?? 8080);
@@ -249,6 +250,17 @@ const server = createServer(async (req, res) => {
         return send(res, 200, await contests(USER_AGENT, url.searchParams.get("refresh") === "1"));
       } catch (e) {
         return send(res, 502, { error: String(e?.message ?? e) });
+      }
+    }
+    if (url.pathname === "/api/awards") {
+      return send(res, 200, await awardEvents(USER_AGENT, url.searchParams.get("refresh") === "1"));
+    }
+    const award = /^\/api\/awards\/([^/]+)$/.exec(url.pathname);
+    if (award) {
+      try {
+        return send(res, 200, await awardDetails(award[1], url.searchParams.get("call"), USER_AGENT, url.searchParams.get("refresh") === "1"));
+      } catch (e) {
+        return send(res, e?.status ?? 502, { error: String(e?.message ?? e) });
       }
     }
     if (url.pathname === "/api/activations") {
