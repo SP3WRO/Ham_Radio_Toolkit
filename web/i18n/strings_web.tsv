@@ -31,3 +31,4 @@ web_sat_always	Always above the horizon (geostationary)	Stale nad horyzontem (ge
 web_sat_no_pass	No pass in the next 24 h	Brak przelotu w ciągu 24 h	Kein Überflug in den nächsten 24 h	Žádný přelet v příštích 24 h	Žiadny prelet v nasledujúcich 24 h
 web_aprs_listening	Listening runs while the app is open on screen.	Nasłuch działa, dopóki aplikacja jest otwarta na ekranie.	Der Empfang läuft, solange die App auf dem Bildschirm geöffnet ist.	Příjem běží, dokud je aplikace otevřená na obrazovce.	Príjem beží, kým je aplikácia otvorená na obrazovke.
 web_aprs_wait	Wait 30 s before sending your position again.	Odczekaj 30 s przed ponownym nadaniem pozycji.	Warte 30 s, bevor du die Position erneut sendest.	Před dalším odesláním polohy počkejte 30 s.	Pred ďalším odoslaním polohy počkajte 30 s.
+web_ft8_stopped	Stopped	Zatrzymano	Angehalten	Zastaveno	Zastavené

@@ -81,3 +81,32 @@ export function audioLevel(x) {
   for (let i = 0; i < x.length; i++) s += x[i] * x[i];
   return Math.min(1, Math.sqrt(s / Math.max(1, x.length)) * 4);
 }
+
+/** Odczyt WAV (PCM 8/16/24/32 bit albo float32), kanały uśrednione. @param {Uint8Array} bytes */
+export function parseWav(bytes) {
+  const v = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  const tag = (/** @type {number} */ o) => String.fromCharCode(bytes[o], bytes[o + 1], bytes[o + 2], bytes[o + 3]);
+  if (tag(0) !== "RIFF" || tag(8) !== "WAVE") throw new Error("To nie jest plik WAV");
+  let o = 12, fmt = 1, ch = 1, rate = 0, bits = 16;
+  while (o + 8 <= bytes.length) {
+    const id = tag(o), size = v.getUint32(o + 4, true), body = o + 8;
+    if (id === "fmt ") { fmt = v.getUint16(body, true); ch = v.getUint16(body + 2, true); rate = v.getUint32(body + 4, true); bits = v.getUint16(body + 14, true); if (fmt === 0xfffe) fmt = v.getUint16(body + 24, true); }
+    if (id === "data") {
+      const bps = bits / 8, frames = Math.floor(Math.min(size, bytes.length - body) / (bps * ch));
+      const out = new Float32Array(frames);
+      for (let i = 0; i < frames; i++) {
+        let s = 0;
+        for (let c = 0; c < ch; c++) {
+          const p = body + (i * ch + c) * bps;
+          s += fmt === 3 ? (bits === 64 ? v.getFloat64(p, true) : v.getFloat32(p, true))
+            : bits === 8 ? (bytes[p] - 128) / 128 : bits === 16 ? v.getInt16(p, true) / 32768
+              : bits === 24 ? ((bytes[p] | (bytes[p + 1] << 8) | (bytes[p + 2] << 16)) << 8 >> 8) / 8388608 : v.getInt32(p, true) / 2147483648;
+        }
+        out[i] = s / ch;
+      }
+      return { sampleRate: rate, samples: out };
+    }
+    o = body + size + (size & 1);
+  }
+  throw new Error("Brak danych w pliku WAV");
+}

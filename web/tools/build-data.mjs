@@ -138,6 +138,22 @@ writeFileSync(join(OUT, "bandplan.json"), JSON.stringify(bandplan));
   console.log(`satelity: ${Object.keys(db).length} z częstotliwościami wbudowanymi`);
 }
 
+// ---------------------------------------------------------------- tablice LDPC(174,91) dla FT8/FT4
+{
+  const src = readFileSync(join(KOTLIN, "ft8", "Ft8LdpcTables.kt"), "utf8");
+  const block = (/** @type {string} */ name) => {
+    const at = src.indexOf(`val ${name}`);
+    const body = src.slice(at, src.indexOf("\n    )", at));
+    return [...body.matchAll(/intArrayOf\(([^)]*)\)/g)].map((m) => m[1].split(",").map((x) => Number(x.trim())));
+  };
+  const nm = block("NM"), mn = block("MN");
+  const rows = /NUM_ROWS[^(]*\(([^)]*)\)/.exec(src)?.[1].split(",").map((x) => Number(x.trim())) ?? [];
+  if (nm.length !== 83 || mn.length !== 174 || rows.length !== 83) throw new Error(`Tablice LDPC: ${nm.length}/${mn.length}/${rows.length}`);
+  writeFileSync(join(WEB, "public", "js", "core", "ft8-tables.js"),
+    `// Wygenerowane przez tools/build-data.mjs z Ft8LdpcTables.kt (ft8_lib, MIT) – nie edytować\n` +
+    `export const NM = ${JSON.stringify(nm)};\nexport const MN = ${JSON.stringify(mn)};\nexport const NUM_ROWS = ${JSON.stringify(rows)};\n`);
+}
+
 // ---------------------------------------------------------------- pliki kopiowane 1:1
 copyFileSync(join(MAIN, "assets", "cty.csv"), join(OUT, "cty.csv"));
 copyFileSync(join(MAIN, "assets", "activations.json"), join(OUT, "activations.json"));

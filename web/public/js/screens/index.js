@@ -20,6 +20,7 @@ import { satellitesScreen } from "./satellites.js";
 import { cwTrainerScreen, cwDecoderScreen } from "./cw.js";
 import { aprsScreen } from "./aprs.js";
 import { rttyScreen } from "./rtty.js";
+import { ft8Screen } from "./ft8.js";
 
 /** @type {Record<string, (ctx: import("../app.js").ScreenContext) => import("../app.js").ScreenInstance>} */
 export const SCREENS = {
@@ -38,6 +39,7 @@ export const SCREENS = {
   cw_decoder: cwDecoderScreen,
   aprs: aprsScreen,
   rtty_decoder: rttyScreen,
+  ft8_decoder: ft8Screen,
   logger: loggerScreen,
   log_stats: logStatsScreen,
   toolbox: toolboxScreen,

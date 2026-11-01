@@ -77,6 +77,7 @@ export const ICON_PATHS = {"home":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></pat
 "star":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"></path>",
 "starBorder":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"m22 9.24-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28z\"></path>",
 "playArrow":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M8 5v14l11-7z\"></path>",
+"fullscreenExit":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M5 16h3v3h2v-5H5zm3-8H5v2h5V5H8zm6 11h2v-3h3v-2h-5zm2-11V5h-2v5h5V8z\"></path>",
 "stop":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M6 6h12v12H6z\"></path>",
 "mic":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3m5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72z\"></path>",
 "upload":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm4 18H6V4h7v5h5zM8 15.01l1.41 1.41L11 14.84V19h2v-4.16l1.59 1.59L16 15.01 12.01 11z\"></path>",
