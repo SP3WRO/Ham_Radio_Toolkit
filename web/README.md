@@ -32,8 +32,9 @@ Kod jest w czystym JavaScripcie (moduły ES) – **bez zależności i bez kroku 
 | SSTV | port Robot36 – Robot 36/72, PD, Martin, Scottie, Wraase, HF Fax; zapis PNG |
 | Balony (Horus Binary) | v1/v2/v3 (port horusdemodlib), widmo, telemetria, odległość i elewacja |
 | DSSTV (HamDRM) | zgodny z EasyPal/QSSTV, tryby A/B/E, 4/16/64-QAM, RS, podgląd JPEG 2000 w trakcie odbioru |
+| O programie | wersja aplikacji i wersji WWW, licencja MIT, kod innych autorów, źródła danych |
 
-Pozostałe narzędzia mają w Przyborniku oznaczenie „Wkrótce”.
+Wszystkie narzędzia z Przybornika są już przeniesione. Do zrobienia: wysyłka logu do QRZ/eQSL, przemienniki z RepeaterBook i powiadomienia Web Push.
 
 ## Jedno źródło danych z aplikacją na Androida
 

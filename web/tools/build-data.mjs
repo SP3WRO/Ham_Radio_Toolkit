@@ -165,6 +165,10 @@ mkdirSync(join(OUT, "horus"), { recursive: true });
 for (const f of ["payload_id_list.txt", "custom_field_list.json"]) copyFileSync(join(MAIN, "assets", "horus", f), join(OUT, "horus", f));
 
 
+// Wersja aplikacji (versionName z app/build.gradle.kts) – ekran "O programie"
+const gradle = readFileSync(join(MAIN, "..", "..", "build.gradle.kts"), "utf8");
+writeFileSync(join(OUT, "app_version.json"), JSON.stringify({ versionName: /versionName\s*=\s*"([^"]+)"/.exec(gradle)?.[1] ?? "?" }) + "\n");
+
 // ---------------------------------------------------------------- lista plików dla service workera
 // Wersja = skrót zawartości wszystkich plików, więc każda zmiana w aplikacji daje nową wersję (aktualizacja na iPhonie)
 const PUBLIC = join(WEB, "public");

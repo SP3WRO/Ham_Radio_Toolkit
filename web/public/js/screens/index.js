@@ -24,6 +24,7 @@ import { ft8Screen } from "./ft8.js";
 import { sstvScreen } from "./sstv.js";
 import { horusScreen } from "./horus.js";
 import { dsstvScreen } from "./dsstv.js";
+import { aboutScreen } from "./about.js";
 
 /** @type {Record<string, (ctx: import("../app.js").ScreenContext) => import("../app.js").ScreenInstance>} */
 export const SCREENS = {
@@ -46,6 +47,7 @@ export const SCREENS = {
   sstv_decoder: sstvScreen,
   horus_decoder: horusScreen,
   dsstv_decoder: dsstvScreen,
+  about: aboutScreen,
   logger: loggerScreen,
   log_stats: logStatsScreen,
   toolbox: toolboxScreen,

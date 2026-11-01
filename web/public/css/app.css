@@ -389,3 +389,15 @@ a.btn { text-decoration: none; }
 .sstv-thumb.selected img { outline: 2px solid var(--primary); outline-offset: 1px; }
 .meter.indeterminate > div { animation: meter-slide 1.2s linear infinite; }
 @keyframes meter-slide { from { margin-left: -30%; } to { margin-left: 100%; } }
+/* O programie */
+.scroll.about { display: flex; flex-direction: column; gap: 16px; }
+.about-title { font-size: 32px; font-weight: 800; color: var(--primary); margin: 0; text-align: center; }
+.about-thanks { text-align: center; font-style: italic; padding: 8px 16px 24px; margin: 0; }
+.credit-row { gap: 8px; padding: 6px 0; color: inherit; text-decoration: none; align-items: center; }
+.license-text { white-space: pre-wrap; font-size: 11px; margin: 0; }
+.secondary { color: var(--secondary); }
+.medium { font-weight: 500; }
+.kuki-overlay { position: fixed; inset: 0; background: #000; z-index: 1000; cursor: pointer; }
+.kuki { position: absolute; left: 0; top: 0; width: 180px; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; will-change: transform; }
+.kuki-bird { font-size: 44px; line-height: 1.2; }
+.kuki-name { font-size: 16px; font-weight: 700; }
