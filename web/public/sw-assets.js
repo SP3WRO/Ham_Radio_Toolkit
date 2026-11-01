@@ -1,5 +1,5 @@
 // Wygenerowane przez tools/build-data.mjs – nie edytować
-self.HRT_VERSION = "2e68faf51e4d";
+self.HRT_VERSION = "fb4dea5ecbd5";
 self.HRT_ASSETS = [
  "./",
  "css/app.css",
@@ -38,12 +38,20 @@ self.HRT_ASSETS = [
  "js/core/cept.js",
  "js/core/contests.js",
  "js/core/cw.js",
+ "js/core/drm/channel.js",
+ "js/core/drm/data.js",
+ "js/core/drm/receiver.js",
+ "js/core/drm/tables.js",
  "js/core/dsp.js",
  "js/core/fft.js",
  "js/core/ft8-tables.js",
  "js/core/ft8.js",
  "js/core/geo.js",
  "js/core/horus.js",
+ "js/core/jpeg2000.js",
+ "js/core/jpx/arithmetic_decoder.js",
+ "js/core/jpx/jpx.js",
+ "js/core/jpx/util.js",
  "js/core/logbook.js",
  "js/core/radio.js",
  "js/core/repeaters.js",
@@ -63,6 +71,7 @@ self.HRT_ASSETS = [
  "js/screens/contests.js",
  "js/screens/cw.js",
  "js/screens/decoder-common.js",
+ "js/screens/dsstv.js",
  "js/screens/ft8.js",
  "js/screens/home.js",
  "js/screens/horus.js",

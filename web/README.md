@@ -25,8 +25,15 @@ Kod jest w czystym JavaScripcie (moduły ES) – **bez zależności i bez kroku 
 | Dyplomy | akcje radiodyplom.pl, obserwowane, ranking, szacunek punktów z własnego logu |
 | Za granicą | znak wg CEPT T/R 61-01, kraj z pozycji (OpenStreetMap), region IARU, strefy i czas |
 | Satelity | TLE z AMSAT/CelesTrak, przeloty liczone w przeglądarce (SGP4), radar nieboskłonu, częstotliwości AMSAT/SatNOGS |
+| Trener i dekoder CW | metoda Kocha, tempo Farnswortha; dekoder z mikrofonu i pliku |
+| APRS | APRS-IS przez most WebSocket na serwerze, mapa stacji, wysyłanie własnej pozycji |
+| RTTY | widmo do strojenia, AFC, automatyczny przesuw, szybkość i polaryzacja |
+| FT8 / FT4 | sloty zsynchronizowane z zegarem, dekodowanie w osobnym wątku, plik WAV |
+| SSTV | port Robot36 – Robot 36/72, PD, Martin, Scottie, Wraase, HF Fax; zapis PNG |
+| Balony (Horus Binary) | v1/v2/v3 (port horusdemodlib), widmo, telemetria, odległość i elewacja |
+| DSSTV (HamDRM) | zgodny z EasyPal/QSSTV, tryby A/B/E, 4/16/64-QAM, RS, podgląd JPEG 2000 w trakcie odbioru |
 
-Pozostałe narzędzia (dekodery z mikrofonu, trener CW, APRS) mają w Przyborniku oznaczenie „Wkrótce”.
+Pozostałe narzędzia mają w Przyborniku oznaczenie „Wkrótce”.
 
 ## Jedno źródło danych z aplikacją na Androida
 
@@ -106,6 +113,8 @@ Przeglądarka nie może pobierać danych z większości serwisów krótkofalarsk
 | `/api/awards`, `/api/awards/<id>` | radiodyplom.pl | 12 h |
 | `/api/satellites` | AMSAT/CelesTrak, SatNOGS, AMSAT DB | 24 h |
 | `/api/country` | Nominatim (OpenStreetMap) | najwyżej 1 zapytanie/s, wyniki w pamięci |
+| `/api/aprs` (WebSocket) | APRS-IS (TCP) | na żywo |
+| `/api/proxy/horus/…` | listy ładunków Projektu Horus (GitHub) | 7 dni |
 
 Hasła HamQTH/QRZCQ są zapisane tylko w przeglądarce; serwer używa ich wyłącznie do zapytania i nigdzie ich nie zapisuje.
 
@@ -116,8 +125,8 @@ Zmienne środowiskowe: `PORT`, `HOST`, `STATIC_DIR`, `CACHE_MAX_MB`, `ALLOWED_OR
 - **Dane są w przeglądarce na urządzeniu** (log w IndexedDB, ustawienia w localStorage). Aplikacja prosi o trwałe przechowywanie; mimo to warto regularnie eksportować ADIF – Safari może usuwać dane stron nieużywanych od tygodni, jeśli nie są dodane do ekranu początkowego.
 - **Kalendarz**: „Do kalendarza” tworzy plik .ics – Safari od razu proponuje dodanie wydarzenia.
 - **Brak pracy w tle**: przypomnienia o przelotach satelitów i alerty burz geomagnetycznych będą wymagały Web Push (iOS 16.4+, tylko po dodaniu do ekranu początkowego) wysyłanego z serwera.
-- **APRS-IS** to połączenie TCP – w przeglądarce potrzebny będzie most WebSocket↔TCP na serwerze (konfiguracja nginx jest już na to przygotowana).
-- **Mikrofon** (dekodery FT8/RTTY/CW/SSTV) działa w Safari po zgodzie użytkownika; kompas (satelity) wymaga zgody na czujniki ruchu.
+- **APRS-IS** to połączenie TCP – przeglądarka łączy się przez most WebSocket↔TCP na serwerze (`/api/aprs`); serwer proxy (Apache/nginx) musi przepuszczać WebSockety.
+- **Mikrofon** (dekodery FT8/RTTY/CW/SSTV/Horus/DSSTV) działa w Safari po zgodzie użytkownika; kompas (satelity) wymaga zgody na czujniki ruchu.
 
 ## Struktura
 
@@ -136,3 +145,9 @@ web/
 ```
 
 Ikony interfejsu: Google Material Design Icons (Apache 2.0).
+
+## Licencje kodu zewnętrznego
+
+- Dekoder SSTV: port Robot36 (Ahmet Inan, 0BSD).
+- Horus Binary: port horusdemodlib (David Rowe i in., LGPL-2.1).
+- JPEG 2000: `public/js/core/jpx/` z pdf.js 3.11.174 (Mozilla, Apache 2.0).
