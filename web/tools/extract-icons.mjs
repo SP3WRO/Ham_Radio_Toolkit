@@ -26,7 +26,7 @@ const ICONS = {
   menuBook: "MdMenuBook", signalCellularAlt: "MdSignalCellularAlt", map: "MdMap", forum: "MdForum", moreHoriz: "MdMoreHoriz",
   translate: "MdTranslate", info: "MdInfo", language: "MdLanguage", palette: "MdPalette", person: "MdPerson",
   hiking: "MdHiking", notifications: "MdNotifications", key: "MdKey", iosShare: "MdIosShare", share: "MdShare",
-  addBox: "MdAddBox", cloudOff: "MdCloudOff", construction: "MdConstruction",
+  addBox: "MdAddBox", cloudOff: "MdCloudOff", construction: "MdConstruction", filterList: "MdFilterList", sync: "MdSync",
 };
 
 function toSvg(node) {

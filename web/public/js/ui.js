@@ -105,10 +105,10 @@ export function selectField(o) {
   return h("label", { class: "field select" }, select, h("span", { class: "field-label" }, o.label), icon("expandMore", "icon field-caret"));
 }
 
-/** Przełącznik. @param {boolean} checked @param {(v: boolean) => void} onchange @param {string} label */
-export function switchEl(checked, onchange, label) {
-  return h("label", { class: "switch" },
-    h("input", { type: "checkbox", role: "switch", checked, "aria-label": label, onchange: (e) => onchange(e.target.checked) }),
+/** Przełącznik. @param {boolean} checked @param {(v: boolean) => void} onchange @param {string} label @param {boolean} [disabled] */
+export function switchEl(checked, onchange, label, disabled = false) {
+  return h("label", { class: `switch ${disabled ? "disabled" : ""}` },
+    h("input", { type: "checkbox", role: "switch", checked, disabled, "aria-label": label, onchange: (e) => onchange(e.target.checked) }),
     h("span", { class: "switch-track" }));
 }
 

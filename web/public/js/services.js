@@ -85,6 +85,9 @@ export async function proxied(service, path, init) {
   return res;
 }
 
+/** Adres endpointu serwera, np. apiUrl("/activations?lat=..") @param {string} path */
+export const apiUrl = (path) => `${API_BASE}${path}`;
+
 export async function serverStatus() {
   try {
     const res = await fetch(`${API_BASE}/health`, { cache: "no-store" });

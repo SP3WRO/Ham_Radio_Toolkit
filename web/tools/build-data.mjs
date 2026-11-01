@@ -111,6 +111,7 @@ writeFileSync(join(OUT, "bandplan.json"), JSON.stringify(bandplan));
 
 // ---------------------------------------------------------------- pliki kopiowane 1:1
 copyFileSync(join(MAIN, "assets", "cty.csv"), join(OUT, "cty.csv"));
+copyFileSync(join(MAIN, "assets", "activations.json"), join(OUT, "activations.json"));
 for (const f of readdirSync(join(MAIN, "assets", "vademecum"))) {
   copyFileSync(join(MAIN, "assets", "vademecum", f), join(OUT, "vademecum", f));
 }

@@ -8,6 +8,7 @@ import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { join, normalize, extname, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { nearby } from "./activations.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT ?? 8080);
@@ -28,6 +29,11 @@ const SERVICES = {
   tropocast: { base: "https://tropocast.eu/api/v1/tropo/", ttl: 20 * 60, paths: /^metadata\?[\w=&.-]+$/ },
   // Baza krajów DXCC (AD1C) – aplikacja odświeża ją raz w tygodniu
   ctyfiles: { base: "https://www.country-files.com/cty/", ttl: 24 * 3600, paths: /^cty\.csv$/ },
+  // DX Cluster: spoty z DX Summit (odczyt) i wysyłanie własnego spotu (POST)
+  dxsummit: { base: "https://www.dxsummit.fi/api/v1/", ttl: 30, paths: /^spots(\?limit=\d{1,3})?$/, post: /^spots$/ },
+  // Aktywatorzy na żywo
+  pota: { base: "https://api.pota.app/", ttl: 45, paths: /^spot\/activator$/ },
+  wwff: { base: "https://spots.wwff.co/", ttl: 45, paths: /^static\/spots\.json$/ },
 };
 
 const MIME = {
@@ -75,6 +81,32 @@ async function fetchUpstream(url) {
   const buf = Buffer.from(await res.arrayBuffer());
   if (buf.length > 5 * 1024 * 1024) throw new Error("Odpowiedź za duża");
   return { body: buf, type: res.headers.get("content-type") ?? "application/octet-stream", status: res.status };
+}
+
+/** Wysłanie danych do usługi (tylko adresy z [post] na białej liście, JSON do 4 KB, bez pamięci podręcznej). */
+async function proxyPost(req, res, service, path) {
+  const svc = SERVICES[service];
+  if (!svc?.post || !svc.post.test(path)) return send(res, 404, { error: "Nieznana usługa" });
+  const chunks = [];
+  let size = 0;
+  for await (const c of req) {
+    size += c.length;
+    if (size > 4096) return send(res, 413, { error: "Za duże zapytanie" });
+    chunks.push(c);
+  }
+  const body = Buffer.concat(chunks).toString("utf8");
+  try { JSON.parse(body); } catch { return send(res, 400, { error: "Niepoprawny JSON" }); }
+  try {
+    const up = await fetch(svc.base + path, {
+      method: "POST", body, headers: { "User-Agent": USER_AGENT, "Content-Type": "application/json" }, signal: AbortSignal.timeout(15000),
+    });
+    res.writeHead(up.status, { "Content-Type": up.headers.get("content-type") ?? "text/plain", ...SECURITY_HEADERS });
+    res.end(Buffer.from(await up.arrayBuffer()));
+    // Nowy spot ma być widoczny od razu
+    for (const k of cache.keys()) if (k.startsWith(svc.base)) cache.delete(k);
+  } catch (e) {
+    send(res, 502, { error: "Usługa niedostępna", detail: String(e?.message ?? e) });
+  }
 }
 
 async function proxy(req, res, service, path) {
@@ -167,12 +199,26 @@ const server = createServer(async (req, res) => {
       res.setHeader("Access-Control-Allow-Origin", origin);
       res.setHeader("Vary", "Origin");
     }
-    if (req.method === "OPTIONS") { res.writeHead(204); return res.end(); }
-    if (req.method !== "GET") return send(res, 405, { error: "Tylko GET" });
+    if (req.method === "OPTIONS") {
+      res.writeHead(204, { "Access-Control-Allow-Methods": "GET, POST", "Access-Control-Allow-Headers": "Content-Type" });
+      return res.end();
+    }
     if (url.pathname === "/api/health") return send(res, 200, { ok: true, services: Object.keys(SERVICES), cacheEntries: cache.size });
     if (rateLimited(ip)) return send(res, 429, { error: "Za dużo zapytań" });
     const m = /^\/api\/proxy\/([a-z0-9]+)\/(.+)$/.exec(url.pathname);
+    if (m && req.method === "POST") return proxyPost(req, res, m[1], m[2]);
+    if (req.method !== "GET") return send(res, 405, { error: "Tylko GET i POST" });
     if (m) return proxy(req, res, m[1], m[2] + url.search);
+    if (url.pathname === "/api/activations") {
+      const lat = Number(url.searchParams.get("lat")), lon = Number(url.searchParams.get("lon"));
+      const radius = Math.min(Number(url.searchParams.get("radius") ?? 500), 500);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) return send(res, 400, { error: "Podaj lat i lon" });
+      try {
+        return send(res, 200, await nearby(lat, lon, radius, USER_AGENT));
+      } catch (e) {
+        return send(res, 502, { error: String(e?.message ?? e) });
+      }
+    }
     return send(res, 404, { error: "Nie ma takiego adresu" });
   }
   if (req.method !== "GET" && req.method !== "HEAD") return send(res, 405, "Method not allowed");

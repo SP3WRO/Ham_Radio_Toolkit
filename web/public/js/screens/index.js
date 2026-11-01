@@ -10,12 +10,15 @@ import { grayLineScreen, beaconsScreen, bandplanScreen } from "./planning.js";
 import { vademecumScreen } from "./vademecum.js";
 import { settingsScreen } from "./settings.js";
 import { soonScreen } from "./common.js";
+import { dxClusterScreen, liveSpotsScreen, activationsScreen } from "./spots.js";
 
 /** @type {Record<string, (ctx: import("../app.js").ScreenContext) => import("../app.js").ScreenInstance>} */
 export const SCREENS = {
   home: homeScreen,
   propagation: propagationScreen,
-  dx_cluster: (ctx) => soonScreen({ ...ctx, params: ["dx_cluster"] }),
+  dx_cluster: dxClusterScreen,
+  live_spots: liveSpotsScreen,
+  activations: activationsScreen,
   logger: loggerScreen,
   log_stats: logStatsScreen,
   toolbox: toolboxScreen,
