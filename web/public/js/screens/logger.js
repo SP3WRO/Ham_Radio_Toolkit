@@ -303,7 +303,8 @@ export function qsoDialog(o) {
   updateSave();
   renderInfo();
   if (v.callsign) scheduleLookup();
-  if (!init) setTimeout(() => callField.input.focus(), 50);
+  // Fokus od razu (jeszcze w obsłudze dotknięcia) – Safari na iPhonie pokaże klawiaturę
+  if (!init) callField.input.focus();
 }
 
 // ---------------------------------------------------------------- statystyki

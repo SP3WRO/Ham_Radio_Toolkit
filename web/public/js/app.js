@@ -1,5 +1,6 @@
 // @ts-check
 // Start aplikacji: język, motyw, dolne menu i nawigacja (odpowiednik MainActivity/HamRadioToolkitApp)
+import "./compat.js";
 import { h, icon, toast, replace } from "./ui.js";
 import { loadLanguage, t } from "./i18n.js";
 import { settings } from "./store.js";
@@ -102,6 +103,11 @@ async function start() {
   // Dziennik i baza DXCC w tle; stare wpisy dostają kraj, gdy tylko baza będzie dostępna
   logbook.load().then(() => cty()).then((db) => logbook.backfillDxcc(db)).catch((e) => console.warn("Log/DXCC", e));
   requestPersistentStorage();
+  // Safari na iPhonie przewija stronę, żeby pokazać pole nad klawiaturą, i po jej schowaniu zostawia przesunięty układ
+  document.addEventListener("focusout", () => setTimeout(() => {
+    const a = document.activeElement;
+    if ((!a || a === document.body) && (window.scrollY || document.documentElement.scrollTop)) window.scrollTo(0, 0);
+  }, 100));
   // Pozycja: pytamy dopiero po geście użytkownika (Safari), chyba że zgoda już jest
   location.alreadyGranted().then((granted) => { if (granted) location.start(); });
 

@@ -26,7 +26,8 @@ export function lookupScreen(ctx) {
 
   const field = textField({ label: t("settings_callsign"), placeholder: t("lk_hint"), value: input, uppercase: true, maxlength: 15, class: "has-trailing",
     oninput: (v) => {
-      const clean = v.toUpperCase().replace(/[^A-Z0-9/]/g, "").slice(0, 15);
+      const clean = v.replace(/[^A-Z0-9/]/g, "").slice(0, 15);
+      // Wartość podmieniamy tylko przy niedozwolonych znakach – sama zmiana wielkości liter psuje pisanie na iPhonie
       if (clean !== v) field.input.value = clean;
       input = clean;
     }, onenter: () => search() });

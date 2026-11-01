@@ -53,6 +53,8 @@ export async function startMic(onChunk, targetRate) {
   const stream = await navigator.mediaDevices.getUserMedia({
     audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 },
   });
+  // Safari: okno zgody na mikrofon potrafi wstrzymać kontekst ("interrupted") – wznawiamy jeszcze raz
+  if (ac.state !== "running") await ac.resume().catch(() => {});
   const source = ac.createMediaStreamSource(stream);
   const rate = targetRate ?? ac.sampleRate;
   const resampler = new StreamResampler(ac.sampleRate, rate);
@@ -61,8 +63,12 @@ export async function startMic(onChunk, targetRate) {
   let node;
   try {
     await ac.audioWorklet.addModule(new URL("./audio/capture-worklet.js", import.meta.url));
-    const w = new AudioWorkletNode(ac, "hrt-capture", { numberOfInputs: 1, numberOfOutputs: 0 });
+    // Safari przetwarza tylko węzły podłączone do wyjścia – wyjście przez wyciszony GainNode
+    const w = new AudioWorkletNode(ac, "hrt-capture", { numberOfInputs: 1, numberOfOutputs: 1, outputChannelCount: [1] });
     w.port.onmessage = (e) => deliver(e.data);
+    const mute = ac.createGain();
+    mute.gain.value = 0;
+    w.connect(mute).connect(ac.destination);
     node = w;
   } catch {
     // Starsze Safari bez AudioWorklet
@@ -76,6 +82,7 @@ export async function startMic(onChunk, targetRate) {
     rate,
     stop() {
       try { source.disconnect(); node.disconnect(); } catch { /* już odłączone */ }
+      if (typeof ScriptProcessorNode !== "undefined" && node instanceof ScriptProcessorNode) node.onaudioprocess = null;
       stream.getTracks().forEach((t) => t.stop());
     },
   };

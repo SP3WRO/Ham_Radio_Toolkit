@@ -77,13 +77,13 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .icon.large { width: 32px; height: 32px; }
 .icon-btn { width: 48px; height: 48px; border: 0; background: none; border-radius: 50%; display: inline-flex;
   align-items: center; justify-content: center; cursor: pointer; color: var(--on-surface-variant); flex-shrink: 0; }
-.icon-btn:active { background: color-mix(in srgb, var(--on-surface) 12%, transparent); }
+.icon-btn:active { background: rgba(128, 128, 128, .18); background: color-mix(in srgb, var(--on-surface) 12%, transparent); }
 .icon-btn.active { color: var(--primary); }
 .icon-btn:disabled { opacity: .38; }
 
 .card { background: var(--surface-container-high); border-radius: var(--radius-card); border: 0; display: block; width: 100%; text-align: left; }
 button.card { cursor: pointer; padding: 0; }
-.card.clickable:active { background: color-mix(in srgb, var(--on-surface) 8%, var(--surface-container-high)); }
+.card.clickable:active { background: rgba(128, 128, 128, .18); background: color-mix(in srgb, var(--on-surface) 8%, var(--surface-container-high)); }
 .card.pad { padding: 16px; }
 .card.pad-s { padding: 12px; }
 .card.tonal { background: var(--secondary-container); color: var(--on-secondary-container); }
@@ -195,7 +195,7 @@ input[type=range] { width: 100%; accent-color: var(--primary); height: 32px; }
 .settings-card { overflow: hidden; }
 .settings-item { display: flex; align-items: center; gap: 16px; width: 100%; padding: 12px 16px; background: none; border: 0; text-align: left; min-height: 56px; }
 .settings-item.clickable { cursor: pointer; }
-.settings-item.clickable:active { background: color-mix(in srgb, var(--on-surface) 8%, transparent); }
+.settings-item.clickable:active { background: rgba(128, 128, 128, .18); background: color-mix(in srgb, var(--on-surface) 8%, transparent); }
 .settings-item-text { flex: 1; min-width: 0; }
 .settings-item-title { font-size: 16px; line-height: 24px; }
 .settings-item-summary { font-size: 14px; line-height: 20px; color: var(--on-surface-variant); overflow-wrap: anywhere; }
@@ -206,10 +206,11 @@ input[type=range] { width: 100%; accent-color: var(--primary); height: 32px; }
 
 /* ---------------------------------------------------------------- dialogi i komunikaty */
 dialog.dialog { border: 0; border-radius: var(--radius-dialog); background: var(--surface-container-high); color: var(--on-surface);
-  padding: 24px 24px 16px; width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 48px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  padding: 24px 24px 16px; width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 48px); max-height: calc(100dvh - 48px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   display: flex; flex-direction: column; }
 dialog.dialog:not([open]) { display: none; }
-dialog.dialog::backdrop { background: var(--scrim); }
+/* Safari < 17.4: ::backdrop nie dziedziczy zmiennych z :root – kolor wprost */
+dialog.dialog::backdrop { background: rgba(0, 0, 0, .4); }
 dialog.dialog.fullscreen { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; border-radius: 0; padding: 0; margin: 0; background: #06192b; color: #fff; }
 .dialog-title { font-size: 24px; line-height: 32px; margin-bottom: 16px; }
 .dialog.fullscreen .dialog-title { display: none; }
@@ -309,7 +310,7 @@ canvas.map { width: 100%; display: block; touch-action: none; }
   box-shadow: 0 3px 12px rgba(0,0,0,.35); }
 .menu-item { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 16px; background: none; border: 0; text-align: left; cursor: pointer; font-size: 16px; }
 .menu-item .icon { color: var(--on-surface-variant); }
-.menu-item:active { background: color-mix(in srgb, var(--on-surface) 10%, transparent); }
+.menu-item:active { background: rgba(128, 128, 128, .18); background: color-mix(in srgb, var(--on-surface) 10%, transparent); }
 
 /* ---------------------------------------------------------------- spoty */
 .chip-scroll { display: flex; gap: 6px; overflow-x: auto; padding: 2px 16px; scrollbar-width: none; flex-shrink: 0; }
@@ -332,7 +333,7 @@ a.btn { text-decoration: none; }
 .station-chip.done { background: var(--tertiary-container); color: var(--on-tertiary-container); border-color: transparent; font-weight: 700; }
 .icon-btn.tertiary { color: var(--tertiary); }
 .skyplot { display: block; max-width: 100%; }
-.skyplot .sky-bg { fill: color-mix(in srgb, var(--outline-variant) 20%, transparent); }
+.skyplot .sky-bg { fill: rgba(128, 128, 128, .18); fill: color-mix(in srgb, var(--outline-variant) 20%, transparent); }
 .skyplot .sky-ring { fill: none; stroke: var(--outline-variant); stroke-width: 1; }
 .skyplot .sky-ring.dashed { stroke-dasharray: 4 4; }
 .skyplot text { font: 700 12px system-ui, sans-serif; fill: var(--on-surface); }
@@ -402,3 +403,15 @@ a.btn { text-decoration: none; }
 .kuki-bird { font-size: 44px; line-height: 1.2; }
 .kuki-name { font-size: 16px; font-weight: 700; }
 .settings-preview { display: flex; justify-content: center; align-items: center; min-height: 56px; }
+
+/* ---------------------------------------------------------------- Safari / iPhone */
+.field input.upper { text-transform: uppercase; }
+.field input.upper::placeholder { text-transform: none; }
+/* Okno z polem tekstowym u góry – klawiatura iPhone'a nie zasłania pola */
+dialog.dialog.with-input { margin-top: calc(env(safe-area-inset-top) + 16px); margin-bottom: auto; }
+/* Zastępstwo dla Safari bez <dialog> (iOS < 15.4) – patrz compat.js */
+dialog.dialog.polyfill[open] { position: fixed; inset: 0; margin: auto; z-index: 1000; display: flex; flex-direction: column; height: fit-content; }
+.dialog-backdrop-polyfill { position: fixed; inset: 0; background: rgba(0, 0, 0, .4); z-index: 999; }
+/* Przyciski bez natywnego wyglądu Safari; długie przytrzymanie nie zaznacza tekstu ani nie otwiera menu linku */
+button { -webkit-appearance: none; appearance: none; }
+button, .nav-item, .chip, .tab, .btn { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }

@@ -256,8 +256,10 @@ export function transliterate(s) {
   }).join(" ");
 }
 
+// Bez lookbehind (?<!…) – Safari obsługuje go dopiero od 16.4. Znak przed słowem łapiemy w grupie i oddajemy w zamianie.
+const WORD_PREFIX = "(^|[^\\p{L}])";
 /** @param {string} ru */
-const word = (ru) => new RegExp(`(?<!\\p{L})(?:${ru})(?!\\p{L})`, "giu");
+const word = (ru) => new RegExp(`${WORD_PREFIX}(?:${ru})(?!\\p{L})`, "giu");
 /** @type {[RegExp, string][]} */
 const PHRASES = [
   [word("по радиосвязи на КВ|на КВ"), "HF"], [word("по радиосвязи на УКВ|на УКВ"), "VHF"], [word("УКВ"), "VHF"], [word("КВ"), "HF"],
@@ -275,7 +277,7 @@ export function translateRussian(name, known = {}) {
   const hit = known[normalizeRussian(name)];
   if (hit) return hit;
   let s = dashes(name).replace(/ё/g, "е").replace(/Ё/g, "Е");
-  for (const [re, en] of PHRASES) s = s.replace(re, en);
+  for (const [re, en] of PHRASES) s = re.source.startsWith(WORD_PREFIX) ? s.replace(re, (_m, pre) => pre + en) : s.replace(re, en);
   s = transliterate(s);
   s = s.replace(/(\p{L}+)sk(?:oy|aya|iy|ogo|ie|ikh)(?!\p{L})/gu, "$1sk").replace(/(\p{L}+)sk Krai/gu, "$1sky Krai");
   return s.replace(/\s+-\s+/g, " – ").replace(/\s+/g, " ").trim().replace(/^[–\s]+|[–\s]+$/g, "");
@@ -291,7 +293,8 @@ const ALIASES = { waedc: "wae" };
 
 /** @param {string} name */
 function words(name) {
-  return name.toLowerCase().split(/[^\p{L}\p{N}]+|(?<=\p{N})(?=\p{L})|(?<=\p{L})(?=\p{N})/u)
+  // Granice cyfra–litera bez lookbehind (Safari < 16.4)
+  return name.toLowerCase().replace(/(\p{N})(?=\p{L})/gu, "$1 ").replace(/(\p{L})(?=\p{N})/gu, "$1 ").split(/[^\p{L}\p{N}]+/u)
     .filter((w) => w && !/^(19|20)\d\d$/.test(w)).map((w) => ALIASES[w] ?? w).filter((w) => !MODE_WORDS.has(w));
 }
 /** @param {string} name */

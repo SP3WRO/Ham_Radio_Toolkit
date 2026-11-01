@@ -82,7 +82,8 @@ export class PhraseLocalizer {
     const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
     // Dłuższe zwroty przed krótszymi, które w nich występują
     this.patterns = [...phrases].sort((x, y) => y[0].length - x[0].length)
-      .map(([phrase, key]) => /** @type {[RegExp, string]} */ ([new RegExp(`(?<!\\p{L})(${esc(phrase)}|${esc(cap(phrase))})(?!\\p{L})`, "gu"), key]));
+      // Bez lookbehind (Safari < 16.4): znak przed zwrotem w grupie 1, zwrot w grupie 2
+      .map(([phrase, key]) => /** @type {[RegExp, string]} */ ([new RegExp(`(^|[^\\p{L}])(${esc(phrase)}|${esc(cap(phrase))})(?!\\p{L})`, "gu"), key]));
   }
 
   /** @param {string} text */
@@ -94,7 +95,7 @@ export class PhraseLocalizer {
       if (!re.test(result)) continue;
       const translated = this.translate(key);
       re.lastIndex = 0;
-      result = result.replace(re, (m) => (m.charAt(0) !== m.charAt(0).toLowerCase() ? translated.charAt(0).toUpperCase() + translated.slice(1) : translated));
+      result = result.replace(re, (_m, pre, m) => pre + (m.charAt(0) !== m.charAt(0).toLowerCase() ? translated.charAt(0).toUpperCase() + translated.slice(1) : translated));
     }
     return result;
   }

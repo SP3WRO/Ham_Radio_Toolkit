@@ -30,7 +30,7 @@ export function locatorScreen(ctx) {
       label: t("loc_my_locator"), value: manual, uppercase: true, maxlength: 8, error: !!manual && !Maidenhead.isValid(manual),
       oninput: (v) => { manual = v; locField.setError(!!v && !Maidenhead.isValid(v)); saveBtn.textContent = v ? t("common_save") : t("loc_use_gps"); saveBtn.disabled = !!v && !Maidenhead.isValid(v); },
     });
-    const saveBtn = /** @type {HTMLButtonElement} */ (button(manual ? t("common_save") : t("loc_use_gps"), () => settings.set({ user_locator: manual.trim() })));
+    const saveBtn = /** @type {HTMLButtonElement} */ (button(manual ? t("common_save") : t("loc_use_gps"), () => settings.set({ user_locator: manual.trim().toUpperCase() })));
     saveBtn.disabled = !!manual && !Maidenhead.isValid(manual);
     replace(myStation,
       h("div", { class: "body-l bold" }, t("loc_my_station")),
@@ -130,8 +130,9 @@ export function locatorScreen(ctx) {
     mapHost,
     h("section", { class: "card pad-s col gap-m" }, h("div", { class: "body-l bold" }, t("loc_coords_to_locator")),
       h("div", { class: "fields" },
-        textField({ label: t("loc_lat"), value: "", inputmode: "decimal", oninput: (v) => { convLat = v; updateConv(); } }),
-        textField({ label: t("loc_lon"), value: "", inputmode: "decimal", oninput: (v) => { convLon = v; updateConv(); } })),
+        // Bez inputmode=decimal: klawiatura iPhone'a nie ma wtedy minusa (szerokości S, długości W)
+        textField({ label: t("loc_lat"), value: "", oninput: (v) => { convLat = v; updateConv(); } }),
+        textField({ label: t("loc_lon"), value: "", oninput: (v) => { convLon = v; updateConv(); } })),
       convOut));
 
   renderStation();

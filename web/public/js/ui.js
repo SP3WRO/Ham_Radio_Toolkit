@@ -80,17 +80,13 @@ export function chip(label, selected, onclick) {
 export function textField(o) {
   const input = /** @type {HTMLInputElement} */ (h("input", {
     type: o.type ?? "text", value: o.value, placeholder: o.placeholder ?? " ", inputmode: o.inputmode,
-    autocapitalize: o.uppercase ? "characters" : "off", autocomplete: "off", spellcheck: "false", maxlength: o.maxlength,
-    enterkeyhint: o.onenter ? "search" : null,
+    // Safari na iPhonie: bez autokorekty i podpowiedzi (psują znaki i lokatory), bez autouzupełniania danych kontaktowych
+    autocapitalize: o.uppercase ? "characters" : "off", autocorrect: "off", autocomplete: "off", spellcheck: "false", maxlength: o.maxlength,
+    enterkeyhint: o.onenter ? "search" : null, class: o.uppercase ? "upper" : null,
   }));
-  input.addEventListener("input", () => {
-    if (o.uppercase) {
-      const pos = input.selectionStart;
-      input.value = input.value.toUpperCase();
-      input.setSelectionRange(pos, pos);
-    }
-    o.oninput?.(input.value);
-  });
+  // Wielkie litery tylko w wyświetlaniu (text-transform) i w przekazywanej wartości. Podmiana input.value w trakcie
+  // pisania na iPhonie myli klawiaturę (podwojone znaki, przeskakujący kursor przy podpowiedziach QuickType).
+  input.addEventListener("input", () => o.oninput?.(o.uppercase ? input.value.toUpperCase() : input.value));
   if (o.onenter) input.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); o.onenter?.(); } });
   const support = h("div", { class: "field-support" }, o.support ?? "");
   const wrap = h("label", { class: `field ${o.error ? "error" : ""} ${o.class ?? ""}` },
@@ -134,9 +130,26 @@ export function dialog(o) {
     o.actions ? h("div", { class: "dialog-actions" }, o.actions(close)) : null));
   dlg.addEventListener("cancel", (e) => { e.preventDefault(); close(); });
   dlg.addEventListener("click", (e) => { if (e.target === dlg) close(); });
+  // Okno z polem tekstowym u góry ekranu – na iPhonie klawiatura nie zasłoni pola (Safari nie zmniejsza układu strony)
+  if (dlg.querySelector("input:not([type=checkbox]):not([type=range]):not([type=file]), textarea")) dlg.classList.add("with-input");
   document.body.appendChild(dlg);
   dlg.showModal();
+  fitToVisualViewport(dlg);
   return close;
+}
+
+/** Przy otwartej klawiaturze okno mieści się w widocznej części ekranu (visualViewport). @param {HTMLElement} dlg */
+function fitToVisualViewport(dlg) {
+  const vv = window.visualViewport;
+  if (!vv || !dlg.classList.contains("with-input")) return;
+  const update = () => {
+    if (!dlg.isConnected) { vv.removeEventListener("resize", update); vv.removeEventListener("scroll", update); return; }
+    dlg.style.maxHeight = `${Math.max(160, vv.height - 32)}px`;
+    dlg.style.transform = vv.offsetTop ? `translateY(${vv.offsetTop}px)` : "";
+  };
+  vv.addEventListener("resize", update);
+  vv.addEventListener("scroll", update);
+  update();
 }
 
 /** Krótki komunikat na dole ekranu (Toast). @param {string} text @param {number} [ms] @param {{label: string, onclick: () => void}} [action] */
@@ -211,11 +224,12 @@ export function settingsText(o) {
       title: o.title, body: o.preview ? h("div", { class: "col gap-s" }, field, previewHost) : field,
       actions: (close) => [
         button(t("common_cancel"), close, "text"),
-        (save = /** @type {HTMLButtonElement} */ (button(t("common_save"), () => { o.onsave(value.trim()); close(); }, "text"))),
+        (save = /** @type {HTMLButtonElement} */ (button(t("common_save"), () => { o.onsave(o.uppercase ? value.trim().toUpperCase() : value.trim()); close(); }, "text"))),
       ],
     });
     check();
-    setTimeout(() => field.input.focus(), 50);
+    // Fokus od razu, w obsłudze dotknięcia – tylko wtedy Safari na iPhonie pokazuje klawiaturę
+    field.input.focus();
   }, o.trailing);
 }
 

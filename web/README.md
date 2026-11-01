@@ -121,6 +121,18 @@ Hasła HamQTH/QRZCQ są zapisane tylko w przeglądarce; serwer używa ich wyłą
 
 Zmienne środowiskowe: `PORT`, `HOST`, `STATIC_DIR`, `CACHE_MAX_MB`, `ALLOWED_ORIGINS` (gdy aplikacja jest na innym adresie niż serwer – wtedy w `index.html` ustaw `window.HRT_API_BASE`).
 
+## Safari i iPhone
+
+Aplikacja działa w Safari od iOS 15.4 (wcześniejsze wersje dostają zamienniki z `public/js/compat.js`: `AbortSignal.timeout`, okna dialogowe, `Array.at`). Zasady, których pilnuje kod:
+
+- bez lookbehind w wyrażeniach regularnych (`(?<=…)`, `(?<!…)`) – Safari obsługuje je dopiero od 16.4, a jedno takie wyrażenie w module blokuje start całej aplikacji;
+- pola tekstowe bez autokorekty i bez podmiany wartości w trakcie pisania (wielkie litery przez CSS) – iPhone inaczej podwaja znaki i psuje lokatory oraz znaki wywoławcze;
+- okna z polem tekstowym otwierają się u góry ekranu i mieszczą się nad klawiaturą (`visualViewport`), fokus ustawiany od razu w obsłudze dotknięcia;
+- mikrofon: węzeł AudioWorklet podłączony do wyjścia przez wyciszony GainNode (Safari nie przetwarza węzłów bez wyjścia), kontekst wznawiany po zgodzie na mikrofon;
+- czcionka pól co najmniej 16 px (Safari powiększa stronę przy mniejszej).
+
+Sprawdzenie składni pod Safari: `esbuild public/js/app.js --bundle --target=safari15 --outfile=/dev/null`.
+
 ## Ograniczenia iOS
 
 - **Dane są w przeglądarce na urządzeniu** (log w IndexedDB, ustawienia w localStorage). Aplikacja prosi o trwałe przechowywanie; mimo to warto regularnie eksportować ADIF – Safari może usuwać dane stron nieużywanych od tygodni, jeśli nie są dodane do ekranu początkowego.
