@@ -350,3 +350,11 @@ a.btn { text-decoration: none; }
 .scroll.decoder { display: flex; flex-direction: column; }
 .decoder-text { flex: 1 1 auto !important; min-height: 180px; max-height: 50vh; overflow-y: auto; background: var(--surface-container-high); border-radius: var(--radius-card);
   padding: 12px; font-size: 20px; line-height: 1.4; white-space: pre-wrap; word-break: break-word; }
+.fab.extended { width: auto; padding: 0 20px; gap: 12px; font-size: 15px; font-weight: 500; }
+.dot.ok { background: #2e7d32; }
+.dot:not(.ok) { background: var(--outline); }
+.aprs-icon { position: relative; flex: 0 0 auto; width: 32px; height: 32px; background-size: 512px 192px; background-repeat: no-repeat; }
+.aprs-icon.primary-table { background-image: url(../icons/aprs_primary.png); }
+.aprs-icon.alt-table { background-image: url(../icons/aprs_secondary.png); }
+.aprs-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 700 16px/1 system-ui, sans-serif;
+  color: #fff; -webkit-text-stroke: 1px #000; paint-order: stroke fill; }

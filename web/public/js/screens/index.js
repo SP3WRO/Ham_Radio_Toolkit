@@ -18,6 +18,7 @@ import { awardsScreen } from "./awards.js";
 import { abroadScreen } from "./abroad.js";
 import { satellitesScreen } from "./satellites.js";
 import { cwTrainerScreen, cwDecoderScreen } from "./cw.js";
+import { aprsScreen } from "./aprs.js";
 
 /** @type {Record<string, (ctx: import("../app.js").ScreenContext) => import("../app.js").ScreenInstance>} */
 export const SCREENS = {
@@ -34,6 +35,7 @@ export const SCREENS = {
   satellites: satellitesScreen,
   cw_trainer: cwTrainerScreen,
   cw_decoder: cwDecoderScreen,
+  aprs: aprsScreen,
   logger: loggerScreen,
   log_stats: logStatsScreen,
   toolbox: toolboxScreen,

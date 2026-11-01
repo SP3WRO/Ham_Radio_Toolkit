@@ -16,6 +16,7 @@ import { contests } from "./contests.mjs";
 import { awardEvents, awardDetails } from "./awards.mjs";
 import { countryAt } from "./country.mjs";
 import { satellites } from "./satellites.mjs";
+import { handleAprsUpgrade } from "./aprs.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT ?? 8080);
@@ -303,6 +304,15 @@ const server = createServer(async (req, res) => {
   }
   if (req.method !== "GET" && req.method !== "HEAD") return send(res, 405, "Method not allowed");
   return serveStatic(req, res, url.pathname);
+});
+
+// WebSocket: tylko most APRS-IS
+server.on("upgrade", (req, socket) => {
+  const url = new URL(req.url ?? "/", "http://localhost");
+  const ip = String(req.headers["x-forwarded-for"] ?? req.socket.remoteAddress ?? "").split(",")[0].trim();
+  if (url.pathname !== "/api/aprs" || rateLimited(ip)) return socket.destroy();
+  socket.on("error", () => {});
+  handleAprsUpgrade(req, socket, ip, USER_AGENT);
 });
 
 server.listen(PORT, HOST, () => {

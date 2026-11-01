@@ -6,6 +6,7 @@ import { t } from "./i18n.js";
 import { cbBaseCall, isCompleteCall, HAMDB_DXCC, combineCallbook } from "./core/callbook.js";
 import { Maidenhead } from "./core/geo.js";
 import { inPoland } from "./core/world.js";
+import { aprsHeard } from "./core/aprs.js";
 import { logbook } from "./db.js";
 
 // ---------------------------------------------------------------- GPS (działa, gdy strona jest na ekranie)
@@ -151,7 +152,7 @@ export async function callbookLookup(callsign, usePskReporter = false) {
   const call = callsign.trim().toUpperCase();
   const hit = callbookCache.get(call);
   // Wynik bez lokatora odświeżamy, gdy teraz możemy dodatkowo zapytać PSK Reporter
-  if (hit && Date.now() - hit[0] < CALLBOOK_CACHE_MS && !(usePskReporter && !hit[1].grid)) return hit[1];
+  if (hit && Date.now() - hit[0] < CALLBOOK_CACHE_MS && !(usePskReporter && !hit[1].grid)) return withAprs(hit[1]);
   const db = await cty().catch(() => null);
   const entity = db?.resolve(call) ?? null;
   const base = cbBaseCall(call);
@@ -178,7 +179,20 @@ export async function callbookLookup(callsign, usePskReporter = false) {
   }
   const result = combineCallbook({ call, entity, homeEntity, data, lastLogged, hamQthConfigured: credentials.hasHamQth() }, t);
   callbookCache.set(call, [Date.now(), result]);
-  return result;
+  return withAprs(result);
+}
+
+/**
+ * Pozycja z nasłuchu APRS-IS – zaraz po PSK Reporter, przed logiem i bazami (jak w aplikacji); APRS nadaje stale,
+ * więc sprawdzamy ją także dla wyniku z pamięci. @param {any} result
+ */
+function withAprs(result) {
+  if (result.grid?.fromPsk) return result;
+  const heard = aprsHeard.find(result.callsign);
+  if (!heard) return result;
+  const min = Math.max(0, Math.floor((Date.now() - heard.timeMs) / 60000));
+  const ago = min < 1 ? t("cb_just_now") : min < 60 ? t("cb_minutes_ago", min) : t("cb_hours_ago", Math.floor(min / 60));
+  return { ...result, grid: { locator: Maidenhead.fromLatLon(heard.lat, heard.lon, 6), source: `APRS-IS – ${heard.callsign} ${ago}` } };
 }
 
 // ---------------------------------------------------------------- kraj z pozycji (CountryResolver)

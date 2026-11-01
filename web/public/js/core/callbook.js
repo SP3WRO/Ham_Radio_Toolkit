@@ -164,9 +164,9 @@ export function combineCallbook(o, t) {
   };
   const { uke = null, hamDb = null, radioId = null, hamQth = null, qrzcq = null, psk = null } = data ?? {};
   const notes = [...(data?.notes ?? [])];
-  /** @type {{locator: string, source: string} | null} */
+  /** @type {{locator: string, source: string, fromPsk?: boolean} | null} */
   let grid = null;
-  if (psk?.status === "found") grid = { locator: psk.spot.locator, source: t("cb_src_psk", ago(psk.spot.timeSeconds)) };
+  if (psk?.status === "found") grid = { locator: psk.spot.locator, source: t("cb_src_psk", ago(psk.spot.timeSeconds)), fromPsk: true };
   else if (lastLogged) grid = { locator: lastLogged.gridSquare.toUpperCase(), source: t("cb_src_log", lastLogged.datetimeUtc) };
   else if (!abroad && qrzcq?.gridSquare) grid = { locator: qrzcq.gridSquare, source: t("cb_src_operator", "QRZCQ") };
   else if (!abroad && hamQth && hamQth.gridSquare.length >= 4 && Maidenhead.isValid(hamQth.gridSquare)) grid = { locator: hamQth.gridSquare.toUpperCase(), source: t("cb_src_operator", "HamQTH") };

@@ -21,3 +21,10 @@ await sharp(src).extract(inner).flatten({ background: BLUE }).resize(180, 180).p
 // Ikona "maskable" (Android/Chrome): treść w 80% środka, reszta tła wypełniona kolorem
 await sharp(src).flatten({ background: BLUE }).resize(512, 512).png().toFile(out("icon-maskable-512.png"));
 console.log("Ikony zapisane w public/icons");
+
+// Symbole APRS (arkusze 16×6, komórki 128 px) zmniejszone do 48 px – wystarczają na ekranie z gęstością 2–3×
+const RES = join(WEB, "..", "app", "src", "main", "res", "drawable-nodpi");
+for (const name of ["aprs_primary", "aprs_secondary"]) {
+  await sharp(join(RES, `${name}.png`)).resize(768, 288).png({ compressionLevel: 9, palette: true }).toFile(out(`${name}.png`));
+}
+console.log("Symbole APRS zapisane w public/icons");

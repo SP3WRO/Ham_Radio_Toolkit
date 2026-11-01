@@ -1,5 +1,5 @@
 // Wygenerowane przez tools/build-data.mjs – nie edytować
-self.HRT_VERSION = "60ae58b1ae86";
+self.HRT_VERSION = "134a90952196";
 self.HRT_ASSETS = [
  "./",
  "css/app.css",
@@ -20,6 +20,8 @@ self.HRT_ASSETS = [
  "data/vademecum/sp_areas.tsv",
  "data/world_path.txt",
  "icons/apple-touch-icon.png",
+ "icons/aprs_primary.png",
+ "icons/aprs_secondary.png",
  "icons/icon-192.png",
  "icons/icon-512.png",
  "icons/icon-maskable-512.png",
@@ -27,6 +29,7 @@ self.HRT_ASSETS = [
  "js/app.js",
  "js/audio.js",
  "js/audio/capture-worklet.js",
+ "js/core/aprs.js",
  "js/core/awards.js",
  "js/core/callbook.js",
  "js/core/cept.js",
@@ -44,6 +47,7 @@ self.HRT_ASSETS = [
  "js/i18n.js",
  "js/icons.js",
  "js/screens/abroad.js",
+ "js/screens/aprs.js",
  "js/screens/awards.js",
  "js/screens/calculators.js",
  "js/screens/common.js",
