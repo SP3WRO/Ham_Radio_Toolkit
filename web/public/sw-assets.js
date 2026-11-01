@@ -1,5 +1,5 @@
 // Wygenerowane przez tools/build-data.mjs – nie edytować
-self.HRT_VERSION = "795f857393bc";
+self.HRT_VERSION = "6f03032bd05a";
 self.HRT_ASSETS = [
  "./",
  "css/app.css",

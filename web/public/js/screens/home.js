@@ -38,7 +38,8 @@ export function homeScreen(ctx) {
   const renderQth = () => {
     const { fix, status } = location.get();
     if (status === "idle" || status === "denied" || status === "insecure" || (status === "unavailable" && !fix)) {
-      const msg = status === "denied" ? t("web_location_denied") : status === "insecure" ? t("web_location_https") : t("home_no_location");
+      const msg = status === "denied" ? t("web_location_denied") : status === "insecure" ? t("web_location_https")
+        : status === "unavailable" ? t("web_location_unavailable") : t("home_no_location");
       replace(qthBody, h("div", { class: "body-l" }, msg),
         status === "insecure" ? null : h("div", null, button(t("home_allow_location"), () => location.start(), "text", { style: { marginLeft: "-12px" } })));
     } else if (!fix) {

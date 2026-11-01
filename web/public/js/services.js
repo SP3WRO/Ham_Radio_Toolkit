@@ -19,32 +19,52 @@ const gps = { fix: null, status: "idle" };
 const gpsListeners = new Set();
 /** @type {number | null} */
 let watchId = null;
+// Raz udzielona zgoda – przy kolejnym otwarciu GPS startuje sam (Safari nie zawsze zdradza zgodę przez Permissions API)
+const WANTED_KEY = "hrt.gps.wanted";
+
+/** @param {GeolocationPosition} p */
+function onPosition(p) {
+  const fix = { lat: p.coords.latitude, lon: p.coords.longitude, altitude: p.coords.altitude, accuracy: p.coords.accuracy };
+  // Szybka, przybliżona pozycja nie zastępuje dokładniejszej sprzed chwili
+  if (gps.fix && gps.status === "ok" && fix.accuracy > gps.fix.accuracy * 4 && fix.accuracy > 500) return;
+  saveLastKnownPosition(fix);
+  try { localStorage.setItem(WANTED_KEY, "1"); } catch { /* prywatne okno */ }
+  set({ fix, status: "ok" });
+}
+
+/** @param {GeolocationPositionError} err */
+function onError(err) {
+  if (err.code === 1) {
+    // PERMISSION_DENIED – zgoda w Safari albo Usługi lokalizacji dla witryn Safari są wyłączone
+    location.stop();
+    try { localStorage.removeItem(WANTED_KEY); } catch { /* prywatne okno */ }
+    set({ status: "denied" });
+  } else if (err.code === 2 && !gps.fix) {
+    // POSITION_UNAVAILABLE – nasłuch zostaje, pozycja może przyjść później
+    set({ status: "unavailable" });
+  }
+  // TIMEOUT – czekamy dalej
+}
 
 export const location = {
   get: () => gps,
   /** @param {() => void} l */
   subscribe(l) { gpsListeners.add(l); return () => gpsListeners.delete(l); },
 
-  /** Start nasłuchu pozycji (na iOS pierwsze wywołanie pokazuje systemowe pytanie o zgodę). */
+  /**
+   * Start nasłuchu pozycji (na iOS pierwsze wywołanie pokazuje pytanie o zgodę). Ponowne dotknięcie
+   * "Zezwól na lokalizację" po błędzie zaczyna od nowa – Safari po błędzie potrafi przestać wysyłać pozycje.
+   */
   start() {
-    if (watchId != null) return;
+    if (watchId != null && (gps.status === "ok" || gps.status === "waiting")) return;
+    location.stop();
     if (!window.isSecureContext) return set({ status: "insecure" });
     if (!("geolocation" in navigator)) return set({ status: "unavailable" });
     set({ status: gps.fix ? "ok" : "waiting" });
-    watchId = navigator.geolocation.watchPosition(
-      (p) => {
-        const fix = { lat: p.coords.latitude, lon: p.coords.longitude, altitude: p.coords.altitude, accuracy: p.coords.accuracy };
-        saveLastKnownPosition(fix);
-        set({ fix, status: "ok" });
-      },
-      (err) => {
-        if (err.code === err.PERMISSION_DENIED) {
-          this.stop();
-          set({ status: "denied" });
-        } else if (!gps.fix) set({ status: "unavailable" });
-      },
-      { enableHighAccuracy: true, maximumAge: 15000, timeout: 30000 }
-    );
+    // Najpierw szybka pozycja (Wi-Fi / sieć komórkowa), potem nasłuch GPS. Bez limitu czasu w nasłuchu:
+    // w budynku iPhone długo czeka na GPS, a każdy TIMEOUT w Safari kończył się komunikatem o braku lokalizacji
+    navigator.geolocation.getCurrentPosition(onPosition, onError, { enableHighAccuracy: false, maximumAge: 300000, timeout: 20000 });
+    watchId = navigator.geolocation.watchPosition(onPosition, onError, { enableHighAccuracy: true, maximumAge: 15000 });
   },
 
   stop() {
@@ -52,8 +72,9 @@ export const location = {
     watchId = null;
   },
 
-  /** Czy przeglądarka już dała zgodę (bez pytania użytkownika). */
+  /** Czy zgoda już jest (bez pytania użytkownika) albo była udzielona przy poprzednim otwarciu. */
   async alreadyGranted() {
+    try { if (localStorage.getItem(WANTED_KEY) === "1") return true; } catch { /* prywatne okno */ }
     try {
       const p = await navigator.permissions?.query({ name: "geolocation" });
       return p?.state === "granted";
@@ -73,7 +94,7 @@ function set(patch) {
 if (typeof document !== "undefined") {
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) location.stop();
-    else if (gps.status === "ok" || gps.status === "waiting") location.start();
+    else if (gps.status === "ok" || gps.status === "waiting" || gps.status === "unavailable") location.start();
   });
 }
 
