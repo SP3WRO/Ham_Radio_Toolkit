@@ -4,7 +4,8 @@ import { h, replace, iconButton, icon, textField, selectField, switchEl, button,
 import { t, fmt } from "../i18n.js";
 import { settings, stationPosition } from "../store.js";
 import { logbook } from "../db.js";
-import { cty } from "../services.js";
+import { cty, callbookLookup } from "../services.js";
+import { isCompleteCall } from "../core/callbook.js";
 import { Adif, LogStatistics, makeQso, filterLogs } from "../core/logbook.js";
 import { calculateBandFromFreq } from "../core/radio.js";
 import { Maidenhead, GreatCircle } from "../core/geo.js";
@@ -186,6 +187,14 @@ export function qsoDialog(o) {
   let previous = [];
   /** @type {any} */
   let lookupTimer = null;
+  // Pola uzupełnione automatycznie z wyszukiwarki – czyścimy je przy zmianie znaku, jeśli nikt ich nie poprawił
+  /** @type {Record<"name"|"qth"|"gridSquare", string>} */
+  const auto = { name: "", qth: "", gridSquare: "" };
+  /** @type {Record<string, any>} */
+  const inputs = {};
+  let lookupSeq = 0;
+  const status = h("div", { class: "body-s muted pre" });
+  const setField = (key, value) => { v[key] = value; if (inputs[key]) inputs[key].input.value = value; };
 
   const info = h("div", { class: "col gap-s" });
   const renderInfo = () => {
@@ -207,12 +216,33 @@ export function qsoDialog(o) {
   const scheduleLookup = () => {
     clearTimeout(lookupTimer);
     const call = v.callsign.trim();
+    const seq = ++lookupSeq;
+    for (const k of /** @type {const} */ (["name", "qth", "gridSquare"])) {
+      if (auto[k] && v[k] === auto[k]) setField(k, "");
+      auto[k] = "";
+    }
+    gridField.setError(false);
+    status.textContent = "";
     if (call.length < 3) { entity = null; previous = []; newCountry = false; renderInfo(); return; }
     lookupTimer = setTimeout(async () => {
       const db = await cty().catch(() => null);
       entity = db?.resolve(call) ?? null;
       previous = logbook.previousContacts(call).filter((q) => q.id !== init?.id);
       newCountry = entity != null && !logbook.workedDxcc().has(entity.dxcc);
+      renderInfo();
+      if (!isCompleteCall(call)) return;
+      status.textContent = t("qso_looking_up");
+      const cb = await callbookLookup(call);
+      if (seq !== lookupSeq) return;
+      const fill = (/** @type {"name"|"qth"|"gridSquare"} */ k, value) => {
+        if (!value || v[k].trim()) return;
+        auto[k] = value;
+        setField(k, value);
+      };
+      fill("name", cb.name ?? "");
+      fill("qth", cb.qth ?? "");
+      fill("gridSquare", cb.grid?.locator ?? "");
+      status.textContent = [cb.grid ? t("qso_locator_from", cb.grid.locator, cb.grid.source) : t("qso_no_locator"), ...cb.notes].join("\n");
       renderInfo();
     }, 600);
   };
@@ -226,6 +256,9 @@ export function qsoDialog(o) {
   });
   gridField.setError(!!v.gridSquare && !Maidenhead.isValid(v.gridSquare));
   const dtField = field(t("qso_datetime"), "datetime");
+  const nameField = field(t("qso_name"), "name");
+  const qthField = field("QTH", "qth");
+  Object.assign(inputs, { name: nameField, qth: qthField, gridSquare: gridField });
   dtField.classList.toggle("hidden", realTime);
 
   /** @type {HTMLButtonElement} */
@@ -233,12 +266,12 @@ export function qsoDialog(o) {
   const updateSave = () => { if (saveBtn) saveBtn.disabled = !v.callsign.trim() || !v.frequency.trim(); };
 
   const body = h("div", { class: "col gap-l" },
-    callField, info,
+    callField, info, status,
     h("div", { class: "fields" }, h("div", { style: { flex: "1.2" }, class: "field-wrap" }, freqField),
       h("div", { style: { flex: "0.8" }, class: "field-wrap" }, selectField({ label: t("qso_mode"), value: v.mode, options: /** @type {[string, string][]} */ (MODES.map((m) => [m, m]).concat(MODES.includes(v.mode) ? [] : [[v.mode, v.mode]])),
         onchange: (m) => { v.mode = m; renderInfo(); } }))),
     h("div", { class: "fields" }, field(t("qso_rst_sent"), "rstSent"), field(t("qso_rst_rcvd"), "rstRcvd")),
-    h("div", { class: "fields" }, field(t("qso_name"), "name"), field("QTH", "qth")),
+    h("div", { class: "fields" }, nameField, qthField),
     h("div", { class: "fields" }, gridField, field("POTA/WWFF", "huntedRef", { uppercase: true, placeholder: "SP-0012" })),
     h("div", { class: "row between" }, h("span", null, t("qso_utc_now")),
       switchEl(realTime, (x) => { realTime = x; if (x) v.datetime = now; dtField.input.value = v.datetime; dtField.classList.toggle("hidden", x); }, t("qso_utc_now"))),

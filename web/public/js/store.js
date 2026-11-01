@@ -65,3 +65,26 @@ export function saveLastKnownPosition(p) {
   const last = state.last_known_lat != null && state.last_known_lon != null ? { lat: state.last_known_lat, lon: state.last_known_lon } : null;
   if (!last || GreatCircle.distanceKm(last, p) > 0.2) settings.set({ last_known_lat: p.lat, last_known_lon: p.lon });
 }
+
+// ---------------------------------------------------------------- konta w serwisach (CredentialsRepository)
+// Osobno od ustawień; zostają tylko w tej przeglądarce. Serwer dostaje je wyłącznie na czas zapytania.
+const CRED_KEY = "hrt.credentials.v1";
+export const CREDENTIAL_DEFAULTS = {
+  hamQthUser: "", hamQthPassword: "", qrzcqUser: "", qrzcqPassword: "", qrzLogbookKey: "", eqslUser: "", eqslPassword: "",
+  repeaterBookToken: "", repeaterBookContact: "",
+};
+/** @typedef {typeof CREDENTIAL_DEFAULTS} Credentials */
+
+export const credentials = {
+  /** @returns {Credentials} */
+  get() {
+    try { return { ...CREDENTIAL_DEFAULTS, ...JSON.parse(localStorage.getItem(CRED_KEY) ?? "{}") }; } catch { return { ...CREDENTIAL_DEFAULTS }; }
+  },
+  /** @param {Partial<Credentials>} patch */
+  set(patch) {
+    const next = { ...this.get(), ...patch };
+    try { localStorage.setItem(CRED_KEY, JSON.stringify(next)); } catch { /* prywatne okno */ }
+  },
+  hasHamQth() { const c = this.get(); return !!(c.hamQthUser.trim() && c.hamQthPassword); },
+  hasQrzcq() { const c = this.get(); return !!(c.qrzcqUser.trim() && c.qrzcqPassword); },
+};

@@ -2,7 +2,7 @@
 // Ustawienia (SettingsScreen.kt) – te same sekcje; powiadomienia i konta dojdą z funkcjami online
 import { h, settingsSection, settingsChoice, settingsText, settingsSwitch, settingsSlider, settingsItem, divider, replace } from "../ui.js";
 import { t, LANGUAGES } from "../i18n.js";
-import { settings } from "../store.js";
+import { settings, credentials } from "../store.js";
 import { serverStatus, cty, ctyInfo } from "../services.js";
 import { APP_VERSION } from "../core/logbook.js";
 import { Callsigns } from "../core/radio.js";
@@ -10,6 +10,21 @@ import { Maidenhead } from "../core/geo.js";
 import { layout } from "./common.js";
 
 const APRS_SSID = /^-?(\d|1[0-5])$/;
+
+/** Konta w serwisach (AccountsSettings) – na razie te, z których korzysta wyszukiwarka znaków. */
+/** @param {() => void} rerender */
+function accountRows(rerender) {
+  const c = credentials.get();
+  /** @param {string} title @param {keyof typeof c} key @param {{secret?: boolean, desc?: string, uppercase?: boolean}} [o] */
+  const item = (title, key, o = {}) => settingsText({ title, value: c[key], secret: o.secret, uppercase: o.uppercase, emptySummary: o.desc,
+    onsave: (v) => { credentials.set({ [key]: v }); rerender(); } });
+  return [
+    divider(), item(t("settings_login", "HamQTH"), "hamQthUser", { desc: t("settings_hamqth_desc") }),
+    divider(), item(t("settings_password", "HamQTH"), "hamQthPassword", { secret: true }),
+    divider(), item(t("settings_login", "QRZCQ"), "qrzcqUser", { desc: t("settings_qrzcq_desc") }),
+    divider(), item(t("settings_password", "QRZCQ"), "qrzcqPassword", { secret: true }),
+  ];
+}
 
 /** @param {import("../app.js").ScreenContext} ctx */
 export function settingsScreen(ctx) {
@@ -73,7 +88,8 @@ export function settingsScreen(ctx) {
             active_programs: on ? [...new Set([...s.active_programs, p])] : s.active_programs.filter((x) => x !== p) })),
         ])),
       settingsSection(t("settings_section_accounts"), "key",
-        h("div", { class: "settings-note" }, t("web_accounts_note"))),
+        h("div", { class: "settings-note" }, t("web_accounts_note")),
+        ...accountRows(render)),
       settingsSection(t("web_section_web"), "info",
         settingsItem(t("web_version"), APP_VERSION),
         divider(),

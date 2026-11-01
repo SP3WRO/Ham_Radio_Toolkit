@@ -1,5 +1,5 @@
 // Wygenerowane przez tools/build-data.mjs – nie edytować
-self.HRT_VERSION = "f4a2d29db402";
+self.HRT_VERSION = "1a357499baa0";
 self.HRT_ASSETS = [
  "./",
  "css/app.css",
@@ -23,6 +23,7 @@ self.HRT_ASSETS = [
  "icons/icon-maskable-512.png",
  "index.html",
  "js/app.js",
+ "js/core/callbook.js",
  "js/core/geo.js",
  "js/core/logbook.js",
  "js/core/radio.js",
@@ -38,6 +39,7 @@ self.HRT_ASSETS = [
  "js/screens/index.js",
  "js/screens/locator.js",
  "js/screens/logger.js",
+ "js/screens/lookup.js",
  "js/screens/map.js",
  "js/screens/planning.js",
  "js/screens/propagation.js",

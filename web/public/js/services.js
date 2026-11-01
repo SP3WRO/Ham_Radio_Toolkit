@@ -1,7 +1,11 @@
 // @ts-check
 // Pozycja GPS, dostęp do danych z sieci przez serwer pośredniczący i baza DXCC
 import { CtyDatabase } from "./core/logbook.js";
-import { saveLastKnownPosition } from "./store.js";
+import { saveLastKnownPosition, credentials } from "./store.js";
+import { t } from "./i18n.js";
+import { cbBaseCall, isCompleteCall, HAMDB_DXCC, combineCallbook } from "./core/callbook.js";
+import { Maidenhead } from "./core/geo.js";
+import { logbook } from "./db.js";
 
 // ---------------------------------------------------------------- GPS (działa, gdy strona jest na ekranie)
 /** @typedef {{lat: number, lon: number, altitude: number | null, accuracy: number}} Fix */
@@ -130,4 +134,48 @@ async function refreshCty() {
     ctySource = date;
     ctyPromise = Promise.resolve(CtyDatabase.parse(text));
   } catch { /* bez sieci – zostaje ostatnia kopia */ }
+}
+
+// ---------------------------------------------------------------- wyszukiwarka znaków (Callbook.lookup)
+const CALLBOOK_CACHE_MS = 10 * 60 * 1000;
+/** @type {Map<string, [number, any]>} */
+const callbookCache = new Map();
+
+/**
+ * Dane o stacji z kilku źródeł naraz. Nigdy nie rzuca wyjątku. [usePskReporter] – tylko przy jawnym wyszukiwaniu
+ * (nie przy pisaniu znaku w oknie QSO), bo PSK Reporter pozwala na jedno zapytanie na 5 minut.
+ * @param {string} callsign @param {boolean} [usePskReporter]
+ */
+export async function callbookLookup(callsign, usePskReporter = false) {
+  const call = callsign.trim().toUpperCase();
+  const hit = callbookCache.get(call);
+  // Wynik bez lokatora odświeżamy, gdy teraz możemy dodatkowo zapytać PSK Reporter
+  if (hit && Date.now() - hit[0] < CALLBOOK_CACHE_MS && !(usePskReporter && !hit[1].grid)) return hit[1];
+  const db = await cty().catch(() => null);
+  const entity = db?.resolve(call) ?? null;
+  const base = cbBaseCall(call);
+  const homeEntity = db?.resolve(base) ?? null;
+  const online = isCompleteCall(call);
+  const c = credentials.get();
+  // Tylko dokładnie ten sam znak – lokator z pracy /P nie opisuje stacji domowej i odwrotnie
+  const lastLogged = logbook.previousContacts(call).filter((q) => q.callsign.toUpperCase() === call && q.gridSquare.length >= 4 && Maidenhead.isValid(q.gridSquare))
+    .sort((a, b) => (a.datetimeUtc < b.datetimeUtc ? 1 : -1))[0] ?? null;
+  let data = { notes: [] };
+  if (online || homeEntity?.dxcc === 269) {
+    try {
+      const res = await fetch(`${API_BASE}/callbook`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ call, base, online, uke: homeEntity?.dxcc === 269, hamDb: homeEntity != null && HAMDB_DXCC.has(homeEntity.dxcc),
+          psk: usePskReporter, hamQthUser: c.hamQthUser, hamQthPassword: c.hamQthPassword, qrzcqUser: c.qrzcqUser, qrzcqPassword: c.qrzcqPassword }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error ?? `HTTP ${res.status}`);
+      data = body;
+    } catch (e) {
+      data = { notes: [t("cb_failed", /** @type {Error} */ (e).message)] };
+    }
+  }
+  const result = combineCallbook({ call, entity, homeEntity, data, lastLogged, hamQthConfigured: credentials.hasHamQth() }, t);
+  callbookCache.set(call, [Date.now(), result]);
+  return result;
 }

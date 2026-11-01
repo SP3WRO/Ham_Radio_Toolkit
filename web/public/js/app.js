@@ -91,7 +91,12 @@ async function start() {
     }
   });
 
-  window.addEventListener("hashchange", () => { sessionStorage.setItem("hrt.navigated", "1"); show(); });
+  window.addEventListener("hashchange", () => {
+    sessionStorage.setItem("hrt.navigated", "1");
+    // Okna dialogowe należą do poprzedniego ekranu (np. gest „wstecz” w Safari)
+    document.querySelectorAll("dialog.dialog").forEach((d) => d.dispatchEvent(new Event("cancel")));
+    show();
+  });
   show();
 
   // Dziennik i baza DXCC w tle; stare wpisy dostają kraj, gdy tylko baza będzie dostępna

@@ -10,6 +10,7 @@ import { join, normalize, extname, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { nearby } from "./activations.mjs";
 import { repeaters } from "./repeaters.mjs";
+import { lookup as callbookLookup } from "./callbook.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT ?? 8080);
@@ -84,6 +85,18 @@ async function fetchUpstream(url) {
   const buf = Buffer.from(await res.arrayBuffer());
   if (buf.length > 5 * 1024 * 1024) throw new Error("Odpowiedź za duża");
   return { body: buf, type: res.headers.get("content-type") ?? "application/octet-stream", status: res.status };
+}
+
+/** Treść JSON zapytania POST (do 4 KB). */
+async function readJson(req) {
+  const chunks = [];
+  let size = 0;
+  for await (const c of req) {
+    size += c.length;
+    if (size > 4096) throw Object.assign(new Error("Za duże zapytanie"), { status: 413 });
+    chunks.push(c);
+  }
+  try { return JSON.parse(Buffer.concat(chunks).toString("utf8")); } catch { throw Object.assign(new Error("Niepoprawny JSON"), { status: 400 }); }
 }
 
 /** Wysłanie danych do usługi (tylko adresy z [post] na białej liście, JSON do 4 KB, bez pamięci podręcznej). */
@@ -210,6 +223,13 @@ const server = createServer(async (req, res) => {
     if (rateLimited(ip)) return send(res, 429, { error: "Za dużo zapytań" });
     const m = /^\/api\/proxy\/([a-z0-9]+)\/(.+)$/.exec(url.pathname);
     if (m && req.method === "POST") return proxyPost(req, res, m[1], m[2]);
+    if (url.pathname === "/api/callbook" && req.method === "POST") {
+      try {
+        return send(res, 200, await callbookLookup(await readJson(req), USER_AGENT));
+      } catch (e) {
+        return send(res, e?.status ?? 400, { error: String(e?.message ?? e) });
+      }
+    }
     if (req.method !== "GET") return send(res, 405, { error: "Tylko GET i POST" });
     if (m) return proxy(req, res, m[1], m[2] + url.search);
     if (url.pathname === "/api/repeaters") {

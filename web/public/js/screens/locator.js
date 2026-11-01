@@ -3,8 +3,7 @@
 import { h, replace, textField, button, iconButton, icon } from "../ui.js";
 import { t, fmt, format } from "../i18n.js";
 import { settings, stationPosition } from "../store.js";
-import { location, cty } from "../services.js";
-import { logbook } from "../db.js";
+import { location, callbookLookup } from "../services.js";
 import { Maidenhead, GreatCircle } from "../core/geo.js";
 import { parseNum } from "../core/radio.js";
 import { layout } from "./common.js";
@@ -55,19 +54,19 @@ export function locatorScreen(ctx) {
       if (lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180) target = { description: t("loc_point", format("%.4f", lat), format("%.4f", lon)), position: { lat, lon }, note: "" };
       else { target = null; targetErr.textContent = t("loc_not_recognized"); }
     } else {
-      // Znak: lokator z własnego logu, a gdy go brak – środek kraju DXCC (wyszukiwarki online dojdą w etapie 2)
+      // Znak: lokator z wyszukiwarki (PSK Reporter, log, QRZCQ, HamQTH, HamDB) – bez zgadywania środka kraju
       const call = text.toUpperCase();
-      const fromLog = logbook.previousContacts(call).find((q) => Maidenhead.isValid(q.gridSquare));
-      const entity = (await cty().catch(() => null))?.resolve(call) ?? null;
-      if (fromLog) {
-        const p = /** @type {{lat: number, lon: number}} */ (Maidenhead.toLatLon(fromLog.gridSquare));
-        const details = [fromLog.name, fromLog.qth, entity?.name ?? ""].filter((s) => s.trim()).join(", ");
-        target = { description: details ? `${call} – ${details}` : call, position: p, note: t("cb_src_log", fromLog.datetimeUtc) };
-      } else if (entity) {
-        target = { description: `${call} – ${entity.name}`, position: { lat: entity.lat, lon: entity.lon }, note: t("web_lookup_offline") };
-      } else {
+      const r = await callbookLookup(call, true);
+      const position = r.grid ? Maidenhead.toLatLon(r.grid.locator) : null;
+      if (!r.entity && !r.sources.length && !r.grid) {
         target = null;
         targetErr.textContent = t("loc_not_recognized");
+      } else if (!r.grid || !position) {
+        target = null;
+        targetErr.textContent = [t("loc_no_locator_for", call), ...r.notes].join("\n");
+      } else {
+        const details = [r.name ?? "", r.qth ?? "", r.entity?.name ?? ""].filter((x) => x.trim()).join(", ");
+        target = { description: details ? `${call} – ${details}` : call, position, note: r.grid.source };
       }
     }
     renderTarget();
@@ -76,7 +75,7 @@ export function locatorScreen(ctx) {
   const targetField = textField({ label: t("loc_target_label"), placeholder: t("loc_target_hint"), value: targetInput, uppercase: true, class: "has-trailing",
     oninput: (v) => { targetInput = v; }, onenter: searchTarget });
   targetField.appendChild(iconButton("search", t("common_search"), searchTarget, { class: "icon-btn field-trailing" }));
-  const targetErr = h("div", { class: "body-m error-text" });
+  const targetErr = h("div", { class: "body-m error-text pre" });
 
   function renderTarget() {
     const pos = stationPosition();
