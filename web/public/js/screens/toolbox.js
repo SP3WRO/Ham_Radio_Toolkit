@@ -5,7 +5,7 @@ import { t } from "../i18n.js";
 import { layout } from "./common.js";
 
 /** Narzędzia działające już w wersji WWW. */
-export const READY = new Set(["beacons", "locator", "gray_line_calc", "bandplan", "calculators", "coax_calc", "vademecum", "live_spots", "activations", "repeaters", "callsign_lookup", "contest_calendar", "awards", "abroad", "satellites", "cw_trainer", "cw_decoder", "aprs", "rtty_decoder", "ft8_decoder", "sstv_decoder"]);
+export const READY = new Set(["beacons", "locator", "gray_line_calc", "bandplan", "calculators", "coax_calc", "vademecum", "live_spots", "activations", "repeaters", "callsign_lookup", "contest_calendar", "awards", "abroad", "satellites", "cw_trainer", "cw_decoder", "aprs", "rtty_decoder", "ft8_decoder", "sstv_decoder", "horus_decoder"]);
 
 /** @type {[string, string[][]][]} */
 const GROUPS = [

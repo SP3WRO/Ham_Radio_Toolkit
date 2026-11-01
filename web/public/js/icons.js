@@ -83,4 +83,5 @@ export const ICON_PATHS = {"home":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></pat
 "upload":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm4 18H6V4h7v5h5zM8 15.01l1.41 1.41L11 14.84V19h2v-4.16l1.59 1.59L16 15.01 12.01 11z\"></path>",
 "send":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M2.01 21 23 12 2.01 3 2 10l15 2-15 2z\"></path>",
 "save":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V7zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3m3-10H5V5h10z\"></path>",
-"folderOpen":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2m0 12H4V8h16z\"></path>"};
+"folderOpen":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2m0 12H4V8h16z\"></path>",
+"contentCopy":"<path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2m0 16H8V7h11z\"></path>"};

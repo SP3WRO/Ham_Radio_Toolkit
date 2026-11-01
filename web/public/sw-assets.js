@@ -1,5 +1,5 @@
 // Wygenerowane przez tools/build-data.mjs – nie edytować
-self.HRT_VERSION = "a587edfc4958";
+self.HRT_VERSION = "2e68faf51e4d";
 self.HRT_ASSETS = [
  "./",
  "css/app.css",
@@ -7,6 +7,8 @@ self.HRT_ASSETS = [
  "data/bandplan.json",
  "data/contest_names_ru.json",
  "data/cty.csv",
+ "data/horus/custom_field_list.json",
+ "data/horus/payload_id_list.txt",
  "data/i18n/cs.json",
  "data/i18n/de.json",
  "data/i18n/en.json",
@@ -41,6 +43,7 @@ self.HRT_ASSETS = [
  "js/core/ft8-tables.js",
  "js/core/ft8.js",
  "js/core/geo.js",
+ "js/core/horus.js",
  "js/core/logbook.js",
  "js/core/radio.js",
  "js/core/repeaters.js",
@@ -62,6 +65,7 @@ self.HRT_ASSETS = [
  "js/screens/decoder-common.js",
  "js/screens/ft8.js",
  "js/screens/home.js",
+ "js/screens/horus.js",
  "js/screens/index.js",
  "js/screens/locator.js",
  "js/screens/logger.js",

@@ -161,6 +161,8 @@ for (const f of readdirSync(join(MAIN, "assets", "vademecum"))) {
   copyFileSync(join(MAIN, "assets", "vademecum", f), join(OUT, "vademecum", f));
 }
 copyFileSync(join(MAIN, "res", "raw", "world_path.txt"), join(OUT, "world_path.txt"));
+mkdirSync(join(OUT, "horus"), { recursive: true });
+for (const f of ["payload_id_list.txt", "custom_field_list.json"]) copyFileSync(join(MAIN, "assets", "horus", f), join(OUT, "horus", f));
 
 
 // ---------------------------------------------------------------- lista plików dla service workera

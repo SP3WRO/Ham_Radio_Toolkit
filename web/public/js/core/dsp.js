@@ -57,9 +57,45 @@ export class StreamResampler {
   }
 }
 
-/** Całe nagranie do innej częstotliwości. @param {Float32Array} samples @param {number} inputRate @param {number} outputRate */
+/**
+ * Całe nagranie do innej częstotliwości (resample() z AudioInput.kt): w górę – interpolacja sinc z oknem Blackmana
+ * (±16 próbek), w dół – filtr FIR bez opóźnienia (63 współczynniki) i interpolacja liniowa.
+ * @param {Float32Array} samples @param {number} inputRate @param {number} outputRate
+ */
 export function resample(samples, inputRate, outputRate) {
-  return new StreamResampler(inputRate, outputRate).process(samples).slice();
+  if (inputRate === outputRate) return samples;
+  const outLength = Math.floor((samples.length * outputRate) / inputRate);
+  const step = inputRate / outputRate;
+  const out = new Float32Array(outLength);
+  if (outputRate > inputRate) {
+    const half = 16, cutoff = 0.9;
+    for (let i = 0; i < outLength; i++) {
+      const pos = i * step, center = Math.floor(pos);
+      let acc = 0;
+      for (let k = Math.max(0, center - half + 1); k <= Math.min(samples.length - 1, center + half); k++) {
+        const x = pos - k;
+        const sinc = Math.abs(x) < 1e-9 ? cutoff : Math.sin(Math.PI * cutoff * x) / (Math.PI * x);
+        const w = 0.42 + 0.5 * Math.cos((Math.PI * x) / half) + 0.08 * Math.cos((2 * Math.PI * x) / half);
+        acc += samples[k] * sinc * w;
+      }
+      out[i] = acc;
+    }
+    return out;
+  }
+  const taps = lowpassTaps((0.45 * outputRate) / inputRate, 63);
+  const half = taps.length >> 1;
+  const src = new Float32Array(samples.length);
+  for (let i = 0; i < samples.length; i++) {
+    let acc = 0;
+    for (let t = Math.max(0, half - i); t < taps.length && i + t - half < samples.length; t++) acc += taps[t] * samples[i + t - half];
+    src[i] = acc;
+  }
+  for (let i = 0; i < outLength; i++) {
+    const pos = i * step, j = Math.trunc(pos), frac = pos - j;
+    const a = src[Math.min(j, src.length - 1)], b = src[Math.min(j + 1, src.length - 1)];
+    out[i] = a + (b - a) * frac;
+  }
+  return out;
 }
 
 /** WAV 16-bit PCM mono (zapis nagrań z dekoderów). @param {Float32Array} samples @param {number} rate */

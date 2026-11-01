@@ -44,6 +44,8 @@ const SERVICES = {
   wwff: { base: "https://spots.wwff.co/", ttl: 45, paths: /^static\/spots\.json$/ },
   // Szczegóły przemienników DMR (color code, sieć, grupy)
   radioid: { base: "https://radioid.net/api/dmr/", ttl: 24 * 3600, paths: /^repeater\/\?callsign=[A-Z0-9]{3,10}$/ },
+  // Listy Projektu Horus: numery ładunków i opisy pól dodatkowych (aplikacja odświeża je raz w tygodniu)
+  horus: { base: "https://raw.githubusercontent.com/projecthorus/horusdemodlib/master/", ttl: 7 * 24 * 3600, paths: /^(payload_id_list\.txt|custom_field_list\.json)$/ },
 };
 
 const MIME = {
