@@ -1,34 +1,35 @@
-# key	en	pl	de	cs	sk
-ct_filter_polish	Polish	Polskie	Polnische	Polské	Poľské
-ct_filter_international	International	Międzynarodowe	International	Mezinárodní	Medzinárodné
-ct_vhf	VHF	UKF	UKW	VKV	VKV
-ct_filter_digi	Digital	Cyfrowe	Digital	Digitální	Digitálne
-ct_filter_local	Country of stay	Kraj pobytu	Aufenthaltsland	Země pobytu	Krajina pobytu
-ct_title	Contest calendar	Kalendarz zawodów	Contestkalender	Kalendář závodů	Kalendár pretekov
-ct_show_weekly	Show weekly contests (CWT, MWC, sprints…)	Pokaż zawody cotygodniowe (CWT, MWC, sprinty…)	Wöchentliche Contests anzeigen (CWT, MWC, Sprints…)	Zobrazit týdenní závody (CWT, MWC, sprinty…)	Zobraziť týždenné preteky (CWT, MWC, šprinty…)
-ct_show_russian	Show Russian national and regional contests (QRZ.RU)	Pokaż rosyjskie zawody krajowe i regionalne (QRZ.RU)	Russische nationale und regionale Contests anzeigen (QRZ.RU)	Zobrazit ruské národní a regionální závody (QRZ.RU)	Zobraziť ruské národné a regionálne preteky (QRZ.RU)
-ct_running_now	Running now	Trwają teraz	Laufen gerade	Probíhají teď	Prebiehajú teraz
-ct_none	No contests for the selected filter.	Brak zawodów dla wybranego filtra.	Keine Contests für den gewählten Filter.	Pro zvolený filtr nejsou žádné závody.	Pre zvolený filter nie sú žiadne preteky.
-ct_footer	Data: SP9CXN contest calendar, VHF/UHF/SHF contest calendar of the Polski Klub UKF association and the QRZ.RU contest calendar (Russian names translated into English by the app). The calendars refresh every 12 hours. Check the date in the rules before the start.	Dane: kalendarz zawodów SP9CXN, kalendarz zawodów VHF/UHF/SHF Stowarzyszenia Polski Klub UKF oraz kalendarz zawodów QRZ.RU (rosyjskie nazwy przetłumaczone na angielski przez aplikację). Kalendarze odświeżają się co 12 godzin. Przed startem sprawdź termin w regulaminie.	Daten: Contestkalender SP9CXN, VHF/UHF/SHF-Contestkalender des Vereins Polski Klub UKF und der Contestkalender von QRZ.RU (russische Namen von der App ins Englische übersetzt). Die Kalender werden alle 12 Stunden aktualisiert. Prüfe vor dem Start den Termin in der Ausschreibung.	Data: kalendář závodů SP9CXN, kalendář závodů VKV/UHF/SHF sdružení Polski Klub UKF a kalendář závodů QRZ.RU (ruské názvy přeložené aplikací do angličtiny). Kalendáře se obnovují každých 12 hodin. Před startem si ověř termín v propozicích.	Údaje: kalendár pretekov SP9CXN, kalendár pretekov VKV/UHF/SHF združenia Polski Klub UKF a kalendár pretekov QRZ.RU (ruské názvy preložené aplikáciou do angličtiny). Kalendáre sa obnovujú každých 12 hodín. Pred štartom si over termín v propozíciách.
-ct_calendar_of	%1$s calendar	Kalendarz %1$s	Kalender %1$s	Kalendář %1$s	Kalendár %1$s
-ct_offline	No connection and no saved calendars – built-in calendar (selected major contests, dates calculated from the rules)	Brak połączenia i zapisanych kalendarzy – kalendarz wbudowany (wybrane duże zawody, terminy wyliczone z reguł)	Keine Verbindung und keine gespeicherten Kalender – integrierter Kalender (ausgewählte große Contests, Termine aus den Regeln berechnet)	Bez připojení a uložených kalendářů – vestavěný kalendář (vybrané velké závody, termíny vypočtené z pravidel)	Bez pripojenia a uložených kalendárov – vstavaný kalendár (vybrané veľké preteky, termíny vypočítané z pravidiel)
-ct_unavailable	%1$s: unavailable	%1$s: niedostępny	%1$s: nicht verfügbar	%1$s: nedostupný	%1$s: nedostupný
-ct_copy_from	%1$s: copy from %2$s	%1$s: kopia z %2$s	%1$s: Kopie vom %2$s	%1$s: kopie z %2$s	%1$s: kópia z %2$s
-ct_running_left	ON NOW – ends in %1$s	TRWA – do końca %1$s	LÄUFT – endet in %1$s	PROBÍHÁ – do konce %1$s	PREBIEHA – do konca %1$s
-ct_starts_in	Starts in %1$s	Start za %1$s	Start in %1$s	Start za %1$s	Štart o %1$s
-ct_organizer	Organizer	Organizator	Veranstalter	Pořadatel	Organizátor
-ct_exchange	Exchange	Wymiana	Austausch	Výměna	Výmena
-ct_log_deadline	Log deadline	Termin wysyłki logów	Logeinsendeschluss	Termín zaslání deníků	Termín zaslania denníkov
-ct_organizer_page	Organizer's page	Strona organizatora	Seite des Veranstalters	Stránka pořadatele	Stránka organizátora
-ct_rules	Rules	Regulamin	Ausschreibung	Propozice	Propozície
-ct_search_rules	Search for rules	Szukaj regulaminu	Ausschreibung suchen	Hledat propozice	Hľadať propozície
-ct_rules_pl	Rules (PL)	Regulamin PL	Ausschreibung (PL)	Propozice (PL)	Propozície (PL)
-ct_logs_by	Logs by: %1$s	Logi do: %1$s	Logs bis: %1$s	Deníky do: %1$s	Denníky do: %1$s
-ct_rules_pl_value	Rules (PL): %1$s	Regulamin PL: %1$s	Ausschreibung (PL): %1$s	Propozice (PL): %1$s	Propozície (PL): %1$s
-plural:dur_days	one:%1$d day|other:%1$d days	one:%1$d dzień|few:%1$d dni|many:%1$d dni|other:%1$d dni	one:%1$d Tag|other:%1$d Tage	one:%1$d den|few:%1$d dny|many:%1$d dne|other:%1$d dní	one:%1$d deň|few:%1$d dni|many:%1$d dňa|other:%1$d dní
-dur_hours	%1$d h	%1$d godz.	%1$d Std.	%1$d h	%1$d h
-dur_hours_minutes	%1$d h %2$d min	%1$d godz. %2$d min	%1$d Std. %2$d Min.	%1$d h %2$d min	%1$d h %2$d min
-dur_minutes	%1$d min	%1$d min	%1$d Min.	%1$d min	%1$d min
-ct_mode_cw	CW	CW	CW	CW	CW
-ct_mode_ssb	SSB	SSB	SSB	SSB	SSB
-ct_qrp	QRP	QRP	QRP	QRP	QRP
+# key	en	pl	de	cs	sk	ru
+ct_filter_polish	Polish	Polskie	Polnische	Polské	Poľské	Польские
+ct_filter_international	International	Międzynarodowe	International	Mezinárodní	Medzinárodné	Международные
+ct_vhf	VHF	UKF	UKW	VKV	VKV	УКВ
+ct_filter_digi	Digital	Cyfrowe	Digital	Digitální	Digitálne	Цифровые
+ct_filter_local	Country of stay	Kraj pobytu	Aufenthaltsland	Země pobytu	Krajina pobytu	Страна пребывания
+ct_title	Contest calendar	Kalendarz zawodów	Contestkalender	Kalendář závodů	Kalendár pretekov	Календарь соревнований
+ct_show_weekly	Show weekly contests (CWT, MWC, sprints…)	Pokaż zawody cotygodniowe (CWT, MWC, sprinty…)	Wöchentliche Contests anzeigen (CWT, MWC, Sprints…)	Zobrazit týdenní závody (CWT, MWC, sprinty…)	Zobraziť týždenné preteky (CWT, MWC, šprinty…)	Показывать еженедельные соревнования (CWT, MWC, спринты…)
+ct_show_russian	Show Russian national and regional contests (QRZ.RU)	Pokaż rosyjskie zawody krajowe i regionalne (QRZ.RU)	Russische nationale und regionale Contests anzeigen (QRZ.RU)	Zobrazit ruské národní a regionální závody (QRZ.RU)	Zobraziť ruské národné a regionálne preteky (QRZ.RU)	Показывать российские национальные и региональные соревнования (QRZ.RU)
+ct_running_now	Running now	Trwają teraz	Laufen gerade	Probíhají teď	Prebiehajú teraz	Идут сейчас
+ct_none	No contests for the selected filter.	Brak zawodów dla wybranego filtra.	Keine Contests für den gewählten Filter.	Pro zvolený filtr nejsou žádné závody.	Pre zvolený filter nie sú žiadne preteky.	Нет соревнований для выбранного фильтра.
+ct_footer	Data: SP9CXN contest calendar, PK-UKF / SP1CNV VHF/UHF/SHF contest calendar and the QRZ.RU contest calendar (Russian names translated into English by the app). The calendars refresh once a day. Check the date in the rules before the start.	Dane: kalendarz zawodów SP9CXN, kalendarz zawodów VHF/UHF/SHF PK-UKF / SP1CNV oraz kalendarz zawodów QRZ.RU (rosyjskie nazwy przetłumaczone na angielski przez aplikację). Kalendarze odświeżają się raz na dobę. Przed startem sprawdź termin w regulaminie.	Daten: Contestkalender SP9CXN, VHF/UHF/SHF-Contestkalender von PK-UKF / SP1CNV und der Contestkalender von QRZ.RU (russische Namen von der App ins Englische übersetzt). Die Kalender werden einmal täglich aktualisiert. Prüfe vor dem Start den Termin in der Ausschreibung.	Data: kalendář závodů SP9CXN, kalendář závodů VKV/UHF/SHF PK-UKF / SP1CNV a kalendář závodů QRZ.RU (ruské názvy přeložené aplikací do angličtiny). Kalendáře se obnovují jednou denně. Před startem si ověř termín v propozicích.	Údaje: kalendár pretekov SP9CXN, kalendár pretekov VKV/UHF/SHF PK-UKF / SP1CNV a kalendár pretekov QRZ.RU (ruské názvy preložené aplikáciou do angličtiny). Kalendáre sa obnovujú raz denne. Pred štartom si over termín v propozíciách.	Данные: календарь соревнований SP9CXN, календарь соревнований VHF/UHF/SHF PK-UKF / SP1CNV и календарь соревнований QRZ.RU (приложение переводит русские названия на английский). Календари обновляются раз в сутки. Перед стартом проверьте дату в положении.
+ct_calendar_of	%1$s calendar	Kalendarz %1$s	Kalender %1$s	Kalendář %1$s	Kalendár %1$s	Календарь %1$s
+ct_offline	No connection and no saved calendars – built-in calendar (selected major contests, dates calculated from the rules)	Brak połączenia i zapisanych kalendarzy – kalendarz wbudowany (wybrane duże zawody, terminy wyliczone z reguł)	Keine Verbindung und keine gespeicherten Kalender – integrierter Kalender (ausgewählte große Contests, Termine aus den Regeln berechnet)	Bez připojení a uložených kalendářů – vestavěný kalendář (vybrané velké závody, termíny vypočtené z pravidel)	Bez pripojenia a uložených kalendárov – vstavaný kalendár (vybrané veľké preteky, termíny vypočítané z pravidiel)	Нет соединения и сохранённых календарей – встроенный календарь (некоторые крупные соревнования, даты рассчитаны по положениям)
+ct_unavailable	%1$s: unavailable	%1$s: niedostępny	%1$s: nicht verfügbar	%1$s: nedostupný	%1$s: nedostupný	%1$s: недоступен
+ct_copy_from	%1$s: copy from %2$s	%1$s: kopia z %2$s	%1$s: Kopie vom %2$s	%1$s: kopie z %2$s	%1$s: kópia z %2$s	%1$s: копия от %2$s
+ct_running_left	ON NOW – ends in %1$s	TRWA – do końca %1$s	LÄUFT – endet in %1$s	PROBÍHÁ – do konce %1$s	PREBIEHA – do konca %1$s	ИДУТ – окончание через %1$s
+ct_starts_in	Starts in %1$s	Start za %1$s	Start in %1$s	Start za %1$s	Štart o %1$s	Начало через %1$s
+ct_organizer	Organizer	Organizator	Veranstalter	Pořadatel	Organizátor	Организатор
+ct_exchange	Exchange	Wymiana	Austausch	Výměna	Výmena	Обмен
+ct_log_deadline	Log deadline	Termin wysyłki logów	Logeinsendeschluss	Termín zaslání deníků	Termín zaslania denníkov	Срок отправки отчётов
+ct_organizer_page	Organizer's page	Strona organizatora	Seite des Veranstalters	Stránka pořadatele	Stránka organizátora	Страница организатора
+ct_source_page	Contest page on %1$s	Strona zawodów na %1$s	Contest-Seite auf %1$s	Stránka závodu na %1$s	Stránka pretekov na %1$s	Страница соревнований на %1$s
+ct_rules	Rules	Regulamin	Ausschreibung	Propozice	Propozície	Положение
+ct_search_rules	Search for rules	Szukaj regulaminu	Ausschreibung suchen	Hledat propozice	Hľadať propozície	Найти положение
+ct_rules_pl	Rules (PL)	Regulamin PL	Ausschreibung (PL)	Propozice (PL)	Propozície (PL)	Положение (PL)
+ct_logs_by	Logs by: %1$s	Logi do: %1$s	Logs bis: %1$s	Deníky do: %1$s	Denníky do: %1$s	Отчёты до: %1$s
+ct_rules_pl_value	Rules (PL): %1$s	Regulamin PL: %1$s	Ausschreibung (PL): %1$s	Propozice (PL): %1$s	Propozície (PL): %1$s	Положение (PL): %1$s
+plural:dur_days	one:%1$d day|other:%1$d days	one:%1$d dzień|few:%1$d dni|many:%1$d dni|other:%1$d dni	one:%1$d Tag|other:%1$d Tage	one:%1$d den|few:%1$d dny|many:%1$d dne|other:%1$d dní	one:%1$d deň|few:%1$d dni|many:%1$d dňa|other:%1$d dní	one:%1$d день|few:%1$d дня|many:%1$d дней|other:%1$d дня
+dur_hours	%1$d h	%1$d godz.	%1$d Std.	%1$d h	%1$d h	%1$d ч
+dur_hours_minutes	%1$d h %2$d min	%1$d godz. %2$d min	%1$d Std. %2$d Min.	%1$d h %2$d min	%1$d h %2$d min	%1$d ч %2$d мин
+dur_minutes	%1$d min	%1$d min	%1$d Min.	%1$d min	%1$d min	%1$d мин
+ct_mode_cw	CW	CW	CW	CW	CW	CW
+ct_mode_ssb	SSB	SSB	SSB	SSB	SSB	SSB
+ct_qrp	QRP	QRP	QRP	QRP	QRP	QRP

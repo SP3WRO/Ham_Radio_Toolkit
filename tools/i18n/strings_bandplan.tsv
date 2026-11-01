@@ -1,66 +1,66 @@
-# key	en	pl	de	cs	sk
+# key	en	pl	de	cs	sk	ru
 # Zwroty z polskich opisów segmentów bandplanu (BandplanText) – bez wielkiej litery na początku
-bp_ph_global_emergency	global emergency frequency	globalna częstotliwość kryzysowa	globale Notfunkfrequenz	globální tísňový kmitočet	globálny tiesňový kmitočet
-bp_ph_intercontinental	intercontinental contacts	łączności międzykontynentalne	interkontinentale Verbindungen	mezikontinentální spojení	medzikontinentálne spojenia
-bp_ph_emergency_traffic	emergency traffic	łączność kryzysowa	Notfunk	tísňový provoz	tiesňová prevádzka
-bp_ph_emergency	emergency	kryzysowa	Notfunk	tísňový	tiesňový
-bp_ph_automated_stations	automatic stations	zautomatyzowane stacje	automatische Stationen	automatické stanice	automatické stanice
-bp_ph_automatic_stations2	automatic stations	automatyczne stacje	automatische Stationen	automatické stanice	automatické stanice
-bp_ph_automatic_stations	automatic stations	stacje automatyczne	automatische Stationen	automatické stanice	automatické stanice
-bp_ph_dx_window	DX window	okno DX	DX-Fenster	DX okno	DX okno
-bp_ph_cw_only	CW only	tylko CW	nur CW	jen CW	len CW
-bp_ph_narrow_modes	narrow-band modes	wąskie emisje	Schmalbandbetriebsarten	úzkopásmové provozy	úzkopásmové prevádzky
-bp_ph_narrowband	narrow-band	wąskopasmowe	Schmalband	úzkopásmové	úzkopásmové
-bp_ph_digital_modes	digital modes	emisje cyfrowe	digitale Betriebsarten	digitální provozy	digitálne prevádzky
-bp_ph_wideband	wide-band	szerokopasmowe	Breitband	širokopásmové	širokopásmové
-bp_ph_all_modes	all modes	wszystkie emisje	alle Betriebsarten	všechny provozy	všetky prevádzky
-bp_ph_all	all	wszystkie	alle	vše	všetky
-bp_ph_phone_usb	phone on USB	fonia na USB	Fonie auf USB	fonie na USB	fónia na USB
-bp_ph_phone	phone	fonia	Fonie	fonie	fónia
-bp_ph_phone_acc	phone	fonię	Fonie	fonii	fóniu
-bp_ph_image	image	obraz	Bild	obraz	obraz
-bp_ph_contests	contests	zawody	Contest	závody	preteky
-bp_ph_weak_signals	weak signals	słabe sygnały	schwache Signale	slabé signály	slabé signály
-bp_ph_intl_calling	international calling	międzynarodowe wywołanie	internationaler Anruf	mezinárodní výzva	medzinárodná výzva
-bp_ph_calling	calling	wywołanie	Anruf	výzva	výzva
-bp_ph_intl_beacons	international beacons	beacony międzynarodowe	internationale Baken	mezinárodní majáky	medzinárodné majáky
-bp_ph_no_cw_beacons	no CW beacons	bez beaconów CW	ohne CW-Baken	bez CW majáků	bez CW majákov
-bp_ph_digital_beacons	digital beacons	beacony cyfrowe	digitale Baken	digitální majáky	digitálne majáky
-bp_ph_beacons	beacons	beacony	Baken	majáky	majáky
-bp_ph_regional_local	regional and local	regionalne i lokalne	regional und lokal	regionální a místní	regionálne a miestne
-bp_ph_remote_control	remote control	zdalne sterowanie	Fernsteuerung	dálkové ovládání	diaľkové ovládanie
-bp_ph_earth_space	Earth-to-space only	tylko kierunek Ziemia–kosmos	nur Richtung Erde–Weltraum	jen směr Země–vesmír	len smer Zem–vesmír
-bp_ph_sat_uplink	satellite uplink	uplink satelitów	Satelliten-Uplink	uplink družic	uplink družíc
-bp_ph_sat_aprs	satellite APRS	APRS satelitarny	Satelliten-APRS	satelitní APRS	satelitné APRS
-bp_ph_satellites	satellites	satelity	Satelliten	družice	družice
-bp_ph_exclusive	exclusive	wyłącznie	ausschließlich	výhradně	výhradne
-bp_ph_experiments	experiments	eksperymenty	Experimente	experimenty	experimenty
-bp_ph_amateur_subband	amateur sub-band	sub-band amatorski	Amateur-Teilband	radioamatérské podpásmo	rádioamatérske podpásmo
-bp_ph_local_subband	local communication sub-band	sub-band komunikacji lokalnej	Teilband für Lokalverbindungen	podpásmo místního provozu	podpásmo miestnej prevádzky
-bp_ph_rep_inputs	repeater inputs	wejścia przemienników	Relaiseingaben	vstupy převáděčů	vstupy prevádzačov
-bp_ph_rep_outputs	repeater outputs	wyjścia przemienników	Relaisausgaben	výstupy převáděčů	výstupy prevádzačov
-bp_ph_inputs_outputs	inputs and outputs	wejścia i wyjścia	Eingaben und Ausgaben	vstupy a výstupy	vstupy a výstupy
-bp_ph_output	output	wyjście	Ausgabe	výstup	výstup
-bp_ph_input	input	wejście	Eingabe	vstup	vstup
-bp_ph_repeaters	repeaters	przemienniki	Relais	převáděče	prevádzače
-bp_ph_local_option	local option	opcja lokalna	lokale Option	místní volba	miestna voľba
-bp_ph_usually	usually	zwykle	meist	obvykle	obvykle
-bp_ph_national_plans	per national plans	wg planów krajowych	nach nationalen Plänen	dle národních plánů	podľa národných plánov
-bp_ph_national_alloc	per national allocations	wg krajowych przydziałów	nach nationaler Zuteilung	dle národních přidělení	podľa národných pridelení
-bp_ph_links	links	łącza	Links	spoje	spoje
-bp_ph_gateways	internet gateways	bramki internetowe	Internet-Gateways	internetové brány	internetové brány
-bp_ph_telegraphy	telegraphy	telegrafia	Telegrafie	telegrafie	telegrafia
-bp_ph_channel	channel	kanał	Kanal	kanál	kanál
-bp_ph_digital	digital	cyfrowe	digital	digitální	digitálne
-bp_ph_no_ssb	no SSB!	brak SSB!	kein SSB!	bez SSB!	bez SSB!
-bp_ph_some_countries	some countries allow	niektóre kraje dopuszczają	einige Länder erlauben	některé země povolují	niektoré krajiny povoľujú
-bp_ph_recommended	recommended	zalecana	empfohlen	doporučená	odporúčaná
-bp_ph_europe	Europe	Europa	Europa	Evropa	Európa
-bp_ph_caribbean	Caribbean: also protected	Karaiby: chroniona też	Karibik: ebenfalls geschützt	Karibik: chráněná také	Karibik: chránená aj
-bp_ph_other_freq	some countries use another one – check the national band plan	część krajów używa innej – sprawdź krajowy bandplan	einige Länder nutzen eine andere – prüfe den nationalen Bandplan	některé země používají jinou – ověř národní kmitočtový plán	niektoré krajiny používajú inú – over národný kmitočtový plán
-bp_ph_on_vhf	on VHF	na UKF	auf UKW	na VKV	na VKV
-bp_ph_also	also	także	auch	také	aj
-bp_ph_and	and	i	und	a	a
-bp_ph_up_to	up to	do	bis	do	do
-bp_ph_from	from	od	ab	od	od
-bp_ph_in	in	w	in	v	v
+bp_ph_global_emergency	global emergency frequency	globalna częstotliwość kryzysowa	globale Notfunkfrequenz	globální tísňový kmitočet	globálny tiesňový kmitočet	всемирная аварийная частота
+bp_ph_intercontinental	intercontinental contacts	łączności międzykontynentalne	interkontinentale Verbindungen	mezikontinentální spojení	medzikontinentálne spojenia	межконтинентальные связи
+bp_ph_emergency_traffic	emergency traffic	łączność kryzysowa	Notfunk	tísňový provoz	tiesňová prevádzka	аварийный трафик
+bp_ph_emergency	emergency	kryzysowa	Notfunk	tísňový	tiesňový	аварийная связь
+bp_ph_automated_stations	automatic stations	zautomatyzowane stacje	automatische Stationen	automatické stanice	automatické stanice	автоматические станции
+bp_ph_automatic_stations2	automatic stations	automatyczne stacje	automatische Stationen	automatické stanice	automatické stanice	автоматические станции
+bp_ph_automatic_stations	automatic stations	stacje automatyczne	automatische Stationen	automatické stanice	automatické stanice	автоматические станции
+bp_ph_dx_window	DX window	okno DX	DX-Fenster	DX okno	DX okno	DX-окно
+bp_ph_cw_only	CW only	tylko CW	nur CW	jen CW	len CW	только CW
+bp_ph_narrow_modes	narrow-band modes	wąskie emisje	Schmalbandbetriebsarten	úzkopásmové provozy	úzkopásmové prevádzky	узкополосные виды
+bp_ph_narrowband	narrow-band	wąskopasmowe	Schmalband	úzkopásmové	úzkopásmové	узкополосные
+bp_ph_digital_modes	digital modes	emisje cyfrowe	digitale Betriebsarten	digitální provozy	digitálne prevádzky	цифровые виды
+bp_ph_wideband	wide-band	szerokopasmowe	Breitband	širokopásmové	širokopásmové	широкополосные
+bp_ph_all_modes	all modes	wszystkie emisje	alle Betriebsarten	všechny provozy	všetky prevádzky	все виды излучения
+bp_ph_all	all	wszystkie	alle	vše	všetky	все
+bp_ph_phone_usb	phone on USB	fonia na USB	Fonie auf USB	fonie na USB	fónia na USB	телефон на USB
+bp_ph_phone	phone	fonia	Fonie	fonie	fónia	телефон
+bp_ph_phone_acc	phone	fonię	Fonie	fonii	fóniu	телефон
+bp_ph_image	image	obraz	Bild	obraz	obraz	изображение
+bp_ph_contests	contests	zawody	Contest	závody	preteky	соревнования
+bp_ph_weak_signals	weak signals	słabe sygnały	schwache Signale	slabé signály	slabé signály	слабые сигналы
+bp_ph_intl_calling	international calling	międzynarodowe wywołanie	internationaler Anruf	mezinárodní výzva	medzinárodná výzva	международный вызов
+bp_ph_calling	calling	wywołanie	Anruf	výzva	výzva	вызов
+bp_ph_intl_beacons	international beacons	beacony międzynarodowe	internationale Baken	mezinárodní majáky	medzinárodné majáky	международные маяки
+bp_ph_no_cw_beacons	no CW beacons	bez beaconów CW	ohne CW-Baken	bez CW majáků	bez CW majákov	без CW-маяков
+bp_ph_digital_beacons	digital beacons	beacony cyfrowe	digitale Baken	digitální majáky	digitálne majáky	цифровые маяки
+bp_ph_beacons	beacons	beacony	Baken	majáky	majáky	маяки
+bp_ph_regional_local	regional and local	regionalne i lokalne	regional und lokal	regionální a místní	regionálne a miestne	региональные и местные
+bp_ph_remote_control	remote control	zdalne sterowanie	Fernsteuerung	dálkové ovládání	diaľkové ovládanie	дистанционное управление
+bp_ph_earth_space	Earth-to-space only	tylko kierunek Ziemia–kosmos	nur Richtung Erde–Weltraum	jen směr Země–vesmír	len smer Zem–vesmír	только Земля–космос
+bp_ph_sat_uplink	satellite uplink	uplink satelitów	Satelliten-Uplink	uplink družic	uplink družíc	спутниковый аплинк
+bp_ph_sat_aprs	satellite APRS	APRS satelitarny	Satelliten-APRS	satelitní APRS	satelitné APRS	спутниковый APRS
+bp_ph_satellites	satellites	satelity	Satelliten	družice	družice	спутники
+bp_ph_exclusive	exclusive	wyłącznie	ausschließlich	výhradně	výhradne	исключительно
+bp_ph_experiments	experiments	eksperymenty	Experimente	experimenty	experimenty	эксперименты
+bp_ph_amateur_subband	amateur sub-band	sub-band amatorski	Amateur-Teilband	radioamatérské podpásmo	rádioamatérske podpásmo	любительский участок
+bp_ph_local_subband	local communication sub-band	sub-band komunikacji lokalnej	Teilband für Lokalverbindungen	podpásmo místního provozu	podpásmo miestnej prevádzky	участок местной связи
+bp_ph_rep_inputs	repeater inputs	wejścia przemienników	Relaiseingaben	vstupy převáděčů	vstupy prevádzačov	входы ретрансляторов
+bp_ph_rep_outputs	repeater outputs	wyjścia przemienników	Relaisausgaben	výstupy převáděčů	výstupy prevádzačov	выходы ретрансляторов
+bp_ph_inputs_outputs	inputs and outputs	wejścia i wyjścia	Eingaben und Ausgaben	vstupy a výstupy	vstupy a výstupy	входы и выходы
+bp_ph_output	output	wyjście	Ausgabe	výstup	výstup	выход
+bp_ph_input	input	wejście	Eingabe	vstup	vstup	вход
+bp_ph_repeaters	repeaters	przemienniki	Relais	převáděče	prevádzače	ретрансляторы
+bp_ph_local_option	local option	opcja lokalna	lokale Option	místní volba	miestna voľba	местный вариант
+bp_ph_usually	usually	zwykle	meist	obvykle	obvykle	обычно
+bp_ph_national_plans	per national plans	wg planów krajowych	nach nationalen Plänen	dle národních plánů	podľa národných plánov	согласно национальным планам
+bp_ph_national_alloc	per national allocations	wg krajowych przydziałów	nach nationaler Zuteilung	dle národních přidělení	podľa národných pridelení	согласно национальным распределениям
+bp_ph_links	links	łącza	Links	spoje	spoje	линки
+bp_ph_gateways	internet gateways	bramki internetowe	Internet-Gateways	internetové brány	internetové brány	интернет-шлюзы
+bp_ph_telegraphy	telegraphy	telegrafia	Telegrafie	telegrafie	telegrafia	телеграф
+bp_ph_channel	channel	kanał	Kanal	kanál	kanál	канал
+bp_ph_digital	digital	cyfrowe	digital	digitální	digitálne	цифровые
+bp_ph_no_ssb	no SSB!	brak SSB!	kein SSB!	bez SSB!	bez SSB!	без SSB!
+bp_ph_some_countries	some countries allow	niektóre kraje dopuszczają	einige Länder erlauben	některé země povolují	niektoré krajiny povoľujú	некоторые страны разрешают
+bp_ph_recommended	recommended	zalecana	empfohlen	doporučená	odporúčaná	рекомендуется
+bp_ph_europe	Europe	Europa	Europa	Evropa	Európa	Европа
+bp_ph_caribbean	Caribbean: also protected	Karaiby: chroniona też	Karibik: ebenfalls geschützt	Karibik: chráněná také	Karibik: chránená aj	Карибы: также защищённая
+bp_ph_other_freq	some countries use another one – check the national band plan	część krajów używa innej – sprawdź krajowy bandplan	einige Länder nutzen eine andere – prüfe den nationalen Bandplan	některé země používají jinou – ověř národní kmitočtový plán	niektoré krajiny používajú inú – over národný kmitočtový plán	в некоторых странах другая – проверьте национальный план
+bp_ph_on_vhf	on VHF	na UKF	auf UKW	na VKV	na VKV	на УКВ
+bp_ph_also	also	także	auch	také	aj	также
+bp_ph_and	and	i	und	a	a	и
+bp_ph_up_to	up to	do	bis	do	do	до
+bp_ph_from	from	od	ab	od	od	от
+bp_ph_in	in	w	in	v	v	в

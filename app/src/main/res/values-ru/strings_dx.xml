@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_dx.tsv -->
+<resources>
+    <string name="dx_filters">Фильтры</string>
+    <string name="dx_spot_it">Отправить спот</string>
+    <string name="dx_filtering">Фильтры спотов</string>
+    <string name="dx_reset_filters">Сбросить фильтры</string>
+    <string name="dx_search_hint">Поиск DX-станции, споттера…</string>
+    <string name="dx_band">Диапазон:</string>
+    <string name="dx_mode">Вид работы:</string>
+    <string name="dx_country">Страна:</string>
+    <string name="dx_country_count">Страна (%1$d):</string>
+    <string name="dx_country_hint">например, Япония</string>
+    <string name="dx_updated">Обновлено: %1$s</string>
+    <string name="dx_spots_count">Спотов: %1$d</string>
+    <string name="dx_no_spots">Нет спотов, подходящих под выбранные фильтры.</string>
+    <string name="dx_qso_logged">QSO с %1$s записано в журнал</string>
+    <string name="dx_sending_spot">Отправка спота…</string>
+    <string name="dx_invalid_freq">Неверная частота</string>
+    <string name="dx_error_download">Ошибка загрузки данных: %1$s</string>
+    <string name="dx_error_send">Ошибка отправки: %1$s</string>
+    <string name="spot_new_country">НОВАЯ СТРАНА</string>
+    <string name="spot_award">ДИПЛОМ: %1$s</string>
+    <string name="addspot_title">Добавить новый спот</string>
+    <string name="addspot_dx_call">Позывной DX</string>
+    <string name="addspot_freq">Частота (кГц)</string>
+    <string name="addspot_comment">Комментарий (необязательно)</string>
+</resources>

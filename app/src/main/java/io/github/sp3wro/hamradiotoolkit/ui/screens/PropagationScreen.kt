@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.OpenInNew
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
@@ -268,6 +269,7 @@ fun IndicatorItem(label: String, value: String) {
 
 @Composable
 fun HfConditionsList(conditions: List<BandCondition>) {
+    val context = LocalContext.current
     val groupedByBand = conditions.groupBy { it.name }
 
     LazyColumn(contentPadding = PaddingValues(16.dp)) {
@@ -324,6 +326,14 @@ fun HfConditionsList(conditions: List<BandCondition>) {
                 }
             }
             HorizontalDivider()
+        }
+
+        item {
+            TextButton(onClick = { openUrl(context, "https://www.hamqsl.com") }, modifier = Modifier.padding(top = 8.dp)) {
+                Icon(Icons.AutoMirrored.Filled.OpenInNew, contentDescription = null, modifier = Modifier.size(18.dp))
+                Spacer(Modifier.width(6.dp))
+                Text(stringResource(R.string.common_source_value, "HamQSL – Paul N0NBH"))
+            }
         }
     }
 }

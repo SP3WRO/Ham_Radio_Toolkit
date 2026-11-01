@@ -38,10 +38,9 @@
     <string name="settings_source_poland">%1$s (Polska)</string>
     <string name="settings_source_world">%1$s (świat)</string>
     <string name="settings_source_europe">%1$s (Europa)</string>
-    <string name="settings_source_token">%1$s (wymaga tokenu)</string>
     <string name="settings_repeater_note">Poza Polską źródło przełącza się samo przy uruchomieniu aplikacji na „HearHam + repeatermap.de”, a po powrocie wraca do poprzedniego. Wybór ręczny ma pierwszeństwo. Szczegóły DMR (sieć, talkgrupy) z RadioID.net.</string>
     <string name="settings_search_radius">Promień wyszukiwania</string>
-    <string name="settings_aprs_ssid_placeholder">np. -7 (samochód), -9 (pieszo)</string>
+    <string name="settings_aprs_ssid_placeholder">np. -5 (telefon), -7 (ręczna), -9 (pojazd)</string>
     <string name="settings_aprs_ssid_invalid">SSID od 0 do 15</string>
     <string name="settings_aprs_icon">Ikona na mapie</string>
     <string name="settings_aprs_icon_car">Samochód</string>
@@ -50,6 +49,10 @@
     <string name="settings_aprs_icon_walker">Pieszo</string>
     <string name="settings_aprs_icon_home">Dom</string>
     <string name="settings_aprs_icon_tent">Namiot / portable</string>
+    <string name="settings_aprs_icon_custom">Własna ikona</string>
+    <string name="settings_aprs_icon_custom_desc">Kod APRS: tabela i symbol, np. /b to rower</string>
+    <string name="settings_aprs_icon_custom_value">Własna: %1$s</string>
+    <string name="settings_aprs_icon_custom_invalid">Dwa znaki: tabela (ukośnik, ukośnik wsteczny, cyfra lub wielka litera) i symbol</string>
     <string name="settings_aprs_comment">Komentarz w beaconie</string>
     <string name="settings_aprs_radius">Promień nasłuchu</string>
     <string name="settings_section_programs">Aktywacje – lista obiektów</string>
@@ -81,8 +84,4 @@
     <string name="settings_qrzcq_desc">Dodatkowe źródło lokatorów stacji (konto na qrzcq.com)</string>
     <string name="settings_qrz_key">QRZ Logbook – klucz API</string>
     <string name="settings_qrz_key_desc">Z ustawień logbooka na qrz.com; wysyłka wymaga subskrypcji QRZ</string>
-    <string name="settings_rb_token">RepeaterBook – token aplikacji</string>
-    <string name="settings_rb_token_desc">Token rbuapp_… z panelu API Apps na repeaterbook.com (źródło przemienników „RepeaterBook”)</string>
-    <string name="settings_rb_contact">RepeaterBook – e-mail kontaktowy</string>
-    <string name="settings_rb_contact_desc">RepeaterBook wymaga adresu kontaktowego w zapytaniach</string>
 </resources>

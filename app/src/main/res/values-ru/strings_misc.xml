@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_misc.tsv -->
+<resources>
+    <string name="err_repeatermap">repeatermap.de не отвечает</string>
+    <string name="err_not_wav">Это не файл WAV</string>
+    <string name="err_wav_no_audio">В файле WAV нет аудиоданных</string>
+    <string name="dec_decoding_file_mode">Декодирование файла (%1$s)…</string>
+    <string name="aprs_icon_desc">Значок APRS %1$s</string>
+    <string name="map_zoom_out">Отдалить</string>
+    <string name="hp_pressure">Давление</string>
+    <string name="hp_temp_ext">Внешн. темп.</string>
+    <string name="hp_temp1">Темп. 1</string>
+    <string name="hp_temp2">Темп. 2</string>
+    <string name="hp_humidity">Влажность</string>
+    <string name="hp_solar">Солнечная панель</string>
+    <string name="hp_voltage1">Напряжение 1</string>
+    <string name="hp_voltage2">Напряжение 2</string>
+    <string name="hp_cutdown_battery">Батарея отсечки</string>
+    <string name="r36_unsupported_audio">Неподдерживаемый аудиоформат</string>
+    <string name="r36_mic_failed">Не удалось запустить микрофон</string>
+    <string name="r36_listening">Приём…</string>
+    <string name="r36_mic_read_error">Ошибка чтения с микрофона</string>
+    <string name="r36_file_done">Декодирование файла завершено</string>
+    <string name="ct_note_unconfirmed">Дата не подтверждена – соревнования могут не состояться</string>
+    <string name="ct_note_old_rules">Ссылка на положение прошлого года – оно ещё может измениться</string>
+    <string name="ct_note_ru_by">QSO и множители со станциями из России и Беларуси не засчитываются</string>
+</resources>

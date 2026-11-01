@@ -4,7 +4,6 @@ import io.github.sp3wro.hamradiotoolkit.R
 import io.github.sp3wro.hamradiotoolkit.AppStrings
 import android.content.Context
 import android.util.Log
-import io.github.sp3wro.hamradiotoolkit.data.geo.CountryInfo
 import io.github.sp3wro.hamradiotoolkit.data.model.Repeater
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
@@ -36,7 +35,6 @@ object RepeaterSources {
     const val WORLD = "international"
     const val HEARHAM = "hearham"
     const val REPEATERMAP = "repeatermap"
-    const val REPEATERBOOK = "repeaterbook_api"
 
     fun isPolish(source: String) = source == PRZEMIENNIKI_NET || source == PRZEMIENNIKI_EU
 
@@ -46,7 +44,6 @@ object RepeaterSources {
         WORLD -> "HearHam + repeatermap.de"
         HEARHAM -> "HearHam"
         REPEATERMAP -> "repeatermap.de"
-        REPEATERBOOK -> "RepeaterBook"
         else -> source
     }
 }
@@ -86,8 +83,6 @@ object InternationalRepeaters {
     private const val HEARHAM_URL = "https://hearham.com/api/repeaters/v1"
     private const val HEARHAM_MAX_AGE_MS = 7L * 24 * 3600 * 1000
     private const val REPEATERMAP_URL = "https://www.repeatermap.de/api/v1/map.php"
-    private const val REPEATERBOOK_MAX_AGE_MS = 24L * 3600 * 1000
-
     /** Promień pobierania – maksymalny promień z ustawień, żeby zmiana suwaka nie wymagała nowego pobrania. */
     const val FETCH_RADIUS_KM = 210.0
 
@@ -221,86 +216,6 @@ object InternationalRepeaters {
     private val CTCSS_IN_TEXT = Regex("""(?i)(?:CTCSS|PL|Ton|Tone)\s*:?\s*(\d{2,3}[.,]\d)""")
     private val COLOR_CODE_IN_TEXT = Regex("""(?i)\bCC\s*:?\s*(\d{1,2})\b""")
 
-    // ---------------------------------------------------------------- RepeaterBook (token użytkownika)
-
-    suspend fun repeaterBook(context: Context, country: CountryInfo, token: String, contact: String): List<Repeater> =
-        withContext(Dispatchers.IO) {
-            if (token.isBlank()) throw IOException("Wpisz token RepeaterBook w Ustawieniach → Konta w serwisach")
-            val url = repeaterBookUrl(country)
-            val file = File(cacheDir(context), "rb_" + url.hashCode().toString(16) + ".json")
-            val fresh = file.exists() && System.currentTimeMillis() - file.lastModified() < REPEATERBOOK_MAX_AGE_MS
-            val text = if (fresh) file.readText() else {
-                val ua = "HamRadioToolkit/1.0 (Android" + (if (contact.isNotBlank()) "; $contact" else "") + ")"
-                val request = Request.Builder().url(url)
-                    .header("User-Agent", ua)
-                    .header("X-RB-App-Token", token.trim())
-                    .build()
-                HttpClients.default.newCall(request).execute().use { response ->
-                    val body = response.body?.string().orEmpty()
-                    if (response.code == 429) throw IOException(AppStrings.get(R.string.err_rb_429))
-                    if (!response.isSuccessful) {
-                        val code = Regex(""""(?:error|code)"\s*:\s*"([^"]+)"""").find(body)?.groupValues?.get(1)
-                        throw IOException("RepeaterBook: HTTP ${response.code}" + (code?.let { " ($it)" } ?: ""))
-                    }
-                    writeAtomically(file, body)
-                    body
-                }
-            }
-            parseRepeaterBook(text)
-        }
-
-    private fun repeaterBookUrl(country: CountryInfo): String {
-        val base = "https://www.repeaterbook.com/api/"
-        return when (country.isoCode) {
-            "US" -> {
-                val fips = US_FIPS[country.adminArea]
-                (base + "export.php").toHttpUrl().newBuilder().addQueryParameter("country", "United States")
-                    .apply { if (fips != null) addQueryParameter("state_id", fips) }.build().toString()
-            }
-            "CA", "MX" -> (base + "export.php").toHttpUrl().newBuilder()
-                .addQueryParameter("country", country.nameEn).build().toString()
-            else -> (base + "exportROW.php").toHttpUrl().newBuilder()
-                .addQueryParameter("country", country.nameEn).build().toString()
-        }
-    }
-
-    /** Odpowiedź eksportu RepeaterBook: {"count": n, "results": [{...}]} – nazwy pól wg dokumentacji API. */
-    fun parseRepeaterBook(text: String): List<Repeater> {
-        val root = json.parseToJsonElement(text)
-        val results = (root as? JsonObject)?.get("results") as? JsonArray ?: return emptyList()
-        return results.mapNotNull { el ->
-            val o = el as? JsonObject ?: return@mapNotNull null
-            val call = o.str("Callsign").trim().uppercase()
-            val output = o.str("Frequency").toDoubleOrNull() ?: return@mapNotNull null
-            val input = o.str("Input Freq").toDoubleOrNull() ?: output
-            val lat = o.str("Lat").toDoubleOrNull() ?: return@mapNotNull null
-            val lon = o.str("Long").toDoubleOrNull() ?: return@mapNotNull null
-            val modes = buildList {
-                if (o.yes("FM Analog")) add("FM")
-                if (o.yes("DMR")) add("DMR")
-                if (o.yes("D-Star")) add("D-STAR")
-                if (o.yes("System Fusion")) add("C4FM")
-                if (o.yes("NXDN")) add("NXDN")
-                if (o.yes("APCO P-25")) add("P25")
-                if (o.yes("Tetra")) add("TETRA")
-            }.ifEmpty { listOf("FM") }
-            Repeater(
-                callsign = call,
-                qth = listOf(o.str("Nearest City"), o.str("Landmark")).filter { it.isNotBlank() }.joinToString(", "),
-                modes = modes,
-                userRx = output,
-                userTx = input,
-                requiredCtcss = ctcssOrDash(o.str("PL")),
-                status = if (o.str("Operational Status").contains("off", ignoreCase = true)) "off" else "working",
-                latitude = lat,
-                longitude = lon,
-                source = "RepeaterBook",
-                note = o.str("Notes").trim(),
-                dmrColorCode = o.str("DMR Color Code").trim()
-            )
-        }
-    }
-
     // ---------------------------------------------------------------- RadioID (szczegóły DMR na żądanie)
 
     data class DmrDetails(val colorCode: String, val network: String, val talkgroups: List<String>, val trustee: String)
@@ -409,7 +324,7 @@ object InternationalRepeaters {
 
     private fun get(url: String): String =
         HttpClients.default.newCall(Request.Builder().url(url).build()).execute().use { response ->
-            if (!response.isSuccessful) throw IOException("HTTP ${response.code} z ${url.toHttpUrl().host}")
+            if (!response.isSuccessful) throw IOException(AppStrings.get(R.string.err_http_from, response.code, "${url.toHttpUrl().host}"))
             response.body?.string() ?: throw IOException(AppStrings.get(R.string.err_empty_response_from, url.toHttpUrl().host))
         }
 
@@ -417,20 +332,4 @@ object InternationalRepeaters {
     private fun JsonObject.num(key: String): Double? = (this[key] as? JsonPrimitive)?.let { it.doubleOrNull ?: it.contentOrNull?.toDoubleOrNull() }
     private fun JsonObject.long(key: String): Long? = (this[key] as? JsonPrimitive)?.let { it.longOrNull ?: it.doubleOrNull?.toLong() }
     private fun JsonObject.int(key: String): Int? = (this[key] as? JsonPrimitive)?.let { it.intOrNull ?: it.contentOrNull?.toIntOrNull() }
-    private fun JsonObject.yes(key: String): Boolean = str(key).equals("Yes", ignoreCase = true)
-
-    // Kody FIPS stanów USA – RepeaterBook filtruje eksport po state_id
-    private val US_FIPS = mapOf(
-        "Alabama" to "01", "Alaska" to "02", "Arizona" to "04", "Arkansas" to "05", "California" to "06",
-        "Colorado" to "08", "Connecticut" to "09", "Delaware" to "10", "District of Columbia" to "11", "Florida" to "12",
-        "Georgia" to "13", "Hawaii" to "15", "Idaho" to "16", "Illinois" to "17", "Indiana" to "18", "Iowa" to "19",
-        "Kansas" to "20", "Kentucky" to "21", "Louisiana" to "22", "Maine" to "23", "Maryland" to "24",
-        "Massachusetts" to "25", "Michigan" to "26", "Minnesota" to "27", "Mississippi" to "28", "Missouri" to "29",
-        "Montana" to "30", "Nebraska" to "31", "Nevada" to "32", "New Hampshire" to "33", "New Jersey" to "34",
-        "New Mexico" to "35", "New York" to "36", "North Carolina" to "37", "North Dakota" to "38", "Ohio" to "39",
-        "Oklahoma" to "40", "Oregon" to "41", "Pennsylvania" to "42", "Rhode Island" to "44", "South Carolina" to "45",
-        "South Dakota" to "46", "Tennessee" to "47", "Texas" to "48", "Utah" to "49", "Vermont" to "50",
-        "Virginia" to "51", "Washington" to "53", "West Virginia" to "54", "Wisconsin" to "55", "Wyoming" to "56",
-        "Puerto Rico" to "72"
-    )
 }

@@ -44,10 +44,8 @@
     <string name="src_wwff">obiekty i spoty World Wide Flora &amp; Fauna</string>
     <string name="src_aprsis">pozycje stacji i nadawanie pozycji</string>
     <string name="src_rep_pl_eu">przemienniki w Polsce i Europie</string>
-    <string name="src_rep_pl">przemienniki w Polsce</string>
     <string name="src_rep_world">przemienniki na świecie</string>
     <string name="src_dmr_details">szczegóły przemienników DMR</string>
-    <string name="src_rb">przemienniki – z własnym tokenem</string>
     <string name="src_uke_name">UKE – rejestr pozwoleń amatorskich</string>
     <string name="src_uke">dane polskich stacji</string>
     <string name="src_callbook">callbook</string>
@@ -62,7 +60,7 @@
     <string name="src_sp9cxn">zawody krajowe i międzynarodowe</string>
     <string name="src_pkukf">kalendarz zawodów VHF/UHF/SHF</string>
     <string name="src_qrzru">kalendarz zawodów</string>
-    <string name="src_radiodyplom">akcje dyplomowe, stacje i ranking</string>
+    <string name="src_radiodyplom">akcje dyplomowe i mapa pasm</string>
     <string name="src_upload">wysyłka łączności</string>
     <string name="src_iaru_name">IARU Regiony 1, 2 i 3</string>
     <string name="src_iaru">bandplany</string>

@@ -1,11 +1,11 @@
 ﻿param([string]$Tsv = "", [string]$Res = (Join-Path $PSScriptRoot "..\..\app\src\main\res"))
-# Tabela: klucz <TAB> en <TAB> pl <TAB> de <TAB> cs <TAB> sk ; wiersze "#" to komentarze.
+# Tabela: klucz <TAB> en <TAB> pl <TAB> de <TAB> cs <TAB> sk <TAB> ru ; wiersze "#" to komentarze.
 # Liczba mnoga: klucz "plural:nazwa", wartości "one:..|few:..|many:..|other:..".
 # Tablica: klucz "array:nazwa", elementy rozdzielone " || ".
 $enc = New-Object System.Text.UTF8Encoding($false)
 # Bez -Tsv: wszystkie tabele z tego katalogu
 if ($Tsv -eq "") { Get-ChildItem $PSScriptRoot -Filter *.tsv | % { & $PSCommandPath -Tsv $_.FullName -Res $Res }; return }
-$langs = @("", "-pl", "-de", "-cs", "-sk")
+$langs = @("", "-pl", "-de", "-cs", "-sk", "-ru")
 $name = [IO.Path]::GetFileNameWithoutExtension($Tsv)
 function Esc([string]$s) {
     $s = $s.Replace('&', '&amp;').Replace('<', '&lt;').Replace('>', '&gt;')
@@ -22,13 +22,13 @@ foreach ($line in [IO.File]::ReadAllLines($Tsv, $enc)) {
     $n++
     if ($line.Trim() -eq "" -or $line.StartsWith("#")) { continue }
     $cols = $line.Split("`t")
-    if ($cols.Count -ne 6) { throw "$($Tsv):$n – oczekiwano 6 kolumn, jest $($cols.Count): $line" }
+    if ($cols.Count -ne 7) { throw "$($Tsv):$n – oczekiwano 7 kolumn, jest $($cols.Count): $line" }
     $rows += ,$cols
 }
 $keys = $rows | % { $_[0] }
 $dup = $keys | Group-Object | ? Count -gt 1
 if ($dup) { throw "Powtórzone klucze: $($dup.Name -join ', ')" }
-for ($i = 0; $i -lt 5; $i++) {
+for ($i = 0; $i -lt 6; $i++) {
     $sb = New-Object System.Text.StringBuilder
     [void]$sb.AppendLine('<?xml version="1.0" encoding="utf-8"?>')
     [void]$sb.AppendLine("<!-- Wygenerowane z tabeli tłumaczeń $name.tsv -->")
@@ -56,4 +56,4 @@ for ($i = 0; $i -lt 5; $i++) {
     if (-not (Test-Path $dir)) { New-Item -ItemType Directory $dir | Out-Null }
     [IO.File]::WriteAllText((Join-Path $dir "$name.xml"), $sb.ToString(), $enc)
 }
-"$name : $($rows.Count) wpisów x 5 języków"
+"$name : $($rows.Count) wpisów x 6 języków"

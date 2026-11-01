@@ -150,6 +150,7 @@ object QrzcqClient {
         }
     }
 
+    // Hasło musi iść w adresie: API nie przyjmuje POST (sprawdzone 2026-11-01), a połączenie to HTTPS
     private fun login(user: String, password: String): String {
         val url = URL.toHttpUrl().newBuilder()
             .addQueryParameter("username", user)
@@ -160,8 +161,8 @@ object QrzcqClient {
         val key = tag(xml, "Key")
         if (key.isEmpty()) {
             val message = when (val error = tag(xml, "Error")) {
-                "" -> "logowanie nieudane"
-                else -> if (error.contains("premium", ignoreCase = true)) "konto wymaga pakietu Premium" else error
+                "" -> AppStrings.get(R.string.cb_login_failed)
+                else -> if (error.contains("premium", ignoreCase = true)) AppStrings.get(R.string.cb_premium_required) else error
             }
             sessionKey = null
             loginError = System.currentTimeMillis() to message

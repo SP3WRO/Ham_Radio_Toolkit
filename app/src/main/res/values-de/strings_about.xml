@@ -44,10 +44,8 @@
     <string name="src_wwff">World-Wide-Flora-&amp;-Fauna-Referenzen und -Spots</string>
     <string name="src_aprsis">Stationspositionen und Positionsaussendung</string>
     <string name="src_rep_pl_eu">Relais in Polen und Europa</string>
-    <string name="src_rep_pl">Relais in Polen</string>
     <string name="src_rep_world">Relais weltweit</string>
     <string name="src_dmr_details">Details zu DMR-Relais</string>
-    <string name="src_rb">Relais – mit eigenem Token</string>
     <string name="src_uke_name">UKE – polnisches Register der Amateurfunkgenehmigungen</string>
     <string name="src_uke">Daten polnischer Stationen</string>
     <string name="src_callbook">Callbook</string>
@@ -62,7 +60,7 @@
     <string name="src_sp9cxn">nationale und internationale Contests</string>
     <string name="src_pkukf">VHF/UHF/SHF-Contestkalender</string>
     <string name="src_qrzru">Contestkalender</string>
-    <string name="src_radiodyplom">Diplomaktionen, Stationen und Rangliste</string>
+    <string name="src_radiodyplom">Diplomaktionen und Bandkarte</string>
     <string name="src_upload">QSO-Upload</string>
     <string name="src_iaru_name">IARU-Regionen 1, 2 und 3</string>
     <string name="src_iaru">Bandpläne</string>

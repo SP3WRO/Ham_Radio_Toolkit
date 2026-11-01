@@ -1,62 +1,62 @@
-# key	en	pl	de	cs	sk
-log_title	Logger	Logger	Logbuch	Deník	Denník
-log_count	%1$d QSO	%1$d QSO	%1$d QSO	%1$d QSO	%1$d QSO
-log_count_filtered	%1$d of %2$d QSO	%1$d z %2$d QSO	%1$d von %2$d QSO	%1$d z %2$d QSO	%1$d z %2$d QSO
-log_search	Search the log	Szukaj w logu	Im Log suchen	Hledat v deníku	Hľadať v denníku
-log_stats	Statistics	Statystyki	Statistik	Statistiky	Štatistiky
-log_upload	Upload to QRZ/eQSL	Wyślij do QRZ/eQSL	Zu QRZ/eQSL hochladen	Odeslat na QRZ/eQSL	Odoslať na QRZ/eQSL
-log_more	More	Więcej	Mehr	Více	Viac
-log_import_adif	Import ADIF	Importuj ADIF	ADIF importieren	Importovat ADIF	Importovať ADIF
-log_export_adif	Export ADIF	Eksportuj ADIF	ADIF exportieren	Exportovat ADIF	Exportovať ADIF
-log_nothing_to_export	No QSOs to export	Brak łączności do wyeksportowania	Keine QSOs zum Exportieren	Žádná spojení k exportu	Žiadne spojenia na export
-log_add_qso	Add QSO	Dodaj QSO	QSO hinzufügen	Přidat QSO	Pridať QSO
-log_search_hint	Callsign, band, mode, country, date…	Znak, pasmo, emisja, kraj, data…	Rufzeichen, Band, Betriebsart, Land, Datum…	Značka, pásmo, provoz, země, datum…	Značka, pásmo, prevádzka, krajina, dátum…
-log_empty	No QSOs logged yet.\nTap “+” to add your first QSO,\nor import an ADIF file.	Brak zalogowanych łączności.\nKliknij „+”, aby dodać pierwsze QSO,\nalbo zaimportuj plik ADIF.	Noch keine QSOs geloggt.\nTippe auf „+“, um das erste QSO hinzuzufügen,\noder importiere eine ADIF-Datei.	Zatím žádná zapsaná spojení.\nKlepni na „+“ a přidej první QSO,\nnebo importuj soubor ADIF.	Zatiaľ žiadne zapísané spojenia.\nŤukni na „+“ a pridaj prvé QSO,\nalebo importuj súbor ADIF.
-log_no_match	No QSOs match “%1$s”	Brak QSO pasujących do „%1$s”	Keine QSOs passend zu „%1$s“	Žádná QSO neodpovídají „%1$s“	Žiadne QSO nezodpovedajú „%1$s“
-log_qso_updated	QSO updated	Zaktualizowano QSO	QSO aktualisiert	QSO aktualizováno	QSO aktualizované
-log_delete_title	Delete QSO?	Usunąć QSO?	QSO löschen?	Smazat QSO?	Odstrániť QSO?
-log_busy_export	Exporting ADIF…	Eksport ADIF…	ADIF-Export…	Export ADIF…	Export ADIF…
-log_busy_import	Importing ADIF…	Import ADIF…	ADIF-Import…	Import ADIF…	Import ADIF…
-log_cannot_open_file	cannot open the file	nie można otworzyć pliku	Datei kann nicht geöffnet werden	soubor nelze otevřít	súbor nie je možné otvoriť
-log_exported	Saved %1$d QSOs to the ADIF file	Zapisano %1$d QSO do pliku ADIF	%1$d QSOs in die ADIF-Datei gespeichert	Do souboru ADIF uloženo %1$d QSO	Do súboru ADIF uložených %1$d QSO
-log_file_write_error	Error writing the file: %1$s	Błąd zapisu pliku: %1$s	Fehler beim Schreiben der Datei: %1$s	Chyba zápisu souboru: %1$s	Chyba zápisu súboru: %1$s
-log_file_read_error	Error reading the file: %1$s	Błąd odczytu pliku: %1$s	Fehler beim Lesen der Datei: %1$s	Chyba čtení souboru: %1$s	Chyba čítania súboru: %1$s
-log_imported	Imported %1$d QSOs	Zaimportowano %1$d QSO	%1$d QSOs importiert	Importováno %1$d QSO	Importovaných %1$d QSO
-log_imported_dupes	, skipped %1$d duplicates	, pominięto %1$d dubli	, %1$d Duplikate übersprungen	, přeskočeno %1$d duplicit	, preskočených %1$d duplicít
-log_imported_incomplete	, %1$d incomplete records	, %1$d niepełnych rekordów	, %1$d unvollständige Datensätze	, %1$d neúplných záznamů	, %1$d neúplných záznamov
-log_import_error	ADIF import error: %1$s	Błąd importu ADIF: %1$s	ADIF-Importfehler: %1$s	Chyba importu ADIF: %1$s	Chyba importu ADIF: %1$s
-log_upload_no_credentials	Enter your QRZ Logbook key or eQSL login in Settings	Uzupełnij klucz QRZ Logbook lub login eQSL w Ustawieniach	Trage deinen QRZ-Logbook-Schlüssel oder eQSL-Login in den Einstellungen ein	Doplň klíč QRZ Logbook nebo přihlášení eQSL v Nastavení	Doplň kľúč QRZ Logbook alebo prihlásenie eQSL v Nastaveniach
-log_upload_all_done	%1$s: everything already uploaded	%1$s: wszystko już wysłane	%1$s: bereits alles hochgeladen	%1$s: vše už odesláno	%1$s: všetko už odoslané
-log_upload_progress	%1$s: %2$d/%3$d	%1$s: %2$d/%3$d	%1$s: %2$d/%3$d	%1$s: %2$d/%3$d	%1$s: %2$d/%3$d
-log_upload_result	%1$s: uploaded %2$d/%3$d	%1$s: wysłano %2$d/%3$d	%1$s: %2$d/%3$d hochgeladen	%1$s: odesláno %2$d/%3$d	%1$s: odoslané %2$d/%3$d
-log_upload_rejected	, rejected %1$d	, odrzucono %1$d	, %1$d abgelehnt	, odmítnuto %1$d	, odmietnutých %1$d
-log_save_error	Error saving the log: %1$s	Błąd zapisu dziennika: %1$s	Fehler beim Speichern des Logs: %1$s	Chyba uložení deníku: %1$s	Chyba uloženia denníka: %1$s
-qso_looking_up	Looking up station data…	Szukam danych stacji…	Suche Stationsdaten…	Hledám údaje o stanici…	Hľadám údaje o stanici…
-qso_locator_from	Locator %1$s: %2$s	Lokator %1$s: %2$s	Locator %1$s: %2$s	Lokátor %1$s: %2$s	Lokátor %1$s: %2$s
-qso_no_locator	We have no locator data for this station	Nie posiadamy danych o lokatorze tej stacji	Für diese Station liegen keine Locator-Daten vor	Pro tuto stanici nemáme údaje o lokátoru	Pre túto stanicu nemáme údaje o lokátore
-qso_new	New QSO	Nowe QSO	Neues QSO	Nové QSO	Nové QSO
-qso_edit	Edit QSO	Edytuj QSO	QSO bearbeiten	Upravit QSO	Upraviť QSO
-qso_callsign	Callsign*	Znak (Callsign)*	Rufzeichen*	Značka*	Značka*
-qso_frequency	Frequency (kHz)	Częstotliwość (kHz)	Frequenz (kHz)	Kmitočet (kHz)	Kmitočet (kHz)
-qso_mode	Mode	Emisja	Betriebsart	Druh provozu	Druh prevádzky
-qso_rst_sent	RST sent	RST wysłany	RST gesendet	RST odeslaný	RST odoslaný
-qso_rst_rcvd	RST received	RST odebrany	RST empfangen	RST přijatý	RST prijatý
-qso_name	Name	Imię	Name	Jméno	Meno
-qso_locator	Locator	Lokator	Locator	Lokátor	Lokátor
-qso_utc_now	UTC time right now	Czas UTC w tej chwili	Aktuelle UTC-Zeit	Aktuální čas UTC	Aktuálny čas UTC
-qso_datetime	UTC date and time (YYYY-MM-DD HH:MM)	Data i czas UTC (RRRR-MM-DD GG:MM)	UTC-Datum und -Zeit (JJJJ-MM-TT HH:MM)	Datum a čas UTC (RRRR-MM-DD HH:MM)	Dátum a čas UTC (RRRR-MM-DD HH:MM)
-qso_comment	Comment / notes	Komentarz / uwagi	Kommentar / Notizen	Komentář / poznámky	Komentár / poznámky
-qso_distance	%1$s km • bearing %2$s° %3$s	%1$s km • azymut %2$s° %3$s	%1$s km • Richtung %2$s° %3$s	%1$s km • azimut %2$s° %3$s	%1$s km • azimut %2$s° %3$s
-qso_dupe	DUPE – already worked on %1$s %2$s	DUBEL – już było QSO na %1$s %2$s	DOPPELT – schon auf %1$s %2$s gearbeitet	DUPLICITA – spojení na %1$s %2$s už proběhlo	DUPLICITA – spojenie na %1$s %2$s už prebehlo
-qso_worked_before	Worked %1$d× (last %2$s, %3$s %4$s)	Pracowany %1$d× (ostatnio %2$s, %3$s %4$s)	%1$d× gearbeitet (zuletzt %2$s, %3$s %4$s)	Pracováno %1$d× (naposledy %2$s, %3$s %4$s)	Pracované %1$d× (naposledy %2$s, %3$s %4$s)
-stats_title	Log statistics	Statystyki logu	Log-Statistik	Statistiky deníku	Štatistiky denníka
-stats_calls	Callsigns	Znaki	Rufzeichen	Značky	Značky
-stats_pota_parks	POTA parks	Parki POTA	POTA-Parks	Parky POTA	Parky POTA
-stats_wwff_refs	WWFF references	Obiekty WWFF	WWFF-Referenzen	Objekty WWFF	Objekty WWFF
-stats_without_dxcc	%1$d QSOs without a country (the DXCC database has not downloaded yet or the prefix is unknown).	%1$d QSO bez przypisanego kraju (baza DXCC jeszcze się nie pobrała albo nieznany prefiks).	%1$d QSOs ohne Land (die DXCC-Datenbank ist noch nicht geladen oder das Präfix ist unbekannt).	%1$d QSO bez přiřazené země (databáze DXCC se ještě nestáhla nebo je prefix neznámý).	%1$d QSO bez priradenej krajiny (databáza DXCC sa ešte nestiahla alebo je prefix neznámy).
-stats_worked_note	Statistics show worked countries. The app does not download confirmations (LoTW / eQSL) yet.	Statystyki pokazują kraje zrobione (worked). Potwierdzeń (LoTW / eQSL) aplikacja jeszcze nie pobiera.	Die Statistik zeigt gearbeitete Länder (worked). Bestätigungen (LoTW / eQSL) lädt die App noch nicht.	Statistiky ukazují pracované země (worked). Potvrzení (LoTW / eQSL) aplikace zatím nestahuje.	Štatistiky ukazujú pracované krajiny (worked). Potvrdenia (LoTW / eQSL) aplikácia zatiaľ nesťahuje.
-stats_by_band_mode	QSOs by band and mode	QSO według pasm i emisji	QSOs nach Band und Betriebsart	QSO podle pásem a provozů	QSO podľa pásiem a prevádzok
-stats_dxcc_count	DXCC entities (%1$d)	Kraje DXCC (%1$d)	DXCC-Gebiete (%1$d)	Země DXCC (%1$d)	Krajiny DXCC (%1$d)
-stats_no_data	No data	Brak danych	Keine Daten	Žádná data	Žiadne údaje
-stats_band	Band	Pasmo	Band	Pásmo	Pásmo
-stats_phone	Phone	Fonia	Fonie	Fonie	Fónia
+# key	en	pl	de	cs	sk	ru
+log_title	Logger	Logger	Logbuch	Deník	Denník	Журнал
+log_count	%1$d QSO	%1$d QSO	%1$d QSO	%1$d QSO	%1$d QSO	%1$d QSO
+log_count_filtered	%1$d of %2$d QSO	%1$d z %2$d QSO	%1$d von %2$d QSO	%1$d z %2$d QSO	%1$d z %2$d QSO	%1$d из %2$d QSO
+log_search	Search the log	Szukaj w logu	Im Log suchen	Hledat v deníku	Hľadať v denníku	Поиск в журнале
+log_stats	Statistics	Statystyki	Statistik	Statistiky	Štatistiky	Статистика
+log_upload	Upload to QRZ/eQSL	Wyślij do QRZ/eQSL	Zu QRZ/eQSL hochladen	Odeslat na QRZ/eQSL	Odoslať na QRZ/eQSL	Отправить в QRZ/eQSL
+log_more	More	Więcej	Mehr	Více	Viac	Ещё
+log_import_adif	Import ADIF	Importuj ADIF	ADIF importieren	Importovat ADIF	Importovať ADIF	Импорт ADIF
+log_export_adif	Export ADIF	Eksportuj ADIF	ADIF exportieren	Exportovat ADIF	Exportovať ADIF	Экспорт ADIF
+log_nothing_to_export	No QSOs to export	Brak łączności do wyeksportowania	Keine QSOs zum Exportieren	Žádná spojení k exportu	Žiadne spojenia na export	Нет QSO для экспорта
+log_add_qso	Add QSO	Dodaj QSO	QSO hinzufügen	Přidat QSO	Pridať QSO	Добавить QSO
+log_search_hint	Callsign, band, mode, country, date…	Znak, pasmo, emisja, kraj, data…	Rufzeichen, Band, Betriebsart, Land, Datum…	Značka, pásmo, provoz, země, datum…	Značka, pásmo, prevádzka, krajina, dátum…	Позывной, диапазон, вид работы, страна, дата…
+log_empty	No QSOs logged yet.\nTap “+” to add your first QSO,\nor import an ADIF file.	Brak zalogowanych łączności.\nKliknij „+”, aby dodać pierwsze QSO,\nalbo zaimportuj plik ADIF.	Noch keine QSOs geloggt.\nTippe auf „+“, um das erste QSO hinzuzufügen,\noder importiere eine ADIF-Datei.	Zatím žádná zapsaná spojení.\nKlepni na „+“ a přidej první QSO,\nnebo importuj soubor ADIF.	Zatiaľ žiadne zapísané spojenia.\nŤukni na „+“ a pridaj prvé QSO,\nalebo importuj súbor ADIF.	В журнале пока нет QSO.\nНажмите «+», чтобы добавить первое QSO,\nили импортируйте файл ADIF.
+log_no_match	No QSOs match “%1$s”	Brak QSO pasujących do „%1$s”	Keine QSOs passend zu „%1$s“	Žádná QSO neodpovídají „%1$s“	Žiadne QSO nezodpovedajú „%1$s“	Нет QSO, подходящих под «%1$s»
+log_qso_updated	QSO updated	Zaktualizowano QSO	QSO aktualisiert	QSO aktualizováno	QSO aktualizované	QSO обновлено
+log_delete_title	Delete QSO?	Usunąć QSO?	QSO löschen?	Smazat QSO?	Odstrániť QSO?	Удалить QSO?
+log_busy_export	Exporting ADIF…	Eksport ADIF…	ADIF-Export…	Export ADIF…	Export ADIF…	Экспорт ADIF…
+log_busy_import	Importing ADIF…	Import ADIF…	ADIF-Import…	Import ADIF…	Import ADIF…	Импорт ADIF…
+log_cannot_open_file	cannot open the file	nie można otworzyć pliku	Datei kann nicht geöffnet werden	soubor nelze otevřít	súbor nie je možné otvoriť	не удаётся открыть файл
+log_exported	Saved %1$d QSOs to the ADIF file	Zapisano %1$d QSO do pliku ADIF	%1$d QSOs in die ADIF-Datei gespeichert	Do souboru ADIF uloženo %1$d QSO	Do súboru ADIF uložených %1$d QSO	Сохранено QSO в файл ADIF: %1$d
+log_file_write_error	Error writing the file: %1$s	Błąd zapisu pliku: %1$s	Fehler beim Schreiben der Datei: %1$s	Chyba zápisu souboru: %1$s	Chyba zápisu súboru: %1$s	Ошибка записи файла: %1$s
+log_file_read_error	Error reading the file: %1$s	Błąd odczytu pliku: %1$s	Fehler beim Lesen der Datei: %1$s	Chyba čtení souboru: %1$s	Chyba čítania súboru: %1$s	Ошибка чтения файла: %1$s
+log_imported	Imported %1$d QSOs	Zaimportowano %1$d QSO	%1$d QSOs importiert	Importováno %1$d QSO	Importovaných %1$d QSO	Импортировано QSO: %1$d
+log_imported_dupes	, skipped %1$d duplicates	, pominięto %1$d dubli	, %1$d Duplikate übersprungen	, přeskočeno %1$d duplicit	, preskočených %1$d duplicít	, пропущено дублей: %1$d
+log_imported_incomplete	, %1$d incomplete records	, %1$d niepełnych rekordów	, %1$d unvollständige Datensätze	, %1$d neúplných záznamů	, %1$d neúplných záznamov	, неполных записей: %1$d
+log_import_error	ADIF import error: %1$s	Błąd importu ADIF: %1$s	ADIF-Importfehler: %1$s	Chyba importu ADIF: %1$s	Chyba importu ADIF: %1$s	Ошибка импорта ADIF: %1$s
+log_upload_no_credentials	Enter your QRZ Logbook key or eQSL login in Settings	Uzupełnij klucz QRZ Logbook lub login eQSL w Ustawieniach	Trage deinen QRZ-Logbook-Schlüssel oder eQSL-Login in den Einstellungen ein	Doplň klíč QRZ Logbook nebo přihlášení eQSL v Nastavení	Doplň kľúč QRZ Logbook alebo prihlásenie eQSL v Nastaveniach	Укажите ключ QRZ Logbook или логин eQSL в настройках
+log_upload_all_done	%1$s: everything already uploaded	%1$s: wszystko już wysłane	%1$s: bereits alles hochgeladen	%1$s: vše už odesláno	%1$s: všetko už odoslané	%1$s: всё уже отправлено
+log_upload_progress	%1$s: %2$d/%3$d	%1$s: %2$d/%3$d	%1$s: %2$d/%3$d	%1$s: %2$d/%3$d	%1$s: %2$d/%3$d	%1$s: %2$d/%3$d
+log_upload_result	%1$s: uploaded %2$d/%3$d	%1$s: wysłano %2$d/%3$d	%1$s: %2$d/%3$d hochgeladen	%1$s: odesláno %2$d/%3$d	%1$s: odoslané %2$d/%3$d	%1$s: отправлено %2$d/%3$d
+log_upload_rejected	, rejected %1$d	, odrzucono %1$d	, %1$d abgelehnt	, odmítnuto %1$d	, odmietnutých %1$d	, отклонено %1$d
+log_save_error	Error saving the log: %1$s	Błąd zapisu dziennika: %1$s	Fehler beim Speichern des Logs: %1$s	Chyba uložení deníku: %1$s	Chyba uloženia denníka: %1$s	Ошибка сохранения журнала: %1$s
+qso_looking_up	Looking up station data…	Szukam danych stacji…	Suche Stationsdaten…	Hledám údaje o stanici…	Hľadám údaje o stanici…	Поиск данных станции…
+qso_locator_from	Locator %1$s: %2$s	Lokator %1$s: %2$s	Locator %1$s: %2$s	Lokátor %1$s: %2$s	Lokátor %1$s: %2$s	Локатор %1$s: %2$s
+qso_no_locator	We have no locator data for this station	Nie posiadamy danych o lokatorze tej stacji	Für diese Station liegen keine Locator-Daten vor	Pro tuto stanici nemáme údaje o lokátoru	Pre túto stanicu nemáme údaje o lokátore	У нас нет данных о локаторе этой станции
+qso_new	New QSO	Nowe QSO	Neues QSO	Nové QSO	Nové QSO	Новое QSO
+qso_edit	Edit QSO	Edytuj QSO	QSO bearbeiten	Upravit QSO	Upraviť QSO	Редактировать QSO
+qso_callsign	Callsign*	Znak (Callsign)*	Rufzeichen*	Značka*	Značka*	Позывной*
+qso_frequency	Frequency (kHz)	Częstotliwość (kHz)	Frequenz (kHz)	Kmitočet (kHz)	Kmitočet (kHz)	Частота (кГц)
+qso_mode	Mode	Emisja	Betriebsart	Druh provozu	Druh prevádzky	Вид работы
+qso_rst_sent	RST sent	RST wysłany	RST gesendet	RST odeslaný	RST odoslaný	RST передан
+qso_rst_rcvd	RST received	RST odebrany	RST empfangen	RST přijatý	RST prijatý	RST принят
+qso_name	Name	Imię	Name	Jméno	Meno	Имя
+qso_locator	Locator	Lokator	Locator	Lokátor	Lokátor	Локатор
+qso_utc_now	UTC time right now	Czas UTC w tej chwili	Aktuelle UTC-Zeit	Aktuální čas UTC	Aktuálny čas UTC	Текущее время UTC
+qso_datetime	UTC date and time (YYYY-MM-DD HH:MM)	Data i czas UTC (RRRR-MM-DD GG:MM)	UTC-Datum und -Zeit (JJJJ-MM-TT HH:MM)	Datum a čas UTC (RRRR-MM-DD HH:MM)	Dátum a čas UTC (RRRR-MM-DD HH:MM)	Дата и время UTC (ГГГГ-ММ-ДД ЧЧ:ММ)
+qso_comment	Comment / notes	Komentarz / uwagi	Kommentar / Notizen	Komentář / poznámky	Komentár / poznámky	Комментарий / заметки
+qso_distance	%1$s km • bearing %2$s° %3$s	%1$s km • azymut %2$s° %3$s	%1$s km • Richtung %2$s° %3$s	%1$s km • azimut %2$s° %3$s	%1$s km • azimut %2$s° %3$s	%1$s км • азимут %2$s° %3$s
+qso_dupe	DUPE – already worked on %1$s %2$s	DUBEL – już było QSO na %1$s %2$s	DOPPELT – schon auf %1$s %2$s gearbeitet	DUPLICITA – spojení na %1$s %2$s už proběhlo	DUPLICITA – spojenie na %1$s %2$s už prebehlo	ДУБЛЬ – уже проведено %1$s %2$s
+qso_worked_before	Worked %1$d× (last %2$s, %3$s %4$s)	Pracowany %1$d× (ostatnio %2$s, %3$s %4$s)	%1$d× gearbeitet (zuletzt %2$s, %3$s %4$s)	Pracováno %1$d× (naposledy %2$s, %3$s %4$s)	Pracované %1$d× (naposledy %2$s, %3$s %4$s)	Проведено %1$d× (последнее %2$s, %3$s %4$s)
+stats_title	Log statistics	Statystyki logu	Log-Statistik	Statistiky deníku	Štatistiky denníka	Статистика журнала
+stats_calls	Callsigns	Znaki	Rufzeichen	Značky	Značky	Позывные
+stats_pota_parks	POTA parks	Parki POTA	POTA-Parks	Parky POTA	Parky POTA	Парки POTA
+stats_wwff_refs	WWFF references	Obiekty WWFF	WWFF-Referenzen	Objekty WWFF	Objekty WWFF	Референсы WWFF
+stats_without_dxcc	%1$d QSOs without a country (the DXCC database has not downloaded yet or the prefix is unknown).	%1$d QSO bez przypisanego kraju (baza DXCC jeszcze się nie pobrała albo nieznany prefiks).	%1$d QSOs ohne Land (die DXCC-Datenbank ist noch nicht geladen oder das Präfix ist unbekannt).	%1$d QSO bez přiřazené země (databáze DXCC se ještě nestáhla nebo je prefix neznámý).	%1$d QSO bez priradenej krajiny (databáza DXCC sa ešte nestiahla alebo je prefix neznámy).	QSO без страны: %1$d (база DXCC ещё не загружена или префикс неизвестен).
+stats_worked_note	Statistics show worked countries. The app does not download confirmations (LoTW / eQSL) yet.	Statystyki pokazują kraje zrobione (worked). Potwierdzeń (LoTW / eQSL) aplikacja jeszcze nie pobiera.	Die Statistik zeigt gearbeitete Länder (worked). Bestätigungen (LoTW / eQSL) lädt die App noch nicht.	Statistiky ukazují pracované země (worked). Potvrzení (LoTW / eQSL) aplikace zatím nestahuje.	Štatistiky ukazujú pracované krajiny (worked). Potvrdenia (LoTW / eQSL) aplikácia zatiaľ nesťahuje.	Статистика показывает страны, с которыми проведены связи. Приложение пока не загружает подтверждения (LoTW / eQSL).
+stats_by_band_mode	QSOs by band and mode	QSO według pasm i emisji	QSOs nach Band und Betriebsart	QSO podle pásem a provozů	QSO podľa pásiem a prevádzok	QSO по диапазонам и видам работы
+stats_dxcc_count	DXCC entities (%1$d)	Kraje DXCC (%1$d)	DXCC-Gebiete (%1$d)	Země DXCC (%1$d)	Krajiny DXCC (%1$d)	Территории DXCC (%1$d)
+stats_no_data	No data	Brak danych	Keine Daten	Žádná data	Žiadne údaje	Нет данных
+stats_band	Band	Pasmo	Band	Pásmo	Pásmo	Диапазон
+stats_phone	Phone	Fonia	Fonie	Fonie	Fónia	Телефон

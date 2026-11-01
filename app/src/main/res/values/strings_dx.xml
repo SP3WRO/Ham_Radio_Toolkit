@@ -17,7 +17,6 @@
     <string name="dx_qso_logged">QSO with %1$s logged</string>
     <string name="dx_sending_spot">Sending spot…</string>
     <string name="dx_invalid_freq">Invalid frequency</string>
-    <string name="dx_award_points">%1$s · %2$d pts</string>
     <string name="dx_error_download">Error downloading data: %1$s</string>
     <string name="dx_error_send">Sending failed: %1$s</string>
     <string name="spot_new_country">NEW COUNTRY</string>

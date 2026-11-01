@@ -163,4 +163,10 @@ class AprsParserTest {
         assertEquals(passcode, AprsParser.passcode("sp3abc-7"))
         assert(passcode in 0..0x7fff)
     }
+
+    @Test
+    fun symbolCode_validation() {
+        listOf("/[", "/b", "\\j", "S#", "1&").forEach { assert(AprsParser.isValidSymbolCode(it)) { it } }
+        listOf("", "/", "/[x", "a#", " [", "/ ").forEach { assert(!AprsParser.isValidSymbolCode(it)) { it } }
+    }
 }

@@ -22,16 +22,16 @@ sealed class UploadOutcome {
 class LogUploadClient(private val client: OkHttpClient = HttpClients.default) {
 
     // https://www.qrz.com/docs/logbook/QRZLogbookAPI.html – INSERT wymaga subskrypcji QRZ
-    suspend fun uploadToQrz(apiKey: String, qso: QsoEntry): UploadOutcome = withContext(Dispatchers.IO) {
+    suspend fun uploadToQrz(apiKey: String, qso: QsoEntry, stationCallsign: String?): UploadOutcome = withContext(Dispatchers.IO) {
         val body = FormBody.Builder()
             .add("KEY", apiKey)
             .add("ACTION", "INSERT")
-            .add("ADIF", AdifGenerator.record(qso))
+            .add("ADIF", AdifGenerator.record(qso, stationCallsign))
             .build()
         val request = Request.Builder().url("https://logbook.qrz.com/api").post(body).build()
         try {
             client.newCall(request).execute().use { response ->
-                if (!response.isSuccessful) return@withContext UploadOutcome.Fatal("HTTP ${response.code} z QRZ")
+                if (!response.isSuccessful) return@withContext UploadOutcome.Fatal(AppStrings.get(R.string.err_http_from, response.code, "QRZ"))
                 parseQrzResponse(response.body?.string().orEmpty())
             }
         } catch (e: IOException) {
@@ -53,7 +53,7 @@ class LogUploadClient(private val client: OkHttpClient = HttpClients.default) {
             val request = Request.Builder().url("https://www.eqsl.cc/qslcard/importADIF.cfm").post(body).build()
             try {
                 client.newCall(request).execute().use { response ->
-                    if (!response.isSuccessful) return@withContext UploadOutcome.Fatal("HTTP ${response.code} z eQSL")
+                    if (!response.isSuccessful) return@withContext UploadOutcome.Fatal(AppStrings.get(R.string.err_http_from, response.code, "eQSL"))
                     parseEqslResponse(response.body?.string().orEmpty())
                 }
             } catch (e: IOException) {
@@ -75,7 +75,7 @@ class LogUploadClient(private val client: OkHttpClient = HttpClients.default) {
                 result == "AUTH" -> UploadOutcome.Fatal(AppStrings.get(R.string.up_qrz_auth))
                 reason.contains("invalid api key", ignoreCase = true) || reason.contains("access key", ignoreCase = true) ->
                     UploadOutcome.Fatal("QRZ: $reason")
-                result == "FAIL" -> UploadOutcome.Rejected("QRZ: ${reason.ifEmpty { "odrzucono" }}")
+                result == "FAIL" -> UploadOutcome.Rejected(if (reason.isEmpty()) AppStrings.get(R.string.up_qrz_rejected) else "QRZ: $reason")
                 else -> UploadOutcome.Fatal(AppStrings.get(R.string.up_qrz_unexpected))
             }
         }

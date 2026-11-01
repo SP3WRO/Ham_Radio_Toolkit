@@ -1,6 +1,7 @@
 package io.github.sp3wro.hamradiotoolkit.data.preferences
 
 import android.content.Context
+import androidx.datastore.core.DataMigration
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
@@ -11,7 +12,22 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
 // Osobny plik, wyłączony z kopii zapasowej w chmurze (res/xml/backup_rules.xml, data_extraction_rules.xml)
-private val Context.credentialsStore: DataStore<Preferences> by preferencesDataStore(name = "service_credentials")
+private val Context.credentialsStore: DataStore<Preferences> by preferencesDataStore(
+    name = "service_credentials",
+    produceMigrations = { listOf(RemoveRepeaterBookCredentials) }
+)
+
+/** Usuwa z telefonu token i e-mail po wycofanym źródle RepeaterBook. */
+private object RemoveRepeaterBookCredentials : DataMigration<Preferences> {
+    private val keys = listOf(stringPreferencesKey("repeaterbook_token"), stringPreferencesKey("repeaterbook_contact"))
+
+    override suspend fun shouldMigrate(currentData: Preferences): Boolean = keys.any { it in currentData }
+
+    override suspend fun migrate(currentData: Preferences): Preferences =
+        currentData.toMutablePreferences().apply { keys.forEach { remove(it) } }.toPreferences()
+
+    override suspend fun cleanUp() = Unit
+}
 
 data class ServiceCredentials(
     val hamQthUser: String = "",
@@ -20,10 +36,7 @@ data class ServiceCredentials(
     val qrzcqPassword: String = "",
     val qrzLogbookKey: String = "",
     val eqslUser: String = "",
-    val eqslPassword: String = "",
-    val repeaterBookToken: String = "",
-    /** Adres e-mail do nagłówka User-Agent – RepeaterBook wymaga kontaktu do autora zapytań. */
-    val repeaterBookContact: String = ""
+    val eqslPassword: String = ""
 ) {
     val hasHamQth: Boolean get() = hamQthUser.isNotBlank() && hamQthPassword.isNotBlank()
     val hasQrzcq: Boolean get() = qrzcqUser.isNotBlank() && qrzcqPassword.isNotBlank()
@@ -41,8 +54,6 @@ class CredentialsRepository(context: Context) {
     private val qrzLogbookKeyKey = stringPreferencesKey("qrz_logbook_key")
     private val eqslUserKey = stringPreferencesKey("eqsl_user")
     private val eqslPasswordKey = stringPreferencesKey("eqsl_password")
-    private val repeaterBookTokenKey = stringPreferencesKey("repeaterbook_token")
-    private val repeaterBookContactKey = stringPreferencesKey("repeaterbook_contact")
 
     val credentials: Flow<ServiceCredentials> = store.data.map {
         ServiceCredentials(
@@ -52,9 +63,7 @@ class CredentialsRepository(context: Context) {
             qrzcqPassword = it[qrzcqPasswordKey].orEmpty(),
             qrzLogbookKey = it[qrzLogbookKeyKey].orEmpty(),
             eqslUser = it[eqslUserKey].orEmpty(),
-            eqslPassword = it[eqslPasswordKey].orEmpty(),
-            repeaterBookToken = it[repeaterBookTokenKey].orEmpty(),
-            repeaterBookContact = it[repeaterBookContactKey].orEmpty()
+            eqslPassword = it[eqslPasswordKey].orEmpty()
         )
     }
 
@@ -69,8 +78,6 @@ class CredentialsRepository(context: Context) {
             it[qrzLogbookKeyKey] = credentials.qrzLogbookKey.trim()
             it[eqslUserKey] = credentials.eqslUser.trim()
             it[eqslPasswordKey] = credentials.eqslPassword
-            it[repeaterBookTokenKey] = credentials.repeaterBookToken.trim()
-            it[repeaterBookContactKey] = credentials.repeaterBookContact.trim()
         }
     }
 }

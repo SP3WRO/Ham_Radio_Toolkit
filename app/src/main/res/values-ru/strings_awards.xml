@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_awards.tsv -->
+<resources>
+    <string name="aw_running">Идут</string>
+    <string name="aw_upcoming">Предстоящие</string>
+    <string name="aw_followed">Отслеживаемые</string>
+    <string name="aw_unavailable">radiodyplom.pl: недоступен (%1$s)</string>
+    <string name="aw_cached">radiodyplom.pl: копия от %1$s (нет соединения)</string>
+    <string name="aw_running_header">Идут сейчас (%1$d)</string>
+    <string name="aw_upcoming_header">Предстоящие (%1$d)</string>
+    <string name="aw_none_followed">Вы не отслеживаете ни одной дипломной программы – нажмите на звёздочку рядом с ней.</string>
+    <string name="aw_none">Нет дипломных программ для выбранного фильтра.</string>
+    <string name="aw_footer">Данные: radiodyplom.pl (SP8TZ) – список программ и карта диапазонов за последние 30 минут. Станции отслеживаемых программ (звёздочка) выделяются в DX-кластере.</string>
+    <string name="aw_unfollow">Не отслеживать</string>
+    <string name="aw_follow">Отслеживать</string>
+    <string name="aw_running_left">ИДЁТ – осталось %1$s</string>
+    <string name="aw_event_page">Страница программы</string>
+    <string name="aw_on_air_header">Сейчас в эфире (%1$d)</string>
+    <string name="aw_on_air_none">За последние 30 минут нет сообщений о станциях программы.</string>
+    <string name="aw_organizers_value">Организаторы: %1$s</string>
+</resources>

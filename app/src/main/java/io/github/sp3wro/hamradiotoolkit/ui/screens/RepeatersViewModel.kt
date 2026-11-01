@@ -6,7 +6,6 @@ import android.app.Application
 import android.location.Location
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.sp3wro.hamradiotoolkit.data.geo.CountryResolver
 import io.github.sp3wro.hamradiotoolkit.data.model.Repeater
 import io.github.sp3wro.hamradiotoolkit.data.model.RepeaterGroup
 import io.github.sp3wro.hamradiotoolkit.data.network.InternationalRepeaters
@@ -116,11 +115,8 @@ class RepeatersViewModel(application: Application) : AndroidViewModel(applicatio
             _error.value = null
             try {
                 val position = if (lat != null && lon != null) LatLon(lat, lon) else null
-                val country = if (source == RepeaterSources.REPEATERBOOK && position != null) {
-                    CountryResolver.resolve(getApplication(), position)
-                } else null
                 // Scalenie wpisów tego samego przemiennika (np. osobno FM i DMR) – jedna karta z kilkoma emisjami
-                fullDatabase = InternationalRepeaters.merge(fetcher.fetchRepeaters(source, getApplication(), position, country))
+                fullDatabase = InternationalRepeaters.merge(fetcher.fetchRepeaters(source, getApplication(), position))
                 fetchedAround = position
                 refreshList()
             } catch (e: Exception) {

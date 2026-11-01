@@ -1,48 +1,52 @@
 package io.github.sp3wro.hamradiotoolkit.data.contests
 
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+
 /**
- * Kalendarz zawodów VHF/UHF/SHF Stowarzyszenia Polski Klub UKF (pk-ukf.pl) – jedna strona na rok,
- * tabele miesięczne: data, czas UTC, nazwa, pasmo, organizator, regulamin PL/EN, termin wysyłki logów.
+ * Kalendarz zawodów VHF/UHF/SHF PK-UKF / SP1CNV. Na prośbę PK-UKF aplikacja nie czyta ich strony:
+ * dane pobiera co 48 godzin workflow w tym repozytorium (tools/pkukf-calendar) i publikuje jako JSON.
  */
 object PkUkfCalendar {
-    fun url(year: Int) = "https://pk-ukf.pl/kalendarz-zawodow-$year/"
+    const val JSON_URL = "https://raw.githubusercontent.com/SP3WRO/Ham_Radio_Toolkit/main/tools/pkukf-calendar/data/contests.json"
 
     private const val DAY_MS = 86_400_000L
-    private val ROW = Regex("""(?s)<tr\b[^>]*>(.*?)</tr>""", RegexOption.IGNORE_CASE)
-    private val CELL = Regex("""(?s)<td\b[^>]*>(.*?)</td>""", RegexOption.IGNORE_CASE)
-    private val LINK = Regex("""<a\b[^>]*href="([^"]*)"""", RegexOption.IGNORE_CASE)
-    // "3 Listopad 2026", "7-8 Listopad 2026", "31 Październik - 1 Listopad 2026"
-    private val DATE = Regex("""^(\d{1,2})(?:\s*-\s*(\d{1,2}))?\s+(\p{L}+)(?:\s*-\s*(\d{1,2})\s+(\p{L}+))?\s+(\d{4})$""")
-    // "18:00 - 22:00", "14.00 - 18.00", "18:0 - 22:00"
-    private val TIME = Regex("""^(\d{1,2})[:.](\d{1,2})\s*-\s*(\d{1,2})[:.](\d{1,2})$""")
-    private val MONTHS = listOf("sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis", "gru")
+    private val json = Json {
+        ignoreUnknownKeys = true
+        coerceInputValues = true
+    }
+    private val ISO_DATE = Regex("""^(\d{4})-(\d{2})-(\d{2})$""")
     private val POLISH_ORGANIZER = Regex("""PK[ -]?UKF|PZK|\bSP\d?\b""", RegexOption.IGNORE_CASE)
 
-    /** Wiersze z nieustalonym dniem ("?? Listopad") są pomijane – nie da się ich umieścić w kalendarzu. */
-    fun parse(html: String): List<ContestEntry> =
-        ROW.findAll(html).mapNotNull { row ->
-            parseRow(CELL.findAll(row.groupValues[1]).map { it.groupValues[1] }.toList())
-        }.sortedBy { it.startMs }.toList()
+    @Serializable
+    private class Calendar(val contests: List<Contest> = emptyList())
 
-    private fun parseRow(cells: List<String>): ContestEntry? {
-        if (cells.size < 9) return null
-        val d = DATE.matchEntire(ContestText.dashes(ContestText.text(cells[1]))) ?: return null
-        val t = TIME.matchEntire(ContestText.dashes(ContestText.text(cells[2]))) ?: return null
-        val startMonth = month(d.groupValues[3]) ?: return null
-        val endMonth = if (d.groupValues[5].isNotEmpty()) month(d.groupValues[5]) ?: return null else startMonth
-        val year = d.groupValues[6].toInt()
-        // "31 Grudzień - 1 Styczeń 2027": rok podany przy dacie końca
-        val startYear = if (endMonth < startMonth) year - 1 else year
-        val startDay = d.groupValues[1].toInt()
-        val endDay = (d.groupValues[4].ifEmpty { d.groupValues[2] }.ifEmpty { d.groupValues[1] }).toInt()
-        if (startDay > CivilDate.lengthOfMonth(startYear, startMonth) || endDay > CivilDate.lengthOfMonth(year, endMonth)) return null
-        val start = CivilDate(startYear, startMonth, startDay).epochMillis + minutes(t.groupValues[1], t.groupValues[2])
-        var end = CivilDate(year, endMonth, endDay).epochMillis + minutes(t.groupValues[3], t.groupValues[4])
+    @Serializable
+    private class Contest(
+        val name: String? = null,
+        @SerialName("start_utc") val startUtc: String? = null,
+        @SerialName("end_utc") val endUtc: String? = null,
+        val band: String? = null,
+        val organizer: String? = null,
+        @SerialName("rules_pl") val rulesPl: String? = null,
+        @SerialName("rules_en") val rulesEn: String? = null,
+        @SerialName("log_deadline") val logDeadline: String? = null,
+        @SerialName("log_deadline_raw") val logDeadlineRaw: String? = null
+    )
+
+    /** Wpisy z nieustalonym dniem ("?? Listopad", start_utc = null) są pomijane – nie da się ich umieścić w kalendarzu. */
+    fun parse(text: String): List<ContestEntry> =
+        json.decodeFromString<Calendar>(text).contests.mapNotNull(::toEntry).sortedBy { it.startMs }
+
+    private fun toEntry(c: Contest): ContestEntry? {
+        val name = c.name?.trim()?.takeIf { it.isNotBlank() } ?: return null
+        val start = c.startUtc?.let(ContestText::utcMillis) ?: return null
+        var end = c.endUtc?.let(ContestText::utcMillis) ?: return null
         if (end <= start) end += DAY_MS
 
-        val name = ContestText.text(cells[3]).takeIf { it.isNotBlank() } ?: return null
-        val bands = ContestText.text(cells[4])
-        val organizer = ContestText.text(cells[5]).takeUnless { it == "-" || it == "–" }.orEmpty()
+        val bands = c.band?.trim().orEmpty()
+        val organizer = c.organizer?.trim().orEmpty().takeUnless { it == "-" || it == "–" }.orEmpty()
         return ContestEntry(
             name = name,
             startMs = start,
@@ -52,20 +56,19 @@ object PkUkfCalendar {
             vhf = true,
             modes = ContestText.modesIn("$name $bands") + ContestMode.VHF,
             bands = bands,
-            rulesUrl = link(cells[7]) ?: link(cells[6]),
-            rulesPlUrl = link(cells[6]),
+            rulesUrl = link(c.rulesEn) ?: link(c.rulesPl),
+            rulesPlUrl = link(c.rulesPl),
             organizer = organizer,
-            logDeadline = ContestText.text(cells[8]).takeUnless { it == "-" || it == "–" }.orEmpty()
+            logDeadline = deadline(c)
         )
     }
 
-    private fun month(name: String): Int? {
-        val prefix = name.lowercase().take(3)
-        return MONTHS.indexOf(prefix).takeIf { it >= 0 }?.plus(1)
+    // Data z pola log_deadline nie zależy od języka; tekst ze strony tylko gdy daty nie da się ustalić
+    private fun deadline(c: Contest): String {
+        val date = ISO_DATE.matchEntire(c.logDeadline.orEmpty())?.groupValues
+        if (date != null) return "${date[3]}.${date[2]}.${date[1]}"
+        return c.logDeadlineRaw?.trim().orEmpty().takeUnless { it == "-" || it == "–" }.orEmpty()
     }
 
-    private fun minutes(h: String, m: String): Long = (h.toInt() * 60 + m.toInt()) * 60_000L
-
-    private fun link(cell: String): String? =
-        LINK.find(cell)?.groupValues?.get(1)?.let { ContestText.decodeEntities(it).trim() }?.takeIf { it.startsWith("http") }
+    private fun link(url: String?): String? = url?.trim()?.takeIf { it.startsWith("http") }
 }

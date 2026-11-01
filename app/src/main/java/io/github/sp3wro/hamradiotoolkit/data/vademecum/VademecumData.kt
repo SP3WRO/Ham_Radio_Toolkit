@@ -7,7 +7,7 @@ data class DxccItem(val prefix: String, val entity: String, val continent: Strin
 
 /**
  * Treść ściąg z plików TSV w assets/vademecum: każdy wiersz to jedna pozycja, a kolumny – języki
- * (en, pl, de, cs, sk). Bierzemy kolumnę języka interfejsu, a gdy jej brak – angielską.
+ * (en, pl, de, cs, sk, ru). Bierzemy kolumnę języka interfejsu, a gdy jej brak – angielską.
  */
 class VademecumData private constructor(
     val dxcc: List<DxccItem>,

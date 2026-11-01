@@ -46,6 +46,14 @@ private object AprsSprites {
     }
 }
 
+/** Podgląd symbolu z dwuznakowego kodu (tabela lub nakładka + symbol). */
+@Composable
+fun AprsSymbolPreview(code: String, modifier: Modifier = Modifier, size: Dp = 32.dp) {
+    val table = code[0]
+    val overlay = table.takeIf { it != '/' && it != '\\' }
+    AprsIcon(table, code[1], overlay, modifier, size)
+}
+
 /**
  * Symbol APRS jak na aprs.fi: '/' – tabela podstawowa, '\' – alternatywna.
  * Nakładka (cyfra/litera z pola tabeli) jest nadrukowana na środku symbolu alternatywnego.

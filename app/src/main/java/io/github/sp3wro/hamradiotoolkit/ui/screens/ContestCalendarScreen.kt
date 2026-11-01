@@ -97,7 +97,7 @@ fun ContestCalendarScreen(countryIso: String? = null, onSettingsClick: () -> Uni
     LaunchedEffect(refreshTick) {
         loading = true
         try {
-            // Wymuszone pobranie tylko po naciśnięciu "Odśwież" – przy wejściu na ekran korzystamy z kopii (do 12 h)
+            // Wymuszone pobranie tylko po naciśnięciu "Odśwież" – przy wejściu na ekran korzystamy z kopii (do 24 h)
             val result = ContestSources.load(context, forceRefresh = refreshTick > 0)
             statuses = result.statuses
             offline = result.entries.isEmpty()
@@ -212,7 +212,7 @@ fun ContestCalendarScreen(countryIso: String? = null, onSettingsClick: () -> Uni
                     )
                     listOf(
                         stringResource(R.string.ct_calendar_of, "SP9CXN") to ContestSource.SP9CXN.pageUrl,
-                        stringResource(R.string.ct_calendar_of, "PK-UKF") to ContestSource.PK_UKF.pageUrl,
+                        stringResource(R.string.ct_calendar_of, ContestSource.PK_UKF.label) to ContestSource.PK_UKF.pageUrl,
                         stringResource(R.string.ct_calendar_of, "QRZ.RU") to ContestSource.QRZ_RU.pageUrl
                     ).forEach { (label, url) ->
                         TextButton(onClick = { openUrl(context, url) }) {
@@ -339,6 +339,13 @@ else stringResource(R.string.ct_starts_in, durationText(context, c.startMs - now
                         Text(stringResource(R.string.ct_rules_pl))
                     }
                 }
+                c.sourcePageUrl?.takeIf { it != c.rulesUrl }?.let { url ->
+                    TextButton(onClick = { openUrl(context, url) }) {
+                        Icon(Icons.AutoMirrored.Filled.OpenInNew, contentDescription = null, modifier = Modifier.size(18.dp))
+                        Spacer(Modifier.width(4.dp))
+                        Text(stringResource(R.string.ct_source_page, ContestSource.QRZ_RU.label))
+                    }
+                }
                 TextButton(onClick = { addToCalendar(context, c) }) {
                     Icon(Icons.Filled.EventAvailable, contentDescription = null, modifier = Modifier.size(18.dp))
                     Spacer(Modifier.width(4.dp))
@@ -382,6 +389,7 @@ private fun addToCalendar(context: Context, c: ContestEntry) {
         c.logDeadline.takeIf { it.isNotBlank() }?.let { context.getString(R.string.ct_logs_by, it) },
         c.rulesUrl,
         c.rulesPlUrl?.takeIf { it != c.rulesUrl }?.let { context.getString(R.string.ct_rules_pl_value, it) },
+        c.sourcePageUrl?.takeIf { it != c.rulesUrl },
         c.sources.filter { it != ContestSource.BUILTIN }.takeIf { it.isNotEmpty() }
             ?.joinToString(", ", prefix = context.getString(R.string.common_source) + ": ") { it.label }
     ).joinToString("\n")

@@ -16,6 +16,12 @@ object AprsParser {
         'L' to 3, 'l' to 3, '#' to 3
     )
 
+    /** Kod symbolu APRS: tabela (/, \ albo nakładka: cyfra lub wielka litera) i znak symbolu. */
+    fun isValidSymbolCode(code: String): Boolean =
+        code.length == 2 &&
+            (code[0] == '/' || code[0] == '\\' || code[0] in '0'..'9' || code[0] in 'A'..'Z') &&
+            code[1].code in 33..126
+
     // Passcode dla APRS-IS (hash znaku bez SSID)
     fun passcode(call: String): Int {
         val cleanCall = call.uppercase().substringBefore('-')

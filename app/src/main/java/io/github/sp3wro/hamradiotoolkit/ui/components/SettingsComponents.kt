@@ -149,6 +149,8 @@ fun SettingsTextItem(
     uppercase: Boolean = false,
     keyboardType: KeyboardType = KeyboardType.Text,
     validate: (String) -> String? = { null }, // komunikat błędu albo null
+    trailing: @Composable (() -> Unit)? = null,
+    preview: @Composable ((String) -> Unit)? = null, // podgląd wpisywanej wartości w okienku
     onSave: (String) -> Unit
 ) {
     var open by remember { mutableStateOf(false) }
@@ -157,7 +159,7 @@ fun SettingsTextItem(
         isSecret -> stringResource(R.string.settings_set)
         else -> value
     }
-    SettingsItem(title = title, summary = summary, onClick = { open = true })
+    SettingsItem(title = title, summary = summary, onClick = { open = true }, trailing = trailing)
     if (open) {
         var input by remember(value) { mutableStateOf(value) }
         val error = validate(input.trim())
@@ -165,21 +167,24 @@ fun SettingsTextItem(
             onDismissRequest = { open = false },
             title = { Text(title) },
             text = {
-                OutlinedTextField(
-                    value = input,
-                    onValueChange = { input = if (uppercase) it.uppercase() else it },
-                    placeholder = { if (placeholder.isNotEmpty()) Text(placeholder) },
-                    singleLine = true,
-                    isError = error != null,
-                    supportingText = error?.let { { Text(it) } },
-                    visualTransformation = if (isSecret) PasswordVisualTransformation() else androidx.compose.ui.text.input.VisualTransformation.None,
-                    keyboardOptions = KeyboardOptions(
-                        capitalization = if (uppercase) KeyboardCapitalization.Characters else KeyboardCapitalization.None,
-                        keyboardType = if (isSecret) KeyboardType.Password else keyboardType,
-                        autoCorrectEnabled = false
-                    ),
-                    modifier = Modifier.fillMaxWidth()
-                )
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedTextField(
+                        value = input,
+                        onValueChange = { input = if (uppercase) it.uppercase() else it },
+                        placeholder = { if (placeholder.isNotEmpty()) Text(placeholder) },
+                        singleLine = true,
+                        isError = error != null,
+                        supportingText = error?.let { { Text(it) } },
+                        visualTransformation = if (isSecret) PasswordVisualTransformation() else androidx.compose.ui.text.input.VisualTransformation.None,
+                        keyboardOptions = KeyboardOptions(
+                            capitalization = if (uppercase) KeyboardCapitalization.Characters else KeyboardCapitalization.None,
+                            keyboardType = if (isSecret) KeyboardType.Password else keyboardType,
+                            autoCorrectEnabled = false
+                        ),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    preview?.invoke(input.trim())
+                }
             },
             confirmButton = {
                 TextButton(

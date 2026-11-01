@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_home.tsv -->
+<resources>
+    <string name="home_hello">Здравствуйте!</string>
+    <string name="home_hello_call">"Здравствуйте, "</string>
+    <string name="home_utc_time">Время UTC</string>
+    <string name="home_date_local">"%1$s  •  местное время %2$s"</string>
+    <string name="home_qth_locator">QTH-локатор</string>
+    <string name="home_no_location">Нет доступа к местоположению</string>
+    <string name="home_allow_location">Разрешить доступ к местоположению</string>
+    <string name="home_waiting_gps">Ожидание сигнала GPS…</string>
+    <string name="home_asl">" над ур. моря"</string>
+    <string name="home_no_altitude">нет высоты</string>
+    <string name="home_aprs_connecting">Подключение к сети APRS-IS…</string>
+    <string name="home_aprs_no_stations">Подключено – нет станций в радиусе %1$d км</string>
+    <plurals name="home_aprs_stations">
+        <item quantity="one">%1$d станция в радиусе %2$d км</item>
+        <item quantity="few">%1$d станции в радиусе %2$d км</item>
+        <item quantity="many">%1$d станций в радиусе %2$d км</item>
+        <item quantity="other">%1$d станции в радиусе %2$d км</item>
+    </plurals>
+    <string name="home_nearest_repeater">Ближайший ретранслятор</string>
+    <string name="home_tx">Передача</string>
+    <string name="home_rx">Приём</string>
+    <string name="home_mode">Вид работы</string>
+    <string name="home_none">нет</string>
+    <string name="home_connected">подключено</string>
+    <string name="home_disconnected">отключено</string>
+</resources>

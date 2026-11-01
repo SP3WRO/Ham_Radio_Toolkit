@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wygenerowane z tabeli tłumaczeń strings_contest_phrases.tsv -->
+<resources>
+    <string name="cx_eu_non_eu">станции Европы работают с внеевропейскими</string>
+    <string name="cx_qtc_all">QTC между всеми станциями</string>
+    <string name="cx_contacts_only_with">связи только с</string>
+    <string name="cx_serial">порядковый номер</string>
+    <string name="cx_tx_power">мощность передатчика</string>
+    <string name="cx_operator_age">возраст оператора</string>
+    <string name="cx_asia">Азия</string>
+    <string name="cx_member_number">членский номер</string>
+    <string name="cx_or_country">или страна</string>
+    <string name="cx_name">имя</string>
+    <string name="cx_cq_zone">зона CQ</string>
+    <string name="cx_itu_zone">зона ITU</string>
+    <string name="cx_hq_stations">станции HQ</string>
+    <string name="cx_society">сокращение организации</string>
+    <string name="cx_eg">например</string>
+    <string name="cx_sp_stations">станции SP</string>
+    <string name="cx_province_letter">буква воеводства</string>
+    <string name="cx_county_code">код повята</string>
+    <string name="cx_oblast_code">код области</string>
+    <string name="cx_district_code">код округа</string>
+    <string name="cx_state_province">штат/провинция</string>
+    <string name="cx_locator">локатор</string>
+    <string name="cx_chars">знаков</string>
+    <string name="cx_chars_gen">знаков</string>
+    <string name="cx_and_up">и выше</string>
+    <string name="cx_also">также</string>
+</resources>

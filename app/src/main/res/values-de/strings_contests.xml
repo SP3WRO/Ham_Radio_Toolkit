@@ -11,7 +11,7 @@
     <string name="ct_show_russian">Russische nationale und regionale Contests anzeigen (QRZ.RU)</string>
     <string name="ct_running_now">Laufen gerade</string>
     <string name="ct_none">Keine Contests für den gewählten Filter.</string>
-    <string name="ct_footer">Daten: Contestkalender SP9CXN, VHF/UHF/SHF-Contestkalender des Vereins Polski Klub UKF und der Contestkalender von QRZ.RU (russische Namen von der App ins Englische übersetzt). Die Kalender werden alle 12 Stunden aktualisiert. Prüfe vor dem Start den Termin in der Ausschreibung.</string>
+    <string name="ct_footer">Daten: Contestkalender SP9CXN, VHF/UHF/SHF-Contestkalender von PK-UKF / SP1CNV und der Contestkalender von QRZ.RU (russische Namen von der App ins Englische übersetzt). Die Kalender werden einmal täglich aktualisiert. Prüfe vor dem Start den Termin in der Ausschreibung.</string>
     <string name="ct_calendar_of">Kalender %1$s</string>
     <string name="ct_offline">Keine Verbindung und keine gespeicherten Kalender – integrierter Kalender (ausgewählte große Contests, Termine aus den Regeln berechnet)</string>
     <string name="ct_unavailable">%1$s: nicht verfügbar</string>
@@ -22,6 +22,7 @@
     <string name="ct_exchange">Austausch</string>
     <string name="ct_log_deadline">Logeinsendeschluss</string>
     <string name="ct_organizer_page">Seite des Veranstalters</string>
+    <string name="ct_source_page">Contest-Seite auf %1$s</string>
     <string name="ct_rules">Ausschreibung</string>
     <string name="ct_search_rules">Ausschreibung suchen</string>
     <string name="ct_rules_pl">Ausschreibung (PL)</string>

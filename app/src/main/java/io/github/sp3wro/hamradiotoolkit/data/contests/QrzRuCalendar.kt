@@ -1,16 +1,40 @@
 package io.github.sp3wro.hamradiotoolkit.data.contests
 
+import java.util.Calendar
+import java.util.TimeZone
+
 /**
- * Kalendarz zawodów QRZ.RU – plik ICS z najbliższym terminem każdych zawodów (ok. rok do przodu).
+ * Kalendarz zawodów QRZ.RU – plik ICS z najbliższym terminem każdych zawodów.
  * Rosyjskie nazwy tłumaczymy na angielski ([RussianContestNames]), oryginał zostaje w [ContestEntry.originalName].
+ *
+ * Ustalenia z QRZ.RU: cały plik ma ok. 1,1 MB, więc pobieramy tylko potrzebne miesiące (parametr m, po jednym
+ * w zapytaniu, bieżący i dwa kolejne), od razu z m.qrz.ru, bo tam www.qrz.ru przekierowuje Androida.
+ * Stron /contest/detail/ aplikacja nie pobiera; otwiera je tylko użytkownik, a link do strony zawodów
+ * ([ContestEntry.sourcePageUrl]) musi zostać przy każdym wpisie.
  *
  * Uwaga: DTSTART ma TZID=Europe/Moscow, ale w rzeczywistości zawiera czas z regulaminu (zwykle UTC),
  * dlatego czas bierzemy z SUMMARY ("проводится с 05.01.2026 18:00 UTC по 05.01.2026 19:59 UTC").
+ * Parametr m to sam numer miesiąca bez roku, więc w pliku bywają też terminy sprzed roku i za rok.
  */
 object QrzRuCalendar {
-    const val ICS_URL = "https://www.qrz.ru/contest/qrz-contest.ics"
+    private const val ICS_URL = "https://m.qrz.ru/contest/qrz-contest.ics"
     const val PAGE_URL = "https://www.qrz.ru/contest/"
     private const val HOUR_MS = 3_600_000L
+    private const val MONTHS_AHEAD = 2
+
+    fun icsUrl(month: Int): String = "$ICS_URL?m=$month"
+
+    /** Numery miesięcy do pobrania (1–12): bieżący według UTC i [MONTHS_AHEAD] kolejnych. */
+    fun monthsToFetch(nowMs: Long): List<Int> {
+        val month = monthOf(nowMs)
+        return (0..MONTHS_AHEAD).map { (month - 1 + it) % 12 + 1 }
+    }
+
+    /** Poprzedni miesiąc: nie jest pobierany, ale jego kopia pokazuje zawody trwające na przełomie miesięcy. */
+    fun previousMonth(nowMs: Long): Int = (monthOf(nowMs) + 10) % 12 + 1
+
+    private fun monthOf(nowMs: Long): Int =
+        Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply { timeInMillis = nowMs }.get(Calendar.MONTH) + 1
 
     private val EVENT = Regex("""(?s)BEGIN:VEVENT(.*?)END:VEVENT""")
     private val PERIOD = Regex(
@@ -65,6 +89,7 @@ object QrzRuCalendar {
         val description = p["DESCRIPTION"].orEmpty()
         val vhf = Regex("""MHz|GHz""").containsMatchIn(bands) || Regex("""УКВ|VHF|UHF""", RegexOption.IGNORE_CASE).containsMatchIn(original)
         val id = UID.matchEntire(p["UID"].orEmpty().trim())?.groupValues?.get(1)
+        val detailUrl = id?.let { "https://www.qrz.ru/contest/detail/$it.html" }
         val russian = RussianContestNames.isCyrillic(original)
         val name = if (russian) RussianContestNames.translate(original) else original
         return ContestEntry(
@@ -77,8 +102,8 @@ object QrzRuCalendar {
             modes = ContestText.modesIn("$modulation $original") + if (vhf) setOf(ContestMode.VHF) else emptySet(),
             bands = bands,
             originalName = if (russian) original else null,
-            rulesUrl = field(description, "Положение")?.takeIf { it.startsWith("http") }
-                ?: id?.let { "https://www.qrz.ru/contest/detail/$it.html" },
+            rulesUrl = field(description, "Положение")?.takeIf { it.startsWith("http") } ?: detailUrl,
+            sourcePageUrl = detailUrl,
             homepage = field(description, "Homepage")?.takeIf { it.startsWith("http") },
             logDeadline = field(description, "Отчеты принимаются до").orEmpty()
         )

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Wygenerowane z tabeli tłumaczeń strings_misc.tsv -->
 <resources>
-    <string name="err_award_page">Aktionsseite nicht erkannt</string>
     <string name="err_repeatermap">repeatermap.de antwortet nicht</string>
     <string name="err_not_wav">Das ist keine WAV-Datei</string>
     <string name="err_wav_no_audio">Keine Audiodaten in der WAV-Datei</string>

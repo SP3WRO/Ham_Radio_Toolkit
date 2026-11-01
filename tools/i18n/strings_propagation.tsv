@@ -1,30 +1,30 @@
-# key	en	pl	de	cs	sk
-prop_title	Propagation	Propagacja	Ausbreitung	Šíření	Šírenie
-prop_tab_hf	HF	HF (KF)	KW	KV	KV
-prop_tab_vhf	VHF	VHF (UKF)	UKW	VKV	VKV
-prop_tropocast_title	Tropocast map (ICON-EU)	Mapa Tropocast (ICON-EU)	Tropocast-Karte (ICON-EU)	Mapa Tropocast (ICON-EU)	Mapa Tropocast (ICON-EU)
-prop_now	Now	Teraz	Jetzt	Teď	Teraz
-prop_vhf_map_desc	VHF propagation map	Mapa propagacji VHF	UKW-Ausbreitungskarte	Mapa šíření VKV	Mapa šírenia VKV
-prop_legend_background	background	tło	Hintergrund	pozadí	pozadie
-prop_legend_marginal	marginal	marginalna	marginal	okrajové	okrajové
-prop_legend_weak	weak	słaba	schwach	slabé	slabé
-prop_legend_moderate	moderate	umiarkowana	mäßig	mírné	mierne
-prop_legend_good	good	dobra	gut	dobré	dobré
-prop_legend_very_good	very good	bardzo dobra	sehr gut	velmi dobré	veľmi dobré
-prop_legend_high	high	wysoka	hoch	vysoké	vysoké
-prop_legend_strong	strong	silna	stark	silné	silné
-prop_legend_very_strong	very strong	bardzo silna	sehr stark	velmi silné	veľmi silné
-prop_solar_params	Solar parameters	Parametry słoneczne	Sonnenparameter	Sluneční parametry	Slnečné parametre
-prop_updated	Updated: %1$s	Aktualizacja: %1$s	Aktualisiert: %1$s	Aktualizace: %1$s	Aktualizácia: %1$s
-prop_sunspots	Sunspots (SN)	Plamy (SN)	Sonnenflecken (SN)	Skvrny (SN)	Škvrny (SN)
-prop_a_index	A index	Indeks A	A-Index	Index A	Index A
-prop_k_index	K index	Indeks K	K-Index	Index K	Index K
-prop_day	Day	Dzień	Tag	Den	Deň
-prop_night	Night	Noc	Nacht	Noc	Noc
-prop_cond_good	Good	Dobre	Gut	Dobré	Dobré
-prop_cond_fair	Fair	Średnie	Mittel	Průměrné	Priemerné
-prop_cond_poor	Poor	Słabe	Schlecht	Slabé	Slabé
-prop_cond_closed	Closed	Zamknięte	Geschlossen	Uzavřené	Uzavreté
-prop_offline_cached	No connection – showing the last downloaded data	Brak połączenia – pokazuję ostatnie pobrane dane	Keine Verbindung – zeige die zuletzt geladenen Daten	Bez připojení – zobrazuji naposledy stažená data	Bez pripojenia – zobrazujem naposledy stiahnuté údaje
-prop_download_error	Error downloading data: %1$s	Błąd pobierania danych: %1$s	Fehler beim Laden der Daten: %1$s	Chyba stahování dat: %1$s	Chyba sťahovania údajov: %1$s
-prop_tropocast_error	Could not download the Tropocast map: %1$s	Nie udało się pobrać mapy Tropocast: %1$s	Tropocast-Karte konnte nicht geladen werden: %1$s	Mapu Tropocast se nepodařilo stáhnout: %1$s	Mapu Tropocast sa nepodarilo stiahnuť: %1$s
+# key	en	pl	de	cs	sk	ru
+prop_title	Propagation	Propagacja	Ausbreitung	Šíření	Šírenie	Прохождение
+prop_tab_hf	HF	HF (KF)	KW	KV	KV	КВ
+prop_tab_vhf	VHF	VHF (UKF)	UKW	VKV	VKV	УКВ
+prop_tropocast_title	Tropocast map (ICON-EU)	Mapa Tropocast (ICON-EU)	Tropocast-Karte (ICON-EU)	Mapa Tropocast (ICON-EU)	Mapa Tropocast (ICON-EU)	Карта Tropocast (ICON-EU)
+prop_now	Now	Teraz	Jetzt	Teď	Teraz	Сейчас
+prop_vhf_map_desc	VHF propagation map	Mapa propagacji VHF	UKW-Ausbreitungskarte	Mapa šíření VKV	Mapa šírenia VKV	Карта прохождения на УКВ
+prop_legend_background	background	tło	Hintergrund	pozadí	pozadie	фон
+prop_legend_marginal	marginal	marginalna	marginal	okrajové	okrajové	на грани
+prop_legend_weak	weak	słaba	schwach	slabé	slabé	слабое
+prop_legend_moderate	moderate	umiarkowana	mäßig	mírné	mierne	умеренное
+prop_legend_good	good	dobra	gut	dobré	dobré	хорошее
+prop_legend_very_good	very good	bardzo dobra	sehr gut	velmi dobré	veľmi dobré	очень хорошее
+prop_legend_high	high	wysoka	hoch	vysoké	vysoké	высокое
+prop_legend_strong	strong	silna	stark	silné	silné	сильное
+prop_legend_very_strong	very strong	bardzo silna	sehr stark	velmi silné	veľmi silné	очень сильное
+prop_solar_params	Solar parameters	Parametry słoneczne	Sonnenparameter	Sluneční parametry	Slnečné parametre	Солнечные параметры
+prop_updated	Updated: %1$s	Aktualizacja: %1$s	Aktualisiert: %1$s	Aktualizace: %1$s	Aktualizácia: %1$s	Обновлено: %1$s
+prop_sunspots	Sunspots (SN)	Plamy (SN)	Sonnenflecken (SN)	Skvrny (SN)	Škvrny (SN)	Солнечные пятна (SN)
+prop_a_index	A index	Indeks A	A-Index	Index A	Index A	Индекс A
+prop_k_index	K index	Indeks K	K-Index	Index K	Index K	Индекс K
+prop_day	Day	Dzień	Tag	Den	Deň	День
+prop_night	Night	Noc	Nacht	Noc	Noc	Ночь
+prop_cond_good	Good	Dobre	Gut	Dobré	Dobré	Хорошо
+prop_cond_fair	Fair	Średnie	Mittel	Průměrné	Priemerné	Средне
+prop_cond_poor	Poor	Słabe	Schlecht	Slabé	Slabé	Плохо
+prop_cond_closed	Closed	Zamknięte	Geschlossen	Uzavřené	Uzavreté	Закрыт
+prop_offline_cached	No connection – showing the last downloaded data	Brak połączenia – pokazuję ostatnie pobrane dane	Keine Verbindung – zeige die zuletzt geladenen Daten	Bez připojení – zobrazuji naposledy stažená data	Bez pripojenia – zobrazujem naposledy stiahnuté údaje	Нет соединения – показаны последние загруженные данные
+prop_download_error	Error downloading data: %1$s	Błąd pobierania danych: %1$s	Fehler beim Laden der Daten: %1$s	Chyba stahování dat: %1$s	Chyba sťahovania údajov: %1$s	Ошибка загрузки данных: %1$s
+prop_tropocast_error	Could not download the Tropocast map: %1$s	Nie udało się pobrać mapy Tropocast: %1$s	Tropocast-Karte konnte nicht geladen werden: %1$s	Mapu Tropocast se nepodařilo stáhnout: %1$s	Mapu Tropocast sa nepodarilo stiahnuť: %1$s	Не удалось загрузить карту Tropocast: %1$s

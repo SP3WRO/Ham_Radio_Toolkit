@@ -19,6 +19,10 @@ import kotlinx.coroutines.flow.map
 // Utworzenie pojedynczej instancji DataStore dla całej aplikacji (właściwość rozszerzająca Context)
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "user_settings")
 
+// Domyślne ustawienia APRS: -5 to SSID telefonu, "/[" to piechur
+const val DEFAULT_APRS_SSID = "-5"
+const val DEFAULT_APRS_ICON = "/["
+
 class UserPreferencesRepository(private val dataStore: DataStore<Preferences>) {
     
     private val callsignKey = stringPreferencesKey("callsign")
@@ -177,11 +181,11 @@ class UserPreferencesRepository(private val dataStore: DataStore<Preferences>) {
     }
 
     val aprsSsid: Flow<String> = dataStore.data.map { preferences ->
-        preferences[aprsSsidKey] ?: "-7"
+        preferences[aprsSsidKey] ?: DEFAULT_APRS_SSID
     }
 
     val aprsIcon: Flow<String> = dataStore.data.map { preferences ->
-        preferences[aprsIconKey] ?: "/>"
+        preferences[aprsIconKey] ?: DEFAULT_APRS_ICON
     }
 
     val aprsComment: Flow<String> = dataStore.data.map { preferences ->
@@ -201,6 +205,8 @@ class UserPreferencesRepository(private val dataStore: DataStore<Preferences>) {
             // Starsze wersje oferowały te źródła, ale w praktyce pobierały dane z baz polskich
             "repeaterbook" -> "przemienniki_net"
             "radioreference" -> "przemienniki_eu"
+            // Źródło RepeaterBook usunięte z aplikacji
+            "repeaterbook_api" -> "international"
             null -> "przemienniki_net"
             else -> source
         }

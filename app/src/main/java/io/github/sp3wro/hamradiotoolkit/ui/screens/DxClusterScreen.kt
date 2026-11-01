@@ -1,6 +1,5 @@
 package io.github.sp3wro.hamradiotoolkit.ui.screens
 
-import io.github.sp3wro.hamradiotoolkit.utils.localizedString
 import io.github.sp3wro.hamradiotoolkit.R
 import androidx.compose.ui.res.stringResource
 import android.widget.Toast
@@ -80,15 +79,20 @@ fun DxClusterScreen(
     var cty by remember { mutableStateOf(CtyRepository.cached()) }
     LaunchedEffect(Unit) { cty = CtyRepository.get(appContext) }
     val workedDxcc = remember(logs) { logs.mapNotNull { it.dxcc }.toSet() }
-    // Stacje obserwowanych akcji dyplomowych (z zapisanych kopii stron radiodyplom.pl)
+    // Stacje obserwowanych akcji dyplomowych aktywne na mapie pasm radiodyplom.pl
     val prefs = remember { UserPreferencesRepository(appContext.dataStore) }
     val followedAwards by prefs.followedAwards.collectAsState(initial = emptySet())
     var awardStations by remember { mutableStateOf<Map<String, List<AwardStationTag>>>(emptyMap()) }
-    LaunchedEffect(followedAwards) { awardStations = AwardSources.followedStations(appContext, followedAwards) }
+    LaunchedEffect(followedAwards) {
+        awardStations = emptyMap()
+        while (followedAwards.isNotEmpty()) {
+            awardStations = AwardSources.followedStations(appContext, followedAwards)
+            delay(AwardSources.BANDMAP_POLL_MS)
+        }
+    }
     val awardTextOf: (DxSpot) -> String? = { spot ->
         val call = spot.dxCall.trim().uppercase()
-        (awardStations[call] ?: awardStations[Callsigns.baseCall(call)])
-            ?.joinToString(" • ") { appContext.localizedString(R.string.dx_award_points, it.eventName, it.points) }
+        (awardStations[call] ?: awardStations[Callsigns.baseCall(call)])?.joinToString(" • ") { it.text }
     }
     var spotToLog by remember { mutableStateOf<DxSpot?>(null) }
     val isLoading by viewModel.isLoading.collectAsState()

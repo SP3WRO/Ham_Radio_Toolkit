@@ -2,8 +2,8 @@ package io.github.sp3wro.hamradiotoolkit.data.contests
 
 /** Skąd pochodzi wpis kalendarza. */
 enum class ContestSource(val label: String, val pageUrl: String) {
-    SP9CXN("SP9CXN", Sp9cxnCalendar.URL),
-    PK_UKF("PK-UKF", "https://pk-ukf.pl/"),
+    SP9CXN("SP9CXN", Sp9cxnCalendar.PAGE_URL),
+    PK_UKF("PK-UKF / SP1CNV", "https://pk-ukf.pl/"),
     QRZ_RU("QRZ.RU", QrzRuCalendar.PAGE_URL),
     BUILTIN("kalendarz wbudowany", "")
 }
@@ -24,6 +24,8 @@ data class ContestEntry(
     val rulesUrl: String? = null,
     /** Regulamin po polsku (tłumaczenie SP9CXN albo polska wersja PK-UKF). */
     val rulesPlUrl: String? = null,
+    /** Strona tych zawodów w serwisie QRZ.RU; zostaje przy wpisie także po złączeniu ze źródłem o wyższym priorytecie. */
+    val sourcePageUrl: String? = null,
     val homepage: String? = null,
     val organizer: String = "",
     val exchange: String = "",
@@ -37,28 +39,6 @@ data class ContestEntry(
 
 /** Wspólne narzędzia parserów kalendarzy. */
 internal object ContestText {
-    private val TAG = Regex("<[^>]+>")
-    private val BR = Regex("<br\\s*/?>", RegexOption.IGNORE_CASE)
-    private val SPACES = Regex("\\s+")
-    private val NUMERIC = Regex("&#(x?)([0-9a-fA-F]+);")
-    private val NAMED = mapOf(
-        "&nbsp;" to " ", "&lt;" to "<", "&gt;" to ">", "&quot;" to "\"", "&apos;" to "'",
-        "&ndash;" to "–", "&mdash;" to "—", "&laquo;" to "«", "&raquo;" to "»", "&oacute;" to "ó", "&Oacute;" to "Ó"
-    )
-
-    fun decodeEntities(s: String): String {
-        var out = NUMERIC.replace(s) { m ->
-            val code = m.groupValues[2].toIntOrNull(if (m.groupValues[1].isEmpty()) 10 else 16)
-            if (code == null || !Character.isValidCodePoint(code)) m.value else String(Character.toChars(code))
-        }
-        for ((entity, value) in NAMED) out = out.replace(entity, value)
-        return out.replace("&amp;", "&")
-    }
-
-    /** Tekst komórki HTML: bez znaczników, z rozwiniętymi encjami i pojedynczymi spacjami. */
-    fun text(html: String): String =
-        decodeEntities(TAG.replace(BR.replace(html, " "), "")).replace(SPACES, " ").trim()
-
     /** Myślniki typograficzne zamienione na zwykły. */
     fun dashes(s: String): String = s.replace('–', '-').replace('—', '-').replace('−', '-')
 
@@ -81,6 +61,18 @@ internal object ContestText {
     private val VHF = Regex("""\b(VHF|UHF|SHF|UKF|EME)\b|\bSPAC\b|\d\s*(MHz|GHz)""", RegexOption.IGNORE_CASE)
 
     fun looksVhf(text: String): Boolean = VHF.containsMatchIn(text)
+
+    private val UTC_TIME = Regex("""^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})""")
+
+    /** Czas "2026-03-07T14:00:00Z" albo "2026-03-07 14:00:00" (UTC); sekundy są pomijane. */
+    fun utcMillis(s: String): Long? {
+        val g = UTC_TIME.find(s.trim())?.groupValues ?: return null
+        val y = g[1].toInt()
+        val mo = g[2].toInt()
+        val d = g[3].toInt()
+        if (mo !in 1..12 || d !in 1..CivilDate.lengthOfMonth(y, mo)) return null
+        return CivilDate(y, mo, d).epochMillis + (g[4].toInt() * 60 + g[5].toInt()) * 60_000L
+    }
 
     /** Koniec zapisany jako 16:59 / 23:59 traktujemy jak pełną godzinę (17:00 / 24:00). */
     fun roundEnd(endMs: Long): Long = if ((endMs / 60_000L) % 60 == 59L) endMs + 60_000L else endMs

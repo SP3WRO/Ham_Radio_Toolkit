@@ -1,42 +1,42 @@
-# key	en	pl	de	cs	sk
-aprs_listen_only	Listen only	Tylko nasłuch	Nur Empfang	Jen příjem	Len príjem
-aprs_send_position	Send position	Nadaj pozycję	Position senden	Odeslat polohu	Odoslať polohu
-aprs_no_gps	No GPS position	Brak pozycji GPS	Keine GPS-Position	Chybí poloha GPS	Chýba poloha GPS
-aprs_position_sent	Position %1$s sent to APRS-IS	Wysłano pozycję %1$s do APRS-IS	Position %1$s an APRS-IS gesendet	Poloha %1$s odeslána do APRS-IS	Poloha %1$s odoslaná do APRS-IS
-aprs_my_station	My station	Moja stacja	Meine Station	Moje stanice	Moja stanica
-aprs_radius	Listening radius: %1$d km	Promień nasłuchu: %1$d km	Empfangsradius: %1$d km	Poloměr příjmu: %1$d km	Polomer príjmu: %1$d km
-aprs_comment	  •  comment: %1$s	  •  komentarz: %1$s	  •  Kommentar: %1$s	  •  komentář: %1$s	  •  komentár: %1$s
-aprs_always_listening	Listening runs all the time while the app is open.	Nasłuch działa przez cały czas, gdy aplikacja jest otwarta.	Der Empfang läuft die ganze Zeit, solange die App geöffnet ist.	Příjem běží po celou dobu, kdy je aplikace otevřená.	Príjem beží po celý čas, keď je aplikácia otvorená.
-aprs_need_callsign	Sending a position requires an amateur callsign. Without one the app only receives APRS frames (read-only APRS-IS connection).	Nadawanie pozycji wymaga znaku krótkofalarskiego. Bez niego aplikacja tylko odbiera ramki APRS (połączenie z APRS-IS w trybie do odczytu).	Das Senden der Position erfordert ein Amateurfunkrufzeichen. Ohne Rufzeichen empfängt die App nur APRS-Rahmen (APRS-IS-Verbindung nur lesend).	Odesílání polohy vyžaduje radioamatérskou značku. Bez ní aplikace jen přijímá rámce APRS (spojení s APRS-IS jen pro čtení).	Odosielanie polohy vyžaduje rádioamatérsku značku. Bez nej aplikácia len prijíma rámce APRS (spojenie s APRS-IS len na čítanie).
-aprs_enter_callsign	Enter your callsign in Settings	Wpisz znak w Ustawieniach	Rufzeichen in den Einstellungen eintragen	Zadej značku v Nastavení	Zadaj značku v Nastaveniach
-aprs_waiting_gps	Waiting for a GPS fix…	Oczekiwanie na pozycję GPS…	Warte auf GPS-Position…	Čekání na polohu GPS…	Čaká sa na polohu GPS…
-aprs_waiting_frames	Waiting for frames within %1$d km…	Oczekiwanie na ramki w promieniu %1$d km…	Warte auf Rahmen im Umkreis von %1$d km…	Čekání na rámce v okruhu %1$d km…	Čaká sa na rámce v okruhu %1$d km…
-aprs_connecting	Connecting to the APRS-IS network…	Łączenie z siecią APRS-IS…	Verbinde mit dem APRS-IS-Netz…	Připojování k síti APRS-IS…	Pripája sa k sieti APRS-IS…
-aprs_now	now	teraz	jetzt	teď	teraz
-aprs_min_ago	%1$d min ago	%1$d min temu	vor %1$d Min.	před %1$d min	pred %1$d min
-aprs_position	Position	Pozycja	Position	Poloha	Poloha
-aprs_movement	Movement	Ruch	Bewegung	Pohyb	Pohyb
-aprs_course	course %1$s°	kurs %1$s°	Kurs %1$s°	kurz %1$s°	kurz %1$s°
-aprs_altitude	Altitude	Wysokość	Höhe	Výška	Výška
-aprs_altitude_value	%1$d m a.s.l.	%1$d m n.p.m.	%1$d m ü. NN	%1$d m n. m.	%1$d m n. m.
-aprs_phg	Station (PHG)	Stacja (PHG)	Station (PHG)	Stanice (PHG)	Stanica (PHG)
-aprs_antenna	antenna %1$d m	antena %1$d m	Antenne %1$d m	anténa %1$d m	anténa %1$d m
-aprs_gain	gain %1$s dB	zysk %1$s dB	Gewinn %1$s dB	zisk %1$s dB	zisk %1$s dB
-aprs_humidity	humidity %1$s%%	wilgotność %1$s%%	Luftfeuchte %1$s%%	vlhkost %1$s%%	vlhkosť %1$s%%
-aprs_wind	wind %1$d km/h	wiatr %1$d km/h	Wind %1$d km/h	vítr %1$d km/h	vietor %1$d km/h
-aprs_wind_from	 from %1$s°	 z %1$s°	 aus %1$s°	 od %1$s°	 od %1$s°
-aprs_gusts	gusts %1$d km/h	porywy %1$d km/h	Böen %1$d km/h	nárazy %1$d km/h	nárazy %1$d km/h
-aprs_rain_1h	rain 1 h %1$s mm	opad 1 h %1$s mm	Regen 1 h %1$s mm	srážky 1 h %1$s mm	zrážky 1 h %1$s mm
-aprs_rain_24h	rain 24 h %1$s mm	opad 24 h %1$s mm	Regen 24 h %1$s mm	srážky 24 h %1$s mm	zrážky 24 h %1$s mm
-aprs_weather	Weather	Pogoda	Wetter	Počasí	Počasie
-rep_title	Repeaters (%1$d km)	Przemienniki (%1$d km)	Relais (%1$d km)	Převáděče (%1$d km)	Prevádzače (%1$d km)
-rep_only_working	Working only	Tylko sprawne	Nur in Betrieb	Jen funkční	Len funkčné
-rep_found	Found: %1$d	Znaleziono: %1$d	Gefunden: %1$d	Nalezeno: %1$d	Nájdené: %1$d
-rep_none	No repeaters within your range match the criteria.	Brak przemienników spełniających kryteria w Twoim zasięgu.	Keine Relais in deiner Reichweite entsprechen den Kriterien.	V tvém dosahu nejsou převáděče odpovídající kritériím.	V tvojom dosahu nie sú prevádzače zodpovedajúce kritériám.
-rep_tx	Repeater TX	Przemiennik TX	Relais TX	Převáděč TX	Prevádzač TX
-rep_rx	Repeater RX	Przemiennik RX	Relais RX	Převáděč RX	Prevádzač RX
-rep_ctcss	CTCSS tone	Ton CTCSS	CTCSS-Ton	Tón CTCSS	Tón CTCSS
-rep_none_short	None	Brak	Keiner	Žádný	Žiadny
-rep_checking_radioid	Checking RadioID…	Sprawdzam RadioID…	Prüfe RadioID…	Ověřuji RadioID…	Overujem RadioID…
-rep_trustee	Trustee: %1$s	Opiekun: %1$s	Verantwortlicher: %1$s	Správce: %1$s	Správca: %1$s
-rep_download_error	Download error (%1$s): %2$s	Błąd pobierania (%1$s): %2$s	Ladefehler (%1$s): %2$s	Chyba stahování (%1$s): %2$s	Chyba sťahovania (%1$s): %2$s
+# key	en	pl	de	cs	sk	ru
+aprs_listen_only	Listen only	Tylko nasłuch	Nur Empfang	Jen příjem	Len príjem	Только приём
+aprs_send_position	Send position	Nadaj pozycję	Position senden	Odeslat polohu	Odoslať polohu	Отправить позицию
+aprs_no_gps	No GPS position	Brak pozycji GPS	Keine GPS-Position	Chybí poloha GPS	Chýba poloha GPS	Нет позиции GPS
+aprs_position_sent	Position %1$s sent to APRS-IS	Wysłano pozycję %1$s do APRS-IS	Position %1$s an APRS-IS gesendet	Poloha %1$s odeslána do APRS-IS	Poloha %1$s odoslaná do APRS-IS	Позиция %1$s отправлена в APRS-IS
+aprs_my_station	My station	Moja stacja	Meine Station	Moje stanice	Moja stanica	Моя станция
+aprs_radius	Listening radius: %1$d km	Promień nasłuchu: %1$d km	Empfangsradius: %1$d km	Poloměr příjmu: %1$d km	Polomer príjmu: %1$d km	Радиус приёма: %1$d км
+aprs_comment	  •  comment: %1$s	  •  komentarz: %1$s	  •  Kommentar: %1$s	  •  komentář: %1$s	  •  komentár: %1$s	  •  комментарий: %1$s
+aprs_always_listening	Listening runs all the time while the app is open.	Nasłuch działa przez cały czas, gdy aplikacja jest otwarta.	Der Empfang läuft die ganze Zeit, solange die App geöffnet ist.	Příjem běží po celou dobu, kdy je aplikace otevřená.	Príjem beží po celý čas, keď je aplikácia otvorená.	Приём работает всё время, пока приложение открыто.
+aprs_need_callsign	Sending a position requires an amateur callsign. Without one the app only receives APRS frames (read-only APRS-IS connection).	Nadawanie pozycji wymaga znaku krótkofalarskiego. Bez niego aplikacja tylko odbiera ramki APRS (połączenie z APRS-IS w trybie do odczytu).	Das Senden der Position erfordert ein Amateurfunkrufzeichen. Ohne Rufzeichen empfängt die App nur APRS-Rahmen (APRS-IS-Verbindung nur lesend).	Odesílání polohy vyžaduje radioamatérskou značku. Bez ní aplikace jen přijímá rámce APRS (spojení s APRS-IS jen pro čtení).	Odosielanie polohy vyžaduje rádioamatérsku značku. Bez nej aplikácia len prijíma rámce APRS (spojenie s APRS-IS len na čítanie).	Для отправки позиции нужен любительский позывной. Без него приложение только принимает кадры APRS (подключение к APRS-IS только для чтения).
+aprs_enter_callsign	Enter your callsign in Settings	Wpisz znak w Ustawieniach	Rufzeichen in den Einstellungen eintragen	Zadej značku v Nastavení	Zadaj značku v Nastaveniach	Укажите позывной в настройках
+aprs_waiting_gps	Waiting for a GPS fix…	Oczekiwanie na pozycję GPS…	Warte auf GPS-Position…	Čekání na polohu GPS…	Čaká sa na polohu GPS…	Ожидание сигнала GPS…
+aprs_waiting_frames	Waiting for frames within %1$d km…	Oczekiwanie na ramki w promieniu %1$d km…	Warte auf Rahmen im Umkreis von %1$d km…	Čekání na rámce v okruhu %1$d km…	Čaká sa na rámce v okruhu %1$d km…	Ожидание кадров в радиусе %1$d км…
+aprs_connecting	Connecting to the APRS-IS network…	Łączenie z siecią APRS-IS…	Verbinde mit dem APRS-IS-Netz…	Připojování k síti APRS-IS…	Pripája sa k sieti APRS-IS…	Подключение к сети APRS-IS…
+aprs_now	now	teraz	jetzt	teď	teraz	сейчас
+aprs_min_ago	%1$d min ago	%1$d min temu	vor %1$d Min.	před %1$d min	pred %1$d min	%1$d мин назад
+aprs_position	Position	Pozycja	Position	Poloha	Poloha	Позиция
+aprs_movement	Movement	Ruch	Bewegung	Pohyb	Pohyb	Движение
+aprs_course	course %1$s°	kurs %1$s°	Kurs %1$s°	kurz %1$s°	kurz %1$s°	курс %1$s°
+aprs_altitude	Altitude	Wysokość	Höhe	Výška	Výška	Высота
+aprs_altitude_value	%1$d m a.s.l.	%1$d m n.p.m.	%1$d m ü. NN	%1$d m n. m.	%1$d m n. m.	%1$d м над ур. моря
+aprs_phg	Station (PHG)	Stacja (PHG)	Station (PHG)	Stanice (PHG)	Stanica (PHG)	Станция (PHG)
+aprs_antenna	antenna %1$d m	antena %1$d m	Antenne %1$d m	anténa %1$d m	anténa %1$d m	антенна %1$d м
+aprs_gain	gain %1$s dB	zysk %1$s dB	Gewinn %1$s dB	zisk %1$s dB	zisk %1$s dB	усиление %1$s дБ
+aprs_humidity	humidity %1$s%%	wilgotność %1$s%%	Luftfeuchte %1$s%%	vlhkost %1$s%%	vlhkosť %1$s%%	влажность %1$s%%
+aprs_wind	wind %1$d km/h	wiatr %1$d km/h	Wind %1$d km/h	vítr %1$d km/h	vietor %1$d km/h	ветер %1$d км/ч
+aprs_wind_from	 from %1$s°	 z %1$s°	 aus %1$s°	 od %1$s°	 od %1$s°	 с направления %1$s°
+aprs_gusts	gusts %1$d km/h	porywy %1$d km/h	Böen %1$d km/h	nárazy %1$d km/h	nárazy %1$d km/h	порывы %1$d км/ч
+aprs_rain_1h	rain 1 h %1$s mm	opad 1 h %1$s mm	Regen 1 h %1$s mm	srážky 1 h %1$s mm	zrážky 1 h %1$s mm	дождь за 1 ч %1$s мм
+aprs_rain_24h	rain 24 h %1$s mm	opad 24 h %1$s mm	Regen 24 h %1$s mm	srážky 24 h %1$s mm	zrážky 24 h %1$s mm	дождь за 24 ч %1$s мм
+aprs_weather	Weather	Pogoda	Wetter	Počasí	Počasie	Погода
+rep_title	Repeaters (%1$d km)	Przemienniki (%1$d km)	Relais (%1$d km)	Převáděče (%1$d km)	Prevádzače (%1$d km)	Ретрансляторы (%1$d км)
+rep_only_working	Working only	Tylko sprawne	Nur in Betrieb	Jen funkční	Len funkčné	Только работающие
+rep_found	Found: %1$d	Znaleziono: %1$d	Gefunden: %1$d	Nalezeno: %1$d	Nájdené: %1$d	Найдено: %1$d
+rep_none	No repeaters within your range match the criteria.	Brak przemienników spełniających kryteria w Twoim zasięgu.	Keine Relais in deiner Reichweite entsprechen den Kriterien.	V tvém dosahu nejsou převáděče odpovídající kritériím.	V tvojom dosahu nie sú prevádzače zodpovedajúce kritériám.	В вашем радиусе нет ретрансляторов, подходящих под условия.
+rep_tx	Repeater TX	Przemiennik TX	Relais TX	Převáděč TX	Prevádzač TX	Передача ретранслятора
+rep_rx	Repeater RX	Przemiennik RX	Relais RX	Převáděč RX	Prevádzač RX	Приём ретранслятора
+rep_ctcss	CTCSS tone	Ton CTCSS	CTCSS-Ton	Tón CTCSS	Tón CTCSS	Тон CTCSS
+rep_none_short	None	Brak	Keiner	Žádný	Žiadny	Нет
+rep_checking_radioid	Checking RadioID…	Sprawdzam RadioID…	Prüfe RadioID…	Ověřuji RadioID…	Overujem RadioID…	Проверка в RadioID…
+rep_trustee	Trustee: %1$s	Opiekun: %1$s	Verantwortlicher: %1$s	Správce: %1$s	Správca: %1$s	Ответственный: %1$s
+rep_download_error	Download error (%1$s): %2$s	Błąd pobierania (%1$s): %2$s	Ladefehler (%1$s): %2$s	Chyba stahování (%1$s): %2$s	Chyba sťahovania (%1$s): %2$s	Ошибка загрузки (%1$s): %2$s
