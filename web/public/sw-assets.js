@@ -1,10 +1,11 @@
 // Wygenerowane przez tools/build-data.mjs – nie edytować
-self.HRT_VERSION = "1a357499baa0";
+self.HRT_VERSION = "d065e80ac397";
 self.HRT_ASSETS = [
  "./",
  "css/app.css",
  "data/activations.json",
  "data/bandplan.json",
+ "data/contest_names_ru.json",
  "data/cty.csv",
  "data/i18n/cs.json",
  "data/i18n/de.json",
@@ -24,6 +25,7 @@ self.HRT_ASSETS = [
  "index.html",
  "js/app.js",
  "js/core/callbook.js",
+ "js/core/contests.js",
  "js/core/geo.js",
  "js/core/logbook.js",
  "js/core/radio.js",
@@ -35,6 +37,7 @@ self.HRT_ASSETS = [
  "js/icons.js",
  "js/screens/calculators.js",
  "js/screens/common.js",
+ "js/screens/contests.js",
  "js/screens/home.js",
  "js/screens/index.js",
  "js/screens/locator.js",

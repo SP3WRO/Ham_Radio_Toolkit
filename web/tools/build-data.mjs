@@ -7,6 +7,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, copyFileSync, exis
 import { join, dirname } from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
+import { normalizeRussian } from "../public/js/core/contests.js";
 
 const WEB = join(dirname(fileURLToPath(import.meta.url)), "..");
 const ROOT = join(WEB, "..");
@@ -103,11 +104,26 @@ const bandplan = {
     3: parseBands(regional, "Region3Bandplan"),
   },
   phrases: parsePhrases("BandplanText"),
+  contestPhrases: parsePhrases("ContestText"),
 };
 for (const [r, bands] of Object.entries(bandplan.regions)) {
   if (bands.length < 10) throw new Error(`Region ${r}: tylko ${bands.length} pasm – zmienił się format pliku?`);
 }
 writeFileSync(join(OUT, "bandplan.json"), JSON.stringify(bandplan));
+
+// ---------------------------------------------------------------- tłumaczenia rosyjskich nazw zawodów (QRZ.RU)
+{
+  const src = readFileSync(join(KOTLIN, "data", "contests", "RussianContestNames.kt"), "utf8");
+  const start = src.indexOf("private val KNOWN");
+  const body = src.slice(start, src.indexOf(").mapKeys", start));
+  /** @type {Record<string, string>} */
+  const known = {};
+  const unq = (/** @type {string} */ x) => x.replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+  for (const m of body.matchAll(/"((?:[^"\\]|\\.)*)"\s+to\s+"((?:[^"\\]|\\.)*)"/g)) known[normalizeRussian(unq(m[1]))] = unq(m[2]);
+  if (Object.keys(known).length < 50) throw new Error("Za mało nazw w RussianContestNames.kt");
+  writeFileSync(join(OUT, "contest_names_ru.json"), JSON.stringify(known));
+  console.log(`zawody RU: ${Object.keys(known).length} nazw`);
+}
 
 // ---------------------------------------------------------------- pliki kopiowane 1:1
 copyFileSync(join(MAIN, "assets", "cty.csv"), join(OUT, "cty.csv"));

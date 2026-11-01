@@ -13,6 +13,7 @@ import { soonScreen } from "./common.js";
 import { dxClusterScreen, liveSpotsScreen, activationsScreen } from "./spots.js";
 import { repeatersScreen } from "./repeaters.js";
 import { lookupScreen } from "./lookup.js";
+import { contestsScreen } from "./contests.js";
 
 /** @type {Record<string, (ctx: import("../app.js").ScreenContext) => import("../app.js").ScreenInstance>} */
 export const SCREENS = {
@@ -23,6 +24,7 @@ export const SCREENS = {
   activations: activationsScreen,
   repeaters: repeatersScreen,
   callsign_lookup: lookupScreen,
+  contest_calendar: contestsScreen,
   logger: loggerScreen,
   log_stats: logStatsScreen,
   toolbox: toolboxScreen,

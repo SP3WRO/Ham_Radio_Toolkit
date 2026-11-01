@@ -11,6 +11,7 @@ import { fileURLToPath } from "node:url";
 import { nearby } from "./activations.mjs";
 import { repeaters } from "./repeaters.mjs";
 import { lookup as callbookLookup } from "./callbook.mjs";
+import { contests } from "./contests.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT ?? 8080);
@@ -239,6 +240,13 @@ const server = createServer(async (req, res) => {
       if ((lat != null && !Number.isFinite(lat)) || (lon != null && !Number.isFinite(lon))) return send(res, 400, { error: "Złe współrzędne" });
       try {
         return send(res, 200, { repeaters: await repeaters(source, lat, lon, USER_AGENT) });
+      } catch (e) {
+        return send(res, 502, { error: String(e?.message ?? e) });
+      }
+    }
+    if (url.pathname === "/api/contests") {
+      try {
+        return send(res, 200, await contests(USER_AGENT, url.searchParams.get("refresh") === "1"));
       } catch (e) {
         return send(res, 502, { error: String(e?.message ?? e) });
       }

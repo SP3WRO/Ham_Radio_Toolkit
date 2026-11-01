@@ -321,3 +321,7 @@ a.card { color: inherit; text-decoration: none; }
 .clamp2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .switch.disabled { opacity: .38; }
+.plain-btn { background: none; border: 0; padding: 0; cursor: pointer; gap: 8px; }
+.card.running { background: var(--primary-container); color: var(--on-primary-container); }
+.label-m { font-size: 12px; font-weight: 500; }
+a.btn { text-decoration: none; }

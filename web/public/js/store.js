@@ -21,6 +21,7 @@ export const DEFAULTS = {
   last_known_lat: /** @type {number | null} */ (null),
   last_known_lon: /** @type {number | null} */ (null),
   install_hint_dismissed: false,
+  contests_show_russian: false,
 };
 
 /** @typedef {typeof DEFAULTS} Settings */
