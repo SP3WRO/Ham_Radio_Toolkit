@@ -343,3 +343,10 @@ a.btn { text-decoration: none; }
 .skyplot .sky-name { font-size: 11px; fill: var(--primary); }
 .skyplot .sky-name.up { fill: var(--tertiary); }
 .spinner.s { width: 14px; height: 14px; border-width: 2px; }
+.code { font-family: ui-monospace, Menlo, monospace; }
+.textarea { width: 100%; min-height: 96px; box-sizing: border-box; padding: 12px 16px; border: 1px solid var(--outline); border-radius: 4px; background: transparent;
+  color: var(--on-surface); font-size: 16px; resize: vertical; }
+.textarea:focus { outline: 2px solid var(--primary); outline-offset: -2px; border-color: transparent; }
+.scroll.decoder { display: flex; flex-direction: column; }
+.decoder-text { flex: 1 1 auto !important; min-height: 180px; max-height: 50vh; overflow-y: auto; background: var(--surface-container-high); border-radius: var(--radius-card);
+  padding: 12px; font-size: 20px; line-height: 1.4; white-space: pre-wrap; word-break: break-word; }

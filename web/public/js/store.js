@@ -23,6 +23,10 @@ export const DEFAULTS = {
   install_hint_dismissed: false,
   contests_show_russian: false,
   followed_awards: /** @type {string[]} */ ([]),
+  cw_lesson: 1,
+  cw_char_wpm: 20,
+  cw_effective_wpm: 12,
+  cw_tone_hz: 600,
 };
 
 /** @typedef {typeof DEFAULTS} Settings */
