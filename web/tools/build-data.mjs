@@ -14,7 +14,7 @@ const ROOT = join(WEB, "..");
 const MAIN = join(ROOT, "app", "src", "main");
 const KOTLIN = join(MAIN, "java", "io", "github", "sp3wro", "hamradiotoolkit");
 const OUT = join(WEB, "public", "data");
-const LANGS = ["en", "pl", "de", "cs", "sk"];
+const LANGS = ["en", "pl", "de", "cs", "sk", "ru"];
 
 mkdirSync(join(OUT, "i18n"), { recursive: true });
 mkdirSync(join(OUT, "vademecum"), { recursive: true });

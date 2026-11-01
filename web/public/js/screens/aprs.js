@@ -106,6 +106,14 @@ if (typeof document !== "undefined") {
   });
 }
 
+/** Podgląd symbolu z dwuznakowego kodu (tabela lub nakładka + symbol). @param {string} code @param {number} [size] */
+export function aprsSymbolPreview(code, size = 32) {
+  const table = code[0];
+  const el = aprsIcon(/** @type {any} */ ({ table: table === "/" ? "/" : "\\", symbol: code[1], overlay: table !== "/" && table !== "\\" ? table : null }));
+  if (size !== 32) { el.style.transform = `scale(${size / 32})`; el.style.margin = `${(size - 32) / 2}px`; }
+  return el;
+}
+
 /** Symbol APRS z arkusza (16×6). @param {AprsPacket} p */
 function aprsIcon(p) {
   const code = p.symbol.charCodeAt(0) - 33;

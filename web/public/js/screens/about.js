@@ -34,11 +34,10 @@ const SOURCES = [
   ["tool_aprs", [{ name: "APRS-IS (aprs2.net)", usage: "src_aprsis", url: "https://www.aprs2.net" }]],
   ["src_g_repeaters", [
     { name: "przemienniki.eu", usage: "src_rep_pl_eu", url: "https://przemienniki.eu" },
-    { name: "przemienniki.net", usage: "src_rep_pl", url: "https://przemienniki.net" },
+    { name: "przemienniki.net", usage: "src_rep_pl_eu", url: "https://przemienniki.net" },
     { name: "HearHam.com", usage: "src_rep_world", url: "https://hearham.com" },
     { name: "repeatermap.de", usage: "src_rep_world", url: "https://www.repeatermap.de" },
-    { name: "RadioID.net", usage: "src_dmr_details", url: "https://radioid.net" },
-    { name: "RepeaterBook.com", usage: "src_rb", url: "https://www.repeaterbook.com" }]],
+    { name: "RadioID.net", usage: "src_dmr_details", url: "https://radioid.net" }]],
   ["src_g_lookup", [
     { name: "UKE", nameKey: "src_uke_name", usage: "src_uke", url: "https://amator.uke.gov.pl" },
     { name: "HamQTH", usage: "src_callbook", url: "https://www.hamqth.com" },
@@ -53,7 +52,7 @@ const SOURCES = [
     { name: "amateur-satellite-database (palewire)", usage: "src_satdb", url: "https://github.com/palewire/amateur-satellite-database" }]],
   ["src_g_contests", [
     { name: "SP9CXN", nameKey: "src_sp9cxn_name", usage: "src_sp9cxn", url: "https://sp9cxn.pzk.pl" },
-    { name: "Polski Klub UKF", usage: "src_pkukf", url: "https://pk-ukf.pl" },
+    { name: "PK-UKF / SP1CNV", usage: "src_pkukf", url: "https://pk-ukf.pl" },
     { name: "QRZ.RU", usage: "src_qrzru", url: "https://www.qrz.ru/contest/" },
     { name: "radiodyplom.pl – SP8TZ", usage: "src_radiodyplom", url: "https://radiodyplom.pl" }]],
   ["src_g_log", [

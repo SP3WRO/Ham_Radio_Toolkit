@@ -1,7 +1,6 @@
 // @ts-check
 // Przemienniki: parsery źródeł, scalanie i grupowanie – port data/model/Repeater.kt, RepeaterDataSourceFetcher.kt,
 // InternationalRepeaters.kt i RepeatersViewModel.buildList. Moduł bez DOM – używa go też serwer.
-import { parseCsvLine } from "./spots.js";
 
 /**
  * @typedef {{callsign: string, qth: string, modes: string[], userRx: number, userTx: number, requiredCtcss: string,
@@ -15,12 +14,11 @@ export const RepeaterSources = {
   WORLD: "international",
   HEARHAM: "hearham",
   REPEATERMAP: "repeatermap",
-  REPEATERBOOK: "repeaterbook_api",
   /** @param {string} s */
   isPolish: (s) => s === "przemienniki_net" || s === "przemienniki_eu",
   /** @param {string} s */
   label: (s) => ({ przemienniki_net: "przemienniki.net", przemienniki_eu: "przemienniki.eu", international: "HearHam + repeatermap.de",
-    hearham: "HearHam", repeatermap: "repeatermap.de", repeaterbook_api: "RepeaterBook" })[s] ?? s,
+    hearham: "HearHam", repeatermap: "repeatermap.de" })[s] ?? s,
 };
 
 /** @param {Partial<Repeater>} p @returns {Repeater} */
@@ -78,71 +76,41 @@ export function parsePrzemiennikiEu(body) {
   })] : []));
 }
 
-/** Mapa emisji ze znaku (przemienniki.eu) – uzupełnia eksport CHIRP z przemienniki.net. @param {string} body */
-export function modesFromEu(body) {
-  /** @type {Map<string, string[]>} */
-  const map = new Map();
-  for (const r of JSON.parse(body)) {
-    if (!String(r.callsign ?? "").trim()) continue;
-    map.set(r.callsign, [...(map.get(r.callsign) ?? []), ...(r.modes ?? [])]);
-  }
-  return new Map([...map].map(([k, v]) => [k, normalizeModesPl(v)]));
-}
+// Maski "status" z sekcji masks w rpts.json przemienniki.net
+const NET_STATUS = /** @type {Record<string, string>} */ ({ 1: "working", 2: "off", 8: "testing", 16: "building", 32: "planned" });
+/** @param {unknown} v */
+const coordinate = (v) => { const n = v == null || v === "" ? NaN : Number(v); return Number.isFinite(n) && n !== 0 ? n : null; };
 
-/** Współrzędne z przemienniki.net/export/radar.xml. @param {string} xml */
-export function parseRadarXml(xml) {
-  /** @type {Map<string, [number, number]>} */
-  const map = new Map();
-  for (const m of xml.matchAll(/<repeater\s+[\s\S]*?>/g)) {
-    /** @type {Record<string, string>} */
-    const attrs = {};
-    for (const a of m[0].matchAll(/(\w+)="([^"]*)"/g)) attrs[a[1]] = a[2].trim();
-    const cs = attrs.callsign?.trim();
-    const lat = Number(attrs.latitude) || 0, lon = Number(attrs.longitude) || 0;
-    if (cs && lat !== 0 && lon !== 0) map.set(cs, [lat, lon]);
-  }
-  return map;
-}
+/** Znacznik wersji bazy z przemienniki.net/export/timestamp.xml. @param {string} xml */
+export const przemiennikiNetTimestamp = (xml) => /<timestamp>([^<]*)<\/timestamp>/.exec(xml)?.[1]?.trim() || null;
 
 /**
- * Eksport CHIRP z przemienniki.net. Kolumny: Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,Mode,TStep,Comment
- * @param {string} csv @param {Map<string, [number, number]>} coords @param {Map<string, string[]>} modes @returns {Repeater[]}
+ * Pełny eksport przemienniki.net/export/rpts.json (liczby raz w cudzysłowach, raz bez).
+ * qrg_tx nadaje przemiennik, czyli na niej odbiera użytkownik. @param {string} text @returns {Repeater[]}
  */
-export function parseChirpCsv(csv, coords, modes) {
-  const result = [];
-  /** @type {Map<string, number> | null} */
-  let cols = null;
-  for (const raw of csv.split("\n")) {
-    const line = raw.replace(/\r$/, "");
-    if (!line.trim()) continue;
-    const fields = parseCsvLine(line);
-    if (!cols) { if (fields.includes("Frequency")) cols = new Map(fields.map((f, i) => [f, i])); continue; }
-    const c = cols;
-    const row = (n) => fields[c.get(n) ?? -1] ?? "";
-    const callsign = row("Name");
-    if (!callsign.trim()) continue;
-    const userRx = Number(row("Frequency"));
-    if (!row("Frequency") || !Number.isFinite(userRx) || userRx === 0) continue;
-    const offset = Number(row("Offset")) || 0;
-    const duplex = row("Duplex");
-    const userTx = duplex === "-" ? userRx - offset : duplex === "+" ? userRx + offset : userRx;
-    // CHIRP zawsze wypełnia rToneFreq/cToneFreq (88.5) – ton obowiązuje tylko, gdy kolumna Tone go włącza
-    const tone = row("Tone");
-    const ctcssRaw = tone === "Tone" ? row("rToneFreq") : tone === "TSQL" ? row("cToneFreq") : "";
-    const ctcss = !ctcssRaw.trim() || Number(ctcssRaw) === 0 ? "-" : ctcssRaw;
-    const qth = row("Comment");
-    const pos = coords.get(callsign);
-    if (!pos) continue; // bez współrzędnych nie policzymy odległości
-    const raws = [...(modes.get(callsign) ?? []), row("Mode") || "FM"];
-    const u = qth.toUpperCase();
-    if (u.includes("C4FM") || u.includes("FUSION") || u.includes("WIRES-X")) raws.push("C4FM");
-    if (u.includes("DMR")) raws.push("DMR");
-    if (u.includes("DSTAR") || u.includes("D-STAR")) raws.push("D-STAR");
-    const m = normalizeModesPl(raws);
-    result.push(makeRepeater({ callsign, qth: qth.trim() ? qth : "Przemienniki.net", modes: m.length ? m : ["FM"], userRx, userTx,
-      requiredCtcss: ctcss, status: "working", latitude: pos[0], longitude: pos[1], source: "przemienniki.net" }));
+export function parsePrzemiennikiNet(text) {
+  const list = JSON.parse(text)?.repeaters;
+  /** @type {Repeater[]} */
+  const out = [];
+  for (const r of Array.isArray(list) ? list : []) {
+    const callsign = String(r?.qra ?? "").trim();
+    if (!callsign || String(r.deleted) === "1" || String(r.visible) === "0") continue;
+    const userRx = coordinate(r.qrg_tx);
+    if (userRx == null) continue;
+    const userTx = coordinate(r.qrg_rx) ?? userRx;
+    // Pozycja z lokatora, gdy nie ma dokładnej; bez żadnej nie da się policzyć odległości
+    const lat = coordinate(r.lat) ?? coordinate(r.loclat);
+    const lon = coordinate(r.lng) ?? coordinate(r.loclng);
+    if (lat == null || lon == null) continue;
+    const ctcss = String(r.ctcss_rx ?? "").trim();
+    const modes = normalizeModesPl(String(r.mode_txt ?? "").split("+"));
+    out.push(makeRepeater({
+      callsign, qth: String(r.qth ?? "").trim() || String(r.locator ?? "").trim() || "Przemienniki.net",
+      modes: modes.length ? modes : ["FM"], userRx, userTx, requiredCtcss: !ctcss || Number(ctcss) === 0 ? "-" : ctcss,
+      status: NET_STATUS[String(r.status)] ?? "unknown", latitude: lat, longitude: lon, source: "przemienniki.net",
+    }));
   }
-  return result;
+  return out;
 }
 
 // ---------------------------------------------------------------- źródła zagraniczne
@@ -233,31 +201,6 @@ export function parseRepeatermap(text) {
     }
   }
   return result;
-}
-
-/** Eksport RepeaterBook: {"count": n, "results": [...]} @param {string} text @returns {Repeater[]} */
-export function parseRepeaterBook(text) {
-  const root = JSON.parse(text);
-  const results = Array.isArray(root?.results) ? root.results : [];
-  const yes = (o, k) => str(o, k).toLowerCase() === "yes";
-  return results.flatMap((o) => {
-    const output = num(o, "Frequency"), lat = num(o, "Lat"), lon = num(o, "Long");
-    if (output == null || lat == null || lon == null) return [];
-    const modes = [];
-    if (yes(o, "FM Analog")) modes.push("FM");
-    if (yes(o, "DMR")) modes.push("DMR");
-    if (yes(o, "D-Star")) modes.push("D-STAR");
-    if (yes(o, "System Fusion")) modes.push("C4FM");
-    if (yes(o, "NXDN")) modes.push("NXDN");
-    if (yes(o, "APCO P-25")) modes.push("P25");
-    if (yes(o, "Tetra")) modes.push("TETRA");
-    return [makeRepeater({
-      callsign: str(o, "Callsign").trim().toUpperCase(), qth: [str(o, "Nearest City"), str(o, "Landmark")].filter((s) => s.trim()).join(", "),
-      modes: modes.length ? modes : ["FM"], userRx: output, userTx: num(o, "Input Freq") ?? output, requiredCtcss: ctcssOrDash(str(o, "PL")),
-      status: /off/i.test(str(o, "Operational Status")) ? "off" : "working", latitude: lat, longitude: lon, source: "RepeaterBook",
-      note: str(o, "Notes").trim(), dmrColorCode: str(o, "DMR Color Code").trim(),
-    })];
-  });
 }
 
 /** Szczegóły DMR z RadioID: [częstotliwość wyjścia, szczegóły][]. @param {string} text */

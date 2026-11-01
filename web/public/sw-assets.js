@@ -1,5 +1,5 @@
 // Wygenerowane przez tools/build-data.mjs – nie edytować
-self.HRT_VERSION = "7b7f68851a20";
+self.HRT_VERSION = "7feb974ed57e";
 self.HRT_ASSETS = [
  "./",
  "css/app.css",
@@ -14,6 +14,7 @@ self.HRT_ASSETS = [
  "data/i18n/de.json",
  "data/i18n/en.json",
  "data/i18n/pl.json",
+ "data/i18n/ru.json",
  "data/i18n/sk.json",
  "data/sat_freqs.json",
  "data/vademecum/dxcc.tsv",

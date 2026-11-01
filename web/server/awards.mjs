@@ -1,13 +1,13 @@
-// Akcje dyplomowe radiodyplom.pl dla wersji WWW (AwardSources.kt): kalendarz ICS i strony akcji pobierane najwyżej
-// co 12 godzin. Strony akcji (z rankingiem nawet kilka MB) serwer czyta raz i trzyma tylko wynik: szczegóły + ranking.
-import { parseRadiodyplomIcs, parseAwardPage, RADIODYPLOM_ICS, awardEventUrl } from "../public/js/core/awards.js";
+// Akcje dyplomowe radiodyplom.pl dla wersji WWW (AwardSources.kt) – wyłącznie public_events.json (najwyżej co 12 godzin)
+// i public_bandmap.json (najwyżej co 5 minut, tylko gdy ktoś ma otwarty ekran, który z niej korzysta).
+import { parseAwardEvents, parseBandmap, RADIODYPLOM_EVENTS, RADIODYPLOM_BANDMAP } from "../public/js/core/awards.js";
 
 const MAX_AGE = 12 * 3600 * 1000;
+const BANDMAP_MAX_AGE = 5 * 60 * 1000;
 const FORCE_MIN = 10 * 60 * 1000;
-const MAX_PAGES = 60;
 
 async function get(url, ua) {
-  const res = await fetch(url, { headers: { "User-Agent": ua }, signal: AbortSignal.timeout(60000) });
+  const res = await fetch(url, { headers: { "User-Agent": ua }, signal: AbortSignal.timeout(30000) });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.text();
 }
@@ -23,10 +23,7 @@ export async function awardEvents(ua, refresh = false) {
   if (force) listForced = Date.now();
   if (list && !force && Date.now() - list.time < MAX_AGE) return { events: list.events, fetchedAt: list.time, fromCache: false, error: null };
   listLoading ??= (async () => {
-    const text = await get(RADIODYPLOM_ICS, ua);
-    const events = parseRadiodyplomIcs(text);
-    if (!events.length && !text.includes("BEGIN:VCALENDAR")) throw new Error("Nieprawidłowy kalendarz");
-    list = { events, time: Date.now() };
+    list = { events: parseAwardEvents(await get(RADIODYPLOM_EVENTS, ua)), time: Date.now() };
   })().finally(() => { listLoading = null; });
   try {
     await listLoading;
@@ -37,39 +34,18 @@ export async function awardEvents(ua, refresh = false) {
   }
 }
 
-/** @type {Map<string, {details: any, ranking: Record<string, any>, time: number}>} */
-const pages = new Map();
-/** @type {Map<string, Promise<any>>} */
-const pending = new Map();
-/** @type {Map<string, number>} */
-const forced = new Map();
+/** @type {{spots: any[], time: number} | null} */
+let bandmap = null;
+/** @type {Promise<any> | null} */
+let bandmapLoading = null;
 
-/** Szczegóły akcji z wynikiem znaku [call] w rankingu. */
-export async function awardDetails(id, call, ua, refresh = false) {
-  if (!/^\d{1,7}$/.test(id)) throw Object.assign(new Error("Zły numer akcji"), { status: 400 });
-  const sign = String(call ?? "").trim().toUpperCase();
-  if (sign && !/^[A-Z0-9/]{3,15}$/.test(sign)) throw Object.assign(new Error("Zły znak"), { status: 400 });
-  const force = refresh && Date.now() - (forced.get(id) ?? 0) > FORCE_MIN;
-  if (force) forced.set(id, Date.now());
-  let page = pages.get(id);
-  if (!page || force || Date.now() - page.time > MAX_AGE) {
-    if (!pending.has(id)) {
-      pending.set(id, (async () => {
-        const parsed = parseAwardPage(await get(awardEventUrl(id), ua), id);
-        if (!parsed.details.stations.length && !parsed.details.awards.length) throw new Error("Nie udało się odczytać strony akcji");
-        pages.delete(id);
-        pages.set(id, { ...parsed, time: Date.now() });
-        // Najstarsze kopie wypadają, żeby pamięć serwera nie rosła
-        while (pages.size > MAX_PAGES) pages.delete(/** @type {string} */ (pages.keys().next().value));
-      })().finally(() => pending.delete(id)));
-    }
-    try {
-      await pending.get(id);
-    } catch (e) {
-      if (!page) throw Object.assign(new Error(String(e?.message ?? e)), { status: 502 });
-    }
-    page = pages.get(id) ?? page;
+/** Mapa pasm: { spots, fetchedAt } – spots już bez wpisów starszych niż 30 minut; null, gdy nie ma sieci ani kopii. */
+export async function awardBandmap(ua) {
+  if (!bandmap || Date.now() - bandmap.time >= BANDMAP_MAX_AGE) {
+    bandmapLoading ??= (async () => {
+      bandmap = { spots: parseBandmap(await get(RADIODYPLOM_BANDMAP, ua)), time: Date.now() };
+    })().finally(() => { bandmapLoading = null; });
+    try { await bandmapLoading; } catch { /* zostaje starsza kopia */ }
   }
-  if (!page) throw Object.assign(new Error("Brak danych"), { status: 502 });
-  return { ...page.details, fetchedAtMs: page.time, rankingCallsign: sign, myRanking: sign ? page.ranking[sign] ?? null : null };
+  return bandmap ? { spots: bandmap.spots, fetchedAt: bandmap.time } : null;
 }

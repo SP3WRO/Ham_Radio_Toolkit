@@ -1,11 +1,12 @@
-// Kalendarz zawodów dla wersji WWW (ContestSources.kt): serwer pobiera SP9CXN, PK-UKF i QRZ.RU najwyżej co 12 godzin,
-// parsuje, łączy i oddaje gotową listę: /api/contests[?refresh=1]
+// Kalendarz zawodów dla wersji WWW (ContestSources.kt): SP9CXN i PK-UKF / SP1CNV jako JSON z repozytorium, QRZ.RU po jednym
+// pliku ICS na miesiąc (bieżący i dwa kolejne, pobierane po kolei). Każdy plik najwyżej raz na dobę; serwer parsuje, łączy
+// i oddaje gotową listę: /api/contests[?refresh=1]
 import { readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { parseSp9cxn, parsePkUkf, parseQrzRu, mergeContests, pkUkfUrl, QRZ_RU_ICS, CONTEST_SOURCES } from "../public/js/core/contests.js";
+import { parseSp9cxn, parsePkUkf, parseQrzRu, mergeContests, SP9CXN_JSON, PK_UKF_JSON, qrzRuIcsUrl, qrzRuMonths, qrzRuPreviousMonth, contestKey } from "../public/js/core/contests.js";
 
-const MAX_AGE = 12 * 3600 * 1000;
+const MAX_AGE = 24 * 3600 * 1000;
 // Wymuszone odświeżenie ("Odśwież" na ekranie) – najwyżej raz na 10 minut dla całego serwera
 const FORCE_MIN = 10 * 60 * 1000;
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -49,21 +50,44 @@ async function source(key, url, parse, ua, force) {
   }
 }
 
+/** Miesiące QRZ.RU jako jedno źródło: czas najstarszej kopii; poprzedni miesiąc tylko z kopii (zawody na przełomie miesięcy). */
+async function qrzRu(ua, force) {
+  const now = Date.now();
+  const months = qrzRuMonths(now);
+  for (const key of copies.keys()) {
+    const m = /^qrzru-(\d+)$/.exec(key);
+    if (m && !months.includes(Number(m[1])) && Number(m[1]) !== qrzRuPreviousMonth(now)) copies.delete(key);
+  }
+  /** @type {any[]} */
+  const results = [];
+  // Po kolei – nie obciążamy QRZ.RU równoległymi zapytaniami
+  for (const m of months) results.push(await source(`qrzru-${m}`, qrzRuIcsUrl(m), (t) => parseQrzRu(t, known), ua, force));
+  const previous = copies.get(`qrzru-${qrzRuPreviousMonth(now)}`)?.entries ?? [];
+  const seen = new Set();
+  const entries = [...previous, ...results.flatMap((r) => r.entries)].filter((e) => {
+    const k = contestKey(e);
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  }).sort((a, b) => a.startMs - b.startMs);
+  const times = results.map((r) => r.fetchedAt).filter((t) => t != null);
+  return {
+    entries, fetchedAt: times.length ? Math.min(...times) : null,
+    fromCache: results.some((r) => r.fromCache || r.error), error: entries.length ? null : results.find((r) => r.error)?.error ?? null,
+  };
+}
+
 export async function contests(ua, refresh = false) {
   const force = refresh && Date.now() - lastForced > FORCE_MIN;
   if (force) lastForced = Date.now();
-  const now = new Date();
-  const year = now.getUTCFullYear();
-  // Od listopada także kalendarz PK-UKF na kolejny rok (jeśli już jest)
-  const years = now.getUTCMonth() + 1 >= 11 ? [year, year + 1] : [year];
   const [sp, pk, qrz] = await Promise.all([
-    source("sp9cxn", CONTEST_SOURCES.SP9CXN.pageUrl, parseSp9cxn, ua, force),
-    Promise.all(years.map((y) => source(`pkukf_${y}`, pkUkfUrl(y), parsePkUkf, ua, force))),
-    source("qrzru", QRZ_RU_ICS, (t) => parseQrzRu(t, known), ua, force),
+    source("sp9cxn", SP9CXN_JSON, parseSp9cxn, ua, force),
+    source("pkukf", PK_UKF_JSON, parsePkUkf, ua, force),
+    qrzRu(ua, force),
   ]);
   const status = (src, r) => ({ source: src, fetchedAt: r.fetchedAt, fromCache: r.fromCache, error: r.error });
   return {
-    entries: mergeContests([sp.entries, pk.flatMap((r) => r.entries), qrz.entries]),
-    statuses: [status("SP9CXN", sp), status("PK_UKF", pk[0]), status("QRZ_RU", qrz)],
+    entries: mergeContests([sp.entries, pk.entries, qrz.entries]),
+    statuses: [status("SP9CXN", sp), status("PK_UKF", pk), status("QRZ_RU", qrz)],
   };
 }

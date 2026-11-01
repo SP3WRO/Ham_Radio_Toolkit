@@ -1,9 +1,9 @@
 // @ts-check
 // Propagacja – parametry słoneczne i warunki KF z hamqsl.com, mapy troposferyczne Tropocast (PropagationScreen.kt)
-import { h, replace, iconButton } from "../ui.js";
+import { h, replace, iconButton, icon } from "../ui.js";
 import { t } from "../i18n.js";
 import { settings } from "../store.js";
-import { proxied } from "../services.js";
+import { proxied, apiUrl } from "../services.js";
 import { parseSolarXml } from "../core/world.js";
 import { layout } from "./common.js";
 
@@ -66,24 +66,39 @@ export function propagationScreen(ctx) {
       const d = Math.abs(Date.parse(f.valid_at) - target);
       if (Number.isFinite(d) && d < min) { min = d; best = f; }
     }
-    const base = "https://tropocast.eu/api/v1/tropo";
     const a = encodeURIComponent(area);
-    if (best.run != null && best.forecast_hour != null) return `${base}/archive/frames/${best.run}/${best.forecast_hour}.png?model=full&area=${a}&source=icon-eu`;
-    return `${base}/frames/${best.hour}.png?run=${tropo.run || "current"}&model=full&area=${a}&source=icon-eu`;
+    if (best.run != null && best.forecast_hour != null) return `archive/frames/${encodeURIComponent(best.run)}/${best.forecast_hour}.png?model=full&area=${a}&source=icon-eu`;
+    return `frames/${best.hour}.png?run=${encodeURIComponent(tropo.run || "current")}&model=full&area=${a}&source=icon-eu`;
+  }
+
+  /** Mapa przez serwer (ten sam adres); gdy serwer jej nie pobierze – bezpośrednio z tropocast.eu bez nagłówka Referer. @param {string} path */
+  function tropoImage(path) {
+    const img = /** @type {HTMLImageElement} */ (h("img", { class: "map-img", alt: t("prop_vhf_map_desc"), referrerpolicy: "no-referrer" }));
+    img.addEventListener("error", () => {
+      const direct = `https://tropocast.eu/api/v1/tropo/${path}`;
+      if (img.src !== direct) img.src = direct;
+      else img.replaceWith(h("div", { class: "body-m error-text", style: { padding: "32px" } }, t("prop_tropocast_error", "HTTP")));
+    });
+    img.src = apiUrl(`/proxy/tropocast/${path}`);
+    return img;
   }
 
   function render() {
-    if (loading && !solar) return replace(content, h("div", { class: "centered" }, h("div", { class: "spinner l" })));
-    if (error && !solar) return replace(content, h("div", { class: "centered error-text" }, error));
-    if (!solar) return replace(content);
+    // Karta Tropocast działa niezależnie od hamqsl.com – zakładki są zawsze widoczne
     const tabs = h("div", { class: "tabs fixed", role: "tablist" }, [t("prop_tab_hf"), t("prop_tab_vhf")].map((label, i) =>
       h("button", { type: "button", role: "tab", class: `tab ${selectedTab === i ? "active" : ""}`, "aria-selected": String(selectedTab === i),
         onclick: () => { selectedTab = i; render(); if (i === 1 && !tropo && !tropoError) fetchTropo(); } }, label)));
+    /** @returns {any} */
+    const hfTab = () => {
+      if (solar) return hfList(solar);
+      if (loading) return h("div", { class: "centered" }, h("div", { class: "spinner l" }));
+      return null;
+    };
     replace(content,
-      error ? h("div", { class: "body-s error-text", style: { padding: "4px 16px" } }, error) : null,
-      selectedTab === 0 ? h("div", { style: { padding: "8px 16px" } }, solarCard(solar)) : null,
+      error && (solar || selectedTab === 0) ? h("div", { class: `body-s error-text ${solar ? "" : "centered"}`, style: { padding: "4px 16px" } }, error) : null,
+      selectedTab === 0 && solar ? h("div", { style: { padding: "8px 16px" } }, solarCard(solar)) : null,
       tabs,
-      selectedTab === 0 ? hfList(solar) : tropoTab());
+      selectedTab === 0 ? hfTab() : tropoTab());
   }
 
   function tropoTab() {
@@ -94,7 +109,7 @@ export function propagationScreen(ctx) {
       h("div", { class: "seg", style: { width: "100%" } }, options.map(([o, label]) =>
         h("button", { type: "button", class: `btn ${tropoOffset === o ? "btn-filled" : "btn-tonal"}`, onclick: () => { tropoOffset = Number(o); render(); } }, label))),
       url ? h("div", { class: "card", style: { overflow: "hidden" } },
-        h("img", { class: "map-img", src: url, alt: t("prop_vhf_map_desc"), loading: "lazy" }), legend())
+        tropoImage(url), legend())
         : tropoError ? h("div", { class: "body-m error-text", style: { padding: "32px" } }, tropoError)
           : h("div", { class: "spinner l", style: { margin: "32px" } }));
   }
@@ -134,7 +149,9 @@ function hfList(d) {
   const cell = (c) => h("div", null, c ? conditionBadge(c) : h("span", { class: "muted" }, "-"));
   return h("div", { class: "scroll no-pad" }, h("div", { style: { padding: "16px" } },
     h("div", { class: "list-row body-m bold muted" }, h("span"), h("span", null, t("prop_day")), h("span", null, t("prop_night"))),
-    [...bands].map(([name, e]) => h("div", { class: "list-row" }, h("span", { class: "body-l bold" }, name), cell(e.day), cell(e.night)))));
+    [...bands].map(([name, e]) => h("div", { class: "list-row" }, h("span", { class: "body-l bold" }, name), cell(e.day), cell(e.night))),
+    h("a", { class: "btn btn-text", href: "https://www.hamqsl.com", target: "_blank", rel: "noopener", style: { marginTop: "8px", marginLeft: "-12px" } },
+      icon("openInNew"), t("common_source_value", "HamQSL – Paul N0NBH"))));
 }
 
 /** @param {string} condition */

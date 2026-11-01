@@ -1,27 +1,27 @@
-letter	en	pl	de	cs	sk
-A	Alfa	Alfa (Adam)	Alfa (Anton)	Alfa (Adam)	Alfa (Adam)
-B	Bravo	Bravo (Barbara)	Bravo (Berta)	Bravo (Božena)	Bravo (Božena)
-C	Charlie	Charlie (Cezary)	Charlie (Cäsar)	Charlie (Cyril)	Charlie (Cyril)
-D	Delta	Delta (Dorota)	Delta (Dora)	Delta (David)	Delta (Dávid)
-E	Echo	Echo (Ewa)	Echo (Emil)	Echo (Emil)	Echo (Emil)
-F	Foxtrot	Foxtrott (Franciszek)	Foxtrot (Friedrich)	Foxtrot (František)	Foxtrot (František)
-G	Golf	Golf (Grażyna)	Golf (Gustav)	Golf (Gustav)	Golf (Gustáv)
-H	Hotel	Hotel (Henryk)	Hotel (Heinrich)	Hotel (Helena)	Hotel (Helena)
-I	India	India (Irena)	India (Ida)	India (Ivan)	India (Ivan)
-J	Juliett	Juliet (Jadwiga)	Juliett (Julius)	Juliett (Josef)	Juliett (Jozef)
-K	Kilo	Kilo (Karol)	Kilo (Kaufmann)	Kilo (Karel)	Kilo (Karol)
-L	Lima	Lima (Ludwik)	Lima (Ludwig)	Lima (Ludvík)	Lima (Ľudovít)
-M	Mike	Mike (Maria)	Mike (Martha)	Mike (Marie)	Mike (Mária)
-N	November	November (Natalia)	November (Nordpol)	November (Norbert)	November (Norbert)
-O	Oscar	Oscar (Olga)	Oscar (Otto)	Oscar (Oto)	Oscar (Oto)
-P	Papa	Papa (Paweł)	Papa (Paula)	Papa (Petr)	Papa (Peter)
-Q	Quebec	Quebec (Quebec)	Quebec (Quelle)	Quebec (Quido)	Quebec (Quido)
-R	Romeo	Romeo (Roman)	Romeo (Richard)	Romeo (Rudolf)	Romeo (Rudolf)
-S	Sierra	Sierra (Stanisław)	Sierra (Samuel)	Sierra (Svatopluk)	Sierra (Svätopluk)
-T	Tango	Tango (Tadeusz)	Tango (Theodor)	Tango (Tomáš)	Tango (Tomáš)
-U	Uniform	Uniform (Urszula)	Uniform (Ulrich)	Uniform (Urban)	Uniform (Urban)
-V	Victor	Victor (Violetta)	Victor (Viktor)	Victor (Václav)	Victor (Viktor)
-W	Whiskey	Whiskey (Wanda)	Whiskey (Wilhelm)	Whiskey (dvojité V)	Whiskey (dvojité V)
-X	X-ray	X-Ray (Xsawery)	X-ray (Xanthippe)	X-ray (Xaver)	X-ray (Xaver)
-Y	Yankee	Yankee (Ypsylon)	Yankee (Ypsilon)	Yankee (Ypsilon)	Yankee (Ypsilon)
-Z	Zulu	Zulu (Zygmunt)	Zulu (Zacharias)	Zulu (Zuzana)	Zulu (Zuzana)
+letter	en	pl	de	cs	sk	ru
+A	Alfa	Alfa (Adam)	Alfa (Anton)	Alfa (Adam)	Alfa (Adam)	Alfa
+B	Bravo	Bravo (Barbara)	Bravo (Berta)	Bravo (Božena)	Bravo (Božena)	Bravo
+C	Charlie	Charlie (Cezary)	Charlie (Cäsar)	Charlie (Cyril)	Charlie (Cyril)	Charlie
+D	Delta	Delta (Dorota)	Delta (Dora)	Delta (David)	Delta (Dávid)	Delta
+E	Echo	Echo (Ewa)	Echo (Emil)	Echo (Emil)	Echo (Emil)	Echo
+F	Foxtrot	Foxtrott (Franciszek)	Foxtrot (Friedrich)	Foxtrot (František)	Foxtrot (František)	Foxtrot
+G	Golf	Golf (Grażyna)	Golf (Gustav)	Golf (Gustav)	Golf (Gustáv)	Golf
+H	Hotel	Hotel (Henryk)	Hotel (Heinrich)	Hotel (Helena)	Hotel (Helena)	Hotel
+I	India	India (Irena)	India (Ida)	India (Ivan)	India (Ivan)	India
+J	Juliett	Juliet (Jadwiga)	Juliett (Julius)	Juliett (Josef)	Juliett (Jozef)	Juliett
+K	Kilo	Kilo (Karol)	Kilo (Kaufmann)	Kilo (Karel)	Kilo (Karol)	Kilo
+L	Lima	Lima (Ludwik)	Lima (Ludwig)	Lima (Ludvík)	Lima (Ľudovít)	Lima
+M	Mike	Mike (Maria)	Mike (Martha)	Mike (Marie)	Mike (Mária)	Mike
+N	November	November (Natalia)	November (Nordpol)	November (Norbert)	November (Norbert)	November
+O	Oscar	Oscar (Olga)	Oscar (Otto)	Oscar (Oto)	Oscar (Oto)	Oscar
+P	Papa	Papa (Paweł)	Papa (Paula)	Papa (Petr)	Papa (Peter)	Papa
+Q	Quebec	Quebec (Quebec)	Quebec (Quelle)	Quebec (Quido)	Quebec (Quido)	Quebec
+R	Romeo	Romeo (Roman)	Romeo (Richard)	Romeo (Rudolf)	Romeo (Rudolf)	Romeo
+S	Sierra	Sierra (Stanisław)	Sierra (Samuel)	Sierra (Svatopluk)	Sierra (Svätopluk)	Sierra
+T	Tango	Tango (Tadeusz)	Tango (Theodor)	Tango (Tomáš)	Tango (Tomáš)	Tango
+U	Uniform	Uniform (Urszula)	Uniform (Ulrich)	Uniform (Urban)	Uniform (Urban)	Uniform
+V	Victor	Victor (Violetta)	Victor (Viktor)	Victor (Václav)	Victor (Viktor)	Victor
+W	Whiskey	Whiskey (Wanda)	Whiskey (Wilhelm)	Whiskey (dvojité V)	Whiskey (dvojité V)	Whiskey
+X	X-ray	X-Ray (Xsawery)	X-ray (Xanthippe)	X-ray (Xaver)	X-ray (Xaver)	X-ray
+Y	Yankee	Yankee (Ypsylon)	Yankee (Ypsilon)	Yankee (Ypsilon)	Yankee (Ypsilon)	Yankee
+Z	Zulu	Zulu (Zygmunt)	Zulu (Zacharias)	Zulu (Zuzana)	Zulu (Zuzana)	Zulu

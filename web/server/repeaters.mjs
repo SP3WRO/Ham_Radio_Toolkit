@@ -1,7 +1,7 @@
 // Przemienniki dla wersji WWW: serwer pobiera i parsuje źródła (RepeaterDataSourceFetcher w aplikacji),
 // trzyma kopie w pamięci i oddaje telefonowi gotową listę: /api/repeaters?source=..&lat=..&lon=..
 import {
-  RepeaterSources, parseChirpCsv, parseRadarXml, modesFromEu, parsePrzemiennikiEu, parseHearHam, parseRepeatermap,
+  RepeaterSources, parsePrzemiennikiNet, przemiennikiNetTimestamp, parsePrzemiennikiEu, parseHearHam, parseRepeatermap,
   merge, geoBox, boxContains, boxTiles, FETCH_RADIUS_KM,
 } from "../public/js/core/repeaters.js";
 
@@ -32,21 +32,40 @@ async function get(url, userAgent, timeout = 60000) {
   return res.text();
 }
 
-const euJson = (ua) => cached("eu-json", 6 * HOUR, () => get("https://przemienniki.eu/api/export/json", ua));
+// Autor przemienniki.eu prosi o rzadkie pobieranie, bo dane zmieniają się rzadko: kopia ważna 7 dni, także przy odświeżaniu
+const przemiennikiEu = (ua) => cached("pl-eu", 7 * 24 * HOUR, async () => {
+  const list = parsePrzemiennikiEu(await get("https://przemienniki.eu/api/export/json", ua));
+  if (!list.length) throw new Error("Pusta odpowiedź z przemienniki.eu");
+  return list;
+});
 
+/**
+ * przemienniki.net: rpts.json ma ok. 4 MB, więc raz na dobę pytamy tylko o timestamp.xml, a całą bazę pobieramy,
+ * gdy się zmienił. radar.xml nie jest potrzebny – to podzbiór rpts.json.
+ */
+let netCopy = /** @type {{list: any[], stamp: string | null, checked: number} | null} */ (null);
+/** @type {Promise<any[]> | null} */
+let netLoading = null;
 async function przemiennikiNet(ua) {
-  return cached("pl-net", 6 * HOUR, async () => {
-    // Współrzędne z radar.xml i pełne emisje z przemienniki.eu tylko uzupełniają eksport CHIRP – ich brak nie blokuje listy
-    const [coords, modes, csv] = await Promise.all([
-      get("https://przemienniki.net/export/radar.xml", ua).then(parseRadarXml).catch(() => new Map()),
-      euJson(ua).then(modesFromEu).catch(() => new Map()),
-      get("https://przemienniki.net/export/chirp.csv", "CHIRP/1.0 (HamRadioToolkit)"),
-    ]);
-    return parseChirpCsv(csv, coords, modes);
-  });
+  if (netCopy && Date.now() - netCopy.checked < 24 * HOUR) return netCopy.list;
+  netLoading ??= (async () => {
+    const stamp = await get("https://przemienniki.net/export/timestamp.xml/", ua).then(przemiennikiNetTimestamp).catch(() => null);
+    if (netCopy && stamp != null && stamp === netCopy.stamp) {
+      netCopy.checked = Date.now();
+      return netCopy.list;
+    }
+    try {
+      const list = parsePrzemiennikiNet(await get("https://przemienniki.net/export/rpts.json/", ua, 120000));
+      if (!list.length) throw new Error("Pusta odpowiedź z przemienniki.net");
+      netCopy = { list, stamp, checked: Date.now() };
+      return list;
+    } catch (e) {
+      if (netCopy) return netCopy.list;
+      throw e;
+    }
+  })().finally(() => { netLoading = null; });
+  return netLoading;
 }
-
-const przemiennikiEu = (ua) => cached("pl-eu", 6 * HOUR, async () => parsePrzemiennikiEu(await euJson(ua)));
 
 /** Cała baza HearHam (świat) – odświeżana raz w tygodniu, jak w aplikacji. */
 const hearHamAll = (ua) => cached("hearham", 7 * 24 * HOUR, async () => {
@@ -81,13 +100,12 @@ async function repeatermap(box, ua) {
 }
 
 /**
- * Przemienniki ze źródła [source]. Bazy polskie – cały kraj; zagraniczne – obszar ok. 210 km wokół pozycji.
+ * Przemienniki ze źródła [source]. Bazy polskie – cała baza; zagraniczne – obszar ok. 210 km wokół pozycji.
  * @param {string} source @param {number | null} lat @param {number | null} lon @param {string} ua
  */
 export async function repeaters(source, lat, lon, ua) {
   if (source === RepeaterSources.PRZEMIENNIKI_NET) return merge(await przemiennikiNet(ua));
   if (source === RepeaterSources.PRZEMIENNIKI_EU) return merge(await przemiennikiEu(ua));
-  if (source === RepeaterSources.REPEATERBOOK) throw new Error("RepeaterBook będzie dostępny w wersji WWW razem z kontami w serwisach");
   if (lat == null || lon == null) throw new Error("Brak pozycji – źródła zagraniczne wymagają lokalizacji");
   const box = geoBox(lat, lon, FETCH_RADIUS_KM);
   if (source === RepeaterSources.HEARHAM) return merge(await hearHam(box, ua));

@@ -116,3 +116,9 @@ test("most WebSocket ↔ APRS-IS", async () => {
     fake.close();
   }
 });
+
+test("kod własnej ikony APRS", async () => {
+  const { isValidSymbolCode } = await import("../public/js/core/aprs.js");
+  for (const c of ["/[", "/b", "\\j", "S#", "1&"]) assert.ok(isValidSymbolCode(c), c);
+  for (const c of ["", "/", "/[x", "a#", " [", "/ "]) assert.ok(!isValidSymbolCode(c), c);
+});

@@ -1,5 +1,5 @@
 // @ts-check
-// Kalendarz zawodów (data/contests/*.kt): parsery SP9CXN, PK-UKF i QRZ.RU, łączenie źródeł, zawody cykliczne
+// Kalendarz zawodów (data/contests/*.kt): parsery SP9CXN i PK-UKF (JSON) oraz QRZ.RU (ICS), łączenie źródeł, zawody cykliczne
 // oraz zapasowy kalendarz wbudowany. Parsery działają na serwerze, kalendarz wbudowany – w przeglądarce.
 
 export const HOUR_MS = 3_600_000;
@@ -7,13 +7,13 @@ export const DAY_MS = 86_400_000;
 
 /**
  * @typedef {{name: string, startMs: number, endMs: number, source: string, polish: boolean, vhf: boolean, modes: string[],
- *   bands: string, originalName: string | null, rulesUrl: string | null, rulesPlUrl: string | null, homepage: string | null,
+ *   bands: string, originalName: string | null, rulesUrl: string | null, rulesPlUrl: string | null, sourcePageUrl: string | null, homepage: string | null,
  *   organizer: string, exchange: string, logDeadline: string, notes: string[], sources: string[]}} ContestEntry
  */
 
 export const CONTEST_SOURCES = {
   SP9CXN: { label: "SP9CXN", pageUrl: "https://sp9cxn.pzk.pl/kalendarz.html" },
-  PK_UKF: { label: "PK-UKF", pageUrl: "https://pk-ukf.pl/" },
+  PK_UKF: { label: "PK-UKF / SP1CNV", pageUrl: "https://pk-ukf.pl/" },
   QRZ_RU: { label: "QRZ.RU", pageUrl: "https://www.qrz.ru/contest/" },
   BUILTIN: { label: "", pageUrl: "" },
 };
@@ -21,7 +21,7 @@ export const CONTEST_SOURCES = {
 /** @param {Partial<ContestEntry> & {name: string, startMs: number, endMs: number, source: string}} p @returns {ContestEntry} */
 export function makeContest(p) {
   return {
-    polish: false, vhf: false, modes: [], bands: "", originalName: null, rulesUrl: null, rulesPlUrl: null, homepage: null,
+    polish: false, vhf: false, modes: [], bands: "", originalName: null, rulesUrl: null, rulesPlUrl: null, sourcePageUrl: null, homepage: null,
     organizer: "", exchange: "", logDeadline: "", notes: [], ...p, sources: p.sources ?? [p.source],
   };
 }
@@ -38,20 +38,6 @@ export function lengthOfMonth(year, month) {
 export const dayMs = (y, m, d) => Date.UTC(y, m - 1, d);
 
 // ---------------------------------------------------------------- wspólne narzędzia tekstu
-const NAMED = { "&nbsp;": " ", "&lt;": "<", "&gt;": ">", "&quot;": "\"", "&apos;": "'", "&ndash;": "–", "&mdash;": "—", "&laquo;": "«", "&raquo;": "»", "&oacute;": "ó", "&Oacute;": "Ó" };
-
-/** @param {string} s */
-export function decodeEntities(s) {
-  let out = s.replace(/&#(x?)([0-9a-fA-F]+);/g, (m, hex, num) => {
-    const code = parseInt(num, hex ? 16 : 10);
-    return Number.isFinite(code) && code <= 0x10ffff ? String.fromCodePoint(code) : m;
-  });
-  for (const [e, v] of Object.entries(NAMED)) out = out.split(e).join(v);
-  return out.split("&amp;").join("&");
-}
-
-/** Tekst komórki HTML. @param {string} html */
-export const htmlText = (html) => decodeEntities(html.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
 /** @param {string} s */
 export const dashes = (s) => s.replace(/[–—−]/g, "-");
 
@@ -79,134 +65,90 @@ export const roundEnd = (endMs) => (Math.floor(endMs / 60_000) % 60 === 59 ? end
 /** @param {string[]} a @param {string[]} b */
 const union = (a, b) => [...new Set([...a, ...b])];
 
-const ROW = /<tr\b[^>]*>([\s\S]*?)<\/tr>/gi;
-const CELL = /<td\b[^>]*>([\s\S]*?)<\/td>/gi;
-/** @param {string} row */
-const cellsOf = (row) => [...row.matchAll(CELL)].map((m) => m[1]);
+// ---------------------------------------------------------------- SP9CXN i PK-UKF (JSON z repozytorium)
+// Aplikacja nie czyta stron sp9cxn.pzk.pl ani pk-ukf.pl (prośba PK-UKF): dane pobiera co 48 h workflow w repozytorium
+// (tools/sp9cxn-calendar, tools/pkukf-calendar) i publikuje jako JSON.
+const RAW = "https://raw.githubusercontent.com/SP3WRO/Ham_Radio_Toolkit/main/tools";
+export const SP9CXN_JSON = `${RAW}/sp9cxn-calendar/data/contests.json`;
+export const PK_UKF_JSON = `${RAW}/pkukf-calendar/data/contests.json`;
 
-// ---------------------------------------------------------------- SP9CXN
-const SP_BASE = "https://sp9cxn.pzk.pl/";
-/** @param {string} href */
-function spAbsolute(href) {
-  const url = decodeEntities(href.trim());
-  if (!url || url.startsWith("#") || url.startsWith("mailto:")) return null;
-  return /^https?:\/\//.test(url) ? url : SP_BASE + url.replace(/^\.\//, "").replace(/^\//, "");
+/** Czas "2026-03-07T14:00:00Z" albo "2026-03-07 14:00:00" (UTC), bez sekund. @param {unknown} s */
+export function utcMillis(s) {
+  const g = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/.exec(String(s ?? "").trim());
+  if (!g) return null;
+  const [y, mo, d] = [Number(g[1]), Number(g[2]), Number(g[3])];
+  if (mo < 1 || mo > 12 || d < 1 || d > lengthOfMonth(y, mo)) return null;
+  return dayMs(y, mo, d) + (Number(g[4]) * 60 + Number(g[5])) * 60_000;
 }
-/** @param {string} dateCell @param {string} timeCell */
-function spDateTime(dateCell, timeCell) {
-  const d = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/.exec(htmlText(dateCell));
-  const t = /^(\d{1,2})[:.](\d{2})$/.exec(htmlText(timeCell));
-  if (!d || !t) return null;
-  const [day, month, year] = [Number(d[1]), Number(d[2]), Number(d[3])];
-  if (month < 1 || month > 12 || day < 1 || day > lengthOfMonth(year, month)) return null;
-  return dayMs(year, month, day) + (Number(t[1]) * 60 + Number(t[2])) * 60_000;
-}
+/** @param {unknown} url */
+const httpLink = (url) => { const u = typeof url === "string" ? url.trim() : ""; return u.startsWith("http") ? u : null; };
+/** @param {string} text */
+const contestsOf = (text) => { const j = JSON.parse(text); return Array.isArray(j?.contests) ? j.contests : []; };
+const mod = (/** @type {number} */ x) => ((x % DAY_MS) + DAY_MS) % DAY_MS;
 
-/** Notatki to klucze tłumaczeń (ct_note_*). @param {string} html @returns {ContestEntry[]} */
-export function parseSp9cxn(html) {
-  const headings = [...html.matchAll(/KALENDARZ\s+ZAWOD\S*\s+(KRAJOWYCH|MI\S*DZYNARODOWYCH)/gi)].map((m) => ({ at: m.index ?? 0, domestic: m[1].toUpperCase().startsWith("K") }));
-  /** @type {ContestEntry[]} */
-  const result = [];
-  for (const table of html.matchAll(/<table\b[\s\S]*?<\/table>/gi)) {
-    const at = table.index ?? 0;
-    const heading = headings.filter((x) => x.at < at).pop();
-    if (!heading) continue;
-    for (const row of table[0].matchAll(ROW)) {
-      const e = spRow(cellsOf(row[1]), heading.domestic);
-      if (e) result.push(e);
-    }
-  }
-  return result.sort((a, b) => a.startMs - b.startMs);
-}
-
-/** @param {string[]} cells @param {boolean} domestic */
-function spRow(cells, domestic) {
-  if (cells.length < 5) return null;
-  const start = spDateTime(cells[0], cells[1]);
-  let end = spDateTime(cells[cells.length - 2], cells[cells.length - 1]);
-  if (start == null || end == null) return null;
-  // Literówki w dacie końca – godzina końca z dnia startu
-  if (end <= start || end - start > 14 * DAY_MS) {
-    const mod = (/** @type {number} */ x) => ((x % DAY_MS) + DAY_MS) % DAY_MS;
-    end = start - mod(start) + mod(end);
-    if (end <= start) end += DAY_MS;
-  }
-  const nameCell = cells[2];
-  const links = [...nameCell.matchAll(/<a\b[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi)];
-  const cellText = htmlText(nameCell);
-  let name = (links[0] && htmlText(links[0][2])) || cellText;
-  const notes = [];
-  if (cellText.includes("??")) notes.push("ct_note_unconfirmed");
-  if (cellText.trimEnd().endsWith("*") || /\s\*(\s|$)/.test(cellText)) notes.push("ct_note_old_rules");
-  if (/UA\s*i\s*EU/.test(cellText)) notes.push("ct_note_ru_by");
-  name = name.split("??").join("").replace(/UA\s*i\s*EU/g, "").replace(/[*\s]+$/, "").replace(/\s+/g, " ").trim();
-  if (!name) return null;
-  const plLink = cells.length >= 6 ? /<a\b[^>]*href="([^"]*)"/i.exec(cells[3]) : null;
-  const vhf = looksVhf(name);
-  return makeContest({
-    name, startMs: start, endMs: roundEnd(end), source: "SP9CXN", polish: domestic || looksPolish(name), vhf,
-    modes: [...modesIn(`${name} ${cellText}`), ...(vhf ? ["VHF"] : [])],
-    rulesUrl: links[0] ? spAbsolute(links[0][1]) : null, rulesPlUrl: plLink ? spAbsolute(plLink[1]) : null, notes,
-  });
-}
-
-// ---------------------------------------------------------------- PK-UKF
-export const pkUkfUrl = (/** @type {number} */ year) => `https://pk-ukf.pl/kalendarz-zawodow-${year}/`;
-const PL_MONTHS = ["sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis", "gru"];
-/** @param {string} name */
-const plMonth = (name) => { const i = PL_MONTHS.indexOf(name.toLowerCase().slice(0, 3)); return i < 0 ? null : i + 1; };
-/** @param {string} cell */
-function pkLink(cell) {
-  const m = /<a\b[^>]*href="([^"]*)"/i.exec(cell);
-  const url = m ? decodeEntities(m[1]).trim() : "";
-  return url.startsWith("http") ? url : null;
-}
-
-/** @param {string} html @returns {ContestEntry[]} */
-export function parsePkUkf(html) {
+/** Notatki to klucze tłumaczeń (ct_note_*). @param {string} text JSON @returns {ContestEntry[]} */
+export function parseSp9cxn(text) {
   /** @type {ContestEntry[]} */
   const out = [];
-  for (const row of html.matchAll(ROW)) {
-    const e = pkRow(cellsOf(row[1]));
-    if (e) out.push(e);
+  for (const c of contestsOf(text)) {
+    const name = typeof c?.name === "string" ? c.name.trim() : "";
+    const start = utcMillis(c?.start_utc);
+    let end = utcMillis(c?.end_utc);
+    if (!name || start == null || end == null) continue;
+    // Literówki w dacie końca – godzina końca z dnia startu
+    if (end <= start || end - start > 14 * DAY_MS) {
+      end = start - mod(start) + mod(end);
+      if (end <= start) end += DAY_MS;
+    }
+    const notes = [];
+    if (c.unconfirmed) notes.push("ct_note_unconfirmed");
+    if (c.old_rules) notes.push("ct_note_old_rules");
+    if (c.no_ru_by_contacts) notes.push("ct_note_ru_by");
+    const vhf = looksVhf(name);
+    out.push(makeContest({
+      name, startMs: start, endMs: roundEnd(end), source: "SP9CXN", polish: !!c.domestic || looksPolish(name), vhf,
+      modes: [...modesIn(name), ...(vhf ? ["VHF"] : [])], rulesUrl: httpLink(c.rules_url), rulesPlUrl: httpLink(c.rules_pl_url), notes,
+    }));
   }
   return out.sort((a, b) => a.startMs - b.startMs);
 }
 
-/** @param {string[]} cells */
-function pkRow(cells) {
-  if (cells.length < 9) return null;
-  const d = /^(\d{1,2})(?:\s*-\s*(\d{1,2}))?\s+(\p{L}+)(?:\s*-\s*(\d{1,2})\s+(\p{L}+))?\s+(\d{4})$/u.exec(dashes(htmlText(cells[1])));
-  const t = /^(\d{1,2})[:.](\d{1,2})\s*-\s*(\d{1,2})[:.](\d{1,2})$/.exec(dashes(htmlText(cells[2])));
-  if (!d || !t) return null;
-  const startMonth = plMonth(d[3]);
-  const endMonth = d[5] ? plMonth(d[5]) : startMonth;
-  if (startMonth == null || endMonth == null) return null;
-  const year = Number(d[6]);
-  const startYear = endMonth < startMonth ? year - 1 : year;
-  const startDay = Number(d[1]);
-  const endDay = Number(d[4] || d[2] || d[1]);
-  if (startDay > lengthOfMonth(startYear, startMonth) || endDay > lengthOfMonth(year, endMonth)) return null;
-  const start = dayMs(startYear, startMonth, startDay) + (Number(t[1]) * 60 + Number(t[2])) * 60_000;
-  let end = dayMs(year, endMonth, endDay) + (Number(t[3]) * 60 + Number(t[4])) * 60_000;
-  if (end <= start) end += DAY_MS;
-  const name = htmlText(cells[3]);
-  if (!name) return null;
-  const bands = htmlText(cells[4]);
-  const org = htmlText(cells[5]);
-  const organizer = org === "-" || org === "–" ? "" : org;
-  const deadline = htmlText(cells[8]);
-  return makeContest({
-    name, startMs: start, endMs: roundEnd(end), source: "PK_UKF",
-    polish: /PK[ -]?UKF|PZK|\bSP\d?\b/i.test(organizer) || looksPolish(name), vhf: true,
-    modes: union(modesIn(`${name} ${bands}`), ["VHF"]), bands,
-    rulesUrl: pkLink(cells[7]) ?? pkLink(cells[6]), rulesPlUrl: pkLink(cells[6]), organizer,
-    logDeadline: deadline === "-" || deadline === "–" ? "" : deadline,
-  });
+/** Wpisy bez ustalonego dnia (start_utc = null) są pomijane. @param {string} text JSON @returns {ContestEntry[]} */
+export function parsePkUkf(text) {
+  /** @type {ContestEntry[]} */
+  const out = [];
+  for (const c of contestsOf(text)) {
+    const name = typeof c?.name === "string" ? c.name.trim() : "";
+    const start = utcMillis(c?.start_utc);
+    let end = utcMillis(c?.end_utc);
+    if (!name || start == null || end == null) continue;
+    if (end <= start) end += DAY_MS;
+    const bands = typeof c.band === "string" ? c.band.trim() : "";
+    const org = typeof c.organizer === "string" ? c.organizer.trim() : "";
+    const organizer = org === "-" || org === "–" ? "" : org;
+    // Data z log_deadline nie zależy od języka; tekst ze strony tylko gdy daty brak
+    const iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(c.log_deadline ?? "");
+    const raw = typeof c.log_deadline_raw === "string" ? c.log_deadline_raw.trim() : "";
+    out.push(makeContest({
+      name, startMs: start, endMs: roundEnd(end), source: "PK_UKF",
+      polish: /PK[ -]?UKF|PZK|\bSP\d?\b/i.test(organizer) || looksPolish(name), vhf: true,
+      modes: union(modesIn(`${name} ${bands}`), ["VHF"]), bands,
+      rulesUrl: httpLink(c.rules_en) ?? httpLink(c.rules_pl), rulesPlUrl: httpLink(c.rules_pl), organizer,
+      logDeadline: iso ? `${iso[3]}.${iso[2]}.${iso[1]}` : raw === "-" || raw === "–" ? "" : raw,
+    }));
+  }
+  return out.sort((a, b) => a.startMs - b.startMs);
 }
 
 // ---------------------------------------------------------------- QRZ.RU (ICS)
-export const QRZ_RU_ICS = "https://www.qrz.ru/contest/qrz-contest.ics";
+// Cały plik QRZ.RU ma ok. 1,1 MB – pobieramy tylko potrzebne miesiące (m = numer miesiąca, bez roku), od razu z m.qrz.ru
+const QRZ_RU_ICS = "https://m.qrz.ru/contest/qrz-contest.ics";
+/** @param {number} month 1–12 */
+export const qrzRuIcsUrl = (month) => `${QRZ_RU_ICS}?m=${month}`;
+/** Bieżący miesiąc (UTC) i dwa kolejne. @param {number} nowMs */
+export const qrzRuMonths = (nowMs) => { const m = new Date(nowMs).getUTCMonth() + 1; return [0, 1, 2].map((i) => ((m - 1 + i) % 12) + 1); };
+/** Poprzedni miesiąc – jego kopia pokazuje zawody na przełomie miesięcy. @param {number} nowMs */
+export const qrzRuPreviousMonth = (nowMs) => ((new Date(nowMs).getUTCMonth() + 1 + 10) % 12) + 1;
 const PERIOD = /^(.*?),?\s*проводится с (\d{2})\.(\d{2})\.(\d{4}) (\d{1,2}):(\d{2}) (UTC|MSK) по (\d{2})\.(\d{2})\.(\d{4}) (\d{1,2}):(\d{2}) (UTC|MSK)/;
 
 /** @param {string} y @param {string} mo @param {string} d @param {string} h @param {string} mi @param {string} zone */
@@ -268,6 +210,7 @@ function qrzEvent(p, known) {
   const description = p.DESCRIPTION ?? "";
   const vhf = /MHz|GHz/.test(bands) || /УКВ|VHF|UHF/i.test(original);
   const id = /^(\d+)@qrz\.ru$/.exec((p.UID ?? "").trim())?.[1];
+  const detailUrl = id ? `https://www.qrz.ru/contest/detail/${id}.html` : null;
   const russian = isCyrillic(original);
   const field = (/** @type {string} */ label) => description.split("\n").map((l) => l.trim()).find((l) => l.startsWith(`${label}:`))
     ?.slice(label.length + 1).trim() || null;
@@ -277,7 +220,7 @@ function qrzEvent(p, known) {
     name: russian ? translateRussian(original, known) : original, startMs: start, endMs: roundEnd(end), source: "QRZ_RU",
     polish: looksPolish(original), vhf, modes: [...modesIn(`${modulation} ${original}`), ...(vhf ? ["VHF"] : [])], bands,
     originalName: russian ? original : null,
-    rulesUrl: rules?.startsWith("http") ? rules : id ? `https://www.qrz.ru/contest/detail/${id}.html` : null,
+    rulesUrl: rules?.startsWith("http") ? rules : detailUrl, sourcePageUrl: detailUrl,
     homepage: homepage?.startsWith("http") ? homepage : null, logDeadline: field("Отчеты принимаются до") ?? "",
   });
 }
@@ -389,7 +332,7 @@ export function mergeContests(lists) {
       result[i] = {
         ...b, polish: b.polish || e.polish, vhf: b.vhf || e.vhf, modes: union(b.modes, e.modes), bands: b.bands || e.bands,
         originalName: b.originalName ?? e.originalName, rulesUrl: b.rulesUrl ?? e.rulesUrl, rulesPlUrl: b.rulesPlUrl ?? e.rulesPlUrl,
-        homepage: b.homepage ?? e.homepage, organizer: b.organizer || e.organizer, logDeadline: b.logDeadline || e.logDeadline,
+        sourcePageUrl: b.sourcePageUrl ?? e.sourcePageUrl, homepage: b.homepage ?? e.homepage, organizer: b.organizer || e.organizer, logDeadline: b.logDeadline || e.logDeadline,
         notes: union(b.notes, e.notes), sources: union(b.sources, e.sources),
       };
     }

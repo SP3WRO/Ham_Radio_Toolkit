@@ -13,7 +13,7 @@ import { nearby } from "./activations.mjs";
 import { repeaters } from "./repeaters.mjs";
 import { lookup as callbookLookup } from "./callbook.mjs";
 import { contests } from "./contests.mjs";
-import { awardEvents, awardDetails } from "./awards.mjs";
+import { awardEvents, awardBandmap } from "./awards.mjs";
 import { countryAt } from "./country.mjs";
 import { satellites } from "./satellites.mjs";
 import { handleAprsUpgrade } from "./aprs.mjs";
@@ -33,8 +33,10 @@ const USER_AGENT = "HamRadioToolkit-Web/0.1 (+https://github.com/SP3WRO/Ham_Radi
 const SERVICES = {
   // Parametry słoneczne i warunki KF – hamqsl.com aktualizuje dane co ok. godzinę
   hamqsl: { base: "https://www.hamqsl.com/", ttl: 15 * 60, paths: /^solarxml\.php$/ },
-  // Metadane map troposferycznych (obrazy przeglądarka pobiera bezpośrednio z tropocast.eu)
-  tropocast: { base: "https://tropocast.eu/api/v1/tropo/", ttl: 20 * 60, paths: /^metadata\?[\w=&.-]+$/ },
+  // Mapy troposferyczne Tropocast: metadane i obrazy
+  // Mapy idą przez serwer: przeglądarka ładująca je bezpośrednio z tropocast.eu dostawała pusty obraz
+  tropocast: { base: "https://tropocast.eu/api/v1/tropo/", ttl: 20 * 60,
+    paths: /^(metadata\?[\w=&.-]+|frames\/\d{1,3}\.png\?[\w=&.:%-]+|archive\/frames\/[\w.:%-]+\/\d{1,3}\.png\?[\w=&.%-]+)$/ },
   // Baza krajów DXCC (AD1C) – aplikacja odświeża ją raz w tygodniu
   ctyfiles: { base: "https://www.country-files.com/cty/", ttl: 24 * 3600, paths: /^cty\.csv$/ },
   // DX Cluster: spoty z DX Summit (odczyt) i wysyłanie własnego spotu (POST)
@@ -284,13 +286,9 @@ const server = createServer(async (req, res) => {
     if (url.pathname === "/api/awards") {
       return send(res, 200, await awardEvents(USER_AGENT, url.searchParams.get("refresh") === "1"));
     }
-    const award = /^\/api\/awards\/([^/]+)$/.exec(url.pathname);
-    if (award) {
-      try {
-        return send(res, 200, await awardDetails(award[1], url.searchParams.get("call"), USER_AGENT, url.searchParams.get("refresh") === "1"));
-      } catch (e) {
-        return send(res, e?.status ?? 502, { error: String(e?.message ?? e) });
-      }
+    if (url.pathname === "/api/awards/bandmap") {
+      const r = await awardBandmap(USER_AGENT);
+      return r ? send(res, 200, r) : send(res, 502, { error: "radiodyplom.pl niedostępny" });
     }
     if (url.pathname === "/api/activations") {
       const lat = Number(url.searchParams.get("lat")), lon = Number(url.searchParams.get("lon"));

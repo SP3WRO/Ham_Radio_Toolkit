@@ -164,9 +164,12 @@ export function settingsItem(title, summary, onclick, trailing) {
     trailing ?? null);
 }
 
-/** Wybór jednej opcji z listy w okienku. @template T @param {string} title @param {[T, string][]} options @param {T} selected @param {(v: T) => void} onselect */
-export function settingsChoice(title, options, selected, onselect) {
-  const label = options.find(([v]) => v === selected)?.[1] ?? "—";
+/**
+ * Wybór jednej opcji z listy w okienku. @template T @param {string} title @param {[T, string][]} options @param {T} selected
+ * @param {(v: T) => void} onselect @param {string | null} [summaryOverride] opis, gdy wartość jest spoza listy
+ */
+export function settingsChoice(title, options, selected, onselect, summaryOverride) {
+  const label = summaryOverride ?? options.find(([v]) => v === selected)?.[1] ?? "—";
   return settingsItem(title, label, () => {
     /** @type {() => void} */
     let close = () => {};
@@ -183,11 +186,13 @@ export function settingsChoice(title, options, selected, onselect) {
 /**
  * Pole tekstowe edytowane w okienku; zapis po "Zapisz".
  * @param {{title: string, value: string, emptySummary?: string, placeholder?: string, uppercase?: boolean, secret?: boolean,
- *   inputmode?: string, validate?: (v: string) => string | null, onsave: (v: string) => void}} o
+ *   inputmode?: string, validate?: (v: string) => string | null, onsave: (v: string) => void,
+ *   trailing?: any, preview?: (v: string) => any}} o  preview – podgląd wpisywanej wartości w okienku
  */
 export function settingsText(o) {
   const summary = !o.value.trim() ? o.emptySummary ?? t("settings_not_set") : o.secret ? t("settings_set") : o.value;
   return settingsItem(o.title, summary, () => {
+    const previewHost = h("div", { class: "settings-preview" });
     let value = o.value;
     /** @type {HTMLButtonElement} */
     let save;
@@ -200,9 +205,10 @@ export function settingsText(o) {
       field.setError(err != null);
       field.setSupport(err ?? "");
       save.disabled = err != null;
+      if (o.preview) replace(previewHost, o.preview(value.trim()));
     };
     dialog({
-      title: o.title, body: field,
+      title: o.title, body: o.preview ? h("div", { class: "col gap-s" }, field, previewHost) : field,
       actions: (close) => [
         button(t("common_cancel"), close, "text"),
         (save = /** @type {HTMLButtonElement} */ (button(t("common_save"), () => { o.onsave(value.trim()); close(); }, "text"))),
@@ -210,7 +216,7 @@ export function settingsText(o) {
     });
     check();
     setTimeout(() => field.input.focus(), 50);
-  });
+  }, o.trailing);
 }
 
 /** @param {string} title @param {string | null} summary @param {boolean} checked @param {(v: boolean) => void} onchange */

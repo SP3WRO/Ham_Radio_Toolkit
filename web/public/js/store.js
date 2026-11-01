@@ -4,6 +4,10 @@ import { Maidenhead, GreatCircle } from "./core/geo.js";
 
 const KEY = "hrt.settings.v1";
 
+// Domyślne APRS: -5 to SSID telefonu, "/[" to piechur
+export const DEFAULT_APRS_SSID = "-5";
+export const DEFAULT_APRS_ICON = "/[";
+
 export const DEFAULTS = {
   callsign: "NOCALL",
   user_locator: "",
@@ -12,8 +16,8 @@ export const DEFAULTS = {
   refresh_interval: 0,
   tropocast_area: "poland",
   active_programs: ["POTA", "SOTA", "WWFF"],
-  aprs_ssid: "-7",
-  aprs_icon: "/>",
+  aprs_ssid: DEFAULT_APRS_SSID,
+  aprs_icon: DEFAULT_APRS_ICON,
   aprs_comment: "HamRadioToolkit",
   aprs_radius_km: 50,
   repeater_radius_km: 50,
@@ -35,6 +39,8 @@ export const DEFAULTS = {
 let state = { ...DEFAULTS, ...read() };
 // Etap 1 zapisywał źródło "świat" jako "world" – w aplikacji to "international"
 if (/** @type {string} */ (state.repeater_data_source) === "world") state.repeater_data_source = "international";
+// Źródło RepeaterBook usunięte (wersja 26.11.1)
+if (/^repeaterbook/.test(state.repeater_data_source)) state.repeater_data_source = "international";
 /** @type {Set<(s: Settings) => void>} */
 const listeners = new Set();
 

@@ -2,8 +2,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
-  makeRepeater, groupRepeaters, normalizeModesPl, parseHearHam, parseRepeatermap, merge, parseRadioId, pickRadioId, parseRepeaterBook,
-  geoBox, boxTiles, boxContains, parseChirpCsv, parseRadarXml, modesFromEu, parsePrzemiennikiEu, buildRepeaterList, listKey,
+  makeRepeater, groupRepeaters, normalizeModesPl, parseHearHam, parseRepeatermap, merge, parseRadioId, pickRadioId,
+  geoBox, boxTiles, boxContains, parsePrzemiennikiNet, przemiennikiNetTimestamp, parsePrzemiennikiEu, buildRepeaterList, listKey,
 } from "../public/js/core/repeaters.js";
 
 const near = (a, b, tol = 1e-9) => assert.ok(Math.abs(a - b) <= tol, `${a} ≠ ${b}`);
@@ -88,11 +88,6 @@ test("RadioID i RepeaterBook", () => {
   assert.equal(d.colorCode, "1"); assert.equal(d.network, "Brandmeister");
   assert.deepEqual(d.talkgroups, ["TS1: 260 (Poland)", "TS2: 26071 (Lodz)"]); assert.equal(d.trustee, "SQ7SCC");
   assert.equal(pickRadioId([[438.45, d]], 438.45), d);
-  const [r] = parseRepeaterBook(`{"count":1,"results":[{"Callsign":"HB9F","Frequency":"438.6250","Input Freq":"431.0250","PL":"71.9",
-    "TSQ":"","Lat":"46.95","Long":"7.44","Nearest City":"Bern","Landmark":"Gurten","Operational Status":"On-air",
-    "FM Analog":"Yes","DMR":"No","D-Star":"No","System Fusion":"Yes","Notes":"Linked"}]}`);
-  assert.equal(r.callsign, "HB9F"); near(r.userTx, 431.025); assert.equal(r.requiredCtcss, "71.9");
-  assert.deepEqual(r.modes, ["FM", "C4FM"]); assert.equal(r.qth, "Bern, Gurten");
 });
 
 test("kafelki obszaru", () => {
@@ -102,21 +97,30 @@ test("kafelki obszaru", () => {
   for (const lat of [box.south, 52.4, box.north - 1e-6]) for (const lon of [box.west, 16.9, box.east - 1e-6]) assert.ok(tiles.some((t) => boxContains(t, lat, lon)));
 });
 
-test("przemienniki.net (CHIRP + radar.xml) i przemienniki.eu", () => {
-  const coords = parseRadarXml(`<radar><repeater callsign="SR3WR" latitude="52.7178" longitude="16.3744" /><repeater callsign="SR3XX" latitude="0" longitude="0"/></radar>`);
-  assert.deepEqual(coords.get("SR3WR"), [52.7178, 16.3744]);
-  assert.equal(coords.has("SR3XX"), false);
-  const modes = modesFromEu(`[{"callsign":"SR3WR","modes":["FM","DMR"]}]`);
-  const csv = "Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,Mode,TStep,Comment\r\n" +
-    "1,SR3WR,145.6875,-,0.6,Tone,94.8,88.5,FM,12.5,Wronki\r\n" +
-    "2,SR3WR,438.825,-,7.6,,88.5,88.5,FM,12.5,Wronki DMR\r\n" +
-    "3,SR3ZZ,145.6,,0,,88.5,88.5,FM,12.5,brak współrzędnych\r\n";
-  const list = parseChirpCsv(csv, coords, modes);
-  assert.equal(list.length, 2);
-  near(list[0].userTx, 145.0875);
-  assert.equal(list[0].requiredCtcss, "94.8");
-  assert.equal(list[1].requiredCtcss, "-"); // ton wyłączony w kolumnie Tone
-  assert.deepEqual(list[1].modes, ["FM", "DMR"]);
+const RPTS = JSON.stringify({ masks: { status: [{ type: "status", mask: "1" }] }, repeaters: [
+  { id: "1", qra: "SR3DAB", status: "1", visible: "1", qrg_tx: 439.05, qrg_rx: 431.45, band: 16384, mode_txt: "FM+DSTAR/DV+C4FM/Fusion",
+    locator: "JO82", qth: "Zalesie", lat: "52.1", lng: "16.9", loclat: "52.0", loclng: "16.8", ctcss_rx: "71.9", ctcss_tx: "79.7", deleted: "0" },
+  { id: "2", qra: "SR3OFF", status: "2", visible: "1", qrg_tx: 145.6625, qrg_rx: 145.0625, mode_txt: "", locator: "JO91", qth: null,
+    latitude: null, lat: null, lng: null, loclat: "51.5", loclng: "17.0", ctcss_rx: null, deleted: "0" },
+  { id: "3", qra: "SR3NOPOS", status: "1", visible: "1", qrg_tx: 145.6, qrg_rx: 145.0, lat: null, lng: null, loclat: null, loclng: null },
+  { id: "4", qra: "SR3DEL", status: "1", visible: "1", qrg_tx: 145.6, qrg_rx: 145.0, lat: "52.0", lng: "17.0", deleted: "1" },
+  { id: "5", qra: "SR3PLAN", status: "32", visible: "1", qrg_tx: 145.6, qrg_rx: 145.0, lat: "52.0", lng: "17.0", ctcss_rx: "0" },
+], generated: "2026-10-25 15:51:00" });
+
+test("przemienniki.net (rpts.json) i przemienniki.eu", () => {
+  const list = Object.fromEntries(parsePrzemiennikiNet(RPTS).map((r) => [r.callsign, r]));
+  assert.deepEqual(Object.keys(list).sort(), ["SR3DAB", "SR3OFF", "SR3PLAN"]);
+  const dab = list.SR3DAB;
+  near(dab.userRx, 439.05); near(dab.userTx, 431.45);
+  assert.deepEqual(dab.modes, ["FM", "D-STAR", "C4FM"]);
+  assert.equal(dab.requiredCtcss, "71.9"); assert.equal(dab.status, "working"); near(dab.latitude, 52.1);
+  // Bez dokładnej pozycji – środek lokatora; bez emisji – FM; wyłączony nie jest "working"
+  const off = list.SR3OFF;
+  near(off.latitude, 51.5); assert.equal(off.qth, "JO91"); assert.deepEqual(off.modes, ["FM"]);
+  assert.equal(off.requiredCtcss, "-"); assert.equal(off.status, "off");
+  assert.equal(list.SR3PLAN.status, "planned"); assert.equal(list.SR3PLAN.requiredCtcss, "-");
+  assert.equal(przemiennikiNetTimestamp(`<?xml version="1.0" encoding="UTF-8"?><timestamp>2026-10-25 14:43:54</timestamp>`), "2026-10-25 14:43:54");
+  assert.equal(przemiennikiNetTimestamp("<html>błąd</html>"), null);
   const eu = parsePrzemiennikiEu(`[{"callsign":"SR3PO","modes":["FM"],"tx_frequency":145.6,"rx_frequency":145.0,"rx_ctcss":false,"status":"","coordinates":[52.4,16.9],"qth":"Poznań"},
     {"callsign":"SR3NO","modes":["FM"],"coordinates":[]}]`);
   assert.equal(eu.length, 1); assert.equal(eu[0].requiredCtcss, "-"); assert.equal(eu[0].status, "working");
@@ -140,19 +144,24 @@ test("serwer: przemienniki.net i świat (podstawiony fetch)", async () => {
   const hh = JSON.parse(hearHamJson);
   const many = Array.from({ length: 1200 }, (_, i) => ({ ...hh[0], id: i, callsign: `GB${i}XX`, latitude: 52.3 + i / 10000, longitude: 13.6 }));
   const files = {
-    "https://przemienniki.net/export/radar.xml": `<r><repeater callsign="SR3WR" latitude="52.7178" longitude="16.3744" /></r>`,
-    "https://przemienniki.eu/api/export/json": `[{"callsign":"SR3WR","modes":["FM","DMR"],"coordinates":[52.7,16.3]}]`,
-    "https://przemienniki.net/export/chirp.csv": "Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,Mode,TStep,Comment\n1,SR3WR,145.6875,-,0.6,Tone,94.8,88.5,FM,12.5,Wronki\n",
+    "https://przemienniki.net/export/timestamp.xml/": "<timestamp>2026-10-25 14:43:54</timestamp>",
+    "https://przemienniki.net/export/rpts.json/": RPTS,
     "https://hearham.com/api/repeaters/v1": JSON.stringify(many),
   };
+  /** @type {string[]} */
+  const urls = [];
   globalThis.fetch = async (url) => {
+    urls.push(String(url));
     if (String(url).startsWith("https://www.repeatermap.de/")) return new Response(repeatermapJson, { status: 200 });
     return new Response(files[url] ?? "", { status: files[url] ? 200 : 404 });
   };
   try {
     const { repeaters } = await import("../server/repeaters.mjs");
     const pl = await repeaters("przemienniki_net", null, null, "test");
-    assert.equal(pl.length, 1); assert.deepEqual(pl[0].modes, ["FM", "DMR"]); assert.equal(pl[0].source, "przemienniki.net");
+    assert.equal(pl.length, 3); assert.equal(pl[0].source, "przemienniki.net");
+    // Druga prośba tego samego dnia – bez pytania serwisu
+    await repeaters("przemienniki_net", null, null, "test");
+    assert.equal(urls.filter((u) => u.includes("przemienniki.net")).length, 2);
     const world = await repeaters("international", 52.31, 13.62, "test");
     assert.ok(world.some((r) => r.callsign === "DB0LDS" && r.source === "repeatermap.de"));
     assert.ok(world.filter((r) => r.source === "HearHam").length >= 1000);

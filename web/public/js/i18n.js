@@ -1,5 +1,5 @@
 // @ts-check
-// Teksty interfejsu w 5 językach (generowane z tools/i18n/*.tsv) i formatowanie jak String.format w Androidzie
+// Teksty interfejsu w 6 językach (generowane z tools/i18n/*.tsv) i formatowanie jak String.format w Androidzie
 
 export const LANGUAGES = [
   { tag: "", nativeName: "" }, // język systemu
@@ -8,8 +8,9 @@ export const LANGUAGES = [
   { tag: "de", nativeName: "Deutsch" },
   { tag: "cs", nativeName: "Čeština" },
   { tag: "sk", nativeName: "Slovenčina" },
+  { tag: "ru", nativeName: "Русский" },
 ];
-const SUPPORTED = ["pl", "en", "de", "cs", "sk"];
+const SUPPORTED = ["pl", "en", "de", "cs", "sk", "ru"];
 
 /** @type {Record<string, any>} */
 let dict = {};
@@ -39,7 +40,7 @@ export async function loadLanguage(chosen) {
 
 export const currentLanguage = () => lang;
 /** Locale do liczb i dat (UiLocale w aplikacji). */
-export const uiLocale = () => ({ pl: "pl-PL", en: "en-GB", de: "de-DE", cs: "cs-CZ", sk: "sk-SK" })[lang] ?? "en-GB";
+export const uiLocale = () => ({ pl: "pl-PL", en: "en-GB", de: "de-DE", cs: "cs-CZ", sk: "sk-SK", ru: "ru-RU" })[lang] ?? "en-GB";
 
 /** Tekst w języku interfejsu. @param {string} key @param {...any} args */
 export function t(key, ...args) {

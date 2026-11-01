@@ -1,5 +1,5 @@
 // @ts-check
-// Kalendarz zawodów (ContestCalendarScreen.kt): SP9CXN, PK-UKF i QRZ.RU przez serwer aplikacji, zapasowo kalendarz wbudowany
+// Kalendarz zawodów (ContestCalendarScreen.kt): SP9CXN, PK-UKF / SP1CNV i QRZ.RU przez serwer aplikacji, zapasowo kalendarz wbudowany
 import { h, replace, iconButton, chip, switchEl, icon } from "../ui.js";
 import { t, plural, currentLanguage, uiLocale } from "../i18n.js";
 import { settings } from "../store.js";
@@ -196,6 +196,7 @@ export function contestsScreen(ctx) {
       h("div", { class: "row wrap", style: { gap: "4px" } },
         link(c.rulesUrl ? t("ct_rules") : t("ct_search_rules"), c.rulesUrl ?? `https://www.google.com/search?q=${encodeURIComponent(`${c.name} rules`)}`),
         c.rulesPlUrl && c.rulesPlUrl !== c.rulesUrl ? link(t("ct_rules_pl"), c.rulesPlUrl) : null,
+        c.sourcePageUrl && c.sourcePageUrl !== c.rulesUrl ? link(t("ct_source_page", CONTEST_SOURCES.QRZ_RU.label), c.sourcePageUrl) : null,
         h("button", { type: "button", class: "btn btn-text", style: { marginLeft: "-12px" }, onclick: () => addToCalendar(c, modes, bands, sources) }, icon("eventAvailable"), t("common_add_to_calendar"))));
   }
 
@@ -204,6 +205,7 @@ export function contestsScreen(ctx) {
     const description = [c.originalName, [modes, bands].filter(Boolean).join(", ") || null, L(c.exchange) || null,
       c.logDeadline ? t("ct_logs_by", c.logDeadline) : null, c.rulesUrl,
       c.rulesPlUrl && c.rulesPlUrl !== c.rulesUrl ? t("ct_rules_pl_value", c.rulesPlUrl) : null,
+      c.sourcePageUrl && c.sourcePageUrl !== c.rulesUrl ? c.sourcePageUrl : null,
       sources.length ? `${t("common_source")}: ${sources.join(", ")}` : null].filter(Boolean).join("\n");
     const url = URL.createObjectURL(new Blob([contestIcs(c, description)], { type: "text/calendar" }));
     // Na iPhonie bez "download" – Safari pokazuje wtedy okno dodawania do Kalendarza zamiast zapisu do Plików

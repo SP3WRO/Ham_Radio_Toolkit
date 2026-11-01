@@ -16,13 +16,13 @@ Kod jest w czystym JavaScripcie (moduły ES) – **bez zależności i bez kroku 
 | Szara linia, Beacony NCDXF, Bandplan R1/R2/R3 | jak w aplikacji |
 | Kalkulatory, Tłumienność kabli | wszystkie 11 kalkulatorów i 16 kabli |
 | Vademecum | DXCC, kody Q, RST, okręgi SP, skróty, Morse, alfabet fonetyczny |
-| Ustawienia | język (5), motyw, stacja, APRS, przemienniki, programy, konta HamQTH i QRZCQ |
+| Ustawienia | język (6), motyw, stacja, APRS, przemienniki, programy, konta HamQTH i QRZCQ |
 | DX Cluster | spoty DX Summit z filtrami pasm, emisji i krajów, nowe kraje, wysyłanie spotów, QSO ze spotu, akcje dyplomowe przy spotach |
 | Aktywacje na żywo, Aktywacje w okolicy | POTA, WWFF, SOTA – spoty i obiekty w promieniu do 500 km |
 | Przemienniki | przemienniki.net / przemienniki.eu / HearHam / repeatermap, filtry, DMR z RadioID, najbliższy na ekranie głównym |
 | Wyszukiwarka znaków | rejestr UKE, HamDB, RadioID, HamQTH, QRZCQ, PSK Reporter, log; autouzupełnianie okna QSO |
-| Kalendarz zawodów | SP9CXN, PK-UKF, QRZ.RU (z tłumaczeniem nazw), filtry, „Do kalendarza” (plik .ics → Kalendarz iOS) |
-| Dyplomy | akcje radiodyplom.pl, obserwowane, ranking, szacunek punktów z własnego logu |
+| Kalendarz zawodów | SP9CXN i PK-UKF / SP1CNV (JSON z repozytorium), QRZ.RU po miesiącach (z tłumaczeniem nazw), filtry, „Do kalendarza” (plik .ics → Kalendarz iOS) |
+| Dyplomy | akcje radiodyplom.pl (public_events.json), obserwowane, stacje na pasmach z ostatnich 30 minut (public_bandmap.json) |
 | Za granicą | znak wg CEPT T/R 61-01, kraj z pozycji (OpenStreetMap), region IARU, strefy i czas |
 | Satelity | TLE z AMSAT/CelesTrak, przeloty liczone w przeglądarce (SGP4), radar nieboskłonu, częstotliwości AMSAT/SatNOGS |
 | Trener i dekoder CW | metoda Kocha, tempo Farnswortha; dekoder z mikrofonu i pliku |
@@ -34,7 +34,7 @@ Kod jest w czystym JavaScripcie (moduły ES) – **bez zależności i bez kroku 
 | DSSTV (HamDRM) | zgodny z EasyPal/QSSTV, tryby A/B/E, 4/16/64-QAM, RS, podgląd JPEG 2000 w trakcie odbioru |
 | O programie | wersja aplikacji i wersji WWW, licencja MIT, kod innych autorów, źródła danych |
 
-Wszystkie narzędzia z Przybornika są już przeniesione. Do zrobienia: wysyłka logu do QRZ/eQSL, przemienniki z RepeaterBook i powiadomienia Web Push.
+Wszystkie narzędzia z Przybornika są już przeniesione. Do zrobienia: wysyłka logu do QRZ/eQSL i powiadomienia Web Push.
 
 ## Jedno źródło danych z aplikacją na Androida
 
@@ -108,10 +108,10 @@ Przeglądarka nie może pobierać danych z większości serwisów krótkofalarsk
 | Adres | Źródła | Odświeżanie |
 | --- | --- | --- |
 | `/api/activations` | POTA, SOTA, WWFF (CSV) | raz na dobę |
-| `/api/repeaters` | przemienniki.net, przemienniki.eu, HearHam, repeatermap | 6 h – 7 dni |
+| `/api/repeaters` | przemienniki.net (rpts.json, gdy zmieni się timestamp.xml), przemienniki.eu (7 dni), HearHam, repeatermap | 1–7 dni |
 | `/api/callbook` (POST) | UKE, HamDB, RadioID, HamQTH, QRZCQ, PSK Reporter | UKE raz w tygodniu, PSK Reporter najwyżej co 5 min |
-| `/api/contests` | SP9CXN, PK-UKF, QRZ.RU | 12 h |
-| `/api/awards`, `/api/awards/<id>` | radiodyplom.pl | 12 h |
+| `/api/contests` | SP9CXN i PK-UKF / SP1CNV (JSON z tego repozytorium), QRZ.RU (bieżący i 2 kolejne miesiące) | 24 h |
+| `/api/awards`, `/api/awards/bandmap` | radiodyplom.pl – tylko public_events.json i public_bandmap.json | 12 h / 5 min |
 | `/api/satellites` | AMSAT/CelesTrak, SatNOGS, AMSAT DB | 24 h |
 | `/api/country` | Nominatim (OpenStreetMap) | najwyżej 1 zapytanie/s, wyniki w pamięci |
 | `/api/aprs` (WebSocket) | APRS-IS (TCP) | na żywo |

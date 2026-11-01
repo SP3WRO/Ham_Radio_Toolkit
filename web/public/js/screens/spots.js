@@ -5,7 +5,7 @@ import { t, fmt, format } from "../i18n.js";
 import { settings, stationPosition } from "../store.js";
 import { logbook } from "../db.js";
 import { cty, proxied, apiUrl } from "../services.js";
-import { followedAwardStations, awardTextFor } from "./awards.js";
+import { followedAwardStations, awardTextFor, refreshBandmap, BANDMAP_POLL_MS } from "./awards.js";
 import { GreatCircle } from "../core/geo.js";
 import { bandForKhz, Callsigns, parseNum } from "../core/radio.js";
 import { DX_BANDS, DX_MODES, filterDxSpots, spotKhz, guessModeFromSpot, qsoFrequency, parsePota, parseWwff } from "../core/spots.js";
@@ -15,7 +15,7 @@ import { qsoDialog } from "./logger.js";
 /** @typedef {import("../core/spots.js").DxSpot} DxSpot */
 /** @typedef {import("../core/spots.js").LiveSpot} LiveSpot */
 
-/** Linijka "akcja dyplomowa" pod spotem. @param {Map<string, any>} tags @param {string} call */
+/** Linijka "akcja dyplomowa" pod spotem. @param {Map<string, string[]>} tags @param {string} call */
 function award(tags, call) {
   const text = tags.size ? awardTextFor(tags, call) : null;
   return text ? h("div", { class: "body-s bold tertiary ellipsis" }, t("spot_award", text)) : null;
@@ -170,7 +170,11 @@ export function dxClusterScreen(ctx) {
   const minutes = settings.get().refresh_interval;
   const timer = minutes > 0 ? setInterval(() => { if (!document.hidden) fetchSpots(); }, minutes * 60000) : null;
   const unsubscribe = logbook.subscribe(renderList);
-  return { el, destroy: () => { if (timer) clearInterval(timer); unsubscribe(); } };
+  // Stacje obserwowanych akcji dyplomowych z mapy pasm radiodyplom.pl (tylko gdy coś obserwujemy)
+  const pollAwards = () => { if (settings.get().followed_awards.length && !document.hidden) refreshBandmap().then(renderList); };
+  pollAwards();
+  const awardsTimer = setInterval(pollAwards, BANDMAP_POLL_MS);
+  return { el, destroy: () => { if (timer) clearInterval(timer); clearInterval(awardsTimer); unsubscribe(); } };
 }
 
 // ---------------------------------------------------------------- aktywacje na żywo

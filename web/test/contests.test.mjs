@@ -12,25 +12,25 @@ const fmt = (ms) => new Date(ms).toISOString().slice(0, 16).replace("T", " ");
 const ms = (s) => Date.parse(`${s.replace(" ", "T")}:00Z`);
 const byName = (list) => Object.fromEntries(list.map((e) => [e.name, e]));
 
-const spCell = (text) => `<td class="TC-1"><p class="Normal P-5"><span class="C-16">${text}</span></p></td>`;
-const SP9CXN = `
-<p><span class="C-15">KALENDARZ ZAWODÓW KRAJOWYCH PAŹDZIERNIK 2026</span></p>
-<table id="table_261" border="1"><tr><td colspan="2">Początek</td><td>Nazwa zawodów</td><td colspan="2">Koniec</td></tr>
-<tr>${spCell("Data")}${spCell("Godz. UTC")}${spCell("Data")}${spCell("Godz. UTC")}</tr>
-<tr>${spCell("07.10.2026")}${spCell("17:00")}<td class="TC-2"><p class="Normal"><a href="arki_ukf_2026.pdf" target="_blank" class="C-17">O<span class="C-17">MP ARKI VHF<span class="C-17"> X tura</span></span></a></p></td>${spCell("07.10.2026")}${spCell("19:00")}</tr>
-<tr>${spCell("11.10.2026")}${spCell("15:00")}<td class="TC-2"><p class="Normal"><a href="sp_cw_2026.pdf" class="C-17">SP CW Contest</a></p></td>${spCell("11.10.2026")}${spCell("15:59")}</tr>
-</table>
-<p><span class="C-15">KALENDARZ ZAWODÓW MIĘDZYNARODOWYCH PAŹDZIERNIK 2026</span></p>
-<table id="table_262" border="1">
-<tr>${spCell("04.10.2026")}${spCell("06:00")}<td class="TC-1"><p class="Normal"><a href="https://www.uba.be/en/hf/contest-rules/on-contest" class="C-17">ON Contest 80/40 m SSB</a><span class="C-16"> &nbsp;</span><span class="C-20">UA i EU</span></p></td><td class="TC-1"><p class="Normal P-6"><a href="https://www-uba-be.translate.goog/en/?_x_tr_sl=auto&amp;_x_tr_tl=pl" class="C-18">PL</a></p></td>${spCell("04.10.2026")}${spCell("09:00")}</tr>
-<tr>${spCell("13.10.2026")}${spCell("18:00")}<td class="TC-1"><p class="Normal"><a href="https://www.darc.de/rtty" class="C-17">DARC RTTY <span class="C-17">Short C<span class="C-17">ontest</span></span></a></p></td><td class="TC-1"><p class="Normal P-6"><a href="DARC_RTTY.pdf" class="C-18">PL</a></p></td>${spCell("13.10.2026")}${spCell("19:29")}</tr>
-<tr>${spCell("18.10.2026")}${spCell("17:30")}<td class="TC-1"><p class="Normal"><a href="https://example.org/sunday" class="C-17">Sunday Contest<span class="C-17"> CW</span></a><span> *</span></p></td><td class="TC-1">-</td>${spCell("18.10.2016")}${spCell("18:00")}</tr>
-<tr>${spCell("??.10.2026")}${spCell("18:00")}<td class="TC-1">Nieznane</td><td>-</td>${spCell("??.10.2026")}${spCell("19:00")}</tr>
-</table>`;
+const SP9CXN = JSON.stringify({ source: "SP9CXN", months: ["2026-10"], count: 7, contests: [
+  { id: "a", name: "OMP ARKI VHF X tura", section: "domestic", domestic: true, start_utc: "2026-10-07T17:00:00Z", end_utc: "2026-10-07T19:00:00Z",
+    rules_url: "https://sp9cxn.pzk.pl/arki_ukf_2026.pdf", rules_pl_url: null, modes: [], unconfirmed: false, old_rules: false, no_ru_by_contacts: false, problems: [] },
+  { id: "b", name: "SP CW Contest", domestic: true, start_utc: "2026-10-11T15:00:00Z", end_utc: "2026-10-11T15:59:00Z", rules_url: "https://sp9cxn.pzk.pl/sp_cw_2026.pdf" },
+  { id: "c", name: "ON Contest 80/40 m SSB", domestic: false, start_utc: "2026-10-04T06:00:00Z", end_utc: "2026-10-04T09:00:00Z",
+    rules_url: "https://www.uba.be/en/hf/contest-rules/on-contest", rules_pl_url: "https://www-uba-be.translate.goog/en/?_x_tr_sl=auto&_x_tr_tl=pl",
+    rules_pl_machine_translated: true, no_ru_by_contacts: true },
+  { id: "d", name: "DARC RTTY Short Contest", domestic: false, start_utc: "2026-10-13T18:00:00Z", end_utc: "2026-10-13T19:29:00Z",
+    rules_url: "https://www.darc.de/rtty", rules_pl_url: "https://sp9cxn.pzk.pl/DARC_RTTY.pdf" },
+  { id: "e", name: "Sunday Contest CW", domestic: false, start_utc: "2026-10-18T17:30:00Z", end_utc: "2026-10-18T18:00:00Z",
+    rules_url: "https://example.org/sunday", rules_pl_url: null, old_rules: true, problems: ["end_date_fixed"] },
+  { id: "f", name: "Nocne Marki", domestic: true, start_utc: "2026-12-06T23:00:00Z", end_utc: "2026-12-22T00:00:00Z" },
+  { id: "g", name: "Bez końca", domestic: false, start_utc: "2026-10-20T18:00:00Z", end_utc: null, problems: ["end_unparsed"] },
+] });
 
-test("SP9CXN – tabele krajowe i międzynarodowe", () => {
+test("SP9CXN – JSON z repozytorium", () => {
   const list = byName(parseSp9cxn(SP9CXN));
-  assert.equal(Object.keys(list).length, 5, Object.keys(list).join());
+  assert.equal(Object.keys(list).length, 6, Object.keys(list).join());
+  assert.equal(fmt(list["Nocne Marki"].endMs), "2026-12-07 00:00");
   const arki = list["OMP ARKI VHF X tura"];
   assert.ok(arki.polish && arki.vhf);
   assert.equal(fmt(arki.startMs), "2026-10-07 17:00");
@@ -44,40 +44,43 @@ test("SP9CXN – tabele krajowe i międzynarodowe", () => {
   assert.equal(list["DARC RTTY Short Contest"].rulesPlUrl, "https://sp9cxn.pzk.pl/DARC_RTTY.pdf");
   const sunday = list["Sunday Contest CW"];
   assert.equal(fmt(sunday.endMs), "2026-10-18 18:00");
-  assert.equal(sunday.notes.length, 1);
+  assert.deepEqual(sunday.notes, ["ct_note_old_rules"]);
   assert.equal(sunday.rulesPlUrl, null);
 });
 
-const pkRow = (date, time, name, band, org, deadline) => `<tr><td>1</td><td>${date}</td><td>${time}</td><td><strong>${name}</strong></td><td>${band}</td><td>${org}</td>
-  <td><a href="https://pk-ukf.pl/pl.pdf">Regulamin</a></td><td><a href="https://pk-ukf.pl/en.pdf">Regulamin</a></td><td>${deadline}</td></tr>`;
-const PK = `<table><tr><td>Lp.</td><td>Data</td><td>Czas trwania UTC</td><td>Nazwa zawodów</td><td>Pasmo</td><td>Organizator</td><td>Regulamin polski</td><td>Regulamin angielski</td><td>Termin wysyłki logów</td></tr>
-${pkRow("3 Listopad 2026", "18:00 &#8211; 22:00", "SPAC Listopad 144MHz", "144 MHz", "PK UKF", "10 Listopad 2026 (7dni)")}
-${pkRow("7-8 Listopad 2026", "14:00 &#8211; 14:00", "MMC 144 MHz", "144MHz CW", "ARI", "11 Listopad 2026 (3dni)")}
-${pkRow("31 Październik &#8211; 1 Listopad 2026", "00:00 &#8211; 23:59", "EME ARRL I-part", "50 .. 1296 MHz", "ARRL", "30 dni po zawodach")}
-${pkRow("6 Styczeń 2026", "18:0 – 22:00", "SPAC Styczeń 144MHz", "144 MHz", "PK UKF", "13 Styczeń 2026")}
-${pkRow("1 Styczeń 2026", "14.00 - 18.00", "AGCW VHF/UHF Contest", "144 i 432MHz", "AGCW", "2 Styczeń 2026")}
-${pkRow("?? Listopad 2026", "18:00 &#8211; 21:59", "YL VHF Contest", "144 i 432 MHz", "LRAL", "28 Listopad 2026")}
-</table>`;
+const PK = JSON.stringify({ years: [2026], count: 4, contests: [
+  { id: "a", name: "SPAC Listopad 144MHz", major: false, month: 11, start_utc: "2026-11-03T18:00:00Z", end_utc: "2026-11-03T22:00:00Z",
+    band: "144 MHz", organizer: "PK UKF", rules_pl: "https://pk-ukf.pl/pl.pdf", rules_en: "https://pk-ukf.pl/en.pdf",
+    log_deadline_raw: "10 Listopad 2026 (7dni)", log_deadline: "2026-11-10", log_deadline_computed: false, is_spac: true, year: 2026 },
+  { id: "b", name: "MMC 144 MHz", start_utc: "2026-11-07T14:00:00Z", end_utc: "2026-11-08T14:00:00Z",
+    band: "144MHz CW", organizer: "ARI", rules_pl: null, rules_en: "https://example.org/mmc", log_deadline_raw: "30 dni po zawodach", log_deadline: "2026-12-08" },
+  { id: "c", name: "EME ARRL I-part", start_utc: "2026-10-31T00:00:00Z", end_utc: "2026-11-01T23:59:00Z",
+    band: "50 .. 1296 MHz", organizer: "-", rules_pl: null, rules_en: null, log_deadline_raw: "?? Lipiec 2026 (5 dni)", log_deadline: null },
+  { id: "d", name: "YL VHF Contest", start_date: null, end_date: null, start_utc: null, end_utc: null, band: "144 i 432 MHz", organizer: "LRAL" },
+] });
 
-test("PK-UKF – formaty dat", () => {
+test("PK-UKF / SP1CNV – JSON z repozytorium", () => {
   const list = byName(parsePkUkf(PK));
-  assert.equal(Object.keys(list).length, 5);
+  assert.equal(Object.keys(list).length, 3);
   const spac = list["SPAC Listopad 144MHz"];
   assert.ok(spac.polish && spac.vhf);
   assert.equal(fmt(spac.startMs), "2026-11-03 18:00");
   assert.equal(fmt(spac.endMs), "2026-11-03 22:00");
+  assert.equal(spac.rulesUrl, "https://pk-ukf.pl/en.pdf");
   assert.equal(spac.rulesPlUrl, "https://pk-ukf.pl/pl.pdf");
-  assert.equal(spac.logDeadline, "10 Listopad 2026 (7dni)");
+  assert.equal(spac.logDeadline, "10.11.2026");
   const mmc = list["MMC 144 MHz"];
   assert.equal(mmc.polish, false);
   assert.ok(mmc.modes.includes("CW"));
-  assert.equal(fmt(mmc.startMs), "2026-11-07 14:00");
   assert.equal(fmt(mmc.endMs), "2026-11-08 14:00");
+  assert.equal(mmc.rulesUrl, "https://example.org/mmc");
+  assert.equal(mmc.rulesPlUrl, null);
+  assert.equal(mmc.logDeadline, "08.12.2026");
   const eme = list["EME ARRL I-part"];
   assert.equal(fmt(eme.startMs), "2026-10-31 00:00");
   assert.equal(fmt(eme.endMs), "2026-11-02 00:00");
-  assert.equal(fmt(list["SPAC Styczeń 144MHz"].startMs), "2026-01-06 18:00");
-  assert.equal(fmt(list["AGCW VHF/UHF Contest"].endMs), "2026-01-01 18:00");
+  assert.equal(eme.organizer, "");
+  assert.equal(eme.logDeadline, "?? Lipiec 2026 (5 dni)");
 });
 
 const ICS = "BEGIN:VCALENDAR\r\nVERSION:2.0\r\n" +
@@ -108,6 +111,7 @@ test("QRZ.RU – ICS i tłumaczenie nazw", () => {
   assert.equal(bryansk.logDeadline, "12.01.2026");
   assert.equal(bryansk.homepage, "http://r3y.ru");
   assert.equal(bryansk.rulesUrl, "https://www.qrz.ru/contest/detail/54.html");
+  assert.equal(bryansk.sourcePageUrl, "https://www.qrz.ru/contest/detail/54.html");
   assert.equal(bryansk.vhf, false);
   assert.equal(zoya.name, "Zoya");
   assert.equal(fmt(zoya.startMs), "2026-11-13 17:00");
@@ -139,6 +143,8 @@ test("łączenie tych samych zawodów z różnych źródeł i zawody cykliczne",
   assert.deepEqual(on.sources, ["SP9CXN", "QRZ_RU"]);
   assert.equal(on.bands, "80 m, 40 m");
   assert.equal(on.rulesUrl, "https://www.uba.be/en/hf/contest-rules/on-contest");
+  // Link do strony QRZ.RU zostaje po złączeniu ze źródłem o wyższym priorytecie
+  assert.equal(on.sourcePageUrl, "https://www.qrz.ru/contest/detail/77.html");
 
   const week = 7 * 86_400_000;
   const base = sp[0];
@@ -176,18 +182,24 @@ test("kalendarz wbudowany – terminy", () => {
 
 test("serwer – /api/contests łączy źródła", async () => {
   const realFetch = globalThis.fetch;
+  /** @type {string[]} */
+  const urls = [];
   globalThis.fetch = /** @type {any} */ (async (url) => {
     const u = String(url);
-    const body = u.includes("sp9cxn") ? SP9CXN : u.includes("pk-ukf") ? PK : u.includes("qrz.ru") ? ICS : "";
+    urls.push(u);
+    const body = u.includes("sp9cxn-calendar") ? SP9CXN : u.includes("pkukf-calendar") ? PK : u.startsWith("https://m.qrz.ru/contest/qrz-contest.ics?m=") ? ICS : "";
     return new Response(body, { status: body ? 200 : 404 });
   });
   try {
     const { contests } = await import("../server/contests.mjs");
     const r = await contests("test");
-    assert.ok(r.entries.length >= 13, String(r.entries.length));
+    assert.equal(r.entries.length, 12);
     assert.deepEqual(r.statuses.map((s) => s.source), ["SP9CXN", "PK_UKF", "QRZ_RU"]);
     assert.ok(r.statuses.every((s) => s.fetchedAt && !s.error));
     assert.ok(r.entries.some((e) => e.name === "Bryansk Oblast HF Cup"));
+    // Bez stron sp9cxn.pzk.pl i pk-ukf.pl; QRZ.RU – trzy miesiące
+    assert.ok(!urls.some((u) => u.includes("pk-ukf.pl") || u.includes("sp9cxn.pzk.pl")));
+    assert.equal(urls.filter((u) => u.includes("qrz.ru")).length, 3);
   } finally {
     globalThis.fetch = realFetch;
   }

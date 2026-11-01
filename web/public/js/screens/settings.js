@@ -2,14 +2,18 @@
 // Ustawienia (SettingsScreen.kt) – te same sekcje; powiadomienia i konta dojdą z funkcjami online
 import { h, settingsSection, settingsChoice, settingsText, settingsSwitch, settingsSlider, settingsItem, divider, replace } from "../ui.js";
 import { t, LANGUAGES } from "../i18n.js";
-import { settings, credentials } from "../store.js";
+import { settings, credentials, DEFAULT_APRS_ICON } from "../store.js";
 import { serverStatus, cty, ctyInfo } from "../services.js";
 import { APP_VERSION } from "../core/logbook.js";
 import { Callsigns } from "../core/radio.js";
 import { Maidenhead } from "../core/geo.js";
+import { isValidSymbolCode } from "../core/aprs.js";
+import { aprsSymbolPreview } from "./aprs.js";
 import { layout } from "./common.js";
 
 const APRS_SSID = /^-?(\d|1[0-5])$/;
+const APRS_ICONS = [["/>", "settings_aprs_icon_car"], ["/<", "settings_aprs_icon_motorcycle"], ["/v", "settings_aprs_icon_van"],
+  ["/[", "settings_aprs_icon_walker"], ["/-", "settings_aprs_icon_home"], ["/;", "settings_aprs_icon_tent"]];
 
 /** Konta w serwisach (AccountsSettings) – na razie te, z których korzysta wyszukiwarka znaków. */
 /** @param {() => void} rerender */
@@ -34,6 +38,7 @@ export function settingsScreen(ctx) {
 
   const render = () => {
     const s = settings.get();
+    const customIcon = APRS_ICONS.some(([v]) => v === s.aprs_icon) ? null : s.aprs_icon;
     const km = (v) => t("common_km", String(v));
     replace(host,
       settingsSection(t("settings_language"), "language",
@@ -63,7 +68,7 @@ export function settingsScreen(ctx) {
         settingsChoice(t("settings_repeater_source"), [
           ["przemienniki_net", t("settings_source_poland", "przemienniki.net")], ["przemienniki_eu", t("settings_source_poland", "przemienniki.eu")],
           ["international", t("settings_source_world", "HearHam + repeatermap.de")], ["hearham", t("settings_source_world", "HearHam")],
-          ["repeatermap", t("settings_source_europe", "repeatermap.de")], ["repeaterbook", t("settings_source_token", "RepeaterBook")],
+          ["repeatermap", t("settings_source_europe", "repeatermap.de")],
         ], s.repeater_data_source, (v) => settings.set({ repeater_data_source: v })),
         h("div", { class: "settings-note" }, t("settings_repeater_note")),
         divider(),
@@ -74,9 +79,14 @@ export function settingsScreen(ctx) {
           validate: (v) => (!v || APRS_SSID.test(v) ? null : t("settings_aprs_ssid_invalid")),
           onsave: (v) => settings.set({ aprs_ssid: !v || v.startsWith("-") ? v : `-${v}` }) }),
         divider(),
-        settingsChoice(t("settings_aprs_icon"), [["/>", "settings_aprs_icon_car"], ["/<", "settings_aprs_icon_motorcycle"], ["/v", "settings_aprs_icon_van"],
-          ["/[", "settings_aprs_icon_walker"], ["/-", "settings_aprs_icon_home"], ["/;", "settings_aprs_icon_tent"]].map(([v, k]) => [v, t(k)]),
-          s.aprs_icon, (v) => settings.set({ aprs_icon: v })),
+        settingsChoice(t("settings_aprs_icon"), APRS_ICONS.map(([v, k]) => [v, t(k)]),
+          s.aprs_icon, (v) => settings.set({ aprs_icon: v }), customIcon ? t("settings_aprs_icon_custom_value", customIcon) : null),
+        divider(),
+        settingsText({ title: t("settings_aprs_icon_custom"), value: customIcon ?? "", emptySummary: t("settings_aprs_icon_custom_desc"), placeholder: "/b",
+          validate: (v) => (!v || isValidSymbolCode(v) ? null : t("settings_aprs_icon_custom_invalid")),
+          trailing: customIcon && isValidSymbolCode(customIcon) ? aprsSymbolPreview(customIcon) : null,
+          preview: (v) => (isValidSymbolCode(v) ? aprsSymbolPreview(v, 48) : null),
+          onsave: (v) => settings.set({ aprs_icon: v || DEFAULT_APRS_ICON }) }),
         divider(),
         settingsText({ title: t("settings_aprs_comment"), value: s.aprs_comment, emptySummary: t("settings_none"), onsave: (v) => settings.set({ aprs_comment: v }) }),
         divider(),

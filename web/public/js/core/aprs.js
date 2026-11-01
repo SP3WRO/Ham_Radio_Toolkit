@@ -15,6 +15,10 @@ const WX_LEN = { c: 3, s: 3, g: 3, t: 3, r: 3, p: 3, P: 3, h: 2, b: 5, L: 3, l: 
  */
 
 /** Passcode APRS-IS (hash znaku bez SSID). @param {string} call */
+/** Kod symbolu: tabela (/, \\ albo nakładka: cyfra lub wielka litera) i znak symbolu. @param {string} code */
+export const isValidSymbolCode = (code) => code.length === 2 && /^[/\\0-9A-Z]$/.test(code[0]) && code.charCodeAt(1) >= 33 && code.charCodeAt(1) <= 126;
+
+/** @param {string} call */
 export function aprsPasscode(call) {
   const c = call.toUpperCase().split("-")[0];
   let hash = 0x73e2;
