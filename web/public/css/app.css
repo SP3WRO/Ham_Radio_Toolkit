@@ -358,3 +358,9 @@ a.btn { text-decoration: none; }
 .aprs-icon.alt-table { background-image: url(../icons/aprs_secondary.png); }
 .aprs-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 700 16px/1 system-ui, sans-serif;
   color: #fff; -webkit-text-stroke: 1px #000; paint-order: stroke fill; }
+.btn.listen { width: 100%; height: 52px; font-size: 16px; justify-content: center; }
+.btn.listen.danger { background: var(--error); color: var(--on-error); }
+.btn.small { padding: 0 8px; gap: 6px; font-size: 13px; justify-content: center; min-width: 0; white-space: nowrap; }
+.spectrum { width: 100%; height: 110px; border-radius: 12px; background: var(--surface-variant); touch-action: manipulation; display: block; }
+.icon-btn.sm { width: 40px; height: 40px; }
+.decoder-text.small-text { font-size: 15px; }

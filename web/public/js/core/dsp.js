@@ -61,3 +61,23 @@ export class StreamResampler {
 export function resample(samples, inputRate, outputRate) {
   return new StreamResampler(inputRate, outputRate).process(samples).slice();
 }
+
+/** WAV 16-bit PCM mono (zapis nagrań z dekoderów). @param {Float32Array} samples @param {number} rate */
+export function wavBytes(samples, rate) {
+  const buf = new ArrayBuffer(44 + samples.length * 2);
+  const v = new DataView(buf);
+  const str = (/** @type {number} */ o, /** @type {string} */ s) => { for (let i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+  str(0, "RIFF"); v.setUint32(4, 36 + samples.length * 2, true); str(8, "WAVE");
+  str(12, "fmt "); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
+  str(36, "data"); v.setUint32(40, samples.length * 2, true);
+  for (let i = 0; i < samples.length; i++) v.setInt16(44 + i * 2, Math.max(-32768, Math.min(32767, Math.round(samples[i] * 32767))), true);
+  return new Uint8Array(buf);
+}
+
+/** Poziom sygnału 0..1 (RMS ×4, jak w aplikacji). @param {Float32Array} x */
+export function audioLevel(x) {
+  let s = 0;
+  for (let i = 0; i < x.length; i++) s += x[i] * x[i];
+  return Math.min(1, Math.sqrt(s / Math.max(1, x.length)) * 4);
+}
