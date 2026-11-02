@@ -11,6 +11,7 @@
 !/gradlew.bat
 !/LICENSE
 !/README.md
+!/PRIVACY_POLICY.md
 !/.gitignore
 
 *.iml
