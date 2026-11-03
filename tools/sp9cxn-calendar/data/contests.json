@@ -1,7 +1,7 @@
 {
   "source": "SP9CXN",
   "source_url": "https://sp9cxn.pzk.pl/kalendarz.html",
-  "source_updated": "2026-10-20",
+  "source_updated": "2026-11-02",
   "months": [
     "2026-11",
     "2026-12"
@@ -1237,7 +1237,7 @@
       "end_utc": "2026-11-27T17:59:00Z",
       "start_raw": "27.11.2026 16:00",
       "end_raw": "27.11.2026 17:59",
-      "rules_url": "https://sp9cxn.pzk.pl/dzieci_zamojszczyzny_cw_SSB_2024.pdf",
+      "rules_url": "https://sp9cxn.pzk.pl/dzieci_zamojszczyzny_cwssb_2026.pdf",
       "rules_pl_url": null,
       "rules_pl_machine_translated": false,
       "vhf": false,
@@ -1246,7 +1246,7 @@
         "SSB"
       ],
       "unconfirmed": false,
-      "old_rules": true,
+      "old_rules": false,
       "no_ru_by_contacts": false,
       "problems": []
     },
@@ -1261,7 +1261,7 @@
       "end_utc": "2026-11-27T18:59:00Z",
       "start_raw": "27.11.2026 18:00",
       "end_raw": "27.11.2026 18:59",
-      "rules_url": "https://sp9cxn.pzk.pl/dzieci_zamojszczyzny_digi_2024.pdf",
+      "rules_url": "https://sp9cxn.pzk.pl/dzieci_zamojszczyzny_digi_2026.pdf",
       "rules_pl_url": null,
       "rules_pl_machine_translated": false,
       "vhf": false,
@@ -1269,7 +1269,7 @@
         "DIGI"
       ],
       "unconfirmed": false,
-      "old_rules": true,
+      "old_rules": false,
       "no_ru_by_contacts": false,
       "problems": []
     },
