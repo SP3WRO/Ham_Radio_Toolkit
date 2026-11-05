@@ -2,7 +2,7 @@
   "year": 2026,
   "source_url": "https://pk-ukf.pl/kalendarz-zawodow-2026/",
   "source_version": "1.03",
-  "source_modified": "2026-09-27T20:21:56+00:00",
+  "source_modified": "2026-11-03T15:48:16+00:00",
   "count": 166,
   "contests": [
     {
@@ -2559,7 +2559,7 @@
       "band": ">= 432MHz",
       "organizer": "IARU R1",
       "rules_pl": "https://pk-ukf.pl/wp-content/uploads/2024/03/Regulamin_zawodow_VUSHF_R1-IARU_2023_PL.pdf",
-      "rules_en": "https://pk-ukf.pl/wp-content/uploads/2024/12/Rules-IARU-R1-VHF-up-Contests.pdff",
+      "rules_en": "https://pk-ukf.pl/wp-content/uploads/2024/12/Rules-IARU-R1-VHF-up-Contests.pdf",
       "log_deadline_raw": "7 Październik 2026 (3dni)",
       "log_deadline": "2026-10-07",
       "log_deadline_computed": false,
@@ -2866,8 +2866,8 @@
       "is_spac": false
     },
     {
-      "id": "e0f36574287e",
-      "name": "MMC 144 MHz",
+      "id": "11a797e0c427",
+      "name": "Marconi Memorial Contest VHF",
       "major": true,
       "month": 11,
       "date_raw": "7-8 Listopad 2026",
@@ -2878,7 +2878,7 @@
       "end_utc": "2026-11-08T14:00:00Z",
       "band": "144MHz CW",
       "organizer": "ARI",
-      "rules_pl": null,
+      "rules_pl": "https://pk-ukf.pl/wp-content/uploads/2026/11/Regulamin_zawodow_MMC_2026_PL.pdf",
       "rules_en": "http://www.ari.it/english-area/vhf/6495-48th-marconi-memorial-contest-vhf.html",
       "log_deadline_raw": "11 Listopad 2026 (3dni)",
       "log_deadline": "2026-11-11",

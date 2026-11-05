@@ -1,7 +1,7 @@
 {
   "source": "SP9CXN",
   "source_url": "https://sp9cxn.pzk.pl/kalendarz.html",
-  "source_updated": "2026-11-02",
+  "source_updated": "2026-11-04",
   "months": [
     "2026-11",
     "2026-12"
@@ -939,7 +939,7 @@
       "end_utc": "2026-11-22T11:59:00Z",
       "start_raw": "21.11.2026 12:00",
       "end_raw": "22.11.2026 11:59",
-      "rules_url": "http://lzdx.bfra.bg/rulesen.html",
+      "rules_url": "https://lzdx.bfra.bg/rulesen.html",
       "rules_pl_url": "https://lzdx-bfra-bg.translate.goog/rulesen.html?_x_tr_sl=auto&_x_tr_tl=pl&_x_tr_hl=pl",
       "rules_pl_machine_translated": true,
       "vhf": false,
@@ -948,7 +948,7 @@
         "SSB"
       ],
       "unconfirmed": false,
-      "old_rules": true,
+      "old_rules": false,
       "no_ru_by_contacts": false,
       "problems": []
     },
@@ -1635,6 +1635,27 @@
       "problems": []
     },
     {
+      "id": "cb5b0a1d40fd",
+      "name": "Nocne Marki",
+      "section": "domestic",
+      "domestic": true,
+      "section_month": 12,
+      "section_year": 2026,
+      "start_utc": "2026-12-05T23:00:00Z",
+      "end_utc": "2026-12-20T00:00:00Z",
+      "start_raw": "05.12.2026 23:00",
+      "end_raw": "20.12.2026 00:00",
+      "rules_url": "https://sp9cxn.pzk.pl/nocne_marki_2026.pdf",
+      "rules_pl_url": null,
+      "rules_pl_machine_translated": false,
+      "vhf": false,
+      "modes": [],
+      "unconfirmed": false,
+      "old_rules": false,
+      "no_ru_by_contacts": false,
+      "problems": []
+    },
+    {
       "id": "9fd61634047b",
       "name": "Narodziny Krótkofalarstwa Polskiego",
       "section": "domestic",
@@ -1675,27 +1696,6 @@
       ],
       "unconfirmed": false,
       "old_rules": false,
-      "no_ru_by_contacts": false,
-      "problems": []
-    },
-    {
-      "id": "ed119bc28fb1",
-      "name": "Nocne Marki",
-      "section": "domestic",
-      "domestic": true,
-      "section_month": 12,
-      "section_year": 2026,
-      "start_utc": "2026-12-06T23:00:00Z",
-      "end_utc": "2026-12-22T00:00:00Z",
-      "start_raw": "06.12.2026 23:00",
-      "end_raw": "22.12.2026 00:00",
-      "rules_url": "https://sp9cxn.pzk.pl/nocne_marki_2025.pdf",
-      "rules_pl_url": null,
-      "rules_pl_machine_translated": false,
-      "vhf": false,
-      "modes": [],
-      "unconfirmed": false,
-      "old_rules": true,
       "no_ru_by_contacts": false,
       "problems": []
     },
