@@ -10,7 +10,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.FilterList
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Sync
 import androidx.compose.material3.*
@@ -44,8 +49,10 @@ fun RepeatersScreen(
     val selectedBand by viewModel.selectedBand.collectAsState()
     val selectedModeFilter by viewModel.selectedModeFilter.collectAsState()
     val onlyWorking by viewModel.onlyWorking.collectAsState()
+    val searchQuery by viewModel.searchQuery.collectAsState()
 
     var showFiltersPanel by remember { mutableStateOf(true) }
+    var searchOpen by remember { mutableStateOf(searchQuery.isNotEmpty()) }
 
     LaunchedEffect(repeaterRadiusKm) {
         viewModel.updateRadius(repeaterRadiusKm)
@@ -72,6 +79,16 @@ fun RepeatersScreen(
                     }
                 },
                 actions = {
+                    IconButton(onClick = {
+                        searchOpen = !searchOpen
+                        if (!searchOpen) viewModel.setSearchQuery("")
+                    }) {
+                        Icon(
+                            Icons.Filled.Search,
+                            contentDescription = stringResource(R.string.rep_search),
+                            tint = if (searchQuery.isNotBlank()) MaterialTheme.colorScheme.primary else LocalContentColor.current
+                        )
+                    }
                     IconButton(onClick = onSettingsClick) {
                         Icon(Icons.Filled.Settings, contentDescription = stringResource(R.string.common_settings))
                     }
@@ -99,6 +116,29 @@ fun RepeatersScreen(
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
+            // WYSZUKIWANIE PO ZNAKU – w całej pobranej bazie, bez limitu odległości
+            if (searchOpen) {
+                OutlinedTextField(
+                    value = searchQuery,
+                    onValueChange = viewModel::setSearchQuery,
+                    placeholder = { Text(stringResource(R.string.rep_search_hint)) },
+                    leadingIcon = { Icon(Icons.Filled.Search, contentDescription = null) },
+                    trailingIcon = {
+                        if (searchQuery.isNotEmpty()) {
+                            IconButton(onClick = { viewModel.setSearchQuery("") }) {
+                                Icon(Icons.Filled.Clear, contentDescription = stringResource(R.string.common_clear))
+                            }
+                        }
+                    },
+                    supportingText = if (searchQuery.isNotBlank()) {
+                        { Text(stringResource(R.string.rep_search_note)) }
+                    } else null,
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Characters, imeAction = ImeAction.Search),
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp)
+                )
+            }
+
             // PANEL FILTRÓW
             AnimatedVisibility(visible = showFiltersPanel) {
                 Surface(
@@ -178,7 +218,8 @@ fun RepeatersScreen(
             ) {
                 if (repeaters.isEmpty() && !isLoading) {
                     Text(
-                        text = error ?: stringResource(R.string.rep_none),
+                        text = error ?: if (searchQuery.isNotBlank()) stringResource(R.string.rep_no_match, searchQuery.trim())
+                            else stringResource(R.string.rep_none),
                         modifier = Modifier
                             .align(Alignment.Center)
                             .padding(16.dp),

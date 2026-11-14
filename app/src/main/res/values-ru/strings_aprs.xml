@@ -42,4 +42,8 @@
     <string name="rep_checking_radioid">Проверка в RadioID…</string>
     <string name="rep_trustee">Ответственный: %1$s</string>
     <string name="rep_download_error">Ошибка загрузки (%1$s): %2$s</string>
+    <string name="rep_search">Поиск по позывному</string>
+    <string name="rep_search_hint">Позывной или место…</string>
+    <string name="rep_search_note">Поиск по всему загруженному списку, без ограничения расстояния</string>
+    <string name="rep_no_match">Нет ретрансляторов по запросу «%1$s».</string>
 </resources>

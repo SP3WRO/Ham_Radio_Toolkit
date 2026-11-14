@@ -263,7 +263,7 @@ object RegionalInfo {
             aprs = "144.800 MHz",
             fmCalling = "145.500 MHz (2 m), 433.500 MHz (70 cm)",
             emergency = "3.760, 7.110, 14.300, 18.160, 21.360 MHz",
-            source = "IARU Region 1"
+            source = "IARU Region 1 – HF Band Plan (10.2020), VHF Handbook 10.03 (02.2026)"
         )
         IaruRegion.R2 -> RegionalFrequencies(
             aprs = "144.390 MHz" + if (iso != null && iso in CARIBBEAN) " (Karaiby: chroniona też 145.010)" else "",

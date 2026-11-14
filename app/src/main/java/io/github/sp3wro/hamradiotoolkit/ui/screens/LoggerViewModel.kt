@@ -76,8 +76,18 @@ class LoggerViewModel(application: Application) : AndroidViewModel(application) 
     val lastRstSent: String get() = _logs.value.firstOrNull()?.rstSent ?: "59"
     val lastRstRcvd: String get() = _logs.value.firstOrNull()?.rstRcvd ?: "59"
 
+    // Wersja dziennika, którą pokazuje lista w pamięci (-1 = jeszcze nic nie wczytano)
+    private var knownRevision = -1L
+
     init {
-        loadLogs()
+        // Pierwsze wczytanie i odświeżanie po zmianach zrobionych z innych ekranów (DX Cluster, POTA…)
+        viewModelScope.launch {
+            repository.revision.collect { revision ->
+                fileMutex.withLock {
+                    if (revision != knownRevision) reloadLocked()
+                }
+            }
+        }
         // Stare wpisy (sprzed bazy DXCC) dostają kraj, gdy tylko baza cty będzie dostępna
         viewModelScope.launch {
             val cty = CtyRepository.get(application) ?: return@launch
@@ -234,6 +244,7 @@ class LoggerViewModel(application: Application) : AndroidViewModel(application) 
     private fun launchEdit(action: () -> Unit, transform: (List<QsoEntry>) -> List<QsoEntry>) {
         viewModelScope.launch {
             fileMutex.withLock {
+                val before = repository.revision.value
                 val ok = withContext(Dispatchers.IO) {
                     try {
                         action()
@@ -244,8 +255,15 @@ class LoggerViewModel(application: Application) : AndroidViewModel(application) 
                         false
                     }
                 }
-                // Po błędzie wczytujemy stan z bazy, żeby lista nie pokazywała niezapisanej zmiany
-                _logs.value = if (ok) transform(_logs.value) else withContext(Dispatchers.IO) { repository.getLogs() }
+                val after = repository.revision.value
+                // Szybka poprawka listy w pamięci tylko wtedy, gdy była aktualna i nikt inny w międzyczasie
+                // nic nie zapisał. Po błędzie lub cudzej zmianie wczytujemy stan z bazy
+                if (ok && before == knownRevision && after == before + 1) {
+                    _logs.value = transform(_logs.value)
+                    knownRevision = after
+                } else {
+                    reloadLocked()
+                }
             }
         }
     }
@@ -256,16 +274,26 @@ class LoggerViewModel(application: Application) : AndroidViewModel(application) 
 
     private suspend fun runOnLog(action: () -> Unit) {
         fileMutex.withLock {
-            _logs.value = withContext(Dispatchers.IO) {
+            withContext(Dispatchers.IO) {
                 try {
                     action()
                 } catch (e: Exception) {
                     Log.e(TAG, "Błąd zapisu dziennika QSO", e)
                     _message.value = s(R.string.log_save_error, e.message.orEmpty())
                 }
-                repository.getLogs()
             }
+            reloadLocked()
         }
+    }
+
+    /**
+     * Wczytuje dziennik z bazy; wywoływać pod [fileMutex]. Wersję odczytujemy przed zapytaniem,
+     * więc zapis zrobiony w trakcie wczytywania wywoła kolejne odświeżenie.
+     */
+    private suspend fun reloadLocked() {
+        val (revision, list) = withContext(Dispatchers.IO) { repository.revision.value to repository.getLogs() }
+        _logs.value = list
+        knownRevision = revision
     }
 
     private companion object {

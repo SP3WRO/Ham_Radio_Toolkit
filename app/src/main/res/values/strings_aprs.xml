@@ -42,4 +42,8 @@
     <string name="rep_checking_radioid">Checking RadioID…</string>
     <string name="rep_trustee">Trustee: %1$s</string>
     <string name="rep_download_error">Download error (%1$s): %2$s</string>
+    <string name="rep_search">Search by callsign</string>
+    <string name="rep_search_hint">Callsign or location…</string>
+    <string name="rep_search_note">Searching the whole downloaded list, without the distance limit</string>
+    <string name="rep_no_match">No repeater matches “%1$s”.</string>
 </resources>
