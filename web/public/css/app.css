@@ -68,7 +68,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .nav-item .nav-pill { width: 64px; height: 32px; border-radius: 16px; display: flex; align-items: center; justify-content: center; transition: background .2s; }
 .nav-item.active { color: var(--primary); }
 .nav-item.active .nav-pill { background: var(--primary-container); color: var(--on-primary-container); }
-.nav-item span.label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+/* Podpis zawsze w jednej linii; na wąskich ekranach mniejsza czcionka (np. "Прохождение", "Инструменты") */
+.nav-item span.label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-size: clamp(9px, 2.9vw, 12px); }
 
 /* ---------------------------------------------------------------- elementy */
 .icon { display: inline-flex; width: 24px; height: 24px; flex-shrink: 0; }

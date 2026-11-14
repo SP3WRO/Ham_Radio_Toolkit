@@ -282,6 +282,8 @@ export function qsoDialog(o) {
     title: init ? t("qso_edit") : t("qso_new"),
     body,
     wide: true,
+    // Przypadkowe dotknięcie obok okna nie kasuje wpisanego QSO
+    persistent: true,
     onclose: () => clearTimeout(lookupTimer),
     actions: (close) => [
       button(t("common_cancel"), close, "text"),

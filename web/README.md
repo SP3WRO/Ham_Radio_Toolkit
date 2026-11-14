@@ -19,7 +19,7 @@ Kod jest w czystym JavaScripcie (moduły ES) – **bez zależności i bez kroku 
 | Ustawienia | język (6), motyw, stacja, APRS, przemienniki, programy, konta HamQTH i QRZCQ |
 | DX Cluster | spoty DX Summit z filtrami pasm, emisji i krajów, nowe kraje, wysyłanie spotów, QSO ze spotu, akcje dyplomowe przy spotach |
 | Aktywacje na żywo, Aktywacje w okolicy | POTA, WWFF, SOTA – spoty i obiekty w promieniu do 500 km |
-| Przemienniki | przemienniki.net / przemienniki.eu / HearHam / repeatermap, filtry, DMR z RadioID, najbliższy na ekranie głównym |
+| Przemienniki | przemienniki.net / przemienniki.eu / HearHam / repeatermap, filtry, wyszukiwanie po znaku i miejscowości, DMR z RadioID, najbliższy na ekranie głównym |
 | Wyszukiwarka znaków | rejestr UKE, HamDB, RadioID, HamQTH, QRZCQ, PSK Reporter, log; autouzupełnianie okna QSO |
 | Kalendarz zawodów | SP9CXN i PK-UKF / SP1CNV (JSON z repozytorium), QRZ.RU po miesiącach (z tłumaczeniem nazw), filtry, „Do kalendarza” (plik .ics → Kalendarz iOS) |
 | Dyplomy | akcje radiodyplom.pl (public_events.json), obserwowane, stacje na pasmach z ostatnich 30 minut (public_bandmap.json) |

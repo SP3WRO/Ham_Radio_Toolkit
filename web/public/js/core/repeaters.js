@@ -310,9 +310,11 @@ function distanceKm(lat1, lon1, lat2, lon2) {
 /**
  * Lista ekranu i najbliższy przemiennik dla strony głównej (RepeatersViewModel.buildList).
  * @param {Repeater[]} database @param {{lat: number, lon: number} | null} pos
- * @param {{radiusKm: number, band: string, mode: string, onlyWorking: boolean}} f
+ * @param {{radiusKm: number, band: string, mode: string, onlyWorking: boolean, query?: string}} f
+ *   query – wyszukiwanie po znaku lub miejscowości; wtedy bez limitu odległości (cała pobrana baza)
  */
 export function buildRepeaterList(database, pos, f) {
+  const query = (f.query ?? "").trim();
   const withDistance = database.flatMap((rep) => {
     if (pos && (rep.latitude === 0 || rep.longitude === 0)) return [];
     return [{ ...rep, distanceKm: pos ? Math.round(distanceKm(pos.lat, pos.lon, rep.latitude, rep.longitude) * 10) / 10 : 0 }];
@@ -328,9 +330,21 @@ export function buildRepeaterList(database, pos, f) {
   const has = (rep, ...needles) => rep.modes.some((m) => needles.some((n) => m.toUpperCase().includes(n)));
   const modeOk = (rep) => ({ FM: has(rep, "FM", "ANALOG"), DMR: has(rep, "DMR"), C4FM: has(rep, "C4FM", "FUSION"), DSTAR: has(rep, "DSTAR", "D-STAR") })[f.mode] ?? true;
   const seen = new Set();
-  const filtered = withDistance.filter((rep) => (!pos || rep.distanceKm <= f.radiusKm) && bandOk(rep.userRx) && modeOk(rep) &&
+  const filtered = withDistance.filter((rep) => (query ? matchesRepeaterSearch(rep, query) : (!pos || rep.distanceKm <= f.radiusKm)) &&
+    bandOk(rep.userRx) && modeOk(rep) &&
     (!f.onlyWorking || rep.status === "working"))
     .filter((r) => { const k = listKey(r); if (seen.has(k)) return false; seen.add(k); return true; })
     .sort((a, b) => a.distanceKm - b.distanceKm);
   return { groups: groupRepeaters(filtered), nearest };
+}
+
+/**
+ * Znak bez spacji i myślników ("SR3 P" = "SR3P") albo fragment miejscowości (RepeatersViewModel.matchesSearch).
+ * @param {Repeater} rep @param {string} query
+ */
+export function matchesRepeaterSearch(rep, query) {
+  const norm = (/** @type {string} */ s) => s.toUpperCase().replace(/[^\p{L}\p{N}]/gu, "");
+  const wanted = norm(query);
+  if (wanted && norm(rep.callsign).includes(wanted)) return true;
+  return rep.qth.toLowerCase().includes(query.trim().toLowerCase());
 }

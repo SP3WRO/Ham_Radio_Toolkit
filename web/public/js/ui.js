@@ -116,7 +116,8 @@ export function button(label, onclick, variant = "filled", extra = {}) {
 // ---------------------------------------------------------------- okna dialogowe i komunikaty
 /**
  * Okno dialogowe (AlertDialog). Zwraca funkcję zamykającą.
- * @param {{title: string, body: any, actions?: (close: () => void) => any[], onclose?: () => void, wide?: boolean, fullscreen?: boolean}} o
+ * persistent – dotknięcie obok okna go nie zamyka (tylko "Wstecz"/Esc albo przycisk), jak dismissOnClickOutside = false
+ * @param {{title: string, body: any, actions?: (close: () => void) => any[], onclose?: () => void, wide?: boolean, fullscreen?: boolean, persistent?: boolean}} o
  */
 export function dialog(o) {
   const close = () => {
@@ -129,7 +130,7 @@ export function dialog(o) {
     h("div", { class: "dialog-body" }, o.body),
     o.actions ? h("div", { class: "dialog-actions" }, o.actions(close)) : null));
   dlg.addEventListener("cancel", (e) => { e.preventDefault(); close(); });
-  dlg.addEventListener("click", (e) => { if (e.target === dlg) close(); });
+  if (!o.persistent) dlg.addEventListener("click", (e) => { if (e.target === dlg) close(); });
   // Okno z polem tekstowym u góry ekranu – na iPhonie klawiatura nie zasłoni pola (Safari nie zmniejsza układu strony)
   if (dlg.querySelector("input:not([type=checkbox]):not([type=range]):not([type=file]), textarea")) dlg.classList.add("with-input");
   document.body.appendChild(dlg);

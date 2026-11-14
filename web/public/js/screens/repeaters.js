@@ -1,6 +1,6 @@
 // @ts-check
 // Przemienniki (RepeatersScreen.kt, RepeatersViewModel.kt) – jedna baza dla ekranu i karty na stronie głównej
-import { h, replace, iconButton, chip, icon } from "../ui.js";
+import { h, replace, iconButton, chip, icon, textField } from "../ui.js";
 import { t, format } from "../i18n.js";
 import { settings, stationPosition } from "../store.js";
 import { apiUrl, proxied } from "../services.js";
@@ -79,6 +79,7 @@ export function nearestRepeater() {
 
 // ---------------------------------------------------------------- ekran
 const filters = { band: "ALL", mode: "ALL", onlyWorking: false, show: true };
+const search = { open: false, query: "" };
 /** @type {Map<string, any>} */
 const dmrCache = new Map();
 
@@ -94,8 +95,29 @@ export function repeatersScreen(ctx) {
   const filterBtn = iconButton("filterList", t("dx_filters"), () => { filters.show = !filters.show; render(); });
   const syncBtn = iconButton("sync", t("common_refresh"), () => repeaterStore.ensure(true));
 
+  // Wyszukiwanie po znaku lub miejscowości – w całej pobranej bazie, bez limitu odległości
+  const searchHost = h("div");
+  const searchField = textField({
+    label: t("rep_search_hint"), value: search.query, class: "has-trailing", uppercase: true,
+    oninput: (v) => { search.query = v; render(); },
+  });
+  const clearBtn = iconButton("clear", t("common_clear"), () => { search.query = ""; searchField.input.value = ""; render(); }, { class: "icon-btn field-trailing" });
+  searchField.appendChild(clearBtn);
+  const searchBtn = iconButton("search", t("rep_search"), () => {
+    search.open = !search.open;
+    if (!search.open) { search.query = ""; searchField.input.value = ""; }
+    replace(searchHost, search.open ? h("div", { style: { padding: "4px 16px" } }, searchField) : null);
+    render();
+    if (search.open) searchField.input.focus();
+  });
+  if (search.open) replace(searchHost, h("div", { style: { padding: "4px 16px" } }, searchField));
+
   function render() {
-    const { groups } = buildRepeaterList(repeaterStore.database, stationPosition(), { radiusKm: radius, ...filters });
+    const query = search.query.trim();
+    const { groups } = buildRepeaterList(repeaterStore.database, stationPosition(), { radiusKm: radius, ...filters, query });
+    searchBtn.classList.toggle("active", !!query);
+    clearBtn.classList.toggle("hidden", !search.query);
+    searchField.setSupport(query ? t("rep_search_note") : "");
     filterBtn.classList.toggle("active", filters.band !== "ALL" || filters.mode !== "ALL" || filters.onlyWorking);
     syncBtn.replaceChildren(repeaterStore.loading ? h("span", { class: "spinner" }) : icon("sync"));
     const row = (label, options, key) => h("div", { class: "row wrap", style: { gap: "6px" } },
@@ -106,7 +128,8 @@ export function repeatersScreen(ctx) {
       row(t("dx_mode"), [["ALL", t("common_all")], ["FM", "FM"], ["DMR", "DMR"], ["C4FM", "C4FM"], ["DSTAR", "D-STAR"]], "mode"),
       h("div", { class: "row between" }, chip(t("rep_only_working"), filters.onlyWorking, () => { filters.onlyWorking = !filters.onlyWorking; render(); }),
         h("span", { class: "body-s semibold secondary" }, t("rep_found", groups.length)))) : null);
-    if (!groups.length && !repeaterStore.loading) return replace(list, h("div", { class: "centered muted" }, repeaterStore.error ?? t("rep_none")));
+    if (!groups.length && !repeaterStore.loading) return replace(list, h("div", { class: "centered muted" },
+      repeaterStore.error ?? (query ? t("rep_no_match", query) : t("rep_none"))));
     if (!groups.length) return replace(list, h("div", { class: "centered" }, h("div", { class: "spinner l" })));
     replace(list, repeaterStore.error ? h("div", { class: "body-s error-text" }, repeaterStore.error) : null, groups.map(card));
   }
@@ -155,7 +178,7 @@ export function repeatersScreen(ctx) {
   const unsubscribe = (() => { const l = () => render(); repeaterStore.listeners.add(l); return () => repeaterStore.listeners.delete(l); })();
   const titleEl = h("div", { class: "col" }, h("span", { class: "title-m" }, t("rep_title", radius)),
     h("span", { class: "body-s muted" }, t("common_source_value", RepeaterSources.label(source))));
-  const { el } = layout(ctx, { title: titleEl, body: h("div", { class: "screen" }, panel, list), actions: [filterBtn, syncBtn] });
+  const { el } = layout(ctx, { title: titleEl, body: h("div", { class: "screen" }, searchHost, panel, list), actions: [searchBtn, filterBtn, syncBtn] });
   repeaterStore.ensure();
   render();
   return { el, destroy: unsubscribe };

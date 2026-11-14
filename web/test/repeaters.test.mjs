@@ -170,3 +170,17 @@ test("serwer: przemienniki.net i świat (podstawiony fetch)", async () => {
     globalThis.fetch = realFetch;
   }
 });
+
+test("wyszukiwanie przemiennika po znaku i miejscowości – bez limitu odległości", () => {
+  const pos = { lat: 52.4, lon: 16.9 };
+  const db = [
+    makeRepeater({ callsign: "SR3P", qth: "Poznań", modes: ["FM"], userRx: 145.6, userTx: 145.0, latitude: 52.41, longitude: 16.93 }),
+    makeRepeater({ callsign: "SR2Z", qth: "Gdańsk", modes: ["FM"], userRx: 438.9, userTx: 431.3, latitude: 54.35, longitude: 18.65 }),
+  ];
+  const f = { radiusKm: 50, band: "ALL", mode: "ALL", onlyWorking: false };
+  assert.deepEqual(buildRepeaterList(db, pos, f).groups.map((g) => g.callsign), ["SR3P"]);
+  assert.deepEqual(buildRepeaterList(db, pos, { ...f, query: "sr2 z" }).groups.map((g) => g.callsign), ["SR2Z"]);
+  assert.deepEqual(buildRepeaterList(db, pos, { ...f, query: "gdań" }).groups.map((g) => g.callsign), ["SR2Z"]);
+  assert.deepEqual(buildRepeaterList(db, pos, { ...f, query: "SR", band: "70CM" }).groups.map((g) => g.callsign), ["SR2Z"]);
+  assert.equal(buildRepeaterList(db, pos, { ...f, query: "SP9XYZ" }).groups.length, 0);
+});
