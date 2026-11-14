@@ -48,6 +48,10 @@ class RepeatersViewModel(application: Application) : AndroidViewModel(applicatio
     private val _onlyWorking = MutableStateFlow(false)
     val onlyWorking: StateFlow<Boolean> = _onlyWorking.asStateFlow()
 
+    // Wyszukiwanie po znaku (lub miejscowości) – w całej pobranej bazie, bez limitu odległości
+    private val _searchQuery = MutableStateFlow("")
+    val searchQuery: StateFlow<String> = _searchQuery.asStateFlow()
+
     private var currentLat: Double? = null
     private var currentLon: Double? = null
     private var currentRadiusKm: Int = 100
@@ -103,6 +107,11 @@ class RepeatersViewModel(application: Application) : AndroidViewModel(applicatio
         refreshList()
     }
 
+    fun setSearchQuery(query: String) {
+        _searchQuery.value = query
+        refreshList()
+    }
+
     fun fetchRepeaters() {
         val source = currentDataSource
         val lat = currentLat
@@ -141,9 +150,10 @@ class RepeatersViewModel(application: Application) : AndroidViewModel(applicatio
         val band = _selectedBand.value
         val mode = _selectedModeFilter.value
         val workingOnly = _onlyWorking.value
+        val query = _searchQuery.value.trim()
         val database = fullDatabase
         refreshJob = viewModelScope.launch(Dispatchers.Default) {
-            val (list, nearest) = buildList(database, lat, lon, radiusKm, band, mode, workingOnly)
+            val (list, nearest) = buildList(database, lat, lon, radiusKm, band, mode, workingOnly, query)
             ensureActive()
             _repeaters.value = list
             _nearest.value = nearest
@@ -152,8 +162,8 @@ class RepeatersViewModel(application: Application) : AndroidViewModel(applicatio
 
     private fun buildList(
         database: List<Repeater>, lat: Double?, lon: Double?, radiusKm: Int,
-        band: String, mode: String, workingOnly: Boolean
-    ): Pair<List<RepeaterGroup>, RepeaterGroup?> {
+        band: String, mode: String, workingOnly: Boolean, query: String
+    ):Pair<List<RepeaterGroup>, RepeaterGroup?> {
         val results = FloatArray(1)
         val withDistance = database.mapNotNull { rep ->
             // Pomijamy przemienniki bez lokalizacji, jeśli mamy współrzędne użytkownika
@@ -176,8 +186,11 @@ class RepeatersViewModel(application: Application) : AndroidViewModel(applicatio
         } else null
 
         val filtered = withDistance.filter { rep ->
-            // 1. Filtr promienia
-            val matchesRadius = (lat == null || rep.distanceKm <= radiusKm)
+            // 1. Filtr promienia (przy wyszukiwaniu po znaku pomijany – szukamy w całej bazie)
+            val matchesRadius = query.isNotEmpty() || lat == null || rep.distanceKm <= radiusKm
+
+            // 1a. Wyszukiwanie: znak (bez spacji i myślników, np. "SR3 P" = "SR3P") albo miejscowość
+            val matchesQuery = query.isEmpty() || matchesSearch(rep, query)
 
             // 2. Filtr pasma (Band) – zakresy obejmują wszystkie regiony IARU
             val rxFreq = rep.userRx
@@ -202,9 +215,15 @@ class RepeatersViewModel(application: Application) : AndroidViewModel(applicatio
             // 4. Filtr statusu
             val matchesStatus = if (workingOnly) rep.status == "working" else true
 
-            matchesRadius && matchesBand && matchesMode && matchesStatus
+            matchesRadius && matchesQuery && matchesBand && matchesMode && matchesStatus
         }.distinctBy { it.listKey }.sortedBy { it.distanceKm }
 
         return RepeaterGroup.of(filtered) to nearest
+    }
+
+    private fun matchesSearch(rep: Repeater, query: String): Boolean {
+        val wanted = query.uppercase().filter { it.isLetterOrDigit() }
+        if (wanted.isNotEmpty() && rep.callsign.uppercase().filter { it.isLetterOrDigit() }.contains(wanted)) return true
+        return rep.qth.contains(query, ignoreCase = true)
     }
 }

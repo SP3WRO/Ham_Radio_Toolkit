@@ -42,4 +42,8 @@
     <string name="rep_checking_radioid">Prüfe RadioID…</string>
     <string name="rep_trustee">Verantwortlicher: %1$s</string>
     <string name="rep_download_error">Ladefehler (%1$s): %2$s</string>
+    <string name="rep_search">Nach Rufzeichen suchen</string>
+    <string name="rep_search_hint">Rufzeichen oder Standort…</string>
+    <string name="rep_search_note">Suche in der ganzen geladenen Liste, ohne Entfernungsgrenze</string>
+    <string name="rep_no_match">Kein Relais passt zu „%1$s“.</string>
 </resources>

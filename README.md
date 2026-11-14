@@ -8,7 +8,7 @@
 
 A toolkit for radio amateurs on Android. One app brings together propagation, DX Cluster, a station log, APRS, repeaters, satellites, a contest and award calendar, calculators, and FT8/FT4, RTTY, CW, SSTV, DSSTV and Horus Binary decoders.
 
-**Download:** get the APK from [Releases](https://github.com/SP3WRO/Ham_Radio_Toolkit/releases). The current stable version is 26.11.1.
+**Download:** get the APK from [Releases](https://github.com/SP3WRO/Ham_Radio_Toolkit/releases). The current stable version is 26.11.2.
 
 The app requires Android 7.0 or newer. The interface is available in English, Polish, German, Czech, Slovak and Russian. You can change the language and the theme (light, dark or system) in Settings. Translations were made with the help of AI, so corrections are welcome.
 
@@ -50,7 +50,7 @@ All the other tools, described below.
 - **Callsign lookup:** DXCC entity, CQ/ITU zones and local time work offline. Station data comes from the Polish UKE register, RadioID, HamQTH, QRZCQ and HamDB, and the locator from PSK Reporter, APRS-IS, your log, QRZCQ, HamQTH or HamDB. The result also shows distance, short-path and long-path bearing, and your QSOs with that station.
 - **Live activations:** POTA and WWFF spots sorted by distance, with QSO logging. SOTA spots are not shown because the SOTA API terms require prior approval.
 - **APRS:** receiving APRS-IS stations within a chosen radius, including their movement, altitude, PHG and weather data, and sending your own position manually. The default SSID is -5 and the default map icon is a walker; you can pick another icon or enter your own APRS symbol code, with a preview. Without a callsign the app only listens.
-- **Repeaters:** search within a chosen radius and a filter for working repeaters. Sources are przemienniki.eu, przemienniki.net, HearHam and repeatermap.de, and DMR details come from RadioID. Outside Poland the source switches automatically unless you choose one manually.
+- **Repeaters:** search within a chosen radius or by callsign and location, and a filter for working repeaters. Sources are przemienniki.eu, przemienniki.net, HearHam and repeatermap.de, and DMR details come from RadioID. Outside Poland the source switches automatically unless you choose one manually.
 - **Satellites:** TLE updates, a pass list with AOS and LOS, a sky plot, a compass with azimuth and elevation, frequencies from AMSAT and SatNOGS, and pass reminders.
 - **NCDXF beacons:** a schedule showing which station is on the air now and when the others transmit.
 
@@ -74,7 +74,7 @@ The **CW trainer** teaches Morse code with the Koch method. You can set the char
 - **Abroad:** CEPT T/R 61-01 licence rules, the callsign to use in a given country, guest prefixes, IARU Region, zones and time, and nearby repeaters. Check the country's current regulations before you travel.
 - **Locator and bearing:** converting between locator and coordinates, distance plus short-path and long-path bearing to a locator, point or callsign, and an azimuthal map.
 - **Gray line:** a terminator map with sunrise and sunset times for your QTH.
-- **Band plan:** IARU band plans for Regions 1, 2 and 3, with Polish practice in Region 1.
+- **Band plan:** IARU band plans for Regions 1, 2 and 3. Region 1 follows the HF Band Plan (10.2020) and VHF Handbook 10.03 (02.2026).
 - **Activation references:** POTA, SOTA and WWFF references near your position.
 
 #### Calculators
@@ -176,7 +176,7 @@ Created with the help of AI by Mateusz SP3WRO.
 
 Zestaw narzędzi dla krótkofalowców na Androida. W jednej aplikacji łączy propagację, DX Cluster, log łączności, APRS, przemienniki, satelity, kalendarz zawodów i dyplomów, kalkulatory oraz dekodery FT8/FT4, RTTY, CW, SSTV, DSSTV i Horus Binary.
 
-**Pobieranie:** plik APK znajdziesz w zakładce [Releases](https://github.com/SP3WRO/Ham_Radio_Toolkit/releases). Aktualna wersja stabilna to 26.11.1.
+**Pobieranie:** plik APK znajdziesz w zakładce [Releases](https://github.com/SP3WRO/Ham_Radio_Toolkit/releases). Aktualna wersja stabilna to 26.11.2.
 
 Aplikacja wymaga Androida 7.0 lub nowszego. Interfejs jest dostępny po angielsku, polsku, niemiecku, czesku, słowacku i rosyjsku, a język i motyw (jasny, ciemny lub systemowy) zmienisz w ustawieniach. Tłumaczenia powstały z pomocą AI, więc poprawki są mile widziane.
 
@@ -218,7 +218,7 @@ Pozostałe narzędzia, opisane poniżej.
 - **Wyszukiwarka znaków:** kraj DXCC, strefy CQ/ITU i czas lokalny działają bez internetu. Dane stacji pochodzą z rejestru UKE, RadioID, HamQTH, QRZCQ i HamDB, a lokator z PSK Reporter, APRS-IS, Twojego logu, QRZCQ, HamQTH lub HamDB. Wynik obejmuje też odległość, azymut krótką i długą drogą oraz Twoje łączności z tą stacją.
 - **Aktywacje na żywo:** spoty POTA i WWFF z sortowaniem według odległości i logowaniem QSO. Spoty SOTA nie są wyświetlane, ponieważ regulamin API SOTA wymaga wcześniejszej zgody.
 - **APRS:** odbiór stacji z APRS-IS w wybranym promieniu, w tym ich ruchu, wysokości, danych PHG i pogody, oraz ręczne nadawanie własnej pozycji. Domyślny SSID to -5, a domyślna ikona na mapie to pieszy; możesz wybrać inną ikonę albo wpisać własny kod symbolu APRS, z podglądem. Bez znaku wywoławczego aplikacja działa tylko w trybie nasłuchu.
-- **Przemienniki:** wyszukiwanie w wybranym promieniu i filtr sprawnych przemienników. Źródła to przemienniki.eu, przemienniki.net, HearHam i repeatermap.de, a szczegóły DMR pochodzą z RadioID. Poza Polską źródło przełącza się samo, chyba że wybierzesz je ręcznie.
+- **Przemienniki:** wyszukiwanie w wybranym promieniu albo po znaku i miejscowości oraz filtr sprawnych przemienników. Źródła to przemienniki.eu, przemienniki.net, HearHam i repeatermap.de, a szczegóły DMR pochodzą z RadioID. Poza Polską źródło przełącza się samo, chyba że wybierzesz je ręcznie.
 - **Satelity:** aktualizacja danych TLE, lista przelotów z AOS i LOS, skyplot, kompas z azymutem i elewacją, częstotliwości z AMSAT i SatNOGS oraz przypomnienia o przelotach.
 - **Beacony NCDXF:** harmonogram z informacją, która stacja nadaje teraz i kiedy nadają pozostałe.
 
@@ -242,7 +242,7 @@ Telefon odbiera sygnał mikrofonem, więc wystarczy położyć go przy głośnik
 - **Za granicą:** zasady licencji CEPT T/R 61-01, znak do użycia w danym kraju, prefiksy dla gości, Region IARU, strefy i czas oraz przemienniki w okolicy. Przed wyjazdem sprawdź aktualne przepisy kraju.
 - **Lokator i azymut:** przeliczanie lokatora i współrzędnych, odległość i azymut krótką oraz długą drogą do lokatora, punktu lub znaku, a także mapa azymutalna.
 - **Szara linia:** mapa terminatora oraz godziny wschodu i zachodu słońca dla Twojego QTH.
-- **Bandplan:** plany pasm IARU dla Regionów 1, 2 i 3, z polską praktyką w Regionie 1.
+- **Bandplan:** plany pasm IARU dla Regionów 1, 2 i 3. Region 1 według HF Band Plan (10.2020) i VHF Handbook 10.03 (02.2026).
 - **Obiekty do aktywacji:** obiekty POTA, SOTA i WWFF w pobliżu Twojej pozycji.
 
 #### Kalkulatory

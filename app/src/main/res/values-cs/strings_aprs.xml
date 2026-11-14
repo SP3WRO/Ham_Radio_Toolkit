@@ -42,4 +42,8 @@
     <string name="rep_checking_radioid">Ověřuji RadioID…</string>
     <string name="rep_trustee">Správce: %1$s</string>
     <string name="rep_download_error">Chyba stahování (%1$s): %2$s</string>
+    <string name="rep_search">Hledat podle značky</string>
+    <string name="rep_search_hint">Značka nebo lokalita…</string>
+    <string name="rep_search_note">Hledám v celém staženém seznamu, bez omezení vzdálenosti</string>
+    <string name="rep_no_match">Žádný převáděč neodpovídá „%1$s“.</string>
 </resources>

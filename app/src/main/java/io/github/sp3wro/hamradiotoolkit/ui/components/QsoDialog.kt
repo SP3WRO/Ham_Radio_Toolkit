@@ -17,6 +17,7 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.DialogProperties
 import io.github.sp3wro.hamradiotoolkit.data.callbook.Callbook
 import io.github.sp3wro.hamradiotoolkit.data.dxcc.CtyRepository
 import io.github.sp3wro.hamradiotoolkit.data.dxcc.DxccEntity
@@ -133,6 +134,8 @@ fun QsoDialog(
 
     AlertDialog(
         onDismissRequest = onDismissRequest,
+        // Okno zamyka tylko "Wstecz" albo przycisk – przypadkowe dotknięcie obok nie kasuje wpisanego QSO
+        properties = DialogProperties(dismissOnClickOutside = false),
         title = { Text(if (initialQso == null) stringResource(R.string.qso_new) else stringResource(R.string.qso_edit)) },
         text = {
             Column(

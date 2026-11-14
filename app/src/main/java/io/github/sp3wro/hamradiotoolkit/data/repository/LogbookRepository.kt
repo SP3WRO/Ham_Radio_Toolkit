@@ -9,6 +9,10 @@ import android.util.Log
 import io.github.sp3wro.hamradiotoolkit.data.dxcc.CtyDatabase
 import io.github.sp3wro.hamradiotoolkit.data.model.QsoEntry
 import io.github.sp3wro.hamradiotoolkit.utils.Callsigns.baseCall
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.serialization.json.Json
 import java.io.File
 
@@ -60,6 +64,13 @@ class LogbookRepository private constructor(context: Context) {
     private val helper = LogbookOpenHelper(appContext)
     @Volatile private var migrated = false
 
+    // Numer wersji dziennika, zwiększany po każdym zapisie. Ekrany (Logger, DX Cluster, POTA, statystyki)
+    // mają osobne ViewModele – dzięki temu każdy wie, że inny dopisał QSO i trzeba odświeżyć listę
+    private val _revision = MutableStateFlow(0L)
+    val revision: StateFlow<Long> = _revision.asStateFlow()
+
+    private fun changed() = _revision.update { it + 1 }
+
     private val db: SQLiteDatabase
         get() {
             val database = helper.writableDatabase
@@ -72,14 +83,17 @@ class LogbookRepository private constructor(context: Context) {
 
     fun addQso(entry: QsoEntry) {
         db.insertWithOnConflict("qso", null, entry.toValues(), SQLiteDatabase.CONFLICT_REPLACE)
+        changed()
     }
 
     fun updateQso(entry: QsoEntry) {
         db.update("qso", entry.toValues(), "id = ?", arrayOf(entry.id))
+        changed()
     }
 
     fun deleteQso(id: String) {
         db.delete("qso", "id = ?", arrayOf(id))
+        changed()
     }
 
     /** Import wielu QSO w jednej transakcji; pomija duble (ten sam znak, czas, pasmo i emisja). */
@@ -97,6 +111,7 @@ class LogbookRepository private constructor(context: Context) {
         } finally {
             database.endTransaction()
         }
+        if (added > 0) changed()
         return added
     }
 
@@ -127,6 +142,7 @@ class LogbookRepository private constructor(context: Context) {
         } finally {
             database.endTransaction()
         }
+        changed()
     }
 
     /** Uzupełnia kraj DXCC w QSO, które go nie mają (np. stare wpisy sprzed bazy cty). */
@@ -154,6 +170,7 @@ class LogbookRepository private constructor(context: Context) {
         } finally {
             database.endTransaction()
         }
+        if (updated > 0) changed()
         return updated
     }
 
@@ -179,6 +196,7 @@ class LogbookRepository private constructor(context: Context) {
                 }
                 // Stary plik zostaje jako kopia – nic nie jest kasowane
                 json.renameTo(File(appContext.filesDir, "qso_log.migrated.json"))
+                changed()
                 Log.i(TAG, "Przeniesiono ${entries.size} QSO z qso_log.json do bazy")
             } catch (e: Exception) {
                 Log.e(TAG, "Nie udało się przenieść qso_log.json – plik zostaje bez zmian", e)

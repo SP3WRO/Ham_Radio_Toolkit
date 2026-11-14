@@ -10,6 +10,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.text.BasicText
+import androidx.compose.foundation.text.TextAutoSize
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
@@ -144,6 +149,27 @@ private val bottomTabs = listOf(
     BottomTab(Screen.Logger.route, R.string.tab_logger, Icons.Filled.Book),
     BottomTab(Screen.Toolbox.route, R.string.tab_toolbox, Icons.Filled.Handyman)
 )
+
+// Podpis zakładki zawsze w jednej linii: na wąskich ekranach i przy długich tłumaczeniach
+// (np. "Прохождение", "Инструменты") czcionka zmniejsza się, zamiast dzielić słowo na pół
+@Composable
+private fun BottomTabLabel(text: String) {
+    val style = LocalTextStyle.current
+    val color = LocalContentColor.current
+    BasicText(
+        text = text,
+        style = style.copy(textAlign = TextAlign.Center),
+        color = { color },
+        maxLines = 1,
+        softWrap = false,
+        overflow = TextOverflow.Ellipsis,
+        autoSize = TextAutoSize.StepBased(
+            minFontSize = 8.sp,
+            maxFontSize = if (style.fontSize.isSp) style.fontSize else 12.sp,
+            stepSize = 0.5.sp
+        )
+    )
+}
 
 // Ekrany otwierane z Przybornika – na dolnym pasku podświetlają zakładkę "Przybornik"
 private val toolboxSubRoutes = setOf(
@@ -348,7 +374,7 @@ fun HamRadioToolkitApp(repository: UserPreferencesRepository) {
                 bottomTabs.forEach { tab ->
                     NavigationBarItem(
                         icon = { Icon(tab.icon, contentDescription = stringResource(tab.label)) },
-                        label = { Text(stringResource(tab.label)) },
+                        label = { BottomTabLabel(stringResource(tab.label)) },
                         selected = currentDestination?.hierarchy?.any { belongsToTab(it.route, tab) } == true,
                         onClick = { navController.openTab(tab, currentDestination?.route) },
                         // Zaznaczenie w kolorze głównym (domyślnie Material bierze tu kolor akcentu)

@@ -40,3 +40,7 @@ rep_none_short	None	Brak	Keiner	Žádný	Žiadny	Нет
 rep_checking_radioid	Checking RadioID…	Sprawdzam RadioID…	Prüfe RadioID…	Ověřuji RadioID…	Overujem RadioID…	Проверка в RadioID…
 rep_trustee	Trustee: %1$s	Opiekun: %1$s	Verantwortlicher: %1$s	Správce: %1$s	Správca: %1$s	Ответственный: %1$s
 rep_download_error	Download error (%1$s): %2$s	Błąd pobierania (%1$s): %2$s	Ladefehler (%1$s): %2$s	Chyba stahování (%1$s): %2$s	Chyba sťahovania (%1$s): %2$s	Ошибка загрузки (%1$s): %2$s
+rep_search	Search by callsign	Szukaj po znaku	Nach Rufzeichen suchen	Hledat podle značky	Hľadať podľa značky	Поиск по позывному
+rep_search_hint	Callsign or location…	Znak lub miejscowość…	Rufzeichen oder Standort…	Značka nebo lokalita…	Značka alebo lokalita…	Позывной или место…
+rep_search_note	Searching the whole downloaded list, without the distance limit	Szukam w całej pobranej bazie, bez limitu odległości	Suche in der ganzen geladenen Liste, ohne Entfernungsgrenze	Hledám v celém staženém seznamu, bez omezení vzdálenosti	Hľadám v celom stiahnutom zozname, bez obmedzenia vzdialenosti	Поиск по всему загруженному списку, без ограничения расстояния
+rep_no_match	No repeater matches “%1$s”.	Brak przemiennika pasującego do „%1$s”.	Kein Relais passt zu „%1$s“.	Žádný převáděč neodpovídá „%1$s“.	Žiadny prevádzač nezodpovedá „%1$s“.	Нет ретрансляторов по запросу «%1$s».

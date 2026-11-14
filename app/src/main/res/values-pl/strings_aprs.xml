@@ -42,4 +42,8 @@
     <string name="rep_checking_radioid">Sprawdzam RadioID…</string>
     <string name="rep_trustee">Opiekun: %1$s</string>
     <string name="rep_download_error">Błąd pobierania (%1$s): %2$s</string>
+    <string name="rep_search">Szukaj po znaku</string>
+    <string name="rep_search_hint">Znak lub miejscowość…</string>
+    <string name="rep_search_note">Szukam w całej pobranej bazie, bez limitu odległości</string>
+    <string name="rep_no_match">Brak przemiennika pasującego do „%1$s”.</string>
 </resources>
