@@ -10,6 +10,19 @@ import { repeaterStore, nearestRepeater } from "./repeaters.js";
 import { abroadBanner } from "./abroad.js";
 
 const isIos = () => /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+/**
+ * Inna przeglądarka niż Safari na iPhonie (Chrome, Edge, Firefox…) – ten sam silnik WebKit, ale inne menu i ustawienia
+ * zgód w iOS. Zwraca nazwę przeglądarki do instrukcji albo null dla Safari.
+ */
+const iosOtherBrowser = () => {
+  if (!isIos()) return null;
+  const ua = navigator.userAgent;
+  if (/CriOS\//.test(ua)) return "Chrome";
+  if (/EdgiOS\//.test(ua)) return "Edge";
+  if (/FxiOS\//.test(ua)) return "Firefox";
+  if (/OPiOS\//.test(ua)) return "Opera";
+  return null;
+};
 const isStandalone = () => matchMedia("(display-mode: standalone)").matches || /** @type {any} */ (navigator).standalone === true;
 
 /** @param {import("../app.js").ScreenContext} ctx */
@@ -18,10 +31,10 @@ export function homeScreen(ctx) {
   const hello = !call || call === "NOCALL" ? h("div", { class: "hello" }, t("home_hello"))
     : h("div", { class: "hello" }, t("home_hello_call"), h("b", null, call));
 
-  // Podpowiedź instalacji na iPhonie (Safari nie pokazuje własnego przycisku "Zainstaluj")
+  // Podpowiedź instalacji na iPhonie (Safari ani Chrome na iOS nie pokazują własnego przycisku "Zainstaluj")
   const install = isIos() && !isStandalone() && !settings.get().install_hint_dismissed
     ? infoCard({ class: "tonal" }, h("div", { class: "install-banner" }, icon("iosShare"),
-      h("div", { class: "col grow" }, h("div", { class: "title-s" }, t("web_install_title")), h("div", { class: "body-m" }, t("web_install_text")),
+      h("div", { class: "col grow" }, h("div", { class: "title-s" }, t("web_install_title")), h("div", { class: "body-m" }, iosOtherBrowser() ? t("web_install_text_other", iosOtherBrowser()) : t("web_install_text")),
         h("div", null, button(t("web_install_dismiss"), () => { settings.set({ install_hint_dismissed: true }); install?.remove(); }, "text", { style: { marginLeft: "-12px" } })))))
     : null;
 
@@ -38,7 +51,8 @@ export function homeScreen(ctx) {
   const renderQth = () => {
     const { fix, status } = location.get();
     if (status === "idle" || status === "denied" || status === "insecure" || (status === "unavailable" && !fix)) {
-      const msg = status === "denied" ? t("web_location_denied") : status === "insecure" ? t("web_location_https")
+      const other = iosOtherBrowser();
+      const msg = status === "denied" ? (other ? t("web_location_denied_other", other) : t("web_location_denied")) : status === "insecure" ? t("web_location_https")
         : status === "unavailable" ? t("web_location_unavailable") : t("home_no_location");
       replace(qthBody, h("div", { class: "body-l" }, msg),
         status === "insecure" ? null : h("div", null, button(t("home_allow_location"), () => location.start(), "text", { style: { marginLeft: "-12px" } })));
