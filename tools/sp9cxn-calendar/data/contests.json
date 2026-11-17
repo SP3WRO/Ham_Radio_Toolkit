@@ -1,12 +1,12 @@
 {
   "source": "SP9CXN",
   "source_url": "https://sp9cxn.pzk.pl/kalendarz.html",
-  "source_updated": "2026-11-09",
+  "source_updated": "2026-11-17",
   "months": [
     "2026-11",
     "2026-12"
   ],
-  "count": 111,
+  "count": 112,
   "contests": [
     {
       "id": "41b2cd39e735",
@@ -25,31 +25,6 @@
       "vhf": false,
       "modes": [
         "DIGI"
-      ],
-      "unconfirmed": false,
-      "old_rules": false,
-      "no_ru_by_contacts": false,
-      "problems": [
-        "date_outside_section"
-      ]
-    },
-    {
-      "id": "474ffa10929e",
-      "name": "Sunday Contest CW",
-      "section": "international",
-      "domestic": false,
-      "section_month": 12,
-      "section_year": 2026,
-      "start_utc": "2026-06-07T15:00:00Z",
-      "end_utc": "2026-06-07T15:30:00Z",
-      "start_raw": "07.06.2026 15:00",
-      "end_raw": "07.06.2026 15:30",
-      "rules_url": "https://nedtest.cz/rules",
-      "rules_pl_url": "https://sp9cxn.pzk.pl/Sunday_Contest_2026.pdf",
-      "rules_pl_machine_translated": false,
-      "vhf": false,
-      "modes": [
-        "CW"
       ],
       "unconfirmed": false,
       "old_rules": false,
@@ -929,6 +904,27 @@
       "problems": []
     },
     {
+      "id": "6ac048b132a7",
+      "name": "EPC QSO Party BPSK63",
+      "section": "international",
+      "domestic": false,
+      "section_month": 11,
+      "section_year": 2026,
+      "start_utc": "2026-11-21T12:00:00Z",
+      "end_utc": "2026-11-22T12:00:00Z",
+      "start_raw": "21.11.2026 12:00",
+      "end_raw": "22.11.2026 12:00",
+      "rules_url": "https://epcqso.com/contest-rules/",
+      "rules_pl_url": "https://epcqso-com.translate.goog/contest-rules/?_x_tr_sl=auto&_x_tr_tl=pl&_x_tr_hl=pl",
+      "rules_pl_machine_translated": true,
+      "vhf": false,
+      "modes": [],
+      "unconfirmed": false,
+      "old_rules": false,
+      "no_ru_by_contacts": false,
+      "problems": []
+    },
+    {
       "id": "6be4faaea85f",
       "name": "LZ DX Contest CW/SSB",
       "section": "international",
@@ -1330,7 +1326,7 @@
       "end_utc": "2026-11-29T17:00:00Z",
       "start_raw": "29.11.2026 15:00",
       "end_raw": "29.11.2026 17:00",
-      "rules_url": "https://sp9cxn.pzk.pl/powstanie_listopad_cwssb.pdf",
+      "rules_url": "https://sp9cxn.pzk.pl/powstanie_listopad_2026.pdf",
       "rules_pl_url": null,
       "rules_pl_machine_translated": false,
       "vhf": false,
@@ -1339,7 +1335,7 @@
         "SSB"
       ],
       "unconfirmed": false,
-      "old_rules": true,
+      "old_rules": false,
       "no_ru_by_contacts": false,
       "problems": []
     },
@@ -2399,6 +2395,29 @@
       ],
       "unconfirmed": false,
       "old_rules": true,
+      "no_ru_by_contacts": false,
+      "problems": []
+    },
+    {
+      "id": "73a29f824932",
+      "name": "Sunday Contest CW",
+      "section": "international",
+      "domestic": false,
+      "section_month": 12,
+      "section_year": 2026,
+      "start_utc": "2026-12-27T15:00:00Z",
+      "end_utc": "2026-12-27T15:30:00Z",
+      "start_raw": "27.12.2026 15:00",
+      "end_raw": "27.12.2026 15:30",
+      "rules_url": "https://nedtest.cz/rules",
+      "rules_pl_url": "https://sp9cxn.pzk.pl/Sunday_Contest_2026.pdf",
+      "rules_pl_machine_translated": false,
+      "vhf": false,
+      "modes": [
+        "CW"
+      ],
+      "unconfirmed": false,
+      "old_rules": false,
       "no_ru_by_contacts": false,
       "problems": []
     },
