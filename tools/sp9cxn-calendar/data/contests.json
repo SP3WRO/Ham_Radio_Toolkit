@@ -1,7 +1,7 @@
 {
   "source": "SP9CXN",
   "source_url": "https://sp9cxn.pzk.pl/kalendarz.html",
-  "source_updated": "2026-11-17",
+  "source_updated": "2026-11-20",
   "months": [
     "2026-11",
     "2026-12"
@@ -904,6 +904,29 @@
       "problems": []
     },
     {
+      "id": "9870fa2ae942",
+      "name": "PGA – DIGI",
+      "section": "domestic",
+      "domestic": true,
+      "section_month": 11,
+      "section_year": 2026,
+      "start_utc": "2026-11-21T07:00:00Z",
+      "end_utc": "2026-11-21T07:59:00Z",
+      "start_raw": "21.11.2026 07:00",
+      "end_raw": "21.11.2026 07:59",
+      "rules_url": "http://pga-zawody.pzk.pl/articles.php?article_id=21",
+      "rules_pl_url": null,
+      "rules_pl_machine_translated": false,
+      "vhf": false,
+      "modes": [
+        "DIGI"
+      ],
+      "unconfirmed": false,
+      "old_rules": false,
+      "no_ru_by_contacts": false,
+      "problems": []
+    },
+    {
       "id": "6ac048b132a7",
       "name": "EPC QSO Party BPSK63",
       "section": "international",
@@ -1286,29 +1309,6 @@
       "vhf": false,
       "modes": [
         "CW"
-      ],
-      "unconfirmed": false,
-      "old_rules": false,
-      "no_ru_by_contacts": false,
-      "problems": []
-    },
-    {
-      "id": "557f2eb08adc",
-      "name": "PGA – DIGI",
-      "section": "domestic",
-      "domestic": true,
-      "section_month": 11,
-      "section_year": 2026,
-      "start_utc": "2026-11-28T07:00:00Z",
-      "end_utc": "2026-11-28T07:59:00Z",
-      "start_raw": "28.11.2026 07:00",
-      "end_raw": "28.11.2026 07:59",
-      "rules_url": "http://pga-zawody.pzk.pl/articles.php?article_id=21",
-      "rules_pl_url": null,
-      "rules_pl_machine_translated": false,
-      "vhf": false,
-      "modes": [
-        "DIGI"
       ],
       "unconfirmed": false,
       "old_rules": false,
